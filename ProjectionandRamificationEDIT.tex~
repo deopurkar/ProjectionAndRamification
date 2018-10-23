@@ -1,0 +1,2197 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[margin = 1 in]{geometry}
+\usepackage[frenchmath,defaultmathsizes]{mathastext}
+\usepackage{
+  hyperref,
+  amsmath,
+  amssymb,
+  tikz,
+  amsthm,
+  thmtools,
+  microtype,
+  enumitem,
+  stmaryrd,
+  tikz-cd,
+}
+\usepackage{graphicx}
+
+\linespread{1.1}
+
+\usepackage{eucal}
+
+%\usepackage[all]{xy}
+
+%\usepackage[draft]{showlabels}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture} 
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{observation}{Observation}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{counterexample}[theorem]{Counterexample}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{question}[theorem]{Question}
+\theoremstyle{remark}
+\newtheorem{notation}[theorem]{Notation}
+\numberwithin{equation}{section}
+
+
+
+\title{Projection and Ramification}
+\author{Anand Deopurkar, Eduard Duryev, \& Anand Patel}
+
+
+
+%-----------------------------------------------
+\def\labelitemi{--}
+\newcommand{\todo}[1]{\fbox{ToDo: #1}}
+\renewcommand{\k}{k}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Bl}{Bl}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\ProjBun}{ProjBun}
+\renewcommand{\Vec}{\operatorname{Vec}}
+\DeclareMathOperator{\Def}{Def}
+\DeclareMathOperator{\res}{Res}
+\DeclareMathOperator{\Quot}{Quot}
+\DeclareMathOperator{\Hilb}{Hilb}
+\DeclareMathOperator{\sing}{Sing}
+\DeclareMathOperator{\dm}{dim}
+\newcommand{\cO}{{\mathcal O}}
+\renewcommand{\to}{{\longrightarrow}}
+
+\renewcommand{\sectionautorefname}{\S}
+\renewcommand{\subsectionautorefname}{\S}
+\input{macros}
+\declaretheorem[sibling=theorem,style=theorem]{remark}
+\numberwithin{equation}{section}
+\declaretheorem[title=Theorem, style=plain]{maintheorem}
+\declaretheorem[title=Theorem-Example, style=plain]{exampletheorem}
+\renewcommand{\themaintheorem}{\Alph{maintheorem}}
+\renewcommand{\theexampletheorem}{\Alph{exampletheorem}}
+
+\renewcommand{\O}{\mathcal O}
+\newcommand{\G}{\mathbf G}
+\newcommand{\td}{\widetilde}
+\newcommand{\Frac}{{\mathrm{Frac}}\,}
+\newcommand{\Jac}{{\textrm{Jac}}}
+\DeclareMathOperator{\Ram}{Ram}
+\newcommand{\fm}{\mathfrak m}
+\newcommand{\smvee}{\raise0.5ex\hbox{$\scriptscriptstyle\vee$}}
+
+\newcommand{\compl}[1]{\widehat{#1}}
+\newcommand{\Spec}{{\text{\rm Spec}\,}}
+\newcommand{\Spf}{{\text{\rm Spf}\,}}
+\renewcommand {\o}[1]{\overline{#1}}
+\newcommand{\Proj}{{\text{\rm Proj}\,}}
+\newcommand{\git}{\sslash}
+% -----------------------------------------------
+
+%%% BEGIN DOCUMENT
+
+\begin{document}
+
+
+
+
+\maketitle
+\tableofcontents
+
+
+\section{Introduction}
+
+
+If $X \subset \P^{N}$ is an $n$-dimensional smooth projective variety, not contained in any hyperplane, and if $L \subset \P^{N}$ is a general $(N-n-1)$-plane, then the linear projection away from $L$ 
+\begin{align*}
+  p_{L}: X \to \P^{n}
+\end{align*}
+is a finite surjective map with ramification divisor 
+\begin{align*}
+  R_L \subset X.
+\end{align*} 
+
+Our objective is to understand how $R_{L}$ varies as $L$ varies.  To pose our study more precisely, observe that the Riemann-Hurwitz formula gives an equivalence of divisor classes $$R_L \sim K_{X} + (n+1)H =: R,$$  with $H$ and $K_{X}$ denoting the hyperplane and canonical classes of $X$.   Our task is to study basic properties of the {\sl projection-ramification} rational map: 
+\begin{align*}
+  \rho_{X} &: \G(N-n-1,N) \dashrightarrow |R|\\
+    &L \mapsto R_{L}
+\end{align*}
+
+
+A simple argument shows that $\rho_{X}$ is a linear projection of $\G(N-n-1,N)$ in its Plucker embedding. In general, $\rho_{X}$ cannot be extended to the entire Grassmannian. The failure of regularity of $\rho_{X}$ is equivalent, essentially by definition, to the existence of a linear space $L_{0} \subset \P^{N}$ of dimension $N-n-1$ which happens to be incident to {\sl every} tangent plane of $X$.  The difficulty in understanding $\rho_{X}$ stems directly from this failure of regularity.
+
+We focus primarily on two questions:
+\begin{enumerate}
+	\item Is $\rho_{X}$ generically finite onto its image?
+	\item Is $\rho_{X}$ ever dominant, and if so what is its degree?
+\end{enumerate}
+
+Due to usual complications in positive characteristic, we work mostly over a characteristic zero field. 
+
+
+
+
+\subsection{Results} 
+
+We first address the question of {\sl maximal variation} which, to our knowledge, first appeared in work of Flenner and Manaresi \cite{MANAFlenn:}: \begin{center}{\sl If $X$ is a smooth variety, is $\rho_{X}$ generically finite onto its image?}\end{center} We answer the question affirmatively, at least for ``most'' varieties:
+
+\begin{maintheorem}\label{theorem:Main}
+  Assume $X \subset \P^{N}$ is a non-degenerate variety over a field of
+  characterstic zero, such that the dual variety $X^{*} \subset \P^{N*}$ is a hypersurface. Then $\rho_{X}$ is generically finite onto its image.
+\end{maintheorem} 
+
+
+Our second result shows that maximal variation does not always hold: 
+
+\begin{maintheorem}
+  \label{Thm:Counterexamples}
+  There exist smooth, non-degenerate rational normal scrolls $X^{n} \subset \P^{N}$ of every dimension $n \geq 4$ such that the projection-ramification map $\rho_{X}$ is not generically finite onto its image.
+\end{maintheorem}
+
+Our third structural result illustrates the special role played by the varieties of minimal degree:
+
+\begin{maintheorem}\label{theorem:minimaldegree}
+  Suppose $X \subset \P^{N}$ is a smooth, non-degenerate projective variety, with $\rho_{X}: \G \to |R|$ the projection-ramification map.  Then $$\dim \G \leq \dim |R|,$$ with equality holding if and only if $X$ is a variety of minimal degree.
+\end{maintheorem}
+
+
+\autoref{theorem:minimaldegree} turns our attention to the case of rational normal scrolls. In particular, it is natural to wonder how common it is for a rational normal scroll to satisfy $\deg \rho_{X} = 0$.  Our final result states, roughly, that this only occurs in ``low degree.''
+
+\begin{maintheorem}
+	\label{theorem:rationalnormalscrolls}
+	Let $X = \P(V) \subset \P^{N}$ be a rational normal scroll, where $V$ is a rank $n$ ample vector bundle on $\P^{1}$. 
+
+	Then: 
+	\begin{enumerate}
+	 	\item If $\rho_{X}$ is dominant, then $\rho_{X'}$ is also dominant where $X' = \P(V(1))$.
+	 	\item If $\rho_{X}$ is dominant, then $\rho_{\tilde{X}}$ is also dominant, where $\tilde{X}$ is a general elementary transformation of $X$ through a codimension one plane in a ruling.
+	 	\item If $X$ is balanced, and $\deg V \geq n(n-1)$, then $\rho_{X}$ is dominant. 
+	 \end{enumerate} 
+\end{maintheorem}
+
+
+
+
+
+We now provide some remarks to clarify these theorems and to compare them with known results from the literature.
+
+\begin{remark}
+\autoref{theorem:Main} is proven inductively by arguing that a general linear space $L$ which is incident to $X$ must be an isolated point in its fiber under $\rho_{X}$.  Note that we do not assume $X$ to be smooth in the statement of \autoref{theorem:Main}. This requires us to be more precise about what is meant by the projection-ramification map $\rho_{X}$, but to state the conclusion informally: {\sl If we move a generically chosen complementary dimensional plane $L \subset \P^{N}$, then the corresponding ramification locus $R_{L} \subset X$ also moves.} 
+ \end{remark}
+
+ \begin{remark}
+ 	The hypothesis in \autoref{theorem:Main} is sufficient, but not necessary: If $X  = \P^{k} \times \P^{1} \subset \P^{2k+1}$, $k>1$ is the Segre embedding, then $X^{*}$ is not a hypersurface, yet $\rho_{X}$ is generically finite onto its image.  In fact, in this case $\rho_{X}$ is birational.
+ \end{remark}
+
+\begin{remark}
+	The rational normal scrolls in \autoref{Thm:Counterexamples} include some which are balanced. In lieu of \autoref{theorem:minimaldegree}, we can rephrase the statement as: There exist rational normal scrolls for which $\deg \rho_{X} = 0$.  A natural problem emerges: To classify rational normal scrolls with this property.  
+
+	When we restrict our attention to rational normal scrolls, \autoref{Thm:Counterexamples} is sharp: smooth surfaces always have non-degenerate dual varieties and so \autoref{theorem:Main} applies, and the case of threefolds follows from a direct calculation -- see \autoref{corollary:maxVariation3Scrolls}.
+\end{remark}
+
+ 
+ 
+
+\begin{remark}
+  As Flenner and Manaresi point out in the paper \cite[~Remark 2.6]{Flenner2004}, their example \cite[~Example 4.8]{MANAFlenn:} does not provide an example of the failure of maximal variation of ramification divisors.  Therefore \autoref{Thm:Counterexamples} provides  the first known examples of varieties with non-maximal variation of ramification divisors.  
+\end{remark}
+
+\begin{remark}
+	To our knowledge, the following observation accounts for our collective understanding 
+regarding the variation of ramification divisors (especially for $X$ smooth) up until the writing of this paper:  
+
+\begin{observation}\label{observation:simple}\nonumber
+    If $X$ is a variety such that $\rho_{X}$ is a regular map, then $\rho_{X}$ is finite. 
+\end{observation} 
+
+We call a variety $X$ {\sl compressible} if $\rho_{X}$ is not a regular map.  This failure of regularity is equivalent to there being a linear space $L_{0}$ of dimension $N - n-1$ such that the projection $p_{L_{0}}:X \dashrightarrow \P^{n}$ is not dominant, thereby ``compressing'' $X$.  Otherwise, we say $X$ is {\sl incompressible}.
+
+It is easy to see that (in char. 0!) every smooth hypersurface and every smooth, non-degenerate curve is incompressible.  The cubic surface scroll $X \subset \P^{4}$ serves as a first example of a compressible surface: projection from its directrix line is not dominant. 
+
+Even so, \autoref{theorem:Main} applies to all non-degenerate smooth surfaces, as the dual variety of such a surface is automatically divisorial.  In light of \autoref{Thm:Counterexamples}, the case of threefolds becomes particularly interesting -- by the classification of varieties with small dual varieties, it suffices to investigate  the question of maximal variation of ramification divisors for $\P^{2}$-bundles over curves.
+
+\end{remark}
+
+
+
+\begin{remark}
+A version of \autoref{theorem:Main} is proven in Flenner and Manaresi's paper
+  \cite[~Theorem 3.4]{MANAFlenn:},
+  under the assumption that $X$ obeys a strong geometric condition:  for {\sl
+  every} $(N-n-1)$-plane $L \subset \P^{N}$, the join variety $J(L,X)$ equals
+  $\P^{N}$.  If we additionally assume $X$ to be smooth, this property directly implies the regularity of $\rho_{X}$ and
+  hence falls under \autoref{observation:simple}.  
+
+  If $X \subset \P^{N}$ is any smooth non-degenerate
+  variety, then a sufficiently high degree Veronese re-embedding of $X$ will
+  have divisorial dual variety $X^{*}$, and hence will satisfy the hypothesis of
+  \autoref{theorem:Main}.  On the other hand, it is easy to see that a sufficiently high degree Veronese
+  re-embedding of $X$ is compressible, meaning
+ \autoref{observation:simple} does not apply.
+\end{remark}
+
+\begin{remark}
+	 Flenner
+  and Manaresi observe in \cite[~Remark 3.5]{MANAFlenn:} that for a smooth, non-degenerate variety
+  $X \subset \P^{N}$, the ampleness of the twisted normal bundle
+  $N_{X/\P^{N}}(-1)$ forces $X$ to be incompressible, and hence such an $X$ falls under the umbrella of \autoref{observation:simple}.  In particular,  
+  \autoref{observation:simple} applies to all non-degenerate smooth complete intersections.
+\end{remark}
+
+
+
+
+
+
+\subsection{Projection, ramification, and enumerative geometry}
+
+
+\autoref{theorem:minimaldegree} uncovers a large array of enumerative problems concerning projection and ramification: 
+\begin{problem}\label{problem:degree}
+   For each variety of minimal degree $X^{n} \subset \P^{N}$, determine the degree of $\rho_{X}$.
+ \end{problem} 
+
+\autoref{problem:degree} rapidly increases in difficulty with $n$.  When $X$ is one dimensional, i.e. a rational normal curve in $\P^{N}$, it is  well-known and easy to see that 
+\begin{align*}
+  \deg \rho_{X} = C_{N} 
+\end{align*}
+where $C_{N} = \frac{(2N-2)!}{N!(N-1)!}$ is the Catalan number \cite{GOLDBERG1991129}.  In fact for any non-degenerate smooth curve $X \subset \P^{N}$, rational or otherwise, $\rho_{X}$ is a {\sl regular} map known as the {\sl Wronski map}, which we know is induced by a space of sections of $\O(1)$ on $\G(N-2,N)$. This immediately yields the equality $\deg \rho_{X} = \deg \G(N-2,N) = \frac{(2N-2)!}{N!(N-1)!}$ when $X$ is a rational normal curve. 
+
+ Once $n \geq 2$, our understanding of \autoref{problem:degree} quickly wanes.
+ The base scheme of $\rho_{X}$ has complicated nilpotent structure, effectively blocking any straightforward application of the excess intersection formula. A search of the classical literature combined with some new arguments allows us
+ to extract some answers to \autoref{problem:degree} when the dimension $n \geq
+ 2$. For the ease of the reader, we collect all examples we understand in the following:
+
+\begin{exampletheorem}\label{Thm:Examples} 
+\begin{enumerate}
+  \item If $X \subset \P^{N}$ is a rational normal curve, then $\deg \rho_{X} = \frac{(2N-2)!}{N!(N-1)!}$.
+  \item  If $X \subset \P^{N}$ is a quadric hypersurface, then $\rho_{X}$ is an isomorphism.
+
+  \item  If  $X = \P^{k} \times \P^{1} \hookrightarrow \P^{2k+1}$ is the Segre embedding, then $ \rho_{X}$ is birational.
+
+  \item  If $X \subset \P^{5}$ is the Veronese surface, then $ \deg \rho_{X} = 3$.
+  \item If $X \subset \P^{5}$ is a general quartic surface scroll, then $\deg \rho_{X} = 2$. \todo{Still needs to be done.}
+  \item If $X = \P(\O_{\P^{1}}(1) \oplus \O_{\P^{1}}(k+1)) \subset \P^{k+3}$ is the surface scroll with most imbalanced splitting type, then $\rho_{X}$ is birational.
+  \item If $X = \P(\O_{\P^{1}}(1) \oplus \O_{\P^{1}}(1) \oplus \O_{\P^{1}}(k+1)) \subset \P^{k+5}$ is the threefold scroll with most imbalanced splitting type, then $\rho_{X}$ is birational.
+\end{enumerate} 
+\end{exampletheorem}
+
+
+
+\subsection{Comparison with related work}
+
+
+  \subsubsection{Wronski maps and Shapiro conjecture}
+If $X \subset \P^{N}$ is a non-degenerate smooth curve, then it immediately
+follows that $\rho_{X}$
+is regular. As we mentioned before, $\rho_{X}$ is called the {\sl Wronski
+map}.  If we further assume $X \subset \P^{N}$ is a rational normal curve, then we get the very
+well-studied finite projection: 
+\begin{align*}
+    \rho: \G(1,N) \to \P^{2N-2}.
+\end{align*}
+The geometry surrounding such Wronski maps has received a lot of attention thanks to the Shapiro
+conjecture  which states that the
+preimage of any point in $\P^{2N-2}$ corresponding to $2N-2$ real points consists entirely of real points in $\G(1,N)$ (see \cite{sottile2000}; the conjecture was resolved by Eremenko and Gabrielov in \cite{Erem/Gabr1}).
+When placed in this context, our \autoref{theorem:minimaldegree} potentially sets the stage for a vast higher-dimensional generalization of the body of work around the Shapiro
+conjecture.
+
+\subsubsection{Catalan numbers vs. Hurwitz numbers, and Chisini's conjecture} Our \autoref{theorem:minimaldegree} points to an interesting difference between enumerative problems concerning ramification divisors and branch divisors.  Arguably, the most central enumerative problem concerning branch divisors, originating in the work of Hurwitz, is to compute the number of branched covers of the projective line with specified branch set in $\P^{1}$.  As is well-known, these Hurwitz numbers exhibit remarkable structure.  
+
+In contrast, the calculation of the number of (equivalence classes of) degree $N$ rational functions on $\P^{1}$ ramified at a prescribed set of $2N-2$ general points is elementary, yielding the Catalan numbers.
+
+In higher dimensions, however, the analogue of the Hurwitz  enumerative problem becomes less interesting, thanks to Chisini's conjecture, now Kulikov's theorem \cite{1064-5632-63-6-A03}, which asserts that a branched cover $S \to \P^{2}$ with {\sl generic branching} is uniquely determined by its branch divisor $B \subset \P^{2}$, with a few finite exceptions.  The corresponding enumerative problem regarding ramification divisors persists in all dimensions, thanks to \autoref{theorem:minimaldegree}, and poses a significant challenge.  We end our paper with empirical evidence suggesting that the occurrence of the combinatorial Catalan numbers is not an isolated event -- there appears to be a mysterious combinatorial structure intertwined with the projection-ramification enumerative problems emerging from \autoref{theorem:minimaldegree}. 
+
+
+
+
+
+
+
+\section{Proof of \autoref{theorem:Main}}
+\label{sec:proof_of_theorem:main}
+Our proof of \autoref{theorem:Main} proceeds inductively by showing that a general
+$(N-n-1)$-plane which is incident to $X$ is an isolated point in its fiber
+under $\rho_{X}$.  In order to execute this strategy, we find it easier to work
+with abstract pairs $(X,L)$ of a variety and a line bundle.  Before proceeding,
+we fix some notation.
+\subsection{Notation and conventions} We work over an algebraically closed field
+$k$ of characteristic $0$ (We use Bertini's theorem and generic smoothness. We
+also appeal to the Kodaira Vanishing theorem.) By a {\sl proper variety}, we mean a proper, integral, finite-type $k$-scheme. For any scheme $X$, we let $X^{s}$ denote its smooth locus. If $F$ is a coherent sheaf, we let $P(F)$ denote its sheaf of principal parts. We will let $e: H^{0}(X,F) \to P(F)$ denote the natural evaluation morphism -- we suppress the dependence on $F$. If $s$ is a global section of a locally free sheaf, we let $v(s)$ denote the vanishing scheme of $s$.  If $L$ is a line bundle, we let $|L|$ denote the projective space $\P(H^{0}(L))$.  If $L \to Y$ is a line bundle on a smooth variety, and $s \in H^{0}(Y,L)$ is a section, then the {\sl singular scheme} $\sing(v(s))$ of $s$ is the vanishing scheme of $e(s) \in H^{0}(Y,P(L))$; if $K$, the kernel sheaf of $e : H^{0}(Y,L) \otimes \cO_{Y} \to P(L)$, is locally free, then $\sing(v(s))$ is the largest closed subscheme $T \subset Y$  such that $s: \cO_{T} \to H^{0}(Y,L) \otimes \cO_{T}$ factors through $K|_{T}$.  
+
+
+
+ 
+\subsection{Non-defective line bundles} % (fold) 
+
+
+ Throughout, $X$ will be a proper variety of dimension $n$.  Rather than working with centers of projections in $\P^{N}$, we will work with $n+1$ dimensional vector spaces of sections of the line bundle $L = \cO_{X}(1)$.   Furthermore, since we will ultimately want to blow up points on $X$, we will work in a setting where the line bundle $L$ is not necessarily assumed to be very ample.  The exact positivity property which we need is {\sl non-defectivity}. We study this property in this section. 
+
+
+\begin{definition}
+  \label{definition:Genericallynon-defective} 
+  A line bundle $L \to X$ is {\sl non-defective} if for a general point $x \in X$, the vanishing scheme of a  general element of $H^{0}(X, L \otimes {\mathfrak m}^{2}_{x} )$ has an isolated singularity at $x$.
+\end{definition} 
+
+The {\sl conormal variety} (of a line bundle $L \to X$) will play an important role.  To define it, we first note that there is a non-empty open set $U \subset X$ over which the kernel $K$ of
+\begin{align*}
+  e: H^{0}(X,L) \otimes \cO_{U} \to P(L)|_{U}
+\end{align*}
+is locally free. The conormal variety, which we denote simply by $P$, is defined
+to be the closure of the projectivization $\P(K|_{U}) \subset X \times |L|$.
+
+
+\begin{proposition}\label{prop:dimension}
+  \label{prop:dimP}
+  Let $L \to X$ be a non-defective line bundle.  If $h^{0}(L) \geq n+2$, then
+  the conormal variety $P$ has dimension $\dm P = \dm |L| - 1$.  If $h^{0}(L) \leq n+1$, then $P$ is empty.
+\end{proposition} 
+
+\begin{proof}
+  Since $P$ is a subscheme of $X \times |L|$, it has a projection $\Sigma: P \to |L|$ defined by $(x,s) \mapsto s$. 
+
+  Over a nonempty open subset $U \subset X$, the kernel $K$ of $e: H^{0}(X,L) \otimes \cO_{U} \to P(L)|_{U}$ is locally free of some rank $r$, and $P$ is its projectivization. Observe that $r \geq \dm |L| - n$; the statement of the proposition  amounts to showing that if $r>0$ then $r = \dm |L| - n$. 
+
+    If $s \in |L|$ is any element, then we can view $\Sigma^{-1}(s)$ as a subscheme of $X$.  We then have: 
+  \begin{align*}
+    \Sigma^{-1}(s) \cap U = \sing(v(s|_{U})).
+  \end{align*}
+
+  So suppose $r>0$. In particular, $P$ is non-empty. Since $L$ is non-defective, a general point $(x,s) \in P$ is such that $x$ is an isolated point in $\sing(v(s))$.  Therefore, we conclude that $\Sigma: P \to |L|$ is generically finite onto its image, hence $\dm P \leq \dm |L|$.  
+
+  To summarize, $\dm P = \dm |L|$ holds if and only if $P \to |L|$ is surjective, and otherwise $\dm P = \dm |L| -1$.  Now we argue the former possibility is impossible by using Bertini's theorem.  Let $B \subset X$ denote the base scheme of the linear series $|L|$, and set $\widetilde{X} = \Bl_{B}X$. Then, the linear series $|L|$, viewed as a subseries of $|\pi^{*}L-E|$ on $\widetilde{X}$ is basepoint free.  The conormal variety $$\widetilde{P} := \overline{\{(x,D) \mid x \in \widetilde{X}^{sm} \,\, \text{general}, \,\, x \in \sing D, D \in|L|\}} \subset \widetilde{X} \times |L|$$ would also dominate $|L| \subset |\pi^{*}L-E|$ under second projection. By Bertini's theorem, the only way this can happen is if the locus $\widetilde{P}^{sing} \subset \widetilde{P}$ lying over $\sing \widetilde{X}$ dominated $|L|$.  Since we already know $\dm \widetilde{P} \leq \dm |L|$, $\widetilde{P}^{sing}$ would then contain an irreducible component of $\widetilde{P}$ contradicting the irreducibility of $\widetilde{P}$. Hence, $P \to |L|$ could not be dominant, and we are done.
+
+\end{proof} 
+
+\begin{proposition}
+  \label{prop:dimensionCriterion}
+  Suppose $L \to X$ is a line bundle with $h^{0}(X,L) \geq n+2$, and let $P$ denote its conormal variety.  The projection $\Sigma: P \to |L|$ is generically finite onto its image if and only if $L$ is non-defective. 
+\end{proposition}
+
+\begin{proof}
+  The proof closely follows the reasoning in the proof of \autoref{prop:dimP}, and hence we leave the details to the reader.
+\end{proof}
+
+\begin{proposition}\label{prop:ordinarydoublepoint}
+  Let $L \to X$ be a non-defective line bundle, with $h^{0}(X,L) \geq n+2$. If $x \in X$ is a general point, then a general element $s \in H^{0}(X,L \otimes {\mathfrak{m}}^{2}_{x})$ has an ordinary double point singularity at $x$.
+\end{proposition}
+
+\begin{proof}
+  As in the proof of \autoref{prop:dimension}, we know that the projection $\Sigma: P \to
+  |L|$ is generically finite onto its image. Since our ground field has characteristic
+  zero, at a general point $(x,s) \in P \subset X \times |L|$, the projection $\Sigma$ is a local immersion.  In other words, $(1)$  $x \in \sing(v(s))$ is isolated, and $(2)$ with scheme structure inherited from $\sing(v(s))$, $x$ is a reduced point. (Note: we are allowed to assume $x \in X^{s}$.)  
+
+  These two properties imply that $v(s)$ possesses an ordinary double point at $x$: choose local coordinates $(x_{1}, ..., x_{n})$ so that the complete local ring ${\widehat{\cO}_{X,x}}$ is isomorphic to $k[[x_{1}, ..., x_{n}]]$. Our claim then follows from the next statement, which we leave to the reader to check: Let $s = s(x_{1}, ..., x_{n}) \in {\mathfrak m}^{2}_{x}$ be a power series. Then the partial derivatives $\partial_{1}s, ..., \partial_{n}s$ induce linearly independent elements in ${\mathfrak m}_{x}/{\mathfrak m}^{2}_{x}$ if and only if the tangent cone of $s$ is a non-degenerate quadratic cone.
+\end{proof}
+
+
+
+\begin{proposition}
+  \label{prop:genericSeparateTangents}
+  If $L \to X$ is a non-defective line bundle  with $h^{0}(L) \geq n+1$, then the global sections of $L$ separate tangent vectors at a general point $x \in X$, i.e. $$e_{x}: H^{0}(X,L) \otimes k(x) \to P(L) \otimes k(x)$$ is surjective for $x \in X$ general.
+\end{proposition}
+
+\begin{proof}
+
+This follows from the proof of \autoref{prop:dimP}: Let $K$ be the kernel sheaf of $e: H^{0}(L) \otimes \cO_{X} \to P(L)$. Then it was shown in the proof of \autoref{prop:dimension} that the generic rank of $K$ is $r = h^{0}(X,L) - (n+1) $, which in turn implies that $e$ is generically surjective.   
+\end{proof}
+
+
+
+\begin{proposition}
+  \label{prop:blowuppoint}
+  Let $L \to X$ be a non-defective line bundle, let $x \in X$ be a general point, let $\pi : \widetilde{X} \to X$ the blow up of $X$ at $x$, and let $E$ denote the exceptional divisor of $\pi$. Further assume that $h^{0}(L) \geq n+2$. 
+
+  Then $\pi^{*}L (-E) \to \widetilde{X}$ is also non-defective. 
+\end{proposition}
+
+\begin{proof}
+ As a consequence of \autoref{prop:dimP}, at a general point $y \in X$, we get
+  \begin{align*}
+    h^{0}(X,  L \otimes {\mathfrak{m}^{2}_{y}}) = h^{0}(X,L) - (n+1).
+  \end{align*}
+By non-defectivity of $L$, at the general point $y \in X^{s}$ there is an element $t_{1} \in H^{0}(X, {\mathfrak{m}^{2}_{y}} \otimes L)$ such that $v(t_{1})$ has an isolated singularity at $y$.
+
+Now we can choose a second general point $x \in X^{s} \setminus v(t_{1})$. 
+Notice that by \autoref{prop:genericSeparateTangents}, $L$ separates
+tangent vectors at  $x$, and therefore we get an isomorphism
+$$H^{0}(X, L \otimes {\mathfrak m}_{x}) \simeq H^{0}(\widetilde{X},
+\pi^{*}L(-E)).$$
+ 
+
+Furthermore, we can choose $x$ so that the following hold: 
+\begin{enumerate}
+  \item  $h^{0}(X,  L \otimes {\mathfrak m}^{2}_{y}\cdot {\mathfrak m}_{x}) = h^{0}(X,  L \otimes {\mathfrak{m}^{2}_{y}}) - 1$, and
+  \item a general nonzero element $t \in  H^{0}(X, L \otimes{\mathfrak m}^{2}_{y}\cdot {\mathfrak m}_{x})$ has an isolated singularity at $y$, provided it exists.
+ \end{enumerate}
+
+ With $x$ chosen as above, these two conditions imply that the conormal variety
+ $\widetilde{P}$ for the line bundle $\pi^{*}L(-E) \to {\widetilde{X}}$ over
+ $\widetilde{X} = \Bl_{x}X$ has the expected dimension according to \autoref{prop:dimension}, and, provided $t$ exists, that the point $(y,t)$ is a point in $\widetilde{P}$ around which the projection $\Sigma: \widetilde{P} \to |\pi^{*}L(-E)|$ is quasi-finite onto its image. We conclude using \autoref{prop:dimensionCriterion}.
+\end{proof}
+
+\subsection{Projections}
+
+\begin{definition}
+A {\sl projection} is a pair 
+\begin{align*}
+  (L,V)
+\end{align*}
+where  $L \to X$ is a line bundle and $V \subset H^{0}(X,L)$ is a subspace of dimension $n+1$.  
+\end{definition}
+
+\begin{definition}
+  \label{definition:properlyramified}
+  A projection $(L,V)$ is {\sl properly ramified} if the evaluation homomorphism $e: V \otimes \cO_{X} \to P(L)$ is an isomorphism over a general point in $X$.  If $(L,V)$ is properly ramified, its {\sl ramification divisor} $$R(V) \subset X^{s}$$ is the scheme defined by the determinant of $e : V \otimes \cO_{X^{s}} \to P(L)|_{X^{s}}$.
+\end{definition}
+
+If $L \to X$ is fixed, then the set of all projections $(L,V)$ is parametrized by the Grassmannian 
+\begin{align*}
+  G(n+1, H^{0}(X,L)).
+\end{align*}
+
+\begin{corollary}\label{cor:properlyramified}
+  Suppose $L \to X$ is a non-defective line bundle  satisfying $h^{0}(X,L) \geq n+1$. Then there exists a properly ramified projection $(L,V)$.
+\end{corollary}
+
+\begin{proof}
+  This follows immediately from \autoref{prop:genericSeparateTangents}.
+\end{proof}
+
+Next we define the ramification divisor of a projection.  If $L \to X$ is a line bundle over an $n$-dimensional variety $X$, then the sheaf $P(L)$ is locally free of rank $n+1$ over $X^{s}$, and $\wedge^{n+1}P(L)|_{X^{s}} \simeq K_{X^{s}} \otimes L^{\otimes n+1}$.  
+
+Therefore, by applying $\wedge^{n+1}$ to $e : H^{0}(X,L) \otimes \cO_{X^{s}} \to P(L)|_{X^{s}}$, we get a map of vector spaces of global sections: 
+\begin{align}\label{vectorspacemap}
+\wedge^{n+1}H^{0}(X,L) \to H^{0}(X^{s},K_{X^{s}} \otimes L^{\otimes n+1}).
+\end{align}
+
+
+
+\begin{definition}
+  \label{def:ProjectionRamification}
+  Let $L \to X$ be a line bundle which separates tangent vectors at a general point of $X$. The {\sl projection-ramification} map for $L$ is the composite: 
+  \begin{align*}
+    \rho_{(X,L)}: G(n+1,H^{0}(L)) \hookrightarrow \P(\wedge^{n+1}H^{0}(L)) \dashrightarrow \P(H^{0}(X^{s}, K_{X^{s}} \otimes L^{\otimes n+1}))
+  \end{align*}
+  rationally defined by $(L,V) \mapsto R(V)$. Here the dashed arrow comes from \ref{vectorspacemap}.
+\end{definition}
+
+\autoref{cor:properlyramified} implies that the projection-ramification map $\rho_{(X,L)}$ exists whenever $L \to X$ is non-defective and $h^{0}(X,L) \geq n+1$. 
+
+
+\subsection{Proof of main result}
+We proceed to the proof of \autoref{theorem:Main}. More specifically, we prove \autoref{theorem:MainMain} below, which is more precise and implies \autoref{theorem:Main}.
+
+
+
+\begin{definition}
+   A projection $(L,V)$ is {\sl isolated} if it is properly ramified and if $[V] \in G(n+1,H^{0}(X,L))$ is an isolated point in the corresponding fiber of $\rho_{(X,L)}$.
+\end{definition}
+
+Our main next objective is to show: 
+
+\begin{theorem}
+  \label{theorem:MainMain}
+  If $L \to X$ is a non-defective line bundle satisfying $h^{0}(X,L) \geq n+2$, then there exists an isolated projection $(L,V)$.
+\end{theorem}
+
+  
+
+\begin{lemma}\label{lemma:tangentconeRam}
+  Let $L \to X$ be a non-defective line bundle with $h^{0}(L) \geq n+2$, and let $x \in X$ be a general point.  
+
+  Suppose $V \subset H^{0}(X,  L \otimes {\mathfrak m}_{x})$ is a general $(n+1)$-dimensional subspace. Then the ramification divisor $R(V)$ has an ordinary double point singularity at $x$. 
+\end{lemma}
+
+\begin{proof}
+  Using \autoref{prop:genericSeparateTangents} and \autoref{prop:ordinarydoublepoint}, we can assume $V$ has a basis $(s_{1}, ..., s_{n}, t)$ such that: 
+  \begin{enumerate}
+      \item $(s_{1}, ..., s_{n})$ generate $L \otimes ({\mathfrak m}_{x}/{\mathfrak m}^{2}_{x})$ and
+      \item $v(t)$ has an ordinary double point singularity at $x$.
+    \end{enumerate}  
+
+Let $\widehat{\O}_{X,x}$ denote the completion of the local ring at $x \in X$ along its maximal ideal.  Upon trivializing $L$, we may regard $s_{i}$ and $t$ as elements of $\widehat{\O}_{X,x}$, and also assume that $\widehat{\O}_{X,x} = k[[s_{1}, ..., s_{n}]]$. A local matrix representative for the evaluation map 
+\begin{align*}
+  e: V \otimes \widehat{\O}_{X,x} \to P(L) \otimes \widehat{\O}_{X,x}
+\end{align*}
+is given by 
+\begin{align}\label{matrix}
+\begin{pmatrix}
+  s_{1} & s_{2} & \dots & t \\
+  1 & 0 & \dots & \partial_{1}t \\
+  0 & 1 & \dots & \partial_{2}t \\
+  \vdots & \vdots & \vdots & \vdots \\
+  0 & 0 & \dots & \partial_{n}t
+\end{pmatrix}
+\end{align}
+
+Here, $\partial_{i}$ denotes $\frac{d}{ds_{i}}$. The determinant of \ref{matrix} is 
+\begin{align*}
+  t - \sum_{i}s_{i}\partial_{i}t,
+\end{align*}
+and is an analytic local equation for the ramification divisor $R(V)$ near $x$.  It is then immediately clear that $R(V)$ shares the same tangent cone as $v(t)$ at $x$, and hence the proposition follows.
+\end{proof}
+
+\begin{lemma}\label{lemma:basepointfree}
+  Maintain the same setting as in \autoref{lemma:tangentconeRam}, except now assume $V \subset H^{0}(X,L)$ has a basis of the form $(u,a_{1}, ..., a_{n-1}, b)$ where 
+  \begin{enumerate}
+    \item $u$ does not vanish at $x$,
+    \item $a_{1}, ..., a_{n-1}$ all vanish at $x$ and induce linearly independent elements in $L \otimes ({\mathfrak m}_{x}/{\mathfrak m}^{2}_{x})$, and
+    \item $v(b)$ has an ordinary double point at $x$. 
+  \end{enumerate}
+  Then $x \in R(V)$ and $R(V)$ is smooth at $x$.
+\end{lemma}
+
+\begin{proof}
+  That $x \in R(V)$ is clear since $V \cap H^{0}(X,L \otimes \mathfrak{m}^{2}_{x}) \neq 0 $.
+
+  Again we work in the completion $\widehat{\cO}_{x,X}$, and after trivializing $L$, we assume $u, a_{1}, ..., b$ are elements of $\widehat{\cO}_{x,X}$. 
+
+  We choose an element $z \in \widehat{\cO}_{x,X}$ in such a way that $(a_{1}, ..., a_{n-1}, z)$ form a system of coordinates, i.e. $\widehat{\cO}_{x,X} \simeq k[[a_{1}, ..., a_{n-1}, z ]]$.  
+
+  With respect to these coordinates, a local matrix representative for \begin{align*}
+  e: V \otimes \widehat{\cO}_{x,X} \to P(L) \otimes \widehat{\cO}_{x,X}
+\end{align*}
+has the form
+\begin{align}\label{matrix2}
+\begin{pmatrix}
+  u & a_{1} & a_{2} & \dots & b \\
+  \partial_{1}u & 1 & 0 & \dots & \partial_{1}b \\
+  \partial_{2}u & 0 & 1 & \dots & \partial_{2}b \\
+  \vdots & \vdots & \vdots & \vdots \\
+  \partial_{z}u  & 0 & 0 & \dots & \partial_{z}b
+\end{pmatrix}
+\end{align}
+
+The determinant of \ref{matrix2} is the analytic local equation for $R(V)$: 
+\begin{align*}
+   \bar{u} \cdot \partial_{z}b \pm \partial_{z}u \cdot \bar{b}
+ \end{align*} 
+ Here, for any $r \in \widehat{\cO}_{x,X}$ we set $$\bar{r} := r - a_{1}\partial_{1}r - a_{2}\partial_{2}r - ... - z \partial_{z} r.$$
+
+ Since $b \in {\mathfrak m}^{2}_{x}$, we get $\bar{b} \in {\mathfrak m}^{2}_{x}$ and so $\partial_{z}b \in {\mathfrak m}_{x}$.  Furthermore, $\bar{u}$ is a unit.  Therefore,  $R(V)$ is singular at $x$ if and only if: 
+ \begin{align*}
+  \partial_{z}b \in {\mathfrak m}^{2}_{x},
+ \end{align*}
+ but this would mean that the tangent cone of $v(b)$ is degenerate, contrary to our third assumption. So $R(V)$ is smooth at $x$.
+\end{proof}
+
+Now we are ready for the proof of \autoref{theorem:MainMain}. 
+
+\begin{proof}[Proof of \autoref{theorem:MainMain}]
+  We induct on $h^{0}(L)$.  First, assume $h^{0}(X,L) = n+2$ and choose $x \in X$ a general point. Then $V  =  H^{0}(X,{\mathfrak m}_{x}\otimes L)$ satisfies the conditions in \autoref{lemma:tangentconeRam} and in particular $V$ is properly ramified and $R(V)$ has an ordinary double point at $x$.  
+
+  Suppose we have a $1$-parameter family of $(n+1)$-dimensional subspaces $V_{c} \subset H^{0}(X,L)$ parametrized by points $c$ of a smooth pointed curve $(C,0)$ such that
+  \begin{enumerate}
+  \item $V_{0} = V$ 
+  \item $V_{c} \neq V_{0}$ for $c \in C$, $c \neq 0$.
+  \end{enumerate}
+  We must prove $R(V_{c}) \neq R(V)$ for a general point $c \in C$. 
+
+
+  By upper semicontinuity, 
+  \begin{align*}
+    \dm \left(V_{c} \cap H^{0}(X,L \otimes \mathfrak{m}^{2}_{x})\right) \leq 1.
+  \end{align*}
+If $\dm V_{c} \cap H^{0}(X,L \otimes \mathfrak{m}^{2}_{x}) = 0$, then $x \notin R(V_{c})$ and therefore $R(V_{c}) \neq R(V)$.  Otherwise, if $\dm V_{c} \cap H^{0}(X,L \otimes \mathfrak{m}^{2}_{x}) = 1$ then a nonzero section $b \in V_{c} \cap H^{0}(X,L \otimes \mathfrak{m}^{2}_{x})$ must also possess an ordinary double point singularity at $x$, as this is an open condition on families of singularities.
+
+Since $V_{c} \neq V_{0} = H^{0}(X,L\otimes\mathfrak{m})$, there exists a section $u \in V_{c}$ not vanishing at $x$.  This implies that $V_{c}$ obeys the hypotheses in \autoref{lemma:basepointfree}. But then the conclusion of \autoref{lemma:basepointfree} implies $R(V_{c}) \neq R(V_{0})$ as the former is smooth while the latter is singular at $x$, establishing our initial case.
+
+
+Next suppose $h^{0}(X,L) > n+2$, and again choose a general point $x \in X$ so that \autoref{prop:blowuppoint} holds. Choose a general $(n+1)$-dimensional subspace 
+\begin{align*}
+  W \subset  H^{0}(X, L \otimes {\mathfrak m}_{x})
+\end{align*}
+so as to obey the conditions in \autoref{lemma:tangentconeRam}. By induction hypothesis and \autoref{prop:blowuppoint}, the projection $(\pi^{*}L(-E),W)$ is isolated, where $\pi: \widetilde{X} \to X$ is the blow up at $x$.  
+
+So assume we have a $1$-parameter family $W_{c}$ parameterized by a pointed curve $(C,0)$ satisfying 
+\begin{enumerate}
+  \item $W_{0} = W$,
+  \item $W_{c} \neq W_{0}$ for $c \in C$ general,
+  \item $W_{c}$ is not contained in $H^{0}(X, L \otimes {\mathfrak m}_{x})$ for $c \in C$ general.
+ \end{enumerate} 
+ We must verify that $R(W_{c}) \neq R(W_{0})$.  Again by upper semicontinuity and openness (among singularities) of possession of ordinary double point, we find that $W_{c}$ meets the conditions of \autoref{lemma:basepointfree}. We conclude $R(W_{c}) \neq R(W_{0})$ since the former is smooth while the latter is singular at $x$, completing the argument.
+\end{proof}
+
+Recall that if $X \subset \P^{r}$ is a projective variety then its dual variety $X^{*} \subset \P^{r*}$ is the image of the conormal variety $P$ (associated to the line bundle $\cO_{X}(1)$) under the projection $\Sigma: P \to |\cO_{X}(1)| \simeq \P^{r*}$.   We immediately get \autoref{theorem:Main}:
+
+\begin{corollary}
+  \label{cor:maintheorem} Let $X \subset \P^{r}$ be a non-degenerate projective variety such that the dual variety $X^{*} \subset \P^{r*}$ is a hypersurface. Then $\rho_{X,\cO_{X}(1)}$ is generically finite onto its image.
+\end{corollary}
+
+\begin{proof}
+    Indeed, since $\cO_{X}(1)$ generically separates tangent vectors, the condition that $X^{*}$ be a hypersurface implies that the projection $\Sigma: P \to |\cO_{X}(1)|$ is generically finite onto $X^{*}$, and hence $\cO_{X}(1)$ is non-defective by \autoref{prop:dimensionCriterion}. Thus, \autoref{theorem:MainMain} applies.
+  \end{proof}
+
+
+\section{Proof of \autoref{Thm:Counterexamples}} % (fold)
+\label{sec:proof_of_second_result}
+
+Our next objective is to prove \autoref{Thm:Counterexamples} by exhibiting some
+examples.  Let $E = \O(1)^{n-1} \oplus \O(k+1)$ be the vector bundle over
+$\P^{1}$, and set $X = \P E$. We will prove:
+\begin{theorem}
+    The projection-ramification map for the embedding of $X$ given by $\O_{E}(1)$ is not
+    dominant once $k(n-3) > 1$.
+    \label{NonDominance}
+\end{theorem}
+
+\begin{remark}
+The basic phenomenon underlying this example is: a general point in the source Grassmannian
+has trivial $Aut(X)$-stabilizer, yet its ramification divisor, viewed as a point in the linear system $|R|$, has positive
+dimensional
+stabilizer. Note that we are not claiming that all points in $|R|$ have non-trivial stabilizer -- only that those which arise as ramification divisors do.
+\end{remark}
+
+\begin{remark}
+If $k = 1$ and $n \geq 5$, then $X$ is a balanced
+scroll. Therefore, the non-dominance of projection-ramification is not directly
+connected to the eccentricity of the splitting type of a scroll. Rather,
+among balanced scrolls, non-dominance of $\rho_{X}$ happens only in ``low''
+degree -- see \todo{CITE ANAND THEOREM}.
+\end{remark}
+
+
+As a corollary, we  get a result concerning  Grassmannians in their Plucker
+embeddings. Recall that an $n$ dimensional variety $X \subset \P^{N}$ is
+{\sl compressible} if there exists a $(N-n-1)$-dimensional linear space
+$\Lambda \subset \P^{N}$ with the property that the projection $p_{\Lambda}: X
+\dashrightarrow \P^{n}$ is not dominant. 
+
+
+
+\begin{corollary}
+    The Grassmannian $G(r,k)$ is compressible if $5 \leq r \leq k-r$. \todo{Is this obvious? Can we find non-finite projections easily by hand?}
+\end{corollary}
+
+
+Some notation will be useful. Let $x_{1}, \dots, x_{n}$ denote relative homogeneous coordinates on $X$, and
+let $t$ denote the finite coordinate on $\A^{1} = \P^{1}\setminus \infty$. Then the automorphism group of
+$X$ over $\P^{1}$ is a projectivized group of matrices of the form 
+\begin{align}
+     \begin{bmatrix}
+        *&*&*& \dots & 0\\
+        *&*&*& \dots & 0 \\
+        \vdots & \vdots & \vdots & \vdots & \vdots\\
+        F_{1} & F_{2} & \dots & F_{n-1} & *\\
+    \end{bmatrix}
+    \label{Automorphism}
+\end{align}
+where $*$ are constants, and $F_{i}$ are degree $\leq k$ polynomials in $t$.
+We let $V_{m}$ denote the vector space of degree $\leq m$ polynomials in
+$t$. Furthermore, we let $\A_{\alpha}$ and $\A_{\beta}$ denote the affine spaces
+with coordinates $\alpha = \left( \alpha_{1}, \dots, \alpha_{n-1} \right), \beta
+= \left( \beta_{1}, \dots, \beta_{n-1} \right)$.
+
+\begin{lemma}
+    Let $A$ and $B$ be two degree $k+1$ polynomials, and let
+    \begin{align*}
+        U \subset V_{k-1}^{n-1} \times \A_{\alpha} \times \A_{\beta}
+    \end{align*}denote the closed subvariety parametrizing tuples $$\left(
+    G_{1}, \dots, G_{n-1}, \alpha_{1}, \dots, \alpha_{n-1}, \beta_{1}, \dots,
+    \beta_{n-1}
+    \right)$$ such that
+    \begin{align*}
+        \sum_{j=1}^{n-1}G_{j}\left( \alpha_{j}A - \beta_{j}B \right) = 0.
+    \end{align*}
+    Then there is a unique irreducible component $U' \subset U$ such that
+    the projection $U' \to \A_{\alpha} \times \A_{\beta}$ is surjective, and the
+    dimension $d$ of any fiber of $U' \to \A_{\alpha} \times \A_{\beta}$
+    satisfies
+    \begin{align*}
+        d \geq k(n-1) - (2k+1) = k(n-3) - 1.
+    \end{align*}
+    \label{DimensionBound}
+\end{lemma}
+\begin{proof}
+    The fibers of projection $U \to \A_{\alpha} \times \A_{\beta}$ are vector
+    subspaces of $V_{k-1}^{n-1}$, and hence there is a Zariski open subset of
+    $\A_{\alpha} \times \A_{\beta}$ over which $U$ is a vector bundle.  Then
+    $U'$ is the closure of the preimage of this Zariski open set. 
+
+    For the dimension bound, we simply note that the expression 
+    \begin{align*}
+        \sum_{j}G_{j}\left( \alpha_{j}A - \beta_{j}B \right)
+    \end{align*} is a degree $2k$ polynomial, which has $2k+1$ coefficients.
+    Thus, once the values of $\alpha_{j}, \beta_{j}$ are fixed, we get at most $2k+1$
+    linearly independent constraints on the coefficients of the tuple
+    $G_{1}, \dots, G_{n-1}$, from which the dimension bound 
+    follows. 
+\end{proof}
+
+Next, let $G$ denote the Grassmannian of $(n+1)$ dimensional subspaces of
+$H^{0}(X, \O_{E}(1))$, let $|R|$ denote the linear series on $X$ of
+ramification divisors, and let $|D|$ denote the linear series corresponding to
+the line bundle $\O_{E}(1) \otimes \O_{\P^{1}}(-1)$. Finally, fix general points $p_{1}, \dots, p_{n+1} \subset
+\A^{1} \subset \P^{1}$.  
+
+There is an $Aut(X)$ equivariant birational map 
+\begin{align*}
+    G \dashrightarrow |D|^{n+1}
+\end{align*}
+defined as follows: For a general point $[W] \in G$ and for each $j = 1,\dots,
+n+1$, there is a unique (up to scale) element $w_{j} \in W$ whose divisor is of
+the form $F_{j} \cup D_{j}$ where $F_{j}$ is the ruling of $X$ above the point
+$p_{j}$, and $D_{j} \in |D|$.  The birational map above is given by the rule: 
+\begin{align*}
+    [W] \mapsto \left( D_{1}, \dots, D_{n+1} \right).
+\end{align*}
+
+Under the action of $Aut(X)$, a general tuple $(D_{1}, \dots, D_{n+1}) \in
+|D|^{n+1}$ can be brought to {\sl normal form}, given by the following tuple of
+equations: 
+\begin{align*}
+    &x_{1} = 0\\
+    &\vdots\\
+    &x_{n-1} = 0\\
+    &x_{1}+\dots+x_{n-1} + Px_{n} = 0\\
+    & a_{1}x_{1} +\dots+a_{n-1}x_{n-1} + Qx_{n} = 0
+\end{align*}
+where $a_{1}, \dots, a_{n-1}$ are free constants, and $P, Q$ are
+monic, degree $k$ polynomials.
+
+Hence, using the birational correspondence $|D|^{n+1} \dashrightarrow G$, a
+general element $[W] \in G$ is $Aut(X)$ equivalent to one spanned by the
+equations
+\begin{align*}
+    &L_{1}x_{1} \\
+    &\vdots\\
+    &L_{n-1}x_{n-1}\\
+    &L_{n}(x_{1}+\dots+x_{n-1} + Px_{n} )\\
+    &L_{n+1}( a_{1}x_{1} +\dots+a_{n-1}x_{n-1} + Qx_{n})
+\end{align*}
+where $L_{i} = t-p_{i}$.
+
+For a tuple of equations in normal form, it is easy to write the equation
+defining its ramification divisor. Set $L := \prod_{i=1}^{n+1}L_{i}$.
+\begin{lemma}
+    The ramification divisor of the tuple above is defined by the following
+    equation
+    \begin{equation}
+       \left( \sum_{j=1}^{n-1}\frac{L}{L_{j}L_{n}L_{n+1}}\left( (p_{j} - p_{n})QL_{n+1} -
+       a_{j}(p_{j} - p_{n+1})PL_{n} \right)x_{j}\right) +
+       \frac{L}{L_{n}L_{n+1}}W(PL_{n},QL_{n+1})x_{n} 
+        \label{REquation}
+    \end{equation}where $W(a,b) = ab' - ba'$ is the Wronskian.
+    \label{RamEquation}
+\end{lemma}
+
+\begin{proof}
+    The Jacobian matrix of the map defined by a tuple of equations in normal
+    form is
+\begin{align*}
+  \begin{bmatrix}
+      L_{1} & 0 & \dots & x_{1}\\
+    0 & L_{2} & \dots & x_{2}\\
+    \vdots & \vdots & \vdots & \vdots\\
+    L_{n} & \dots & L_{n}P & x_{1} + \dots x_{n-1} + \left( L_{n}P \right)'x_{n}\\
+    a_{1}L_{n+1} & \dots & L_{n+1}Q & a_{1}x_{1} + \dots + \left( L_{n+1}Q \right)'x_{n}
+\end{bmatrix}
+\end{align*}
+The determinant of this matrix gives \eqref{REquation}.
+\end{proof}
+
+Our next proposition is the key to proving the main theorem. 
+\begin{proposition}
+    Suppose $k(n-3) > 1$. Then for a general choice of $(a_{1}, \dots, a_{n-1}, P,Q)$, there exists a
+    nonzero tuple of degree $k$ polynomials $(F_{1}, \dots, F_{n-1})$ such that equation
+    \eqref{REquation} remains unchanged after the substitution
+    \begin{align*}
+        x_{1} &\mapsto x_{1} + F_{1}x_{n},\\
+        &\vdots\\
+        x_{n-1} &\mapsto x_{n-1} + F_{n-1}x_{n},\\
+        x_{n} &\mapsto x_{n}.
+    \end{align*}
+
+    \label{KeyProposition}
+\end{proposition}
+
+We will realize the polynomials $F_{i}$ as products $G_{i}\cdot L_{i}$, and
+then ultimately appeal to \autoref{DimensionBound}. 
+
+\begin{lemma}
+    \autoref{KeyProposition} follows from the statement: If $k(n-3) > 1$, and
+    $(a_{1}, \dots, a_{n-1}, P, Q)$ are general, then there exists a nonzero
+    tuple $(G_{1}, \dots, G_{n-1})$ of degree $k-1$ polynomials such that 
+    \begin{align*}
+        \sum_{j=1}^{n-1}G_{j}\cdot \left( (p_{j}-p_{n})QL_{n+1} - a_{j}(p_{j} -
+        p_{n+1})PL_{n} \right) = 0.
+    \end{align*}
+    \label{LinkLemma}
+\end{lemma}
+\begin{proof}
+    If we set $F_{i} = G_{i}L_{i}$, we would obtain a set of
+    substitutions as in the statement of \autoref{KeyProposition}.
+\end{proof}
+
+\begin{lemma}
+    The statement in \autoref{LinkLemma} is true.
+    \label{TrueLemma}
+\end{lemma}
+
+\begin{proof}
+    Set $\alpha_{j} := (p_{j} - p_{n}), \beta_{j} := a_{j} \cdot (p_{j} -
+    p_{n+1})$, $A := QL_{n+1}, B := PL_{n}$, and apply \autoref{DimensionBound}.
+\end{proof}
+
+\begin{proof}[Proof of \autoref{Thm:Counterexamples}]
+\autoref{KeyProposition} says that for a general tuple of equations
+in normal form corresponding to a general choice $(a_{1}, \dots, P,Q)$, while
+the corresponding point $[W] \in G$ has no nontrivial stabilizer under
+$Aut(X)$, the ramification divisor $\rho_{X}([W]) \in |R|$ has positive dimensional $Aut(X)$-stabilizer,
+provided $k(n-3)>1$.  Thus, \autoref{Thm:Counterexamples} theorem follows from the observation that the projection-ramification map $\rho_{X}$ is $\Aut(X)$-equivariant.  
+\end{proof}
+
+
+
+
+% subsection original_proof (end)
+
+
+
+
+
+
+
+
+
+
+% section proof_of_second_result (end)
+
+
+\section{Proof of \autoref{theorem:minimaldegree}} % (fold)
+\label{sec:proof_of_theorem:minimaldegree} 
+\todo{Can we make it valid in characteristic p?  Come up with an argument which avoids Kodaira vanishing?}
+In this section, we provide the simple proof of \autoref{theorem:minimaldegree}.
+
+
+\begin{lemma}\label{lemma:KYmH}
+  Let $Y$ be a  smooth projective $m$-dimensional variety with $m>0$, and let $H$ be an ample divisor class on $Y$ which induces a morphism 
+  \begin{align*}
+     Y \to \P^{n}.
+   \end{align*} 
+
+  Then 
+  \begin{align*}
+     h^{0}(K_{Y}+mH) \geq n-m.
+   \end{align*} 
+\end{lemma}
+
+\begin{proof}
+  We proceed by induction on $m = \dim Y$. First assume $m>1$. Let $D \subset Y$ be a general divisor (smooth by Bertini's theorem)  in the linear system $|H|$, and consider the exact sequence: 
+  \begin{align*}
+    0 \to \O_{Y}(K_{Y}+(m-1)H) \to \O_{Y}(K_{Y}+mH) \to \O_{D}(K_{D}+mH) \to 0.
+  \end{align*}
+
+  The Kodaira Vanishing Theorem states that $h^{1}(\O_{Y}(K_{Y}+(m-1)H) = 0$, and hence
+  \begin{align*}
+     h^{0}(Y,\O_{Y}(K_{Y}+mH)) \geq h^{0}(D,\O_{D}(K_{D}+(m-1)H)). 
+   \end{align*} 
+   Notice that $h^{0}(\O_{D}(H)) \geq n$, and therefore by induction we know: 
+   \begin{align*}
+      h^{0}(D,\O_{D}(K_{D}+(m-1)H)) \geq (n-1)-(m-1) = n-m,
+    \end{align*}
+    and hence the proposition follows once we settle the case $m=1$. 
+
+
+   But in this case, the inequality 
+    \begin{align*}
+      h^{0}(\O_{Y}(K_{Y} + H)) \geq h^{0}(\O_{Y}(H))-2
+    \end{align*}
+    follows at once from Riemann-Roch, and the fact that a degree $d$ line bundle on $Y$ cannot have more than $d+1$ linearly independent global sections.
+\end{proof} 
+
+
+
+\begin{proof}[Proof of \autoref{theorem:minimaldegree}]
+  
+ We first show: If $\dim \Gr(n-m, n+1) \geq \dim |K_{X} + (m+1)H|$, then $X$ is
+ a variety of minimal degree.  Then we argue that in the case of minimal
+ varieties, this inequality is actually an equality.
+
+  We proceed by intersecting with a hyperplane: let $X' = X \cap H$ be a general
+  hyperplane section of $X$. By combining the Kodaira vanishing theorem, adjunction, and \autoref{lemma:KYmH} we get:
+  \begin{align*}
+    h^{0}(\O_{X}(K_{X}+ (m+1)H)) - h^{0}(\O_{X'}(K_{X'}+ mH)) \geq n-m.
+  \end{align*}
+Therefore, the inequality $$\dim \Gr(n-m, n+1) \geq \dim |K_{X} + (m+1)H|$$ implies $$\dim \Gr(n-m, n) \geq \dim |K_{X'} + mH|$$ and hence by the inductive hypothesis, $X'$ is a variety of minimal degree; thus, $X$ is also a variety of minimal degree. 
+
+
+Thus we are reduced to the case $m=1$: we leave it to the reader to translate this case into the well-known fact that a non-degenerate degree $d$ smooth curve in $\P^{d}$ is a rational normal curve.
+
+To complete the proof we observe that if $X$ is a variety of minimal degree, and if $\dim \Gr(n-m,n+1) > \dim
+|K_{X}+ (m+1)H|$, then by arguing in exactly the same way as above, we would
+conclude the analogous strict inequality for its iterated hyperplane slices.
+Again we reduce to the case of $X$ a rational normal curve ($m=1$), where such an inequality is clearly false. This completes the proof of
+\autoref{theorem:minimaldegree}.
+\end{proof}
+% section proof_of_theorem:minimaldegree (end)
+
+    \section{Proof of \autoref{theorem:rationalnormalscrolls}}% (fold)
+    \label{sec:proof_of_theorem:rationalnormalscrolls}
+Our proof of \autoref{theorem:rationalnormalscrolls} uses a degeneration
+argument and the theory of limit linear series. The basic idea is to specialize
+a given projective bundle $X = \P(V)$ over $\P^{1}$ to a bundle $Y$ over a nodal union
+of two $\P^{1}$'s, and then to leverage dominance of the
+projection-ramification map for $Y$ to conclude it for $X$. 
+
+\subsection{Background on limit linear series} 
+
+
+\subsection{Redefining $\rho_{X}$ for scrolls}
+
+
+\subsection{Dominance of $\rho_{X}$ when $E = \O(2)^{n}$}
+
+% section proof_of_theorem:rationalnormalscrolls (end)
+
+
+
+\section{Enumerative Problems} % (fold)
+\label{sec:enumerativeproblems}
+
+Thanks to \autoref{theorem:minimaldegree}, every variety of minimal degree $X \subset \P^{N}$ comes naturally equipped with the well-posed enumerative problem of determining $\deg \rho_{X}$. 
+
+Our objective in this section is to explore particular ``small'' cases, and to bridge these problems with another set of enumerative problems on moduli spaces of rational curves. 
+
+
+\subsection{Quadric hypersurfaces} % (fold)
+\label{sub:a_quadric_surface}
+A smooth quadric hypersurface $X \subset \P^{N}$ defined by an equation $F(x_{0},x_{1},x_{2}, ...) = 0$ induces the classical {\sl polarity isomorphism} $\P^{N} \longleftrightarrow (\P^{N})^{\smvee}$ given by 
+\begin{align*}
+  p = [p_{0}:p_{1}:p_{2}: ...] \mapsto [\partial_{0}F(p):\partial_{1}F(p):\partial_{2}F(p): ...]
+\end{align*}
+where $\partial_{i}$ denotes derivative with respect to the $i$-th variable $x_{i}$. The duality morphism is equal to $\rho_{X}$, and hence $\deg \rho_{X} = 1$.  
+
+\begin{figure}\label{figure:earthsundaynight}
+  \includegraphics[scale = .5]{SunDayNight.png}
+  \caption{For the quadric $x^{2}+y^{2}+z^{2}=1$, it is visually clear that the ramification curve determines the point of projection.}
+\end{figure}
+% subsection a_quadric_surface (end)
+
+\subsection{The Veronese surface} % (fold)
+\label{sub:the_veronese_surface}
+Suppose $X \subset \P^{5}$ is a Veronese surface, i.e. the embedding of $\P^{2}$ by the complete linear system of conics $H^{0}(\P^{2}, \O_{\P^{2}}(2))$. A $2$-plane $\Lambda \subset \P^{5}$ corresponds to a choice of a {\sl net of conics}, i.e. a three dimensional subspace
+\begin{align*}
+  W^{3} \subset H^{0}(\P^{2}, \O_{\P^{2}}(2)). 
+\end{align*}
+If we select a basis $(A,B,C)$ of $W$, we see that the ramification divisor $R$ of the projection $X \to \P(W^{\vee})$ is defined by the equation 
+\begin{align*}
+  \det \begin{pmatrix}
+        A_{0} & A_{1} & A_{2} \\
+        B_{0} & B_{1} & B_{2} \\
+        C_{0} & C_{1} & C_{2}
+  \end{pmatrix} = 0.
+\end{align*}
+Assuming $W$ is general, we clearly see that $R \subset X$ is a cubic curve. The curve $R$ has a nice geometric interpretation in terms of the net of conics:  $R \subset X$ is the locus of nodes of the singular conics of the net $W$. 
+
+If $R$ is smooth, the net $\P(W)$ meets the discriminant hypersurface parametrizing singular conics transversely; in particular every singular conic in the net $W$ has rank $2$ -- it is the union of two distinct lines. Thus, each point $x \in R$ has a corresponding pair of lines.   By keeping track of the lines, we get an unramified double cover $R' \to R$, which is easily shown to be connected. Such double covers are in bijection with $\Jac (R)[2] \setminus \{0\}$.  
+
+We therefore obtain a rational map 
+\begin{align*}
+  \gamma: \G(2,5) \dashrightarrow J[2]
+\end{align*}
+factoring $\rho_{X}: \G(2,5) \dashrightarrow \P^{9}$, where $J[2]$ denotes the space of pairs $$\{(C,\eta) \mid C  \,\,\text{a smooth plane cubic}, \eta \in \Jac(C)[2]\setminus \{0\}\}.$$
+
+It is a beautiful classical fact \todo{who?} that $\gamma$ is in fact birational. 
+
+
+
+
+
+
+
+
+\subsection{Rational curves, the differential construction, and case of Segre varieties} % (fold)
+\label{sec:rational_curves_in_projective_space}
+\autoref{problem:degree} connects with an intriguing collection of enumerative problems involving rational curves in projective space. We now explain these problems.
+
+Let $\gamma: \P^{1} \to \P^{n}$ be a degree $k$ morphism. Its derivative 
+\begin{align*}
+    d\gamma:T_{\P^{1}} \to \gamma^{*}(T_{\P^{n}})
+  \end{align*}  
+may be viewed as a global section of the rank $n$ vector bundle $\gamma^{*}(T_{\P^{n}}) \otimes T_{\P^{1}}^{\smvee}$.  The splitting of $\gamma^{*}(T_{\P^{n}})$ is known to be balanced for a general morphism $\gamma$. In particular, if the divisibility
+\begin{align*}
+  n \mid k
+\end{align*}
+holds, and if we set $\ell := k+k/n-2$, then a general $\gamma$ satisfies: 
+\begin{align*}
+  (\gamma^{*}T_{\P^{n}}) \otimes T_{\P^{1}}^{\smvee} \simeq \bigoplus_{i=1}^{n} \O_{\P^{1}}(\ell).
+\end{align*} 
+The direct sum decomposition is not canonical, it is only defined up to the
+action of $GL_{n}(k)$.  
+
+Assuming $\gamma$ is an immersion, the element $d \gamma \in
+H^{0}(\P^{1},\bigoplus_{i=1}^{n} \O_{\P^{1}}(\ell))$ does not vanish anywhere,
+and hence defines a degree $\ell$ map $$D(\gamma) : \P^{1} \to \P^{n-1},$$
+only well-defined up to the action of post-composition by $PGL_{n}(k)$. 
+
+\begin{definition}
+  Let $M^{n}_{d}$ denote the moduli stack parametrizing $PGL_{n+1}(k)$
+  equivalence classes of degree $d$ maps $\gamma : \P^{1} \to \P^{n}$, and let
+  $U^{n}_{d} \subset M^{n}_{d}$ denote the open substack parametrizing local immersions with $\gamma^{*}(T_{\P^{n}})$ balanced.
+\end{definition}
+
+\begin{remark}
+Notice that $\dim M^{n}_{k} = (k+1)(n+1) - (n+1)^{2} = (n+1)(k-n) = \dim \G(n, k).$  Furthermore, notice that $PGL_{2}(k)$ acts on $U^{n}_{k}$ and $M^{n}_{k}$ by pre-composition. 
+\end{remark}  
+
+\begin{remark}
+  Though $M^{n}_{k}$ is an Artin stack, the open substack $U^{n}_{k}$ is a scheme, provided $n \leq k$, represented by an open subset of $\G(n,k)$. 
+\end{remark}
+
+
+
+
+When $n \mid k$, and $\ell := k+k/n-2$, we get the morphism of stacks: 
+\begin{align*}
+  D^{n}_{k} &: U^{n}_{k} \to M^{n-1}_{\ell}\\
+  \gamma &\longmapsto D(\gamma)
+\end{align*}
+which we call the {\sl differential construction}. Interestingly, the dimensions of the domain and codomain of the differential construction are equal, and this leads to another collection of enumerative problems: 
+\begin{problem}\label{problem:differential}
+   Compute the degrees of the differential constructions $D^{n}_{k} : U^{n}_{k} \to M^{n-1}_{\ell}$. 
+ \end{problem} 
+
+\begin{remark}
+  The maps $D^{n}_{k}$ are clearly $PGL_{2}(k)$ equivariant.  The image of the differential construction $D^{n}_{k}$ need not be the open set $U^{n-1}_{\ell}$. \todo{Sure?}
+\end{remark}
+
+
+ The $n=k$ instances of \autoref{problem:differential} are easy: 
+
+ \begin{proposition}\label{proposition:trivialdegree}
+   The degree of the differential construction $D^{k}_{k}$ is $1$.
+ \end{proposition}
+\begin{proof}
+  The space $U^{k}_{k}$ is a single $PGL_{2}(k)$ orbit.
+\end{proof}
+ 
+\begin{definition}\label{definition:pointlinescroll}
+  Let $\gamma: \P^{1} \to \P^{n}$ be any map. We define the {\sl point-hyperplane scroll} of $\gamma$ to be 
+  \begin{align*}
+        X_{\gamma} := \big\{(t, \Lambda) \mid \gamma(t) \in \Lambda \big\} \subset \P^{1} \times (\P^{n})^{\smvee}
+      \end{align*}
+      We denote by $\pi_{1}, \pi_{2}$ the projections of $X_{\gamma}$ to $\P^{1}$ and $(\P^{n})^{\smvee}$ respectively. Finally, we set $X_{\gamma}^{\smvee} := \P(\gamma^{*}T_{\P^{n}})$.   
+\end{definition}
+
+\begin{remark}
+  The $\P^{n-1}$-bundle $X_{\gamma}$ is isomorphic to $\P(\gamma^{*}T^{\smvee}_{\P^{n}})$. Hence, for a general map $\gamma: \P^{1} \to \P^{n}$, $X_{\gamma}$ and $X_{\gamma}^{\smvee}$ are balanced scrolls.
+\end{remark}
+
+\begin{proposition}\label{proposition:transfer}
+ Let $\gamma: \P^{1} \to \P^{n}$ be a non constant map.
+
+ \begin{enumerate} 
+  \item The image of $\gamma: \P^{1} \to \P^{n}$ is non-degenerate if and only if $\pi_{2} : X_{\gamma} \to (\P^{n})^{\smvee}$ is finite; in any case,  $\deg \pi_{2} = \deg \gamma.$ 
+  \item The ramification divisor $R(\pi_{2}) \subset X_{\gamma}$ is a smooth, codimension $1$ subscroll of $X_{\gamma}$ if and only if $\gamma$ is an immersion. 
+  \item Assuming $\gamma$ is an immersion, the dual section $R^{\smvee}(\pi_{2}) \subset X^{\smvee}_{\gamma}$ is induced by the inclusion $d \gamma: T_{\P^{1}} \hookrightarrow \gamma^{*}T_{\P^{n}}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  \todo{PROVE}
+\end{proof}
+
+Let $X = \P^{1} \times \P^{n-1}$, and denote by $h$ and $f$ the divisor classes of the pullback of a hyperplane in $\P^{n-1}$ and a point in $\P^{1}$, respectively.  When $n \mid k$, we see that \autoref{proposition:transfer} sets up a commuting diagram: 
+
+\begin{center}
+\begin{tikzcd}
+  & U^{n}_{k} \ar[rr, leftrightarrow, "\text{duality}"] \ar[dd, "D^{n}_{k}"] & &PGL_{n+1}\Big\backslash \left \{ \begin{tabular}{c} \text{Deg. $k$ maps} \\$X \to (\P^{n})^{\smvee}$ \\ \text{induced by $|h+\frac{k}{n}f|$} \end{tabular} \right \}\Big/PGL_{n} \ar[dd, "\rho_{X}"] \\
+  &  &  & \\
+  & M^{n-1}_{\ell}  \ar[rr, leftrightarrow, "\text{duality}"]  && \left \{ \begin{tabular}{c} \text{Smooth divisors $R \subset X$} \\\text{with div. class $|h + \ell f|$} \end{tabular} \right \} \big/ PGL_{n}
+\end{tikzcd}
+\end{center}
+
+From this, we conclude: 
+\begin{proposition}\label{proposition:equivalence}
+  Let $k = nm$, and let $X \subset \P^{n(m+1)-1}$ be the variety $\P^{1} \times \P^{n-1}$ embedded by the linear series $|h+mf|$. Then 
+  \begin{align*}
+    \deg \rho_{X} = \deg D^{n}_{k}.
+  \end{align*}
+\end{proposition}
+
+\begin{corollary}
+  If $X \subset \P^{2n-1}$ is a Segre embedding of $\P^{1} \times \P^{n-1}$, then $\deg \rho_{X} = 1$.
+\end{corollary} 
+
+\begin{proof}
+  The corollary follows at once from \autoref{proposition:equivalence} and \autoref{proposition:trivialdegree}.
+\end{proof}
+
+\subsection{Quartic surface scrolls, trinodal quartics, and their perspective conics}
+
+There are two types of quartic surface scrolls $X$ in $\P^{5}$ -- those that are balanced, isomorphic to $\P^{1} \times \P^{1}$, and those which are isomorphic to $F^{2}$.  As we show in explicit coordinates in the next section, in the latter case $\deg \rho_{X}=1$.  The situation with the balanced scroll is much more interesting. 
+
+
+
+\subsubsection{Trinodal quartics and their perspective conics} % (fold)
+\label{sec:trinodal}
+Aside from $D^{k}_{k}$, the only non-trivial differential construction we understand is 
+\begin{align*}
+  D^{2}_{4} : U^{2}_{4} \to M^{1}_{4}.
+\end{align*} 
+A general element $\gamma: \P^{1} \to \P^{2}$ of $D^{2}_{4}$ has as its image a trinodal quartic curve, which we will denote by $R \subset \P^{2}$. Hence, the differential construction $D^{2}_{4}$ can be construed as a way of assigning a  degree $4$ branched cover $R \to \P^{1}$ to a trinodal plane quartic $R \subset \P^{2}$. We will explore this beautiful construction in this section, and our exploration will lead to the following theorem.  
+
+\begin{theorem}\label{theorem:DifferentialConstruction2}
+  The degree of the differential construction $D^{2}_{4}$ is $2$.
+\end{theorem} 
+
+We have no doubt that the classical geometers must have known \autoref{theorem:DifferentialConstruction2}. The old paper \cite{con:11} discusses rational quartics quite thoroughly, and one can see computations and conclusions which seem relevant.  At the very least, we are confident that the {\sl presentation} of the following  material is new. 
+
+
+\begin{definition}
+  \label{definition:perspectiveconic}
+  Let $\gamma : \P^{1} \to \P^{2}$ be degree $4$ map. A {\sl perspective conic} of $\gamma$ is a smooth conic $C \subset \P^{2}$ which admits a parametrization $\varphi : \P^{1} \to C  $ such that for all $t \in \P^{1}$, the incidence $$\gamma(t) \in T_{\varphi(t)}C$$ holds.
+\end{definition} 
+
+\begin{remark}
+  Notice that the notion of perspective conic does not depend on choice of parametrization of a trinodal quartic $R$. 
+\end{remark} 
+
+\begin{figure}\label{figure:perspectiveconic}
+  \includegraphics[scale = .3]{noaxes.png}
+  \caption{The red curve is the trinodal quartic $R$ given by equation $\frac{1}{x^{2}}+\frac{1}{y^{2}} = 1$. The black curve $C$, given by $x^{2} + y^{2} = 4$, is one of its perspective conics. As one slides the black point once along $C$, the corresponding red point sweeps out $R$ exactly one time.}
+\end{figure}
+
+\begin{proposition}
+  \label{proposition:perspectivesections}
+  Let $\gamma$ be a map inducing a point in $U^{2}_{4}$, so that $X_{\gamma} \simeq \P^{1} \times \P^{1}$. Then the set of perspective conics of $\gamma$ are in natural bijection with the set of square-zero sections of the point-hyperplane scroll $\pi_{1}: X_{\gamma} \to \P^{1}$ projecting to smooth conics under $\pi_{2}: X_{\gamma} \to (\P^{2})^{\smvee}$.
+\end{proposition}
+\begin{proof}
+  A perspective conic $\varphi: \P^{1} \to C$ induces a section $\sigma_{C} : \P^{1} \to X_{\gamma}$ defined by $t \mapsto T_{\varphi(t)}C$. This section $\sigma_{C} \subset X_{\gamma}$ projects isomorphically to the dual conic $C^{\smvee} \subset (\P^{2})^{\smvee}$, by the definition of being perspective.  A simple divisor class computation shows that $\sigma_{C}$ must therefore by a square-zero section. 
+
+  Conversely, given a square-zero section $\sigma : \P^{1} \to X_{\gamma}$ projecting to a conic $D \subset (\P^{2})^{\smvee}$, we consider $D^{\smvee} \subset \P^{2}$. The parametrization of $D$ induces a parametrization of its dual $D^{\smvee}$, which by design realizes the condition of being a perspective conic for $\gamma$. 
+\end{proof}
+
+The perspective conics have the following geometric significance: 
+
+\begin{proposition}
+  \label{proposition:perspectivetangent}
+  Let $\gamma: \P^{1} \to \P^{2}$ represent an element of $U^{2}_{4}$ , and let $C$ be a perspective conic for $\gamma$. Then the divisor $\gamma^{*}(C)$ equals $2E$ for $E \subset \P^{1}$ a degree $4$ effective divisor. 
+\end{proposition}
+\begin{proof}
+  Let $Y \subset C \times \P^{1}$ be the correspondence defined by 
+  \begin{align*}
+    Y = \left\{ \left( p,t \right)\mid \gamma(t) \in T_{p}C \right\}.
+  \end{align*}
+  The projection $p_{2}: D \to \P^{1}$ is clearly finite and degree $2$, and the conic $C$ being perspective means that the double cover $p_{2}$ has a section.  By considering monodromy, This can only happen if the branch scheme $B \subset \P^{1}$ of $p_{2}$ has the form $2E$.  Now, the proposition follows from the simple observation that $B = \gamma^{*}(C)$. 
+\end{proof} 
+
+
+Therefore, perspective conics are {\sl $4$-tangent} to the trinodal quartic $R$ -- they meet $R$ everywhere with even multiplicity. (This should be interpreted ``per branch'' near the singularities.) 
+
+
+
+\begin{remark}
+ 
+  If $R \subset \P^{2}$ is a trinodal quartic, and $C \subset \P^{2}$ is a perspective conic tangent to  $R$ at four distinct points, then the cross-ratio of the set $C \cap \gamma(\P^{1})$ viewed as four points on $C$ is equal to the cross-ratio of the same set viewed as four points on (the normalization of) $R$. 
+\end{remark}
+
+The family of perspective conics is but one out of four families of smooth conics which are $4$-tangent to $R$. We investigate this in the next section.  (Of course, these families of conics will have singular limits, but we are emphasizing that the general member is smooth.)
+
+
+\subsection{Reinterpreting the perspective conics}
+Let $\gamma: \P^{1} \to \P^{2}$ be a quartic map, with image $R$.  In what follows, suppose $R$ is tri-nodal, and that none of the branches of the nodes of $R$ are flexes.  We let $N = \left\{ a,b,c \right\}$ denote the set of nodes of $R$, and we write $a', a''$, etc. for the two preimages of the corresponding node of $R$. Finally, we let $S \subset \P^{1}$ be the preimage of $N$. 
+
+In this section, we will relate the geometry from the previous section with the $2$-torsion in $\Pic(R)[2]$.
+\begin{lemma}
+  \label{lemma:fourtangentconic}
+  Let $C \subset \P^{2}$ be a smooth conic  such that $\gamma^{*}(C)$ is a divisor of the form $2E$ with $E$ consisting of $4$ distinct points on $\P^{1}$. Then $\gamma(E)$ must be supported away from $N$.  
+\end{lemma}
+\begin{proof}
+  In order for $\gamma^{*}(C)$ to have the form $2E$ with $E \cap S$ nonempty, the conic $C$ must be tangent to both branches of the corresponding node.  This forces $C$ to be singular, (with the singularity of $C$ located at the node of $R$).
+\end{proof}
+
+We call a smooth conic as in \autoref{lemma:fourtangentconic} a $4${\sl-tangent} conic of $R$. 
+\begin{lemma}
+  \label{lemma:sqrtcanonical}
+  Let $C$ be a $4$-tangent conic to $R$, and write $C \cap R = 2E$. Then the line bundle $\O_{R}(E)$ differs from $\O_{R}(1)$ by a well-defined element of $\Pic(R)[2]$. 
+\end{lemma}
+\begin{proof}
+  The conic $C$ yields a section of $\O_{R}(2)$, up to scaling. The equality $C \cap R = 2E$ translates into an isomorphism $\O_{R}(E)^{\otimes 2} \simeq \O_{R}(2)$. The result follows.
+\end{proof}
+
+The Jacobian $\Pic^{0}(R)$ is isomorphic to $({\bf C}^{\times})^{3}$. This isomorphism is realized as follows. Any line bundle $L$ on $R$ of degree $0$ pulls back to the trivial bundle $\O_{\P^{1}}$. To recover $L$, one must specify identifications of the fibers of $\O_{\P^{1}}$ at $a'$ and $a''$, $b'$ and $b''$, and $c'$ and $c''$.  This yields three nonzero complex numbers.  In this way, the $2$-torsion subgroup $\Pic(R)[2]$ is identified with $\left\{ -1, +1 \right\}^{3} \subset ({\bf C}^{\times})^{3}$. 
+
+\begin{lemma}
+  \label{lemma:monodromy}
+  As $R$ varies among all generic tri-nodal quartics, the monodromy group of the set $N$ is the full symmetric group $S_3$.
+\end{lemma}
+\begin{proof}
+  This is well-known, so we omit it.
+\end{proof}
+As $R$ varies, the element $(-1,-1,-1) \in \Pic(R)[2]$ is unchanged by monodromy, and hence distinguished. We will see that this distinguished element corresponds (in the sense of \autoref{lemma:sqrtcanonical}) to the $1$-parameter family of perspective conics of $R$.  Furthermore, there are two monodromy orbits in $\Pic(R)[2]$ of size three, namesly the orbits of $(-1,-1,1)$ and $(-1,1,1)$.  We will see the geometric significance of these orbits in terms of plane geometry.
+
+The line bundle $\O_{R}(1)$ is the dualizing bundle $\omega_{R}$. By Riemann-Roch, any other degree $4$ line bundle $L$ on $R$ has $h^{0}(R,L) = 2$. 
+\begin{lemma}
+  \label{lemma:linesthroughnode}
+  Let $\ell \subset \P^2$ be a line passing through the node $a \in R$, and let $\eta_a \in \Pic^{0}(R)[2]$ be the element with $+1$-identifications above the nodes $b$ and $c$, and $-1$ identification above $a$. Then the Cartier divisor $\ell \cap R$ is the divisor of a unique (up to scaling) section $s$  of $\O_{R}(1)$ and of a unique (up to scaling) section $s'$ of $\O_{R}(1)\otimes \eta_{a}$. 
+\end{lemma}
+\begin{proof}
+  The pullback $\gamma^{*}(\O_{R}(1))$ is isomorphic to $\O_{\P^1}(4)$, and the pullback map provides a fixed set of identifications of the fibers of $\O_{\P^{1}}(4)$ over $a', a''$, etc. The identifications creating $\O_{R}(1) \otimes \eta$ are the above fixed identifications, multiplied by the $\pm 1$ identifications prescribing the $2$-torsion bundle $\eta_{a}$.  
+
+  The line $\ell$ obviously corresponds to a unique (up to scaling) section $s$ of $\O_{R}(1)$. The section $\gamma^{*}(s)$ is a quartic polynomial on $\P^1$ vanishing, among other places, at the points $a', a''$.  Since the section $\gamma^{*}(s)$ vanishes at $a'$ and $a''$, it is automatically compatible with any identifications of the line bundle $\O_{\P^{1}}(4)$ above $a'$ and $a''$, and thus automatically descends to a section $s'$  of the twist $\O_{R}(1) \otimes \eta_{a}$.
+\end{proof}
+
+\begin{corollary}
+  \label{corollary:oneminusone}
+  Let $\eta_{a} \in \Pic(R)[2]$ be the element with $-1$ identification above the node $a$, and $+1$ identifications above the
+  other nodes. Then the Cartier divisors cut out by global sections of $\O_{R}(1) \otimes \eta_{a}$ are precisely those cut out by lines in $\P^{2}$ passing through the point $a$.
+\end{corollary}
+\begin{proof}
+  This follows from \autoref{lemma:linesthroughnode} and from the fact that $h^{0}(R,O_{R}(1) \otimes \eta_{a})=2$.
+\end{proof}
+
+
+
+\begin{corollary}
+  \label{corollary:fourtangentsqrt}
+  Let $C$ be a {\rm smooth} conic $4$-tangent to $R$, with $C \cap R = 2E$. Then $\O_{R}(E) = O_{R}(1)\otimes \eta$ where $\eta \in \Pic(R)[2]$ is an element with at least two $-1$ identifications above the nodes of $R$.
+\end{corollary}
+\begin{proof}
+  This follows from \autoref{corollary:oneminusone} and \autoref{lemma:fourtangentconic}. 
+\end{proof} 
+
+\begin{theorem}
+  \label{theorem:perspectiveconics}
+  The system of perspective conics for $R$ cuts out the linear system of divisors for $\O_{R}(1)\otimes \eta$, where $\eta \in \Pic(R)[2]$ is the distinguished $2$-torsion element $(-1,-1,-1)$. 
+\end{theorem}
+\begin{proof}
+  There is a well-defined system of perspective conics for a tri-nodal quartic $R$, which varies rationally with $R$. Indeed, by \autoref{proposition:perspectivesections}, it is given by the dual conics of the system of square-zero sections of $X_{\gamma}$ upon choosing any parametrization  $\gamma$ of $R$.  By \autoref{lemma:monodromy}, we conclude that the degree $4$ linear system on $R$ cut out by the perspective conics must correspond to the distinguished $2$-torsion element $\eta = (-1,-1,-1)$ in the statement of the proposition.  
+ 
+\end{proof}
+
+
+Now we investigate the four remaining $1$-parameter families of $4$-tangent conics to $R$. Before continuing, let $R'$ denote the Cremona image of $R$ under the Cremona transformation through the three nodes $N$. Note that $R'$ is a conic.  Furthermore, let $\left\{ x,y,z \right\}$ denote the Cremona images of the lines joining the nodes pairwise. 
+
+\begin{lemma}
+  \label{lemma:Cremona}
+  The $1$-parameter families of $4$-tangent conics for $R$ are in natural bijection with the families of irreducible quartics $Z$ which are $4$-tangent to the conic $R'$, and have singularities at $\left\{ x,y,z \right\}$.
+\end{lemma}
+\begin{proof}
+  The Cremona transformation through $N$ transforms a $4$-tangent conic to a rational quartic $Z$ having the required properties.
+\end{proof}
+
+Let $\alpha: Q \to \P^{2}$ denote the double cover of $\P^{2}$ branched over the curve $R'$, and let $\iota$ denote the involution on $Q$ interchanging sheets.  Note that $Q$ is isomorphic to $\P^{1} \times \P^{1}$, so it makes sense to talk about $(m,n)$ curves.
+
+\begin{lemma}
+  \label{lemma:liftingX}
+  Let $Z$ be an irreducible tri-nodal  quartic $4$-tangent to $R'$. Then any parametrization $\beta: \P^{1} \to Z$ factors through a lift $\P^1 \xrightarrow{\beta'} Q \xrightarrow{\alpha} \P^{2}$. There are two such lifts, conjugate to each other under $\iota$.
+\end{lemma}
+\begin{proof}
+  This follows from the fact that $Z$ is tangent to the branch curve $R'$, with even order intersection multiplicity everywhere.  
+\end{proof}
+
+For any given irreducible tri-nodal quartic $Z$ which is $4$-tangent to $R'$, we let $Z'$ denote any one of the two lifts of $Z$ in $Q$. There are now only two possibilities, up to involution:  Either $Z'$ is a smooth $(1,3)$ curve, or $Z'$ is a once-nodal $(2,2)$ curve. 
+
+The $4$-tangent tri-nodal quartics $Z$ we are interested in have the additional property of having singularities at the three points $\left\{ x,y,z \right\}$.  This constraint gives a description of the four $1$-parameter families of such curves in terms of their lifts in $S$. 
+
+Indeed, let $x', x''$, $y', y''$, $z', z''$ denote preimages in $Q$ of the corresponding points in $\P^{2}$. Then consider, for example, the linear system of $(2,2)$ curves, nodal at $x'$, and passing through $y', y'', z', z''$.  This system is $1$ dimensional, and projects to a family of $4$-tangent (generically tri-nodal) quartics $X$ in $\P^{2}$. Interchanging $x'$ and $x''$ in the above description yields the same family of $4$-tangent quartics, due to the involution $\iota$. 
+
+Therefore, we obtain three families in this way, labelled by the points $x,y$ and $z$.  In the original geometric picture of $R \subset \P^{2}$, these three families must therefore correspond to elements $\eta \in \Pic(R)[2]$ with precisely two $-1$ identifications. 
+
+The final, distinguished family of tri-nodal $4$-tangent quartics is described as follows: Consider the pencil of $(1,3)$ curves on $Q$ passing through all six points $x',x'',y',y'',z',z''$. This pencil projects to the fourth, and final family, and after re-applying the Cremona transformation yields the family of perspective conics.  
+
+
+
+From the discussion immediately preceding \autoref{theorem:perspectiveconics}, we also conclude: 
+
+\begin{corollary}
+  \label{corollary:perspectiveconicsformaconic}
+  Let $R \subset \P^{2}$ be a tri-nodal quartic. Then through general point $p \in \P^2$ there pass two perspective conics, i.e. the $1$-parameter family of perspective conics traces out a conic in the $\P^5$ of conics.
+\end{corollary}
+\begin{proof}
+  Indeed, after applying the Cremona transformation through the nodes of $R$, we see that the perspective conics transform into the image of a pencil of  $(1,3)$ curves on the double cover $S \to \P^2$.  Therefore, for a general point in $\P^2$ there will be two curves in the pencil projecting through it.
+\end{proof} 
+
+
+
+\subsubsection{The explicit differential construction for trinodal quartics}
+
+A trinodal quartic $R$ can be obtained as an abstract curve by identifying three pairs of points $\{a',a''\}, \{b',b''\}, \{c',c''\}$ on $\P^{1}$. These pairs can be encoded by the three binary quadratic forms (up to scale)  defining them.  In terms of these three quadratic forms, we will now describe the differential construction $D^{2}_{4}$. 
+
+
+In what follows, we let $\{ q_{1},q_{2},q_{3} \}$ denote a point in $\Sym^{3} \P H^{0}(\O_{\P^{1}}(2))$.
+
+\begin{definition}
+  \label{definition:nodemap}
+  Let
+  \begin{align*}
+    \nu: \Sym^{3}\P H^{0}(\O_{\P^{1}}(2)) \dashrightarrow {\bf G}(2,4)
+  \end{align*}
+  denote the map given by the formula:
+  \begin{align*}
+    \nu \left(\{q_{1},q_{2},q_{3}\}\right ) =    \left\{ \begin{tabular}{c}
+      v. space of meromorphic $1$-forms $\omega$ on $\P^{1}$ with at worst \\
+      simple poles at the zeros of $q_{i}$ and with {\sl opposite} residues\\
+      at the pairs of zeros of $q_{i}$, for all $i = 1,2,3$
+    \end{tabular}\right\}
+  \end{align*}
+ 
+\end{definition}
+
+
+
+\begin{proposition}
+  \label{proposition:symtwoptwo}
+The map $\nu$ is birational.
+\end{proposition}
+\begin{proof}
+  Suppose a general three dimensional space $W \subset H^{0}(\O_{\P^{1}}(4))$ is given. Then the induced degree four map $\P^{1} \to \P W^{\smvee}$ is the normalization of a trinodal quartic $R$. The vector space $W$ is naturally identified with the sections of the dualizing sheaf of $R$, which consist of meromorphic $1$-forms on $\P^{1}$ with the properties stated in the proposition.
+\end{proof}
+
+\begin{definition}
+  \label{definition:pi}
+  Let
+  \begin{align*}
+    \pi: \Sym^{3}\P^{2} \dashrightarrow {\bf G}(1,4)
+  \end{align*}
+  be given by the formula
+  \begin{align*}
+\pi\left (\{q_{1},q_{2},q_{3}\}\right ) =    \left\{ \begin{tabular}{l}
+      v. space of meromorphic $1$-forms $\omega$ with at worst simple\\
+      poles at the zeros of $q_{i}$ and with {\sl equal} residues\\
+      at the pairs of zeros of $q_{i}$, for all $i = 1,2,3$
+    \end{tabular}\right\}
+  \end{align*}
+ 
+\end{definition}
+
+\begin{proposition}
+  \label{proposition:reinterpretTangent}
+  The rational map $\pi \circ \nu^{-1} : {\bf G}(2,4) \dashrightarrow {\bf G}(1,4)$ is the differential construction $D^{2}_{4}$.
+\end{proposition}
+\begin{proof}
+  Let $\gamma : \P^{1} \to \P^{2}$ be a general map induced by a three dimensional vector space $W \subset H^{0}(\O_{\P^{1}}(4))$ having image $R$, and let $(q_{1},q_{2},q_{3})$ be $\nu^{-1}(\varphi)$. The pencil $D(\gamma)$ is cut out by the perspective conics. \todo{Why?} According to \autoref{theorem:perspectiveconics}, the linear series on $R$ cut out by perspective conics is $\O_{R}(1) \otimes \eta$, where $\eta$ is the distinguished element $(-1,-1,-1) \in \Pic(R)[2]$.
+  If the space of sections of the line bundle $\O_{R}(1)$ is identified with $\nu(q_{1},q_{2},q_{3})$, then it follows that the space of sections of the twist $\O_{R}(1)\otimes \eta$ equals $\pi(q_{1},q_{2},q_{3})$. 
+\end{proof}
+
+\begin{definition}
+  \label{definition:jacobiantwoquadrics}
+  Let $\{a(x,y),b(x,y)\}$ be two homogeneous quadratic polynomials with no common zeros. Their {\sl Jacobian} is
+  \begin{align*}
+    J(a,b):= a_{x}b_{y}-a_{y}b_{x}.
+  \end{align*}
+
+\end{definition}
+
+Note that the Jacobian vanishes precisely at the two branch points of the map $[x : y] \mapsto [a(x,y):b(x,y)]$.
+
+\begin{theorem}
+  \label{theorem:onlyapencil}
+  Let $\left\{ q_{1},q_{2},q_{3} \right\} \in \Sym^{3}\P^{2}$ have six distinct roots. Then the vector space
+  \begin{align*}
+    \langle q_{1}J(q_{2},q_{3}), q_{2}J(q_{1},q_{3}), q_{3}J(q_{1},q_{2}) \rangle 
+  \end{align*}
+  is equal to  $\pi(q_{1},q_{2},q_{3}) \in {\bf G}(1,4)$.
+\end{theorem}
+\begin{proof}
+  By $SL_2(k)$-equivariance, it suffices to prove the theorem for three quadratic functions $\left\{ xy, q_{2}, q_{3} \right\}$ where $q_{2}$ and $q_{3}$ are general.
+ 
+  Let $\alpha_{1}, \alpha_{2}$, and $\beta_{1}, \beta_{2}$ denote the roots of $q_{2}, q_{3}$. Note that these roots are assumed to be in ${\bf A}^{1} \subset \P^{1}$.  We let $t = x/y$ denote the affine coordinate.
+
+  The vector space $\Pi := \pi(t, q_{2}(t), q_{3}(t))$ is equal to the vector space of forms
+  \begin{align*}
+    \omega = \frac{f(t)dt}{tq_{2}(t)q_{3}(t)},
+  \end{align*}
+  with $\deg(f) \leq 4$, and with the additional constraints
+
+ \begin{align*}
+    \res_{\alpha_{1}}\omega = \res_{ \alpha_{2}} \omega\\
+    \res_{\beta_{1}}\omega = \res_{ \beta_{2}} \omega\\
+    \res_{0}\omega = \res_{\infty} \omega
+  \end{align*}
+
+  Since we know a priori that the space of such forms is two dimensional, we conclude in particular that there exists a nonzero $\omega \in \Pi$ which is nonzero and vanishing at $\alpha_{1}$.  However, the first residue condition then forces $\omega$ to vanish at $\alpha_{2}$ as well. (This is clear from the geometry: an element of the pencil of perspective conics is cut out by a (possibly singular) conic in $\P^{2}$. If it contains a node, then its pullback to $\P^1$ must vanish at both points above the node.)
+
+  Therefore, there exists an $\omega \in \Pi$ of the form $$ \omega = \frac{(t-\alpha_{1})(t-\alpha_{2})g(t)dt}{tq_{2}q_{3}} = \frac{g(t)dt}{tq_{3}}.$$
+  The residue conditions at $\beta_{i}$, and $0, \infty$ together imply that, up to nonzero scaling,
+  \begin{align*}
+    g(t) = t^{2} - \beta_{1}\beta_{2}.
+  \end{align*}
+  The roots $\pm \sqrt{\beta_{1}\beta_{2}}$ are precisely the branch points of the map $[x:y] \to [xy : q_{3}]$.  Therefore, we see that $\omega$ vanishes at the roots of the quartic polynomial $q_{1}j(xy,q_{3})$. The theorem follows by arguing in the same manner for the two other pairs of roots.
+
+\end{proof}
+
+
+
+
+
+
+
+
+\begin{theorem}
+  	Let $X \subset \P^{5}$ be a balanced quartic surface scroll. Then $\deg \rho_{X} = 2$.
+  \end{theorem}  
+
+
+\subsection{Eccentric surface scrolls} % (fold)
+\label{sub:surfaces}
+
+% subsection surfaces (end)
+Let $V = \O(1) \oplus \O(k+1)$, $X = \P V$. Choose an affine coordinate $t$ on $\P^{1}$, and consider the projection-ramification enumerative problem for $X \subset \P^{k+3}$.  We claim: 
+\begin{proposition}\label{proposition:rhobirationalsurfaces}
+	$\rho_{X}$ is birational.
+\end{proposition}
+
+
+Let $A= H^{0}(\O_{X}(1))$. This vector space will be identified with the space of expressions of the form $\ell(t)x_{0} + q_{k+1}(t)x_{1}$, where $\ell, q_{k+1}$ have degrees $1$ and $k+1$ respectively. 
+
+If $W \subset A$ is a general three dimensional vector space, then there will be three elements in $W$ of the form
+\begin{align*}
+	w_{0} = t(x_{0} + q_{k}x_{1})\\
+	w_{\infty} = (x_{0} + r_{k}x_{1})\\
+	w_{*} = s_{k+1}x_{1}
+\end{align*}
+
+The Jacobian of this triple is: 
+
+\begin{align}\label{equation:jacobsurface}
+	sx_{0} + \left[s(qt)' - s'(qt) - t(r's-s'r)\right]x_{1}
+\end{align}
+
+\begin{proof}[Proof of \autoref{proposition:rhobirationalsurfaces}]
+	Let $r := \sigma x_{0} + \tau x_{1} \in H^{0}(X,\O(R))$ be a general element, we can extract the unique vector space $W$ such that $\rho_{X}(W) = r$ as follows: First, we set $s := \sigma$. Secondly, given $s$, the equation $\left[s(qt)' - s'(qt) - t(r's-s'r)\right] = \tau$ is a system of $2k+2$ linear equations on the $2k+2$ coefficients of the pair $(q,r)$. We know (from our our main theorem) that this system has only finitely many solutions, hence it must have a unique solution, proving the proposition.
+\end{proof}
+
+\subsection{Eccentric threefold scrolls} % (fold)
+\label{sub:eccentric_threefolds}
+Now let $V = \O(1) \oplus \O(1) \oplus \O(k+1)$, $k \geq 0$, and set $X := \P V$.  View $X \subset \P^{k+5}$ via the natural $\O(1)$ on $X$. Again, we choose affine coordinate $t \in \P^{1}$ and relative coordinates $x_{0},x_{1},x_{2}$ on $X$ corresponding to the three factors of the splitting of $V$. 
+
+\begin{proposition}\label{proposition:threefold}
+	$\rho_{X}$ is birational.
+\end{proposition}
+% subsection eccentric_threefolds (end)
+
+Suppose $W \subset H^{0}(V)$ is a general $4$ dimensional vector space. Then the projection $W \to H^{0}(\O(1)\oplus \O(1))$ will be an isomorphism.  Hence, there will be $4$ uniquely defined elements of $W$ of the form: 
+\begin{align*}
+	x_{0} + ax_{2}\\
+	x_{1} + bx_{2}\\
+	tx_{0} + cx_{2}\\
+	tx_{1} + d x_{2}
+\end{align*}
+where $a,b,c,d$ are degree $\leq k+1$ polynomials in $t$.
+The Jacobian determinant for this tuple of equations is: 
+\begin{align}\label{eq:jacobianthreefold}
+	\alpha x_{0} + \beta x_{1} + \gamma x_{2} = (d-bt)x_{0} + (at-c)x_{1} + \left[a't(bt-d) + b't(c-at) + c'(d-bt)+ d'(at-c) \right]x_{2}.
+\end{align}
+
+\begin{proof}[Proof of \autoref{proposition:threefold}]
+	We replace the Grassmannian $G(4,H^{0}(V))$ with the affine open subset $\A^{4k+8}$ parametrizing quadruples $(a,b,c,d)$. Then the ramification divisor equation \eqref{eq:jacobianthreefold} defines a map 
+	\begin{align*}
+	 	\rho^{*}: \A^{4k+8} \to \A^{4k+9}
+	 \end{align*} 
+	 where the latter $\A^{4k+9}$ is the vector space of triples $(\alpha,\beta,\gamma)$ with $\deg \alpha, \beta \leq k+2$ and $\deg \gamma \leq 2k+2$. The projection-ramification $\rho_{X}$ map $\rho$ is recovered by composing $\rho^{*}$ with the projection $\A^{4k+9} \dashrightarrow \P^{4k+8}$. 
+
+
+	 We will show that $\rho_{X}$ is dominant. To prove this it suffices to prove: If $(\alpha, \beta, \gamma)$ is a general point in the image of $\rho^{*}$, and $\lambda \neq 0,1$ is a constant, then $\lambda(\alpha, \beta, \gamma)$ is not in the image of $\rho^{*}$. 
+
+	 To this end, suppose $(a,b,c,d)$ is a general point in $\A^{4k+8}$. Then  $\alpha := d-bt$ and $\beta := at-c$ will be degree $k+2$ polynomials which are relatively prime.  
+
+
+	 For any polynomial $p(t)$, let $p^{*}$ denote the highest coefficient of $p$. Then we observe that $\beta^{*} = a^{*}$.  Furthermore, the expression for $\gamma$ is easily seen to be 
+	 \begin{align}\label{gammaEq}
+	  	\gamma = (\alpha'\beta - \beta' \alpha) + \alpha a + \beta b
+	  \end{align} 
+	  where $'$ denotes $d/dt$. 
+
+	  If we scale by $\lambda$, we get: 
+	  \begin{align}\label{firstEquations}
+	  	\lambda \alpha = \lambda (d-bt)\\
+	  	\lambda \beta = \lambda (at-c) \nonumber\\
+	  	\lambda \gamma = \lambda(\alpha'\beta - \beta' \alpha) + \lambda \alpha a + \lambda \beta b \nonumber
+	  \end{align}
+
+	  At the same time, if $\lambda(\alpha, \beta, \gamma)$ is also realized by some quadruple $(\tilde{a}, \tilde{b}, \tilde{c}, \tilde{d})$ then we get the equations: 
+	  \begin{align}\label{secondEquation}
+	  	\lambda \alpha = \tilde{d} - \tilde{b}t\\
+	  	\lambda \beta = \tilde{a}t - \tilde{c} \nonumber\\
+	  	\lambda \gamma = \lambda^{2}(\alpha'\beta - \beta' \alpha) + \lambda \alpha \tilde{a} + \lambda \beta \tilde{b}\nonumber
+	  \end{align}
+	  The second equation gives $\tilde{a}^{*} = \lambda \beta^{*}$
+
+	  The last equation gives: $\gamma = \lambda(\alpha'\beta - \beta' \alpha) + \alpha \tilde{a} + \beta \tilde{b}$.  Combining with \eqref{gammaEq}, we get 
+	  \begin{align}\label{alphasbetas}
+	    	\alpha (a - \beta') + \beta (b + \alpha') = \alpha(\tilde{a} - \lambda\beta') + \beta(\tilde{b} + \lambda \alpha').
+	    \end{align} 
+	    Since $\alpha$ and $\beta$ are relatively prime and have degree greater than $a,b,\tilde{a},\tilde{b}$, we conclude that 
+	    \begin{align*}
+	     	a-\beta' = \tilde{a} - \lambda \beta'\\
+	     	b+\alpha' = \tilde{b} + \lambda \alpha'
+	     \end{align*} 
+	     By examining top coefficients, and using $a^{*} = \beta^{*}$, $\tilde{a}^{*} = \lambda \beta^{*}$ we get: 
+	     \begin{align*}
+	     	\beta^{*} - (k+2)\beta^{*} = \lambda\beta^{*} - \lambda(k+2)\beta^{*}
+	     \end{align*}
+	     or 
+	     \begin{align*}
+	     	(1-\lambda)\beta^{*} = (1-\lambda)(k+2)\beta^{*}
+	     \end{align*}
+	     Given our assumption on $\lambda$, this is only possible if $\beta^{*} = 0$.  However, since $(a,b,c,d)$ were chosen generically, $\beta^{*} = a^{*}$ would not be zero, providing our contradiction.
+
+\end{proof} 
+
+Since every smooth, three dimensional rational normal scroll specializes isotrivially to the scroll $X$ in \autoref{proposition:threefold}, we immediately get: 
+
+\begin{corollary}\label{corollary:maxVariation3Scrolls}
+	The projection-ramification map $\rho_{X}$ is dominant for every smooth three dimensional rational normal scroll $X \subset \P^{N}$.
+\end{corollary}
+
+
+
+
+
+
+
+
+\section{A network of webs, pencils, and points.}
+Denote by $a^{(b)}$ the $b$th symmetric power of a vector space of dimension $a$, by $[a]$ the group $\PGL_a$, by $[a,b]$ the product $\PGL_a \times \PGL_b$, and so on.
+
+\[
+  \begin{tikzpicture}[yscale=2]
+    \draw 
+    (0,0) node (W) {\tiny $\Gr(3,2^{(4)}) / [2]$}
+    (0,-1) node (P) {\tiny $\Gr(2,2^{(4)}) / [2]$}
+    (6,0) node (W1) {\tiny $\Gr(3, 2 \boxtimes 2^{(2)}) / [2, 2]$}
+    (6,-1) node (R) {\tiny $\P(2 \boxtimes 2^{(4)}) / [2, 2]$}
+    (6,1) node (M) {\tiny $\P(2 \boxtimes 3 \boxtimes 2^{(2)}) / [2, 3, 2]$}
+    (6,2) node (C) {\tiny $\P(2 \boxtimes 3 \boxtimes 3) \times \P(3^{(2)}) / [2,3,3]$}
+    (6,3) node (XC) {\tiny $\{(X, C) \mid X \in \Hilb_3\P(3), C \in \P(3^{(2)})\} / [3]$}
+    (0,3) node (XT) {\tiny $\P(3^{(2)}) / \Gm^3 \times S_3$}
+    (12,3) node (M0222) {$M_{0,6}/G$}
+    (12,-1) node (M06) {$M_{0; 6}/ S_6$}
+    (10,0) node (M062) {$M_{0; 6}/ S_6$}
+    ;
+    
+    \draw 
+    (W) edge[->] node[left] {\tiny $D^2_4$} (P)
+    (W1.south west) edge[<-]  node[above] {\tiny Syzygies} (W.south east)
+    (W.north east) edge [<-] node[above] {\tiny Minors} (W1.north west)
+    (P) edge [<->] node[above] {$=$} (R)
+    (W1) edge [->] node[left] {\tiny $\rho$} (R)
+    (M) edge [<->] node[right] {$=$} (W1)
+    (M) edge [<->] node[right] {\tiny Segre $\P^1 \subset \P^2$} (C)
+    
+    (C) edge [transform canvas={xshift=5}, ->] node[right] {\tiny Degeneracy locus} (XC)
+    (C) edge [transform canvas={xshift=-5}, <-] node[left] {\tiny Syzygies} (XC)
+    (XC) edge [<->] (XT)
+    (XC) edge [<->] (M0222)
+    (P) edge [->, bend right=5] node[below] {\tiny Wronskian} (M06)
+    (W.south east) edge [->, bend right=5] node[near end, below] {\tiny Wronskian} (M062)
+    (M0222) edge [->, red] (M06)
+    (M0222) edge [->, red] (M062)
+    ;
+  \end{tikzpicture}
+\]
+Here $G \subset S_6$ is the stabilizer of $\{\{1,2\},\{3,4\},\{5,6\}\}$.
+
+The red arrows are not the obvious forgetful maps.
+Is there an easy description?
+
+The GIT quotient in the top left hand corner $\P(3^{(2)})/\G_m^3 \times S_3$ is very easy to compute.
+It is very likely that this threefold is something famous.
+Actually (before modding out by $S_3$), it appears to be the cubic hypersurface
+\[ AB^2- CDE \subset \P^4.\]
+Why?
+Consider the $\G_m^3$ acting on an equation in $(X,Y,Z)$ of degree 2
+\[ a X^2 + b Y^2 + cZ^2 + \alpha YZ + \beta XZ + \gamma XY.\]
+The quotient will be the $\Proj$ of the semi-invariant ring, which is
+\[ R = k[abc, \alpha\beta\gamma, a\alpha^2, b\beta^2, c\gamma^2] .\]
+Denoting these generators by $A, \dots, E$, we see that $\Proj R \subset \P^4$ is cut out by $AB^2-CDE$.
+The $S_3$ action just permutes the $C, D, E$.
+Is the Richelot involution simply $B \mapsto -B$?
+
+\section{Some more GIT}
+
+\subsection{A moduli space of sequences}
+Let us form a moduli space of sequences
+\begin{equation}\label{eqn:ABseq}
+  \O(-2)^{2} \xrightarrow{A} \O^3 \xrightarrow{B} \O(4).
+\end{equation}
+We can construct this moduli space using GIT as follows.
+Let $X$ be the closed subvariety of $\P^{17} \times \P^{14}$ consisting of pairs of matrices $(A, B)$ that satisfy $B A = 0$.
+Then our moduli space is the quotient $X \sslash \SL_2 \times \SL_3$.
+Note that $X$ has a rank 2 Picard group, so the GIT quotient might depend on a choice of linearization.
+
+For a generic choice of $(A, B) \in X$, the sequence \eqref{eqn:ABseq} will be exact.
+Therefore, up to the action of $\GL(2)$ and $\GL(3)$, the matrix $A$ can be recovered from $B$ and vice-versa.
+If the linearization tilts towards $B$, then the GIT quotient will be $\Gr(3,2^{(4)})$.
+If the linearization tilts towards $A$, then the GIT quotient will be $\Gr(3, 2 \boxtimes 2^{(2)}) \sslash SL(2)$.
+For an intermediate choice, we will get something that interpolates between the two.
+
+\subsection{The differential construction}
+Given $A$ and $B$ as in \eqref{eqn:ABseq}, we get a diagram
+
+\[
+  \begin{tikzcd}
+    {} & {\O(-2)^2} \arrow{r}{A} \arrow{d}{D} & {\O^3} \arrow{r}{B} \arrow{d}{J} & \O(4) \arrow{d}\\
+    0 \arrow{r} & \O(2) \arrow{r} & \O(3) \oplus \O(3) \arrow{r} & \O(4)\arrow{r} &0,
+\end{tikzcd}
+\]
+where the sequence on the bottom can be thought of as the jet bundle sequence
+\[ 0 \to L \otimes \Omega \to j_2 L \to L \to 0,\]
+where $L = \O(4)$.
+The function
+\[ (A, B) \mapsto D\]
+is the differential construction map.
+
+Let us make the maps above more explicit.
+Suppose
+\[B = (R_1, R_2, R_3),\]
+where the $R_i$ are quartics.
+Then the map $J$ is defined by the Jacobian matrix
+\[ J = \begin{pmatrix}
+    {\partial F_1}/{\partial X} & {\partial F_2}/{\partial X}  &     {\partial F_3}/{\partial X} \\
+    {\partial F_1}/{\partial Y} & {\partial F_2}/{\partial Y}  &     {\partial F_3}/{\partial Y}     
+  \end{pmatrix}.
+\]
+Suppose
+\[ A =
+  \begin{pmatrix}
+    P_1 & P_2 & P_3 \\
+    Q_1 & Q_2 & Q_3
+  \end{pmatrix},
+\]
+where the $P_i$ and $Q_j$ are quadrics.
+Then the differential map $D$ is given by
+\[ D =
+  \begin{pmatrix}
+    \left(P_1 \cdot {\partial F_1}/{\partial X} + P_2 \cdot {\partial F_2}/{\partial X} + P_3 \cdot {\partial F_3}/{\partial X}\right)/X \\
+    \left(Q_1 \cdot {\partial F_1}/{\partial X} + Q_2 \cdot {\partial F_2}/{\partial X} + Q_3 \cdot {\partial F_3}/{\partial X}\right)/X \\
+  \end{pmatrix},
+\]
+or equivalently by replacing $\frac{1}{X} \cdot \partial / \partial X$ by $-\frac{1}{Y} \cdot \partial / \partial Y$.
+
+Set $P = \P(2 \boxtimes 2^{(4)})$ and let $D \from X \dashrightarrow P$ be the differential construction map.
+The explicit equations for $D$ above are homogeneous of degree $1$ in the coefficients of $(\P_i, \Q_j)$ and also homogeneous of degree $1$ in the coefficients of $F_k$.
+In other words, we have \[ D^* \O(1) = \O(1,1),\]
+where $\O(a,b)$ on $X \subset \P^{17} \times \P^{14}$ represents the restriction of $\O(a,b)$ on the ambient space. 
+
+\begin{question}
+  Does the differential construction preserve semistability?
+  That is, is the following map regular?
+  \[ X \sslash_{(1,1)} \SL_2 \times \SL_3 \dashrightarrow P \sslash \SL_2\]
+\end{question}
+
+\begin{remark}
+  If the line bundle $L = \O(4)$ is replaced by $L = \O(2)$, then the sequence \eqref{eqn:ABseq} becomes
+  \begin{equation}
+    \O(-1)^{2} \xrightarrow{A} \O^3 \xrightarrow{B} \O(2).
+  \end{equation}
+  In this case, is the moduli space of sequences related to the space of complete conics?
+\end{remark}
+
+
+\begin{remark}
+  It seems interesting to me to study compactified ``moduli spaces of exact sequences'' of the form
+  \[ 0 \to \O(-1)^2 \xrightarrow{A} \O^3 \xrightarrow{B} \O(2) \to 0.\]
+  What makes this interesting is that we get three different compactifications, coming from three different points of view towards such an exact sequence.
+  The first is through $A$, the second is through $B$, and the third is through the extension class $C \in \Ext^1(\O(2), \O(-1)^2)$.
+  Furthermore, we can try to interpolate between these three views using GIT as follows.
+  Consider
+  \[ X \subset \P^{11} \times \P^{8} \times \P^{5}\]
+  consisting of $(A, B, C)$ such that $BA = 0$ and $CB = 0$ and study the GIT quotients
+  \[ X \sslash \SL(2) \times \SL(3).\]
+  (For simplicity, I have chosen specific numbers for the ranks and degrees of the bundles appearing here, but they can be changed).
+\end{remark}
+
+
+
+
+\section{A Porteous approach}
+Here is another attempt to find the degrees of the projection-ramification map for surfaces.
+The idea is to fix a generic ramification divisor, and try to find projections that give exactly that ramification.
+
+For simplicity, let us work on $S = \P^1 \times \P^1$.
+Let $L = (1,n)$.
+Then we have a projection-ramification map
+\[ \Gr\left(3, H^0(S,L)\right) \dashrightarrow |(1,3n-2)|\]
+Given a net $U$ of sections of $L$, we interpret the corresponding ramification divisor as the locus of points $p$ in $S$ such that there exists an element of $U$ that is singular at $p$.
+If $U$ is generic, then there will be a unique element of $U$ that is singular at $p$ for all $p$ in the ramification divisor.
+
+Let a ramification divisor be given.
+We view it as a section $\sigma \from \P^1 \to S$.
+Let $\Sigma \subset S \times |1,n|$ be incidence correspondence consisting of $(s, u)$ such that $u$ is singular at $s$.
+In this case, the divisor $u$ is $C_s + F_s$, where $C_s$ is in the linear series $|1,n-1|$ passing through $s$, and $F_s$ is the fiber of $S$ through $s$.
+The map $\Sigma \to S$ is a $\P^{2n-2}$ bundle.
+Let $\Sigma|_\sigma \to \P^1$ be the pullback of $\Sigma$ along the section $\sigma \from \P^1 \to S$.
+To find projections whose ramification divisor is $\sigma$, we attempt to find sections $Z \from \P^1 \to \Sigma|_\sigma$ such that the composite $Z \from \P^1 \to |1,n|$ spans a $\P^2$.
+The net given by this $\P^2$ will have ramification locus (containing) $\sigma$ by construction.
+We have to make sure that the ramification locus is not all of $S$.
+
+Let $\Delta \subset \Sigma$ be the locus consisting of $(s, u)$ where the divisor $u$ is $C_s + 2F_s$, where $C_s$ is in the linear series $|1,n-2|$ and $F_s$ is the fiber through $s$.
+The sections $Z$ arising from a generic net will never intersect $\Delta$.
+So we should only find $Z \from \P^1 \to \Sigma|_\sigma$ satisfying the following two conditions.
+\begin{enumerate}
+\item The image of $Z$ in $|1,n|$ spans a $\P^2$.
+\item The image of $Z$ is disjoint from $\Delta$.
+\end{enumerate}
+In this case, I believe the ramification locus of the net given by the $\P^2$ is not all of $S$.
+So it must be exactly $\sigma$.
+
+Since $\Delta \subset \Sigma$ is a divisor, the second condition pins down the numerical class of $Z$.
+The space of all $Z$ in this numerical class satisfying the second condition is a (non-projective) variety.
+The first condition puts a closed condition on it.
+We expect the set of points satisfying the condition to be finite, and want to find its size.
+
+Let us first try to identify the bundle $\Sigma \to S$ and its sub-bundle $\Delta \to S$.
+For $\Sigma$, define the bundle $K$ on $S$ by the following exact sequence
+\[ 0 \to K \to \O_S^{2n+2} \to j_SL \to 0,\]
+where $j_SL$ is the first jet bundle of $L$ on $S$. 
+Then $\Sigma$ is the projectivization (space of quotients) of $K^\vee$.
+For $\Delta$, define the bundle $V$ on $\P^1$ by the following exact sequence
+\[ 0 \to V \to \O_{\P^1}^{2n+2}  \to j_{\P^1} \left( \pi_* L \right)\to 0,\]
+where $\pi \from S \to \P^1$ is the natural projection.
+The bundle $\Delta \to S$ is the projectivization of $\pi^* V^\vee$.
+We have an injection of vector bundles 
+\[ \pi^* V \to K,\]
+which induces the inclusion $\Delta \subset \Sigma$.
+
+\begin{proposition}
+  We have isomorphisms
+  \[ V |_\sigma \cong \O(-2)^{2n-2},\]
+  and
+  \[ K |_\sigma \cong V |_\sigma \oplus \O(-2n).\]
+\end{proposition}
+\begin{proof}
+  ToDo.
+\end{proof}
+Therefore, sections of $\Sigma|_\sigma \to \P^1$ disjoint from $\Delta|_\sigma$ are given by quotients
+\[ K^* \to \O(2n)\]
+that restrict to an isomorphism
+\[ \O(2n) \xrightarrow\sim \O(2n).\]
+The space of such quotients is an open subset of the projective space
+\[ \P \Hom(K^*, \O(2n)) \cong \P^{(2n-2)(2n-1)}.\]
+Given a quotient $q \from K^* \to O(2n)$, the surjection
+\[ \O^{2n+2} \to K^*\]
+induces a map
+\[ \O^{2n+2} \to \O(2n),\]
+and hence a map
+\[ q_f \from \C^{2n+2} \to \Sym^{2n}\C^2.\]
+The section given by $q$ is planar, if and only if the rank of $q_f$ is at most $3$.
+This is a condition of expected codimension $(2n-2)(2n-1)$.
+
+\begin{proposition}
+  The number of projections that have ramification divisor $\sigma$ is in bijection with quotients $q \from K^* \to \O(2n)$ satisfying the following two conditions.
+  \begin{enumerate}
+  \item The composition of $\O(2n) \subset K^*$ with $q$ gives an isomorphism $\O(2n) \to \O(2n)$
+  \item The rank of $q_f$ is at most 3.
+  \end{enumerate}
+\end{proposition}
+The second condition leads to a porteous calculation on the moduli space of $q$, but the first condition makes this moduli space quasi-projective.
+Can we work on the full projective space instead, or does this lead to excess intersection?
+
+\section{Maximal variation using limit linear series}
+Let $E$ be a vector bundle on $\P^1$.
+We want to prove that the projection-ramification map for $\P E$ is dominant.
+
+A possible inductive approach is to let the $\P^1$ degenerate to a nodal union $\P^1 \cup \P^1$ and $E$ to a vector bundle $E_1 \cup E_2$, and use the dominance for $E_1$ and $E_2$ to conclude the dominance for $E$.
+This approach fails, however, because for a vector bundle on $\P^1 \cup \P^1$, the projection-ramification map is never dominant.
+The ramification divisor always contains the fiber over the node, and hence lies in a strictly closed subset of the corresponding linear series.
+
+The failure of the inductive approach is apparent even in the case where $E$ is a line bundle, but this case also suggests a possible way out.
+The case of a line bundle $E$ corresponds to maps $\P^1 \to \P^1$.
+When the domain $\P^1$ breaks into $\P^1 \cup \P^1$, the ramification divisor necessarly contains the node point, and hence fails to be general in its linear series.
+One way out is to also consider a simultaneous degeneration of the target $\P^1$.
+This requires further modifications of the source, and leads to an admissible cover.
+The admissible cover lets us recover the lost dimensions of the ramification divisor because of the node.
+But in higher rank, the target is a $\P^n$, and it seems difficult to work with admissible covers for such a high dimensional target.
+Another way out is to consider limit linear series.
+In the case of a line bundle $E$ degenerating to a line bundle on $\P^1 \cup \P^1$, the obvious limit linear series degeneration does not recover the correct ramification divisors.
+But this is only because the limit series is ``unrefined''.
+A refined limit exists after a base-change and a further blow-up as a linear series on $\P^1 \cup \P^1 \cup \P^1$, and this refined limit does recover the correct ramification divisor (equivalent to the ramification divisor obtained by the admissible cover approach, up to stabilization).
+This procedure has the advantage of being purely source-centered, and hence more easily adaptable to higher rank.
+
+To elaborate more, consider a sufficiently positive vector bundle $E$ on $P = \P^1 \cup \P^1$ of rank $n$, and let $V \subset H^0(\P^1, E)$ be a generic $(n+1)$-dimensional subspace.
+Let $D \subset \P E$ be the ramification divisor for $V$.
+Then $D$ contains the fiber of $\P E \to P$ over the node $p \in P$, and is in some sense, not the right ramification divisor.
+To obtain a better ramification divisor, we take a one-parameter smoothing $\mathcal P \to \Delta$ of the whole situation with smooth total space $\mathcal P$.
+We want to blow up $p \in \mathcal P$, pull-back the scroll to the blow up, subtract the exceptional divisor from the preimage of $D$, and take the residual as the ramification divisor.
+However, it is better to do this after a base change to avoid non-reduced fibers.
+So we take a base change of order 2 on $\Delta$, and then blow-up the point $p$.
+Then the central fiber of the resulting $\mathcal P \to \Delta$ is a reduced chain of 3 rational curves; the middle one is new.
+The pre-image of $D$ contains the entire scroll over the new component (which is a copy of $\P^{n-1} \times \P^1$).
+The ``right'' ramification divisor should be the residual.
+Note that the residual has class $(1 , 2)$ on the new component.
+So the correct ramification divisor consists of 
+\begin{enumerate}
+\item the ramification divisor of $V$ on the ``right side'',
+\item the ramification divisor of $V$ on the ``left side'',
+\item interpolated by a divisor in class $(1,2)$ in the ``middle''.
+\end{enumerate}
+The interpolation is not uniquely specified by the right and the left side, and therefore contains more information than the old ramification divisor.
+Here, we used the smoothing to find the missing information.
+We want to do everything just on the central fiber, without the smoothing.
+That is, we want to find the correct analogue of a linear series $V$ on the central fiber and define its ramification divisor so that it is continuous in one-parameter families and leads to the answer above.
+We then want to use induction to show that we have dominance on the central fiber.
+
+It makes sense to take a limit linear series as the analogue of $V$ on the central fiber.
+(I am not sure that it works, but it's worth a try.)
+Let us recall the definition of limit linear series for vector bundles from \cite[Definition~4.1.2]{oss:14} (see  \cite[Definition~2.1]{tei-i-big:91}, but be aware that it uses a different ordering convention in the fundamental inequality).
+For simplicity, let us take $P = \P^1 \cup \P^1$ attached at a node $p$.
+A limit linear series on $P$ of rank $r$ dimension $k$ and degree $d$ consists of $(E_1, V_1)$ and $(E_2, V_2)$, where $E_i$ is a vector bundles on $P_i$ of rank $r$, and $V_i$ is a subspace of $H^0(P_i, E_i)$ of dimension $k$, along with an isomorphism (up to scaling)
+\[ \phi(p) \from E_1|_p \to E_2|_p\]
+satisfying the following conditions.
+\begin{enumerate}
+\item We have
+  \[ \deg E_1 + \deg E_2 - r b = d\]
+  for some integer $b$.
+  More generally, for a $k$ irreducible components, we have $\sum \deg E_i - (k-1)rb = d$.
+\item We have $H^0(P_i, E_i(-b p)) = 0$ for $i = 1, 2$.
+\item If $a_1(1) \leq \dots \leq a_1(k)$ and $a_2(1) \leq \dots \leq a_2(k)$ are the vanishing sequences for $(E_1,V_1)$ and $(E_2, V_2)$, respectively, on $p$, then we have the inequality
+  \begin{equation}\label{ieqn:lls}
+    a_1(i) + a_2(k+1-i) \geq b.
+  \end{equation}
+\item There exist bases $s_i(1), \dots, s_i(k)$ for $V_i$ for $i = 1, 2$, realizing the vanishing sequences $a_i(1), \dots, a_i(k)$ such that if equality holds in \eqref{ieqn:lls} for some $i$, then we have
+  \[ \phi (\overline s_1(i)) = \overline s_2(k+1-i).\]
+  Here $\overline s_1(i)$ is the image in $E_1|_p$ of $s_1(i)/t^{a_1(i)}$ where $t$ is a parameter on $P_1$ at $p$.
+\end{enumerate}
+If equality holds in \eqref{ieqn:lls} for all $i = 1, \dots, k$, then we say that the limit linear series is \emph{refined}.
+
+Let us consider an example.
+Consider $P$ as a specialization of $\P^1$.
+Let $(E, V)$ be a linear series on the generic fiber with $E \cong \O(d)^{\oplus n}$ for some $d \geq 2$ and $\dim V = n+1$
+Suppose $E$ limits to a vector bundle $E' = (E'_1, E'_2) = \left(\O(d-1)^{\oplus n}, \O(1)^{\oplus n}\right)$ and $V$ limits to a subspace $V' \subset H^0(P, E')$ of dimension $n+1$.
+Suppose that the limiting subspace $V'$ is generic.
+
+What is the limit linear series limit in this case?
+I think we have to take $E_1 = E_1'(2p)$ and $E_2 = E_2(dp)$.
+In the family, $E_1$ is the restriction to $P_1$ of the original family of vector bundles twisted by $\O(2P_2)$, and $E_2$ is the restriction to $P_2$ of the original family of vector bundles twisted by $\O(dP_1)$.
+These twists ensure that the restriction to the other component has no global sections.
+The generic linear series $V$ yields a limiting series $V_1$ for $E_1$ and $V_2$ for $E_2$.
+The isomorphism over $p$ is obtained from the gluing description of $E_1'$ and $E_2'$ to form $E'$.
+For this linear series, we have $b = d+2$.
+Assuming that $V'$ is generic, its vanishing sequence for $E_1'$ and $E_2'$ at $p$ is $(0, \dots, 0, 1)$.
+Then the vanishing sequence of $V_1$ for $E_1$ at $p$ is $(2,\dots, 2, 3)$ and of $V_2$ for $E_2$ is $(d, \dots, d, d+1)$.
+We see that the inequality \eqref{ieqn:lls} holds, but it is strict for $i = 1$ and $i = n+1$.
+As a result, we have a limit linear series, but not a refined limit linear series.
+
+To get a refined limit, I think we have to do an order 2 base change, and a further blow up.
+Then the central fiber is a chain of 3 rational curves: $P_1 \cup P_3 \cup P_2$.
+The limiting linear series will have $E_i = \O(d+2)^n$ for $i = 1, 2, 3$.
+By choosing a basis of $V$ and taking its limits to the various $E_i$, we see that it has the following orders of vanishing:
+\begin{enumerate}
+\item On $E_1$ at $p = E_1 \cap E_3$, we get $(3,\dots,3, 4)$;
+\item On $E_2$ at $q = E_2 \cap E_3$, we get $(d+1,\dots,d+1, d+2)$;
+\item On $E_3$ at $p$, we get $(d, \dots, d, d-1)$;
+\item On $E_3$ at $q$, we get $(2, \dots, 2, 1)$.
+\end{enumerate}
+In this case, we have $b = d+3$, and we see that we get a refined limit linear series.
+
+\begin{definition}[Rough]
+  Let $\ell = (E_i, V_i)$ be a limit linear series on $P = P_1 \cup \dots \cup P_k$, where $\dim V_i = (n+1)$ and $\rk E_i = n$.
+  The \emph{ramifification} of $\ell$, denoted by $\rho(\ell)$, is the limit linear series of dimension $1$ and rank $n$ whose component on $P_i$ is the section of $E_i \otimes \det E_i \otimes \Omega_{P_i}$ corresponding to the ramification divisor of $(E_i, V_i)$.  
+\end{definition}
+
+We need to check that the ramification of $\ell$ is indeed a limit linear series.
+That is, the ramification sections on $P_i$ and $P_{i+1}$ agree (up to scaling) on $P_i \cap P_{i+1}$.
+I vaguely convinced myself that this was the case, at least for the refined limit linear series obtained in the example above.
+We also need to check that the definition is continuous in (one-parameter) families. 
+Given that the definition makes sense, we would proceed as follows.
+\begin{enumerate}
+\item Find a nodal curve and a limit linear series $(E_i, V_i)$ on it such that the space of limit linear series has the expected dimension at the point $(E_i, V_i)$.
+  We probably want to take something like the limit linear series on a chain of 3 rational curves obtained above.
+  Having the expected dimension means that every limit linear series arises as a limit from a generic smooth fiber.
+\item Use induction on the ``left'' component, and some calculation on the ``middle'' component to show that the projection-ramification map $\ell \to \rho(\ell)$ is dominant at $(E_i, V_i)$.
+\item Conclude that the projection-ramification map is dominant on the general fiber.
+\end{enumerate}
+
+
+
+
+\subsection{A closer look at linear series with complementary vanishing}
+The basic idea of using limit linear series seems sound, so let us pursue it further.
+Let us work on limit linear on a nodal curve with two components $P_1 \cup P_2$.
+
+To glue $(E_1, V_1)$ and $(E_2, V_2)$ to get a refined limit linear series, the vanishing sequences of the two component series have to be complementary.
+A generic sequence of a linear series of dimension $(r+1)$ on a vector bundle of rank $r$ will be
+\begin{equation}\label{eqn:generic}
+  (0, \dots, 0, 1).
+\end{equation}
+Because of the complementary condition, we are then forced to study linear series with vanishing sequence
+\begin{equation}\label{eqn:complementary}
+  (1, \dots, 1, 0).
+\end{equation}
+We make some easy observation regarding linear series with a vanishing sequence of the second kind.
+\begin{proposition}
+  Let $H \subset \P E|_0$ be a hyperplane.
+  Then a linear series with vanishing sequence \eqref{eqn:complementary} is equivalent to a linear series that contains $H$ (but not the entire $\P E|_0$) in its base locus.
+\end{proposition}
+Blow up $H \subset \P E$ and blow down the proper transform of $\P E|_0$, obtaining another scroll $\P E'$.
+Equivalently, construct $E'$ from $E$ as the kernel of the map
+\[ E \to \C^{r-1}_0\]
+corresponding to the hyperplane $H \subset \P E$ (remember that projectivizations are quotients).
+\begin{proposition}
+  Via the rational map $\P E \dashrightarrow \P E'$, a linear series $V$ on $\P E$ with vanishing sequence \eqref{eqn:complementary} gives a linear series $V'$ with vanishing sequence \eqref{eqn:generic} on $\P E'$.
+  Furthermore, the reduced ramification divisor of $V$ is the proper transform of the usual ramification divisor of $V'$.
+\end{proposition}
+
+The \emph{reduced ramification divisor} of $V$ is the closure of the ramification divisor of $V$ calculated away from $0$.
+Better, it is the usual ramification divisor of $V$ minus $(r-1)$ copies of the fiber $\P E_0$ which are necassrily contained in it.
+It is easy to see (also follows from the proper transform description above) that the restriction of the reduced ramification divisor to $\P E_0$ is the hyperplane $H$.
+
+\begin{proposition}\label{prop:complementary_to_normal}
+  Fix $H \subset \P E_0$.
+  Let $G$ be the space of linear series on $\P E$ with vanishing sequence \eqref{eqn:complementary} that has $H \subset \P E_0$ in the base locus.
+  Let $P$ be the set of ramification divisors (in the right class) that contains $H$.
+  Then the map
+  \[ G \dashrightarrow P\]
+  that sends a linear series to its reduced ramification divisor  is dominant if and only if the usual projection ramification map on $E'$ is dominant.
+\end{proposition}
+
+\subsection{Sketch of proof of dominance}
+
+Let $E$ be a vector bundle of rank $r$ for which we know that the projection ramification map is dominant.
+My goal is to sketch a proof of dominance for a generic vector bundle of the same rank and degree $\deg E + (r-1)$.
+To do so, let us construct a limit linear series on $P_1 \cup P_2$ such that the projection ramification map is dominant at this limit series.
+This series will have rank $r$ and degree $\deg E + (r-1)$.
+
+The two constituents of this series are $E_1 = E$ and $E_2 = \O(2) \oplus \dots \oplus \O(2) \oplus \O(1)$.
+Let $H \subset \P E_2 |_0$ be a generic hyperplane.
+The key point is the dominance of the projection ramification map for $\P E_2$ with vanishing sequence \eqref{eqn:complementary} and base locus $H$.
+We get this dominance from \autoref{prop:complementary_to_normal} and the dominance for $\O(1) \oplus \dots \oplus \O(1)$.
+(If $E = \O(2) \oplus \dots \oplus \O(2) \oplus \O(1)$ in \autoref{prop:complementary_to_normal}, and $H$ is generic, then $E'$ will be $\O(1) \oplus \dots \oplus \O(1)$.)
+
+To make the limit linear series more precise, denote the node of $P_1 \cup P_2$ as a point of $P_1$ by $p$ and as a point of $P_2$ by $q$.
+Choose a generic isomorphism $\phi$ between $E_1|_p$ and $E_2|_q$, which we use to identify their projectivizations.
+Let $V_1 \subset H^0(E_1)$ be a generic subspace of dimension $(r+1)$, and let $H \subset \P E_1|_p$ be the hyperplane cut out by the residual of the unique up to scaling section of $V_1$ that vanishes along $\P E_1 |_p$.
+Equivalently, $H \subset \P E_1|_p$ is the restriction of the ramification divisor of $V_1$.
+Let $V_2 \subset H^0(E_2)$ be a generic subspace of dimension $(r+1)$ with complementary vanishing sequence at $q$ and base locus $H \subset \P E_2 |_q$.
+
+Let $a \geq 0$ be an integer such that $H^0(E_1(-a)) = 0$.
+Set $E_1' = E_1(3)$ and $E_2' = E_2(a)$ and let $V'_1$ and $V_2'$ be obtained from $V_1$ and $V_2$ by multiplying by forms vanishing at $3p$ and $aq$, respectively.
+Then $(E'_1, E_2', V_1, V_2, \phi)$ is a refined limit linear series with $b = a+4$.
+\begin{proposition}
+  The limit linear series above is smoothable.
+\end{proposition}
+
+The smoothing on the generic fiber will be a limit linear series on a bundle $\mathcal E$ which has rank $r$ and degree satisfying
+\begin{align*}
+  \deg E &= \deg E_1' + \deg E_2' - r(a+4) = \deg E\\
+         &= \deg E_1 + 3r + (2r-1) + ar - r(a+4) \\
+         &= \deg E_1 + (r-1).
+\end{align*}
+
+\begin{proposition}
+  The limit linear series projection ramification map is dominant at $(E'_1, E_2', V_1, V_2, \phi)$.
+\end{proposition}
+\begin{proof}[Sketch of proof]
+  This should come down to dominance on the left and right, which we know.
+\end{proof}
+
+By semi-continuity, we conclude that the projection ramification map is dominant for a generic vector bundle of degree $\deg E + (r-1)$ and rank $r$.
+
+Starting with $E = \O(1)^{r}$ or even $E = \O^{r-1} \oplus \O(1)$, for which we know the dominance, we get the following.
+\begin{proposition}
+  The projection-ramification map is dominant for generic $E$ of rank $r$ and positive degree congruent to $1 \pmod {(r-1)}$.
+\end{proposition}
+
+\begin{remark}
+  The congruence condition is annoying.
+  If we knew more ``base cases'' where dominance holds, then we could get more.
+\end{remark}
+
+\subsection{Maximal variation for $\O(2)^r$}
+The goal of this section is to establish dominance of the projection ramification morphism for $E = \O(2)^r$.
+We do this by a tangent space calculation.
+For simplicity, we work with inhomogeneous polynomials in $x = X/Y$ instead of homogeneous polynomials in $X$ and $Y$.
+
+Consider the point $\lambda$ of $\Gr(r+1, H^0(E))$ represented by the $(r+1) \times r$ matrix
+\[
+  \Lambda =
+  \begin{pmatrix}
+    (x-a_1)^2 & 0 &  \cdots & 0 \\
+    0 & (x-a_2)^2 & \cdots & 0\\
+    0 & 0 & \ddots & 0 \\
+    0 & 0 & \cdots & (x-a_r)^2\\
+    p_1 & p_2 & \cdots & p_r
+  \end{pmatrix},
+\]
+where $a_i \in \C$ and $p_j \in H^0(\O(2))$.
+We claim that if the $a_i$ and the $p_j$ are generic, then the map on the tangent spaces induced by the projection-ramification construction is surjective at $\Lambda$.
+
+Recall that if $M$ is an $(r+1) \times r$ matrix of polynomials in $x$, then the ramification divisor of the projection map represented by $M$ is given by the formula
+\[
+  R(M)  = \det \left(M \mid \xi(M)\right),
+\]
+where $\xi(M)$ is the vector given by
+\[
+  \xi(M)_i = \sum_{j = 1}^r \partial_x M_{i,j} \cdot X_j.
+\]
+
+To do the tangent space computation, we compute the ramification divisor $R$ for the matrix $M  = \Lambda + \epsilon \Delta$, where $\Delta$ is an $(r+1) \times r$ matrix of elements in $H^0(\O(2))$, assuming $\epsilon^2 = 0$.
+The result will be of the form
+\[ R(\Lambda + \epsilon \Delta) = R(\Lambda) + \epsilon S(\Lambda, \Delta),\]
+where $S(R, \Delta)$ is an element of $H^0(2r) \otimes \langle  X_1, \dots, X_r \rangle$, linear in the entries of $\Delta$.
+We must show that the linear map
+\[ H^0(\O(2)) \otimes M_{r+1, r} \to H^0(\O(2r)) \otimes \langle  X_1, \dots, X_r \rangle\]
+given by
+\[ \Delta \mapsto S(\Lambda, \Delta)\]
+is surjective.
+
+We compute $R(\Lambda + \epsilon\Delta)$ for elementary matrices $\Delta$.
+Denote by $E_{i,j}$ the elementary matrix with $1$ at the $(i,j)$th place, and $0$ everywhere else.
+
+First, suppose
+\[ \Delta = q E_{j,i},\]
+where $i \neq j$, and $1 \leq j \leq r$.
+By direct calculation, we obtain
+\begin{equation}\label{eq:off_diagonal}
+  S(\Lambda, \Delta) = \frac{(x-a_1)^2\cdots(x-a_r)^2 p_j}{(x-a_i)^2(x-a_j)^2} \cdot \left[q, (x-a_i)^2\right] \cdot X_i,
+\end{equation}
+where the notation $[a, b]$ means $ab' - a'b$.
+
+Second, suppose
+\[ \Delta = q E_{r,i},\]
+where $1 \leq i \leq r$.
+Again, by direct calculation, we obtain
+\begin{equation}\label{eq:bottom}
+  S(\Lambda, \Delta) = - \frac{(x-a_1)^2 \cdots (x-a_r)^2}{(x-a_i)^2} \cdot \left [q, (x-a_i)^2\right] \cdot X_i.
+\end{equation}
+
+Third, suppose
+\[ \Delta = qE_{i,i},\]
+where $1 \leq i \leq r$.
+As before, by direct calculation, we obtain
+\begin{equation}\label{eq:diagonal}
+  S(\Lambda, \Delta) = R(\Lambda_i(q)),
+\end{equation}
+where $\Lambda_i(q)$ is obtained from $\Lambda$ by changing the $(i,i)$th entry from $(x-a_i)^2$ to $q$.
+
+We want to show that the map
+\begin{equation}\label{eqn:mainmap}
+  H^0(\O(2)) \otimes M_{(r+1) \times r} \to H^0(\O(2r)) \otimes \langle  X_1, \dots, X_r \rangle
+\end{equation}
+given by
+\[ \Delta \mapsto S(\Lambda, \Delta)\]
+is surjective.
+Fix a $i$ with $1 \leq i \leq r$ and consider the subspace of the domain given by
+\[ H^0(\O(2)) \otimes \langle  E_{j,i}  \mid j \neq i \rangle.\]
+By our calculations above, the image of this space lies in $H^0(\O(2r)) \otimes X_i$.
+We begin by identifying the image.
+For $1 \leq j \leq r$ and $j \neq i$, set
+\[ Q_{i,j} = \frac{(x-a_1)^2\cdots (x-a_r)^2p_j}{(x-a_i)^2(x-a_j)^2}\]
+and set
+\[ Q_{i, r+1} = \frac{(x-a_1)^2 \cdots (x-a_r)^2}{(x-a_i)^2.}\]
+
+\begin{lemma}\label{lem:no_linear_syzygy}
+  For generic $p_1, \dots, p_r$, there is no non-trivial linear relation among the polynomials $Q_{i,j}$ for $j \in \{1, \dots, r+1\} \setminus \{i\}$.
+\end{lemma}
+\begin{proof}
+  Suppose we had a linear relation
+  \[ \sum l_j Q_{i,j} = 0.\]
+  Divide throughout by $\frac{(x-a_1)^2 \dots (x-a_r)^2}{(x-a_i)^2}$.
+  Then we get the relation
+  \[ \sum_{j=1}^r l_j \frac{p_j}{(x-a_j)^2} + l_{r+1} = 0.\]
+  If $l_j \neq 0$ for some $j$ with $1 \leq j \leq r$, then we have a pole on the left hand side at $x = a_j$, but not on the right hand side; a contradiction.
+  Therefore, we must have $l_j = 0$ for all $j$ with $1 \leq j \leq r$, and hence also $l_{r+1} = 0$.
+  Thus, the relation was trivial.
+\end{proof}
+\begin{lemma}\label{lem:jacobian}
+  The image of the map
+  \[ H^0(\O(2)) \to H^0(\O(2))\]
+  given by
+  \[ q \mapsto [q, (x-a)^2]\]
+  is
+  \[ (x-a) \cdot H^0(\O(1)).\]
+\end{lemma}
+\begin{proof}
+  Straightforward.
+\end{proof}
+\begin{lemma}\label{lem:imageXi}
+  The image of the map
+  \[ H^0(\O(2)) \otimes \langle  E_{j,i} \mid j \in \{1, \dots, r+1\} \setminus \{i\} \rangle \to H^0(\O(2r)) \otimes X_i\]
+  is
+  \[ (x-a) \cdot H^0(\O(2r-1)) \otimes X_i.\]
+\end{lemma}
+\begin{proof}
+  By the computation in \eqref{eq:off_diagonal} and \eqref{eq:bottom} and \autoref{lem:jacobian} the image of the map above is the same as the image of the multiplication map
+  \[ \langle Q_{i,j} \mid j \in \{1, \dots, r+1\} \setminus \{i\} \rangle \otimes (x-a) \cdot H^0(\O(1)) \to H^0(\O(2r)) \otimes X_i.\]
+  By \autoref{lem:no_linear_syzygy}, the map
+  \[ \langle Q_{i,j} \mid j \in \{1, \dots, r+1\} \setminus \{i\} \rangle \otimes H^0(\O(1)) \to H^0(\O(2r-1))\]
+  is injective.
+  Since both sides have dimension $2r$, the map is an isomorphism.
+  The proof is now complete.
+\end{proof}
+
+By \autoref{lem:imageXi}, the cokernel of the map
+\[ H^0(\O(2)) \otimes \langle  E_{j,i} \mid j \in \{1, \dots, r+1\} \setminus \{i\} \rangle \to H^0(\O(2r)) \otimes X_i\]
+is $\C \otimes X_i$, where the map $H^0(\O(2r)) \to \C$ is the evaluation at $a_i$.
+Putting all these maps together for various $i$, we get that the cokernel of the map
+\[ H^0(\O(2)) \otimes \langle  E_{j,i} \mid j \neq i \rangle \to H^0(\O(2r)) \otimes \langle  X_1, \dots, X_r \rangle\]
+is $\C \otimes \langle  X_1, \dots, X_r \rangle$,
+where the map
+\begin{equation}\label{eqn:remaining}
+  H^0(\O(2)) \otimes \langle  X_1, \dots, X_r \rangle \to \C \otimes \langle  X_1, \dots, X_r \rangle
+\end{equation}
+is given on $H^0(\O(2r)) \otimes X_i$ by the evaluation at $a_i$.
+
+It remains to show that the map
+\begin{equation}\label{eq:remaining_diagonal}
+  H^0(\O(2)) \otimes \langle  E_{i,i} \rangle \to \C \otimes \langle  X_1, \dots, X_r \rangle,
+\end{equation}
+obtained by composing \eqref{eqn:mainmap} and \eqref{eqn:remaining}, is surjective.
+Recall from \eqref{eq:diagonal} that the image of $q E_{i,i}$ is given by $R(\Lambda_i(q))$.
+Suppose $q = (x-a_i)l$, where $l(a_i) \neq 0$.
+Then, we have
+\[ R(\Lambda_i(q))_{x = a_j} = 0\]
+for $j \neq i$, and
+\[ R(\Lambda_i(q))_{x = a_i} = \pm l(a_i) \prod_{j \neq i}(a_i-a_j)^2 p_i(a_i) X_i.\]
+Thus, up to scaling, $qE_{i,i}$ maps to $X_i$ under \eqref{eq:remaining_diagonal}.
+Therefore, the map \eqref{eq:remaining_diagonal} is surjective.
+
+
+\subsection{The ``two''} % (fold)
+\label{sub:the_}
+Given a general triple $\{a,b,c\}$ of binary quadratic forms, we can create the three quartic binary forms $a[b,c], b[c,a], c[a,b]$, where $[p,q]$ denotes $p_{x}q_{y} - p_{y}q_{x}$.  As we know, these three forms are actually linearly dependent, yielding a pencil of binary quartics. 
+
+In this way, we obtain an {\sl a priori} rational map
+\begin{align*}
+ 	D: H \dashrightarrow G(1,4)
+ \end{align*} 
+ where $H$ denotes the Hilbert scheme of $3$ points on $\P^{2}$. 
+
+ The main observation is: 
+ \begin{proposition}
+ 	\label{proposition:Dregular}
+ 	The rational map $D$ extends to a regular map.
+ \end{proposition}
+
+ \begin{proof}
+ 	This is best seen by visualizing $D$ geometrically, and noting that the geometric construction makes sense at every point of $H$.
+
+ 	If $\{a,b,c\}$ is a general subset of $\P^{2}$, then the quartic pencil $D(\{a,b,c\})$ is obtained as follows.  Recall that in $\P^{2}$ we have the canonical diagonal conic $C$ parametrizing square forms. A point $a \in \P^{2}$ defines a line $Pol(a) \subset \P^{2}$ spanned by the two points of $C$ which correspond to the roots of $a$. Furthermore, a pair of points $b,c \in \P^{2}$ defines the line $\overline{b,c} \subset \P^{2}$. 
+
+ 	To the triple $\{a,b,c\}$ we attach the triple of pairs of lines $Pol(a) \cup \overline{b,c}$ (and permutations), which cut the conic $C$ at $3$ members of a degree $4$ pencil. 
+
+ 	This geometric construction works even for non-reduced schemes.  For example, if $Z \subset \P^{2}$ is a fat point concentrated at a point $a \in \P^{2}$, we assign the degree $4$ pencil on $C$ as: The degree $2$ pencil corresponding to $Pol(a)$ with two base points at $Pol(a) \cap C$.
+ \end{proof}
+
+ The map $D$ is only generically finite; the locus of collinear triples is contracted, and has the same image as the locus of fat schemes.   However, it is easy to exhibit a point in $G$ over which there are exactly two preimages. 
+
+ \begin{lemma}
+ 	\label{lemma:TwoPreimages}
+ 	Let $\Lambda \in G(1,4)$ denote the unique pencil with simple base points at $0,1,\infty$ in $\P^{1}$. Then the preimage $D^{-1}(\Lambda)$ consists of two non-reduced points.
+ \end{lemma}
+
+ \begin{proof}
+ 	The two configurations are described as follows: View the three points $0,1,\infty$ on the diagonal conic $C$. Then the triple $\{0,1,\infty\}$ clearly maps to $\Lambda$, as does the triangle created by $Pol(0), Pol(1), Pol(\infty)$. 
+
+ 	A simple first-order analysis shows that any non-trivial first-order deformation of either of these configurations will have the effect of either removing the base-points, or moving their location. 
+
+ 	Furthermore, it is easy to see that these are the only two configurations giving rise to the pencil $\Lambda$. 
+ \end{proof}
+% subsection the_ (end)
+
+
+
+ \bibliographystyle{amsalpha}
+   \bibliography{CommonMath}
+
+\end{document}

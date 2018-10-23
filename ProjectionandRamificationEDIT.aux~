@@ -1,0 +1,286 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{MANAFlenn:}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{1}{Introduction}}{2}{section.1}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{1.1}{Results}}{2}{subsection.1.1}}
+\@writefile{loe}{\contentsline {maintheorem}{\numberline {A}Theorem}{2}{maintheorem.1}}
+\newlabel{theorem:Main}{{A}{2}{}{maintheorem.1}{}}
+\@writefile{loe}{\contentsline {maintheorem}{\numberline {B}Theorem}{2}{maintheorem.2}}
+\newlabel{Thm:Counterexamples}{{B}{2}{}{maintheorem.2}{}}
+\@writefile{loe}{\contentsline {maintheorem}{\numberline {C}Theorem}{2}{maintheorem.3}}
+\newlabel{theorem:minimaldegree}{{C}{2}{}{maintheorem.3}{}}
+\citation{Flenner2004}
+\citation{MANAFlenn:}
+\@writefile{loe}{\contentsline {maintheorem}{\numberline {D}Theorem}{3}{maintheorem.4}}
+\newlabel{theorem:rationalnormalscrolls}{{D}{3}{}{maintheorem.4}{}}
+\@writefile{loe}{\contentsline {remark}{\numberline {1.1}\MakeUppercase  {r}emark}{3}{remark.1.1}}
+\@writefile{loe}{\contentsline {remark}{\numberline {1.2}\MakeUppercase  {r}emark}{3}{remark.1.2}}
+\@writefile{loe}{\contentsline {remark}{\numberline {1.3}\MakeUppercase  {r}emark}{3}{remark.1.3}}
+\@writefile{loe}{\contentsline {remark}{\numberline {1.4}\MakeUppercase  {r}emark}{3}{remark.1.4}}
+\@writefile{loe}{\contentsline {remark}{\numberline {1.5}\MakeUppercase  {r}emark}{3}{remark.1.5}}
+\@writefile{loe}{\contentsline {observation}{\numberline {1}Observation}{3}{observation.1}}
+\newlabel{observation:simple}{{1}{3}{}{observation.1}{}}
+\citation{MANAFlenn:}
+\citation{MANAFlenn:}
+\citation{GOLDBERG1991129}
+\@writefile{loe}{\contentsline {remark}{\numberline {1.6}\MakeUppercase  {r}emark}{4}{remark.1.6}}
+\@writefile{loe}{\contentsline {remark}{\numberline {1.7}\MakeUppercase  {r}emark}{4}{remark.1.7}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{1.2}{Projection, ramification, and enumerative geometry}}{4}{subsection.1.2}}
+\@writefile{loe}{\contentsline {problem}{\numberline {1.8}\MakeUppercase  {p}roblem}{4}{problem.1.8}}
+\newlabel{problem:degree}{{1.8}{4}{}{problem.1.8}{}}
+\@writefile{loe}{\contentsline {exampletheorem}{\numberline {A}Theorem-Example}{4}{exampletheorem.1}}
+\newlabel{Thm:Examples}{{A}{4}{}{exampletheorem.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{1.3}{Comparison with related work}}{4}{subsection.1.3}}
+\citation{sottile2000}
+\citation{Erem/Gabr1}
+\citation{1064-5632-63-6-A03}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{1.3.1}{Wronski maps and Shapiro conjecture}}{5}{subsubsection.1.3.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{1.3.2}{Catalan numbers vs. Hurwitz numbers, and Chisini's conjecture}}{5}{subsubsection.1.3.2}}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{2}{Proof of \autoref  {theorem:Main}}}{5}{section.2}}
+\newlabel{sec:proof_of_theorem:main}{{2}{5}{Proof of \autoref {theorem:Main}}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{2.1}{Notation and conventions}}{5}{subsection.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{2.2}{Non-defective line bundles}}{6}{subsection.2.2}}
+\@writefile{loe}{\contentsline {definition}{\numberline {2.1}Definition}{6}{definition.2.1}}
+\newlabel{definition:Genericallynon-defective}{{2.1}{6}{}{definition.2.1}{}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {2.2}Proposition}{6}{proposition.2.2}}
+\newlabel{prop:dimension}{{2.2}{6}{}{proposition.2.2}{}}
+\newlabel{prop:dimP}{{2.2}{6}{}{proposition.2.2}{}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {2.3}Proposition}{6}{proposition.2.3}}
+\newlabel{prop:dimensionCriterion}{{2.3}{6}{}{proposition.2.3}{}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {2.4}Proposition}{7}{proposition.2.4}}
+\newlabel{prop:ordinarydoublepoint}{{2.4}{7}{}{proposition.2.4}{}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {2.5}Proposition}{7}{proposition.2.5}}
+\newlabel{prop:genericSeparateTangents}{{2.5}{7}{}{proposition.2.5}{}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {2.6}Proposition}{7}{proposition.2.6}}
+\newlabel{prop:blowuppoint}{{2.6}{7}{}{proposition.2.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{2.3}{Projections}}{8}{thmt@dummyctr.dummy.21}}
+\@writefile{loe}{\contentsline {definition}{\numberline {2.7}Definition}{8}{definition.2.7}}
+\@writefile{loe}{\contentsline {definition}{\numberline {2.8}Definition}{8}{definition.2.8}}
+\newlabel{definition:properlyramified}{{2.8}{8}{}{definition.2.8}{}}
+\@writefile{loe}{\contentsline {corollary}{\numberline {2.9}Corollary}{8}{corollary.2.9}}
+\newlabel{cor:properlyramified}{{2.9}{8}{}{corollary.2.9}{}}
+\newlabel{vectorspacemap}{{2.1}{8}{Projections}{equation.2.1}{}}
+\@writefile{loe}{\contentsline {definition}{\numberline {2.10}Definition}{8}{definition.2.10}}
+\newlabel{def:ProjectionRamification}{{2.10}{8}{}{definition.2.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{2.4}{Proof of main result}}{8}{subsection.2.4}}
+\@writefile{loe}{\contentsline {definition}{\numberline {2.11}Definition}{8}{definition.2.11}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {2.12}Theorem}{8}{theorem.2.12}}
+\newlabel{theorem:MainMain}{{2.12}{8}{}{theorem.2.12}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {2.13}Lemma}{8}{lemma.2.13}}
+\newlabel{lemma:tangentconeRam}{{2.13}{8}{}{lemma.2.13}{}}
+\newlabel{matrix}{{2.2}{9}{Proof of main result}{equation.2.2}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {2.14}Lemma}{9}{lemma.2.14}}
+\newlabel{lemma:basepointfree}{{2.14}{9}{}{lemma.2.14}{}}
+\newlabel{matrix2}{{2.3}{9}{Proof of main result}{equation.2.3}{}}
+\@writefile{loe}{\contentsline {corollary}{\numberline {2.15}Corollary}{11}{corollary.2.15}}
+\newlabel{cor:maintheorem}{{2.15}{11}{}{corollary.2.15}{}}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{3}{Proof of \autoref  {Thm:Counterexamples}}}{11}{section.3}}
+\newlabel{sec:proof_of_second_result}{{3}{11}{Proof of \autoref {Thm:Counterexamples}}{section.3}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.1}Theorem}{11}{theorem.3.1}}
+\newlabel{NonDominance}{{3.1}{11}{}{theorem.3.1}{}}
+\@writefile{loe}{\contentsline {remark}{\numberline {3.2}\MakeUppercase  {r}emark}{11}{remark.3.2}}
+\@writefile{loe}{\contentsline {remark}{\numberline {3.3}\MakeUppercase  {r}emark}{11}{remark.3.3}}
+\@writefile{loe}{\contentsline {corollary}{\numberline {3.4}Corollary}{11}{corollary.3.4}}
+\newlabel{Automorphism}{{3.1}{11}{Proof of \autoref {Thm:Counterexamples}}{equation.3.1}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {3.5}Lemma}{11}{lemma.3.5}}
+\newlabel{DimensionBound}{{3.5}{12}{}{lemma.3.5}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {3.6}Lemma}{13}{lemma.3.6}}
+\newlabel{REquation}{{3.2}{13}{}{equation.3.2}{}}
+\newlabel{RamEquation}{{3.6}{13}{}{equation.3.2}{}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {3.7}Proposition}{13}{proposition.3.7}}
+\newlabel{KeyProposition}{{3.7}{13}{}{proposition.3.7}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {3.8}Lemma}{13}{lemma.3.8}}
+\newlabel{LinkLemma}{{3.8}{13}{}{lemma.3.8}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {3.9}Lemma}{14}{lemma.3.9}}
+\newlabel{TrueLemma}{{3.9}{14}{}{lemma.3.9}{}}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{4}{Proof of \autoref  {theorem:minimaldegree}}}{14}{section.4}}
+\newlabel{sec:proof_of_theorem:minimaldegree}{{4}{14}{Proof of \autoref {theorem:minimaldegree}}{section.4}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {4.1}Lemma}{14}{lemma.4.1}}
+\newlabel{lemma:KYmH}{{4.1}{14}{}{lemma.4.1}{}}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{5}{Proof of \autoref  {theorem:rationalnormalscrolls}}}{15}{section.5}}
+\newlabel{sec:proof_of_theorem:rationalnormalscrolls}{{5}{15}{Proof of \autoref {theorem:rationalnormalscrolls}}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{5.1}{Background on limit linear series}}{15}{subsection.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{5.2}{Redefining $\rho _{X}$ for scrolls}}{15}{subsection.5.2}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{5.3}{Dominance of $\rho _{X}$ when $E = \EuScript  O(2)^{n}$}}{15}{subsection.5.3}}
+\newlabel{eq:off_diagonal}{{5.1}{16}{Dominance of $\rho _{X}$ when $E = \O (2)^{n}$}{equation.5.1}{}}
+\newlabel{eq:bottom}{{5.2}{16}{Dominance of $\rho _{X}$ when $E = \O (2)^{n}$}{equation.5.2}{}}
+\newlabel{eq:diagonal}{{5.3}{16}{Dominance of $\rho _{X}$ when $E = \O (2)^{n}$}{equation.5.3}{}}
+\newlabel{eqn:mainmap}{{5.4}{16}{Dominance of $\rho _{X}$ when $E = \O (2)^{n}$}{equation.5.4}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {5.1}Lemma}{16}{lemma.5.1}}
+\newlabel{lem:no_linear_syzygy}{{5.1}{16}{}{lemma.5.1}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {5.2}Lemma}{17}{lemma.5.2}}
+\newlabel{lem:jacobian}{{5.2}{17}{}{lemma.5.2}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {5.3}Lemma}{17}{lemma.5.3}}
+\newlabel{lem:imageXi}{{5.3}{17}{}{lemma.5.3}{}}
+\newlabel{eqn:remaining}{{5.5}{17}{Dominance of $\rho _{X}$ when $E = \O (2)^{n}$}{equation.5.5}{}}
+\newlabel{figure:earthsundaynight}{{6.1}{18}{Quadric hypersurfaces}{subsection.6.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces For the quadric $x^{2}+y^{2}+z^{2}=1$, it is visually clear that the ramification curve determines the point of projection.}}{18}{figure.1}}
+\newlabel{eq:remaining_diagonal}{{5.6}{18}{Dominance of $\rho _{X}$ when $E = \O (2)^{n}$}{equation.5.6}{}}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{6}{Enumerative Problems}}{18}{section.6}}
+\newlabel{sec:enumerativeproblems}{{6}{18}{Enumerative Problems}{section.6}{}}
+\newlabel{sub:a_quadric_surface}{{6.1}{18}{Quadric hypersurfaces}{subsection.6.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{6.1}{Quadric hypersurfaces}}{18}{subsection.6.1}}
+\newlabel{sub:the_veronese_surface}{{6.2}{19}{The Veronese surface}{subsection.6.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{6.2}{The Veronese surface}}{19}{subsection.6.2}}
+\newlabel{sec:rational_curves_in_projective_space}{{6.3}{19}{Rational curves, the differential construction, and case of Segre varieties}{subsection.6.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{6.3}{Rational curves, the differential construction, and case of Segre varieties}}{19}{subsection.6.3}}
+\@writefile{loe}{\contentsline {definition}{\numberline {6.1}Definition}{20}{definition.6.1}}
+\@writefile{loe}{\contentsline {remark}{\numberline {6.2}\MakeUppercase  {r}emark}{20}{remark.6.2}}
+\@writefile{loe}{\contentsline {remark}{\numberline {6.3}\MakeUppercase  {r}emark}{20}{remark.6.3}}
+\@writefile{loe}{\contentsline {problem}{\numberline {6.4}\MakeUppercase  {p}roblem}{20}{problem.6.4}}
+\newlabel{problem:differential}{{6.4}{20}{}{problem.6.4}{}}
+\@writefile{loe}{\contentsline {remark}{\numberline {6.5}\MakeUppercase  {r}emark}{20}{remark.6.5}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {6.6}Proposition}{20}{proposition.6.6}}
+\newlabel{proposition:trivialdegree}{{6.6}{20}{}{proposition.6.6}{}}
+\@writefile{loe}{\contentsline {definition}{\numberline {6.7}Definition}{20}{definition.6.7}}
+\newlabel{definition:pointlinescroll}{{6.7}{20}{}{definition.6.7}{}}
+\@writefile{loe}{\contentsline {remark}{\numberline {6.8}\MakeUppercase  {r}emark}{20}{remark.6.8}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {6.9}Proposition}{20}{proposition.6.9}}
+\newlabel{proposition:transfer}{{6.9}{20}{}{proposition.6.9}{}}
+\citation{con:11}
+\@writefile{loe}{\contentsline {proposition}{\numberline {6.10}Proposition}{21}{proposition.6.10}}
+\newlabel{proposition:equivalence}{{6.10}{21}{}{proposition.6.10}{}}
+\@writefile{loe}{\contentsline {corollary}{\numberline {6.11}Corollary}{21}{corollary.6.11}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{6.4}{Quartic surface scrolls, trinodal quartics, and their perspective conics}}{21}{subsection.6.4}}
+\newlabel{sec:trinodal}{{6.4.1}{21}{Trinodal quartics and their perspective conics}{subsubsection.6.4.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{6.4.1}{Trinodal quartics and their perspective conics}}{21}{subsubsection.6.4.1}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {6.12}Theorem}{21}{theorem.6.12}}
+\newlabel{theorem:DifferentialConstruction2}{{6.12}{21}{}{theorem.6.12}{}}
+\@writefile{loe}{\contentsline {definition}{\numberline {6.13}Definition}{21}{definition.6.13}}
+\newlabel{definition:perspectiveconic}{{6.13}{21}{}{definition.6.13}{}}
+\@writefile{loe}{\contentsline {remark}{\numberline {6.14}\MakeUppercase  {r}emark}{21}{remark.6.14}}
+\newlabel{figure:perspectiveconic}{{6.4.1}{22}{Trinodal quartics and their perspective conics}{remark.6.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The red curve is the trinodal quartic $R$ given by equation $\frac  {1}{x^{2}}+\frac  {1}{y^{2}} = 1$. The black curve $C$, given by $x^{2} + y^{2} = 4$, is one of its perspective conics. As one slides the black point once along $C$, the corresponding red point sweeps out $R$ exactly one time.}}{22}{figure.2}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {6.15}Proposition}{22}{proposition.6.15}}
+\newlabel{proposition:perspectivesections}{{6.15}{22}{}{proposition.6.15}{}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {6.16}Proposition}{22}{proposition.6.16}}
+\newlabel{proposition:perspectivetangent}{{6.16}{22}{}{proposition.6.16}{}}
+\@writefile{loe}{\contentsline {remark}{\numberline {6.17}\MakeUppercase  {r}emark}{22}{remark.6.17}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{6.5}{Reinterpreting the perspective conics}}{23}{subsection.6.5}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {6.18}Lemma}{23}{lemma.6.18}}
+\newlabel{lemma:fourtangentconic}{{6.18}{23}{}{lemma.6.18}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {6.19}Lemma}{23}{lemma.6.19}}
+\newlabel{lemma:sqrtcanonical}{{6.19}{23}{}{lemma.6.19}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {6.20}Lemma}{23}{lemma.6.20}}
+\newlabel{lemma:monodromy}{{6.20}{23}{}{lemma.6.20}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {6.21}Lemma}{23}{lemma.6.21}}
+\newlabel{lemma:linesthroughnode}{{6.21}{23}{}{lemma.6.21}{}}
+\@writefile{loe}{\contentsline {corollary}{\numberline {6.22}Corollary}{24}{corollary.6.22}}
+\newlabel{corollary:oneminusone}{{6.22}{24}{}{corollary.6.22}{}}
+\@writefile{loe}{\contentsline {corollary}{\numberline {6.23}Corollary}{24}{corollary.6.23}}
+\newlabel{corollary:fourtangentsqrt}{{6.23}{24}{}{corollary.6.23}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {6.24}Theorem}{24}{theorem.6.24}}
+\newlabel{theorem:perspectiveconics}{{6.24}{24}{}{theorem.6.24}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {6.25}Lemma}{24}{lemma.6.25}}
+\newlabel{lemma:Cremona}{{6.25}{24}{}{lemma.6.25}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {6.26}Lemma}{24}{lemma.6.26}}
+\newlabel{lemma:liftingX}{{6.26}{24}{}{lemma.6.26}{}}
+\@writefile{loe}{\contentsline {corollary}{\numberline {6.27}Corollary}{25}{corollary.6.27}}
+\newlabel{corollary:perspectiveconicsformaconic}{{6.27}{25}{}{corollary.6.27}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{6.5.1}{The explicit differential construction for trinodal quartics}}{25}{subsubsection.6.5.1}}
+\@writefile{loe}{\contentsline {definition}{\numberline {6.28}Definition}{25}{definition.6.28}}
+\newlabel{definition:nodemap}{{6.28}{25}{}{definition.6.28}{}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {6.29}Proposition}{25}{proposition.6.29}}
+\newlabel{proposition:symtwoptwo}{{6.29}{25}{}{proposition.6.29}{}}
+\@writefile{loe}{\contentsline {definition}{\numberline {6.30}Definition}{26}{definition.6.30}}
+\newlabel{definition:pi}{{6.30}{26}{}{definition.6.30}{}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {6.31}Proposition}{26}{proposition.6.31}}
+\newlabel{proposition:reinterpretTangent}{{6.31}{26}{}{proposition.6.31}{}}
+\@writefile{loe}{\contentsline {definition}{\numberline {6.32}Definition}{26}{definition.6.32}}
+\newlabel{definition:jacobiantwoquadrics}{{6.32}{26}{}{definition.6.32}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {6.33}Theorem}{26}{theorem.6.33}}
+\newlabel{theorem:onlyapencil}{{6.33}{26}{}{theorem.6.33}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {6.34}Theorem}{27}{theorem.6.34}}
+\newlabel{sub:surfaces}{{6.6}{27}{Eccentric surface scrolls}{subsection.6.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{6.6}{Eccentric surface scrolls}}{27}{subsection.6.6}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {6.35}Proposition}{27}{proposition.6.35}}
+\newlabel{proposition:rhobirationalsurfaces}{{6.35}{27}{}{proposition.6.35}{}}
+\newlabel{equation:jacobsurface}{{6.1}{27}{Eccentric surface scrolls}{equation.6.1}{}}
+\newlabel{sub:eccentric_threefolds}{{6.7}{27}{Eccentric threefold scrolls}{subsection.6.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{6.7}{Eccentric threefold scrolls}}{27}{subsection.6.7}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {6.36}Proposition}{27}{proposition.6.36}}
+\newlabel{proposition:threefold}{{6.36}{27}{}{proposition.6.36}{}}
+\newlabel{eq:jacobianthreefold}{{6.2}{28}{Eccentric threefold scrolls}{equation.6.2}{}}
+\newlabel{gammaEq}{{6.3}{28}{Eccentric threefold scrolls}{equation.6.3}{}}
+\newlabel{firstEquations}{{6.4}{28}{Eccentric threefold scrolls}{equation.6.4}{}}
+\newlabel{secondEquation}{{6.5}{28}{Eccentric threefold scrolls}{equation.6.5}{}}
+\newlabel{alphasbetas}{{6.6}{28}{Eccentric threefold scrolls}{equation.6.6}{}}
+\@writefile{loe}{\contentsline {corollary}{\numberline {6.37}Corollary}{29}{corollary.6.37}}
+\newlabel{corollary:maxVariation3Scrolls}{{6.37}{29}{}{corollary.6.37}{}}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{7}{A network of webs, pencils, and points.}}{29}{section.7}}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{8}{Some more GIT}}{30}{section.8}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{8.1}{A moduli space of sequences}}{30}{subsection.8.1}}
+\newlabel{eqn:ABseq}{{8.1}{30}{A moduli space of sequences}{equation.8.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{8.2}{The differential construction}}{30}{subsection.8.2}}
+\@writefile{loe}{\contentsline {question}{\numberline {8.1}Question}{31}{question.8.1}}
+\@writefile{loe}{\contentsline {remark}{\numberline {8.2}\MakeUppercase  {r}emark}{31}{remark.8.2}}
+\@writefile{loe}{\contentsline {remark}{\numberline {8.3}\MakeUppercase  {r}emark}{31}{remark.8.3}}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{9}{A Porteous approach}}{31}{section.9}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {9.1}Proposition}{32}{proposition.9.1}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {9.2}Proposition}{33}{proposition.9.2}}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{10}{Maximal variation using limit linear series}}{33}{section.10}}
+\citation{oss:14}
+\citation{tei-i-big:91}
+\newlabel{ieqn:lls}{{10.1}{34}{Maximal variation using limit linear series}{equation.10.1}{}}
+\@writefile{loe}{\contentsline {definition}{\numberline {10.1}Definition\thmtformatoptarg {Rough}}{35}{definition.10.1}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{10.1}{A closer look at linear series with complementary vanishing}}{35}{subsection.10.1}}
+\newlabel{eqn:generic}{{10.2}{36}{A closer look at linear series with complementary vanishing}{equation.10.2}{}}
+\newlabel{eqn:complementary}{{10.3}{36}{A closer look at linear series with complementary vanishing}{equation.10.3}{}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {10.2}Proposition}{36}{proposition.10.2}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {10.3}Proposition}{36}{proposition.10.3}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {10.4}Proposition}{36}{proposition.10.4}}
+\newlabel{prop:complementary_to_normal}{{10.4}{36}{}{proposition.10.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{10.2}{Sketch of proof of dominance}}{36}{subsection.10.2}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {10.5}Proposition}{37}{proposition.10.5}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {10.6}Proposition}{37}{proposition.10.6}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {10.7}Proposition}{37}{proposition.10.7}}
+\@writefile{loe}{\contentsline {remark}{\numberline {10.8}\MakeUppercase  {r}emark}{37}{remark.10.8}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{10.3}{Maximal variation for $\EuScript  O(2)^r$}}{37}{subsection.10.3}}
+\newlabel{eq:off_diagonal}{{10.4}{38}{Maximal variation for $\O (2)^r$}{equation.10.4}{}}
+\newlabel{eq:bottom}{{10.5}{38}{Maximal variation for $\O (2)^r$}{equation.10.5}{}}
+\newlabel{eq:diagonal}{{10.6}{38}{Maximal variation for $\O (2)^r$}{equation.10.6}{}}
+\newlabel{eqn:mainmap}{{10.7}{38}{Maximal variation for $\O (2)^r$}{equation.10.7}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {10.9}Lemma}{39}{lemma.10.9}}
+\newlabel{lem:no_linear_syzygy}{{10.9}{39}{}{lemma.10.9}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {10.10}Lemma}{39}{lemma.10.10}}
+\newlabel{lem:jacobian}{{10.10}{39}{}{lemma.10.10}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {10.11}Lemma}{39}{lemma.10.11}}
+\newlabel{lem:imageXi}{{10.11}{39}{}{lemma.10.11}{}}
+\newlabel{eqn:remaining}{{10.8}{40}{Maximal variation for $\O (2)^r$}{equation.10.8}{}}
+\newlabel{eq:remaining_diagonal}{{10.9}{40}{Maximal variation for $\O (2)^r$}{equation.10.9}{}}
+\newlabel{sub:the_}{{10.4}{40}{The ``two''}{subsection.10.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{10.4}{The ``two''}}{40}{subsection.10.4}}
+\@writefile{loe}{\contentsline {proposition}{\numberline {10.12}Proposition}{40}{proposition.10.12}}
+\newlabel{proposition:Dregular}{{10.12}{40}{}{proposition.10.12}{}}
+\bibstyle{amsalpha}
+\bibdata{CommonMath}
+\bibcite{Erem/Gabr1}{EG02}
+\bibcite{MANAFlenn:}{FM98}
+\bibcite{Flenner2004}{FM04}
+\bibcite{GOLDBERG1991129}{Gol91}
+\bibcite{1064-5632-63-6-A03}{Kul99}
+\bibcite{sottile2000}{Sot00}
+\newlabel{tocindent-1}{0pt}
+\newlabel{tocindent0}{13.9917pt}
+\newlabel{tocindent1}{24.94171pt}
+\newlabel{tocindent2}{38.47682pt}
+\newlabel{tocindent3}{0pt}
+\@writefile{loe}{\contentsline {lemma}{\numberline {10.13}Lemma}{41}{lemma.10.13}}
+\newlabel{lemma:TwoPreimages}{{10.13}{41}{}{lemma.10.13}{}}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{}{References}}{41}{section*.2}}

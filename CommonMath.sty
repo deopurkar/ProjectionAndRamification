@@ -1,0 +1,61 @@
+%%% Provides a command for creating new theorems with a counter.
+
+\RequirePackage{hyperref}
+\RequirePackage{amsmath, amsthm, amssymb, thmtools, thm-restate}
+
+\@ifundefined{theorem}{
+  \declaretheorem[parent=section]{theorem}
+  \newtheorem*{theorem*}{Theorem}
+}{}
+
+\@ifundefined{corollary}{
+  \declaretheorem[sibling=theorem]{corollary}
+}{}
+
+\@ifundefined{lemma}{
+  \declaretheorem[sibling=theorem]{lemma}
+}{}
+
+\@ifundefined{proposition}{
+  \declaretheorem[sibling=theorem]{proposition}
+}{}
+
+\@ifundefined{conjecture}{
+  \declaretheorem[sibling=theorem]{conjecture}
+}{}
+
+\@ifundefined{problem}{
+  \declaretheorem[sibling=theorem]{problem}
+}{}
+
+\@ifundefined{question}{
+  \declaretheorem[sibling=theorem]{question}
+  \newtheorem*{question*}{Question}
+}{}
+
+\@ifundefined{claim}{
+  \declaretheorem[unnumbered]{claim}
+}{}
+
+\@ifundefined{definition}{
+  \declaretheorem[sibling=theorem, style=definition]{definition}
+}{}
+
+\@ifundefined{exercise}{
+  \declaretheorem[sibling=theorem, style=definition]{exercise}
+}{}
+
+\@ifundefined{example}{
+  \declaretheorem[sibling=theorem, style=definition]{example}
+}{}
+
+\@ifundefined{remark}{
+  \declaretheorem[sibling=theorem, style=remark]{remark}
+}{}
+
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\chapterautorefname}{Chapter}
+\renewcommand{\subsectionautorefname}{Subsection}
+\renewcommand{\subsubsectionautorefname}{\subsectionautorefname}
+\newcommand{\subfigureautorefname}{\figureautorefname}
+

@@ -1,0 +1,64 @@
+# TeX-generated files and other document files
+**/*.pdf
+**/*.fls
+**/*.dvi
+**/*.aux
+**/*.out
+**/*.log
+**/*.bbl
+**/*.blg
+**/*.thm
+**/*.toc
+**/*.nav
+**/*.snm
+**/*.doc
+**/*.docx
+**/*.xls
+**/*.ps
+**/*.ps.imposed
+**/*.gnuplot
+**/*.table
+**/*.djvu
+**/*.csv
+**/*.fdb_latexmk
+**/auto/
+**/_region_.tex
+
+# Compiled source
+**/*.class
+**/*.elc
+**/*.beam
+
+# Compressed files
+**/*.7z
+**/*.zip
+**/*.gz
+**/*.tar
+**/*.jar
+**/*.rar
+**/*.iso
+
+# Media files
+**/*.mp3
+**/*.wav
+**/*.avi
+**/*.mp4
+**/*.mpeg
+**/*.jpg
+**/*.JPG
+**/*.jpeg
+**/*.gif
+**/*.png
+**/*.xpm
+
+
+# Dolphin's shenanigans
+.directory
+
+# Other
+**/*~
+**/*.ignore
+
+# Dropbox files
+**/*.dropbox.attr
+**/*.dropbox

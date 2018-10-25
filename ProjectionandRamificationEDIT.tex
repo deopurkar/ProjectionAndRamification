@@ -282,7 +282,7 @@ We plan to return to a more complete enumerative investigation of $\rho$ in a fu
 
 
 \subsection{Further remarks and questions}
-One of the most central enumerative problem concerning branch divisors, originating in the work of Hurwitz, is to compute the number of branched covers of the projective line with specified branch set in $\P^1$, called the Hurwitz number.
+One of the  central enumerative problems concerning branch divisors, originating in the work of Hurwitz, is to compute the number of branched covers of the projective line with specified branch set in $\P^1$, called the Hurwitz number.
 As is well known, the Hurwitz numbers are difficult to compute, but they exhibit remarkable structure.
 There is a related question of computing the number of rational functions on $\P^1$ with a prescribed ramification set.
 This question is much more elementary, and yields the Catalan numbers, as we have seen.
@@ -1534,7 +1534,7 @@ To conclude, we argue the first map in \eqref{eq:compose} is birational by const
   The collection of singular conics $L_{p} \cup L_{p}'$ parametrized by $p \in C$ induces a map $C \to \P^{5}$, whose degree is $3$, since  through a general point in $\P^{2}$ there pass $3$ of the lines $L_{p}$.  Furthermore, a divisor class computation shows that the node point $L_{p} \cap L_{p'}$ is again on $C$. Hence the image of $C \to \P^{5}$ spans a plane which by construction is the desired net of conics $N$ whose locus of nodes is $C$.
 
 
-\subsection{Quartic surface scroll} Our next objective is to prove that $ \deg \rho_{X} = 2$ for a generic quartic surface scroll $X \subset \P^{2}$.  Our proof uncovers a  rich geometric picture similar to the case of the Veronese surface in the previous subsection.  
+\subsection{Quartic surface scroll} Our next objective is to prove that $ \deg \rho_{X} = 2$ for a generic quartic surface scroll $X \subset \P^{5}$.  Our proof uncovers a  rich geometric picture similar to the case of the Veronese surface in the previous subsection.  
 
 
 We begin with the following seemingly unrelated geometric figure: $C \subset \P^{2}$ is a smooth cubic curve, $a \in \P^{2} \setminus X$ a point, and $Q \subset \P^{2}$ the {\sl polar conic} of $a$ with respect to $C$ -- the unique conic which passes through the six points of ramification on $C$ of the projection from $a$.   We assume $a$ is chosen so that $Q$ is a smooth conic. 
@@ -1542,7 +1542,7 @@ We begin with the following seemingly unrelated geometric figure: $C \subset \P^
 To set notation moving forward, if $x \in \P^{2}$ is any point, we let $P_{x}(C)$ denote the polar conic of $x$ with respect to $C$.  Similarly, we let $P_{x}(Q)$ denote the polar line of $x$ with respect to the conic $Q$.
 
 \begin{lemma}\label{lemma:basicsaboutHessian}
-The Hessian $Hess(C) \subset \P^{2}$ consists of the points $x$ such that $P_{x}(C)$ is singular, and if $C$ is not a Fermat cubic $P_{x}(C)$ is the union of two distinct lines.  Furthermore, if $x \in Hess(C)$, then the unique singularity $s(x)$ of $P_{x}(C)$ lies on $Hess(C)$, and the map $x \mapsto s(x)$ is translation by a $2$-torsion point $\eta \in Hess(C)$.
+The Hessian $Hess(C) \subset \P^{2}$ consists of the points $x$ such that $P_{x}(C)$ is singular, and if $C$ is not a Fermat cubic $P_{x}(C)$ is the union of two distinct lines for every $x \in Hess(C)$.  Furthermore, if $x \in Hess(C)$, then the unique singularity $s(x)$ of $P_{x}(C)$ lies on $Hess(C)$, and the map $x \mapsto s(x)$ is translation by a $2$-torsion point $\eta \in \Jac( Hess(C))$.
 \end{lemma} 
 
 \begin{proof}
@@ -1567,7 +1567,7 @@ Next suppose $\ell_{1},m_{1}, \ell_{2}, m_{2}, \ell_{3}, m_{3}$ are six distinct
     \item The three singular conics $\ell_{i} \cup m_{i}$ are polars of $C$.
     \item The triangle $\ell_{1}\ell_{2} \ell_{3}$ is {\sl conjugate} to the triangle $m_{1}  m_{2}  m_{3}$ with respect to $Q$.
 \end{enumerate}
-The second condition above simply means that the vertices of one triangle are poles of the lines of the other triangle.  By basic projective geometry, the two triangles are then in {\sl linear perspective}, i.e. the three points $x_{1} := \ell_{1} \cap m_{1}, x_{2} := \ell_{2} \cap m_{2}, x_{3} := \ell_{3} \cap m_{3}$ are collinear.
+The second condition above simply means that the vertices of one triangle are polar to the lines of the other triangle.  By basic projective geometry, the two triangles are then in {\sl linear perspective}, i.e. the three points $x_{1} := \ell_{1} \cap m_{1}, x_{2} := \ell_{2} \cap m_{2}, x_{3} := \ell_{3} \cap m_{3}$ are collinear.
 
 \begin{proposition}\label{proposition:importantReyeLineFact}
 Maintain the notation above, and recall the definition of Reye line from the previous subsection. The lines $P_{x_{i}}(Q)$ are Reye lines of the net of polar conics of $C$.

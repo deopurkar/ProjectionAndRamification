@@ -145,7 +145,7 @@ Nevertheless, it appears that the geometry of $\rho_X$ is related to some fascin
 
 \subsection{Maximal variation}
 Our focus is the following question.
-\begin{question}\autoref{q:maxvar}
+\begin{question}\label{q:maxvar}
   Is $\rho_{X}$ generically finite onto its image? In other words, is the image of $\rho_X$ of maximal possible dimension?
 \end{question}
 
@@ -201,6 +201,9 @@ The next result classifies $X \subset \P^n$ for which the source and the target 
 \end{maintheorem}
 Recall the list of varieties of minimal degree: rational normal curves, quadric hypersurfaces, the Veronese surface in $\P^5$, and rational normal scrolls.
 By \autoref{theorem:Main}, $\rho_X$ is dominant for the first three, so we are led to investigate the scrolls.
+It came to us as a surprise that $\rho_X$ is \emph{not} dominant for all scrolls (see \autoref{Thm:Counterexamples}).
+Nevertheless, it is dominant for most scrolls, which we now make precise.
+
 Recall that if $X \subset \P^n$ is a smooth rational normal scroll, then $X$ is isomorphic to the projectivization of an ample vector bundle $E$ on $\P^1$, and the embedding is given by the complete linear series $|\O_{\P E}(1)|$.
 \begin{maintheorem}
   \label{theorem:rationalnormalscrolls}
@@ -218,7 +221,7 @@ We prove \autoref{theorem:rationalnormalscrolls} by degeneration, using the theo
 \end{question}
 
 
-The following result summarizes our knowledge about the answers to \autoref{q:degree}.
+The following result summarizes our knowledge of the answers to \autoref{q:degree}.
 \begin{maintheorem}\label{Thm:Examples}\mbox{}
 \begin{enumerate}
   \item If $X \subset \P^{n}$ is a rational normal curve, then $\rho_X$ is regular and $\deg \rho_{X} = \frac{(2n-2)!}{n!(n-1)!}$.
@@ -247,7 +250,7 @@ They involve intricate classical projective geometry that intertwines cubic plan
 
 The cases of the most unbalanced surface and threefold scrolls follow from direct calculation.
 Note, however, that for the most unbalanced scroll in dimension 4 and higher, the projection-ramification map is not dominant.
-For the cases of the scrolls that remain, $\rho_X$ is not regular.
+For scrolls, $\rho_X$ is not regular.
 Furthermore, the complexity of the base locus of $\rho_X$ effectively blocks any straightforward application of the excess intersection formula.
 
 A smooth rational normal scroll $X \subset \P^n$ of degree $d$ and dimension $r$ is isomorphic to the projectivization of an ample vector bundle $E$ on $\P^1$, which in turn is isomorphic to a direct sum $\O(a_1) \oplus \dots \oplus \O(a_r)$ for positive integers $a_1, \dots, a_r$ satisfying $d = a_1 + \dots + a_r$.
@@ -282,7 +285,8 @@ We plan to return to a more complete enumerative investigation of $\rho$ in a fu
 
 
 \subsection{Further remarks and questions}
-One of the  central enumerative problems concerning branch divisors, originating in the work of Hurwitz, is to compute the number of branched covers of the projective line with specified branch set in $\P^1$, called the Hurwitz number.
+One of the  central enumerative problems concerning branch divisors, originating in the work of Hurwitz, is to compute the number of branched covers of the projective line with specified branch set in $\P^1$.
+This number is called the Hurwitz number.
 As is well known, the Hurwitz numbers are difficult to compute, but they exhibit remarkable structure.
 There is a related question of computing the number of rational functions on $\P^1$ with a prescribed ramification set.
 This question is much more elementary, and yields the Catalan numbers, as we have seen.
@@ -290,7 +294,7 @@ This question is much more elementary, and yields the Catalan numbers, as we hav
 In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, thanks to Chisini's conjecture (now Kulikov's theorem \cite{1064-5632-63-6-A03}).
 Kulikov's theorem asserts that a branched cover $S \to P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^{2}$, with finitely many well-understood exceptions.
 In contrast, the enumerative problem regarding ramification divisors persists in all dimensions, thanks to \autoref{theorem:minimaldegree}, and poses a significant challenge.
-In some sense, the ``branch'' and ``ramification'' enumerative stories trade places.
+In some sense, the ``branch'' and ``ramification'' enumerative stories trade places, at least in terms of difficulty, but perhaps also in terms of structure.
 
 The projection-ramification map generalizes the Wronski map
 \[ \rho \from \Gr(2, n+1) \to \P^{2n-2}.\]
@@ -298,6 +302,13 @@ The geometry surrounding the Wronski map has received a lot of attention, thanks
 This conjecture states that the pre-image of any point in $\P^{2n-2}$ defined by a set of $(2n-2)$ real points on $\P^1$ consists entirely of real points in $\Gr(2, n+1)$ \cite{sottile2000} (the conjecture has been proved by Eremenko and Gabrielov \cite{Erem/Gabr1}).
 \autoref{theorem:minimaldegree} potentially sets the stage for a higher-dimensional generalization of the body of work around the Shapiro conjecture.
 
+The study of $\rho_X$ in positive characteristic is likely to bring new surprises and require different techniques.
+We do not know if \autoref{theorem:Main} or \autoref{theorem:minimaldegree} holds in positive characteristic; our proof certainly does not.
+The answers to the enumerative questions \autoref{q:degree} do depend on the characteristic, even in the simplest case of rational normal curves, due to the presence of inseparable covers \cite{MR2218904}.
+
+\subsection{Notation and conventions} We work over an algebraically closed field
+$k$ of characteristic $0$ (We use Bertini's theorem and generic smoothness. We
+also appeal to the Kodaira Vanishing theorem.) By a {\sl proper variety}, we mean a proper, integral, finite-type $k$-scheme. For any scheme $X$, we let $X^{s}$ denote its smooth locus. If $F$ is a coherent sheaf, we let $P(F)$ denote its sheaf of principal parts. We will let $e: H^{0}(X,F) \to P(F)$ denote the natural evaluation morphism -- we suppress the dependence on $F$. If $s$ is a global section of a locally free sheaf, we let $v(s)$ denote the vanishing scheme of $s$.  If $L$ is a line bundle, we let $|L|$ denote the projective space $\P(H^{0}(L))$.  If $L \to Y$ is a line bundle on a smooth variety, and $s \in H^{0}(Y,L)$ is a section, then the {\sl singular scheme} $\sing(v(s))$ of $s$ is the vanishing scheme of $e(s) \in H^{0}(Y,P(L))$; if $K$, the kernel sheaf of $e : H^{0}(Y,L) \otimes \cO_{Y} \to P(L)$, is locally free, then $\sing(v(s))$ is the largest closed subscheme $T \subset Y$  such that $s: \cO_{T} \to H^{0}(Y,L) \otimes \cO_{T}$ factors through $K|_{T}$.  
 
 \section{Proof of \autoref{theorem:Main}}
 \label{sec:proof_of_theorem:main}
@@ -306,13 +317,7 @@ $(n-r-1)$-plane which is incident to $X$ is an isolated point in its fiber
 under $\rho_{X}$.  In order to execute this strategy, we find it easier to work
 with abstract pairs $(X,L)$ of a variety and a line bundle.  Before proceeding,
 we fix some notation.
-\subsection{Notation and conventions} We work over an algebraically closed field
-$k$ of characteristic $0$ (We use Bertini's theorem and generic smoothness. We
-also appeal to the Kodaira Vanishing theorem.) By a {\sl proper variety}, we mean a proper, integral, finite-type $k$-scheme. For any scheme $X$, we let $X^{s}$ denote its smooth locus. If $F$ is a coherent sheaf, we let $P(F)$ denote its sheaf of principal parts. We will let $e: H^{0}(X,F) \to P(F)$ denote the natural evaluation morphism -- we suppress the dependence on $F$. If $s$ is a global section of a locally free sheaf, we let $v(s)$ denote the vanishing scheme of $s$.  If $L$ is a line bundle, we let $|L|$ denote the projective space $\P(H^{0}(L))$.  If $L \to Y$ is a line bundle on a smooth variety, and $s \in H^{0}(Y,L)$ is a section, then the {\sl singular scheme} $\sing(v(s))$ of $s$ is the vanishing scheme of $e(s) \in H^{0}(Y,P(L))$; if $K$, the kernel sheaf of $e : H^{0}(Y,L) \otimes \cO_{Y} \to P(L)$, is locally free, then $\sing(v(s))$ is the largest closed subscheme $T \subset Y$  such that $s: \cO_{T} \to H^{0}(Y,L) \otimes \cO_{T}$ factors through $K|_{T}$.  
 
-
-
- 
 \subsection{Non-defective line bundles} % (fold) 
 
 

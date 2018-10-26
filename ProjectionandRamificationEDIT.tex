@@ -310,50 +310,57 @@ The answers to the enumerative questions \autoref{q:degree} do depend on the cha
 $k$ of characteristic $0$ (We use Bertini's theorem and generic smoothness. We
 also appeal to the Kodaira Vanishing theorem.) By a {\sl proper variety}, we mean a proper, integral, finite-type $k$-scheme. For any scheme $X$, we let $X^{s}$ denote its smooth locus. If $F$ is a coherent sheaf, we let $P(F)$ denote its sheaf of principal parts. We will let $e: H^{0}(X,F) \to P(F)$ denote the natural evaluation morphism -- we suppress the dependence on $F$. If $s$ is a global section of a locally free sheaf, we let $v(s)$ denote the vanishing scheme of $s$.  If $L$ is a line bundle, we let $|L|$ denote the projective space $\P(H^{0}(L))$.  If $L \to Y$ is a line bundle on a smooth variety, and $s \in H^{0}(Y,L)$ is a section, then the {\sl singular scheme} $\sing(v(s))$ of $s$ is the vanishing scheme of $e(s) \in H^{0}(Y,P(L))$; if $K$, the kernel sheaf of $e : H^{0}(Y,L) \otimes \cO_{Y} \to P(L)$, is locally free, then $\sing(v(s))$ is the largest closed subscheme $T \subset Y$  such that $s: \cO_{T} \to H^{0}(Y,L) \otimes \cO_{T}$ factors through $K|_{T}$.  
 
-\section{Proof of \autoref{theorem:Main}}
+\section{Maximal variation for non-defective pairs}
 \label{sec:proof_of_theorem:main}
-Our proof of \autoref{theorem:Main} proceeds inductively by showing that a general
-$(n-r-1)$-plane which is incident to $X$ is an isolated point in its fiber
-under $\rho_{X}$.  In order to execute this strategy, we find it easier to work
-with abstract pairs $(X,L)$ of a variety and a line bundle.  Before proceeding,
-we fix some notation.
+The goal of this section is to prove \autoref{theorem:Main}.
 
-\subsection{Non-defective line bundles} % (fold) 
+Let $X \subset \P^n$ be a projective variety of dimension $r$.
+Our proof proceeds inductively by showing that a general $(n-r-1)$-dimensional linear subspace which is incident to $X$ is an isolated point in its fiber under $\rho_X$.
+To execute this strategy, it is easier to work with abstract pairs $(X, L)$ of a variety and a line bundle, and with subspaces of $H^0(X, L)$ instead of subspaces of $\P^n$.
+Furthermore, since we will ultimately want to blow up points on $X$, we work in a setting where the line bundle $L$ is not necessarily very ample.
 
-
- Throughout, $X$ will be a proper variety of dimension $r$.  Rather than working with centers of projections in $\P^{n}$, we will work with $r+1$ dimensional vector spaces of sections of the line bundle $L = \cO_{X}(1)$.   Furthermore, since we will ultimately want to blow up points on $X$, we will work in a setting where the line bundle $L$ is not necessarily assumed to be very ample.  The exact positivity property which we need is {\sl non-defectivity}. We study this property in this section. 
-
-
+\subsection{Non-defective line bundles}
+Let $X$ be a proper variety of dimension $r$, and let $L$ be a line bundle on $X$.
+We need the following positivity property on $L$.
 \begin{definition}
   \label{definition:Genericallynon-defective} 
-  A line bundle $L \to X$ is {\sl non-defective} if for a general point $x \in X$, the vanishing scheme of a  general element of $H^{0}(X, L \otimes {\mathfrak m}^{2}_{x} )$ has an isolated singularity at $x$.
+  We say that $L$ is \emph{non-defective} if, for a general point $x \in X$, the vanishing scheme of a general element of $H^{0}(X, L \otimes {\mathfrak m}^{2}_{x} )$ has an isolated singularity at $x$.
 \end{definition} 
 
-The {\sl conormal variety} (of a line bundle $L \to X$) will play an important role.  To define it, we first notice there is a non-empty open set $U \subset X$ over which the kernel $K$ of
-\begin{align*}
-  e: H^{0}(X,L) \otimes \cO_{U} \to P(L)|_{U}
-\end{align*}
-is locally free. The conormal variety, which we denote simply by $P$, is defined
-to be the closure of the projectivization $\P(K|_{U}) \subset X \times |L|$.
-
+The next important notion we need is that of the conormal variety of $L$.
+Let $K$ be the kernel of the map
+\[ e \from H^0(X, L) \otimes \O_X \to P(L).\]
+Let $U \subset X$ be an open subset such that $K|_U$ is locally free and the dual of the inclusion 
+\[H^0(X, L)^* \otimes \O_U \to K|_U^*\]
+is a surjection.
+This surjection defines a closed embedding $\P(K|_U) \subset U \times |L|$.
+The \emph{conormal variety of $L$}, denoted by $P_L$, is the closure of $\P(K|_U)$ in $X \times |L|$.
 
 \begin{proposition}\label{prop:dimension}
   \label{prop:dimP}
-  Let $L \to X$ be a non-defective line bundle.  If $h^{0}(L) \geq n+2$, then
-  the conormal variety $P$ has dimension $\dm P = \dm |L| - 1$.  If $h^{0}(L) \leq n+1$, then $P$ is empty.
+  Suppose $L$ is non-defective.
+  If $h^0(L) \geq r+2$, then $\dim P_L = \dim |L| - 1$.
+  If $h^0(L) \leq r+1$, then $P_L$ is empty.
 \end{proposition} 
 
 \begin{proof}
-  Since $P$ is a subscheme of $X \times |L|$, it has a projection $\Sigma: P \to |L|$ defined by $(x,s) \mapsto s$. 
-
-  Over a nonempty open subset $U \subset X$, the kernel $K$ of $e: H^{0}(X,L) \otimes \cO_{U} \to P(L)|_{U}$ is locally free of some rank $r$, and $P$ is its projectivization. Observe $r \geq \dm |L| - n$; the statement of the proposition  amounts to showing: if $r>0$ then $r = \dm |L| - n$. 
-
-    If $s \in |L|$ is any element, then we can view $\Sigma^{-1}(s)$ as a subscheme of $X$.  We then have: 
+  Set $n = \dim |L|$.
+  Then $\dim H^0(X, L) = n+1$.
+  Let $k$ be the (generic) rank of $K$, namely the rank of the locally free sheaf $K|_U$.
+  Then $k \geq n-r$.
+  The statement of the proposition is equivalent to showing that if $k > 0$, then $k = n-r$.
+    
+  Consider the projection $\Sigma \from P \to |L|$, the restriction of the second projection $X \times |L| \to |L|$.
+  If $s \in |L|$ is any element, then we can view $\Sigma^{-1}(s)$ as a subscheme of $X$.
+  We then have
   \begin{align*}
     \Sigma^{-1}(s) \cap U = \sing(v(s|_{U})).
   \end{align*}
 
-  So suppose $r>0$. In particular, $P$ is non-empty. Since $L$ is non-defective, a general point $(x,s) \in P$ is such that $x$ is an isolated point of $\sing(v(s))$.  Therefore, we conclude $\Sigma: P \to |L|$ is generically finite onto its image, hence $\dm P \leq \dm |L|$.  
+  Suppose $r>0$.
+  Then $P$ is non-empty.
+  Since $L$ is non-defective, a general point $(x,s) \in P$ is such that $x$ is an isolated point of $\sing(v(s))$.
+  Therefore, $\Sigma \from P \to |L|$ is generically finite onto its image, and hence $\dim P \leq \dim |L|$.  
 
   To summarize, $\dm P = \dm |L|$ holds if and only if $P \to |L|$ is surjective, and otherwise $\dm P = \dm |L| -1$.  Now we argue the former possibility is impossible by using Bertini's theorem.  Let $B \subset X$ denote the base scheme of the linear series $|L|$, and set $\widetilde{X} = \Bl_{B}X$. Then, the linear series $|L|$, viewed as a subseries of $|\pi^{*}L-E|$ on $\widetilde{X}$ is basepoint free.  The conormal variety $$\widetilde{P} := \overline{\{(x,D) \mid x \in \widetilde{X}^{sm} \,\, \text{general}, \,\, x \in \sing D, D \in|L|\}} \subset \widetilde{X} \times |L|$$ would also dominate $|L| \subset |\pi^{*}L-E|$ under second projection. By Bertini's theorem, the only way this can happen is if the locus $\widetilde{P}^{sing} \subset \widetilde{P}$ lying over $\sing \widetilde{X}$ dominated $|L|$.  Since we already know $\dm \widetilde{P} \leq \dm |L|$, $\widetilde{P}^{sing}$ would then contain an irreducible component of $\widetilde{P}$ contradicting the irreducibility of $\widetilde{P}$. Hence, $P \to |L|$ could not be dominant, and we are done.
 

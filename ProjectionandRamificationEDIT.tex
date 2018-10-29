@@ -350,8 +350,8 @@ The \emph{conormal variety of $L$}, denoted by $P_L$, is the closure of $\P(K|_U
   Then $k \geq n-r$.
   The statement of the proposition is equivalent to showing that if $k > 0$, then $k = n-r$.
     
-  Consider the projection $\Sigma \from P \to |L|$, the restriction of the second projection $X \times |L| \to |L|$.
-  If $s \in |L|$ is any element, then we can view $\Sigma^{-1}(s)$ as a subscheme of $X$.
+  Consider the projection $\Sigma \from P \to |L|$, obtained by restricting the second projection $X \times |L| \to |L|$.
+  For $s \in |L|$, we view $\Sigma^{-1}(s)$ as a subscheme of $X$.
   We then have
   \begin{align*}
     \Sigma^{-1}(s) \cap U = \sing(v(s|_{U})).
@@ -360,10 +360,25 @@ The \emph{conormal variety of $L$}, denoted by $P_L$, is the closure of $\P(K|_U
   Suppose $r>0$.
   Then $P$ is non-empty.
   Since $L$ is non-defective, a general point $(x,s) \in P$ is such that $x$ is an isolated point of $\sing(v(s))$.
-  Therefore, $\Sigma \from P \to |L|$ is generically finite onto its image, and hence $\dim P \leq \dim |L|$.  
+  Therefore, $\Sigma \from P \to |L|$ is generically finite onto its image.
+  Therefore, $\dim P \leq \dim |L|$, and $k \leq n-r+1$.
 
-  To summarize, $\dm P = \dm |L|$ holds if and only if $P \to |L|$ is surjective, and otherwise $\dm P = \dm |L| -1$.  Now we argue the former possibility is impossible by using Bertini's theorem.  Let $B \subset X$ denote the base scheme of the linear series $|L|$, and set $\widetilde{X} = \Bl_{B}X$. Then, the linear series $|L|$, viewed as a subseries of $|\pi^{*}L-E|$ on $\widetilde{X}$ is basepoint free.  The conormal variety $$\widetilde{P} := \overline{\{(x,D) \mid x \in \widetilde{X}^{sm} \,\, \text{general}, \,\, x \in \sing D, D \in|L|\}} \subset \widetilde{X} \times |L|$$ would also dominate $|L| \subset |\pi^{*}L-E|$ under second projection. By Bertini's theorem, the only way this can happen is if the locus $\widetilde{P}^{sing} \subset \widetilde{P}$ lying over $\sing \widetilde{X}$ dominated $|L|$.  Since we already know $\dm \widetilde{P} \leq \dm |L|$, $\widetilde{P}^{sing}$ would then contain an irreducible component of $\widetilde{P}$ contradicting the irreducibility of $\widetilde{P}$. Hence, $P \to |L|$ could not be dominant, and we are done.
-
+  To show that $k = n-r$, it suffices to show that $\sigma \from P \to |L|$ is not surjective.
+  We do so using Bertini's theorem.
+  Let $B \subset X$ denote the base scheme of the linear series $|L|$, and let $\pi \from \widetilde X = \Bl_{B}X \to X$ be the blow-up, with exceptional divisor $E$.
+  Then the linear series $|L|$ viewed as a sub-series of $|\pi^*L - E|$ is basepoint free.
+  We define a modified conormal variety $\widetilde P$ by setting
+  \[\widetilde{P} = \overline{\left\{(x,D) \mid x \in \widetilde{X} \text{ general}, \,\, x \in \sing D, D \in|L|\right\}} \subset \widetilde{X} \times |L|.\]
+  Note that, if the open set $U \subset X$ in the definition of $P$ is chosen to be disjoint from $B$, then $\widetilde P$ is the closure of $\P(K|_U)$ in $\widetilde X \times |L|$.
+  In particular, $\widetilde P$ is irreducible of the same dimension as $P$, and admits a birational morphism $\widetilde P \to P$.
+  Let $\widetilde P^{\rm sing} \subset \widetilde P$ be the pre-image of the singular locus $\widetilde X^{\rm sing}$ of $X$.
+  Then $\widetilde P^{\rm sing} \subset \widetilde P$ is a proper closed subset, and hence
+  \[ \dim \widetilde P^{\rm sing} < \dim \widetilde P.\]
+  Since we know that $\dim \widetilde P = \dim P \leq \dim |L|$, we conclude that $\widetilde P^{\rm sing} \to |L|$ is not surjective.
+  Let $D \in |L|$ be a general element, in particular, not in the image of $\widetilde P^{\rm sing}$.
+  By Bertini's theorem, $D$ is non-singular, that is, not in the image of $\widetilde P$, and hence $\widetilde P \to |L|$ is not surjective.
+  Since the projection $\widetilde P \to |L|$ factors as $\widetilde P \to P \to |L|$, and the first map $\widetilde P \to P$ is a birational morphism (in particular, surjective), we conclude that $P \to |L|$ is not surjective.
+  The proof is now complete.
 \end{proof} 
 
 \begin{proposition}

@@ -1,6 +1,6 @@
 \documentclass[11pt,reqno]{amsart}
 \usepackage[margin = 1.3 in]{geometry}
-\usepackage[frenchmath,defaultmathsizes]{mathastext}
+%\usepackage[frenchmath,defaultmathsizes]{mathastext}
 \usepackage{
   hyperref,
   amsmath,
@@ -78,13 +78,15 @@
 \DeclareMathOperator{\Hilb}{Hilb}
 \DeclareMathOperator{\sing}{Sing}
 \DeclareMathOperator{\dm}{dim}
+\DeclareMathOperator{\F}{\mathbf F}
+
 \newcommand{\cO}{{\mathcal O}}
 \renewcommand{\to}{{\longrightarrow}}
 
 \renewcommand{\sectionautorefname}{\S}
 \renewcommand{\subsectionautorefname}{\S}
 \input{macros}
-\declaretheorem[sibling=theorem,style=plain]{remark}
+\declaretheorem[sibling=theorem,style=remark]{remark}
 \numberwithin{equation}{section}
 \declaretheorem[title=Theorem, style=plain]{maintheorem}
 \declaretheorem[title=Theorem-Example, style=plain]{exampletheorem}
@@ -308,7 +310,7 @@ The answers to the enumerative questions \autoref{q:degree} do depend on the cha
 
 \subsection{Notation and conventions} We work over an algebraically closed field
 $k$ of characteristic $0$ (We use Bertini's theorem and generic smoothness. We
-also appeal to the Kodaira Vanishing theorem.) By a {\sl proper variety}, we mean a proper, integral, finite-type $k$-scheme. For any scheme $X$, we let $X^{s}$ denote its smooth locus. If $F$ is a coherent sheaf, we let $P(F)$ denote its sheaf of principal parts. We will let $e: H^{0}(X,F) \to P(F)$ denote the natural evaluation morphism -- we suppress the dependence on $F$. If $s$ is a global section of a locally free sheaf, we let $v(s)$ denote the vanishing scheme of $s$.  If $L$ is a line bundle, we let $|L|$ denote the projective space $\P(H^{0}(L))$.  If $L \to Y$ is a line bundle on a smooth variety, and $s \in H^{0}(Y,L)$ is a section, then the {\sl singular scheme} $\sing(v(s))$ of $s$ is the vanishing scheme of $e(s) \in H^{0}(Y,P(L))$; if $K$, the kernel sheaf of $e : H^{0}(Y,L) \otimes \cO_{Y} \to P(L)$, is locally free, then $\sing(v(s))$ is the largest closed subscheme $T \subset Y$  such that $s: \cO_{T} \to H^{0}(Y,L) \otimes \cO_{T}$ factors through $K|_{T}$.  
+also appeal to the Kodaira Vanishing theorem.) By a {\sl proper variety}, we mean a proper, integral, finite-type $k$-scheme. For any scheme $X$, we let $X^{\rm sm}$ denote its smooth locus. If $F$ is a coherent sheaf, we let $P(F)$ denote its sheaf of principal parts. We will let $e\from H^{0}(X,F) \to P(F)$ denote the natural evaluation morphism -- we suppress the dependence on $F$. If $s$ is a global section of a locally free sheaf, we let $v(s)$ denote the vanishing scheme of $s$.  If $L$ is a line bundle, we let $|L|$ denote the projective space $\P(H^{0}(L))$.  If $L$ is a line bundle on a smooth variety $Y$, and $s \in H^{0}(Y,L)$ is a section, then the {\sl singular scheme} $\sing(v(s))$ of $s$ is the vanishing scheme of $e(s) \in H^{0}(Y,P(L))$; if $K$, the kernel sheaf of $e \from H^{0}(Y,L) \otimes \cO_{Y} \to P(L)$, is locally free, then $\sing(v(s))$ is the largest closed subscheme $T \subset Y$  such that $s\from \cO_{T} \to H^{0}(Y,L) \otimes \cO_{T}$ factors through $K|_{T}$.  
 
 \section{Maximal variation for non-defective pairs}
 \label{sec:proof_of_theorem:main}
@@ -324,10 +326,25 @@ Let $X$ be a proper variety of dimension $r$, and let $L$ be a line bundle on $X
 We need the following positivity property on $L$.
 \begin{definition}
   \label{definition:Genericallynon-defective} 
-  We say that $L$ is \emph{non-defective} if, for a general point $x \in X$, the vanishing scheme of a general element of $H^{0}(X, L \otimes {\mathfrak m}^{2}_{x} )$ has an isolated singularity at $x$.
-\end{definition} 
+  We say that $L$ is \emph{non-defective} if the following holds: for a general point $x \in X$, if there exists $s \in H^0(X, L)$ such that $v(s)$ is singular at $x$, then there exists one such that $v(s)$ has an isolated singularity at $x$.
+\end{definition}
+\begin{remark}
+  Suppose $L$ is non-defective.
+  Let $x \in X$ be general, and let $s \in H^0(X, L)$ be such that $v(s)$ has an isolated singularity at $x$.
+  For all such $s$, it may be the case $v(s)$ has singularities away from $x$, even along a positive dimensional locus.
+  For example, let $\pi \from X \to \P^2$  be the blow-up at a point, and $E$ the exceptional divisor.
+  Then the line bundle $L = \pi^*\O(2) + 2E$ is non-defective, but every section of $L$ contains $E$ in its singular locus.
+\end{remark}
+\begin{remark}
+  Let $x$ be a point of $X$.
+  Suppose there exists $s \in H^0(X, L)$ with an isolated singularity at $x$.
+  It may be tempting to conclude from this that $L$ is non-defective.
+  This is not necessarily true!
+  For example, take $X = \F_3$ and $L$ the line bundle associated to the divisor class $E + 2F$, where $F$ is a fiber of the projection $\F_3 \to \P^1$ and $E$ the section of self-intersection $-3$.
+\end{remark}
 
-The next important notion we need is that of the conormal variety of $L$.
+
+We now define the conormal variety of $L$, which plays an important role in our analysis of non-defectivity.
 Let $K$ be the kernel of the map
 \[ e \from H^0(X, L) \otimes \O_X \to P(L).\]
 Let $U \subset X$ be an open subset such that $K|_U$ is locally free and the dual of the inclusion 
@@ -339,29 +356,30 @@ The \emph{conormal variety of $L$}, denoted by $P_L$, is the closure of $\P(K|_U
 \begin{proposition}\label{prop:dimension}
   \label{prop:dimP}
   Suppose $L$ is non-defective.
-  If $h^0(L) \geq r+2$, then $\dim P_L = \dim |L| - 1$.
+  If $h^0(L) \geq r+2$, then $P_L$ is irreducible of dimension $\dim |L| - 1$.
   If $h^0(L) \leq r+1$, then $P_L$ is empty.
 \end{proposition} 
 
 \begin{proof}
   Set $n = \dim |L|$.
-  Then $\dim H^0(X, L) = n+1$.
+  Then $h^0(L) = n+1$.
   Let $k$ be the (generic) rank of $K$, namely the rank of the locally free sheaf $K|_U$.
   Then $k \geq n-r$.
   The statement of the proposition is equivalent to showing that if $k > 0$, then $k = n-r$.
-    
+
+  For brevity, set $P = P_L$.
   Consider the projection $\sigma \from P \to |L|$, obtained by restricting the second projection $X \times |L| \to |L|$.
   For $s \in |L|$, we view $\sigma^{-1}(s)$ as a subscheme of $X$.
   We then have
   \begin{align*}
-    \sigma^{-1}(s) \cap U = \sing(v(s|_{U})).
+    \sigma^{-1}(s) \cap U = \sing(v(s|_U)).
   \end{align*}
 
   Suppose $r>0$.
-  Then $P$ is non-empty.
+  Then $P$ is non-empty and irreducible, since it is the closure of a non-empty and irreducible variety.
   Since $L$ is non-defective, a general point $(x,s) \in P$ is such that $x$ is an isolated point of $\sing(v(s))$.
   Therefore, $\sigma \from P \to |L|$ is generically finite onto its image.
-  We conclude that $\dim P \leq \dim |L|$, and $k \leq n-r+1$.
+  We conclude that $\dim P \leq \dim |L|$, and hence $k \leq n-r+1$.
 
   To show that $k = n-r$, it suffices to show that $\sigma \from P \to |L|$ is not surjective.
   We do so using Bertini's theorem.
@@ -370,68 +388,112 @@ The \emph{conormal variety of $L$}, denoted by $P_L$, is the closure of $\P(K|_U
   Let $P^B \subset P$ be the pre-image of $B$ under the projection $\pi \from P \to X$.
   By the definition of $P$, the map $\pi \from P \to X$ is dominant, and hence $P^B$ is a proper closed subset of $P$.
   Since $P$ is irreducible, we have $\dim P^B < \dim P \leq \dim |L|$, so the projection $P^B \to |L|$ cannot be dominant.
-  Let $D \in |L|$ be general, in particular, not in the image of $P^B \to |L|$.
-  By Bertini's theorem $D$ is non-singular away from $B$.
-  Thus, for any $x \in X$, the point $(x, D) \in X \times |L|$ does not lie in $P$.
-  For $x \in B$, this is because $D$ is not in the image of $P^B$, and for $x \not \in B$, this is because $D$ is non-singular at $x$.
-  We conclude that $D$ does not lie in the image of $P \to |L|$.
+  Let $s \in |L|$ be general, in particular, not in the image of $P^B \to |L|$.
+  By Bertini's theorem $v(s)$ is non-singular away from $B$.
+  Thus, for any $x \in X$, the point $(x, s) \in X \times |L|$ does not lie in $P$.
+  For $x \in B$, this is because $s$ is not in the image of $P^B$, and for $x \not \in B$, this is because $v(s)$ is non-singular at $x$.
+  We conclude that $s$ does not lie in the image of $P \to |L|$.
   Hence $P \to |L|$ is not surjective.
 \end{proof} 
 
 \begin{proposition}
   \label{prop:dimensionCriterion}
-  Suppose $L \to X$ is a line bundle with $h^{0}(X,L) \geq n+2$, and let $P$ denote its conormal variety.  The projection $\Sigma: P \to |L|$ is generically finite onto its image if and only if $L$ is non-defective. 
+  Let $L$ be a line bundle on $X$ with $h^{0}(X,L) \geq r+2$, and let $P = P_L$ be its conormal variety.
+  The projection $\sigma\from P \to |L|$ is generically finite onto its image if and only if $L$ is non-defective. 
 \end{proposition}
 
 \begin{proof}
-  The proof closely follows the reasoning in the proof of \autoref{prop:dimP}, and hence we leave the details to the reader.
+  Since $h^0(X, L) \geq r+2$, the conormal variety $P$ is non-empty.
+  Let $(x,s) \in P$ be a general point.
+  We may assume that $x \in U$.
+  Then $x$ is a singular point of $v(s)$, and it is an isolated singularity of $v(s)$ if and only if $(x,s)$ is an isolated point in the fiber of $\sigma \from P \to |L|$ over $s$.
+  The conclusion follows.
 \end{proof}
 
 \begin{proposition}\label{prop:ordinarydoublepoint}
-  Let $L \to X$ be a non-defective line bundle, with $h^{0}(X,L) \geq n+2$. If $x \in X$ is a general point, then a general element $s \in H^{0}(X,L \otimes {\mathfrak{m}}^{2}_{x})$ has an ordinary double point singularity at $x$.
+  Let $L$ be a non-defective line bundle on $X$ with $h^{0}(X,L) \geq r+2$.
+  Let $x \in X$ be a general point.
+  Then there exists $s \in H^0(X, L)$ such that $v(s)$ has an ordinary double point singularity at $x$.
 \end{proposition}
-
 \begin{proof}
-  As in the proof of \autoref{prop:dimension}, we know  the projection $\Sigma: P \to
-  |L|$ is generically finite onto its image. Since our ground field has characteristic
-  zero, at a general point $(x,s) \in P \subset X \times |L|$, the projection $\Sigma$ is a local immersion.  In other words, $(1)$  $x \in \sing(v(s))$ is isolated, and $(2)$ with scheme structure inherited from $\sing(v(s))$, $x$ is a reduced point. (Note: we are allowed to assume $x \in X^{s}$.)  
-
-  These two properties show $v(s)$ possesses an ordinary double point at $x$: choose local coordinates $(x_{1}, ..., x_{n})$ so that the complete local ring ${\widehat{\cO}_{X,x}}$ is isomorphic to $k[[x_{1}, ..., x_{n}]]$. Our claim then follows from the next statement, which we leave to the reader to check: Let $s = s(x_{1}, ..., x_{n}) \in {\mathfrak m}^{2}_{x}$ be a power series. Then the partial derivatives $\partial_{1}s, ..., \partial_{n}s$ induce linearly independent elements in ${\mathfrak m}_{x}/{\mathfrak m}^{2}_{x}$ if and only if the tangent cone of $s$ is a non-degenerate quadratic cone.
+  By \autoref{prop:dimensionCriterion}, the projection $\sigma\from P \to |L|$ is generically finite onto its image. 
+  Let $(x,s) \in P$ be a general point.
+  Since our ground field is of characteristic zero, we may assume that $P$ is smooth at $(x,s)$, that $x \in U \cap X^{\rm sm}$, and $\sigma \from P \to |L|$ is a local immersion at $(x,s)$.
+  This implies that $x \in \sing(v(s))$ is isolated, and also that $x$ is a reduced point of the scheme $\sing(v(s))$.
+  These two properties show that $v(s)$ possesses an ordinary double point at $x$.
+  To see this, choose local coordinates $(x_{1}, ..., x_{n})$ so that the complete local ring ${\widehat{\cO}_{X,x}}$ is isomorphic to $k\llbracket x_{1},\dots, x_{r}\rrbracket$.
+  After choosing a local trivialization for $L$ around $x$, the section $s$ corresponds to a power series $s(x_1,\dots,x_r)$ contained in $\mathfrak m_x^2 \widehat \O_{X,x}$.
+  The germ of $\sing(v(s))$ at $x$ is cut out by the power series $\frac{\partial s}{\partial x_1}, \dots, \frac{\partial s}{\partial x_r}$.
+  Since the germ of $\sing(v(s))$ at $x$ is the reduced point $x$, we get that $\frac{\partial s}{\partial x_1}, \dots, \frac{\partial s}{\partial x_r}$ are linearly independent as elements of $\mathfrak m_x / \mathfrak m_x^2$.
+  From this, it is easy to check that the tangent cone of $s(x_1, \dots, x_r)$ at $x$ is a non-degenerate quadric cone.
 \end{proof}
-
 
 
 \begin{proposition}
   \label{prop:genericSeparateTangents}
-  If $L \to X$ is a non-defective line bundle  with $h^{0}(L) \geq n+1$, then the global sections of $L$ separate tangent vectors at a general point $x \in X$, i.e. $$e_{x}: H^{0}(X,L) \otimes k(x) \to P(L) \otimes k(x)$$ is surjective for $x \in X$ general.
+  If $L$ is a non-defective line bundle on $X$ with $h^{0}(L) \geq r+1$, then the global sections of $L$ separate tangent vectors at a general point $x \in X$.
+  That is, the evaluation map
+  \[e_{x}\from H^{0}(X,L) \to L/\mathfrak m_x^2 L\]
+  is surjective for general $x \in X$.
 \end{proposition}
-
 \begin{proof}
-
-This follows from the proof of \autoref{prop:dimP}: Let $K$ be the kernel sheaf of $e: H^{0}(L) \otimes \cO_{X} \to P(L)$. Then it was shown in the proof of \autoref{prop:dimension} that the generic rank of $K$ is $r = h^{0}(X,L) - (n+1) $, which in turn implies  $e$ is generically surjective.   
+  By the definition of $P(L)$, we have a natural isomorphism
+  \[ P(L)|_x = L/\mathfrak m_x^2 L,\]
+  so it suffices to show that the evaluation map
+  \[ e \from H^0(X,L) \to P(L)\]
+  is surjective at $x$.
+  Let $k$ be the generic rank of $K$, the kernel of $e$.
+  From the proof of \autoref{prop:dimP}, we get
+  \[  k = h^0(L) - r - 1.\]
+  Since $(r+1)$ is the generic rank of $P(L)$, we conclude that $e$ is generically surjective.
 \end{proof}
-
 
 
 \begin{proposition}
   \label{prop:blowuppoint}
-  Let $L \to X$ be a non-defective line bundle, let $x \in X$ be a general point, let $\pi : \widetilde{X} \to X$ the blow up of $X$ at $x$, and let $E$ denote the exceptional divisor of $\pi$. Further assume $h^{0}(L) \geq n+2$. 
-
-  Then $\pi^{*}L (-E) \to \widetilde{X}$ is also non-defective. 
+  Let $L$ be a non-defective line bundle on $X$ with $h^0(L) \geq r+2$.
+  Let $x \in X$ be a general point, $\pi \from \widetilde{X} \to X$ the blow up of $X$ at $x$, and $E$ the exceptional divisor of $\pi$.
+  Then $\pi^{*}L (-E)$ is a non-defective line bundle on $\widetilde X$.
 \end{proposition}
 
 \begin{proof}
- As a consequence of \autoref{prop:dimP}, at a general point $y \in X$, we get
-  \begin{align*}
-    h^{0}(X,  L \otimes {\mathfrak{m}^{2}_{y}}) = h^{0}(X,L) - (n+1).
-  \end{align*}
-By non-defectivity of $L$, at the general point $y \in X^{s}$ there is an element $t_{1} \in H^{0}(X, {\mathfrak{m}^{2}_{y}} \otimes L)$ such that $v(t_{1})$ has an isolated singularity at $y$.
+  Let $y$ be a general point of $\widetilde X$.
+  We must show that either $H^0(\widetilde X, \pi^* L(-E) \otimes \mathfrak m_y^2) = 0$ or there exists a global section of $\pi^*L(-E)$ whose vanishing locus has an isolated singularity at $y$.
+  Note that
+  \[ H^0(\widetilde X, \pi^*L(-E)) = H^0(X, L \otimes \mathfrak m_x).\]
+  Hence, we must show that for general $(x,y) \in X \times X$, either $H^0(X, L \otimes \mathfrak m_y^2 \cdot \mathfrak m_x) = 0$ or there exists a global section of $L$ with an isolated singularity at $y$ and passing through $x$.
 
-Now we can choose a second general point $x \in X^{s} \setminus v(t_{1})$. 
-Notice  by \autoref{prop:genericSeparateTangents}, $L$ separates
-tangent vectors at  $x$, and therefore we get an isomorphism
-$$H^{0}(X, L \otimes {\mathfrak m}_{x}) \simeq H^{0}(\widetilde{X},
-\pi^{*}L(-E)).$$
+  By \autoref{prop:genericSeparateTangents}, for a general $y \in X$, we have
+  \[ h^0(X, L \otimes \mathfrak m_y^2) = h^0(X, L) - (r+1).\]
+  Hence, for a generic $x \in X$, we have
+  \[ h^0(X, L \otimes \mathfrak m_y^2\cdot \mathfrak m_x) = h^0(X, L) - (r+2).\]
+  Therefore, if $h^0(X, L) = r+2$, then we are done.
+
+  Assume that $h^0(X, L) \geq r+3$.
+  Then $h^0(\widetilde X, \pi^*L(-E)) \geq r+2$.
+  
+  
+  Let $y \in X$ be a general point.
+  As a consequence of \autoref{prop:genericSeparateTangents}, we have
+  \[ h^0(L \otimes \mathfrak m_y^2) = h^0(L) - (r+1).\]
+  
+  
+
+  We may assume that $y \not \in E$, and hence consider $y$ as a point of $X$.
+  We must show that there exists a section of $\pi^*L(-E)$ with an isolated singularity at $y$.
+  Since $H^0(\widetilde X, \pi^*L(-E)) = H^0(X, L \otimes \mathfrak m_x)$, we need to show that for a general $(x,y) \in X \times X$, there exists a section of $L$ that vanishes at $x$ and has an isolated singularity at $y$.
+
+
+  
+ As a consequence of \autoref{prop:dimP}, at a general point $y \in X$, we have
+  \begin{align*}
+    h^{0}(L \otimes {\mathfrak{m}^{2}_{y}}) = h^{0}(L) - (r+1).
+  \end{align*}
+  Furthermore, by the non-defectivity of $L$, there is an element $t_{1} \in H^{0}(X, L \otimes {\mathfrak{m}^{2}_{y}})$ such that $v(t_{1})$ has an isolated singularity at $y$.
+  Choose another general point $x \in X^{\rm sm} \setminus v(t_1)$.
+  
+  By \autoref{prop:genericSeparateTangents}, $L$ separates tangent vectors at  $x$, and therefore we get an isomorphism
+  \[H^{0}(X, L \otimes {\mathfrak m}_{x}) \cong H^{0}(\widetilde{X},\pi^{*}L(-E)).\]
  
 
 Furthermore, we can choose $x$ ensuring the following: 
@@ -442,7 +504,7 @@ Furthermore, we can choose $x$ ensuring the following:
 
  With $x$ chosen as above, the two conditions imply that the conormal variety
  $\widetilde{P}$ for the line bundle $\pi^{*}L(-E) \to {\widetilde{X}}$ over
- $\widetilde{X} = \Bl_{x}X$ has the expected dimension according to \autoref{prop:dimension}, and (provided $t$ exists) that the point $(y,t)$ is a point in $\widetilde{P}$ around which the projection $\Sigma: \widetilde{P} \to |\pi^{*}L(-E)|$ is quasi-finite onto its image. We conclude using \autoref{prop:dimensionCriterion}.
+ $\widetilde{X} = \Bl_{x}X$ has the expected dimension according to \autoref{prop:dimension}, and (provided $t$ exists) that the point $(y,t)$ is a point in $\widetilde{P}$ around which the projection $\sigma\from \widetilde{P} \to |\pi^{*}L(-E)|$ is quasi-finite onto its image. We conclude using \autoref{prop:dimensionCriterion}.
 \end{proof}
 
 \subsection{Projections}
@@ -457,7 +519,7 @@ where  $L \to X$ is a line bundle and $V \subset H^{0}(X,L)$ is a subspace of di
 
 \begin{definition}
   \label{definition:properlyramified}
-  A projection $(L,V)$ is {\sl properly ramified} if the evaluation homomorphism $e: V \otimes \cO_{X} \to P(L)$ is an isomorphism over a general point in $X$.  If $(L,V)$ is properly ramified, its {\sl ramification divisor} $$R(V) \subset X^{s}$$ is the scheme defined by the determinant of $e : V \otimes \cO_{X^{s}} \to P(L)|_{X^{s}}$.
+  A projection $(L,V)$ is {\sl properly ramified} if the evaluation homomorphism $e\from V \otimes \cO_{X} \to P(L)$ is an isomorphism over a general point in $X$.  If $(L,V)$ is properly ramified, its {\sl ramification divisor} $$R(V) \subset X^{\rm sm}$$ is the scheme defined by the determinant of $e \from V \otimes \cO_{X^{\rm sm}} \to P(L)|_{X^{\rm sm}}$.
 \end{definition}
 
 If $L \to X$ is fixed, then the set of all projections $(L,V)$ is parametrized by the Grassmannian 
@@ -473,11 +535,11 @@ If $L \to X$ is fixed, then the set of all projections $(L,V)$ is parametrized b
   This follows immediately from \autoref{prop:genericSeparateTangents}.
 \end{proof}
 
-Next we define the ramification divisor of a projection.  If $L \to X$ is a line bundle over an $r$-dimensional variety $X$, then the sheaf $P(L)$ is locally free of rank $r+1$ over $X^{s}$, and $\bigwedge^{n+1}P(L)|_{X^{s}} \simeq K_{X^{s}} \otimes L^{\otimes n+1}$.  
+Next we define the ramification divisor of a projection.  If $L \to X$ is a line bundle over an $r$-dimensional variety $X$, then the sheaf $P(L)$ is locally free of rank $r+1$ over $X^{\rm sm}$, and $\bigwedge^{n+1}P(L)|_{X^{\rm sm}} \simeq K_{X^{\rm sm}} \otimes L^{\otimes n+1}$.  
 
-Therefore, by applying $\bigwedge^{n+1}$ to $e : H^{0}(X,L) \otimes \cO_{X^{s}} \to P(L)|_{X^{s}}$, we get a map of vector spaces of global sections: 
+Therefore, by applying $\bigwedge^{n+1}$ to $e \from H^{0}(X,L) \otimes \cO_{X^{\rm sm}} \to P(L)|_{X^{\rm sm}}$, we get a map of vector spaces of global sections: 
 \begin{align}\label{vectorspacemap}
-\bigwedge^{n+1}H^{0}(X,L) \to H^{0}(X^{s},K_{X^{s}} \otimes L^{\otimes n+1}).
+\bigwedge^{n+1}H^{0}(X,L) \to H^{0}(X^{\rm sm},K_{X^{\rm sm}} \otimes L^{\otimes n+1}).
 \end{align}
 
 
@@ -486,7 +548,7 @@ Therefore, by applying $\bigwedge^{n+1}$ to $e : H^{0}(X,L) \otimes \cO_{X^{s}} 
   \label{def:ProjectionRamification}
   Let $L \to X$ be a line bundle which separates tangent vectors at a general point of $X$. The {\sl projection-ramification} map for $L$ is the composite: 
   \begin{align*}
-    \rho_{(X,L)}: \Gr(n+1,H^{0}(L)) \hookrightarrow \P(\bigwedge^{n+1}H^{0}(L)) \dashrightarrow \P(H^{0}(X^{s}, K_{X^{s}} \otimes L^{\otimes n+1}))
+    \rho_{(X,L)}\from \Gr(n+1,H^{0}(L)) \hookrightarrow \P(\bigwedge^{n+1}H^{0}(L)) \dashrightarrow \P(H^{0}(X^{\rm sm}, K_{X^{\rm sm}} \otimes L^{\otimes n+1}))
   \end{align*}
   rationally defined by $(L,V) \mapsto R(V)$. Here the dashed arrow comes from \ref{vectorspacemap}.
 \end{definition}
@@ -525,7 +587,7 @@ We need two lemmas, which are essentially local computations.
 
 Let $\widehat{\O}_{X,x}$ denote the completion of the local ring at $x \in X$ along its maximal ideal.  Upon trivializing $L$, we may regard $s_{i}$ and $t$ as elements of $\widehat{\O}_{X,x}$, and can also assume  $\widehat{\O}_{X,x} = k[[s_{1}, ..., s_{n}]]$. A local matrix representative for the evaluation map 
 \begin{align*}
-  e: V \otimes \widehat{\O}_{X,x} \to P(L) \otimes \widehat{\O}_{X,x}
+  e\from V \otimes \widehat{\O}_{X,x} \to P(L) \otimes \widehat{\O}_{X,x}
 \end{align*}
 is given by 
 \begin{align}\label{matrix}
@@ -559,7 +621,7 @@ and is an analytic local equation for the ramification divisor $R(V)$ near $x$. 
   That $x \in R(V)$ is clear since $V \cap H^{0}(X,L \otimes \mathfrak{m}^{2}_{x}) \neq 0 $.
 
   Again we work in the completion $\widehat{\cO}_{x,X}$, and after trivializing $L$, we assume $u, a_{1}, ..., b$ are elements of $\widehat{\cO}_{x,X}$. We choose an element $z \in \widehat{\cO}_{x,X}$ in such a way that $(a_{1}, ..., a_{n-1}, z)$ form a system of coordinates, i.e. $\widehat{\cO}_{x,X} \simeq k[[a_{1}, ..., a_{n-1}, z ]]$.  With respect to these coordinates, a local matrix representative for \begin{align*}
-  e: V \otimes \widehat{\cO}_{x,X} \to P(L) \otimes \widehat{\cO}_{x,X}
+  e\from V \otimes \widehat{\cO}_{x,X} \to P(L) \otimes \widehat{\cO}_{x,X}
 \end{align*}
 has the form
 \begin{align}\label{matrix2}
@@ -608,7 +670,7 @@ Next suppose $h^{0}(X,L) > n+2$, and again choose a general point $x \in X$ wher
 \begin{align*}
   W \subset  H^{0}(X, L \otimes {\mathfrak m}_{x})
 \end{align*}
-so as to obey the conditions in \autoref{lemma:tangentconeRam}. By induction hypothesis and \autoref{prop:blowuppoint}, the projection $(\pi^{*}L(-E),W)$ is isolated, where $\pi: \widetilde{X} \to X$ is the blow up at $x$.  
+so as to obey the conditions in \autoref{lemma:tangentconeRam}. By induction hypothesis and \autoref{prop:blowuppoint}, the projection $(\pi^{*}L(-E),W)$ is isolated, where $\pi\from \widetilde{X} \to X$ is the blow up at $x$.  
 
 So assume we have a $1$-parameter family $W_{c}$ parameterized by a pointed curve $(C,0)$ satisfying 
 \begin{enumerate}
@@ -619,14 +681,14 @@ So assume we have a $1$-parameter family $W_{c}$ parameterized by a pointed curv
  We must verify: $R(W_{c}) \neq R(W_{0})$.  Again by upper semicontinuity and openness (among singularities) of possession of ordinary double point, we see that $W_{c}$ meets the conditions of \autoref{lemma:basepointfree}. We conclude $R(W_{c}) \neq R(W_{0})$ since the former is smooth while the latter is singular at $x$, completing the argument.
 \end{proof}
 
-Recall that if $X \subset \P^{n}$ is a projective variety then its dual variety $X^{*} \subset \P^{n*}$ is the image of the conormal variety $P$ (associated to the line bundle $\cO_{X}(1)$) under the projection $\Sigma: P \to |\cO_{X}(1)| \simeq \P^{n*}$.   We immediately get \autoref{theorem:Main}:
+Recall that if $X \subset \P^{n}$ is a projective variety then its dual variety $X^{*} \subset \P^{n*}$ is the image of the conormal variety $P$ (associated to the line bundle $\cO_{X}(1)$) under the projection $\sigma\from P \to |\cO_{X}(1)| \simeq \P^{n*}$.   We immediately get \autoref{theorem:Main}:
 
 \begin{corollary}
   \label{cor:maintheorem} Let $X \subset \P^{n}$ be a non-degenerate projective variety such that the dual variety $X^{*} \subset \P^{n*}$ is a hypersurface. Then $\rho_{X,\cO_{X}(1)}$ is generically finite onto its image.
 \end{corollary}
 
 \begin{proof}
-    Indeed, since $\cO_{X}(1)$  separates tangent vectors at a general point of $X$, the condition that $X^{*}$ is a hypersurface implies the projection $\Sigma: P \to |\cO_{X}(1)|$ is generically finite onto $X^{*}$, and hence $\cO_{X}(1)$ is non-defective by \autoref{prop:dimensionCriterion}. Thus, \autoref{theorem:MainMain} applies.
+    Indeed, since $\cO_{X}(1)$  separates tangent vectors at a general point of $X$, the condition that $X^{*}$ is a hypersurface implies the projection $\sigma\from P \to |\cO_{X}(1)|$ is generically finite onto $X^{*}$, and hence $\cO_{X}(1)$ is non-defective by \autoref{prop:dimensionCriterion}. Thus, \autoref{theorem:MainMain} applies.
   \end{proof}
 
 
@@ -664,7 +726,7 @@ where $\underline{e}= (e_{1}, \dots, e_{r})$ is given by $e_{i} = d_{i}-2 + \sum
   \label{definition:Wronskian}
   The induced map 
   \begin{align}
-    Wr_{\underline{d}}: \Gr(r+1, V(\underline{d})) \dashrightarrow \P V(\underline{e})
+    Wr_{\underline{d}}\from \Gr(r+1, V(\underline{d})) \dashrightarrow \P V(\underline{e})
   \end{align}
   is called the {\sl Wronskian} map.
 \end{definition}
@@ -715,7 +777,7 @@ embeddings. Recall that an $r$ dimensional variety $X \subset \P^{n}$ is
 $\Lambda \subset \P^{N}$ with the property that the projection $p_{\Lambda}: X
 \dashrightarrow \P^{r}$ is not dominant. 
 
-\begin{proof}[Proof of \autoref{NonDominance}] We will show: the general element in the ramification divisor class $|R|$ has a positive dimensional stabilizer under the action of $Aut(X)$.  We leave it to the reader to check that the Grassmannian $\Gr$ does not have generic stabilizer under $\Aut(X)$.  The theorem then follows by the $Aut(X)$-equivariance of $\rho: \G \dashrightarrow |R|$.
+\begin{proof}[Proof of \autoref{NonDominance}] We will show: the general element in the ramification divisor class $|R|$ has a positive dimensional stabilizer under the action of $Aut(X)$.  We leave it to the reader to check that the Grassmannian $\Gr$ does not have generic stabilizer under $\Aut(X)$.  The theorem then follows by the $Aut(X)$-equivariance of $\rho\from \G \dashrightarrow |R|$.
 
 
 In terms of the affine coordinates $(x_{1}, \dots, x_{r}, t)$ introduced in the previous section, we find ourselves in the situation corresponding to the degree vector $\underline{d} = (1, ..., 1, k+1)$.  The degree vector corresponding to ramification divisors is then $\underline{e} = (r+k+1, r+k+1, \dots, r+2k+1)$.  

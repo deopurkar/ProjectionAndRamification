@@ -467,44 +467,14 @@ The \emph{conormal variety of $L$}, denoted by $P_L$, is the closure of $\P(K|_U
   \[ h^0(X, L \otimes \mathfrak m_y^2) = h^0(X, L) - (r+1).\]
   Hence, for a generic $x \in X$, we have
   \[ h^0(X, L \otimes \mathfrak m_y^2\cdot \mathfrak m_x) = h^0(X, L) - (r+2).\]
-  Therefore, if $h^0(X, L) = r+2$, then we are done.
+  If $h^0(X, L) = r+2$, then we are done.
 
-  Assume that $h^0(X, L) \geq r+3$.
-  Then $h^0(\widetilde X, \pi^*L(-E)) \geq r+2$.
-  
-  
-  Let $y \in X$ be a general point.
-  As a consequence of \autoref{prop:genericSeparateTangents}, we have
-  \[ h^0(L \otimes \mathfrak m_y^2) = h^0(L) - (r+1).\]
-  
-  
-
-  We may assume that $y \not \in E$, and hence consider $y$ as a point of $X$.
-  We must show that there exists a section of $\pi^*L(-E)$ with an isolated singularity at $y$.
-  Since $H^0(\widetilde X, \pi^*L(-E)) = H^0(X, L \otimes \mathfrak m_x)$, we need to show that for a general $(x,y) \in X \times X$, there exists a section of $L$ that vanishes at $x$ and has an isolated singularity at $y$.
-
-
-  
- As a consequence of \autoref{prop:dimP}, at a general point $y \in X$, we have
-  \begin{align*}
-    h^{0}(L \otimes {\mathfrak{m}^{2}_{y}}) = h^{0}(L) - (r+1).
-  \end{align*}
-  Furthermore, by the non-defectivity of $L$, there is an element $t_{1} \in H^{0}(X, L \otimes {\mathfrak{m}^{2}_{y}})$ such that $v(t_{1})$ has an isolated singularity at $y$.
-  Choose another general point $x \in X^{\rm sm} \setminus v(t_1)$.
-  
-  By \autoref{prop:genericSeparateTangents}, $L$ separates tangent vectors at  $x$, and therefore we get an isomorphism
-  \[H^{0}(X, L \otimes {\mathfrak m}_{x}) \cong H^{0}(\widetilde{X},\pi^{*}L(-E)).\]
- 
-
-Furthermore, we can choose $x$ ensuring the following: 
-\begin{enumerate}
-  \item  $h^{0}(X,  L \otimes {\mathfrak m}^{2}_{y}\cdot {\mathfrak m}_{x}) = h^{0}(X,  L \otimes {\mathfrak{m}^{2}_{y}}) - 1$, and
-  \item a general nonzero element $t \in  H^{0}(X, L \otimes{\mathfrak m}^{2}_{y}\cdot {\mathfrak m}_{x})$ has an isolated singularity at $y$, provided it exists.
- \end{enumerate}
-
- With $x$ chosen as above, the two conditions imply that the conormal variety
- $\widetilde{P}$ for the line bundle $\pi^{*}L(-E) \to {\widetilde{X}}$ over
- $\widetilde{X} = \Bl_{x}X$ has the expected dimension according to \autoref{prop:dimension}, and (provided $t$ exists) that the point $(y,t)$ is a point in $\widetilde{P}$ around which the projection $\sigma\from \widetilde{P} \to |\pi^{*}L(-E)|$ is quasi-finite onto its image. We conclude using \autoref{prop:dimensionCriterion}.
+  Assume that $h^0(X, L) \geq r+3$, and let $y \in X$ be general.
+  Then $h^0(X, L \otimes \frak m_y^2) \geq 2$.
+  Since $L$ is non-defective, a general $s \in V = H^0(X, L \otimes \frak m_y^2)$ is such that $v(s)$ has an isolated singularity at $y$.
+  Moreover, since $\dim V \geq 2$, for every $x \in X$, there exists $s \in V$ such that $v(s)$ passes through $x$.
+  Hence, for a general $x \in X$, there exists $s \in V$ such that $v(s)$ has an isolated singularity at $y$ and passes through $x$.
+  The proof is now complete.
 \end{proof}
 
 \subsection{Projections}

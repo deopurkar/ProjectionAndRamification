@@ -124,7 +124,7 @@
 \tableofcontents
 
 
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 Let $X \subset \P^n$ be a smooth projective variety of dimension $r$, not contained in any hyperplane.
 Projection from a general $(n-r-1)$-dimensional linear subspace $L \subset \P^n$ defines a finite surjective map
 \begin{align*}
@@ -156,7 +156,7 @@ Our first result answers this question affirmatively for a large class of variet
 We say that $X \subset \P^n$ is \emph{incompressible} if for every $(n-r-1)$-dimensional linear subspace $L \subset \P^n$, the projection map $p_L \from X \dashrightarrow \P^r$ is dominant.
 Recall that the dual variety $X^* \subset {\P^n}^*$ is the locus of hyperplanes in $\P^n$ whose intersection with $X$ is singular.
 \begin{maintheorem}\label{theorem:Main}
-  Let $X \subset \P^n$ be a non-degenerate, projective variety over a field of characteristic zero.
+  Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over a field of characteristic zero.
   Suppose at least one of the following holds:
   \begin{enumerate}
   \item\label{item:incomp} $X$ is incompressible, 
@@ -312,35 +312,143 @@ The answers to the enumerative questions \autoref{q:degree} do depend on the cha
 $k$ of characteristic $0$ (We use Bertini's theorem and generic smoothness. We
 also appeal to the Kodaira Vanishing theorem.) By a {\sl proper variety}, we mean a proper, integral, finite-type $k$-scheme. For any scheme $X$, we let $X^{\rm sm}$ denote its smooth locus. If $F$ is a coherent sheaf, we let $P(F)$ denote its sheaf of principal parts. We will let $e\from H^{0}(X,F) \to P(F)$ denote the natural evaluation morphism -- we suppress the dependence on $F$. If $s$ is a global section of a locally free sheaf, we let $v(s)$ denote the vanishing scheme of $s$.  If $L$ is a line bundle, we let $|L|$ denote the projective space $\P(H^{0}(L))$.  If $L$ is a line bundle on a smooth variety $Y$, and $s \in H^{0}(Y,L)$ is a section, then the {\sl singular scheme} $\sing(v(s))$ of $s$ is the vanishing scheme of $e(s) \in H^{0}(Y,P(L))$; if $K$, the kernel sheaf of $e \from H^{0}(Y,L) \otimes \cO_{Y} \to P(L)$, is locally free, then $\sing(v(s))$ is the largest closed subscheme $T \subset Y$  such that $s\from \cO_{T} \to H^{0}(Y,L) \otimes \cO_{T}$ factors through $K|_{T}$.  
 
+\section{The projection-ramification map}\label{sec:prmap}
+The goal of this section is to define a projection-ramification map for a pair $(X, L)$ consisting of a proper, normal, variety $X$ and a sufficiently positive line bundle $L$ on $X$.
+For $X \subset \P^n$, taking $L = \O(1)$ recovers the projection-ramification map introduced in \autoref{sec:intro}.
+Working with abstract pairs, however, offers more flexibility that is helpful in inductive proofs.
+Furthermore, we sometimes pass from $X$ to a blow-up, and so our notion of positivity is broader than (very) ampleness.
+
+Let $X$ be a normal proper variety of dimension $r$ over an algebraically closed field $k$ of characteristic zero.
+A \emph{projection} of $X$ is a pair $(L,V)$ consisting of a line bundle $L$ on $X$ and a subspace $V \subset H^{0}(X,L)$ of dimension $r+1$.
+\begin{definition}  \label{definition:properlyramified}
+We say that a projection $(L,V)$ is \emph{properly ramified} if the evaluation homomorphism
+\[e \from V \otimes \O_{X} \to P(L)\]
+is an isomorphism over a general point in $X$.  If $(L,V)$ is properly ramified, its \emph{ramification divisor}
+\[R(L,V) \subset X\]
+is the closure of the scheme defined by the determinant of $e \from V \otimes \O_{X^{\rm sm}} \to P(L)|_{X^{\rm sm}}$.
+\end{definition}
+In most cases, $L$ is clear from context, so we drop it from the notation and denote the ramification divisor simply by $R(V)$.
+
+A projection $(L, V)$ gives the evaluation map
+\[e \from V \otimes \O_X \to L.\]
+The evaluation map yields a map $p_{V,L} \from X \dashrightarrow \P V$, regular on the non-empty open set of $X$ where $e$ is surjective.
+The following is an easy observation, whose proof we skip.
+\begin{proposition}\label{prop:proj}
+  The projection $(L, V)$ is properly ramified if and only if the map on tangent spaces induced by $p_{V,L}$ is generically an isomorphism.
+  In characteristic zero, this is equivalent to the condition that $p_{V,L}$ is dominant.
+\end{proposition}
+
+For a fixed $L$, the set of all projection $(L, V)$ are parametrized by the Grassmannian 
+\begin{align*}
+  \Gr(n+1, H^{0}(X,L)).
+\end{align*}
+The property of being properly ramified is a Zariski open condition on the Grassmannian.
+
+We now define a map that assigns to a projection its ramification divisor.
+To do so, we interpret the ramification divisor as an element of a linear series.
+Let $K_X$ be the canonical sheaf of $X$.
+Denoting by $i \from X^{\rm sm} \to X$ the inclusion, $K_X$ is given by the push-forward
+\[ K_X = i_* K_{X^{\rm sm}}.\]
+Note that, since $X$ is normal, the complement of $X^{\rm sm} \subset X$ has codimension at least 2.
+The sheaf $K_X$ is coherent, reflexive, and satisfies Serre's S2 condition.
+
+Let $L$ be a line bundle on $X$.
+The sheaf $P(L)$ is locally free of rank $(r+1)$ on $X^{\rm sm}$, and we have a canonical isomorphism
+\[ \bigwedge^{r+1} P(L) |_{X^{\rm sm}} \cong K_{X^{\rm sm}} \otimes L^{r+1}.\]
+Given a subspace $V \subset H^0(X, L)$, we apply $\bigwedge^{r+1}$ to the evaluation map
+\[ e \from V \otimes \O_{X^{\rm sm}} \to P(L)|_{X^{\rm sm}},\]
+to get
+\[ \det e \from \det V \otimes \O_{X^{\rm sm}} \to K_{X^{\rm sm}} \otimes L^{r+1}. \]
+By applying $i_*$ and taking global sections, we get
+\[ \det V \to H^0(X, K_X \otimes L^{r+1}).\]
+If $(L, V)$ is properly ramified, then this map is non-zero, and hence gives a point of the projective space $\P H^0(X, K_X \otimes L^{r+1})^*$.
+Doing the same construction universally over the Grassmannian $\Gr = \Gr(r+1, H^0(X,L))$ yields a map
+\begin{equation}\label{eqn:rammap}
+  \det \mathcal V \to H^0(X, K_X \otimes L^{r+1}) \otimes \O_{\Gr},
+\end{equation}
+where $\mathcal V \subset H^0(X, L) \otimes \O_{\Gr}$ is the universal sub-bundle of rank $(r+1)$.
+Let $U \subset \Gr$ be the open subset of properly ramified projections.
+Then the map in \eqref{eqn:rammap} is non-zero at every point of $U$, and defines a map $U \to \P H^0(X, K_X \otimes L^{r+1})^*$ given by the surjection
+\begin{equation}\label{eqn:rammapfamily}
+  H^0(X, K_X \otimes L^{r+1})^* \otimes \O_{U} \to \det \mathcal V|_U^*.
+\end{equation}
+Note that $U$ is non-empty if and only if $L$ separates tangent vectors at a general point of $X$.
+\begin{definition}
+  \label{def:ProjectionRamification}
+  Let $L$ be a line bundle that separates tangent vectors at a general point of $X$.
+  The \emph{projection-ramification} map for $L$ is the rational map
+  \[
+    \rho_{(X,L)} \from \Gr(n+1, H^0(X, L)) \dashrightarrow \P H^0(X, K_X \otimes L^{r+1})^*
+  \]
+  defined on the non-empty open subset of properly ramified maps by \eqref{eqn:rammapfamily}.
+\end{definition}
+
+Note that the map \eqref{eqn:rammapfamily} factors as
+\[ \det \mathcal V \xrightarrow{a} \bigwedge^{r+1}H^0(X, L) \otimes \O_{\Gr} \xrightarrow{b} H^0(X, K_X \otimes L^{r+1}) \otimes \O_{\Gr},\]
+where $a$ is $\wedge^{r+1}$ applied to the universal inclusion $\mathcal V \subset H^0(X, L) \otimes \O_{\Gr}$, and $b$ is induced by $\wedge^{r+1}$ applied to the evaluation map $e \from H^0(X, L) \otimes \O_{X} \to P(L)$.
+The map $a$ defines the Pl\"ucker embedding
+\[ i \from \Gr(r+1, H^0(X,L)) \to \P \bigwedge^{r+1}H^0(X,L)^*,\]
+and the map $b$ defines a linear projection
+\[ p \from \P \bigwedge^{r+1}H^0(X,L)^* \dashrightarrow \P H^0(X, K_X \otimes L^{r+1}).\]
+Thus, $\rho_{X,L}$ factors as the Pl\"ucker embedding followed by a linear projection.
+
 \section{Maximal variation for non-defective pairs}
 \label{sec:proof_of_theorem:main}
 The goal of this section is to prove \autoref{theorem:Main}.
+We begin by proning part \eqref{item:incomp}, which is substantially easier.
+\begin{proposition}[\autoref{theorem:Main}~\eqref{item:incomp}]
+  \label{prop:incompress}
+  Let $X \subset \P^n$ be a non-degenerate, normal, incompressible projective variety over a field of characteristic zero.
+  Then $\rho_X$ is a finite map.
+\end{proposition}
+\begin{proof}
+  Write $\P^n = \P W$ for an $(n+1)$ dimensional vector space $W$ and set $L = \O(1)$.
+  Since $X$ is non-degenerate, we have an inclusion $W \subset H^0(X, L)$.
+  The projection-ramification map
+  \[ \rho_X \from \Gr(r+1, W) \dashrightarrow |K_X + (r+1) H|\]
+  is the composite of the inclusion
+  \[ \Gr(r+1, W) \subset \Gr(r+1, H^0(X,L)),\]
+  and
+  \[ \rho_{X,L} \from \Gr(r+1, H^0(X,L)) \dashrightarrow \P H^0(X, K_X \otimes L^{r+1}) = |K_X + (r+1)H|.\]
 
-Let $X \subset \P^n$ be a projective variety of dimension $r$.
-Our proof proceeds inductively by showing that a general $(n-r-1)$-dimensional linear subspace which is incident to $X$ is an isolated point in its fiber under $\rho_X$.
-To execute this strategy, it is easier to work with abstract pairs $(X, L)$ of a variety and a line bundle, and with subspaces of $H^0(X, L)$ instead of subspaces of $\P^n$.
-Furthermore, since we will ultimately want to blow up points on $X$, we work in a setting where the line bundle $L$ is not necessarily very ample.
+  Let $V \subset W$ be an $(r+1)$-dimensional subspace.
+  Since $X \subset \P W$ is incompressible, the projection map $p_{V,L} \from X \dashrightarrow \P V$ induced by $(L, V)$ is dominant.
+  By \autoref{prop:projram}, this implies that $(L, V)$ is properly ramified.
+  Hence, the sub-grassmannian $\Gr(r+1, W) \subset \Gr(r+1, H^0(X,L))$ lies entirely in the open subset of properly ramified map, where $\rho_{X,L}$ is regular.
+  Therefore, the projection-ramification map $\rho_X$ extends to a regular map
+  \[ \rho_X \from \Gr(r+1, W) \to |K_X + (r+1) H|.\]
+  Since the Picard rank of a Grassmannian is $1$, a regular map from a Grassmannian is either constant or finite.
+  It is easy to check that $\rho_X$ is not constant; so it must be finite.
+\end{proof}
 
-\subsection{Non-defective line bundles}
+The proof of part \eqref{item:dual} of \autoref{theorem:Main}, we proceed inductively by showing that a general $(n-r-1)$-dimensional linear subspace which is incident to $X$ is an isolated point in its fiber under $\rho_X$.
+This strategy relies on a positive property of line bundles, called non-defectivity, which we now study.
+
+\subsection{Non-defective line bundles}\label{sec:non-defectivity}
 Let $X$ be a proper variety of dimension $r$, and let $L$ be a line bundle on $X$.
-We need the following positivity property on $L$.
 \begin{definition}
   \label{definition:Genericallynon-defective} 
-  We say that $L$ is \emph{non-defective} if the following holds: for a general point $x \in X$, if there exists $s \in H^0(X, L)$ such that $v(s)$ is singular at $x$, then there exists one such that $v(s)$ has an isolated singularity at $x$.
+  We say that $L$ is \emph{non-defective} if the following holds: for a general point $x \in X$, either there is no $s \in H^0(X, L)$ such that $v(s)$ is singular at $x$, or a general $s$ such that $v(s)$ is singular at $x$ is such that $v(s)$ only has an isolated singularity at $x$.
 \end{definition}
-\begin{remark}
-  Suppose $L$ is non-defective.
-  Let $x \in X$ be general, and let $s \in H^0(X, L)$ be such that $v(s)$ has an isolated singularity at $x$.
-  For all such $s$, it may be the case $v(s)$ has singularities away from $x$, even along a positive dimensional locus.
-  For example, let $\pi \from X \to \P^2$  be the blow-up at a point, and $E$ the exceptional divisor.
-  Then the line bundle $L = \pi^*\O(2) + 2E$ is non-defective, but every section of $L$ contains $E$ in its singular locus.
-\end{remark}
+Note that for $s \in H^0(X, L)$, the vanishing scheme $v(s)$ is singular at $x$ if and only if $s$ lies in $H^0(X, L \otimes \mathfrak m_x^2)$.
+Thus, for a non-defective $L$, the vector space $H^0(X, L \otimes \mathfrak m_x^2)$ is zero, or the vanishing scheme a general element of this vector space only has an isolated singularity at $x$.
+Note that for $s \in H^0(X, L \otimes \mathfrak m_x^2)$, the condition that $v(s)$ have an isolated singularity at $x$ is a Zariski open condition.
+Therefore, if there exists an $s \in H^0(X, L \otimes \mathfrak m_x^2)$ such that $v(s)$ has an isolated singularity at $x$, then a general $s \in H^0(X, L \otimes \mathfrak m_x^2)$ has the same property.
 \begin{remark}
   Let $x$ be a point of $X$.
   Suppose there exists $s \in H^0(X, L)$ with an isolated singularity at $x$.
   It may be tempting to conclude from this that $L$ is non-defective.
   This is not necessarily true!
   For example, take $X = \F_3$ and $L$ the line bundle associated to the divisor class $E + 2F$, where $F$ is a fiber of the projection $\F_3 \to \P^1$ and $E$ the section of self-intersection $-3$.
+  Since the dimension of the vector space $H^0(X, L \otimes \mathfrak m_x^2)$ may jump at special $x$, the existence of a nice $s \in H^0(X, L \otimes \mathfrak m_x^2)$ for a particular $x$ does not imply the same for a general $x$.
+\end{remark}
+
+\begin{remark}
+  Suppose $L$ is non-defective.
+  Let $x \in X$ be general, and let $s \in H^0(X, L)$ be such that $v(s)$ has an isolated singularity at $x$.
+  For all such $s$, it may be the case $v(s)$ has singularities away from $x$, even along a positive dimensional locus.
+  For example, let $\pi \from X \to \P^2$  be the blow-up at a point, and $E$ the exceptional divisor.
+  Then the line bundle $L = \pi^*\O(2) + 2E$ is non-defective, but every section of $L$ contains $E$ in its singular locus.
 \end{remark}
 
 
@@ -467,8 +575,9 @@ The \emph{conormal variety of $L$}, denoted by $P_L$, is the closure of $\P(K|_U
   \[ h^0(X, L \otimes \mathfrak m_y^2) = h^0(X, L) - (r+1).\]
   Hence, for a generic $x \in X$, we have
   \[ h^0(X, L \otimes \mathfrak m_y^2\cdot \mathfrak m_x) = h^0(X, L) - (r+2).\]
-  If $h^0(X, L) = r+2$, then we are done.
-
+  If $h^0(X, L) = r+2$, then
+  \[ h^0(\widetilde X, L \otimes \mathfrak m_y^2) = h^0(X, L \otimes \mathfrak m_y^2 \cdot \mathfrak m_x) = 0,\]
+  and we are done.
   Assume that $h^0(X, L) \geq r+3$, and let $y \in X$ be general.
   Then $h^0(X, L \otimes \frak m_y^2) \geq 2$.
   Since $L$ is non-defective, a general $s \in V = H^0(X, L \otimes \frak m_y^2)$ is such that $v(s)$ has an isolated singularity at $y$.
@@ -477,53 +586,16 @@ The \emph{conormal variety of $L$}, denoted by $P_L$, is the closure of $\P(K|_U
   The proof is now complete.
 \end{proof}
 
-\subsection{Projections}
-
-\begin{definition}
-A {\sl projection} is a pair 
-\begin{align*}
-  (L,V)
-\end{align*}
-where  $L \to X$ is a line bundle and $V \subset H^{0}(X,L)$ is a subspace of dimension $r+1$.  
-\end{definition}
-
-\begin{definition}
-  \label{definition:properlyramified}
-  A projection $(L,V)$ is {\sl properly ramified} if the evaluation homomorphism $e\from V \otimes \cO_{X} \to P(L)$ is an isomorphism over a general point in $X$.  If $(L,V)$ is properly ramified, its {\sl ramification divisor} $$R(V) \subset X^{\rm sm}$$ is the scheme defined by the determinant of $e \from V \otimes \cO_{X^{\rm sm}} \to P(L)|_{X^{\rm sm}}$.
-\end{definition}
-
-If $L \to X$ is fixed, then the set of all projections $(L,V)$ is parametrized by the Grassmannian 
-\begin{align*}
-  \Gr(n+1, H^{0}(X,L)).
-\end{align*}
 
 \begin{corollary}\label{cor:properlyramified}
-  Suppose $L \to X$ is a non-defective line bundle  satisfying $h^{0}(X,L) \geq n+1$. Then there exists a properly ramified projection $(L,V)$.
+  Suppose $L$ is a non-defective line bundle on $X$ with $h^{0}(X,L) \geq r+1$.
+  Then there exists a properly ramified projection $(L,V)$.
 \end{corollary}
 
 \begin{proof}
   This follows immediately from \autoref{prop:genericSeparateTangents}.
 \end{proof}
-
-Next we define the ramification divisor of a projection.  If $L \to X$ is a line bundle over an $r$-dimensional variety $X$, then the sheaf $P(L)$ is locally free of rank $r+1$ over $X^{\rm sm}$, and $\bigwedge^{n+1}P(L)|_{X^{\rm sm}} \simeq K_{X^{\rm sm}} \otimes L^{\otimes n+1}$.  
-
-Therefore, by applying $\bigwedge^{n+1}$ to $e \from H^{0}(X,L) \otimes \cO_{X^{\rm sm}} \to P(L)|_{X^{\rm sm}}$, we get a map of vector spaces of global sections: 
-\begin{align}\label{vectorspacemap}
-\bigwedge^{n+1}H^{0}(X,L) \to H^{0}(X^{\rm sm},K_{X^{\rm sm}} \otimes L^{\otimes n+1}).
-\end{align}
-
-
-
-\begin{definition}
-  \label{def:ProjectionRamification}
-  Let $L \to X$ be a line bundle which separates tangent vectors at a general point of $X$. The {\sl projection-ramification} map for $L$ is the composite: 
-  \begin{align*}
-    \rho_{(X,L)}\from \Gr(n+1,H^{0}(L)) \hookrightarrow \P(\bigwedge^{n+1}H^{0}(L)) \dashrightarrow \P(H^{0}(X^{\rm sm}, K_{X^{\rm sm}} \otimes L^{\otimes n+1}))
-  \end{align*}
-  rationally defined by $(L,V) \mapsto R(V)$. Here the dashed arrow comes from \ref{vectorspacemap}.
-\end{definition}
-
-\autoref{cor:properlyramified} shows that the projection-ramification map $\rho_{(X,L)}$ exists whenever $L \to X$ is non-defective and $h^{0}(X,L) \geq n+1$. 
+By \autoref{cor:properlyramified}, the rational map $\rho_{X,L}$ is defined if $L$ is a non-defective line bundle on $X$ and $h^0(X, L) \geq r+1$.
 
 
 \subsection{Proof}

@@ -148,7 +148,7 @@ Nevertheless, it appears that the geometry of $\rho_X$ is related to some fascin
 \subsection{Maximal variation}
 Our focus is the following question.
 \begin{question}\label{q:maxvar}
-  Is $\rho_{X}$ generically finite onto its image? In other words, is the image of $\rho_X$ of maximal possible dimension?
+  Is $\rho_{X}$ generically finite onto its image? In other words, does the image of $\rho_X$ have maximal possible dimension?
 \end{question}
 
 To our knowledge, this question first appeared in the work of Flenner and Manaresi \cite{MANAFlenn:}.
@@ -175,7 +175,7 @@ Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho_X$
 To our knowledge, the known results about maximal variation operate under condition \eqref{item:incomp} in \autoref{theorem:Main}.
 For example, in \cite{MANAFlenn:}, the authors deduce maximal variation under the condition that for every $(n-r-1)$-dimensional linear subspace $L \subset \P^n$, the join $J(L, X)$ equals $\P^n$, or under the condition that $X$ is smooth and the twisted normal bundle $N_{X/\P^n}(-1)$ is ample.
 Either condition implies that $X$ is incompressible, and hence falls under condition \eqref{item:incomp}.
-If $X$ is a curve or a hypersurface, then $X$ is incompressible, and covered by condition \eqref{item:incomp}.
+If $X$ is a curve or a complete intersection, then $X$ is incompressible, and covered by condition \eqref{item:incomp}.
 
 \autoref{theorem:Main} substantially increases the class of varieties where we now know maximal variation.
 For example, it is easy to see that if $X$ is a smooth surface over a field of characteristic $0$, then $X^*$ is a hypersurface.
@@ -338,7 +338,7 @@ The following is an easy observation, whose proof we skip.
   In characteristic zero, this is equivalent to the condition that $p_{V,L}$ is dominant.
 \end{proposition}
 
-For a fixed $L$, the set of all projection $(L, V)$ are parametrized by the Grassmannian 
+For a fixed $L$, the set of all projections $(L, V)$ forms a Grassmannian 
 \begin{align*}
   \Gr(n+1, H^{0}(X,L)).
 \end{align*}
@@ -395,7 +395,7 @@ Thus, $\rho_{X,L}$ factors as the Pl\"ucker embedding followed by a linear proje
 \section{Maximal variation for non-defective pairs}
 \label{sec:proof_of_theorem:main}
 The goal of this section is to prove \autoref{theorem:Main}.
-We begin by proning part \eqref{item:incomp}, which is substantially easier.
+We begin by proving part \eqref{item:incomp}, which is substantially easier.
 \begin{proposition}[\autoref{theorem:Main}~\eqref{item:incomp}]
   \label{prop:incompress}
   Let $X \subset \P^n$ be a non-degenerate, normal, incompressible projective variety over a field of characteristic zero.
@@ -413,15 +413,15 @@ We begin by proning part \eqref{item:incomp}, which is substantially easier.
 
   Let $V \subset W$ be an $(r+1)$-dimensional subspace.
   Since $X \subset \P W$ is incompressible, the projection map $p_{V,L} \from X \dashrightarrow \P V$ induced by $(L, V)$ is dominant.
-  By \autoref{prop:projram}, this implies that $(L, V)$ is properly ramified.
-  Hence, the sub-grassmannian $\Gr(r+1, W) \subset \Gr(r+1, H^0(X,L))$ lies entirely in the open subset of properly ramified map, where $\rho_{X,L}$ is regular.
+  By \autoref{prop:proj}, this implies that $(L, V)$ is properly ramified.
+  Hence, the sub-grassmannian $\Gr(r+1, W) \subset \Gr(r+1, H^0(X,L))$ lies entirely in the open subset of properly ramified maps, where $\rho_{X,L}$ is regular.
   Therefore, the projection-ramification map $\rho_X$ extends to a regular map
   \[ \rho_X \from \Gr(r+1, W) \to |K_X + (r+1) H|.\]
   Since the Picard rank of a Grassmannian is $1$, a regular map from a Grassmannian is either constant or finite.
   It is easy to check that $\rho_X$ is not constant; so it must be finite.
 \end{proof}
 
-The proof of part \eqref{item:dual} of \autoref{theorem:Main}, we proceed inductively by showing that a general $(n-r-1)$-dimensional linear subspace which is incident to $X$ is an isolated point in its fiber under $\rho_X$.
+For the proof of part \eqref{item:dual} of \autoref{theorem:Main}, we proceed inductively by showing that a general $(n-r-1)$-dimensional linear subspace which is incident to $X$ is an isolated point in its fiber under $\rho_X$.
 This strategy relies on a positive property of line bundles, called non-defectivity, which we now study.
 
 \subsection{Non-defective line bundles}\label{sec:non-defectivity}
@@ -607,7 +607,7 @@ We proceed to the proof of \autoref{theorem:Main}. More specifically, we prove \
    A projection $(L,V)$ is {\sl isolated} if it is properly ramified and if $[V] \in \Gr(n+1,H^{0}(X,L))$ is an isolated point in the corresponding fiber of $\rho_{(X,L)}$.
 \end{definition}
 
-Our main next objective is to show: 
+
 
 \begin{theorem}
   \label{theorem:MainMain}

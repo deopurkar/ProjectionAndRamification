@@ -316,10 +316,14 @@ also appeal to the Kodaira Vanishing theorem.) By a {\sl proper variety}, we mea
 The goal of this section is to define a projection-ramification map for a pair $(X, L)$ consisting of a proper, normal, variety $X$ and a sufficiently positive line bundle $L$ on $X$.
 For $X \subset \P^n$, taking $L = \O(1)$ recovers the projection-ramification map introduced in \autoref{sec:intro}.
 Working with abstract pairs, however, offers more flexibility that is helpful in inductive proofs.
-Furthermore, we sometimes pass from $X$ to a blow-up, and so our notion of positivity is broader than (very) ampleness.
 
-Let $X$ be a normal proper variety of dimension $r$ over an algebraically closed field $k$ of characteristic zero.
-A \emph{projection} of $X$ is a pair $(L,V)$ consisting of a line bundle $L$ on $X$ and a subspace $V \subset H^{0}(X,L)$ of dimension $r+1$.
+Let $X$ be a proper variety of dimension $r$ over an algebraically closed field $k$ of characteristic zero.
+A \emph{linear series} on $X$ is a pair $(L, W)$ consisting of a line bundle $L$ on $X$ and a subspace $W \subset H^0(X, L)$.
+The \emph{complete linear series} associated to $L$ is $(L, W)$ with $W = H^0(X, L)$.
+A \emph{projection} is a linear series $(L, V)$ with $\dim V = r+1$.
+A \emph{projection of $(L, W)$} is a projection $(L, V)$ with $V \subset W$.
+As a convention, we use $V$ for projections and $W$ for more general linear series.
+
 \begin{definition}  \label{definition:properlyramified}
 We say that a projection $(L,V)$ is \emph{properly ramified} if the evaluation homomorphism
 \[e \from V \otimes \O_{X} \to P(L)\]
@@ -338,14 +342,13 @@ The following is an easy observation, whose proof we skip.
   In characteristic zero, this is equivalent to the condition that $p_{V,L}$ is dominant.
 \end{proposition}
 
-For a fixed $L$, the set of all projections $(L, V)$ forms a Grassmannian 
-\begin{align*}
-  \Gr(n+1, H^{0}(X,L)).
-\end{align*}
+For a fixed $(L, W)$, the set of all projections of $(L, W)$ are parametrized by the Grassmannian $\Gr(r+1, W)$.
 The property of being properly ramified is a Zariski open condition on the Grassmannian.
 
 We now define a map that assigns to a projection its ramification divisor.
 To do so, we interpret the ramification divisor as an element of a linear series.
+
+Assume, furthermore, that $X$ is normal.
 Let $K_X$ be the canonical sheaf of $X$.
 Denoting by $i \from X^{\rm sm} \to X$ the inclusion, $K_X$ is given by the push-forward
 \[ K_X = i_* K_{X^{\rm sm}}.\]
@@ -362,37 +365,39 @@ to get
 By applying $i_*$ and taking global sections, we get
 \[ \det V \to H^0(X, K_X \otimes L^{r+1}).\]
 If $(L, V)$ is properly ramified, then this map is non-zero, and hence gives a point of the projective space $\P H^0(X, K_X \otimes L^{r+1})^*$.
-Doing the same construction universally over the Grassmannian $\Gr = \Gr(r+1, H^0(X,L))$ yields a map
+Doing the same construction universally over the Grassmannian $\Gr = \Gr(r+1, W)$ yields a map
 \begin{equation}\label{eqn:rammap}
   \det \mathcal V \to H^0(X, K_X \otimes L^{r+1}) \otimes \O_{\Gr},
 \end{equation}
-where $\mathcal V \subset H^0(X, L) \otimes \O_{\Gr}$ is the universal sub-bundle of rank $(r+1)$.
+where $\mathcal V \subset W \otimes \O_{\Gr}$ is the universal sub-bundle of rank $(r+1)$.
 Let $U \subset \Gr$ be the open subset of properly ramified projections.
 Then the map in \eqref{eqn:rammap} is non-zero at every point of $U$, and defines a map $U \to \P H^0(X, K_X \otimes L^{r+1})^*$ given by the surjection
 \begin{equation}\label{eqn:rammapfamily}
   H^0(X, K_X \otimes L^{r+1})^* \otimes \O_{U} \to \det \mathcal V|_U^*.
 \end{equation}
-Note that $U$ is non-empty if and only if $L$ separates tangent vectors at a general point of $X$.
+Note that $U$ is non-empty if and only if $W$ separates tangent vectors at a general point of $X$.
 \begin{definition}
   \label{def:ProjectionRamification}
-  Let $L$ be a line bundle that separates tangent vectors at a general point of $X$.
-  The \emph{projection-ramification} map for $L$ is the rational map
+  Let $(L, W)$ be a linear series that separates tangent vectors at a general point of $X$.
+  The \emph{projection-ramification} map for $(L,W)$ is the rational map
   \[
-    \rho_{(X,L)} \from \Gr(n+1, H^0(X, L)) \dashrightarrow \P H^0(X, K_X \otimes L^{r+1})^*
+    \rho_{(X,L,W)} \from \Gr(r+1, W) \dashrightarrow \P H^0(X, K_X \otimes L^{r+1})^*
   \]
   defined on the non-empty open subset of properly ramified maps by \eqref{eqn:rammapfamily}.
 \end{definition}
+If any of $X$, $L$, or $W$ are clear from context, we drop them from the notation.
+In particular, for a non-degenerate $X \subset \P^n$, we denote by $\rho_X$ the map $\rho_{X,L,W}$  with $L = \O_X(1)$ and $W$ the image in $H^0(X, L)$ of $H^0(\P^n, \O(1))$.
 
 Note that the map \eqref{eqn:rammapfamily} factors as
-\[ \det \mathcal V \xrightarrow{a} \bigwedge^{r+1}H^0(X, L) \otimes \O_{\Gr} \xrightarrow{b} H^0(X, K_X \otimes L^{r+1}) \otimes \O_{\Gr},\]
-where $a$ is $\wedge^{r+1}$ applied to the universal inclusion $\mathcal V \subset H^0(X, L) \otimes \O_{\Gr}$, and $b$ is induced by $\wedge^{r+1}$ applied to the evaluation map $e \from H^0(X, L) \otimes \O_{X} \to P(L)$.
+\[ \det \mathcal V \xrightarrow{a} \bigwedge^{r+1} W \otimes \O_{\Gr} \xrightarrow{b} H^0(X, K_X \otimes L^{r+1}) \otimes \O_{\Gr},\]
+where $a$ is $\wedge^{r+1}$ applied to the universal inclusion $\mathcal V \subset W \otimes \O_{\Gr}$, and $b$ is induced by $\wedge^{r+1}$ applied to the evaluation map $e \from W \otimes \O_{X} \to P(L)$.
 The map $a$ defines the Pl\"ucker embedding
-\[ i \from \Gr(r+1, H^0(X,L)) \to \P \bigwedge^{r+1}H^0(X,L)^*,\]
+\[ i \from \Gr(r+1, W) \to \P \left(\bigwedge^{r+1}W^*\right),\]
 and the map $b$ defines a linear projection
-\[ p \from \P \bigwedge^{r+1}H^0(X,L)^* \dashrightarrow \P H^0(X, K_X \otimes L^{r+1}).\]
-Thus, $\rho_{X,L}$ factors as the Pl\"ucker embedding followed by a linear projection.
+\[ p \from \P \left(\bigwedge^{r+1}W^*\right) \dashrightarrow \P H^0(X, K_X \otimes L^{r+1}).\]
+Thus, $\rho_{X,L,W}$ factors as the Pl\"ucker embedding followed by a linear projection.
 
-\section{Maximal variation for non-defective pairs}
+\section{Maximal variation for incompressible and non-defective $X$}
 \label{sec:proof_of_theorem:main}
 The goal of this section is to prove \autoref{theorem:Main}.
 We begin by proving part \eqref{item:incomp}, which is substantially easier.
@@ -402,134 +407,153 @@ We begin by proving part \eqref{item:incomp}, which is substantially easier.
   Then $\rho_X$ is a finite map.
 \end{proposition}
 \begin{proof}
-  Write $\P^n = \P W$ for an $(n+1)$ dimensional vector space $W$ and set $L = \O(1)$.
-  Since $X$ is non-degenerate, we have an inclusion $W \subset H^0(X, L)$.
-  The projection-ramification map
-  \[ \rho_X \from \Gr(r+1, W) \dashrightarrow |K_X + (r+1) H|\]
-  is the composite of the inclusion
-  \[ \Gr(r+1, W) \subset \Gr(r+1, H^0(X,L)),\]
-  and
-  \[ \rho_{X,L} \from \Gr(r+1, H^0(X,L)) \dashrightarrow \P H^0(X, K_X \otimes L^{r+1}) = |K_X + (r+1)H|.\]
-
+  Set $L = \O(1)$ and let $W \subset H^0(X, L)$ be the image of $H^0(\P^n, \O(1))$.
   Let $V \subset W$ be an $(r+1)$-dimensional subspace.
-  Since $X \subset \P W$ is incompressible, the projection map $p_{V,L} \from X \dashrightarrow \P V$ induced by $(L, V)$ is dominant.
+  Since $X$ is incompressible, the projection map $p_{V,L} \from X \dashrightarrow \P V$ induced by $(L, V)$ is dominant.
   By \autoref{prop:proj}, this implies that $(L, V)$ is properly ramified.
-  Hence, the sub-grassmannian $\Gr(r+1, W) \subset \Gr(r+1, H^0(X,L))$ lies entirely in the open subset of properly ramified maps, where $\rho_{X,L}$ is regular.
-  Therefore, the projection-ramification map $\rho_X$ extends to a regular map
-  \[ \rho_X \from \Gr(r+1, W) \to |K_X + (r+1) H|.\]
+  Since $V$ was arbitrary, the projection-ramification map 
+  \[ \rho \from \Gr(r+1, W) \to |K_X + (r+1) H|\]
+  is regular.
   Since the Picard rank of a Grassmannian is $1$, a regular map from a Grassmannian is either constant or finite.
-  It is easy to check that $\rho_X$ is not constant; so it must be finite.
+  It is easy to check that $\rho$ is not constant; so it must be finite.
 \end{proof}
 
-For the proof of part \eqref{item:dual} of \autoref{theorem:Main}, we proceed inductively by showing that a general $(n-r-1)$-dimensional linear subspace which is incident to $X$ is an isolated point in its fiber under $\rho_X$.
-This strategy relies on a positive property of line bundles, called non-defectivity, which we now study.
+For the proof of part \eqref{item:dual} of \autoref{theorem:Main}, we proceed inductively by showing that a general $(n-r-1)$-dimensional linear subspace which is incident to $X$ is an isolated point in its fiber under $\rho$.
+Again, it is more convenient to work with the more abstract set-up of a linear series, allowing for series that are not very ample.
 
-\subsection{Non-defective line bundles}\label{sec:non-defectivity}
-Let $X$ be a proper variety of dimension $r$, and let $L$ be a line bundle on $X$.
+Let $X$ be a proper variety of dimension $r$, and let $(L, W)$ be a linear series on $X$.
+For an ideal sheaf $I \subset \O_X$ we denote by $W \otimes I$ the subspace of $W$ consisting of the sections that vanish modulo $I$. %he
+More precisely, if $K$ is the kernel of the evaluation map
+\[ W \otimes \O_X \to L \otimes \O_X/I,\]
+then $W \otimes I = H^0(X, K)$.
+In particular, for $W = H^0(X, L)$, we have $W \otimes I = H^0(X, L \otimes I)$.
+For $s \in W \otimes I$, the vanishing locus $v(s)$ refers to the vanishing locus of $s$ as a section of $L$.
+We set $|W| = \P W^*$, the space of one-dimensional subspaces of $W$, and likewise $|W \otimes I| = \P (W \otimes I)^*$.
+For a complete linear series, we write $|L|$ for $|W|$.
+Note that $v(s) = v(\lambda s)$ for a non-zero scalar $\lambda$, so it causes no ambiguity to talk about $v(s)$ for $s \in |W|$.
+
+\subsection{Non-defective linear series}\label{sec:non-defectivity}
+We study a positivity property of linear series that generalizes the property of having a divisorial dual.
 \begin{definition}
   \label{definition:Genericallynon-defective} 
-  We say that $L$ is \emph{non-defective} if the following holds: for a general point $x \in X$, either there is no $s \in H^0(X, L)$ such that $v(s)$ is singular at $x$, or a general $s$ such that $v(s)$ is singular at $x$ is such that $v(s)$ only has an isolated singularity at $x$.
+  We say that a linear series $(L, W)$ is \emph{non-defective} if,  for a general point $x \in X$ either $W \otimes \mathfrak m_x^2 = 0$, or there exists $s \in W \otimes \mathfrak m_x^2$ such that $v(s)$ has an isolated singularity at $x$.
 \end{definition}
-Note that for $s \in H^0(X, L)$, the vanishing scheme $v(s)$ is singular at $x$ if and only if $s$ lies in $H^0(X, L \otimes \mathfrak m_x^2)$.
-Thus, for a non-defective $L$, the vector space $H^0(X, L \otimes \mathfrak m_x^2)$ is zero, or the vanishing scheme a general element of this vector space only has an isolated singularity at $x$.
-Note that for $s \in H^0(X, L \otimes \mathfrak m_x^2)$, the condition that $v(s)$ have an isolated singularity at $x$ is a Zariski open condition.
-Therefore, if there exists an $s \in H^0(X, L \otimes \mathfrak m_x^2)$ such that $v(s)$ has an isolated singularity at $x$, then a general $s \in H^0(X, L \otimes \mathfrak m_x^2)$ has the same property.
+Note that for $s \in |W|$, the condition that $v(s)$ have an isolated singularity at $x$ is a Zariski open condition on $|W|$.
+Therefore, if there exists an $s |W \otimes \mathfrak m_x^2|$ such that $v(s)$ has an isolated singularity at $x$, then a general $s \in |W \otimes \mathfrak m_x^2|$ has the same property.
 \begin{remark}
   Let $x$ be a point of $X$.
-  Suppose there exists $s \in H^0(X, L)$ with an isolated singularity at $x$.
-  It may be tempting to conclude from this that $L$ is non-defective.
+  Suppose there exists $s \in |W|$ with an isolated singularity at $x$.
+  It may be tempting to conclude from this that $(L, W)$ is non-defective.
   This is not necessarily true!
-  For example, take $X = \F_3$ and $L$ the line bundle associated to the divisor class $E + 2F$, where $F$ is a fiber of the projection $\F_3 \to \P^1$ and $E$ the section of self-intersection $-3$.
-  Since the dimension of the vector space $H^0(X, L \otimes \mathfrak m_x^2)$ may jump at special $x$, the existence of a nice $s \in H^0(X, L \otimes \mathfrak m_x^2)$ for a particular $x$ does not imply the same for a general $x$.
+  For example, take $X = \F_3$.
+  Denote by $E$ the section of self-intersection $-3$ and $F$ the fiber of the projection $\F_3 \to \P^1$.
+  Let $L = \O_X(E + 2F)$ and $W = H^0(X, L)$.
+  For $x \in E$, the general member of $|W \otimes \mathfrak m_x^2|$ has an isolated singularity at $x$, but the same is not true for a general $x \in X$.
 \end{remark}
 
 \begin{remark}
-  Suppose $L$ is non-defective.
-  Let $x \in X$ be general, and let $s \in H^0(X, L)$ be such that $v(s)$ has an isolated singularity at $x$.
+  Suppose $(L, W)$ is non-defective.
+  Let $x \in X$ be general, and let $s \in |W|$ be such that $v(s)$ has an isolated singularity at $x$.
   For all such $s$, it may be the case $v(s)$ has singularities away from $x$, even along a positive dimensional locus.
   For example, let $\pi \from X \to \P^2$  be the blow-up at a point, and $E$ the exceptional divisor.
-  Then the line bundle $L = \pi^*\O(2) + 2E$ is non-defective, but every section of $L$ contains $E$ in its singular locus.
+  The complete linear series associated to $L = \pi^* \O(2) \otimes \O(2E)$ is non-defective, but for every global section of $L$, the singular locus of $v(s)$ contains $E$.
 \end{remark}
 
 
-We now define the conormal variety of $L$, which plays an important role in our analysis of non-defectivity.
-Let $K$ be the kernel of the map
-\[ e \from H^0(X, L) \otimes \O_X \to P(L).\]
+We now define the conormal variety of a linear series, which plays an important role in our analysis of non-defectivity.
+Let $K$ be the kernel of the evaluation map
+\[ e \from W \otimes \O_X \to P(L).\]
 Let $U \subset X$ be an open subset such that $K|_U$ is locally free and the dual of the inclusion 
-\[H^0(X, L)^* \otimes \O_U \to K|_U^*\]
+\[W^* \otimes \O_U \to K|_U^*\]
 is a surjection.
-This surjection defines a closed embedding $\P(K|_U) \subset U \times |L|$.
-The \emph{conormal variety of $L$}, denoted by $P_L$, is the closure of $\P(K|_U)$ in $X \times |L|$.
+This surjection defines a closed embedding $\P(K|_U) \subset U \times |W|$.
+The \emph{conormal variety of $(L,W)$}, denoted by $P_{L,W}$, is the closure of $\P(K|_U)$ in $X \times |W|$.
 
 \begin{proposition}\label{prop:dimension}
   \label{prop:dimP}
-  Suppose $L$ is non-defective.
-  If $h^0(L) \geq r+2$, then $P_L$ is irreducible of dimension $\dim |L| - 1$.
-  If $h^0(L) \leq r+1$, then $P_L$ is empty.
+  Suppose $(L, W)$ is non-defective.
+  If $\dim W \geq r+2$, then $P_{L,W}$ is irreducible of dimension $\dim W - 2$.
+  If $\dim W \leq r+1$, then $P_{L,W}$ is empty.
 \end{proposition} 
 
 \begin{proof}
-  Set $n = \dim |L|$.
-  Then $h^0(L) = n+1$.
+  Set $n = \dim |W| = \dim W - 1$.
   Let $k$ be the (generic) rank of $K$, namely the rank of the locally free sheaf $K|_U$.
   Then $k \geq n-r$.
   The statement of the proposition is equivalent to showing that if $k > 0$, then $k = n-r$.
 
-  For brevity, set $P = P_L$.
-  Consider the projection $\sigma \from P \to |L|$, obtained by restricting the second projection $X \times |L| \to |L|$.
-  For $s \in |L|$, we view $\sigma^{-1}(s)$ as a subscheme of $X$.
+  For brevity, set $P = P_{L,W}$.
+  Consider the projection $\sigma \from P \to |W|$, obtained by restricting the second projection $X \times |W| \to |W|$.
+  For $s \in |W|$, we view $\sigma^{-1}(s)$ as a subscheme of $X$.
   We then have
   \begin{align*}
-    \sigma^{-1}(s) \cap U = \sing(v(s|_U)).
+    \sigma^{-1}(s) \cap U = \sing(v(s)) \cap U.
   \end{align*}
 
   Suppose $r>0$.
   Then $P$ is non-empty and irreducible, since it is the closure of a non-empty and irreducible variety.
-  Since $L$ is non-defective, a general point $(x,s) \in P$ is such that $x$ is an isolated point of $\sing(v(s))$.
-  Therefore, $\sigma \from P \to |L|$ is generically finite onto its image.
-  We conclude that $\dim P \leq \dim |L|$, and hence $k \leq n-r+1$.
+  Since $(L,W)$ is non-defective, a general point $(x,s) \in P$ is such that $x$ is an isolated point of $\sing(v(s))$.
+  Therefore, $\sigma \from P \to |W|$ is generically finite onto its image.
+  We conclude that $\dim P \leq \dim |W|$, and hence $k \leq n-r+1$.
 
-  To show that $k = n-r$, it suffices to show that $\sigma \from P \to |L|$ is not surjective.
+  To show that $k = n-r$, it suffices to show that $\sigma \from P \to |W|$ is not surjective.
   We do so using Bertini's theorem.
-  Let $B \subset X$ denote the union of the base locus of the linear series $|L|$ and the singular locus of $X$.
+  Let $B \subset X$ denote the union of the base locus of $|W|$ and the singular locus of $X$.
   Then $B$ is a proper closed subset of $X$.
   Let $P^B \subset P$ be the pre-image of $B$ under the projection $\pi \from P \to X$.
-  By the definition of $P$, the map $\pi \from P \to X$ is dominant, and hence $P^B$ is a proper closed subset of $P$.
-  Since $P$ is irreducible, we have $\dim P^B < \dim P \leq \dim |L|$, so the projection $P^B \to |L|$ cannot be dominant.
-  Let $s \in |L|$ be general, in particular, not in the image of $P^B \to |L|$.
+  By the definition of $P$, the map $\pi \from P \to X$ is surjective, and hence $P^B$ is a proper closed subset of $P$.
+  Since $P$ is irreducible, we have $\dim P^B < \dim P \leq \dim |W|$, so the projection $P^B \to |W|$ cannot be dominant.
+  Let $s \in |W|$ be general, in particular, not in the image of $P^B \to |W|$.
   By Bertini's theorem $v(s)$ is non-singular away from $B$.
-  Thus, for any $x \in X$, the point $(x, s) \in X \times |L|$ does not lie in $P$.
+  Thus, for any $x \in X$, the point $(x, s) \in X \times |W|$ does not lie in $P$.
   For $x \in B$, this is because $s$ is not in the image of $P^B$, and for $x \not \in B$, this is because $v(s)$ is non-singular at $x$.
-  We conclude that $s$ does not lie in the image of $P \to |L|$.
-  Hence $P \to |L|$ is not surjective.
+  We conclude that $s$ does not lie in the image of $P \to |W|$.
+  Hence $P \to |W|$ is not surjective.
 \end{proof} 
 
 \begin{proposition}
   \label{prop:dimensionCriterion}
-  Let $L$ be a line bundle on $X$ with $h^{0}(X,L) \geq r+2$, and let $P = P_L$ be its conormal variety.
-  The projection $\sigma\from P \to |L|$ is generically finite onto its image if and only if $L$ is non-defective. 
+  Let $(L, W)$ be a linear series with $\dim W \geq r+2$, and let $P = P_L$ be its conormal variety.
+  The projection $\sigma\from P \to |W|$ is generically finite onto its image if and only if $(L, W)$ is non-defective. 
 \end{proposition}
 
 \begin{proof}
-  Since $h^0(X, L) \geq r+2$, the conormal variety $P$ is non-empty.
+  Since $\dim W \geq r+2$, the conormal variety $P = P_{L,W}$ is non-empty.
   Let $(x,s) \in P$ be a general point.
   We may assume that $x \in U$.
-  Then $x$ is a singular point of $v(s)$, and it is an isolated singularity of $v(s)$ if and only if $(x,s)$ is an isolated point in the fiber of $\sigma \from P \to |L|$ over $s$.
+  Then $x$ is a singular point of $v(s)$, and it is an isolated singularity of $v(s)$ if and only if $(x,s)$ is an isolated point in the fiber of $\sigma \from P \to |W|$ over $s$.
   The conclusion follows.
 \end{proof}
 
-\begin{proposition}\label{prop:ordinarydoublepoint}
-  Let $L$ be a non-defective line bundle on $X$ with $h^{0}(X,L) \geq r+2$.
-  Let $x \in X$ be a general point.
-  Then there exists $s \in H^0(X, L)$ such that $v(s)$ has an ordinary double point singularity at $x$.
+The following observation relates non-defectivity with the non-degeneracy of the dual.
+\begin{proposition}\label{prop:non-deg-dual}
+  Let $X \subset \P^n$ be a non-degenerate projective variety whose dual variety $X^* \subset {\P^{n}}^*$ is a hypersurface.
+  Let $L = \O_X(1)$ and $W \subset H^0(X, L)$ the image of $H^0(\P^n, \O(1))$.
+  Then $(L, W)$ is non-defective if and only if the dual variety $X^* \subset {\P^n}^*$ is a hypersurface.
 \end{proposition}
 \begin{proof}
-  By \autoref{prop:dimensionCriterion}, the projection $\sigma\from P \to |L|$ is generically finite onto its image. 
+  Since $X \subset \P^n$ is not contained in a hyperplane, we have $\dim W = n+1 \geq r+1$.
+  Since $(L, W)$ is very ample, it separates tangent vectors on $X$, so the evaluation map
+  \[ e \from W \otimes \O_X \to P(L)  \]
+  is surjective.
+  It follows that the rank of the kernel is $n-r$, and hence
+  \[ \dim P_{L,W} = (n-r - 1) + r = n-1.\]
+  By definition, the dual variety $X^* \subset {\P^n}^* = |W|$ is the image of the conormal variety under the projection $P_{L,W} \to |W|$.
+  By \autoref{prop:dimensionCriterion}, $(L, W)$ is non-defective if and only if $\dim X^* = n-1$.
+\end{proof}
+
+\begin{proposition}\label{prop:ordinarydoublepoint}
+  Let $(L, W)$ be a non-defective linear series on $X$ with $\dim W \geq r+2$.
+  Let $x \in X$ be a general point.
+  Then there exists $s \in |W|$ such that $v(s)$ has an ordinary double point singularity at $x$.
+\end{proposition}
+\begin{proof}
+  By \autoref{prop:dimensionCriterion}, the projection $\sigma\from P \to |W|$ is generically finite onto its image. 
   Let $(x,s) \in P$ be a general point.
-  Since our ground field is of characteristic zero, we may assume that $P$ is smooth at $(x,s)$, that $x \in U \cap X^{\rm sm}$, and $\sigma \from P \to |L|$ is a local immersion at $(x,s)$.
+  Since our ground field is of characteristic zero, we may assume that $P$ is smooth at $(x,s)$, that $x \in U \cap X^{\rm sm}$, and $\sigma \from P \to |W|$ is a local immersion at $(x,s)$.
   This implies that $x \in \sing(v(s))$ is isolated, and also that $x$ is a reduced point of the scheme $\sing(v(s))$.
   These two properties show that $v(s)$ possesses an ordinary double point at $x$.
-  To see this, choose local coordinates $(x_{1}, ..., x_{n})$ so that the complete local ring ${\widehat{\cO}_{X,x}}$ is isomorphic to $k\llbracket x_{1},\dots, x_{r}\rrbracket$.
+  To see this, choose local coordinates $(x_{1}, ..., x_{n})$ so that the complete local ring ${\widehat{\O}_{X,x}}$ is isomorphic to $k\llbracket x_{1},\dots, x_{r}\rrbracket$.
   After choosing a local trivialization for $L$ around $x$, the section $s$ corresponds to a power series $s(x_1,\dots,x_r)$ contained in $\mathfrak m_x^2 \widehat \O_{X,x}$.
   The germ of $\sing(v(s))$ at $x$ is cut out by the power series $\frac{\partial s}{\partial x_1}, \dots, \frac{\partial s}{\partial x_r}$.
   Since the germ of $\sing(v(s))$ at $x$ is the reduced point $x$, we get that $\frac{\partial s}{\partial x_1}, \dots, \frac{\partial s}{\partial x_r}$ are linearly independent as elements of $\mathfrak m_x / \mathfrak m_x^2$.
@@ -539,68 +563,65 @@ The \emph{conormal variety of $L$}, denoted by $P_L$, is the closure of $\P(K|_U
 
 \begin{proposition}
   \label{prop:genericSeparateTangents}
-  If $L$ is a non-defective line bundle on $X$ with $h^{0}(L) \geq r+1$, then the global sections of $L$ separate tangent vectors at a general point $x \in X$.
+  If $(L, W)$ is a non-defective linear series with $\dim W \geq r+1$, then $W$ separates tangent vectors at a general point $x \in X$.
   That is, the evaluation map
-  \[e_{x}\from H^{0}(X,L) \to L/\mathfrak m_x^2 L\]
+  \[e_{x}\from W \otimes \O_X \to L/\mathfrak m_x^2 L\]
   is surjective for general $x \in X$.
 \end{proposition}
 \begin{proof}
   By the definition of $P(L)$, we have a natural isomorphism
   \[ P(L)|_x = L/\mathfrak m_x^2 L,\]
   so it suffices to show that the evaluation map
-  \[ e \from H^0(X,L) \to P(L)\]
+  \[ e \from W \otimes \O_X \to P(L)\]
   is surjective at $x$.
   Let $k$ be the generic rank of $K$, the kernel of $e$.
   From the proof of \autoref{prop:dimP}, we get
-  \[  k = h^0(L) - r - 1.\]
+  \[  k = \dim W - r - 1.\]
   Since $(r+1)$ is the generic rank of $P(L)$, we conclude that $e$ is generically surjective.
 \end{proof}
+\begin{corollary}\label{cor:properlyramified}
+  Suppose $(L, W)$ is a non-defective linear series on $X$ with $\dim W \geq r+1$.
+  Then there exists a properly ramified projection $(L,V)$ of $(L, W)$.
+\end{corollary}
+\begin{proof}
+  This follows immediately from \autoref{prop:genericSeparateTangents}.
+\end{proof}
+As a consequence of \autoref{cor:properlyramified}, the projection-ramification rational map $\rho_{X,L, W}$ is defined for a non-defective linear series $(L, W)$ with $\dim W \geq r+1$.
 
-
+Let $\pi \from \widetilde X \to X$ be the blow-up at a point $x \in X$, and $E \subset \widetilde X$ the exceptional divisor.
+A linear series $(L, W)$ on $X$ gives a linear series $(\widetilde L, \widetilde W)$ as follows.
+Take $\widetilde L = \pi^* L \otimes \O_{\widetilde X}(-E)$.
+Note that $H^0(X, L) = H^0(\widetilde X, \pi^*L)$, so we may think of $W$ as a subspace of $H^0(\widetilde X, \pi^*L)$.
+Take $\widetilde W = W \otimes \O_{\widetilde X}(-E)$ with its natural inclusion $\widetilde W \subset H^0(\widetilde X, \widetilde L)$.
 \begin{proposition}
   \label{prop:blowuppoint}
-  Let $L$ be a non-defective line bundle on $X$ with $h^0(L) \geq r+2$.
-  Let $x \in X$ be a general point, $\pi \from \widetilde{X} \to X$ the blow up of $X$ at $x$, and $E$ the exceptional divisor of $\pi$.
-  Then $\pi^{*}L (-E)$ is a non-defective line bundle on $\widetilde X$.
+  In the setup above, if $(L, W)$ is non-defective, $\dim W \geq r+2$, and $x \in X$ is general, then $(\widetilde L, \widetilde W)$ is also non-defective.
 \end{proposition}
 
 \begin{proof}
   Let $y$ be a general point of $\widetilde X$.
-  We must show that either $H^0(\widetilde X, \pi^* L(-E) \otimes \mathfrak m_y^2) = 0$ or there exists a global section of $\pi^*L(-E)$ whose vanishing locus has an isolated singularity at $y$.
-  Note that
-  \[ H^0(\widetilde X, \pi^*L(-E)) = H^0(X, L \otimes \mathfrak m_x).\]
-  Hence, we must show that for general $(x,y) \in X \times X$, either $H^0(X, L \otimes \mathfrak m_y^2 \cdot \mathfrak m_x) = 0$ or there exists a global section of $L$ with an isolated singularity at $y$ and passing through $x$.
-
+  We have the equality
+  \[ \widetilde W \otimes \mathfrak m_y^2 = W \otimes \mathfrak m_x \cdot \mathfrak m_y^2. \]
   By \autoref{prop:genericSeparateTangents}, for a general $y \in X$, we have
-  \[ h^0(X, L \otimes \mathfrak m_y^2) = h^0(X, L) - (r+1).\]
-  Hence, for a generic $x \in X$, we have
-  \[ h^0(X, L \otimes \mathfrak m_y^2\cdot \mathfrak m_x) = h^0(X, L) - (r+2).\]
-  If $h^0(X, L) = r+2$, then
-  \[ h^0(\widetilde X, L \otimes \mathfrak m_y^2) = h^0(X, L \otimes \mathfrak m_y^2 \cdot \mathfrak m_x) = 0,\]
-  and we are done.
-  Assume that $h^0(X, L) \geq r+3$, and let $y \in X$ be general.
-  Then $h^0(X, L \otimes \frak m_y^2) \geq 2$.
-  Since $L$ is non-defective, a general $s \in V = H^0(X, L \otimes \frak m_y^2)$ is such that $v(s)$ has an isolated singularity at $y$.
-  Moreover, since $\dim V \geq 2$, for every $x \in X$, there exists $s \in V$ such that $v(s)$ passes through $x$.
-  Hence, for a general $x \in X$, there exists $s \in V$ such that $v(s)$ has an isolated singularity at $y$ and passes through $x$.
-  The proof is now complete.
+  \[ \dim (W \otimes \mathfrak m_y^2) = \dim W - (r+1).\]
+  Since $x \in X$ is general, we get
+  \[ \dim (W \otimes \mathfrak m_x \cdot \mathfrak m_y^2) = \dim W - (r+2).\]
+  If $\dim W = r+2$, then we get $\widetilde W \otimes \mathfrak m_y^2 = 0$, so we are done.
+  Assume that $\dim W \geq r+3$.
+  Then $\dim (W \otimes \mathfrak m_y^2) \geq 2$.
+  Since $(L, W)$ is non-defective, a general $s \in W \otimes \mathfrak m_y^2$ is such that $v(s)$ has an isolated singularity at $y$.
+  Moreover, since $\dim (W \otimes \mathfrak m_y^2) \geq 2$, for every $x \in X$, there exists $s \in V$ such that $v(s)$ passes through $x$.
+  Hence, as $x \in X$ is general, there exists $s \in W \otimes \mathfrak m_y^2$ such that $v(s)$ has an isolated singularity at $y$ and passes through $x$.
+  That is, there exists $s \in \widetilde W \otimes \mathfrak m_y^2 $ that has an isolated singularity at $y$.
+  We conclude that $(\widetilde L, \widetilde W)$ is non-defective.
 \end{proof}
 
 
-\begin{corollary}\label{cor:properlyramified}
-  Suppose $L$ is a non-defective line bundle on $X$ with $h^{0}(X,L) \geq r+1$.
-  Then there exists a properly ramified projection $(L,V)$.
-\end{corollary}
 
-\begin{proof}
-  This follows immediately from \autoref{prop:genericSeparateTangents}.
-\end{proof}
-By \autoref{cor:properlyramified}, the rational map $\rho_{X,L}$ is defined if $L$ is a non-defective line bundle on $X$ and $h^0(X, L) \geq r+1$.
+\subsection{Maximal variation for non-defective pairs}
 
 
-\subsection{Proof}
 We proceed to the proof of \autoref{theorem:Main}. More specifically, we prove \autoref{theorem:MainMain} below, which is more precise and implies \autoref{theorem:Main}.
-
 
 
 \begin{definition}

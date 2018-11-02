@@ -620,25 +620,22 @@ Take $\widetilde W = W \otimes \O_{\widetilde X}(-E)$ with its natural inclusion
 
 \subsection{Maximal variation for non-defective pairs}
 
+In this section, we prove part~\eqref{item:dual} of \autoref{theorem:Main}.
+In fact, we prove a more general result (\autoref{theorem:MainMain}).
 
-We proceed to the proof of \autoref{theorem:Main}. More specifically, we prove \autoref{theorem:MainMain} below, which is more precise and implies \autoref{theorem:Main}.
-
-
-\begin{definition}
-   A projection $(L,V)$ is {\sl isolated} if it is properly ramified and if $[V] \in \Gr(n+1,H^{0}(X,L))$ is an isolated point in the corresponding fiber of $\rho_{(X,L)}$.
-\end{definition}
-
-
-
+As before, $X$ is a proper, normal variety of dimension $r$ over an algebraically closed field of characteristic zero.
 \begin{theorem}
   \label{theorem:MainMain}
-  If $L \to X$ is a non-defective line bundle satisfying $h^{0}(X,L) \geq n+2$, then there exists an isolated projection $(L,V)$.
+  Let $(L, W)$ be a non-defective linear series on $X$ with $\dim W \geq r+2$.
+  Then the projection-ramification map $\rho_{X,L,W}$ is generically finite onto its image.
 \end{theorem}
 
-We need two lemmas, which are essentially local computations.
+For the proof, we need two lemmas, which are essentially local computations.
+Throughout, $X$, $L$, and $W$ are as in the statement of \autoref{theorem:MainMain}.
 
 \begin{lemma}\label{lemma:tangentconeRam}
-  Let $L \to X$ be a non-defective line bundle with $h^{0}(L) \geq n+2$, and let $x \in X$ be a general point.  If $V \subset H^{0}(X,  L \otimes {\mathfrak m}_{x})$ is a general $(n+1)$-dimensional subspace, then the ramification divisor $R(V)$ has an ordinary double point singularity at $x$. 
+  Let $x \in X$ be a general point and $V \subset W \otimes \mathfrak m_x$ a general $(r+1)$-dimensional subspace.
+  Then the ramification divisor $R(V)$ has an ordinary double point singularity at $x$.
 \end{lemma}
 
 \begin{proof}

@@ -639,17 +639,18 @@ Throughout, $X$, $L$, and $W$ are as in the statement of \autoref{theorem:MainMa
 \end{lemma}
 
 \begin{proof}
-  Using \autoref{prop:genericSeparateTangents} and \autoref{prop:ordinarydoublepoint}, we can assume $V$ has a basis $(s_{1}, ..., s_{n}, t)$ satisfying: 
+  Using \autoref{prop:ordinarydoublepoint} and \autoref{prop:genericSeparateTangents}, we get a basis $(s_{1}, ..., s_{n}, t)$ of $V$ satisfying the following two conditions:
   \begin{enumerate}
-      \item $(s_{1}, ..., s_{n})$ generate $L \otimes ({\mathfrak m}_{x}/{\mathfrak m}^{2}_{x})$ and
+      \item $s_{1}, \dots, s_{n}$ generate $L \otimes ({\mathfrak m}_{x}/{\mathfrak m}^{2}_{x})$, and
       \item $v(t)$ has an ordinary double point singularity at $x$.
     \end{enumerate}  
 
-Let $\widehat{\O}_{X,x}$ denote the completion of the local ring at $x \in X$ along its maximal ideal.  Upon trivializing $L$, we may regard $s_{i}$ and $t$ as elements of $\widehat{\O}_{X,x}$, and can also assume  $\widehat{\O}_{X,x} = k[[s_{1}, ..., s_{n}]]$. A local matrix representative for the evaluation map 
+    Let $\widehat{\O}_{X,x}$ denote the completion of the local ring at $x \in X$ along its maximal ideal.  Upon trivializing $L$, we may regard $s_{i}$ and $t$ as elements of $\widehat{\O}_{X,x}$, and can also assume  $\widehat{\O}_{X,x} = k\llbracket s_{1}, \dots s_{n}\rrbracket$.
+    In the bases $(s_1, \dots, s_n, t)$ for $V$ and $(1, s_1, \dots, s_n)$ for $P(L)$, the evaluation map 
 \begin{align*}
   e\from V \otimes \widehat{\O}_{X,x} \to P(L) \otimes \widehat{\O}_{X,x}
 \end{align*}
-is given by 
+has the matrix
 \begin{align}\label{matrix}
 \begin{pmatrix}
   s_{1} & s_{2} & \dots & t \\
@@ -657,14 +658,16 @@ is given by
   0 & 1 & \dots & \partial_{2}t \\
   \vdots & \vdots & \vdots & \vdots \\
   0 & 0 & \dots & \partial_{n}t
-\end{pmatrix}
+\end{pmatrix},
 \end{align}
-
-Here, $\partial_{i}$ denotes $\frac{\partial}{\partial s_{i}}$. The determinant of \ref{matrix} is 
+where $\partial_{i}$ denotes $\frac{\partial}{\partial s_{i}}$.
+The determinant of the matrix \eqref{matrix}
 \begin{align*}
-  t - \sum_{i}s_{i}\partial_{i}t,
+  t - \sum_{i}s_{i}\partial_{i}t
 \end{align*}
-and is an analytic local equation for the ramification divisor $R(V)$ near $x$.  It is then evident that $R(V)$ shares the same tangent cone as $v(t)$ at $x$, and hence the proposition follows.
+is an analytic local equation for the ramification divisor $R(V)$ near $x$.
+Evidently, $R(V)$ shares the same tangent cone as $v(t)$ at $x$.
+The proposition follows.
 \end{proof}
 
 \begin{lemma}\label{lemma:basepointfree}

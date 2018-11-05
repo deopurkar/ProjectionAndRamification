@@ -635,7 +635,7 @@ Throughout, $X$, $L$, and $W$ are as in the statement of \autoref{theorem:MainMa
 
 \begin{lemma}\label{lemma:tangentconeRam}
   Let $x \in X$ be a general point and $V \subset W \otimes \mathfrak m_x$ a general $(r+1)$-dimensional subspace.
-  Then the ramification divisor $R(V)$ has an ordinary double point singularity at $x$.
+  Then $V$ is properly ramified, and the ramification divisor $R(V)$ has an ordinary double point singularity at $x$.
 \end{lemma}
 
 \begin{proof}
@@ -671,22 +671,26 @@ The proposition follows.
 \end{proof}
 
 \begin{lemma}\label{lemma:basepointfree}
-  Maintain the same setting as in \autoref{lemma:tangentconeRam}, except now assume $V \subset H^{0}(X,L)$ has a basis of the form $(u,a_{1}, ..., a_{n-1}, b)$ where 
+  Let $x \in X$ be a general point and $V \subset W$ an $(r+1)$-dimensional subspace with a basis $(u, a_1,\dots, a_{r-1},b)$ where
   \begin{enumerate}
     \item $u$ does not vanish at $x$,
-    \item $a_{1}, ..., a_{n-1}$ all vanish at $x$ and induce linearly independent elements in $L \otimes ({\mathfrak m}_{x}/{\mathfrak m}^{2}_{x})$, and
+    \item $a_1, \dots , a_{r-1}$ vanish at $x$ and reduce to linearly independent elements of $L \otimes ({\mathfrak m}_{x}/{\mathfrak m}^{2}_{x})$, and
     \item $v(b)$ has an ordinary double point at $x$. 
   \end{enumerate}
-  Then $x \in R(V)$ and $R(V)$ is smooth at $x$.
+  Then $R(V)$ contains $x$ and is smooth at $x$.
 \end{lemma}
 
 \begin{proof}
-  That $x \in R(V)$ is clear since $V \cap H^{0}(X,L \otimes \mathfrak{m}^{2}_{x}) \neq 0 $.
+  That $R(V)$ contains $x$ is clear since $V \otimes \mathfrak{m}^{2}_{x} \neq 0$.
 
-  Again we work in the completion $\widehat{\cO}_{x,X}$, and after trivializing $L$, we assume $u, a_{1}, ..., b$ are elements of $\widehat{\cO}_{x,X}$. We choose an element $z \in \widehat{\cO}_{x,X}$ in such a way that $(a_{1}, ..., a_{n-1}, z)$ forms a system of coordinates, i.e. $\widehat{\cO}_{x,X} \simeq k[[a_{1}, ..., a_{n-1}, z ]]$.  With respect to these coordinates, a local matrix representative for \begin{align*}
-  e: V \otimes \widehat{\cO}_{x,X} \to P(L) \otimes \widehat{\cO}_{x,X}
-\end{align*}
-has the form
+  For smoothness, we again work in the completion $\widehat{\O}_{X,x}$.
+  After trivializing $L$, we assume $u, a_{1}, ..., b$ are elements of $\widehat{cO}_{x,X}$.
+  We choose an element $z \in \widehat{\O}_{X,x}$ such that $(a_1, \dots, a_{r-1}, z)$ forms a system of coordinates, that is $\widehat{\O}_{X,x} \cong k\llbracket a_{1}, \dots , a_{r-1}, z \\rrbracket$.
+  With respect to the given basis of $V$ and the basis $1, a_1, \dots, a_{r-1}, z$ for $P(L)$, the evaluation map
+  \begin{align*}
+  e\from V \otimes \widehat{\O}_{X,x} \to P(L) \otimes \widehat{\O}_{X,x}
+  \end{align*}
+  has the matrix
 \begin{align}\label{matrix2}
 \begin{pmatrix}
   u & a_{1} & a_{2} & \dots & b \\
@@ -696,63 +700,69 @@ has the form
   \partial_{z}u  & 0 & 0 & \dots & \partial_{z}b
 \end{pmatrix}
 \end{align}
-
-The determinant of \ref{matrix2} is the analytic local equation for $R(V)$: 
+The determinant of the matrix \eqref{matrix2} is the analytic local equation for $R(V)$.
+It is given by
 \begin{align*}
-   \bar{u} \cdot \partial_{z}b \pm \partial_{z}u \cdot \bar{b}
+   \bar{u} \cdot \partial_{z}b \pm \partial_{z}u \cdot \bar{b},
  \end{align*} 
- Here, for any $r \in \widehat{\cO}_{x,X}$ we set $$\bar{r} := r - a_{1}\partial_{1}r - a_{2}\partial_{2}r - ... - z \partial_{z} r.$$
-
- Since $b \in {\mathfrak m}^{2}_{x}$, we get $\bar{b} \in {\mathfrak m}^{2}_{x}$ and so $\partial_{z}b \in {\mathfrak m}_{x}$.  Furthermore, $\bar{u}$ is a unit.  Therefore,  $R(V)$ is singular at $x$ if and only if: 
- \begin{align*}
-  \partial_{z}b \in {\mathfrak m}^{2}_{x},
- \end{align*}
- but this would render the tangent cone of $v(b)$ degenerate, contrary to our third assumption. So $R(V)$ is smooth at $x$.
+ where, for $r \in \widehat{\O}_{X,x}$ we set
+ \[\bar{r} = r - a_{1}\partial_{1}r - a_{2}\partial_{2}r - \dots - z \partial_{z} r.\]
+ Since $b \in {\mathfrak m}^{2}_{x}$, we get that $\bar{b} \in {\mathfrak m}^{2}_{x}$, and so $\partial_{z}b \in {\mathfrak m}_{x}$.
+ Furthermore, since the tangent cone of $b$ is a non-degenerate quadric, we also get that $\partial_z b \not \in \mathfrak m_x^2$.
+ Since $\overline{u}$ is a unit, we see that the tangent cone of $R(V)$ at $x$ is the hyperplane cut out by $\partial_z b \in \mathfrak m_x/\mathfrak m_x^2$.
+ So $R(V)$ is smooth at $x$.
 \end{proof}
 
-Now we are ready for the proof of \autoref{theorem:MainMain}. 
-
+We now have all the tools for the proof of \autoref{theorem:MainMain}. 
 \begin{proof}[Proof of \autoref{theorem:MainMain}]
-  We induct on $h^{0}(L)$.  First, assume $h^{0}(X,L) = n+2$ and choose $x \in X$ a general point. Then $V  =  H^{0}(X,{\mathfrak m}_{x}\otimes L)$ satisfies the conditions in \autoref{lemma:tangentconeRam} and in particular $V$ is properly ramified and $R(V)$ has an ordinary double point at $x$.  
+  We induct on $\dim W$.
+  The base case $\dim W = r+1$ is vacuous.
 
-  Suppose we have a $1$-parameter family of $(n+1)$-dimensional subspaces $V_{c} \subset H^{0}(X,L)$ parametrized by points $c$ of a smooth pointed curve $(C,0)$ satisfying:
+  We now do the induction step.
+  Suppose $\dim W \geq r+2$.
+  Choose a general point $x \in X$ such that the induced linear series $(\widetilde L, \widetilde W)$ on $\widetilde X = \Bl_x X$ is non-defective as in \autoref{prop:blowuppoint}.
+  Choose a general $(r+1)$-dimensional subspace $V \subset W \otimes \mathfrak m_x = \widetilde W$ that satisfies the hypotheses of \autoref{lemma:tangentconeRam}.
+  By the induction hypothesis, $V$ considered as a projection of $(\widetilde L, \widetilde W)$ is an isolated point in the projection-ramification map for $\widetilde X$.
+  We now show that it is also an isolated point in the projection-ramification map for $X$.
+
+  Let $(C, 0)$ be a pointed smooth curve and $V \subset W \otimes \O_C$ a sub-bundle of rank $(r+1)$ such that
   \begin{enumerate}
-  \item $V_{0} = V$ 
-  \item $V_{c} \neq V_{0}$ for $c \in C$, $c \neq 0$.
+  \item $V_{0} = V$, and 
+  \item $V_{c} \neq W_{0}$ for $c \in C \setminus \{0\}$.
   \end{enumerate}
-  We must prove $R(V_{c}) \neq R(V)$ for a general point $c \in C$. By upper semicontinuity, 
-  \begin{align*}
-    \dm \left(V_{c} \cap H^{0}(X,L \otimes \mathfrak{m}^{2}_{x})\right) \leq 1.
-  \end{align*}
-If $\dm V_{c} \cap H^{0}(X,L \otimes \mathfrak{m}^{2}_{x}) = 0$, then $x \notin R(V_{c})$ and therefore $R(V_{c}) \neq R(V)$.  Otherwise, if $\dm V_{c} \cap H^{0}(X,L \otimes \mathfrak{m}^{2}_{x}) = 1$ then a nonzero section $b \in V_{c} \cap H^{0}(X,L \otimes \mathfrak{m}^{2}_{x})$ must also possess an ordinary double point singularity at $x$, as this is an open condition on families of singularities.
+  We must show that $R(V_c) \neq R(V)$ for a general $c \in C$.
 
-Since $V_{c} \neq V_{0} = H^{0}(X,L\otimes\mathfrak{m})$, there exists a section $u \in V_{c}$ not vanishing at $x$.  This means $V_{c}$ obeys the hypotheses in \autoref{lemma:basepointfree}. But then the conclusion of \autoref{lemma:basepointfree} implies $R(V_{c}) \neq R(V_{0})$ as the former is smooth while the latter is singular at $x$, establishing our initial case.
+  Suppose $V_c \subset W \otimes \mathfrak m_x = \widetilde W$ for all $c \in C$.
+  Denote by $\widetilde R(V_c)$ the ramification divisor of $V_c$ considered as a projection of $\widetilde X$.
+  Since $V = V_0$ is an isolated point in the projection-ramification map for $\widetilde X$, we know that $\widetilde R(V_c) \neq \widetilde R(V_0)$ for a general $c \in C$.
+  Clearly, $R(V_c)$ and $\widetilde R(V_c)$ agree away from the exceptional divisor, and hence we conclude that $R(V_c) \neq R(V_0)$ for a general $c \in C$.
 
-
-Next suppose $h^{0}(X,L) > n+2$, and again choose a general point $x \in X$ where \autoref{prop:blowuppoint} holds. Choose a general $(n+1)$-dimensional subspace 
-\begin{align*}
-  W \subset  H^{0}(X, L \otimes {\mathfrak m}_{x})
-\end{align*}
-so as to obey the conditions in \autoref{lemma:tangentconeRam}. By induction hypothesis and \autoref{prop:blowuppoint}, the projection $(\pi^{*}L(-E),W)$ is isolated, where $\pi\from \widetilde{X} \to X$ is the blow up at $x$.  
-
-So assume we have a $1$-parameter family $W_{c}$ parameterized by a pointed curve $(C,0)$ satisfying 
-\begin{enumerate}
-  \item $W_{0} = W$,
-  \item $W_{c} \neq W_{0}$ for $c \in C$ general,
-  \item $W_{c}$ is not contained in $H^{0}(X, L \otimes {\mathfrak m}_{x})$ for $c \in C$ general.
- \end{enumerate} 
- We must verify: $R(W_{c}) \neq R(W_{0})$.  Again by upper semicontinuity and openness (among singularities) of possession of ordinary double point, we see that $W_{c}$ meets the conditions of \autoref{lemma:basepointfree}. We conclude $R(W_{c}) \neq R(W_{0})$ since the former is smooth while the latter is singular at $x$, completing the argument.
+  On the other hand, suppose $V_c \not \subset W \otimes \mathfrak m_x = \widetilde W$ for a general $c \in C$.
+  Consider the evaluation maps
+  \[ e_c \from V_c \to L / \mathfrak m_x^2 L \]
+  between an $(r+1)$-dimensional source and $(r+1)$-dimensional target.
+  Since $V = V_0$ satisfies the hypotheses of \autoref{lemma:tangentconeRam}, $\rk e_0 = r$.
+  Therefore, by semi-continuity, $\rk e_c \geq r$ for all $c \in C$.
+  If $\rk e_c = (r+1)$ for a general $c \in C$, then $x \not \in R(V_c)$, and hence $R(V_c) \neq R(V)$.
+  Otherwise, by shrinking $C$ if necessary, assume $\rk e_c = r$ for all $c \in C$.
+  In other words, $\dim (V_c \otimes \mathfrak m_x^2) = 1$ for all $c \in C$.
+  Let $b_c \in V_C \otimes \mathfrak m_x^2$ be a non-zero element.
+  Since $v(b_0)$ has an ordinary double-point singularity at $x$, so does $v(b_c)$.
+  Also, since $\rk (e_c) = r$ and $V_c \not \in W \otimes \mathfrak m_x$ for a general $c$, there exists $u_c \in V_c$ not vanishing at $x$, and a set of $(r-1)$ other elements that vanish at $x$ but reduce to linearly independent elements modulo $\mathfrak m_x^2$.
+  That is, $V_c$ satisfies the hypotheses of \autoref{lemma:basepointfree} for a general $c \in C$.
+  But \autoref{lemma:basepointfree} implies that $R(V_c)$ is smooth at $x$.
+  Since $R(V_0)$ is singular at $x$, we conclude that $R(V_0) \neq R(V_c)$.
+  The induction step is now complete.
 \end{proof}
 
-Recall that if $X \subset \P^{n}$ is a projective variety then its dual variety $X^{*} \subset \P^{n*}$ is the image of the conormal variety $P$ (associated to the line bundle $\cO_{X}(1)$) under the projection $\sigma\from P \to |\cO_{X}(1)| \simeq \P^{n*}$.   We immediately get \autoref{theorem:Main}:
-
+We immediately get \autoref{theorem:Main}.
 \begin{corollary}
-  \label{cor:maintheorem} Let $X \subset \P^{n}$ be a non-degenerate projective variety such that the dual variety $X^{*} \subset \P^{n*}$ is a hypersurface. Then $\rho_{X,\cO_{X}(1)}$ is generically finite onto its image.
+  \label{cor:maintheorem} Let $X \subset \P^{n}$ be a non-degenerate projective variety such that the dual variety $X^{*} \subset \P^{n*}$ is a hypersurface. Then $\rho_{X}$ is generically finite onto its image.
 \end{corollary}
-
 \begin{proof}
-    Indeed, since $\cO_{X}(1)$  separates tangent vectors at a general point of $X$, the condition that $X^{*}$ is a hypersurface implies the projection $\sigma\from P \to |\cO_{X}(1)|$ is generically finite onto $X^{*}$, and hence $\cO_{X}(1)$ is non-defective by \autoref{prop:dimensionCriterion}. Thus, \autoref{theorem:MainMain} applies.
-  \end{proof}
+  By \autoref{prop:non-deg-dual} the linear series on $X$ that gives the embedding $X \subset \P^n$ is non-defective.
+  Now apply \autoref{theorem:MainMain}.
+\end{proof}
 
 
 \section{Proof of \autoref{Thm:Counterexamples}} % (fold)

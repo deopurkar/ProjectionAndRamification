@@ -154,7 +154,7 @@ Our focus is the following question.
 To our knowledge, this question first appeared in the work of Flenner and Manaresi \cite{MANAFlenn:}.
 Our first result answers this question affirmatively for a large class of varieties.
 We say that $X \subset \P^n$ is \emph{incompressible} if for every $(n-r-1)$-dimensional linear subspace $L \subset \P^n$, the projection map $p_L \from X \dashrightarrow \P^r$ is dominant.
-Recall that the dual variety $X^* \subset {\P^n}^*$ is the locus of hyperplanes in $\P^n$ whose intersection with $X$ is singular.
+Recall that the dual variety $X^* \subset {\P^n}^*$ is the closure of the locus of hyperplanes in $\P^n$ whose intersection with the smooth part of $X$ is singular.
 \begin{maintheorem}\label{theorem:Main}
   Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over a field of characteristic zero.
   Suppose at least one of the following holds:
@@ -175,7 +175,7 @@ Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho_X$
 To our knowledge, the known results about maximal variation operate under condition \eqref{item:incomp} in \autoref{theorem:Main}.
 For example, in \cite{MANAFlenn:}, the authors deduce maximal variation under the condition that for every $(n-r-1)$-dimensional linear subspace $L \subset \P^n$, the join $J(L, X)$ equals $\P^n$, or under the condition that $X$ is smooth and the twisted normal bundle $N_{X/\P^n}(-1)$ is ample.
 Either condition implies that $X$ is incompressible, and hence falls under condition \eqref{item:incomp}.
-If $X$ is a curve or a complete intersection, then $X$ is incompressible, and covered by condition \eqref{item:incomp}.
+If $X$ is a curve or a smooth complete intersection, then $X$ is incompressible, and covered by condition \eqref{item:incomp}.
 
 \autoref{theorem:Main} substantially increases the class of varieties where we now know maximal variation.
 For example, it is easy to see that if $X$ is a smooth surface over a field of characteristic $0$, then $X^*$ is a hypersurface.
@@ -219,7 +219,7 @@ We prove \autoref{theorem:rationalnormalscrolls} by degeneration, using the theo
 \subsection{Enumerative problems}
 \autoref{theorem:minimaldegree} and \autoref{theorem:rationalnormalscrolls} motivate a gamut of enumerative questions.
 \begin{question}\label{q:degree}
-  For each variety $X \subset \P^n$ of minimal degree, what is the degree of $\rho_X$?
+ When $X \subset \P^n$ is a variety of minimal degree, what is the degree of $\rho_X$?
 \end{question}
 
 
@@ -439,7 +439,7 @@ We study a positivity property of linear series that generalizes the property of
   We say that a linear series $(L, W)$ is \emph{non-defective} if,  for a general point $x \in X$ either $W \otimes \mathfrak m_x^2 = 0$, or there exists $s \in W \otimes \mathfrak m_x^2$ such that $v(s)$ has an isolated singularity at $x$.
 \end{definition}
 Note that for $s \in |W|$, the condition that $v(s)$ have an isolated singularity at $x$ is a Zariski open condition on $|W|$.
-Therefore, if there exists an $s |W \otimes \mathfrak m_x^2|$ such that $v(s)$ has an isolated singularity at $x$, then a general $s \in |W \otimes \mathfrak m_x^2|$ has the same property.
+Therefore, if there exists an $s \in |W \otimes \mathfrak m_x^2|$ such that $v(s)$ has an isolated singularity at $x$, then a general $s \in |W \otimes \mathfrak m_x^2|$ has the same property.
 \begin{remark}
   Let $x$ be a point of $X$.
   Suppose there exists $s \in |W|$ with an isolated singularity at $x$.
@@ -527,8 +527,7 @@ The \emph{conormal variety of $(L,W)$}, denoted by $P_{L,W}$, is the closure of 
 
 The following observation relates non-defectivity with the non-degeneracy of the dual.
 \begin{proposition}\label{prop:non-deg-dual}
-  Let $X \subset \P^n$ be a non-degenerate projective variety whose dual variety $X^* \subset {\P^{n}}^*$ is a hypersurface.
-  Let $L = \O_X(1)$ and $W \subset H^0(X, L)$ the image of $H^0(\P^n, \O(1))$.
+  Let $X \subset \P^n$ be a non-degenerate projective variety.  Let $L = \O_X(1)$ and $W \subset H^0(X, L)$ the image of $H^0(\P^n, \O(1))$.
   Then $(L, W)$ is non-defective if and only if the dual variety $X^* \subset {\P^n}^*$ is a hypersurface.
 \end{proposition}
 \begin{proof}
@@ -684,8 +683,8 @@ The proposition follows.
   That $R(V)$ contains $x$ is clear since $V \otimes \mathfrak{m}^{2}_{x} \neq 0$.
 
   For smoothness, we again work in the completion $\widehat{\O}_{X,x}$.
-  After trivializing $L$, we assume $u, a_{1}, ..., b$ are elements of $\widehat{cO}_{x,X}$.
-  We choose an element $z \in \widehat{\O}_{X,x}$ such that $(a_1, \dots, a_{r-1}, z)$ forms a system of coordinates, that is $\widehat{\O}_{X,x} \cong k\llbracket a_{1}, \dots , a_{r-1}, z \\rrbracket$.
+  After trivializing $L$, we assume $u, a_{1}, ..., b$ are elements of $\widehat{\O}_{X,x}$.
+  We choose an element $z \in \widehat{\O}_{X,x}$ such that $(a_1, \dots, a_{r-1}, z)$ forms a system of coordinates, that is $\widehat{\O}_{X,x} \cong k\llbracket a_{1}, \dots , a_{r-1}, z \rrbracket$.
   With respect to the given basis of $V$ and the basis $1, a_1, \dots, a_{r-1}, z$ for $P(L)$, the evaluation map
   \begin{align*}
   e\from V \otimes \widehat{\O}_{X,x} \to P(L) \otimes \widehat{\O}_{X,x}

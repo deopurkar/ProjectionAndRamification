@@ -313,7 +313,7 @@ $k$ of characteristic $0$ (We use Bertini's theorem and generic smoothness. We
 also appeal to the Kodaira Vanishing theorem.) By a {\sl proper variety}, we mean a proper, integral, finite-type $k$-scheme. For any scheme $X$, we let $X^{\rm sm}$ denote its smooth locus. If $F$ is a coherent sheaf, we let $P(F)$ denote its sheaf of principal parts. We will let $e\from H^{0}(X,F) \to P(F)$ denote the natural evaluation morphism -- we suppress the dependence on $F$. If $s$ is a global section of a locally free sheaf, we let $v(s)$ denote the vanishing scheme of $s$.  If $L$ is a line bundle, we let $|L|$ denote the projective space $\P(H^{0}(L))$.  If $L$ is a line bundle on a smooth variety $Y$, and $s \in H^{0}(Y,L)$ is a section, then the {\sl singular scheme} $\sing(v(s))$ of $s$ is the vanishing scheme of $e(s) \in H^{0}(Y,P(L))$; if $K$, the kernel sheaf of $e \from H^{0}(Y,L) \otimes \cO_{Y} \to P(L)$, is locally free, then $\sing(v(s))$ is the largest closed subscheme $T \subset Y$  such that $s\from \cO_{T} \to H^{0}(Y,L) \otimes \cO_{T}$ factors through $K|_{T}$.  
 
 \section{The projection-ramification map}\label{sec:prmap}
-The goal of this section is to define a projection-ramification map for a pair $(X, L)$ consisting of a proper, normal, variety $X$ and a sufficiently positive line bundle $L$ on $X$.
+In this section, we define a projection-ramification map for a pair $(X, L)$ consisting of a proper, normal, variety $X$ and a sufficiently positive line bundle $L$ on $X$.
 For $X \subset \P^n$, taking $L = \O(1)$ recovers the projection-ramification map introduced in \autoref{sec:intro}.
 Working with abstract pairs, however, offers more flexibility that is helpful in inductive proofs.
 
@@ -754,7 +754,7 @@ We now have all the tools for the proof of \autoref{theorem:MainMain}.
   The induction step is now complete.
 \end{proof}
 
-We immediately get \autoref{theorem:Main}.
+We immediately get part~\eqref{item:dual} of \autoref{theorem:Main}.
 \begin{corollary}
   \label{cor:maintheorem} Let $X \subset \P^{n}$ be a non-degenerate projective variety such that the dual variety $X^{*} \subset \P^{n*}$ is a hypersurface. Then $\rho_{X}$ is generically finite onto its image.
 \end{corollary}
@@ -762,6 +762,92 @@ We immediately get \autoref{theorem:Main}.
   By \autoref{prop:non-deg-dual} the linear series on $X$ that gives the embedding $X \subset \P^n$ is non-defective.
   Now apply \autoref{theorem:MainMain}.
 \end{proof}
+
+
+\section{Projection-ramification for varieties of minimal degree}\label{sec:minimaldegree}
+In this section, we prove \autoref{theorem:minimaldegree}, which characterizes varieties of minimal degree in terms of the projection-ramification map.
+We then prove \autoref{Thm:Counterexamples} by constructing examples of rational scrolls where maximal variation fails.
+Finally, we obtain an alternate description of the projection-ramification map for scrolls, which is used in \autoref{sec:proof_of_theorem:rationalnormalscrolls}.
+
+The following is an easy application of the Kodaira vanishing theorem.
+\begin{proposition}
+  Let $X$ be a smooth projective $r$-dimensional variety with $r > 0$ with a map $X \to \P^n$ that does not factor through 
+  Suppose the pull-back $H$ of $\O(1)$ is ample.
+  Then
+  \[ h^0(X, K_X+rH) \geq n-r.\]
+\end{proposition}
+\begin{proof}
+  We induct on $r$.
+  The case $r = 1$ follows directly from the fact that a degree $d$ line bundle on a curve has at most $(d+1)$ linearly independent sections.
+
+  For the induction step, assume $r > 1$, and let $D \subset X$ be the preimage of a general hyperplane.
+  By Bertini's theorem, $D$ is smooth and connected.
+  Consider the exact sequence
+  \[
+    0 \to \O_X(K_X (r-1)H) \to \O_X(K_X + rH) \to \O_D(K_D + (r-1)H) \to 0.
+  \]
+  Kodaira's vanishing theorem gives $h^1(\O_X(K_X +(r-1)H)) = 0$.
+  Hence, by the long exact sequence of cohomology, we get
+  \begin{equation}\label{eqn:khkd}
+    h^0(X, K_X + rH) \geq h^0(D, K_D + (r-1)H)
+  \end{equation}
+  By the induction hypotheses, we have
+  \[h^0(D, K_D+(r-1)H) \geq n-1-r.\]
+  By combining the last inequality with \eqref{eqn:khkd}, we get the induction step.
+\end{proof}
+
+We now have the tools to prove \autoref{theorem:minimaldegree}, which we restate.
+\begin{theorem}[\autoref{theorem:minimaldegree}]
+  Let $X \subset \P^{n}$ be a smooth, non-degenerate projective variety of dimension $r$ over a field of characteristic zero.
+  We have the inequality
+  \[ \dim \Gr(n-r, n+1) \leq \dim |K_X + (r+1)H|,\]
+  where equality holds if and only if $X$ is a variety of minimal degree, namely $\deg X = n-r+1$.
+\end{theorem}
+\begin{proof}
+  Set $d = \deg X$.
+  We induct on $r$.
+  
+  For $r = 1$, we have
+  \[ \dim \Gr(n-r, n+1) = 2(n-2),\]
+  and
+  \[dim |K_X + (r+1)H| = h^0(K_X + 2H) = 2g_X-2+2d. \]
+  Since $X$ is non-degenerate, we have $n \leq h^0(X, H) - 1$, with equality if and only if $X$ is embedded by the complete linear series.
+  Furthermore, we always have $h^0(X, H) \leq d+1$, with equality if and only if $X$ is rational.
+  The conclusion follows.
+
+  For $r > 1$, let $D \subset X$ be a general hyperplane slice.
+  Consider the long exact sequence on cohomology induced by
+  \[ 0 \to \O_X(K_X+ rH) \to \O_X(K_X + (r+1)H) \to \O_D(K_D + rH) \to 0.\]
+  By the Kodaira vanishing theorem and \autoref{lemma:KYmH}, we get
+  \[
+    h^0(X, K_X+(r+1)H) - h^0(X, K_X+rH) = h^0(D, K_D + rH) \geq n-r.
+  \]
+  
+  
+ We first show: if $\dim \Gr(n-r, n+1) \geq \dim |K_{X} + (r+1)H|$, then $X$ is
+ a variety of minimal degree.  Then we argue: in the case of minimal
+ varieties, this inequality is actually an equality.
+
+  We proceed by intersecting with a hyperplane: let $X' = X \cap H$ be a general
+  hyperplane section of $X$. By combining the Kodaira vanishing theorem, adjunction, and \autoref{lemma:KYmH} we get:
+  \begin{align*}
+    h^{0}(\O_{X}(K_{X}+ (r+1)H)) - h^{0}(\O_{X'}(K_{X'}+ rH)) \geq n-r.
+  \end{align*}
+Therefore, the inequality $$\dim \Gr(n-r, n+1) \geq \dim |K_{X} + (r+1)H|$$ implies $$\dim \Gr(n-r, n) \geq \dim |K_{X'} + rH|$$ and hence by the inductive hypothesis, $X'$ is a variety of minimal degree.  We deduce $X$ is itself a variety of minimal degree. 
+
+
+Thus we are reduced to considering the case $r=1$: we leave it to the reader to translate this case into the well-known fact that a non-degenerate degree $n$ smooth curve in $\P^{n}$ is a rational normal curve.
+
+To complete the proof we observe that if $X$ is a variety of minimal degree, and if $\dim \Gr(n-r,n+1) > \dim
+|K_{X}+ (r+1)H|$, then by arguing in exactly the same way as above, we would
+conclude the analogous strict inequality for its iterated hyperplane slices.
+Again we reduce to the case of $X$ a rational normal curve ($r=1$), where such an inequality is clearly false. This completes the proof of
+\autoref{theorem:minimaldegree}.
+\end{proof}
+
+
+
+The goal of this section is to prove \autoref{Thm:Counterexamples} and \autoref{theorem:minimaldegree}.
 
 
 \section{Proof of \autoref{Thm:Counterexamples}} % (fold)
@@ -901,67 +987,11 @@ We obtain an immediate corollary:
 \section{Proof of \autoref{theorem:minimaldegree}} % (fold)
 \label{sec:proof_of_theorem:minimaldegree} 
 
-In this section, we provide the simple proof of \autoref{theorem:minimaldegree} using the Kodaira vanishing theorem.
-
-
-\begin{lemma}\label{lemma:KYmH}
-  Let $Y$ be a  smooth projective $r$-dimensional variety with $r>0$, and let $H$ be an ample divisor class on $Y$ which induces a morphism 
-  \begin{align*}
-     Y \to \P^{n}.
-   \end{align*} 
-
-  Then 
-  \begin{align*}
-     h^{0}(K_{Y}+rH) \geq n-r.
-   \end{align*} 
-\end{lemma}
-
-\begin{proof}
-  We proceed by induction on $r = \dim Y$, with the case $r = 1$ following directly from the fact that a degree $d$ line bundle on a curve cannot have more than $d+1$ independent sections. So we assume $r>1$. Let $D \subset Y$ be a general divisor (smooth by Bertini's theorem)  in the linear system $|H|$, and consider the exact sequence: 
-  \begin{align*}
-    0 \to \O_{Y}(K_{Y}+(r-1)H) \to \O_{Y}(K_{Y}+rH) \to \O_{D}(K_{D}+rH) \to 0.
-  \end{align*}
-
-  The Kodaira Vanishing Theorem gives $h^{1}(\O_{Y}(K_{Y}+(r-1)H) = 0$, and hence
-  \begin{align*}
-     h^{0}(Y,\O_{Y}(K_{Y}+rH)) \geq h^{0}(D,\O_{D}(K_{D}+(r-1)H)). 
-   \end{align*} 
-   Notice  $h^{0}(\O_{D}(H)) \geq n$, and therefore by induction we know: 
-   \begin{align*}
-      h^{0}(D,\O_{D}(K_{D}+(r-1)H)) \geq (n-1)-(r-1) = n-r.
-    \end{align*}
-    The proposition now follows by the Kodaira vanishing theorem which says that $h^{1}(K_{Y} + (r-1)H) = 0$. 
-\end{proof} 
-
-
-
-\begin{proof}[Proof of \autoref{theorem:minimaldegree}]
-  
- We first show: if $\dim \Gr(n-r, n+1) \geq \dim |K_{X} + (r+1)H|$, then $X$ is
- a variety of minimal degree.  Then we argue: in the case of minimal
- varieties, this inequality is actually an equality.
-
-  We proceed by intersecting with a hyperplane: let $X' = X \cap H$ be a general
-  hyperplane section of $X$. By combining the Kodaira vanishing theorem, adjunction, and \autoref{lemma:KYmH} we get:
-  \begin{align*}
-    h^{0}(\O_{X}(K_{X}+ (r+1)H)) - h^{0}(\O_{X'}(K_{X'}+ rH)) \geq n-r.
-  \end{align*}
-Therefore, the inequality $$\dim \Gr(n-r, n+1) \geq \dim |K_{X} + (r+1)H|$$ implies $$\dim \Gr(n-r, n) \geq \dim |K_{X'} + rH|$$ and hence by the inductive hypothesis, $X'$ is a variety of minimal degree.  We deduce $X$ is itself a variety of minimal degree. 
-
-
-Thus we are reduced to considering the case $r=1$: we leave it to the reader to translate this case into the well-known fact that a non-degenerate degree $n$ smooth curve in $\P^{n}$ is a rational normal curve.
-
-To complete the proof we observe that if $X$ is a variety of minimal degree, and if $\dim \Gr(n-r,n+1) > \dim
-|K_{X}+ (r+1)H|$, then by arguing in exactly the same way as above, we would
-conclude the analogous strict inequality for its iterated hyperplane slices.
-Again we reduce to the case of $X$ a rational normal curve ($r=1$), where such an inequality is clearly false. This completes the proof of
-\autoref{theorem:minimaldegree}.
-\end{proof}
 
 
 % section proof_of_theorem:minimaldegree (end)
 
-    \section{Proof of \autoref{theorem:rationalnormalscrolls}}% (fold)
+\section{Proof of \autoref{theorem:rationalnormalscrolls}}% (fold)
     \label{sec:proof_of_theorem:rationalnormalscrolls}
 
 

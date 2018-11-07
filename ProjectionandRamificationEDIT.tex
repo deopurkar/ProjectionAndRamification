@@ -770,80 +770,74 @@ We then prove \autoref{Thm:Counterexamples} by constructing examples of rational
 Finally, we obtain an alternate description of the projection-ramification map for scrolls, which is used in \autoref{sec:proof_of_theorem:rationalnormalscrolls}.
 
 The following is an easy application of the Kodaira vanishing theorem.
-\begin{proposition}
-  Let $X$ be a smooth projective $r$-dimensional variety with $r > 0$ with a map $X \to \P^n$ that does not factor through 
-  Suppose the pull-back $H$ of $\O(1)$ is ample.
-  Then
-  \[ h^0(X, K_X+rH) \geq n-r.\]
-\end{proposition}
-\begin{proof}
-  We induct on $r$.
-  The case $r = 1$ follows directly from the fact that a degree $d$ line bundle on a curve has at most $(d+1)$ linearly independent sections.
-
-  For the induction step, assume $r > 1$, and let $D \subset X$ be the preimage of a general hyperplane.
-  By Bertini's theorem, $D$ is smooth and connected.
-  Consider the exact sequence
-  \[
-    0 \to \O_X(K_X (r-1)H) \to \O_X(K_X + rH) \to \O_D(K_D + (r-1)H) \to 0.
-  \]
-  Kodaira's vanishing theorem gives $h^1(\O_X(K_X +(r-1)H)) = 0$.
-  Hence, by the long exact sequence of cohomology, we get
-  \begin{equation}\label{eqn:khkd}
-    h^0(X, K_X + rH) \geq h^0(D, K_D + (r-1)H)
+\begin{proposition}\label{lemma:KYmH}
+  Let $X \subset \P^n$ be a non-degenerate, smooth, projective, $r$-dimensional variety with $r > 0$.
+  For all $m \geq r$, we have the inequality
+  \begin{equation}\label{eqn:KYmH}
+    {m \choose r}(n-r) + {{m-1} \choose {r}}\leq h^0(X, K_X + mH).
   \end{equation}
-  By the induction hypotheses, we have
-  \[h^0(D, K_D+(r-1)H) \geq n-1-r.\]
-  By combining the last inequality with \eqref{eqn:khkd}, we get the induction step.
+  If equality holds for any $m \geq r$, then $X$ is a variety of minimal degree ($\deg X = n-r+1$).
+  Conversely, for a variety of minimal degree, equality holds for all $m \geq r$.
+\end{proposition}
+
+\begin{proof}
+  Without loss of generality, $X$ is embedded by the complete linear series.
+  Indeed, passing to the complete linear series only increases the left side of the desired inequality, and does not change the right side.
+  
+  We first prove the inequality \eqref{eqn:KYmH}, using a double induction--first on $r$, and then on $m$.
+  For the base case $r = 1$, Riemann--Roch gives
+  \begin{equation}\label{eqn:r1}
+    h^0(X, K_X + mH) = g_X - 1 + mn,
+  \end{equation}
+  from which \eqref{eqn:KYmH} follows for all $m$.
+
+  Assume that \eqref{eqn:KYmH} holds for varieties of dimension $(r-1)$ and all $m \geq r-1$.
+  Let $D \subset X$ be a general member of the linear series $|H|$.
+  By Bertini's theorem, $D$ is a smooth variety.
+  The adjunction formula $K_D = (K_X + H)|_D$ yields the exact sequence
+  \begin{equation}\label{eqn:mainexact}
+    0 \to \O_X(K_X + (m-1)H) \to \O_X(K_X + mH) \to \O_D(K_D + (m-1)H) \to 0.
+  \end{equation}
+  Note that, by the Kodaira vanishing theorem, we have $h^1(K_X + nH) = 0$ for all $n > 1$; we use this repeatedly, without further comment.
+  For $m = r$, the long exact sequence in cohomology associated to \eqref{eqn:mainexact} gives
+  \[ h^0(K_D + (r-1)H) \leq h^0(K_X + rH).\]
+  By applying the induction hypothesis to $D$, we have
+  \begin{equation}
+    n-r \leq h^0(K_D + (r-1)H)
+  \end{equation}
+  Therefore, we conclude that
+  \begin{equation}
+    (n-r) \leq h^0(K_D + rH).
+  \end{equation}
+  Let $m > r$, and assume that \eqref{eqn:KYmH} holds for $X$ for $m-1$.
+  The long exact sequence in cohomology associated to \eqref{eqn:mainexact} gives
+  \begin{equation}\label{eqn:add}
+    h^0(K_X + (m-1)H) + h^0(K_D + (m-1)H) = h^0(K_X + mH).
+  \end{equation}
+  By applying the induction hypothesis to $m-1$, we get
+  \begin{align*}
+    h^0(K_X + (m-1)H) &+ h^0(K_D + (m-1)H)\\
+                      &\geq{{m-1} \choose r}(n-r) + {{m-2} \choose {r}} + {{m-1} \choose {r-1}}(n-r) + {{m-2} \choose r-1} \\
+                      &={m \choose r} (n-r) + {{m-1} \choose r}.
+  \end{align*}
+  Together with \eqref{eqn:add}, we conclude 
+  \begin{equation}
+    {m \choose r} (n-r) + {{m-1} \choose r} \leq h^0(K_X + mH), 
+  \end{equation}
+  which is \eqref{eqn:KYmH} for $m$.
+  The proof of the inequality is thus complete.
+
+  We now examine when equality holds in \eqref{eqn:KYmH}.
+  For $r = 1$, the equation \eqref{eqn:r1} shows that equality holds for some $m$ if and only if $g_X = 0$, that is $X \subset \P^n$ is a rational normal curve, and in this case, equality holds for all $m$.
+  Furthermore, we observe in the inductive proof that if equality holds for an $X$ of dimension $r > 1$ and some $m$, then it must hold for the hyperplane slice $D$ and $(m-1)$.
+  Again, by an induction on $r$, we conclude that $\deg X = n-r+1$, that is, $X \subset \P^n$ is a variety of minimal degree.
+
+  Finally, for $X \subset \P^n$ of minimal degree, induction on $r$ shows that equality holds in \eqref{eqn:KYmH} for all $m$.
 \end{proof}
 
-We now have the tools to prove \autoref{theorem:minimaldegree}, which we restate.
-\begin{theorem}[\autoref{theorem:minimaldegree}]
-  Let $X \subset \P^{n}$ be a smooth, non-degenerate projective variety of dimension $r$ over a field of characteristic zero.
-  We have the inequality
-  \[ \dim \Gr(n-r, n+1) \leq \dim |K_X + (r+1)H|,\]
-  where equality holds if and only if $X$ is a variety of minimal degree, namely $\deg X = n-r+1$.
-\end{theorem}
-\begin{proof}
-  Set $d = \deg X$.
-  We induct on $r$.
-  
-  For $r = 1$, we have
-  \[ \dim \Gr(n-r, n+1) = 2(n-2),\]
-  and
-  \[dim |K_X + (r+1)H| = h^0(K_X + 2H) = 2g_X-2+2d. \]
-  Since $X$ is non-degenerate, we have $n \leq h^0(X, H) - 1$, with equality if and only if $X$ is embedded by the complete linear series.
-  Furthermore, we always have $h^0(X, H) \leq d+1$, with equality if and only if $X$ is rational.
-  The conclusion follows.
-
-  For $r > 1$, let $D \subset X$ be a general hyperplane slice.
-  Consider the long exact sequence on cohomology induced by
-  \[ 0 \to \O_X(K_X+ rH) \to \O_X(K_X + (r+1)H) \to \O_D(K_D + rH) \to 0.\]
-  By the Kodaira vanishing theorem and \autoref{lemma:KYmH}, we get
-  \[
-    h^0(X, K_X+(r+1)H) - h^0(X, K_X+rH) = h^0(D, K_D + rH) \geq n-r.
-  \]
-  
-  
- We first show: if $\dim \Gr(n-r, n+1) \geq \dim |K_{X} + (r+1)H|$, then $X$ is
- a variety of minimal degree.  Then we argue: in the case of minimal
- varieties, this inequality is actually an equality.
-
-  We proceed by intersecting with a hyperplane: let $X' = X \cap H$ be a general
-  hyperplane section of $X$. By combining the Kodaira vanishing theorem, adjunction, and \autoref{lemma:KYmH} we get:
-  \begin{align*}
-    h^{0}(\O_{X}(K_{X}+ (r+1)H)) - h^{0}(\O_{X'}(K_{X'}+ rH)) \geq n-r.
-  \end{align*}
-Therefore, the inequality $$\dim \Gr(n-r, n+1) \geq \dim |K_{X} + (r+1)H|$$ implies $$\dim \Gr(n-r, n) \geq \dim |K_{X'} + rH|$$ and hence by the inductive hypothesis, $X'$ is a variety of minimal degree.  We deduce $X$ is itself a variety of minimal degree. 
-
-
-Thus we are reduced to considering the case $r=1$: we leave it to the reader to translate this case into the well-known fact that a non-degenerate degree $n$ smooth curve in $\P^{n}$ is a rational normal curve.
-
-To complete the proof we observe that if $X$ is a variety of minimal degree, and if $\dim \Gr(n-r,n+1) > \dim
-|K_{X}+ (r+1)H|$, then by arguing in exactly the same way as above, we would
-conclude the analogous strict inequality for its iterated hyperplane slices.
 Again we reduce to the case of $X$ a rational normal curve ($r=1$), where such an inequality is clearly false. This completes the proof of
 \autoref{theorem:minimaldegree}.
-\end{proof}
+
 
 
 

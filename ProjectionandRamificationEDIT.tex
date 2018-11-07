@@ -11,7 +11,7 @@
   mathrsfs,
   enumitem,
   stmaryrd,
-  diagbox
+  diagbox,
 }
 \usepackage[draft]{showlabels}
 \usepackage[table]{xcolor}
@@ -155,7 +155,7 @@ To our knowledge, this question first appeared in the work of Flenner and Manare
 Our first result answers this question affirmatively for a large class of varieties.
 We say that $X \subset \P^n$ is \emph{incompressible} if for every $(n-r-1)$-dimensional linear subspace $L \subset \P^n$, the projection map $p_L \from X \dashrightarrow \P^r$ is dominant.
 Recall that the dual variety $X^* \subset {\P^n}^*$ is the closure of the locus of hyperplanes in $\P^n$ whose intersection with the smooth part of $X$ is singular.
-\begin{maintheorem}\label{theorem:Main}
+\begin{maintheorem}\label{thm:main}
   Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over a field of characteristic zero.
   Suppose at least one of the following holds:
   \begin{enumerate}
@@ -164,24 +164,24 @@ Recall that the dual variety $X^* \subset {\P^n}^*$ is the closure of the locus 
   \end{enumerate}
   Then $\rho_{X}$ is generically finite onto its image.
 \end{maintheorem} 
-We do not assume that $X$ is smooth in the statement of \autoref{theorem:Main}.
+We do not assume that $X$ is smooth in the statement of \autoref{thm:main}.
 This requires defining $\rho_X$ more carefully.
 To state the conclusion informally, if we move a generic $L \subset \P^n$ of complementary dimension, then the ramification locus $R_L \subset X$ also moves.
 
-The hypotheses in \autoref{theorem:Main} are sufficient, but not necessary.
+The hypotheses in \autoref{thm:main} are sufficient, but not necessary.
 Indeed, consider $X = \P^{r-1} \times \P^1 \subset \P^{2r-1}$, embedded by the Segre embedding, for $r \geq 3$.
 Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho_X$ is dominant (see \autoref{Thm:Examples}).
 
-To our knowledge, the known results about maximal variation operate under condition \eqref{item:incomp} in \autoref{theorem:Main}.
+To our knowledge, the known results about maximal variation operate under condition \eqref{item:incomp} in \autoref{thm:main}.
 For example, in \cite{MANAFlenn:}, the authors deduce maximal variation under the condition that for every $(n-r-1)$-dimensional linear subspace $L \subset \P^n$, the join $J(L, X)$ equals $\P^n$, or under the condition that $X$ is smooth and the twisted normal bundle $N_{X/\P^n}(-1)$ is ample.
 Either condition implies that $X$ is incompressible, and hence falls under condition \eqref{item:incomp}.
 If $X$ is a curve or a smooth complete intersection, then $X$ is incompressible, and covered by condition \eqref{item:incomp}.
 
-\autoref{theorem:Main} substantially increases the class of varieties where we now know maximal variation.
+\autoref{thm:main} substantially increases the class of varieties where we now know maximal variation.
 For example, it is easy to see that if $X$ is a smooth surface over a field of characteristic $0$, then $X^*$ is a hypersurface.
 Therefore, maximal variation holds for all surfaces, although incompressibility may not (The cubic surface scroll $X \subset \P^4$ is the smallest counter example, as the projection from the directrix line of $X$ is not dominant).
 As another source of new examples, take a sufficiently high degree Veronese re-embedding $X \subset \P^N$ of any smooth $X$.
-Then $X^*$ is divisorial, and hence $X$ is covered under \autoref{theorem:Main}.
+Then $X^*$ is divisorial, and hence $X$ is covered under \autoref{thm:main}.
 But $X \subset \P^N$ will be compressible.
 
 Given that maximal variation holds in such a large class of varieties, it is natural to wonder if it always holds.
@@ -202,7 +202,7 @@ The next result classifies $X \subset \P^n$ for which the source and the target 
   where equality holds if and only if $X$ is a variety of minimal degree, that is $\deg X = n-r+1$.
 \end{maintheorem}
 Recall the list of smooth varieties of minimal degree: rational normal curves, quadric hypersurfaces, the Veronese surface in $\P^5$, and rational normal scrolls.
-By \autoref{theorem:Main}, $\rho_X$ is dominant for the first three, so we are led to investigate the scrolls.
+By \autoref{thm:main}, $\rho_X$ is dominant for the first three, so we are led to investigate the scrolls.
 It came to us as a surprise that $\rho_X$ is \emph{not} dominant for all scrolls (see \autoref{Thm:Counterexamples}).
 Nevertheless, it is dominant for most scrolls, which we now make precise.
 
@@ -305,7 +305,7 @@ This conjecture states that the pre-image of any point in $\P^{2n-2}$ defined by
 \autoref{theorem:minimaldegree} potentially sets the stage for a higher-dimensional generalization of the body of work around the Shapiro conjecture.
 
 The study of $\rho_X$ in positive characteristic is likely to bring new surprises and require different techniques.
-We do not know if \autoref{theorem:Main} or \autoref{theorem:minimaldegree} holds in positive characteristic; our proof certainly does not.
+We do not know if \autoref{thm:main} or \autoref{theorem:minimaldegree} holds in positive characteristic; our proof certainly does not.
 The answers to the enumerative questions \autoref{q:degree} do depend on the characteristic, even in the simplest case of rational normal curves, due to the presence of inseparable covers \cite{MR2218904}.
 
 \subsection{Notation and conventions} We work over an algebraically closed field
@@ -363,11 +363,13 @@ Given a subspace $V \subset H^0(X, L)$, we apply $\bigwedge^{r+1}$ to the evalua
 to get
 \[ \det e \from \det V \otimes \O_{X^{\rm sm}} \to K_{X^{\rm sm}} \otimes L^{r+1}. \]
 By applying $i_*$ and taking global sections, we get
-\[ \det V \to H^0(X, K_X \otimes L^{r+1}).\]
+\begin{equation}\label{eqn:ramsection}
+  r_V \from \det V \to H^0(X, K_X \otimes L^{r+1}).
+\end{equation}
 If $(L, V)$ is properly ramified, then this map is non-zero, and hence gives a point of the projective space $\P H^0(X, K_X \otimes L^{r+1})^*$.
 Doing the same construction universally over the Grassmannian $\Gr = \Gr(r+1, W)$ yields a map
 \begin{equation}\label{eqn:rammap}
-  \det \mathcal V \to H^0(X, K_X \otimes L^{r+1}) \otimes \O_{\Gr},
+  r \from \det \mathcal V \to H^0(X, K_X \otimes L^{r+1}) \otimes \O_{\Gr},
 \end{equation}
 where $\mathcal V \subset W \otimes \O_{\Gr}$ is the universal sub-bundle of rank $(r+1)$.
 Let $U \subset \Gr$ be the open subset of properly ramified projections.
@@ -399,9 +401,9 @@ Thus, $\rho_{X,L,W}$ factors as the Pl\"ucker embedding followed by a linear pro
 
 \section{Maximal variation for incompressible and non-defective $X$}
 \label{sec:proof_of_theorem:main}
-The goal of this section is to prove \autoref{theorem:Main}.
+The goal of this section is to prove \autoref{thm:main}.
 We begin by proving part \eqref{item:incomp}, which is substantially easier.
-\begin{proposition}[\autoref{theorem:Main}~\eqref{item:incomp}]
+\begin{proposition}[\autoref{thm:main}~\eqref{item:incomp}]
   \label{prop:incompress}
   Let $X \subset \P^n$ be a non-degenerate, normal, incompressible projective variety over a field of characteristic zero.
   Then $\rho_X$ is a finite map.
@@ -418,7 +420,7 @@ We begin by proving part \eqref{item:incomp}, which is substantially easier.
   It is easy to check that $\rho$ is not constant; so it must be finite.
 \end{proof}
 
-For the proof of part \eqref{item:dual} of \autoref{theorem:Main}, we proceed inductively by showing that a general $(n-r-1)$-dimensional linear subspace which is incident to $X$ is an isolated point in its fiber under $\rho$.
+For the proof of part \eqref{item:dual} of \autoref{thm:main}, we proceed inductively by showing that a general $(n-r-1)$-dimensional linear subspace which is incident to $X$ is an isolated point in its fiber under $\rho$.
 Again, it is more convenient to work with the more abstract set-up of a linear series, allowing for series that are not very ample.
 
 Let $X$ be a proper variety of dimension $r$, and let $(L, W)$ be a linear series on $X$.
@@ -619,18 +621,18 @@ Take $\widetilde W = W \otimes \O_{\widetilde X}(-E)$ with its natural inclusion
 
 \subsection{Maximal variation for non-defective pairs}
 
-In this section, we prove part~\eqref{item:dual} of \autoref{theorem:Main}.
-In fact, we prove a more general result (\autoref{theorem:MainMain}).
+In this section, we prove part~\eqref{item:dual} of \autoref{thm:main}.
+In fact, we prove a more general result (\autoref{thm:mainMain}).
 
 As before, $X$ is a proper, normal variety of dimension $r$ over an algebraically closed field of characteristic zero.
 \begin{theorem}
-  \label{theorem:MainMain}
+  \label{thm:mainMain}
   Let $(L, W)$ be a non-defective linear series on $X$ with $\dim W \geq r+2$.
   Then the projection-ramification map $\rho_{X,L,W}$ is generically finite onto its image.
 \end{theorem}
 
 For the proof, we need two lemmas, which are essentially local computations.
-Throughout, $X$, $L$, and $W$ are as in the statement of \autoref{theorem:MainMain}.
+Throughout, $X$, $L$, and $W$ are as in the statement of \autoref{thm:mainMain}.
 
 \begin{lemma}\label{lemma:tangentconeRam}
   Let $x \in X$ be a general point and $V \subset W \otimes \mathfrak m_x$ a general $(r+1)$-dimensional subspace.
@@ -712,8 +714,8 @@ It is given by
  So $R(V)$ is smooth at $x$.
 \end{proof}
 
-We now have all the tools for the proof of \autoref{theorem:MainMain}. 
-\begin{proof}[Proof of \autoref{theorem:MainMain}]
+We now have all the tools for the proof of \autoref{thm:mainMain}. 
+\begin{proof}[Proof of \autoref{thm:mainMain}]
   We induct on $\dim W$.
   The base case $\dim W = r+1$ is clear.
 
@@ -754,13 +756,13 @@ We now have all the tools for the proof of \autoref{theorem:MainMain}.
   The induction step is now complete.
 \end{proof}
 
-We immediately get part~\eqref{item:dual} of \autoref{theorem:Main}.
+We immediately get part~\eqref{item:dual} of \autoref{thm:main}.
 \begin{corollary}
   \label{cor:maintheorem} Let $X \subset \P^{n}$ be a non-degenerate projective variety such that the dual variety $X^{*} \subset \P^{n*}$ is a hypersurface. Then $\rho_{X}$ is generically finite onto its image.
 \end{corollary}
 \begin{proof}
   By \autoref{prop:non-deg-dual} the linear series on $X$ that gives the embedding $X \subset \P^n$ is non-defective.
-  Now apply \autoref{theorem:MainMain}.
+  Now apply \autoref{thm:mainMain}.
 \end{proof}
 
 
@@ -845,6 +847,67 @@ As a consequence, we immediately deduce \autoref{theorem:minimaldegree}.
 \begin{proof}
   Apply \autoref{lemma:KYmH} with $m = r+1$.
 \end{proof}
+
+\subsection{Projection-ramification for scrolls}
+\autoref{theorem:minimaldegree} motivates a deeper investigation of the projection-ramification map for varieties of minimal degree.
+Indeed, for $X \subset \P^n$ of minimal degree, the projection-ramification map is potentially generically finite.
+Recall that a large class of varieties of minimal degree are the rational normal scrolls, namely $X = \P E$ for an ample vector bundle $E$ on $\P^1$ embedded by the complete linear series $\O_X(1)$.
+If $\dim X \geq 3$, then $X$ is neither incompressible nor does it have a divisorial dual variety.
+Therefore, for such $X$, \autoref{thm:main} leaves the question of maximal variation unanswered.
+
+We now examine the projection-ramification map for projectivizations of vector bundles on smooth curves in more detail.
+Let $C$ be a smooth curve and $E$ an ample vector bundle on $C$ of rank $r$.
+Set $X = \P E$, the space of one-dimensional quotients of $E$, and $L = \O_X(1)$.
+Denote by $\pi \from X \to C$ the natural map.
+
+Let $(L, V)$ be a projection of $X$.
+Recall from \eqref{eqn:ramsection} that such a projection gives a map
+\[ r_V \from \det V \to H^0(X, K_X \otimes L^{r+1}),\]
+whose zero locus is the ramification divisor $R(V) \subset X$.
+Note that we have an isomorphism $K_X \cong \pi^* (\det E \otimes K_C) \otimes L^{-r}$, and hence, we may view $r_v$ as a map
+\[ r_V \from \det V \to H^0(C, E \otimes \det E \otimes K_C).\]
+
+We now describe another construction of a section of $E \otimes \det E \otimes K_C$ from $V$, which we call the \emph{differential construction}.
+The subspace $V \subset H^0(X, L) = H^0(C, E)$ gives the evaluation map
+\[ e \from V \otimes \O_C \to E.\]
+If $V$ is generic, then $e$ is a surjection, and its kernel is canonically isomorphic to $\det E^* \otimes \det V$.
+Consider the diagram
+\begin{equation}\label{eqn:differential_construction}
+\begin{tikzcd}
+  0 \arrow{r}& \det E^* \otimes \det V \arrow{r}\arrow{d}{d_V}& V \otimes \O_C \arrow{r}{e}\arrow{d}{e}& E \arrow{r}\arrow[equal]{d}& 0 \\
+  0 \arrow{r}& E \otimes K_C \arrow{r}& P(E) \arrow{r}& E \arrow{r}& 0,
+\end{tikzcd}
+\end{equation}
+where the bottom row is the standard sequence associated to $P(E)$, both maps labeled $e$ are evaluation maps, and the map $d_V$ is the map induced by them.
+The map $d_V$ gives a map
+\[ d_V \from \det V \to H^0(C, E \otimes \det E \otimes K_C).\]
+\begin{proposition}\label{prop:rdv}
+  In the setup above, the two maps $d_V$ and $r_V$ are equal.
+\end{proposition}
+\begin{proof}
+  Recall that $r_V$ is induced by the determinant of the evalutation map
+  \[ V \otimes \O_X \to P(L).\]
+  Denote by $P_\pi(L)$ the bundle of principal parts of $L$ along the fibers of $\pi$.
+  More explicitly,
+  \[ P_\pi(L) = {\pi_1}_* \left(\pi_2^* L \otimes \left(\O_{X \times_\pi X} / I_{\Delta}^2\right)\right),\]
+  where $\Delta \subset X \times_\pi X$ is the diagonal and $\pi_i$ for $i = 1,2$ are the two projections $X \times_\pi X \to X$.
+  It is easy to check that the evaluation map $\pi^* E \to L$ induces an isomorphism $\pi^* E \to P_\pi(L)$.
+  Furthermore, we have the sequence
+  \[ 0 \to \pi^* K_C \otimes L \to P(L) \to P_\pi(L) \to 0.\]
+  By combining this with the identification $\pi^* E = P_\pi(L)$, and the top row of \eqref{eqn:differential_construction}, we get the diagram
+  \begin{equation}\label{eqn:pxpl}
+    \begin{tikzcd}
+      0 \arrow{r}& \pi^*(\det E^* \otimes \det V) \arrow{r}\arrow{d}{p}& V \otimes \O_X \arrow{r}\arrow{d}{e}& \pi^* E \arrow{r}\arrow{d}\arrow[equal]{d}& 0\\
+      0 \arrow{r}& \pi^* K_C \otimes L \arrow{r}& P(L) \arrow{r}& P_\pi(L) \arrow{r}& 0.
+    \end{tikzcd}
+  \end{equation}
+  From the diagram, we see that $\det e = p$, interpreted as elements of the appropriate $\Hom$ spaces.
+  By definition, after taking global sections, $\det e$ gives the section $r_V$.
+  Note that, applying $\pi_*$ to the bottom row of \eqref{eqn:pxpl} yields the bottom row of \eqref{eqn:differential_construction}.
+  Hence, after twisting by $\det E$ and taking global sections, $p$ gives the section $d_V$.
+  We conclude that $r_V = d_V$.
+\end{proof}
+
 
 
 \section{Proof of \autoref{Thm:Counterexamples}} % (fold)
@@ -2079,7 +2142,7 @@ The Wronski determinant of this triple is:
 \end{align}
 
 \begin{proof}[Proof of \autoref{proposition:rhobirationalsurfaces}]
-	Let $r := \sigma x_{1} + \tau x_{2} \in H^{0}(X,\O(R))$ be a general element, we can extract the unique vector space $W$ obeying $\rho_{X}(W) = [r] \in |R|$ as follows: First, we set $s := \sigma$. Secondly, given $s$, the equation $\left[s(qt)' - s'(qt) - t(r's-s'r)\right] = \tau$ is a system of $2k+2$ linear equations involving the $2k+2$ coefficients of the pair $(q,r)$. We know (from \autoref{theorem:Main})  this system has a finite, positive number of solutions. Hence it must have a unique solution, proving the proposition.
+	Let $r := \sigma x_{1} + \tau x_{2} \in H^{0}(X,\O(R))$ be a general element, we can extract the unique vector space $W$ obeying $\rho_{X}(W) = [r] \in |R|$ as follows: First, we set $s := \sigma$. Secondly, given $s$, the equation $\left[s(qt)' - s'(qt) - t(r's-s'r)\right] = \tau$ is a system of $2k+2$ linear equations involving the $2k+2$ coefficients of the pair $(q,r)$. We know (from \autoref{thm:main})  this system has a finite, positive number of solutions. Hence it must have a unique solution, proving the proposition.
 \end{proof}
 
 \subsection{Eccentric threefold scrolls} % (fold)

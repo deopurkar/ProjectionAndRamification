@@ -904,9 +904,31 @@ The map $d_V$ gives a map
   From the diagram, we see that $\det e = p$, interpreted as elements of the appropriate $\Hom$ spaces.
   By definition, after taking global sections, $\det e$ gives the section $r_V$.
   Note that, applying $\pi_*$ to the bottom row of \eqref{eqn:pxpl} yields the bottom row of \eqref{eqn:differential_construction}.
-  Hence, after twisting by $\det E$ and taking global sections, $p$ gives the section $d_V$.
+  Hence, after applying $\pi_*$, twisting by $\det E$ and taking global sections, $p$ gives the section $d_V$.
   We conclude that $r_V = d_V$.
 \end{proof}
+
+Let $R = R(V) \subset X$ be the ramification divisor of the projection given by $V$.
+Note that $R$ is a divisor of class $\pi^*(\det E \otimes K_C) \otimes \O_X(1)$.
+Therefore, $R \subset X$ is a sub-scroll, or equivalently, a fiber of $R \to C$ are hyperplanes in the corresponding fiber of $X \to C$.
+We can obtain an explicit description of these hyperplanes in two ways, one using the original definition, and one using the differential construction.
+
+By definition $R \subset X$ is the set of points $x \in X$ for which there exists $s \in V$ such that $v(s)$ is singular at $x$.
+Since $s$ is a section of $L = \O_X(1)$, the hypersurface $v(s)$ is singular at $x$ if and only if it contains the entire fiber of $\pi \from X \to C$ through $x$.
+Set $c = \pi(x)$, and let $X_c$ be the fiber of $\pi \from X \to C$ over $c$.
+Let $t$ be a uniformizer of $C$ at $c$.
+Then, in an open set of $X$ containing $X_c$, we have $s = t s_1$ for a section $s_1$ of $\O_X(1)$.
+Observe that, we have $\sing(v(s)) \cap F = v(s_1) \cap F$, and therefore, the fiber $R_c$ of $R \to C$ over $c$ is the hyperplane in $X_c$ cut out by $s_1$.
+
+To obtain the same description using the differential construction, consider the top row of \eqref{eqn:differential_construction}.
+As before, let $c$ be a point of $C$, and $t$ a uniformizer of $C$ at $c$.
+Let $v$ be a local section of $V \otimes \O_C$ around $c$ that generates the kernel of $e \from V \otimes \O_C \to E$ at $c$.
+The fiber of the evaluation map $V \otimes \O_C \to P(L)$ over $c$ sends $v \in V$ to the image of $e(v)$ in $L / \mathfrak m_c^2 L$.
+Since $v$ generates the kernel of $e \from V \otimes \O_C \to L$ at $c$, we know that image of $e(v)$ in $L/ \mathfrak m_cL$ is zero.
+Writing $e(v) = ts_1$ for a section $s_1$ of $E$ around $c$, we see that $d_V(v) = s_1 \otimes t \in E \otimes \mathfrak m_c/\mathfrak m_c^2$.
+Thus, the fiber of the sub-scroll defined by $d_V$ over $c$ is the hyperplane in $X_c$ cut out by $s_1$.
+
+
 
 
 

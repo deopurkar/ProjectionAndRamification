@@ -199,7 +199,7 @@ The next result classifies $X \subset \P^n$ for which the source and the target 
   Let $X \subset \P^{n}$ be a smooth, non-degenerate projective variety of dimension $r$ over a field of characteristic zero.
   We have the inequality
   \[ \dim \Gr(n-r, n+1) \leq \dim |K_X + (r+1)H|,\]
-  where equality holds if and only if $X$ is a variety of minimal degree, namely $\deg X = n-r+1$.
+  where equality holds if and only if $X$ is a variety of minimal degree, that is $\deg X = n-r+1$.
 \end{maintheorem}
 Recall the list of smooth varieties of minimal degree: rational normal curves, quadric hypersurfaces, the Veronese surface in $\P^5$, and rational normal scrolls.
 By \autoref{theorem:Main}, $\rho_X$ is dominant for the first three, so we are led to investigate the scrolls.
@@ -771,12 +771,12 @@ Finally, we obtain an alternate description of the projection-ramification map f
 
 The following is an easy application of the Kodaira vanishing theorem.
 \begin{proposition}\label{lemma:KYmH}
-  Let $X \subset \P^n$ be a non-degenerate, smooth, projective, $r$-dimensional variety with $r > 0$.
+  Let $X \subset \P^n$ be a non-degenerate, smooth, projective, variety of dimension $r \geq 1$ over a field of characteristic zero.
   For all $m \geq r$, we have the inequality
   \begin{equation}\label{eqn:KYmH}
     {m \choose r}(n-r) + {{m-1} \choose {r}}\leq h^0(X, K_X + mH).
   \end{equation}
-  If equality holds for any $m \geq r$, then $X$ is a variety of minimal degree ($\deg X = n-r+1$).
+  If equality holds for any $m \geq r$, then $X$ is a variety of minimal degree, that is $\deg X = n-r+1$.
   Conversely, for a variety of minimal degree, equality holds for all $m \geq r$.
 \end{proposition}
 
@@ -835,13 +835,16 @@ The following is an easy application of the Kodaira vanishing theorem.
   Finally, for $X \subset \P^n$ of minimal degree, induction on $r$ shows that equality holds in \eqref{eqn:KYmH} for all $m$.
 \end{proof}
 
-Again we reduce to the case of $X$ a rational normal curve ($r=1$), where such an inequality is clearly false. This completes the proof of
-\autoref{theorem:minimaldegree}.
-
-
-
-
-The goal of this section is to prove \autoref{Thm:Counterexamples} and \autoref{theorem:minimaldegree}.
+As a consequence, we immediately deduce \autoref{theorem:minimaldegree}.
+\begin{theorem}[\autoref{theorem:minimaldegree}]
+  Let $X \subset \P^n$ be a smooth, non-degenerate projective variety of dimension $r \geq 1$ over a field of characteristic zero.
+  We have the inequality
+  \[ \dim \Gr(n-r, n+1) \leq \dim |K_X + (r+1)H|,\]
+  where equality holds if and only if $X$ is a variety of minimal degree, that is $\deg X = n-r+1$.
+\end{theorem}
+\begin{proof}
+  Apply \autoref{lemma:KYmH} with $m = r+1$.
+\end{proof}
 
 
 \section{Proof of \autoref{Thm:Counterexamples}} % (fold)
@@ -976,10 +979,6 @@ We obtain an immediate corollary:
 
 
 % section proof_of_second_result (end)
-
-
-\section{Proof of \autoref{theorem:minimaldegree}} % (fold)
-\label{sec:proof_of_theorem:minimaldegree} 
 
 
 

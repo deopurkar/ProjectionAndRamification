@@ -1311,7 +1311,7 @@ Assume that $\Lambda_0$ and $\Lambda_1$ satisfy the following genericity conditi
 \begin{equation}\label{eq:genericity}
   \dim (\Lambda_0 \cap \Lambda_1) = 1.
 \end{equation}
-Recall that the ramification $R(\lambda)$ is a section of $E \otimes \det E \otimes T_C$.
+Recall that the ramification $R(\lambda)$ is a section of $E \otimes \det E \otimes \Omega_C$.
 \begin{proposition}\label{prop:agreement}
   In the setup above, $R(\lambda)$ vanishes to order $(r+1)a + (r-i)$ at $p$.
   Write $\widetilde R = R(\lambda)/t^{(r+1)a + r-i}$, where $t$ is a uniformizer at $p$.
@@ -1438,10 +1438,10 @@ Fix a point $p \in \P^1$.
 Consider  the locally closed subset $U \subset \Gr(r+1, H^0(E))$ consisting of linear series with vanishing sequence
 \[ (0,\underbrace{1,\dots, 1}_{r})\]
 over $p$.
-Given $\lambda \in U$, let $\widetilde R(\lambda) \in \P H^0(E \otimes \det E \otimes T_{\P^1} \otimes \O(-(r-1)p)$ be the reduced ramification divisor; see \autoref{prop:agreement}.
+Given $\lambda \in U$, let $\widetilde R(\lambda) \in \P H^0(E \otimes \det E \otimes \Omega_{\P^1} \otimes \O(-(r-1)p)$ be the reduced ramification divisor; see \autoref{prop:agreement}.
 The assignment $\lambda \mapsto \widetilde R(\lambda)$ gives a \emph{reduced} projection-ramification map
 \begin{equation}\label{eqn:rrd}
-  \widetilde R \from U \to \P H^0(E \otimes \det E \otimes T_{\P^1} \otimes \O(-(r-1)p))
+  \widetilde R \from U \to \P H^0(E \otimes \det E \otimes \Omega_{\P^1} \otimes \O(-(r-1)p))
 \end{equation}
 between varieties of the same dimension.
 
@@ -1451,19 +1451,19 @@ There exists a Zariski open subset of $\P_{\rm sub}(E|_p)$, such that for all $\
 Denote this isomorphism class by $E'_{\rm gen}$.
 \begin{proposition}\label{prop:domred}
   If the usual projection-ramification map
-  \[ R\from \Gr(r+1, H^0(E'_{\rm gen})) \dashrightarrow \P H^0(E'_{\rm gen} \otimes \det E'_{\rm gen} \otimes T_{\P^1})\]
+  \[ R\from \Gr(r+1, H^0(E'_{\rm gen})) \dashrightarrow \P H^0(E'_{\rm gen} \otimes \det E'_{\rm gen} \otimes \Omega_{\P^1})\]
   is dominant, then so is the reduced projection-ramification map
-  \[\widetilde R\from U \to \P H^0(E \otimes \det E \otimes T_{\P^1} \otimes \O(-(r-1)p)).\]
+  \[\widetilde R\from U \to \P H^0(E \otimes \det E \otimes \Omega_{\P^1} \otimes \O(-(r-1)p)).\]
 \end{proposition}
 \begin{proof}
-  Let $D \in \P H^0(E \otimes \det E \otimes T_{\P^1} \otimes \O(-(r-1)p))$ be a generic section.
+  Let $D \in \P H^0(E \otimes \det E \otimes \Omega_{\P^1} \otimes \O(-(r-1)p))$ be a generic section.
   Let $\ell \subset E|_p$ be the one-dimensional subspace defined by $D|_p$, and set $E' = E'_{\ell}$.
   Since $D$ is generic, we may assume $E' \cong E'_{\rm gen}$.
   We have the inclusion
   \[
-    E' \otimes \det E' \otimes T_{\P^1} \to E \otimes \det E \otimes \O(-(r-1)p) \otimes T_{\P^1},
+    E' \otimes \det E' \otimes \Omega_{\P^1} \to E \otimes \det E \otimes \O(-(r-1)p) \otimes \Omega_{\P^1},
   \]
-  and by construction $D$ is the image of a section $D' \in \P H^0(E' \otimes \det E' \otimes T_{\P^1})$.
+  and by construction $D$ is the image of a section $D' \in \P H^0(E' \otimes \det E' \otimes \Omega_{\P^1})$.
   Since $R$ is dominant for $E'$, there exists a sequence of subspaces $\lambda_n' \in \Gr(r+1, H^0(E'))$ such that $R(\lambda_n')$  limit to $D'$.
   Let $\lambda_n \subset \Gr(r+1, H^0(E))$ be the image of $\lambda'_n$.
   Then $\widetilde R(\lambda_n)$ limit to $D$.

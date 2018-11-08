@@ -188,7 +188,7 @@ Given that maximal variation holds in such a large class of varieties, it is nat
 This is not the case.
 \begin{maintheorem}
   \label{Thm:Counterexamples}
-  There exist smooth, non-degenerate, rational normal scrolls $X^{r} \subset \P^{n}$ of every dimension $r \geq 4$ such that the projection-ramification map $\rho_{X}$ is not generically finite onto its image.
+  There exist smooth, non-degenerate, rational normal scrolls $X^{r} \subset \P^{n}$ of every dimension $r \geq 4$ and degree $d \geq r+1$ such that the projection-ramification map $\rho_{X}$ is not generically finite onto its image.
 \end{maintheorem}
 \autoref{Thm:Counterexamples} provides the first known examples of varieties with non-maximal variation of ramification divisors.
 We describe the rational normal scrolls in \autoref{Thm:Counterexamples} in \autoref{sec:proof_of_second_result}; they include some of general moduli.
@@ -962,7 +962,7 @@ or equivalently a map
 By construction, $\rho$ is equivariant with respect to the action of $\Aut(X)$, and in particular, by the subgroup $\Aut(X/\P^1)$.
 
 We engineer the failure of maximal variation using the following observation.
-\begin{proposition}
+\begin{proposition}\label{prop:nogenstab}
   A generic point of $\Gr(r+1, H^0(\P^1, E))$ has a trivial stabilizer under the action of $\Aut(\P E/\P^1)$.
 \end{proposition}
 \begin{proof}
@@ -978,7 +978,7 @@ We engineer the failure of maximal variation using the following observation.
   Since $t \in \P^1$ is general, it follows that it must be the identity.
 \end{proof}
 
-\begin{proposition}
+\begin{proposition}\label{prop:existgenstab}
   There exist ample vector bundles $E$ of every rank $\geq 4$ such that a general point of $\P H^0(\P^1, E \otimes \det E \otimes K_{\P^1})^*$ has a positive-dimensional stabilizer under $\Aut(\P E/\P^1)$.
   In particular, we may take $E = \O(1)^{r-1} \oplus \O(k+1)$ where $k \geq 1$ and $r \geq 4$.
 \end{proposition}
@@ -1018,7 +1018,16 @@ We engineer the failure of maximal variation using the following observation.
   Finally, note that the requirement \eqref{eqn:requirement} is satisfied for $a = 1$ and $b = k+1$ if $k \geq 1$ and $r \geq 4$.
 \end{proof}
 
-
+\begin{corollary}[\autoref{Thm:Counterexamples}]
+  Let $r \geq 3$ and $d \geq r+1$.
+  There exist ample vector bundles $E$ of rank $r$ and degree $d$ on $\P^1$ such that for $X = \P E$ and the complete linear series $L = \O_X(1)$, the projection-ramification map $\rho_X$ is not generically finite onto its image.
+\end{corollary}
+\begin{proof}
+  Take $E$ such that the action of $\Aut(X/\P^1)$ on a generic point of $|K_X\otimes L^{r+1}|$ has a positive-dimensional stabilizer (see \autoref{prop:existgenstab}).
+  Since $\rho_X \from \Gr(r+1, H^0(X, L)) \dashrightarrow |K_X \otimes L^{r+1}|$ is equivariant with respect to the action of $\Aut(X/\P^1)$, and a generic
+  point of the source does not have a positive-dimensional stabilizer, it follows that $\rho_X$ cannot be dominant.
+  Since the dimension of the source and target of $\rho_X$ are the same, $\rho_X$ is not generically finite.
+\end{proof}
 
 In the next section, we show \autoref{problem:DominantWronskian} has genuine content  by demonstrating that $Wr_{\underline{d}}$ fails to be dominant for degree vectors of the form $(1,1,1, \dots, k+1)$, $r \geq 4$.
 Let $E = \O(1)^{r-1} \oplus \O(k+1)$ be the vector bundle over

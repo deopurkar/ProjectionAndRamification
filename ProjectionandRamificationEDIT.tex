@@ -875,7 +875,7 @@ Consider the diagram
 \begin{equation}\label{eqn:differential_construction}
 \begin{tikzcd}
   0 \arrow{r}& \det E^* \otimes \det V \arrow{r}\arrow{d}{d_V}& V \otimes \O_C \arrow{r}{e}\arrow{d}{e}& E \arrow{r}\arrow[equal]{d}& 0 \\
-  0 \arrow{r}& E \otimes K_C \arrow{r}& P(E) \arrow{r}& E \arrow{r}& 0,
+  0 \arrow{r}& K_C \otimes E \arrow{r}& P(E) \arrow{r}& E \arrow{r}& 0,
 \end{tikzcd}
 \end{equation}
 where the bottom row is the standard sequence associated to $P(E)$, both maps labeled $e$ are evaluation maps, and the map $d_V$ is the map induced by them.
@@ -912,24 +912,44 @@ Let $R = R(V) \subset X$ be the ramification divisor of the projection given by 
 Note that $R$ is a divisor of class $\pi^*(\det E \otimes K_C) \otimes \O_X(1)$.
 Therefore, $R \subset X$ is a sub-scroll, or equivalently, a fiber of $R \to C$ are hyperplanes in the corresponding fiber of $X \to C$.
 We can obtain an explicit description of these hyperplanes in two ways, one using the original definition, and one using the differential construction.
+Fix a point $c \in C$, and a uniformizer $t$ of $C$ at $c$.
+Let $X_c \subset X$ and $R_c \subset R$ be the fibers of $X \to C$ and $R \to C$ over $c$, respectively.
 
 By definition $R \subset X$ is the set of points $x \in X$ for which there exists $s \in V$ such that $v(s)$ is singular at $x$.
 Since $s$ is a section of $L = \O_X(1)$, the hypersurface $v(s)$ is singular at $x$ if and only if it contains the entire fiber of $\pi \from X \to C$ through $x$.
-Set $c = \pi(x)$, and let $X_c$ be the fiber of $\pi \from X \to C$ over $c$.
-Let $t$ be a uniformizer of $C$ at $c$.
+Suppose $\pi (x) = c$.
 Then, in an open set of $X$ containing $X_c$, we have $s = t s_1$ for a section $s_1$ of $\O_X(1)$.
-Observe that, we have $\sing(v(s)) \cap F = v(s_1) \cap F$, and therefore, the fiber $R_c$ of $R \to C$ over $c$ is the hyperplane in $X_c$ cut out by $s_1$.
+Observe that, we have $\sing(v(s)) \cap F = v(s_1) \cap F$, and therefore, $R_c \subset X_c$ is the hyperplane cut out by $s_1$.
 
 To obtain the same description using the differential construction, consider the top row of \eqref{eqn:differential_construction}.
-As before, let $c$ be a point of $C$, and $t$ a uniformizer of $C$ at $c$.
 Let $v$ be a local section of $V \otimes \O_C$ around $c$ that generates the kernel of $e \from V \otimes \O_C \to E$ at $c$.
 The fiber of the evaluation map $V \otimes \O_C \to P(L)$ over $c$ sends $v \in V$ to the image of $e(v)$ in $L / \mathfrak m_c^2 L$.
 Since $v$ generates the kernel of $e \from V \otimes \O_C \to L$ at $c$, we know that image of $e(v)$ in $L/ \mathfrak m_cL$ is zero.
 Writing $e(v) = ts_1$ for a section $s_1$ of $E$ around $c$, we see that $d_V(v) = s_1 \otimes t \in E \otimes \mathfrak m_c/\mathfrak m_c^2$.
 Thus, the fiber of the sub-scroll defined by $d_V$ over $c$ is the hyperplane in $X_c$ cut out by $s_1$.
 
-
-
+Finally, we write an equation of $R(V) \subset X$ over an open subset of $C$ containing $c$ explicitly in coordinates.
+Choose a trivialization $X_1, \dots, X_r$ for $E$ over an open set $U \subset C$ containing $c$.
+Then $X_U \cong \P^{r-1} \times U = \Proj \O_U[X_1, \dots, X_r]$.
+We have a trivialization of $K_C$ over $U$ given by $dt$.
+We then get a trivialization of $P(E)|_U$ by $X_1, \dots, X_r, dt \otimes X_1, \dots, dt \otimes X_r$.
+Choose a basis $v_0, \dots, v_r$ of $V$, and suppose the map $e \from V \otimes \O_U \to E_U$ is given by
+\[ e(v_i) = \sum m_{i,j} X_j,\]
+for $m_{i,j} \in \O_U$, where $0 \leq i \leq r$ and $1 \leq j \leq r$.
+Then the map $\det E^* \otimes \det V \to V \otimes \O_U$ defining the kernel of $e$ is given by the $r \times r$ minors of the matrix $(m_{i,j})$.
+Denote the $\ell$-th minor by $M_\ell$; that is $M_\ell = (-1)^{\ell}\det (m_{i,j} \mid i \neq \ell)$.
+Then the map $d_V$ sends the generator to the element of $E \otimes K_C$ given by
+\[ \sum_{i,j} M_i \cdot \frac{\partial m_{i,j}}{\partial t} \cdot (dt \otimes X_j).\]
+Note that the expression above is the determinant of the $(r+1) \times (r+1)$ matrix
+\[
+  \begin{pmatrix}
+  m_{0,1} & m_{0,2} & \dots & m_{0,r} & \sum_{i = 1}^r \frac {\partial m_{0,j}}{\partial t} \cdot dt \otimes X_j \\
+  m_{1,1} & m_{1,2} & \dots & m_{1,r} & \sum_{i = 1}^r \frac {\partial m_{1,j}}{\partial t} \cdot dt \otimes X_j \\
+  \vdots & \ddots & \dots & \vdots & \vdots \\
+  m_{r,1} & m_{r,2} & \dots & m_{r,r} & \sum_{i = 1}^r \frac {\partial m_{r,j}}{\partial t} \cdot dt \otimes X_j \\
+\end{pmatrix}.
+\]
+This gives an equation for $R_U \subset X_U = \Proj \O_U[X_1, \dots, X_r]$.
 
 
 \section{Proof of \autoref{Thm:Counterexamples}} % (fold)

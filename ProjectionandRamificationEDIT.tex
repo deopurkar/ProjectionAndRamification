@@ -951,64 +951,77 @@ Note that the expression above is the determinant of the $(r+1) \times (r+1)$ ma
 \end{equation}
 This gives an equation for $R_U \subset X_U = \Proj \O_U[X_1, \dots, X_r]$.
 
+\subsection{Failure of maximal variation}
+In this section, we show that there exists ample vector bundles $E$ of rank $r \geq 4$ on $\P^1$ such that the projection-ramification map for $X = \P E$ is not generically finite.
+In other words, a generic projection of $X$ can be deformed in a one-parameter family so that the ramification divisor remains unchanged.
 
-\section{Proof of \autoref{Thm:Counterexamples}} % (fold)
-\label{sec:proof_of_second_result}
+Recall that the projection-ramification map for $X = \P E$ and the complete linear series of $L = \O_X(1)$ is a map
+\[ \rho \from \Gr(r+1, H^0(X, L)) \dashrightarrow |K_X \otimes L^{r+1}|,\]
+or equivalently a map
+\[ \rho \from \Gr(r+1, H^0(\P^1, E)) \dashrightarrow \P H^0(\P^1, E \otimes \det E \otimes K_{\P^1})^*.\]
+By construction, $\rho$ is equivariant with respect to the action of $\Aut(X)$, and in particular, by the subgroup $\Aut(X/\P^1)$.
 
-Our next objective is to prove \autoref{Thm:Counterexamples} by exhibiting some
-examples.  Before doing so, we pose the general problem of maximal variation for rational normal scrolls in explicit affine coordinates. 
+We engineer the failure of maximal variation using the following observation.
+\begin{proposition}
+  A generic point of $\Gr(r+1, H^0(\P^1, E))$ has a trivial stabilizer under the action of $G$.
 
-\subsection{The generalized Wronski map for scrolls in affine coordinates} % (fold)
- \label{sub:the_generalized_wronski_map}
- 
- Fix variables $x_{1}, \dots, x_{r}, t$.
-\begin{definition}
-  \label{definition:V}
-  Let $\underline{d} = (d_{1}, \dots, d_{r})$ denote an $r$-tuple of degrees. We define $V(\underline{d})$ to be the vector space of forms $\sum_{i=1}^{r}p_{i}(t)x_{i}$, where $\deg p_{i} \leq d_{i}$.
-\end{definition}
+\end{proposition}
+\begin{proof}
+  Fix $(r+1)$ distinct points $p_0, \dots, p_r \in \P^1$.
+  Let $V \subset H^0(\P^1, E)$ be a generic $(r+1)$ dimensional subspace.
+  Let $e \from V \otimes \O_{\P^1} \to E$ be the evaluation map.
+  The points $p_0, \dots, p_r$ give vectors $v_1, \dots, v_r \in V$, unique up to scaling, defined by the property that $e(v_i) = 0$ in the fiber $E|_{p_i}$.
+  Choose a generic point $t \in \P^1$.
+  We get $(r+1)$ points $x_0, \dots, x_r \in \P E^*|_{t} \cong \P^{r-1}$ given by $e(v_0), \dots, e(v_r)$ evaluated at $t$.
+  For generic $V$ and $t$, it is easy to check that these points are in linear general position.
+  Any element of $\Aut(X/\P^1)$ that fixes $V$ must fix $x_0, \dots, x_r$.
+  But then it must act as the identity on the projective space $\P E^*|_t$, and hence on the dual projective space $\P E|_t$.
+  Since $t \in \P^1$ is general, it follows that it must be the identity.
+\end{proof}
 
-\begin{remark}
-  $V(\underline{d})$ is simply the space of global sections of the line bundle $\O_{\P E}(1)$ on the scroll $\P E$ over $\P^{1}$, where $E = \O(d_{1}) \oplus \dots \oplus \O(d_{r})$.
-\end{remark}
+\begin{proposition}
+  There exist ample vector bundles $E$ of every rank $\geq 4$ such that a general point of $\P H^0(\P^1, E \otimes \det E \otimes K_{\P^1})^*$ has a positive-dimensional stabilizer under $\Aut(\P E/\P^1)$.
+  In particular, we may take $E = \O(1)^{r-1} \oplus \O(k+1)$ where $k \geq 1$ and $r \geq 4$.
+\end{proposition}
+\begin{proof}
+  It suffices to exhibit an $E$ such that a generic element of $H^0(\P^1, E \otimes \det E \otimes K_{\P^1})$ has a positive dimensional stabilizer under the action of $\Aut(E/\P^1)$.
+  Take
+  \[ E = \O(a)^{r-1} \oplus \O(b),\]
+  where $0 < a < b$ are to be determined.
+  Elements of $\Aut (E/\P^1)$ can be represented by block lower triangular square matrices
+  \[M = 
+    \begin{pmatrix}
+      A &  \\
+      U & B
+    \end{pmatrix},
+  \]
+  where $A \in \GL_a(\k)$, $B \in \k^\times$, and $U = (u_i)$ is an $(r-1)$ length row with entries in $H^0(\P^1, \O(b-a))$.
+  Set $d = (r-1)a + b$ so that $\det E = \O(d)$.
+  Suppose $a$, $b$, and $r$, are such that
+  \begin{equation}\label{eqn:requirement}
+    (r-1) (b-a+1) \geq b+d-1 = (r-1)a+2b-1.
+  \end{equation}
+  Take a general element of $H^0(\P^1, E \otimes \det E \otimes K_{\P^1})$; say it is given by the column vector
+  \[ v = (p_1, \dots, p_{r-1}, q)^T,\]
+  where the $p_i$ (resp $q$) are homogeneous polynomials in $X, Y$ of degree $a+d-2$ (resp $b+d-2$).
+  We take $A = \id_{r-1}$ and $B = \lambda$ for some $\lambda \in \k^\times$, and show that there exists a $U = (u_{i})$ such that $Mv = v$.
+  Indeed, we have $Mv = (p_1, \dots, p_r, q')$, where
+  \[ q' = \lambda q + \sum u_{i}p_i. \]
+  Let $W \subset H^0(\P^1, \O(a+d-1))$ be the vector space spanned by $p_1, \dots, p_{r-1}$.
+  Consider the multiplication map
+  \[ H^0(\P^1, \O(b-a)) \otimes W \to H^0(\P^1, \O(b+d-2)).\]
+  Thanks to \eqref{eqn:requirement}, the dimension of the source is at least as much as the dimension of the target.
+  It is easy to check that the map is in fact surjective for generic $p_1, \dots, p_{r-1}$.
+  In particular, there exist $u_i \in H^0(\P^1, \O(b-a))$ for $i = 1, \dots, r-1$, such that
+  \[ q(1-\lambda) = \sum u_i p_i.\]
+  With this choice of $U = (u_i)$, we get $M$ such that $Mv = v$.
 
-Next, if $v_{1} \wedge \dots \wedge v_{r+1} \in \bigwedge^{r+1}V(\underline{d})$ is any pure tensor, we set 
-\begin{align}
-  Wr(v_{1} \wedge \dots \wedge v_{r+1}) := \det \begin{pmatrix}
-    -- & v_{1} & -- & v_{1}'\\
-    -- & v_{2} & -- & v_{2}'\\
-    \vdots& \vdots & \vdots & \vdots\\
-    -- & v_{r+1} & -- & v_{r+1}'
-  \end{pmatrix} \in V(\underline{e})
-\end{align}
-where $\underline{e}= (e_{1}, \dots, e_{r})$ is given by $e_{i} = d_{i}-2 + \sum_{j=1}^{r}d_{j}$.
+  Finally, note that the requirement \eqref{eqn:requirement} is satisfied for $a = 1$ and $b = k+1$ if $k \geq 1$ and $r \geq 4$.
+\end{proof}
 
-\begin{definition}
-  \label{definition:Wronskian}
-  The induced map 
-  \begin{align}
-    Wr_{\underline{d}}\from \Gr(r+1, V(\underline{d})) \dashrightarrow \P V(\underline{e})
-  \end{align}
-  is called the {\sl Wronskian} map.
-\end{definition}
 
-\begin{remark}
-  $Wr_{\underline{d}}$ is the projection-ramification map for the scroll $X = \P E$ in coordinates.
-\end{remark}
-
-The dimensions of source and target of the Wronskian map are equal, hence we may pose the general question: 
-\begin{problem}
-\label{problem:DominantWronskian}
-  For which degree vectors $\underline{d} = (d_{1}, ..., d_{r})$ is the Wronskian map $Wr_{\underline{d}}$ dominant?
-\end{problem}
 
 In the next section, we show \autoref{problem:DominantWronskian} has genuine content  by demonstrating that $Wr_{\underline{d}}$ fails to be dominant for degree vectors of the form $(1,1,1, \dots, k+1)$, $r \geq 4$.
- % subsection the_generalized_wronski_map (end) 
-
-
-
-
-\subsection{Proof of \autoref{Thm:Counterexamples}}
-
 Let $E = \O(1)^{r-1} \oplus \O(k+1)$ be the vector bundle over
 $\P^{1}$, and set $X = \P E$. We will prove:
 \begin{theorem}

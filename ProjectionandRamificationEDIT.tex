@@ -139,7 +139,7 @@ The goal of this paper is to explore the relationship between the geometry of $X
 
 A simple argument shows that $\rho_X$ is itself a linear projection of $\Gr(n-r, n+1)$ in its Pl\"ucker embedding.
 When $X$ is a smooth curve over a field of characteristic $0$, the map $\rho_X$ is regular everywhere on $\Gr(n-r, n+1)$.
-When $X$ is a rational normal curve, the map $\rho_X$ is dominant.
+When $X$ is a rational normal curve, the map $\rho_X$ is also finite.
 In this case, the ramification divisor of a map $\P^1 \to \P^1$ of degree $n$ represented by the rational function $f/g$ is cut out by the \emph{Wronskian} expression, namely the degree $(2n-2)$ polynomial $f'g - g'f$.
 Since $\rho_X$ is regular, its degree is the degree of the Grassmannian, which in this case is the Catalan number $\frac{(2n-2)!}{n!(n-1)!}$.
 When $X$ has dimension 2 or more, $\rho_X$ may not be regular on the entire Grassmannian, which makes it difficult to understand.
@@ -1029,61 +1029,82 @@ We engineer the failure of maximal variation using the following observation.
   Since the dimension of the source and target of $\rho_X$ are the same, $\rho_X$ is not generically finite.
 \end{proof}
 
-In the next section, we show \autoref{problem:DominantWronskian} has genuine content  by demonstrating that $Wr_{\underline{d}}$ fails to be dominant for degree vectors of the form $(1,1,1, \dots, k+1)$, $r \geq 4$.
-Let $E = \O(1)^{r-1} \oplus \O(k+1)$ be the vector bundle over
-$\P^{1}$, and set $X = \P E$. We will prove:
-\begin{theorem}
-    The projection-ramification map for the embedding of $X$ given by $\O_{E}(1)$ is not
-    dominant once $k(r-3) > 1$.
-    \label{NonDominance}
-\end{theorem}
-
 \begin{remark}
-The basic phenomenon underlying this example is: a general point in the source Grassmannian
-has trivial $Aut(X)$-stabilizer, yet every point of $|R|$ has positive dimensional stabilizer. 
+In all the examples of scrolls where we know that maximal variation fails, the failure can be explained by the presence of generic stabilizers.
+We do not know, however, if this is the only reason for the failure of maximal variation.
 \end{remark}
 
 \begin{remark}
-If $k = 1$ and $r \geq 5$, then $X$ is a balanced
-scroll. Therefore, the non-dominance of projection-ramification is not directly
-connected to the eccentricity of the splitting type of a scroll. Rather,
-among balanced scrolls, non-dominance of $\rho_{X}$ happens only in ``low''
-degree -- see \autoref{thm:prp1}.
+  If $k = 1$ and $r \geq 4$, then $X$ is the most balanced scroll of its degree and rank, and hence, generic in moduli.
+  Therefore, the non-dominance of projection-ramification is not directly connected to the eccentricity of the splitting type of a scroll. 
 \end{remark}
 
+\section{Maximal variation for generic scrolls}
+In this section, we establish that the projection-ramification map is generically finite (equivalently, dominant) for most scrolls, notwithstanding the examples provided by \autoref{Thm:Counterexamples}.
+We begin by treating the cases of some particular scrolls by hand.
+We then bootstrap these to more general results using degeneration arguments.
 
-As an immediate corollary, we  get a result concerning  Grassmannians in their Plucker
-embeddings. Recall that an $r$ dimensional variety $X \subset \P^{n}$ is
-{\sl compressible} if there exists a $(n-r-1)$-dimensional linear space
-$\Lambda \subset \P^{N}$ with the property that the projection $p_{\Lambda}: X
-\dashrightarrow \P^{r}$ is not dominant. 
+\subsection{Maximal variation for some particular cases}
 
-\begin{proof}[Proof of \autoref{NonDominance}] We will show: the general element in the ramification divisor class $|R|$ has a positive dimensional stabilizer under the action of $Aut(X)$.  We leave it to the reader to check that the Grassmannian $\Gr$ does not have generic stabilizer under $\Aut(X)$.  The theorem then follows by the $Aut(X)$-equivariance of $\rho\from \G \dashrightarrow |R|$.
+Given an ample vector bundle $E$ on $\P^1$, we say that \emph{maximal variation holds for $E$} if the projection-ramification map is generically finite (equivalently, dominant) for $X = \P E$ embedded by the complete linear series associated to $L = \O_X(1)$.
 
-
-In terms of the affine coordinates $(x_{1}, \dots, x_{r}, t)$ introduced in the previous section, we find ourselves in the situation corresponding to the degree vector $\underline{d} = (1, ..., 1, k+1)$.  The degree vector corresponding to ramification divisors is then $\underline{e} = (r+k+1, r+k+1, \dots, r+2k+1)$.  
-
-In these affine coordinates, the substitutions
-\begin{align}\label{substitutions}
-	x_{1} \mapsto & x_{1} + p_{1}(t)x_{r}\\
-	x_{2} \mapsto & x_{2} + p_{2}(t)x_{r}\\
-	\vdots&\\
-	x_{n} \mapsto & x_{r}
-\end{align}
-produce distinct automorphisms in $Aut(X)$ per choice of the $p_{i}$, where each $p_{i}(t)$ has degree $\leq k$.  
-
-If $\sum^{r}_{j=1}a_{j}x_{j}$ represents a general element of $V(\underline{e})$, then the  substitutions \eqref{substitutions} have the effect of replacing the coefficient $a_{r}(t)$  with $a_{r} + \sum_{j=1}^{r-1}a_{j}p_{j}$, and preserving all other coefficients $a_{i}$. 
-
-Now if $(r-3)k > 1$, then the dimension of the vector space of choices for the polynomials $p_{i}$ exceeds the dimension of degree $r+2k+1$ polynomials $a_{r}$. Hence there exists a particular choice of $p_{i}$'s (not all zero) such that the above automorphism fixes the equation $\sum^{r}_{j=1}a_{j}x_{j}$. Scaling these  $p_{i}$'s by constants produces the positive dimensional stabilizer mentioned in the theorem.
-	
+\begin{proposition}\label{prop:segre}
+  Maximal variation holds for $E = \O(1)^r$.
+  In fact, the degree of the projection-ramification map in this case is $1$.
+\end{proposition}
+\begin{proof}
+  We know that the projection-ramification map
+  \[ \rho \from \Gr(r+1, H^0(\P^1, \O(1)^r)) \dashrightarrow \P H^0(\P^1, \O(r-1)^r)^*\]
+  is $\Aut \P E$ equivariant.
+  In this case, it is easy to check that the action of $\Aut (\P E / \P^1) = \PGL_r$ has a unique open orbit and trivial generic stabilizers on both the source and the target of $\rho$.
+  Hence, $\rho$ must be birational.  
 \end{proof}
 
+\begin{proposition}\label{prop:222}
+  Maximal variation holds for $E = \O(2)^r$.
+\end{proposition}
+Compared to \autoref{prop:segre}, our proof of \autoref{prop:222} is significantly more involved, and does not yield the degree.
+\begin{proof}
+  We exhibit a point $\Gr(r+1, H^0(\P^1, E))$ at which $\rho$ is defined, and at which the induced map $d\rho$ on the tangent space is non-singular.
+  It follows that $\rho$ is a local immersion at $\lambda$, and hence dominant.
 
+  Our proof is by direct calculation.
+  We work over $\A^1 = \spec \k[x] \subset \P^1$ and identify $\O(n)$ with $\O(n \cdot \infty)$.
+  Then the global sections of $\O(n)$ are identified with polynomials in $x$ of degree at most $n$.
+  Denote the generator of the $i$th summand of $E$ on $\A^1$ by $X_i$.
+  Consider the point of $\Gr(r+1, H^0(\P^1, E))$ represented by the vector space $V \subset H^0(\P^1, E)$ spanned by $(r+1)$ sections $v_0, \dots, v_r$ defined as follows.
+  Set $v_i = (x-a_i)^2 X_i$ for $0 \leq i \leq r-1$, and $v_r = \sum p_i X_i$, where $a_i \in \k$, and $p_j \in H^0(\P^1, \O(2))$ are generic.
+  By \eqref{eqn:Rmatrix}, the ramification divisor associated to $V$ is cut out by the determinant of the matrix
+  \[
+    M =
+    \begin{pmatrix}
+      (x-a_1)^2 & 0 &  \cdots & 0 & 2(x-a_1)X_1\\
+      0 & (x-a_2)^2 & \cdots & 0 & 2(x-a_2)X_2\\
+      0 & 0 & \ddots & 0 & \vdots\\
+      0 & 0 & \cdots & (x-a_r)^2& 2(x-a_r)X_r\\
+      p_1 & p_2 & \cdots & p_r & \sum p_i' X_i
+    \end{pmatrix}.
+  \]
+  We leave it to the reader to check that $R = \det M$ is not identically zero.
 
-
-
-
-
+  To do the tangent space computation, we choose vectors $w_i \in H^0(\P^1, E)$, and change $v_i$ to $v_i + \epsilon w_i$, where $\epsilon^2 = 0$.
+  We have
+  \[ R_\epsilon = \det M(v_0 + \epsilon w_0, \dots, v_r + \epsilon w_r) = R + \epsilon S(w_0, \dots, w_r),\]
+  where
+  \[S \from H^0(\P^1, E)^{r+1} \to H^0(\P^1, E \otimes \O(2r))\]
+  is a linear function.
+  To show that $d \rho$ is non-singular at $V$, it suffices to show that $S$ is surjective.
+  For $1 \leq i \leq r$ and $0 \leq j \leq r$, let $E_{i,j} \in H^0(\P^1, E)^{r+1}$ be the element corresponding to $(w_0, \dots, w_r)$ where $w_j = X_i$ and $w_\ell = 0$ for all $\ell \neq j$.
+  For $i \neq j$ and $0 \leq j < r$ and $q \in H^0(\P^1, \O(2))$, by direct calculation we get
+  \[ S\left(qE_{i,j}\right) = \frac{(x-a_1)^2 \cdots (x-a_r)^2p_j}{(x-a_i)^2(x-a_j)^2} \cdot [q, (x-a_i)^2] \cdot X_i,\]
+  where the notation $[a,b]$ means $a'b-ab'$.
+  Similarly, we get
+  \[ S\left(qE_{i,r}\right) = - \frac{(x-a_1)^2 \cdots (x-a_r)^2}{(x-a_i)^2} \cdot [q, (x-a_i)^2] \cdot X_i,\]
+  and
+  \[ S\left(qE_{i,i} \right) = \det M_i,\]
+  where $M_i$ is obtained from $M$ by changing the $(i,i)$-th entry from $(x-a_i)^2$ to $q$ and the $(i,r+1)$-th entry from $2(x-a_i)X_i$ to $q'X_i$.
+  
+\end{proof}
 
 
 

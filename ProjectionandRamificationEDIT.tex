@@ -214,7 +214,7 @@ Recall that if $X \subset \P^n$ is a smooth rational normal scroll, then $X$ is 
   In particular, the conclusion holds if $E$ is general of degree at least $(r-1)(2r-1) + 1$.
 \end{maintheorem}
 Thus, at least among the general scrolls, the projection-ramification map is dominant except possibly in small degrees.
-We prove \autoref{theorem:rationalnormalscrolls} by degeneration, using the theory of limit linear series of higher rank developed by Osserman \cite{oss:14}.
+We prove \autoref{theorem:rationalnormalscrolls} by degeneration, using the theory of limit linear series of higher rank developed by Teixidor i Bigas \cite{tei:} and Osserman \cite{oss:14}.
 
 \subsection{Enumerative problems}
 \autoref{theorem:minimaldegree} and \autoref{theorem:rationalnormalscrolls} motivate a gamut of enumerative questions.
@@ -675,7 +675,7 @@ The proposition follows.
   Let $x \in X$ be a general point and $V \subset W$ an $(r+1)$-dimensional subspace with a basis $(u, a_1,\dots, a_{r-1},b)$ where
   \begin{enumerate}
     \item $u$ does not vanish at $x$,
-    \item $a_1, \dots , a_{r-1}$ vanish at $x$ and reduce to linearly independent elements of $L \otimes ({\mathfrak m}_{x}/{\mathfrak m}^{2}_{x})$, and
+    \item $a_1, \dots , a_{r-1}$ vanish at $x$, and reduce to linearly independent elements of $L \otimes ({\mathfrak m}_{x}/{\mathfrak m}^{2}_{x})$, and
     \item $v(b)$ has an ordinary double point at $x$. 
   \end{enumerate}
   Then $R(V)$ contains $x$ and is smooth at $x$.
@@ -1168,40 +1168,59 @@ Compared to \autoref{prop:segre}, our proof of \autoref{prop:222} is significant
   The proof is now complete.
 \end{proof}
 
-
-
-% subsection original_proof (end)
-
-
-
-
-
-
-
-
-
-
-% section proof_of_second_result (end)
-
-
-
-% section proof_of_theorem:minimaldegree (end)
-
-\section{Proof of \autoref{theorem:rationalnormalscrolls}}% (fold)
-    \label{sec:proof_of_theorem:rationalnormalscrolls}
-
-
-In this section, we extend the projection ramification map to vector bundles on nodal curves using limit linear series.
-We then use degeneration to a nodal curve to prove generic maximal variation for vector bundles on smooth curves.
+Our next goal is to bootstrap from \autoref{prop:segre} and \autoref{prop:222} to deduce maximal variation for generic scrolls of sufficiently high degree.
+We do this by a degeneration argument.
+We degenerate a vector bundle $E$ to a vector bundle $E_0$ on the nodal rational curve $P_0 = \P^1 \cup \P^1$, and show that the projection-ramification map for $E_0$ is dominant.
+For this to work, we have to define the projection-ramification map for nodal curves.
+It turns out that with the most n\"aive definition of linear series on scrolls on nodal curves, we do not get a dominant projection-ramification map.
+We have to work with the limit linear series of higher rank as developed in \cite{tei:} and\cite{oss:14}.
 
 \subsection{Limit linear series}\label{sec:lls}
-A linear series on a curve of rank $r$, degree $d$, and dimension $k$ consists of a vector bundle $E$ on the curve of rank $r$ and degree $d$, and a $k$-dimensional subspace of the vector space $H^0(E)$.
-A limit linear series is an extension of this idea to singular curves, done in a manner suitable for degeneration techniques.
+We need limit linear series only in the simplest singular curve, namely a (projective, connected) nodal curve $C$ which is the nodal union of two smooth (projective, connected) curves $C_1$ and $C_2$, but we need them for vector bundles of rank higher than $1$.
+Let $B$ be a DVR with special point $0$, general point $\eta$.
+Let $\pi \from X \to B$ be a smoothing of $C$ with non-singular total space $X$.
+That is, $\pi$ is a flat, proper, family of connected curves, smooth over $\eta$, and isomorphic to $C$ over $0$.
+Such a family is a particularly simple example of an almost local smoothing family \cite[\S~2.1--2.2]{oss:14}.
+Let $g_i$ be the genus of $C_i$ for $i = 1, 2$, and $g = g_1+g_2$ the genus of $X_\eta$.
+
+Let $E$ be a vector bundle of rank $r$ on $C$.
+The \emph{multi-degree} of $E$ is the pair of integers $(\deg E|_{C_1}, \deg E|_{C_2})$.
+The \emph{degree} or \emph{total degree} of $E$ is the sum $\deg E = \deg E|_{C_1} + \deg E|_{C_2}$.
+
+Once and for all, fix a vector bundle $\mathcal E$ of rank $r$ on $X$, and set $E = \mathcal E|_C$.
+Let $E$ have degree $d$ and multi-degree $(w_1, w_2)$.
+Fix a positive integer $k$.
+Our next task is to recall the definition of the space of limit linear series of dimension $k$.
+It will be a $B$-scheme whose fiber over $\eta$ is the Grassmannian $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
+The key idea is to not only consider the sections of $\mathcal E$, but also of its various twists, namely the vector bundles obtained by tensoring with the powers of $\O_X(C_i)$.
+
+Fix maps $\theta_1 \from \O_X \to \O_X(C_1)$ and $\theta_2 \from \O_X \to \O_X(C_2)$.
+The choice of these maps is auxilliary, and each one is unique up to multiplication by an element of $\O_B^*$.
+For $n \in \Z$, set
+\[ \mathcal E_n =
+  \begin{cases}
+    \mathcal E \otimes \O_X(C_1)^{\otimes n} & \text{if $n \geq 0$},\\
+    \mathcal E \otimes \O_X(C_2)^{\otimes (-n)}  & \text{if $n < 0$}.
+  \end{cases}
+\]
+The maps $\theta_1$ and $\theta_2$ induces maps
+\[ \theta_n \from \mathcal E_m \to \mathcal E_{m+n}\]
+given by
+\[
+  \theta_n = 
+  \begin{cases}
+    \theta_1^n & \text{if $n \geq 0$,} \\
+    \theta_2^{-n} & \text{if $n < 0$.}
+  \end{cases}
+\]
+Note that the multi-degree of $\mathcal E_n$ is $(w_1 - nr, w_2 + nr)$.
+
+
 
 Let $B$ be a DVR with special point $0$ and general point $\eta$.
 Let $\pi \from X \to B$ be a family of connected projective curves of genus $g$, smooth over $\eta$, and at worst nodal over $0$, with non-singular total space $X$.
 Assume the special fiber $X_0 = C$ is the nodal union of two curves $C_1$ and $C_2$ meeting at a unique point $p$.
-Then $\pi \from X \to B$ is a particularly simple example of an almost local smoothing family \cite[\S~2.1--2.2]{oss:14}.
+
 
 We recall the notion of a limit linear series from \cite{oss:14}, where it is called linked linear series.
 In \cite{oss:14}, Osserman defines two types of linked linear series.
@@ -1223,22 +1242,8 @@ The choice of $d_v$ and $b$ is also largely auxilliary; increasing them leads to
 
 Let $S$ be a $B$-scheme, and let $\mathcal E$ be a vector bundle on $X_S$ of rank $r$ and degree $d$.
 For every $n \in \Z$, define the vector bundle $\mathcal E_n$ by
-\[ \mathcal E_n =
-  \begin{cases}
-    \mathcal E \otimes \O_X(C_1)^{n} & \text{if $n \geq 0$},\\
-    \mathcal E \otimes \O_X(C_2)^{-n}  & \text{if $n < 0$}.
-  \end{cases}
-\]
-Define maps
-\[ \theta_n \from \mathcal E_{m} \to \mathcal E_{m+n}\]
-by
-\[
-  \theta_n = 
-  \begin{cases}
-    \theta_1^n & \text{if $n \geq 0$,} \\
-    \theta_2^{-n} & \text{if $n < 0$.}
-  \end{cases}.
-\]
+
+
 We say that $\mathcal E$ has multi-degree $w$ if for every $s \in S$ mapping to $0 \in B$, the degree of $\mathcal E|_s$ on $C_v$ is $w_v$ for $v = 1, 2$.
 Note that, if $\mathcal E$ has multi-degree $(w_1, w_2)$, then $\mathcal E_n$ has multi-degree $(w_1-rn, w_2+rn)$.
 
@@ -1294,7 +1299,8 @@ By the semi-continuity of cohomology, $M_{r, d, d_*, w_*}(X/B) \subset M_{r,d,w}
   is representable by schemes, which are projective locally on the target.
   The locus of simple limit linear series is an open substack of $\mathcal G^k_{r,d,d_*,w_*}(X/B)$; it has universal relative dimension at least $k(d-k-r(g-1))$ over $M_{r,w,d_*}(X/B)$.
 \end{theorem}
-The last statement implies: if $\lambda$ is a simple limit linear series such that the fiber of $\beta$ through $\lambda$ has dimension at most $k(d-k-r(g-1))$ at $\lambda$, then $\beta$ is open at $\lambda$ of relative dimension exactly $k(d-k-r(g-1))$.
+The last statement implies the following.
+If $\lambda$ is a simple limit linear series such that the fiber of $\beta$ through $\lambda$ has dimension at most $k(d-k-r(g-1))$ at $\lambda$, then $\beta$ is open at $\lambda$ of relative dimension exactly $k(d-k-r(g-1))$.
 
 
 Although \autoref{def:lls} requires specifying infinitely many vector bundles $V_n$, for $n \in \Z$, specifying finitely many determines the rest.
@@ -1404,29 +1410,29 @@ Let $C$ be a smooth curve and $p \in C$ a point.
 Let $E$ be a vector bundle on $C$ of rank $r$.
 The projective spaces $\P E(np)|_p$, for $n \in \Z$, are canonically isomorphic to each other, so we identify them.
 
-Suppose $\lambda \subset H^0(C, E)$ is an $(r+1)$-dimensional subspace with the vanishing sequence 
+Suppose $V \subset H^0(C, E)$ is an $(r+1)$-dimensional subspace with the vanishing sequence 
 \begin{equation}\label{eqn:specialvs}
   (\underbrace{a, \dots, a}_{i}, \underbrace{a+1, \dots, a+1}_{r+1-i}),
 \end{equation}
 for some $i$ with $1 \leq i \leq r$, and $a \geq 0$.
-Let $\Lambda_0 \subset E|_p \cong E(-ap)|_p$ be the image of $\lambda(-ap)$, and $\Lambda_1 \subset E|_p \cong E(-(a+1)p)|_p$ the image of $\lambda(-(a+1)p)$.
-Then $\dim \Lambda_0 = i$ and $\dim \Lambda_1 = r+1-i$.
-Assume that $\Lambda_0$ and $\Lambda_1$ satisfy the following genericity condition
+Let $V_0 \subset E|_p \cong E(-ap)|_p$ be the image of $V(-ap)$, and $V_1 \subset E|_p \cong E(-(a+1)p)|_p$ the image of $V(-(a+1)p)$.
+Then $\dim V_0 = i$ and $\dim V_1 = r+1-i$.
+Assume that $V_0$ and $V_1$ satisfy the following genericity condition
 \begin{equation}\label{eq:genericity}
-  \dim (\Lambda_0 \cap \Lambda_1) = 1.
+  \dim (V_0 \cap V_1) = 1.
 \end{equation}
-Recall that the ramification $R(\lambda)$ is a section of $E \otimes \det E \otimes \Omega_C$.
+Recall that the ramification divisor $R(V)$ is given by a section $r_V$ of $E \otimes \det E \otimes K_C$.
 \begin{proposition}\label{prop:agreement}
-  In the setup above, $R(\lambda)$ vanishes to order $(r+1)a + (r-i)$ at $p$.
-  Write $\widetilde R = R(\lambda)/t^{(r+1)a + r-i}$, where $t$ is a uniformizer at $p$.
-  Then, the one-dimensional subspace of $E|_p$ spanned by $\widetilde R|_p$ is $\Lambda_0 \cap \Lambda_1$.
+  In the setup above, $r_V$ vanishes to order $(r+1)a + (r-i)$ at $p$.
+  Write $\widetilde r = r_V/t^{(r+1)a + r-i}$, where $t$ is a uniformizer at $p$.
+  Then, the one-dimensional subspace of $E|_p$ spanned by $\widetilde r|_p$ is $V_0 \cap V_1$.
 \end{proposition}
 \begin{proof}
   Let $\langle  s_1, \dots, s_r \rangle$ be a local trivialization for $E$ in an open set around $p$ such that in these local coordinates, we have
-  \[ \lambda = \{t^as_1, \dots, t^as_i, t^{a+1}s_i, t^{a+1}s_{i+1}, \dots, t^{a+1}s_{r}\}.\]
-  In these coordinates, $R(\lambda)$ is given by
+  \[ V = \{t^as_1, \dots, t^as_i, t^{a+1}s_i, t^{a+1}s_{i+1}, \dots, t^{a+1}s_{r}\}.\]
+  By \eqref{eqn:Rmatrix}, in these coordinates, $r_V$ is given by
   \begin{align*}
-    R(\lambda) &= \det
+    r_V &= \det
     \begin{pmatrix}
       t^a & & & & & & at^{a-1}s_1\\
       & t^a & & & & &at^{a-1}s_2\\
@@ -1438,7 +1444,7 @@ Recall that the ramification $R(\lambda)$ is a section of $E \otimes \det E \oti
     \end{pmatrix}\\
                &= (-1)^{r-i}t^{(r+1)a+r-i} \cdot s_i.
   \end{align*}
-  Since $s_i$ spans $\Lambda_0 \cap \Lambda_1$, the proof is complete.
+  Since $s_i$ spans $V_0 \cap V_1$, the proof is complete.
 \end{proof}
 
 Let $\pi \from X \to B$ be a family as in \autoref{sec:lls} with $X_\eta$ smooth and $X_0 = C$ a nodal union $C = C_1 \cup_p C_2$, with $g(C_v) = g_v$ for $v = 1,2$.
@@ -1461,17 +1467,17 @@ Defining $n_1'$ and $n_2'$ analogously to $n_1$ and $n_2$, we get
 \end{align*}
 We define a rational map 
 \begin{equation}\label{eq:Rtilde}
-  \mathcal R \from {\mathcal G}^{r+1}_{r,d,d_*,w_*}(X/B)^{\rm red} \dashrightarrow {\mathcal G}^{1}_{r',d',d'_*,w'_*}(X/B)
+  \rho \from {\mathcal G}^{r+1}_{r,d,d_*,w_*}(X/B)^{\rm red} \dashrightarrow {\mathcal G}^{1}_{r',d',d'_*,w'_*}(X/B)
 \end{equation}
 that extends the projection-ramification map on the generic fiber.
 Let $\mathcal U \subset {\mathcal G}^{r+1}_{r,d,d_*,w_*}(X/B)$ be the open substack obtained by excluding the following closed loci:
 \begin{enumerate}
-\item the closure of the locus of linear series $(\mathcal E, \lambda)$ on the generic fiber $X_\eta$ such that $\lambda \otimes \O_{X_\eta} \to \mathcal E$ has generic rank less than $r$,
-\item the locus of limit linear series $\lambda = (\mathcal E, V_n)$ on the central fiber such that the associated EHT limit linear series $\mu = (\mathcal E, W_1, W_2)$ is not refined, or does not have vanishing sequences as in \eqref{eqn:specialvs}, or does not satisfy the genericity condition $\dim (\Lambda_0 \cap \Lambda_1) = 1$ as in \eqref{eq:genericity}.
+\item the closure of the locus of linear series $(\mathcal E, V)$ on the generic fiber $X_\eta$ such that $V \otimes \O_{X_\eta} \to \mathcal E$ has generic rank less than $r$,
+\item the locus of limit linear series $(\mathcal E, V_n)$ on the central fiber such that the associated EHT limit linear series $\mu = (\mathcal E, W_1, W_2)$ is not refined, or does not have vanishing sequences as in \eqref{eqn:specialvs}, or does not satisfy the genericity condition $\dim (V_0 \cap V_1) = 1$ as in \eqref{eq:genericity}.
 \end{enumerate}
 
 Let $S$ be a $B$ scheme with a map to $\mathcal U$ given by the limit linear series $(\mathcal E, V_n)$.
-On $X_S$, we have the diagram
+On $X_S$, we have a diagram analogous to \eqref{eqn:differential_construction}, namely
 \begin{equation}
   \label{eq:llspr}
   \begin{tikzcd}
@@ -1484,17 +1490,17 @@ In the bottom row, the sheaf $j_1 \mathcal E_n$ is the first jet bundle of $\mat
 The map $\widetilde i$ is the canonical lift of $i$, and the map $d$ is the unique induced map owing to $i \circ j = 0$.
 By composing $d$ through the inclusion $\Omega_{X_S/S} \to \omega_{X_S/S}$, and rearranging the line bundles, we obtain a map
 \begin{equation}\label{eqn:Rn}
-  R_n \from \det V_n \to \mathcal \pi_*(\mathcal E_n \otimes \det \mathcal E_n \otimes \omega^*_{X_S/S}).
+r_n \from \det V_n \to \mathcal \pi_*(\mathcal E_n \otimes \det \mathcal E_n \otimes \omega^*_{X_S/S}).
 \end{equation}
 
 Set $\mathcal E' = \mathcal E \otimes \det \mathcal E \otimes \omega^*_{X_S/S}$.
-We want to say that the sections given by $R_n$ of the various twists of $\mathcal E'$ define a limit linear series of dimension 1.
+We want to say that the sections given by $r_n$ of the various twists of $\mathcal E'$ define a limit linear series of dimension 1.
 The catch is that the twists $\mathcal E_n \otimes \det \mathcal E_n \otimes \omega_{X_S/S}^*$ are only \emph{some} of the twists of $\mathcal E'$.
 However, on the open set $\mathcal U$, this is more than enough information---just looking at the extremal twists suffices.
 Observe that we have $\mathcal E_{n_v} \otimes \det \mathcal E_{n_v} \otimes \omega_{X_S/S} = \mathcal E'_{n'_v}$ for $v = 1,2$.
 \begin{proposition}\label{prop:mapreduced}
   In the setup above, assume that $S$ is reduced.
-  Then there is a unique simple limit linear series $(\mathcal E', L_n)$ of dimension 1 such that $L_{n_v'} = \det V_{n_v}$ and the map $L_{n_v'} \to \pi_* \mathcal E'_{n_v'}$ is given by $R_n$ for $v = 1,2$.
+  Then there is a unique simple limit linear series $(\mathcal E', L_n)$ of dimension 1 such that $L_{n_v'} = \det V_{n_v}$ and the map $L_{n_v'} \to \pi_* \mathcal E'_{n_v'}$ is given by $r_n$ for $v = 1,2$.
 \end{proposition}
 \begin{proof}
   First, suppose $S$ is a point mapping to $0 \in B$.
@@ -1504,11 +1510,11 @@ Observe that we have $\mathcal E_{n_v} \otimes \det \mathcal E_{n_v} \otimes \om
   at $p$ for some $i$ with $1 \leq i \leq r$ and $a \geq  0$.
   Then $(\mathcal E_{n_2}|_{C_2}, V_{n_2})$ has the vanishing sequence
   \[ (\underbrace{b-a-1, \dots, b-a-1}_{r+1-i}, \underbrace{b-a, \dots, b-a}_{i}).\]
-  By construction, the section $R_{n_v}$ restricted to $C_v$ is the ramification of $(\mathcal E_{n_v}|_{C_v}, V_{n_v})$ composed with the inclusion $\omega^*_{C}|_{C_v} \to \Omega^*_{C_v}$.
-  Therefore, by \autoref{prop:agreement}, $R_{n_1}$ vanishes at $p$ to order $a_1' = a(r+1)+(r-i)+1$ and $R_{n_2}$ to order $a_2' = (b-a-1)(r+1)+i$.
+  By construction, the section $r_{n_v}$ restricted to $C_v$ is the ramification of $(\mathcal E_{n_v}|_{C_v}, V_{n_v})$ composed with the inclusion $\omega^*_{C}|_{C_v} \to \Omega^*_{C_v}$.
+  Therefore, by \autoref{prop:agreement}, $r_{n_1}$ vanishes at $p$ to order $a_1' = a(r+1)+(r-i)+1$ and $r_{n_2}$ to order $a_2' = (b-a-1)(r+1)+i$.
   Since $a'_1 + a'_2 = b'$, we have the equality required in condition \eqref{ieq:eht} of \autoref{def:eht}.
-  Note that the spaces $\Lambda_0$ and $\Lambda_1$ are exchanged when we switch from $C_1$ to $C_2$, and so their intersection $\Lambda_0 \cap \Lambda_1$ remains the same.
-  By \autoref{prop:agreement}, after dividing by the appropriate power of the uniformizer, the sections $R_{n_1}$ and $R_{n_2}$ at $p$ are proportional; they both span $\Lambda_0 \cap \Lambda_1$.
+  Note that the spaces $V_0$ and $V_1$ are exchanged when we switch from $C_1$ to $C_2$, and so their intersection $V_0 \cap V_1$ remains the same.
+  By \autoref{prop:agreement}, after dividing by the appropriate power of the uniformizer, the sections $r_{n_1}$ and $r_{n_2}$ at $p$ are proportional; they both span $V_0 \cap V_1$.
   Hence, we also have the gluing condition in required in \eqref{gluing:eht} in \autoref{def:eht}.
 
   For a general $S$, note that for every point $s \in S$, the map
@@ -1526,12 +1532,12 @@ Observe that we have $\mathcal E_{n_v} \otimes \det \mathcal E_{n_v} \otimes \om
   A simple limit linear series of dimension 1 on a vector bundle $\mathcal E'$ on $C$ is simply a section of one of its twists that is non-zero on both components of $C$.
   From \autoref{prop:agreement}, we see that this twist is $\mathcal E'_{n_1+m}$ where
   \[ m = (r+1)a+ar-i.\]
-  In particular, it is not one of the twists $\mathcal E'_{n_1+r(n-n_1)} = \mathcal E_n \otimes \det \mathcal E_n \otimes \omega^*$ in \eqref{eqn:Rn} that receive the image of the ramification section $R_n$.
+  In particular, it is not one of the twists $\mathcal E'_{n_1+r(n-n_1)} = \mathcal E_n \otimes \det \mathcal E_n \otimes \omega^*$ in \eqref{eqn:Rn} that receive the image of the ramification section $r_n$.
 \end{remark}
 
 Thanks to \autoref{prop:mapreduced}, we have a morphism
 \begin{equation}\label{eqn:llsR}
- \mathcal R \from \mathcal U^{\rm red} \to \mathcal G^1_{r',d',d'_*,w'_*(X/B)}
+  \rho \from \mathcal U^{\rm red} \to \mathcal G^1_{r',d',d'_*,w'_*(X/B)}
 \end{equation}
 defined by
 \[ (\mathcal E, V_n) \mapsto (\mathcal E', L_n).\]
@@ -1542,10 +1548,10 @@ Fix a point $p \in \P^1$.
 Consider  the locally closed subset $U \subset \Gr(r+1, H^0(E))$ consisting of linear series with vanishing sequence
 \[ (0,\underbrace{1,\dots, 1}_{r})\]
 over $p$.
-Given $\lambda \in U$, let $\widetilde R(\lambda) \in \P H^0(E \otimes \det E \otimes \Omega_{\P^1} \otimes \O(-(r-1)p)$ be the reduced ramification divisor; see \autoref{prop:agreement}.
-The assignment $\lambda \mapsto \widetilde R(\lambda)$ gives a \emph{reduced} projection-ramification map
+Given $\lambda \in U$, let $\widetilde r(\lambda) \in \P H^0(E \otimes \det E \otimes K_{\P^1} \otimes \O(-(r-1)p)^*$ be the reduced ramification section; see \autoref{prop:agreement}.
+The assignment $\lambda \mapsto \widetilde r(\lambda)$ gives a \emph{reduced} projection-ramification map
 \begin{equation}\label{eqn:rrd}
-  \widetilde R \from U \to \P H^0(E \otimes \det E \otimes \Omega_{\P^1} \otimes \O(-(r-1)p))
+  \widetilde \rho \from U \to \P H^0(E \otimes \det E \otimes K_{\P^1} \otimes \O(-(r-1)p))^*
 \end{equation}
 between varieties of the same dimension.
 
@@ -1555,23 +1561,23 @@ There exists a Zariski open subset of $\P_{\rm sub}(E|_p)$, such that for all $\
 Denote this isomorphism class by $E'_{\rm gen}$.
 \begin{proposition}\label{prop:domred}
   If the usual projection-ramification map
-  \[ R\from \Gr(r+1, H^0(E'_{\rm gen})) \dashrightarrow \P H^0(E'_{\rm gen} \otimes \det E'_{\rm gen} \otimes \Omega_{\P^1})\]
+  \[ \rho \from \Gr(r+1, H^0(E'_{\rm gen})) \dashrightarrow \P H^0(E'_{\rm gen} \otimes \det E'_{\rm gen} \otimes K_{\P^1})^*\]
   is dominant, then so is the reduced projection-ramification map
-  \[\widetilde R\from U \to \P H^0(E \otimes \det E \otimes \Omega_{\P^1} \otimes \O(-(r-1)p)).\]
+  \[\widetilde \rho \from U \to \P H^0(E \otimes \det E \otimes K_{\P^1} \otimes \O(-(r-1)p))^*.\]
 \end{proposition}
 \begin{proof}
-  Let $D \in \P H^0(E \otimes \det E \otimes \Omega_{\P^1} \otimes \O(-(r-1)p))$ be a generic section.
+  Let $D \in \P H^0(E \otimes \det E \otimes K_{\P^1} \otimes \O(-(r-1)p))^*$ be a generic section.
   Let $\ell \subset E|_p$ be the one-dimensional subspace defined by $D|_p$, and set $E' = E'_{\ell}$.
   Since $D$ is generic, we may assume $E' \cong E'_{\rm gen}$.
   We have the inclusion
   \[
-    E' \otimes \det E' \otimes \Omega_{\P^1} \to E \otimes \det E \otimes \O(-(r-1)p) \otimes \Omega_{\P^1},
+    E' \otimes \det E' \otimes K_{\P^1} \to E \otimes \det E \otimes \O(-(r-1)p) \otimes K_{\P^1},
   \]
-  and by construction $D$ is the image of a section $D' \in \P H^0(E' \otimes \det E' \otimes \Omega_{\P^1})$.
-  Since $R$ is dominant for $E'$, there exists a sequence of subspaces $\lambda_n' \in \Gr(r+1, H^0(E'))$ such that $R(\lambda_n')$  limit to $D'$.
-  Let $\lambda_n \subset \Gr(r+1, H^0(E))$ be the image of $\lambda'_n$.
-  Then $\widetilde R(\lambda_n)$ limit to $D$.
-  Since $D$ was generic, we get that $\widetilde R$ is dominant.
+  and by construction $D$ is the image of a section $D' \in \P H^0(E' \otimes \det E' \otimes K_{\P^1})^*$.
+  Since $\rho$ is dominant for $E'$, there exists a sequence of subspaces $V_n' \in \Gr(r+1, H^0(E'))$ such that $\rho(V_n')$  limit to $D'$.
+  Let $V_n \subset \Gr(r+1, H^0(E))$ be the image of $V'_n$.
+  Then $\widetilde \rho(V_n)$ limit to $D$.
+  Since $D$ was generic, we get that $\widetilde \rho$ is dominant.
 \end{proof}
 
 \begin{corollary}\label{prop:domredexamples}
@@ -1658,163 +1664,6 @@ Set $d = d_1 + d_2 - r$ and $g = g(C_1) + g(C_2)$.
   In summary, dominance for a generic bundle of rank $r$ and degree $d$ implies the same for a generic bundle of rank $r$ and degree $d+r-1$ and degree $d+2r-1$.
   Starting with the base case $d = 1$, namely $E = \O^{r-1} \oplus \O(1)$, we obtain the statement by induction.
 \end{proof}
-
-
-
-\subsection{Maximal variation for $\O(2)^r$}
-The goal of this section is to establish dominance of the projection ramification morphism for $E = \O(2)^r$.
-We do this by a tangent space calculation.
-For simplicity, we work with inhomogeneous polynomials in $x = X/Y$ instead of homogeneous polynomials in $X$ and $Y$.
-
-Consider the point $\lambda$ of $\Gr(r+1, H^0(E))$ represented by the $(r+1) \times r$ matrix
-\[
-  \Lambda =
-  \begin{pmatrix}
-    (x-a_1)^2 & 0 &  \cdots & 0 \\
-    0 & (x-a_2)^2 & \cdots & 0\\
-    0 & 0 & \ddots & 0 \\
-    0 & 0 & \cdots & (x-a_r)^2\\
-    p_1 & p_2 & \cdots & p_r
-  \end{pmatrix},
-\]
-where $a_i \in \C$ and $p_j \in H^0(\O(2))$.
-We claim that if the $a_i$ and the $p_j$ are generic, then the map on the tangent spaces induced by the projection-ramification construction is surjective at $\Lambda$.
-
-Recall that if $M$ is an $(r+1) \times r$ matrix of polynomials in $x$, then the ramification divisor of the projection map represented by $M$ is given by the formula
-\[
-  R(M)  = \det \left(M \mid \xi(M)\right),
-\]
-where $\xi(M)$ is the vector given by
-\[
-  \xi(M)_i = \sum_{j = 1}^r \partial_x M_{i,j} \cdot X_j.
-\]
-
-To do the tangent space computation, we compute the ramification divisor $R$ for the matrix $M  = \Lambda + \epsilon \Delta$, where $\Delta$ is an $(r+1) \times r$ matrix of elements in $H^0(\O(2))$, assuming $\epsilon^2 = 0$.
-The result will be of the form
-\[ R(\Lambda + \epsilon \Delta) = R(\Lambda) + \epsilon S(\Lambda, \Delta),\]
-where $S(R, \Delta)$ is an element of $H^0(2r) \otimes \langle  X_1, \dots, X_r \rangle$, linear in the entries of $\Delta$.
-We must show that the linear map
-\[ H^0(\O(2)) \otimes M_{r+1, r} \to H^0(\O(2r)) \otimes \langle  X_1, \dots, X_r \rangle\]
-given by
-\[ \Delta \mapsto S(\Lambda, \Delta)\]
-is surjective.
-
-We compute $R(\Lambda + \epsilon\Delta)$ for elementary matrices $\Delta$.
-Denote by $E_{i,j}$ the elementary matrix with $1$ at the $(i,j)$th place, and $0$ everywhere else.
-
-First, suppose
-\[ \Delta = q E_{j,i},\]
-where $i \neq j$, and $1 \leq j \leq r$.
-By direct calculation, we obtain
-\begin{equation}\label{eq:off_diagonal}
-  S(\Lambda, \Delta) = \frac{(x-a_1)^2\cdots(x-a_r)^2 p_j}{(x-a_i)^2(x-a_j)^2} \cdot \left[q, (x-a_i)^2\right] \cdot X_i,
-\end{equation}
-where the notation $[a, b]$ means $ab' - a'b$.
-
-Second, suppose
-\[ \Delta = q E_{r,i},\]
-where $1 \leq i \leq r$.
-Again, by direct calculation, we obtain
-\begin{equation}\label{eq:bottom}
-  S(\Lambda, \Delta) = - \frac{(x-a_1)^2 \cdots (x-a_r)^2}{(x-a_i)^2} \cdot \left [q, (x-a_i)^2\right] \cdot X_i.
-\end{equation}
-
-Third, suppose
-\[ \Delta = qE_{i,i},\]
-where $1 \leq i \leq r$.
-As before, by direct calculation, we obtain
-\begin{equation}\label{eq:diagonal}
-  S(\Lambda, \Delta) = R(\Lambda_i(q)),
-\end{equation}
-where $\Lambda_i(q)$ is obtained from $\Lambda$ by changing the $(i,i)$th entry from $(x-a_i)^2$ to $q$.
-
-We want to show that the map
-\begin{equation}\label{eqn:mainmap}
-  H^0(\O(2)) \otimes M_{(r+1) \times r} \to H^0(\O(2r)) \otimes \langle  X_1, \dots, X_r \rangle
-\end{equation}
-given by
-\[ \Delta \mapsto S(\Lambda, \Delta)\]
-is surjective.
-Fix a $i$ with $1 \leq i \leq r$ and consider the subspace of the domain given by
-\[ H^0(\O(2)) \otimes \langle  E_{j,i}  \mid j \neq i \rangle.\]
-By our calculations above, the image of this space lies in $H^0(\O(2r)) \otimes X_i$.
-We begin by identifying the image.
-For $1 \leq j \leq r$ and $j \neq i$, set
-\[ Q_{i,j} = \frac{(x-a_1)^2\cdots (x-a_r)^2p_j}{(x-a_i)^2(x-a_j)^2}\]
-and set
-\[ Q_{i, r+1} = \frac{(x-a_1)^2 \cdots (x-a_r)^2}{(x-a_i)^2.}\]
-
-\begin{lemma}\label{lem:no_linear_syzygy}
-  For generic $p_1, \dots, p_r$, there is no non-trivial linear relation among the polynomials $Q_{i,j}$ for $j \in \{1, \dots, r+1\} \setminus \{i\}$.
-\end{lemma}
-\begin{proof}
-  Suppose we had a linear relation
-  \[ \sum l_j Q_{i,j} = 0.\]
-  Divide throughout by $\frac{(x-a_1)^2 \dots (x-a_r)^2}{(x-a_i)^2}$.
-  Then we get the relation
-  \[ \sum_{j=1}^r l_j \frac{p_j}{(x-a_j)^2} + l_{r+1} = 0.\]
-  If $l_j \neq 0$ for some $j$ with $1 \leq j \leq r$, then we have a pole on the left hand side at $x = a_j$, but not on the right hand side; a contradiction.
-  Therefore, we must have $l_j = 0$ for all $j$ with $1 \leq j \leq r$, and hence also $l_{r+1} = 0$.
-  Thus, the relation was trivial.
-\end{proof}
-\begin{lemma}\label{lem:jacobian}
-  The image of the map
-  \[ H^0(\O(2)) \to H^0(\O(2))\]
-  given by
-  \[ q \mapsto [q, (x-a)^2]\]
-  is
-  \[ (x-a) \cdot H^0(\O(1)).\]
-\end{lemma}
-\begin{proof}
-  Straightforward.
-\end{proof}
-\begin{lemma}\label{lem:imageXi}
-  The image of the map
-  \[ H^0(\O(2)) \otimes \langle  E_{j,i} \mid j \in \{1, \dots, r+1\} \setminus \{i\} \rangle \to H^0(\O(2r)) \otimes X_i\]
-  is
-  \[ (x-a) \cdot H^0(\O(2r-1)) \otimes X_i.\]
-\end{lemma}
-\begin{proof}
-  By the computation in \eqref{eq:off_diagonal} and \eqref{eq:bottom} and \autoref{lem:jacobian} the image of the map above is the same as the image of the multiplication map
-  \[ \langle Q_{i,j} \mid j \in \{1, \dots, r+1\} \setminus \{i\} \rangle \otimes (x-a) \cdot H^0(\O(1)) \to H^0(\O(2r)) \otimes X_i.\]
-  By \autoref{lem:no_linear_syzygy}, the map
-  \[ \langle Q_{i,j} \mid j \in \{1, \dots, r+1\} \setminus \{i\} \rangle \otimes H^0(\O(1)) \to H^0(\O(2r-1))\]
-  is injective.
-  Since both sides have dimension $2r$, the map is an isomorphism.
-  The proof is now complete.
-\end{proof}
-
-By \autoref{lem:imageXi}, the cokernel of the map
-\[ H^0(\O(2)) \otimes \langle  E_{j,i} \mid j \in \{1, \dots, r+1\} \setminus \{i\} \rangle \to H^0(\O(2r)) \otimes X_i\]
-is $\C \otimes X_i$, where the map $H^0(\O(2r)) \to \C$ is the evaluation at $a_i$.
-Putting all these maps together for various $i$, we get that the cokernel of the map
-\[ H^0(\O(2)) \otimes \langle  E_{j,i} \mid j \neq i \rangle \to H^0(\O(2r)) \otimes \langle  X_1, \dots, X_r \rangle\]
-is $\C \otimes \langle  X_1, \dots, X_r \rangle$,
-where the map
-\begin{equation}\label{eqn:remaining}
-  H^0(\O(2)) \otimes \langle  X_1, \dots, X_r \rangle \to \C \otimes \langle  X_1, \dots, X_r \rangle
-\end{equation}
-is given on $H^0(\O(2r)) \otimes X_i$ by the evaluation at $a_i$.
-
-It remains to show that the map
-\begin{equation}\label{eq:remaining_diagonal}
-  H^0(\O(2)) \otimes \langle  E_{i,i} \rangle \to \C \otimes \langle  X_1, \dots, X_r \rangle,
-\end{equation}
-obtained by composing \eqref{eqn:mainmap} and \eqref{eqn:remaining}, is surjective.
-Recall from \eqref{eq:diagonal} that the image of $q E_{i,i}$ is given by $R(\Lambda_i(q))$.
-Suppose $q = (x-a_i)l$, where $l(a_i) \neq 0$.
-Then, we have
-\[ R(\Lambda_i(q))_{x = a_j} = 0\]
-for $j \neq i$, and
-\[ R(\Lambda_i(q))_{x = a_i} = \pm l(a_i) \prod_{j \neq i}(a_i-a_j)^2 p_i(a_i) X_i.\]
-Thus, up to scaling, $qE_{i,i}$ maps to $X_i$ under \eqref{eq:remaining_diagonal}.
-Therefore, the map \eqref{eq:remaining_diagonal} is surjective.
-
-
-
-
-% section proof_of_theorem:rationalnormalscrolls (end)
-
 
 
 \section{The Projection-Ramification enumerative problem} % (fold)
@@ -2387,7 +2236,7 @@ yields a short exact sequence
 \end{align*}
 which corresponds to an element $w$ (up to scalar) of the extension space $\Ext^{1}(E,(\det E)^{-1})$. The assignment $W \mapsto [w] \in \P(\Ext^{1}(E,(\det E)^{-1}))$ is easily seen to be a birational map between $\G := \Gr(n+1,H^{0}(E))$ and $\P(\Ext^{1}(E,(\det E)^{-1}))$.
 
-The ramification linear series $|R|$ is the projectivization of the vector space $V = H^{0}(E \otimes \det E \otimes \Omega_{\P^{1}})$.  By Serre duality, $V$ is dual to $\Ext^{1}(E,(\det E)^{-1})$.  Therefore, the projection-ramification map $\rho_{X}$ may be recast as a map
+The ramification linear series $|R|$ is the projectivization of the vector space $V = H^{0}(E \otimes \det E \otimes K_{\P^{1}})$.  By Serre duality, $V$ is dual to $\Ext^{1}(E,(\det E)^{-1})$.  Therefore, the projection-ramification map $\rho_{X}$ may be recast as a map
 \begin{align*}
     \delta_{X}: \P(V^{*}) \dashrightarrow \P(V)
 \end{align*}

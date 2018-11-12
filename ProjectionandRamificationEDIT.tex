@@ -1214,64 +1214,39 @@ given by
   \end{cases}
 \]
 Note that the multi-degree of $\mathcal E_n$ is $(w_1 - nr, w_2 + nr)$.
-
-
-
-Let $B$ be a DVR with special point $0$ and general point $\eta$.
-Let $\pi \from X \to B$ be a family of connected projective curves of genus $g$, smooth over $\eta$, and at worst nodal over $0$, with non-singular total space $X$.
-Assume the special fiber $X_0 = C$ is the nodal union of two curves $C_1$ and $C_2$ meeting at a unique point $p$.
-
-
-We recall the notion of a limit linear series from \cite{oss:14}, where it is called linked linear series.
-In \cite{oss:14}, Osserman defines two types of linked linear series.
-In our setting, where $C$ has only two components, both notions coincide \cite[Remark~3.4.15]{oss:14}.
-We model our definition on the definition of the type II series.
-
-Fix the following data:
-\begin{enumerate}
-\item positive integers $r$, $d$, and $k$;
-\item integers $d_1$, $d_2$, and $b$ satisfying $d_1 + d_2 - rb = d$;
-\item maps $\theta_v \from \O_X \to \O_X(C_v)$ for $v = 1, 2$ vanishing precisely on $C_v$;
-\item integers $w_1$, $w_2$ satisfying $w_v \equiv d_v \pmod r$ and $w_1 + w_2 = d$.
-\end{enumerate}
-The integers $r$, $d$, and $k$ will denote the rank, the degree, and the dimension of the linear series.
-The tuple $w = (w_1, w_2)$ will encode the multi-degree of the vector bundle in the limit linear series, and the integers $d_1$ and $d_2$ will encode its extremal twists.
-The maps $\theta_v$ are unique up to an element of $\O_B^*$.
-The choice of $w_v$, and $\theta_v$ is entirely auxilliary; different choices give isomorphisms between the corresponding moduli stacks of limit linear series.
-The choice of $d_v$ and $b$ is also largely auxilliary; increasing them leads to open inclusions between the corresponding moduli stacks of limit linear series.
-
-Let $S$ be a $B$-scheme, and let $\mathcal E$ be a vector bundle on $X_S$ of rank $r$ and degree $d$.
-For every $n \in \Z$, define the vector bundle $\mathcal E_n$ by
-
-
+In particular, for sufficiently positive $n$, say for $n \geq n_1$, we have $H^0(C_1, \mathcal E_n|_{C_1}) = 0$, and similarly, for sufficiently negative $n$, say $n \leq n_2$, we have $H^0(C_2, \mathcal E_n|_{C_2}) = 0$.
+Assume, without loss of generality, that $n_1 \geq n_2$.
+Set
+\[ d_1 = w_1 - n_1 r, \text{ and } d_2 = w_2 + n_2 r, \text{ and } b = n_1 - n_2.\]
+Observe that
+\[ d_1 + d_2 - rb = d.\]
 We say that $\mathcal E$ has multi-degree $w$ if for every $s \in S$ mapping to $0 \in B$, the degree of $\mathcal E|_s$ on $C_v$ is $w_v$ for $v = 1, 2$.
 Note that, if $\mathcal E$ has multi-degree $(w_1, w_2)$, then $\mathcal E_n$ has multi-degree $(w_1-rn, w_2+rn)$.
 
-Let $n_1 \in \Z$  be such that
-\[ (w_1 - n_1r, w_2+n_1r) = (d_1, d_2-rb),\]
-and $n_2 \in \Z$ such that
-\[ (w_1-n_2r, w_2+n_2r) = (d_1-rb, d_2).\]
-Observe that $n_2 - n_1 = b$.
-\begin{definition}[{Special case of \cite[Definition~3.3.2]{oss:14}}]
+\begin{definition}[Limit linear series]
   \label{def:lls}
   Let $S$ be a $B$-scheme.
-  A \emph{limit linear series} on $X_S$ consists of $(\mathcal E, V_n \mid n \in \Z)$, where $\mathcal E$ is a vector bundle of rank $r$, degree $d$, and multi-degree $w$ on $X_S$, and $V_n$ is a sub-bundle of $\pi_* \mathcal E_n$ of rank $k$ satisfying the following conditions.
-  \begin{enumerate}
-  \item (Vanishing)
-    \label{lls:vanishing}
-    For every $z \in S$ over $0 \in B$ and $v = 1,2$, we have
-    \[ H^0(C_v, \mathcal E_{n_v}|_{C_v}(-(b+1)p)) = 0.\]
-  \item (Compatibility)
-    \label{lls:compatibility}
-    For every $m, n \in \Z$, the map
-    \[\pi_*\theta_n \from \pi_*\mathcal E_m \to \pi_*\mathcal E_{m+n}\] maps
-    $V_m$ to $V_{m+n}$.
-  \end{enumerate}
+  A \emph{$k$-dimensional limit linear series} on $\mathcal E$ consists of sub-bundles $V_n \to \pi_* \mathcal E_n$ of rank $k$ for every $n \in \Z$ satisfying the following compatibility condition.
+  For every $m, n \in \Z$, the map
+  \begin{equation}\label{lls:compatibility}
+    \pi_* \theta_n \from \pi_* \mathcal E_m \to \pi_* \mathcal E_{m+n} \text{ maps } V_n \to V_{m+n}.
+  \end{equation}
 \end{definition}
-The notion of a sub-bundle of a push-forward $\pi_* \mathcal E_n$ is as in \cite[Definition~B.2.1]{oss:14}, namely $V_n$ is a vector bundle with a map $V_n \to \pi_* \mathcal E_n$ which remains injective after arbitrary base-change.
+\autoref{def:lls} is a special case of \cite[Definition~3.3.2]{oss:14}.
+
 \begin{remark}
-  In our case, the various twists of $\mathcal E$ are indexed by integers $n$.
-  In general, the twists are indexed by a graph $G_{II}$ that depends on the dual graph of $X_0$.
+The notion of a sub-bundle of a push-forward is a bit subtle; it is treated in depth in \cite[Definition~B.2.1]{oss:14}.
+We recall the main points.
+For a flat proper morphism $X \to S$ and a vector bundle $\mathcal E$ on $S$, a \emph{sub-bundle} of $\pi_* \mathcal E$ is a vector bundle $V$ on $S$ along with a map $i \from V \to \pi_* \mathcal E$ such that for every $T \to S$, the pull-back $i_T \from V_T \to \pi_* (\mathcal E_T)$ is injective.
+Note that this is a local condition on $S$.
+For Noetherian schemes such as ours, it is enough to check this condition for the $T \to S$ that are inclusions of closed points.
+Alternatively, if $F_0 \to F_1 \to \dots $ is a complex of vector bundles on $S$ quasi-isomorphic to $R\pi_* \mathcal E$, then a sub-bundle of $\pi_* \mathcal E$ is a vector bundle $V$ along with a map $i \from V \to \pi_* \mathcal E$ such that the composite $V \to F_0$ is an injection of vector bundles (that is, the dual map is surjective).
+\end{remark}
+
+
+\begin{remark}
+\autoref{def:lls} defines limit linear series on a particular vector bundle $\mathcal E$.
+We can also vary the choice of the vector bundle, as is done in \cite{oss:14}; in that case, one imposes an additional vanishing condition on the vector bundles to ensure boundedness of the moduli space of limit linear series.
 \end{remark}
 
 Denote by ${\mathcal G}^k_{r,d,d_*, w_*}(X/B)$ the category fibered over the category of $B$-schemes whose objects over $S$ are the limit linear series on $S$ of rank $r$, degree $d$, and multi-degree $w$, and whose morphisms are isomorphisms over $S$, defined in the obvious way.

@@ -1226,13 +1226,14 @@ Note that, if $\mathcal E$ has multi-degree $(w_1, w_2)$, then $\mathcal E_n$ ha
 \begin{definition}[Limit linear series]
   \label{def:lls}
   Let $S$ be a $B$-scheme.
-  A \emph{$k$-dimensional limit linear series} on $\mathcal E$ consists of sub-bundles $V_n \to \pi_* \mathcal E_n$ of rank $k$ for every $n \in \Z$ satisfying the following compatibility condition.
+  A \emph{$k$-dimensional limit linear series} on $\mathcal E_S$ consists of sub-bundles $V_n \to \pi_* (\mathcal E_n)_S$ of rank $k$ for every $n \in \Z$ satisfying the following compatibility condition.
   For every $m, n \in \Z$, the map
   \begin{equation}\label{lls:compatibility}
-    \pi_* \theta_n \from \pi_* \mathcal E_m \to \pi_* \mathcal E_{m+n} \text{ maps } V_n \to V_{m+n}.
+    \pi_* \theta_n \from \pi_* (\mathcal E_m)_S \to \pi_* (\mathcal E_{m+n})_S \text{ maps } V_m \to V_{m+n}.
   \end{equation}
 \end{definition}
 \autoref{def:lls} is a special case of \cite[Definition~3.3.2]{oss:14}.
+From now on, we will talk about the image of an element in $V_m$ in $V_{m+n}$; this should be understood as the image under the map $\pi_* \theta_n$.
 
 \begin{remark}
 The notion of a sub-bundle of a push-forward is a bit subtle; it is treated in depth in \cite[Definition~B.2.1]{oss:14}.
@@ -1240,7 +1241,7 @@ We recall the main points.
 For a flat proper morphism $X \to S$ and a vector bundle $\mathcal E$ on $S$, a \emph{sub-bundle} of $\pi_* \mathcal E$ is a vector bundle $V$ on $S$ along with a map $i \from V \to \pi_* \mathcal E$ such that for every $T \to S$, the pull-back $i_T \from V_T \to \pi_* (\mathcal E_T)$ is injective.
 Note that this is a local condition on $S$.
 For Noetherian schemes such as ours, it is enough to check this condition for the $T \to S$ that are inclusions of closed points.
-Alternatively, if $F_0 \to F_1 \to \dots $ is a complex of vector bundles on $S$ quasi-isomorphic to $R\pi_* \mathcal E$, then a sub-bundle of $\pi_* \mathcal E$ is a vector bundle $V$ along with a map $i \from V \to \pi_* \mathcal E$ such that the composite $V \to F_0$ is an injection of vector bundles (that is, the dual map is surjective).
+Alternatively, if $F_0 \to F_1 \to \cdots $ is a complex of vector bundles on $S$ quasi-isomorphic to $R\pi_* \mathcal E$, then a sub-bundle of $\pi_* \mathcal E$ is a vector bundle $V$ along with a map $i \from V \to \pi_* \mathcal E$ such that the composite $V \to F_0$ is an injection of vector bundles (that is, the dual map is surjective).
 \end{remark}
 
 
@@ -1249,34 +1250,26 @@ Alternatively, if $F_0 \to F_1 \to \dots $ is a complex of vector bundles on $S$
 We can also vary the choice of the vector bundle, as is done in \cite{oss:14}; in that case, one imposes an additional vanishing condition on the vector bundles to ensure boundedness of the moduli space of limit linear series.
 \end{remark}
 
-Denote by ${\mathcal G}^k_{r,d,d_*, w_*}(X/B)$ the category fibered over the category of $B$-schemes whose objects over $S$ are the limit linear series on $S$ of rank $r$, degree $d$, and multi-degree $w$, and whose morphisms are isomorphisms over $S$, defined in the obvious way.
 
 \begin{definition}\label{def:simple_lls}
-Let $S = \spec K$, where $K$ is a field, and let $\lambda = (\mathcal E, V_n \mid n \in \Z)$ be a limit linear series on $S$.
-We say  $\lambda$ is \emph{simple} if there exist integers $w_1, \dots, w_k$, not necessarily distinct, and elements $v_i \in V_{w_i}$ such that for every integer $w$, the images of $v_1, \dots, v_k$ in $V_w$ form a basis of $V_w$.
-Here the maps $V_{w_i} \to V_w$ are as in \autoref{def:lls}~\eqref{lls:compatibility} .
+Let $S = \spec K$, where $K$ is a field, and let $V = (V_n \mid n \in \Z)$ be a limit linear series on $S$.
+We say  $V$ is \emph{simple} if there exist integers $w_1, \dots, w_k$, not necessarily distinct, and elements $v_i \in V_{w_i}$ such that for every $w \in \Z$, the images of $v_1, \dots, v_k$ in $V_w$ form a basis of $V_w$.
 \end{definition}
-\begin{remark}\label{rem:simple_lls}
-  By \cite[Lemma~3.4.14]{oss:14}, it suffices to check the basis condition for $w = n_1$ and $w = n_2$.
-\end{remark}
 
-Let $M_{r, d, w}(X/B)$ be the category fibered over the category of $B$-schemes whose objects over a $B$-scheme $S$ are vector bundles $\mathcal E$ of rank $r$, degree $d$, and multi-degree $w$ on $X_S$, and whose morphisms are isomorphisms over $S$.
-Let $M_{r,d,d_*,w_*}(X/B) \subset M_{r,d,w}(X/B)$ be the full-subcategory  parametrizing bundles satisfying the vanishing condition in \autoref{def:lls}~\eqref{lls:vanishing}.
-Then $M_{r,d,w}(X/B)$ is an Artin stack over $B$, locally of finite type.
-By the semi-continuity of cohomology, $M_{r, d, d_*, w_*}(X/B) \subset M_{r,d,w}(X/B)$ is an open substack.
-
+Note that if $S \to B$ maps to the generic point $\eta$, then the data of a limit linear series $V = (V_n)$ is equivalent to the data of an individual $V_n$ for any $n \in \Z$, and in particular, for $n = 0$.
+As a result, the functor that associates to $S \to \eta$ the set of $k$-dimensional limit linear series of $\mathcal E_S$ is represented by the Grassmannian $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
+The main theorem of \cite{oss:14} is the following representability theorem.
 \begin{theorem}[{\cite[Theorem~3.4.7]{oss:14}}]
   \label{thm:lls}
-  Retain the notation above.
-  Then $\mathcal G^k_{r,d,d_*,w_*}(X/B)$ is an Artin stack over $B$.
-  The natural forgetful map
-  \[ \beta \from \mathcal G^k_{r,d,d_*,w_*}(X/B) \to M_{r,w,d_*}(X/B)\]
-  is representable by schemes, which are projective locally on the target.
-  The locus of simple limit linear series is an open substack of $\mathcal G^k_{r,d,d_*,w_*}(X/B)$; it has universal relative dimension at least $k(d-k-r(g-1))$ over $M_{r,w,d_*}(X/B)$.
+  The functor that associates to a $B$-scheme $S \to B$ the set of limit linear series on $\mathcal E_S$ is representable by a projective $B$-scheme $\mathcal G(k, \mathcal E)$ isomorphic to the Grassmannian $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$ over $\eta$.
+  The locus of simple linear series ${\mathcal G}^{\rm simple}(k, \mathcal E) \subset {\mathcal G}(k, \mathcal E)$ is an open subscheme, and the map ${\mathcal G}^{\rm simple}(k, \mathcal E) \to B$ has universal relative dimension at least $k(d-k-(g-1))$.
 \end{theorem}
-The last statement implies the following.
-If $\lambda$ is a simple limit linear series such that the fiber of $\beta$ through $\lambda$ has dimension at most $k(d-k-r(g-1))$ at $\lambda$, then $\beta$ is open at $\lambda$ of relative dimension exactly $k(d-k-r(g-1))$.
-
+The last stamement implies that if $v \in {\mathcal G}^{\rm simple}$ is such that ${\mathcal G}^{\rm simple}$ has relative dimension at most $k(d-k-(g-1))$ at $v$, then it has relative dimension exactly $k(d-k-(g-1))$ at $v$ and, futhermore, it is an open map near $v$.
+In particular, $v$ is in the closure of $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
+\begin{remark}
+  Osserman proves a stronger theorem, namely a relative version of the statement above, over the stack of vector bundles on $X$.
+  But the statement above is enough for our purposes.  
+\end{remark}
 
 Although \autoref{def:lls} requires specifying infinitely many vector bundles $V_n$, for $n \in \Z$, specifying finitely many determines the rest.
 Set $I = [n_1, n_2] \cap \Z$.

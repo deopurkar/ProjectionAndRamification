@@ -1271,105 +1271,91 @@ In particular, $v$ is in the closure of $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
   But the statement above is enough for our purposes.  
 \end{remark}
 
-Although \autoref{def:lls} requires specifying infinitely many vector bundles $V_n$, for $n \in \Z$, specifying finitely many determines the rest.
-Set $I = [n_1, n_2] \cap \Z$.
-Define an \emph{$I$-linear series} to be the data of $(\mathcal E, V_n \mid n \in I)$ satisfying the conditions \eqref{lls:vanishing} and \eqref{lls:compatibility} in \autoref{def:lls} whenever the subscripts lie in $I$.
-\begin{proposition}\label{prop:lls_restricted}
-  The natural forgetful map from the groupoid of limit linear series to the groupoid of $I$-linear series is an equivalence.
-\end{proposition}
+Although the definition of a limit linear series demands that we specify infinitely many vector bundles $V_n$, one for each $n \in \Z$, this is neither practical nor necessary.
+In the best case, only specifying the extremal ones, namely $V_{n_1}$ and $V_{n_2}$, suffices, provided that they satisfy some compatibility conditions.
+The original definition of limit linear series due to Eisenbud--Harris \cite{eis.har:86} in the rank 1 case and Teixidor i Bigas \cite{tei-i-big:91} in the general case, took this minimalist approach.
 
-It is often enough to specify only the two extremal bundles, for $n = n_1$ and $n = n_2$, provided they satisfy certain compatibility conditions. 
-This approach gives the original incarnation of the notion of limit linear series due to Eisenbud and Harris \cite{eis.har:86} for the rank 1 case and Teixidor i Bigas in the higher rank case \cite{tei-i-big:91}.
-
-Let $\mathcal E$ be a vector bundle on $C$ of multi-degree $w$ satisfying the vanishing condition in \autoref{def:lls}.
-\begin{definition}[{Adapted from \cite[Definition~4.1.2]{oss:14}}]
+Let $E_n$ be the restriction of $\mathcal E_n$ to the central fiber $C = X_0$, and set $p = C_1 \cap C_2$.
+\begin{definition}
   \label{def:eht}
-  Let $W_v \subset H^0(C, \mathcal E_{n_v}|_{C_v})$ be a $k$-dimensional subspace for $v = 1, 2$.
-  We say  $(\mathcal E, W_1, W_2)$ is an \emph{EHT limit linear series} if the following conditions are satisfied.
+  A \emph{$k$-dimensional EHT limit linear series} on $E$ consists of $k$-dimensional subspaces $W_i \subset H^0(C_i, E_{n_i}|_{C_i})$ for $i = 1, 2$ that satisfy the following two conditions.
   \begin{enumerate}
   \item
     \label{ieq:eht}
-    If $a^v_1 \leq \cdots \leq a^v_k$ is the vanishing sequence for $(\mathcal E_{n_v}|_{C_v}, W_v)$ at $p$ for $v = 1, 2$, then for every $i = 1, \dots, k$ we have
-    \[ a^1_i + a^2_{k+1-i} \geq b.\]
+    If $a^i_1 \leq \cdots \leq a^i_k$ is the vanishing sequence for $(\mathcal E_{n_i}|_{C_i}, W_i)$ at $p$ for $i = 1, 2$, then for every $v = 1, \dots, k$ we have
+    \[ a^1_v + a^2_{k+1-v} \geq b.\]
   \item\label{gluing:eht}
-    There exist bases $s^v_1, \dots, s^v_k$ for $W_v$ for $v = 1, 2$, such that $s^v_i$ has order of vanishing $a^v_i$ at $p$, and if we have $a^1_i + a^2_{k+1-i} = b$ for some $i$, then
-    \[ \widetilde \phi (s^1_i) = s^2_{k+1-i},\]
-    where $\widetilde \phi \from \mathcal E_{n_1}(-a^1_{i}p)|_p \to \mathcal E_{n_2}(-a^2_{k+1-i}p) |_p$ is the isomorphism obtained by taking the appropriate twist of the identity map.
+    There exist bases $s^i_1, \dots, s^i_k$ for $W_i$ for $i = 1, 2$, such that $s^i_v$ has order of vanishing $a^i_v$ at $p$, and if we have $a^1_v + a^2_{k+1-v} = b$ for some $v$, then
+    \[ \widetilde \phi (s^1_v) = s^2_{k+1-v},\]
+    where $\widetilde \phi \from E_{n_1}(-a^1_{v}\cdot p)|_p \to E_{n_2}(-a^2_{k+1-v} \cdot p) |_p$ is the isomorphism obtained by taking the appropriate twist of the identity map.
   \end{enumerate}
-  We say  $(\mathcal E, W_1, W_2)$ is \emph{refined} if all the inequalities in \eqref{ieq:eht} are equalities.
+  We say that $(W_1, W_2)$ is a \emph{refined EHT limit linear series} if all equality holds in \eqref{ieq:eht} for all $v = 1, \dots, k$.
 \end{definition}
-Due to the vanishing condition, the restriction map
-\[ H^0(C, \mathcal E_{n_v}) \to H^0(C_v, \mathcal E_{n_v}|_{C_v})\]
+This definition is adapted from \cite[Definition~4.1.2]{oss:14}.
+Note that, due to the vanishing condition on the twists of $E$, the restriction map
+\[ H^0(C, E_{n_i}) \to H^0(C_i, E_{n_i}|_{C_i})\]
 is an isomorphism.
-Via this isomorphism, we sometimes treat $W_v$ as a subspace of $H^0(C_v, \mathcal E_{n_v}|_{C_v})$.
+Via this isomorphism, we sometimes treat $W_i$ as a subspace of $H^0(C_i, \mathcal E_{n_i}|_{C_i})$.
 
-It is possible to define a stack of EHT limit linear series so that the locus of refined EHT limit linear series forms an open substack \cite[\S~4]{oss:14}.
-
-Let $\lambda = (\mathcal E, V_n \mid n \in \Z)$ be a limit linear series on $C$ in the sense of \autoref{def:lls}.
-Set $W_1 = V_{n_1}$ and $W_2 = V_{n_2}$.
+Although the notions of a limit linear series and an EHT limit linear series differ in general, they essentially agree when we restrict to the simple limit linear series and the refined EHT limit linear series.
+More precisely, we have the following statement.
 \begin{proposition}\label{prop:llseht}
-  In the notation above, $(\mathcal E, W_1, W_2)$ is an EHT limit linear series on $C$.
-  Conversely, given an EHT limit linear series $\mu = (\mathcal E, W_1, W_2)$, there exists a limit linear series $\lambda = (\mathcal E, V_n)$ on $C$ such that $W_1 = V_{n_1}$ and $W_2 = V_{n_2}$.
-  Furthermore, if $\mu$ is refined, then $\lambda$ is unique and simple.
+  Let $S$ be a $B$-scheme, and $V = (V_n \mid n \in \Z)$ a limit linear series on $\mathcal E_S$.
+  For every $s \in S$ over $0 \in B$, taking $W_i = V_{n_i}|_s$ for $i = 1, 2$ gives an EHT limit linear series.
+  Conversely, assume that $S$ reduced, and let $\mathcal W_i \subset \pi_*(\mathcal E_{n_i})_S$ be sub-bundles whose restrictions to every $s \in S$ over $\eta \in B$ agree under the isomorphism $(\mathcal E_{n_1})_\eta \cong (\mathcal E_{n_2})_\eta$, and to eveny $s \in S$ over $0 \in B$ define a refined EHT limit linear series.
+  Then there exists a unique limit linear series $V = (V_n \mid n \in \Z)$ on $\mathcal E_S$ such that $\mathcal W_i = V_{n_i}$.
+  Furthermore, for every $s \in S$ over $0$, the series $V|_s$ is simple.
 \end{proposition}
 \begin{proof}
-  This is a point-wise version of the stack theoretic statement \cite[Theorem~4.3.4]{oss:14}, plus the equivalence of type I and type II series in the two component case (\cite[Remark~3.4.15]{oss:14}).
+  Proving that $(W_1, W_2)$ is an EHT limit linear series is straightforward, and left to the reader.
+  It is a special case of \cite[Theorem~4.3.4]{oss:14} and the equivalence of type I and type II series in the two component case (\cite[Remark~3.4.15]{oss:14}.
 
-  The assertion about refined series follows from the proof of \cite[Theorem~4.3.4]{oss:14}, but it is not explicitly stated there.
+  The converse also follows from the proof of \cite[Theorem~4.3.4]{oss:14}, but it is not explicitly stated there.
   So we offer a proof.
   
-  Let $\mu$ be a refined EHT limit linear series.
-  We now construct $V_n \subset H^0(\mathcal E_n)$.
-  By \autoref{prop:lls_restricted}, it suffices to take $n \in [n_1, n_2]$.
+  First, suppose that $S$ lies over $\eta \in B$.
+  Then $V_n \subset \pi_* (\mathcal E_n)_S$ is determined uniquely as the image of $V_{n_i} = \mathcal W_{n_i} \subset \pi_* (\mathcal E_{n_i})_S$ for either $i = 1$ or $i = 2$.
 
-  By composing the restriction $\mathcal E_n \to \mathcal E_n |_{C_v}$ and the inclusion $\mathcal E_n |_{C_v} \to \mathcal E_{n_v}|_{C_v}$, we get a map
-  \[ \iota \from H^0(C, \mathcal E_n) \to H^0(C_1, \mathcal E_{n_1}|_{C_1}) \oplus H^0(C_2, \mathcal E_{n_2}|_{C_2}).\]
-  The vanishing condition in \autoref{def:lls} shows $\iota$ is an injection.
-  The compatibility condition in \autoref{def:lls} implies  $\iota(V_n) \subset W_1 \oplus W_2$.
-  Therefore, the subspace $V_n \subset H^0(C, \mathcal E_n)$ lies in the kernel of the map
-  \begin{equation}\label{eqn:iotabar}
-    \overline{\iota} \from H^0(C, \mathcal E_n) \to H^0(C_1, \mathcal E_{n_1}|_{C_1})/W_1 \oplus H^0(C_2, \mathcal E_{n_2}|_{C_2}) / W_2.
-  \end{equation}
-  
-  Next we show:
-  \begin{equation}\label{eqn:keriotabar}
-    \dim \ker \overline \iota = k.
-  \end{equation}
-  Suppose $s \in \ker\overline\iota$.
-  Then $\iota(s)$ is a linear combination of $(s^1_1,0), \dots, (s^1_k,0), (0,s^2_1), \dots, (0,s^2_k)$.
-  Writing $\iota(s) = (s_1, s_2)$, we have
+  Next, suppose that $S = \spec K$, and it lies over $0 \in B$.
+  Denoting $(\mathcal E_n)_S$ by $E_n$, we must construct $V_n \subset H^0(C, E_n)$.
+  By composing $\theta_{n_i-n} \from E_n \to E_{n_i}$ and the restriction $E_{n_i} \to E_{n_i}|_{C_i}$, we get a map
+  \[ \iota \from H^0(C, E_n) \to H^0(C_1, E_{n_1}|_{C_1}) \oplus H^0(C_2, E_{n_2}|_{C_2}). \]
+  The vanishing condition on the twists of $E$ mean that $\iota$ is injective.
+  The compatibility condition in \autoref{def:lls} implies that we must choose $V_n$ so that $\iota (V_n) \subset W_1 \oplus W_2$.
+  We claim that $\dim \iota^{-1}(W_1 \oplus W_2) = k$, so that there is a unique choice of $V_n$, namely $V_n = \iota^{-1}(W_1 \oplus W_2)$.
+
+  Suppose $s \in i^{-1}(W_1 \oplus W_2)$.
+  Then $\iota(s)$ is a linear combination of $(s^1_1,0), \dots, (s^1_k, 0)$, and $(0, s^2_1), \dots, (0,s^2_k)$.
+  Write $\iota(s) = (s_1, s_2)$.
+  Since $s_i$ is obtained by applying $\theta_{n-n_i}$, and $\theta$ on $C_i$ at $p$ corresponds to multiplication by the uniformizer, we see that
   \begin{equation}\label{eqn:vanishing}
-    \ord_p (s_1) \geq n-n_1 \text{ and } \ord_p(s_2) \geq n_2-n.
+    \ord_p(s_1) \geq n - n_1, \text{ and likewise, } \ord_p(s_2) \geq n_2 - n.
   \end{equation}
-  Recall that $a^v_1 \leq \cdots \leq a^v_k$ is the vanishing sequence of $W_v$ for $v = 1, 2$.
-  Let $i$ be the smallest such that
-  \[ a^1_{i} \geq n - n_1,\]
-  and let $i + c$ be the smallest such that
-  \[ a^1_{i + c} > n - n_1.\]
-  Since $\mu$ is a refined series and $n_2 - n_1 = b$, we get $j = k+1-i$ is the largest such that
-  \[ a^2_j \leq n_2 - n,\]
-  and $j - c$ the largest such that
-  \[ a^2_{j + c } < n_2 - n.\]
-  The vanishing conditions \eqref{eqn:vanishing} imply $\iota(s)$ must in fact be a linear combination of $(s^1_i,0), \dots, (s^1_k,0), (0,s^2_{k-i-c}), \dots, (0,s^2_k)$.
-  But since $s_v$ for $v = 1, 2$ are the restriction to $C_v$ of a section on $C$, they satisfy a gluing condition at $p$.
-  Write
-  \[ \iota(s) = \sum_{\ell = i}^k \alpha_{\ell} (s^1_\ell,0) + \sum_{\ell = j}^{k} \beta_\ell (0,s^2_\ell),\]
-  where $\alpha_\ell, \beta_\ell$ are in the base-field.
-  By the condition \eqref{gluing:eht} in \autoref{def:eht}, the gluing condition for $s_1$ and $s_2$ is equivalent to
-  \[ \alpha_{\ell} = \beta_{k+1-\ell}\]
-  for $\ell = i, \dots, i+c-1$.
-  Hence $\iota(s)$ must be a linear combination of the $k$ elements
-  \[ (s^1_i , s^2_{k+1-i}), \dots, (s^1_{i+c-1} , s^2_{k+2-i-c}), (s^1_{i+c},0), \dots, (s^1_k,0), (0,s^2_{k+2-i}), \dots, (s^2_{k},0).\]
-  It follows that $\ker \overline\iota$ is $k$-dimensional.
+  Let $v_1 \in \{1, \dots, k\}$ be the smallest such that $a^1_v \geq n-n_1$, and $v_1+c$ the smallest such that $a^1_{v_1+c} > n-n_1$.
+  Since $(W_1, W_2)$ is refined, and $n_2 - n_1 = b$, we see that $v_2 = k+1-v_1$ is the largest such that $a^2_{v_2} \leq n_2 - n$, and $v_2 - c$ the smallest such that $a^2_{v_2 + c} < n_2 - n$.
+  The vanishing conditions \eqref{eqn:vanishing} imply that $\iota(s)$ bust be a linear combination of $(s^1_{v_1},0), \dots, (s^1_k,0)$ and $(0, s^2_{v_2-c}), \dots,  (0,s^2_k)$.
+  Suppose
+  \[ \iota(s) = \sum_{\ell = i}^k \alpha_{\ell} \cdot (s^1_\ell,0) + \sum_{\ell = j}^{k} \beta_\ell \cdot (0,s^2_\ell),\]
+  where $\alpha_{\ell}$ and $\beta_{\ell}$ are elements of the field $K$.
+  Since $s$ is a section on the entire nodal curve $C$, its two restrictions to $C_1$ and $C_2$ are equal at $p$.
+  In terms of the two components of $\iota(s)$, and in light of the gluing condition \eqref{gluing:eht} in \autoref{def:eht}, this equality is equivalent to $\alpha_{\ell} = \beta_{k+1-\ell}$.
+  That is, $\iota(s)$ is a linear combination of the $k$ elements 
+  \[ (s^1_{v_1} , s^2_{v_2}), \dots, (s^1_{v_1+c-1} , s^2_{v_2-c+1}), (s^1_{v_1+c},0), \dots, (s^1_k,0), (0,s^2_{v_2+1}), \dots, (s^2_{k},0).\]  
+  Conversely, it is easy to see that any such linear combination lies in $W_1 \oplus W_2$.
+  Hence the claim that $\dim \iota^{-1}(W_1 \oplus W_2) = k$.
 
-  Since $\ker \overline \iota$ is $k$-dimensional, there is a unique possible choice for $V_n$, namely $V_n = \ker \overline \iota$.
-  It is easy to check that with this choice, the compatibility condition in \autoref{def:lls} is satisfied.
-  Therefore, we get a limit linear series $\lambda$ whose associated EHT limit linear series is $\mu$.
+  Set $V_n = \iota^{-1}(W_1 \oplus W_2)$.
+  To see that $V$ is simple, we must exhibit appropriate $w_i$ and $v_i \in V_{w_i}$ for $i = 1, \dots, k$.
+  Take $w_i = n-n_1-a^1_i$, and let $v_i \in V_{w_i} \subset H^0(C, E_{w_i})$ be such that $\iota(v_i) = (s^1_i, s^2_{k+1-i})$.
+  Then the images of $v_1, \dots, v_k$ form a basis of $V_n$ for all $n \in \Z$.
 
-  It remains to show $\lambda$ is simple.
-  For $i = 1, \dots, k$, set $n_i = n-n_1-a^1_i$, and let $s_i \in V_{n_i} \subset H^0(C, \mathcal E_{n_i})$ to be the section whose image under $\iota$ is $(s^1_i , s^2_{k+1-i})$.
-  Then the images of $s_1, \dots, s_k$ form a basis of $V_{n_1} = W_1$ and $V_{n_2} = W_2$.
-  By \autoref{rem:simple_lls}, we conclude $\lambda$ is simple.
+  For more general $S$, consider the map
+  \[ \overline \iota \from \pi_* (\mathcal E_n)_S \to \pi_*(\mathcal E_{n_1})_S / \mathcal W_1 \oplus \pi_*(\mathcal E_{n_2})_S / \mathcal W_2,\]
+  obtained by composing $\iota = \pi_*(\theta_{n_1-n} \oplus \theta_{n_2-n})$ and the projections $\pi_*(\mathcal E_{n_i})_S \to \pi_*(\mathcal E_{n_i})_S / \mathcal W_i$.
+  We proved that, for every $\spec K \to S$, the kernel of $\overline \iota \otimes_{\O_S} K$ is $k$-dimensional.
+  Since $S$ is reduced, it is easy to prove that $V_n = \ker \iota$ is a sub-bundle of $\pi_*(\mathcal E_n)$.
+  It is also easy to check that $V = (V_n \mid n \in \Z)$ a limit linear series, the only one that satisfies $V_{n_i} = \mathcal W_i$.
+  The proof is now complete.
 \end{proof}
 
 \subsection{Projection-ramification for nodal curves}

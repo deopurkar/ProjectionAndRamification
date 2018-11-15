@@ -1530,23 +1530,24 @@ Let $\mathcal U \subset {\mathcal G}(r+1, \mathcal E)$ be the complement of the 
 \item the closure of the subset of $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta))$ corresponding to $V \subset H^0(X_\eta, \mathcal E_\eta)$ for which the evaluation map $V\otimes\O_{X_\eta} \to \mathcal E_\eta$ has generic rank less than $r$.
 \item the set of limit linear series $(V_n \mid n \in \Z)$ on $C$ such that the associated EHT limit linear series $(W_1, W_2)$ is not refined, or does not have the vanishing sequence as in \eqref{eqn:llsvs}, or does not satisfy the transversality condition $\dim (V_0 \cap V_1) = 1$.
 \end{enumerate}
-Give $\mathcal U$ the reduced scheme structure.
 
-Let $S$ be a $B$ scheme with a map to $\mathcal U$ given by the limit linear series $(\mathcal E, V_n)$.
+Let $S$ be a reduced $B$-scheme with a map to $\mathcal U$ given by the limit linear series $(V_n \mid n \in \Z)$.
 On $X_S$, we have a diagram analogous to \eqref{eqn:differential_construction}, namely
 \begin{equation}
   \label{eq:llspr}
   \begin{tikzcd}
-    &\det \mathcal E_n^* \otimes \det V_n\ar{r}{j}\ar{d}{d} & V_n \otimes \O_{X_S}\ar{r}{i}\ar{d}{\widetilde i} & \mathcal E_n\ar[equal]{d}&\\
-    0\ar{r} & \Omega_{X_S/S} \otimes \mathcal E_n\ar{r} & j_1 \mathcal E_n\ar{r} &\ar{r} \mathcal E_n \ar{r}& 0.
+    &\det \mathcal E_n^* \otimes \det V_n\ar{r}{j}\ar{d}{d} & V_n \otimes \O_{X_S}\ar{r}{e}\ar{d}{e} & \mathcal E_n\ar[equal]{d}&\\
+    0\ar{r} & \Omega_{X_S/S} \otimes \mathcal E_n\ar{r} & P(\mathcal E_n)\ar{r} &\ar{r} \mathcal E_n \ar{r}& 0.
   \end{tikzcd}
 \end{equation}
-In the top row, the map $i$ is induced by the inclusion $V_n \to \pi_* \mathcal E_n$ on $S$, and the map $j$ is given by $j = \wedge^r i^* \otimes \det V_n$.
-In the bottom row, the sheaf $j_1 \mathcal E_n$ is the first jet bundle of $\mathcal E_n$ along $X_S \to S$, and the row is the natural jet bundle exact sequence.
-The map $\widetilde i$ is the canonical lift of $i$, and the map $d$ is the unique induced map owing to $i \circ j = 0$.
-By composing $d$ through the inclusion $\Omega_{X_S/S} \to \omega_{X_S/S}$, and rearranging the line bundles, we obtain a map
+Here $P(\mathcal E_n)$ is the sheaf of principal parts of $\mathcal E_n$ relative to $X_S \to S$, and the bottom row is the natural exact sequence coming from its definition.
+The top row is a complex, but it may not be exact.
+The maps labeled $e$ are the evaluation maps.
+The map $j$ is defined by the maximal minors of $e \from V_n \otimes \O_{X_S} \to \mathcal E_n$.
+The map $d$ is the unique map induced by the other maps in the diagram.
+By composing $d$ through the inclusion $\Omega_{X_S/S} \to \omega_{X_S/S}$, and doing some rearrangement, we obtain a map
 \begin{equation}\label{eqn:Rn}
-r_n \from \det V_n \to \mathcal \pi_*(\mathcal E_n \otimes \det \mathcal E_n \otimes \omega^*_{X_S/S}).
+r_n \from \det V_n \to \mathcal \pi_*(\mathcal E_n \otimes \det \mathcal E_n \otimes \omega^*_{X_S/S}) = \pi_*(\mathcal E'_{rn}).
 \end{equation}
 
 Set $\mathcal E' = \mathcal E \otimes \det \mathcal E \otimes \omega^*_{X_S/S}$.

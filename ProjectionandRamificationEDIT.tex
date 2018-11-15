@@ -1176,8 +1176,8 @@ It turns out that with the most n\"aive definition of linear series on scrolls o
 We have to work with the limit linear series of higher rank as developed in \cite{tei:} and\cite{oss:14}.
 
 \subsection{Limit linear series}\label{sec:lls}
-We need limit linear series only in the simplest singular curve, namely a (projective, connected) nodal curve $C$ which is the nodal union of two smooth (projective, connected) curves $C_1$ and $C_2$, but we need them for vector bundles of rank higher than $1$.
-Let $B$ be a DVR with special point $0$, general point $\eta$.
+We need limit linear series for the simplest singular curve, namely a (projective, connected) nodal curve $C$ which is the nodal union of two smooth (projective, connected) curves $C_1$ and $C_2$, but we need them for vector bundles of rank higher than $1$.
+Let $B$ be the spectrum of a DVR with special point $0$, general point $\eta$.
 Let $\pi \from X \to B$ be a smoothing of $C$ with non-singular total space $X$.
 That is, $\pi$ is a flat, proper, family of connected curves, smooth over $\eta$, and isomorphic to $C$ over $0$.
 Such a family is a particularly simple example of an almost local smoothing family \cite[\S~2.1--2.2]{oss:14}.
@@ -1478,36 +1478,59 @@ Denote this isomorphism class by $E'_{\rm gen}$.
   Follows from \autoref{prop:domred} and that the projection-ramification map is dominant for $E' = \O(1)^r$ and $E' = \O(2)^r$.
 \end{proof}
 
-\subsection{Projection-ramification with limit linear series}
+\subsection{Projection-ramification for limit linear series}
+Recall the setup from \autoref{sec:lls}: $C = C_1 \cup C_2$ is a nodal union of two smooth projective curves of genus $g_1$ and $g_2$, and $\pi \from X \to B$ be a smoothing of $C$.
+Let $\mathcal E$ be a vector bundle of rank $r$ on $X$ whose restriction $E$ to $C$ has multi-degree $(w_1, w_2)$.
+The integers $n_1 > n_2$ are such that we have vanishing $H^0(C_1, E_n|_{C_1}) = 0$ for all $n \geq n_1$ and $H^0(C_2, E_n|_{C_2}) = 0$ for $n \leq n_2$.
+For convenience, we increase $n_1$ and decrease $n_2$ so that the vanishing on $C_1$ holds for all $n \geq n_1 - (w_1-2g_1)$ and on $C_2$ for all $n \leq n_2 + (w_2-2g_2)$.
+Define
+\[ d_1 = w_1 - n_1r, \quad d_2 = w_2 + n_2r,\text{ and } b = n_1 - n_2,\]
+as before.
 
-Let $\pi \from X \to B$ be a family as in \autoref{sec:lls} with $X_\eta$ smooth and $X_0 = C$ a nodal union $C = C_1 \cup_p C_2$, with $g(C_v) = g_v$ for $v = 1,2$.
-Fix $r$, $d$, $d_1$, $d_2$, $b$, $w_1$, $w_2$, $\theta_1$, and $\theta_2$ as in \autoref{sec:lls}, and take $k = r+1$.
-Set
-\begin{align*}
-  r' &= r,\\
-  d' &= d + r(d-2g+2),\\ 
-  d'_1 &= d_1 + r(d_1-2g_1+1),\\
-  d'_2 &= d_2 + r(d_2-2g_2+1),\\
-  b' &= b(r+1),\\
-  w'_1 &= w_1 + r(w_1-2g_1+1),\\
-  w'_2 &= w_2 + r(w_1-2g_1+1),\\
-  k' &= 1.
-\end{align*}
-Defining $n_1'$ and $n_2'$ analogously to $n_1$ and $n_2$, we get
-\begin{align*}
-  n_1' &= n_1 (1+r), \\
-  n'_2 &= n_2(1+r).
-\end{align*}
-We define a rational map 
+Set $\mathcal E' = \mathcal E \otimes \det \mathcal E \otimes \omega_{X/B}$.
+Then $\mathcal E'$ is a vector bundle of rank $r$ on $X$ whose restriction $E'$ to $C$ has multi-degree $(w_1', w_2')$ where
+\[ w_1' = w_1 + r(w_1-2g_1+1) \text{ and } w'_2 = w_2 + r(w_2-2g_2+1).\]
+We set
+\[ n_1' = n_1(1+r) \text{ and } n_2' = n_2(1+r),\]
+and observe that we have vanishings $H^0(C_1, E'_{n}|_{C_1}) = 0$ for $n \geq n_1'$ and $H^0(C_2, E'_{n}|_{C_2}) = 0$ for $n \leq n_2'$.
+We also set
+\[ b' = n_1' - n_2' = b(1+r).\]
+
+Our next goal is to define a rational map
 \begin{equation}\label{eq:Rtilde}
-  \rho \from {\mathcal G}^{r+1}_{r,d,d_*,w_*}(X/B)^{\rm red} \dashrightarrow {\mathcal G}^{1}_{r',d',d'_*,w'_*}(X/B)
+  \rho \from {\mathcal G}(r+1, \mathcal E) \dashrightarrow {\mathcal G}(1, \mathcal E')
 \end{equation}
-that extends the projection-ramification map on the generic fiber.
-Let $\mathcal U \subset {\mathcal G}^{r+1}_{r,d,d_*,w_*}(X/B)$ be the open substack obtained by excluding the following closed loci:
+that extends the projection-ramification map
+\[
+  \rho \from \Gr(r+1, H^0(X_\eta, \mathcal E_\eta)) \dashrightarrow \Gr(1, H^0(X_\eta, \mathcal E'_\eta))
+\]
+on $X_\eta$.
+For technical reasons, we define the map in \eqref{eq:Rtilde} only on the reduced scheme underlying ${\mathcal G}(r+1, \mathcal E)$.
+
+Before we define the rational map, we first identify the open set in ${\mathcal G}(r+1, \mathcal E)|_0$ where it can be defined.
+To do this, consider a limit linear series $(V_n \mid n \in \Z)$ on $C$, and let $(W_1, W_2)$ be the associated EHT limit linear series namely $W_1 = V_{n_1}$ and $W_2 = V_{n_2}$ (see \autoref{prop:llseht}).
+The first condition we want to impose is that $(W_1, W_2)$ be a refined EHT limit linear series; this is an open condition (see \cite[Proposition~4.1.5]{oss:14}).
+The second condition we want to impose is that the vanishing sequence of $W_1 \subset H^0(C_1, E_{n_1}|_{C_1})$ at $p$ is of the form
+\begin{equation}\label{eqn:llsvs}
+  (\underbrace{a, \dots, a}_i, \underbrace{a+1, \dots, a+1}_{r+1-i})
+\end{equation}
+as in \eqref{eqn:specialvs}; imposing a particular vanishing sequence is again an open condition (see \cite[Proposition~4.2.5]{oss:14}).
+Since $(W_1, W_2)$ is refined, it follows that the vanishing sequence of $W_2 \subset H^0(C_2, E_{n_2}|_{C_2})$ at $p$ is
+\[ (\underbrace{b-a-1, \dots, b-a-1}_{r+1-i}, \underbrace{b-a, \dots, b-a}_{i}).\]
+Recall from \autoref{sec:prnodal} that $W_1$ yields two vector spaces $V_0$ and $V_1$ in the fiber $E_{n_1}|_p$, which we may identify canonically (up to scaling) with the fiber $E|_p$.
+Likewise, $W_2$ yields two analogous vector spaces, call them $\Lambda_0$ and $\Lambda_1$, in $E|_p$.
+The gluing condition in the definition of EHT limit linear series (\autoref{def:eht}) and the definition of these vector spaces immediately shows that
+\begin{equation}\label{eqn:vlambdaswitch}
+  V_0 = \Lambda_1 \text{ and } V_1 = \Lambda_0.
+\end{equation}
+The third condition we want to impose is that these two vector spaces be transverse, namely $\dim (V_0 \cap V_1) = 1$.
+
+Let $\mathcal U \subset {\mathcal G}(r+1, \mathcal E)$ be the complement of the union of the following closed sets:
 \begin{enumerate}
-\item the closure of the locus of linear series $(\mathcal E, V)$ on the generic fiber $X_\eta$ such that $V \otimes \O_{X_\eta} \to \mathcal E$ has generic rank less than $r$,
-\item the locus of limit linear series $(\mathcal E, V_n)$ on the central fiber such that the associated EHT limit linear series $\mu = (\mathcal E, W_1, W_2)$ is not refined, or does not have vanishing sequences as in \eqref{eqn:specialvs}, or does not satisfy the genericity condition $\dim (V_0 \cap V_1) = 1$ as in \eqref{eq:genericity}.
+\item the closure of the subset of $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta))$ corresponding to $V \subset H^0(X_\eta, \mathcal E_\eta)$ for which the evaluation map $V\otimes\O_{X_\eta} \to \mathcal E_\eta$ has generic rank less than $r$.
+\item the set of limit linear series $(V_n \mid n \in \Z)$ on $C$ such that the associated EHT limit linear series $(W_1, W_2)$ is not refined, or does not have the vanishing sequence as in \eqref{eqn:llsvs}, or does not satisfy the transversality condition $\dim (V_0 \cap V_1) = 1$.
 \end{enumerate}
+Give $\mathcal U$ the reduced scheme structure.
 
 Let $S$ be a $B$ scheme with a map to $\mathcal U$ given by the limit linear series $(\mathcal E, V_n)$.
 On $X_S$, we have a diagram analogous to \eqref{eqn:differential_construction}, namely

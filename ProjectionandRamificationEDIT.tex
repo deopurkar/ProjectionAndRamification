@@ -767,7 +767,7 @@ We immediately get part~\eqref{item:dual} of \autoref{thm:main}.
 
 
 \section{Projection-ramification for varieties of minimal degree}\label{sec:minimaldegree}
-In this section, we prove \autoref{theorem:minimaldegree}, which characterizes varieties of minimal degree in terms of the projection-ramification map.
+In this section, we prove \autoref{theorem:minimaldegree}, which relates varieties of minimal degree and the projection-ramification map.
 We then prove \autoref{Thm:Counterexamples} by constructing examples of rational scrolls where maximal variation fails.
 Finally, we obtain an alternate description of the projection-ramification map for scrolls, which is used in \autoref{sec:proof_of_theorem:rationalnormalscrolls}.
 
@@ -1361,47 +1361,69 @@ More precisely, we have the following statement.
 \autoref{prop:llseht} allows us to combine the economy of specifying an EHT limit linear series with the convenient functorial definition of a limit linear series.
 We use this in the definition of the projection-ramification map in terms of limit linear series.
 
-\subsection{Projection-ramification for nodal curves}
+\subsection{Projection-ramification with non-generic vanishing sequence}
 \label{sec:prnodal}
+We consider the projection-ramification map for linear series with a non-generic vanishing sequence.
+The analysis of such series plays a key role in defining the projection-ramification map for limit linear series.
+
 Let $C$ be a smooth curve and $p \in C$ a point.
 Let $E$ be a vector bundle on $C$ of rank $r$.
-The projective spaces $\P E(np)|_p$, for $n \in \Z$, are canonically isomorphic to each other, so we identify them.
+The projective spaces associated to the vector spaces $E(np)|_p$, for $n \in \Z$, are canonically isomorphic to each other, so we identify them.
+The vanishing sequences considered are at the point $p$.
+Choose a uniformizer $t$ of $C$ at $p$.
 
 Suppose $V \subset H^0(C, E)$ is an $(r+1)$-dimensional subspace with the vanishing sequence 
 \begin{equation}\label{eqn:specialvs}
   (\underbrace{a, \dots, a}_{i}, \underbrace{a+1, \dots, a+1}_{r+1-i}),
 \end{equation}
 for some $i$ with $1 \leq i \leq r$, and $a \geq 0$.
-Let $V_0 \subset E|_p \cong E(-ap)|_p$ be the image of $V(-ap)$, and $V_1 \subset E|_p \cong E(-(a+1)p)|_p$ the image of $V(-(a+1)p)$.
-Then $\dim V_0 = i$ and $\dim V_1 = r+1-i$.
-Assume that $V_0$ and $V_1$ satisfy the following genericity condition
+Let $v_1, \dots, v_{r+1}$ be a basis of $V$ adapted to the vanishing sequence, namely a basis $v_1, \dots, v_{r+1}$ such that in the stalk $E_p$, we can write
+\begin{equation}\label{eqn:basis}
+  v_1 = t^a \widetilde v_1, \dots, v_{i} = t^a \widetilde v_i,\quad v_{i+1} = t^{a+1} \widetilde v_{i+1}, \dots, v_{r+1} = t^{a+1} \widetilde v_{r+1},
+\end{equation}
+for some $\widetilde v_1, \dots, \widetilde v_{r+1} \in E_p$ such that the images of $\widetilde v_1, \dots, \widetilde v_i$ in the fiber $E|_p$ are linearly independent, and the same holds for the images of $\widetilde v_{i+1}, \dots, \widetilde v_{r+1}$.
+Here we are slightly abusing the notation by denoting $v_i$ and its image in $E_p$ under the natural evaluation map by the same letter.
+Let $V_0 \subset E|_p$ be spanned by the images of $\widetilde v_1, \dots, \widetilde v_i$, and $V_1 \subset E|_p$ by the images of $\widetilde v_{i+1}, \dots, \widetilde v_{r+1}$.
+It is easy to check that a different choice of basis adapted to the vanishing sequence gives the same $V_0$ and $V_1$.
+By construction, $\dim V_0 = i$ and $\dim V_1 = r+1-i$, and therefore, $\dim (V_0 \cap V_1) \geq 1$.
+We say that $V$ has \emph{transverse vanishing} at $p$ if 
 \begin{equation}\label{eq:genericity}
   \dim (V_0 \cap V_1) = 1.
 \end{equation}
-Recall that the ramification divisor $R(V)$ is given by a section $r_V$ of $E \otimes \det E \otimes K_C$.
+Note that if $V$ is base-point free at $p$, then $\dim V_0 = r$ and $\dim V_1 = 1$, so $V$ automatically has transverse vanishing.
+
 \begin{proposition}\label{prop:agreement}
-  In the setup above, $r_V$ vanishes to order $(r+1)a + (r-i)$ at $p$.
-  Write $\widetilde r = r_V/t^{(r+1)a + r-i}$, where $t$ is a uniformizer at $p$.
-  Then, the one-dimensional subspace of $E|_p$ spanned by $\widetilde r|_p$ is $V_0 \cap V_1$.
+  Suppose $V \subset H^0(C, E)$ is an $(r+1)$-dimensional subspace with vanishing sequence \eqref{eqn:specialvs} and transverse vanishing at $p$.
+  Then the ramification section $r_V$ of $V$ vanishes to order $(r+1)a + (r-i)$ at $p$.
+  Furthermore, writing $r_V = t^{(r+1)a+r-i} \cdot \widetilde r$, the one-dimensional subspace of $E|_p$ spanned by $\widetilde r|_p$ is $V_0 \cap V_1$.
 \end{proposition}
 \begin{proof}
-  Let $\langle  s_1, \dots, s_r \rangle$ be a local trivialization for $E$ in an open set around $p$ such that in these local coordinates, we have
-  \[ V = \{t^as_1, \dots, t^as_i, t^{a+1}s_i, t^{a+1}s_{i+1}, \dots, t^{a+1}s_{r}\}.\]
-  By \eqref{eqn:Rmatrix}, in these coordinates, $r_V$ is given by
+  Thanks to transverse vanishing, there exists a basis $\{\overline s_1, \dots, \overline s_{r} \}$ of $E|_p$ such that
+  \[ V_0 = \langle  \overline s_1, \dots, \overline s_i \rangle \text{ and } V_1 = \langle  \overline s_{i+1}, \dots, \overline s_r, \overline s_1 \rangle.\]
+  Let $v_1, \dots, v_{r+1}$ be a basis of $V$ adapted to the vanishing sequence such that if $\widetilde v_i$ are defined as in \eqref{eqn:basis} then the images of $\widetilde v_1, \dots, \widetilde v_r$ in $E|_p$ are $\overline s_1, \dots, \overline s_r$, respectively, and the image of $\widetilde v_{r+1}$ is $\overline s_1$.
+  In particular, the $r$ elements $\widetilde v_1, \dots, \widetilde v_r \in E_p$ give a trivialization of $E$ around $p$.
+  Write
+  \[ \widetilde v_{r+1} = b_1 \widetilde v_1 + \dots + b_r \widetilde v_r\]
+  in $E_p$, where $b_1, \dots, b_r \in \O_{C,p}$.
+  Since the image of $\widetilde v_{r+1}$ in $E|_p$ is $\overline s_1$, we get that $b_1 \equiv 1 \pmod {\mathfrak m_p}$, and $b_2, \dots, b_r \in \mathfrak m_p$.  
+  Using the basis $v_1, \dots, v_{r+1}$ of $V$ and the local trivialization $\widetilde v_1, \dots, \widetilde v_r$ of $E$, we can write $r_V$ as the determinant (see \eqref{eqn:Rmatrix}) as follows
   \begin{align*}
     r_V &= \det
     \begin{pmatrix}
-      t^a & & & & & & at^{a-1}s_1\\
-      & t^a & & & & &at^{a-1}s_2\\
-      & & \ddots & & & &\vdots\\
-      & & & t^a  & & &a t^{a-1}s_i\\
-      & & & t^{a+1} & & &(a+1)t^a s_i \\
-      & & & & \ddots & & \vdots\\
-      & & & & &t^{a+1} &(a+1)t^{a}s_r      
+      t^a & & & & & &  at^{a-1}\widetilde v_1\\
+       & \ddots & & & & &\vdots\\
+       & & t^a  & & & &a t^{a-1}\widetilde v_i\\
+       & & & t^{a+1}  & & &(a+1)t^a \widetilde v_{i+1} \\
+       & & & & \ddots & & \vdots\\
+       & & & & &t^{a+1} &(a+1)t^{a}\widetilde v_r\\
+      b_1t^{a+1}& b_2 t^{a+1} & \cdots & b_{r-1}t^{a+1} & & b_rt^{a+1} & (a+1)t^a\widetilde v_1 + t^{a+1}(\cdots)
     \end{pmatrix}\\
-               &= (-1)^{r-i}t^{(r+1)a+r-i} \cdot s_i.
+        &= t^{(r+1)a+r-i} \widetilde v_1  + t^{(r+1)a+r-i+1} (\cdots).
   \end{align*}
-  Since $s_i$ spans $V_0 \cap V_1$, the proof is complete.
+  Thus the order of vanishing of $r_V$ is as claimed.
+  Furthermore, $\widetilde r$ is given by
+  \[ \widetilde r = \widetilde v_1 + t (\cdots).\]
+  Since the image of $\widetilde v_1$, namely $\overline s_1$, spans $V_0 \cap V_1$, the proof is complete.
 \end{proof}
 
 Let $\pi \from X \to B$ be a family as in \autoref{sec:lls} with $X_\eta$ smooth and $X_0 = C$ a nodal union $C = C_1 \cup_p C_2$, with $g(C_v) = g_v$ for $v = 1,2$.

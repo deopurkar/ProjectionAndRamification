@@ -208,16 +208,16 @@ Nevertheless, it is dominant for most scrolls, which we now make precise.
 
 Recall that if $X \subset \P^n$ is a smooth rational normal scroll, then $X$ is isomorphic to the projectivization of an ample vector bundle $E$ on $\P^1$, and the embedding is given by the complete linear series $|\O_{\P E}(1)|$.
 \begin{maintheorem}
-  \label{theorem:rationalnormalscrolls}
+  \label{thm:rationalnormalscrolls}
   Let $X = \P E \subset \P^n$ be a rational normal scroll, where $E$ is a ample vector bundle of rank $r$ on $\P^1$, general in its moduli.
   If $\deg E = a \cdot (r-1) + b \cdot (2r-1) + 1$ for non-negative integers $a, b$, then the projection-ramification map $\rho_X$ is dominant for $X$.
   In particular, the conclusion holds if $E$ is general of degree at least $(r-1)(2r-1) + 1$.
 \end{maintheorem}
 Thus, at least among the general scrolls, the projection-ramification map is dominant except possibly in small degrees.
-We prove \autoref{theorem:rationalnormalscrolls} by degeneration, using the theory of limit linear series of higher rank developed by Teixidor i Bigas \cite{tei:} and Osserman \cite{oss:14}.
+We prove \autoref{thm:rationalnormalscrolls} by degeneration, using the theory of limit linear series of higher rank developed by Teixidor i Bigas \cite{tei:} and Osserman \cite{oss:14}.
 
 \subsection{Enumerative problems}
-\autoref{theorem:minimaldegree} and \autoref{theorem:rationalnormalscrolls} motivate a gamut of enumerative questions.
+\autoref{theorem:minimaldegree} and \autoref{thm:rationalnormalscrolls} motivate a gamut of enumerative questions.
 \begin{question}\label{q:degree}
  When $X \subset \P^n$ is a variety of minimal degree, what is the degree of $\rho_X$?
 \end{question}
@@ -264,7 +264,7 @@ The set $\Sigma_{r,d}$ has a partial ordering $\prec$ given by dominance.
 If $(a_1, \dots, a_r) \prec (b_1, \dots, b_r)$, then the scroll $\P(\O(b_1) \oplus \dots \oplus \O(b_r))$ isotrivially specializes to the scroll $\P(\O(a_1) \oplus \dots \oplus \O(a_r))$.
 By the lower semi-continuity of degrees of rational maps, we get
 \[ \rho(a_1, \dots, a_r) \leq \rho(b_1,\dots, b_r).\]
-\autoref{theorem:rationalnormalscrolls} implies that, at least if $d$ is sufficiently large compared to $r$, then $\rho$ is not identically zero.
+\autoref{thm:rationalnormalscrolls} implies that, at least if $d$ is sufficiently large compared to $r$, then $\rho$ is not identically zero.
 \autoref{Thm:Examples} determines the value of $\rho$ for the partitions $(n)$, $(1, \dots, 1)$, $(1,k+1)$, $(1,1,k+1)$, and $(2,2)$.
 The following table lists some more values of $\rho$ computed using randomized calculations over finite fields using the computer algebra systems \texttt{Macaulay2} and \texttt{MAGMA}.
 We plan to return to a more complete enumerative investigation of $\rho$ in a future paper.
@@ -1214,10 +1214,10 @@ given by
   \end{cases}
 \]
 Note that the multi-degree of $\mathcal E_n$ is $(w_1 - nr, w_2 + nr)$.
-In particular, for sufficiently positive $n$, say for $n \geq n_1$, we have $H^0(C_1, \mathcal E_n|_{C_1}) = 0$, and similarly, for sufficiently negative $n$, say $n \leq n_2$, we have $H^0(C_2, \mathcal E_n|_{C_2}) = 0$.
-Assume, without loss of generality, that $n_1 \geq n_2$.
+In particular, for sufficiently negative $n$, say for $n \leq n_1$, we have $H^0(C_2, \mathcal E_n|_{C_2}) = 0$, and similarly, for sufficiently positive $n$, say $n \geq n_2$, we have $H^0(C_1, \mathcal E_n|_{C_1}) = 0$.
+Assume, without loss of generality, that $n_2 \geq n_1$.
 Set
-\[ d_1 = w_1 - n_1 r, \text{ and } d_2 = w_2 + n_2 r, \text{ and } b = n_1 - n_2.\]
+\[ d_1 = w_1 - n_1 r, \text{ and } d_2 = w_2 + n_2 r, \text{ and } b = n_2 - n_1.\]
 Observe that
 \[ d_1 + d_2 - rb = d.\]
 We say that $\mathcal E$ has multi-degree $w$ if for every $s \in S$ mapping to $0 \in B$, the degree of $\mathcal E|_s$ on $C_v$ is $w_v$ for $v = 1, 2$.
@@ -1481,10 +1481,10 @@ Denote this isomorphism class by $E'_{\rm gen}$.
 \subsection{Projection-ramification for limit linear series}
 Recall the setup from \autoref{sec:lls}: $C = C_1 \cup C_2$ is a nodal union of two smooth projective curves of genus $g_1$ and $g_2$, and $\pi \from X \to B$ be a smoothing of $C$.
 Let $\mathcal E$ be a vector bundle of rank $r$ on $X$ whose restriction $E$ to $C$ has multi-degree $(w_1, w_2)$.
-The integers $n_1 > n_2$ are such that we have vanishing $H^0(C_1, E_n|_{C_1}) = 0$ for all $n \geq n_1$ and $H^0(C_2, E_n|_{C_2}) = 0$ for $n \leq n_2$.
-For convenience, we increase $n_1$ and decrease $n_2$ so that the vanishing on $C_1$ holds for all $n \geq n_1 - (w_1-2g_1)$ and on $C_2$ for all $n \leq n_2 + (w_2-2g_2)$.
+The integers $n_2 \geq n_1$ are such that we have vanishing $H^0(C_2, E_n|_{C_2}) = 0$ for all $n \leq n_1$ and $H^0(C_1, E_n|_{C_1}) = 0$ for $n \geq n_2$.
+For convenience, we decrease $n_1$ and increase $n_2$ so that the vanishing on $C_2$ holds for all $n \leq n_1 - (w_1-2g_1)$ and on $C_1$ for all $n \geq n_2 + (w_2-2g_2)$.
 Define
-\[ d_1 = w_1 - n_1r, \quad d_2 = w_2 + n_2r,\text{ and } b = n_1 - n_2,\]
+\[ d_1 = w_1 - n_1r, \quad d_2 = w_2 + n_2r,\text{ and } b = n_2 - n_1,\]
 as before.
 
 Set $\mathcal E' = \mathcal E \otimes \det \mathcal E \otimes \omega_{X/B}$.
@@ -1492,9 +1492,9 @@ Then $\mathcal E'$ is a vector bundle of rank $r$ on $X$ whose restriction $E'$ 
 \[ w_1' = w_1 + r(w_1-2g_1+1) \text{ and } w'_2 = w_2 + r(w_2-2g_2+1).\]
 We set
 \[ n_1' = n_1(1+r) \text{ and } n_2' = n_2(1+r),\]
-and observe that we have vanishings $H^0(C_1, E'_{n}|_{C_1}) = 0$ for $n \geq n_1'$ and $H^0(C_2, E'_{n}|_{C_2}) = 0$ for $n \leq n_2'$.
+and observe that we have vanishings $H^0(C_2, E'_{n}|_{C_2}) = 0$ for $n \leq n_1'$ and $H^0(C_1, E'_{n}|_{C_1}) = 0$ for $n \geq n_2'$.
 We also set
-\[ b' = n_1' - n_2' = b(1+r).\]
+\[ b' = n_2' - n_1' = b(1+r).\]
 
 Our next goal is to define a rational map
 \begin{equation}\label{eq:Rtilde}
@@ -1507,7 +1507,7 @@ that extends the projection-ramification map
 on $X_\eta$.
 For technical reasons, we define the map in \eqref{eq:Rtilde} only on the reduced scheme underlying ${\mathcal G}(r+1, \mathcal E)$.
 
-Before we define the rational map, we first identify the open set in ${\mathcal G}(r+1, \mathcal E)|_0$ where it can be defined.
+Before defining the map, we identify three conditions on limit linear series on the central fiber that are required for the map to be defined.
 To do this, consider a limit linear series $(V_n \mid n \in \Z)$ on $C$, and let $(W_1, W_2)$ be the associated EHT limit linear series namely $W_1 = V_{n_1}$ and $W_2 = V_{n_2}$ (see \autoref{prop:llseht}).
 The first condition we want to impose is that $(W_1, W_2)$ be a refined EHT limit linear series; this is an open condition (see \cite[Proposition~4.1.5]{oss:14}).
 The second condition we want to impose is that the vanishing sequence of $W_1 \subset H^0(C_1, E_{n_1}|_{C_1})$ at $p$ is of the form
@@ -1530,6 +1530,7 @@ Let $\mathcal U \subset {\mathcal G}(r+1, \mathcal E)$ be the complement of the 
 \item the closure of the subset of $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta))$ corresponding to $V \subset H^0(X_\eta, \mathcal E_\eta)$ for which the evaluation map $V\otimes\O_{X_\eta} \to \mathcal E_\eta$ has generic rank less than $r$.
 \item the set of limit linear series $(V_n \mid n \in \Z)$ on $C$ such that the associated EHT limit linear series $(W_1, W_2)$ is not refined, or does not have the vanishing sequence as in \eqref{eqn:llsvs}, or does not satisfy the transversality condition $\dim (V_0 \cap V_1) = 1$.
 \end{enumerate}
+Give $\mathcal U$ the reduced scheme structure.
 
 Let $S$ be a reduced $B$-scheme with a map to $\mathcal U$ given by the limit linear series $(V_n \mid n \in \Z)$.
 On $X_S$, we have a diagram analogous to \eqref{eqn:differential_construction}, namely
@@ -1547,104 +1548,81 @@ The map $j$ is defined by the maximal minors of $e \from V_n \otimes \O_{X_S} \t
 The map $d$ is the unique map induced by the other maps in the diagram.
 By composing $d$ through the inclusion $\Omega_{X_S/S} \to \omega_{X_S/S}$, and doing some rearrangement, we obtain a map
 \begin{equation}\label{eqn:Rn}
-r_n \from \det V_n \to \mathcal \pi_*(\mathcal E_n \otimes \det \mathcal E_n \otimes \omega^*_{X_S/S}) = \pi_*(\mathcal E'_{rn}).
+r_n \from \det V_n \to \mathcal \pi_*(\mathcal E_n \otimes \det \mathcal E_n \otimes \omega^*_{X_S/S}) = \pi_*(\mathcal E'_{(r+1)n}).
 \end{equation}
-
-Set $\mathcal E' = \mathcal E \otimes \det \mathcal E \otimes \omega^*_{X_S/S}$.
-We want to say that the sections given by $r_n$ of the various twists of $\mathcal E'$ define a limit linear series of dimension 1.
-The catch is that the twists $\mathcal E_n \otimes \det \mathcal E_n \otimes \omega_{X_S/S}^*$ are only \emph{some} of the twists of $\mathcal E'$.
-However, on the open set $\mathcal U$, this is more than enough information---just looking at the extremal twists suffices.
-Observe that we have $\mathcal E_{n_v} \otimes \det \mathcal E_{n_v} \otimes \omega_{X_S/S} = \mathcal E'_{n'_v}$ for $v = 1,2$.
-\begin{proposition}\label{prop:mapreduced}
-  In the setup above, assume that $S$ is reduced.
-  Then there is a unique simple limit linear series $(\mathcal E', L_n)$ of dimension 1 such that $L_{n_v'} = \det V_{n_v}$ and the map $L_{n_v'} \to \pi_* \mathcal E'_{n_v'}$ is given by $r_n$ for $v = 1,2$.
-\end{proposition}
+Consider the two extremal sections, namely those corresponding to $n = n_1$ and $n = n_2$.
+\begin{lemma}\label{lem:rameht}
+  Over every $s \in S$ over $0 \in \Delta$, the restrictions $r_{n_1}|_s$ and $r_{n_2}|_s$ define a one-dimensional refined EHT limit linear series for $E'$.
+\end{lemma}
 \begin{proof}
-  First, suppose $S$ is a point mapping to $0 \in B$.
-  The key is that the two extremal sections $L_{n_v} \to H^0(\mathcal E_{n_v} \otimes \det \mathcal E_{n_v} \otimes \omega_{X_S/S}^*)$ for $v = 1, 2$ define a refined EHT limit linear series.
-  To see this, suppose $(\mathcal E_{n_1} |_{C_1}, V_{n_1})$ has vanishing sequence
-  \[(\underbrace{a, \dots, a}_{i}, \underbrace{a+1, \dots, a+1}_{r+1-i}),\]
-  at $p$ for some $i$ with $1 \leq i \leq r$ and $a \geq  0$.
-  Then $(\mathcal E_{n_2}|_{C_2}, V_{n_2})$ has the vanishing sequence
-  \[ (\underbrace{b-a-1, \dots, b-a-1}_{r+1-i}, \underbrace{b-a, \dots, b-a}_{i}).\]
-  By construction, the section $r_{n_v}$ restricted to $C_v$ is the ramification of $(\mathcal E_{n_v}|_{C_v}, V_{n_v})$ composed with the inclusion $\omega^*_{C}|_{C_v} \to \Omega^*_{C_v}$.
-  Therefore, by \autoref{prop:agreement}, $r_{n_1}$ vanishes at $p$ to order $a_1' = a(r+1)+(r-i)+1$ and $r_{n_2}$ to order $a_2' = (b-a-1)(r+1)+i$.
-  Since $a'_1 + a'_2 = b'$, we have the equality required in condition \eqref{ieq:eht} of \autoref{def:eht}.
-  Note that the spaces $V_0$ and $V_1$ are exchanged when we switch from $C_1$ to $C_2$, and so their intersection $V_0 \cap V_1$ remains the same.
-  By \autoref{prop:agreement}, after dividing by the appropriate power of the uniformizer, the sections $r_{n_1}$ and $r_{n_2}$ at $p$ are proportional; they both span $V_0 \cap V_1$.
-  Hence, we also have the gluing condition in required in \eqref{gluing:eht} in \autoref{def:eht}.
+  Without further comment, we identify $r_{n_i}|_s \in H^0(C, E'_{(r+1)n_i})$ with its image in $H^0(C_i, E'_{(r+1)n_i}|_{C_i})$.
+  We have
+  \[E'_{(r+1)n_2}|_{C_i} = E_{n_2} \otimes \det E_{n_2} \otimes \omega_C|_{C_1} = E_{n_2} \otimes \det E_{n_2} \otimes \Omega_C|_{C_1} \otimes \O_{C_1}(p),\]
+  and by construction $r_{n_1}|_s$ is the image of the ramification section of $V_{n_1} \subset H^0(C_1, E_{n_1}|_{C_1})$ under the inclusion map
+  \[ E_{n_1} \otimes \det E_{n_1} \otimes \Omega_C|_{C_1} \to E_{n_1} \otimes \det E_{n_1} \otimes \omega_C|_{C_1} = E'_{(r+1)n_1}|_{C_1}.\]
+  By \autoref{prop:agreement}, the ramification section of $V_{n_1}$ has order of vanishing $(r+1)a+(r-i)$ at $p$, and hence $r_{n_1}|_s$ on $C_1$ has order of vanishing $(r+1)a+(r-i+1)$ at $p$.
+  Likewise, $r_{n_2}|_s$ on $C_2$ has order of vanishing $(r+1)(b-a-1)+i$ at $p$.
+  Since
+  \[ (r+1)a+(r-i+1) + (r+1)(b-a-1) + i = (r+1)b = b',\]
+  we see that $r_{n_1}|_s$ and $r_{n_2}|_s$ have complementary orders of vanishing, leading to an equality in condition~\eqref{ieq:eht} of \autoref{def:eht}.
 
-  For a general $S$, note that for every point $s \in S$, the map
-  \[ H^0(X_s, \mathcal E'_n|_s) \to H^0(X_s,\mathcal E'_{n_1}|_s)/L_{n_1}|_s \oplus H^0(X_s,\mathcal E'_{n_2}|_s)/L_{n_2}|_s\]
-  has kernel of dimension 1.
-  If $s$ lies over the generic point of $\Delta$, then this is automatic.
-  If $s$ lies over the special point of $\Delta$, then this follows from the fact that $(\mathcal E', L_{n_1}, L_{n_2})$ is a refined EHT linear series; see \eqref{eqn:keriotabar}.
-  Since $S$ is reduced, we conclude that the kernel of the map
-  \[ \pi_*(\mathcal E'_n) \to \pi_*(\mathcal E'_{n_1})/L_{n_1} \oplus \pi_*(\mathcal E'_{n_2})/L_{n_2} \]
-  is a line bundle, say $L_n$, and the inclusion $L_n \to \pi_*(\mathcal E'_n)$ is a sub-bundle map.
-  The data $(\mathcal E', L_n)$ is the unique simple limit linear series claimed in the statement.
+  We must next ensure that condition~\eqref{gluing:eht} of \autoref{def:eht} holds, that is, the images of $r_{n_i}|_s$ in the appropriate twists of $E_{n_i}|_p$ are equal, at least up to scaling.
+  By \autoref{prop:agreement}, the image of $r_{n_1}|_s$ in the appropriate twist of $E_{n_1}|_p$ spans the line $(V_0 \cap V_1)$, and the image of $r_{n_2}|_s$ spans the line $\Lambda_0 \cap \Lambda_1$.
+  But by \eqref{eqn:vlambdaswitch}, we have $V_1 = \Lambda_1$ and $V_0 = \Lambda_0$, so the two lines are equal.
 \end{proof}
 
-\begin{remark}
-  A simple limit linear series of dimension 1 on a vector bundle $\mathcal E'$ on $C$ is simply a section of one of its twists that is non-zero on both components of $C$.
-  From \autoref{prop:agreement}, we see that this twist is $\mathcal E'_{n_1+m}$ where
-  \[ m = (r+1)a+ar-i.\]
-  In particular, it is not one of the twists $\mathcal E'_{n_1+r(n-n_1)} = \mathcal E_n \otimes \det \mathcal E_n \otimes \omega^*$ in \eqref{eqn:Rn} that receive the image of the ramification section $r_n$.
-\end{remark}
-
-Thanks to \autoref{prop:mapreduced}, we have a morphism
-\begin{equation}\label{eqn:llsR}
-  \rho \from \mathcal U^{\rm red} \to \mathcal G^1_{r',d',d'_*,w'_*(X/B)}
+Thanks to \autoref{lem:rameht}, we apply \autoref{prop:llseht}, and conclude that there exists a unique (1-dimensional) limit linear series $(R_n \mid n \in \Z)$ of $\mathcal E'$ on $X_S$ for which $R_{n_1'} = \det V_{n_1}$ and $R_{n_2'} = \det V_{n_2}$, at least if $S$ is reduced.
+The transformation
+\[ (V_n \mid n \in Z) \mapsto (R_n \mid n \in \Z)\]
+defines a morphism
+\begin{equation}\label{prop:mapreduced}
+  \rho \from \mathcal U \to \mathcal G(1, \mathcal E'),
 \end{equation}
-defined by
-\[ (\mathcal E, V_n) \mapsto (\mathcal E', L_n).\]
+as desired in \eqref{eq:Rtilde}.
+Note that $\mathcal U$ has the reduced scheme structure.
 
-\subsection{Maximal variation}
-
-
-For $v = 1, 2$, let $C_v$ be a smooth curve and $E_v$ a vector bundles of rank $r$ on $C_v$.
-Let $p_v \in C_v$ be a point.
-Suppose $\lambda_1 \in \Gr(r+1, H^0(E_1))$ is a linear series with vanishing sequence $(0, \dots, 0, 1)$ at $p_1$, and $\lambda_2 \in \Gr(r+1,H^0(E_2))$ is a linear series with vanishing sequence $(0,1,\dots,1)$ at $p_2$.
-
-Let $C$ be the nodal union of $C_1$ and $C_2$ formed by identifying $p_1$ and $p_2$.
-We construct a simple limit linear series $\lambda$ on $C$ of rank $r$ and degree $\deg E_1 + \deg E_2 - r$.
-Choose an isomorphism $\phi \from E_1(-p)|_{p_1} \to E_2|_{p_2}$ that sends the image of $\lambda_1(-p)$ in $E_1(-p)|_{p_1}$ to the image of $\lambda_2$ in $E_2|_{p_2}$.
-Let $\mathcal E$ be the vector bundle on $C$ constructed by gluing $E_1(-p)$ and $E_2$ by $\phi$.
-Let $b=2m$ be large enough so that $H^0(E_1(-mp)) = 0$ and $H^0(E_2(-mp)) = 0$.
-Set $d_1 = \deg E_1 + (m-1)r$ and $d_2 = \deg E_2 + mr$.
-Then $w_1 = d_1 - r$, so $n_1 = m$; and $w_2 = d_2$, so $n_2 = -m$.
-Let $V_{n_1} \subset H^0(C, \mathcal E_{n_1})$ be the subspace that restricts to $\lambda_1((m-1)p) \subset H^0(C_1, E_1((m-1)p))$ and $V_{n_2} \subset H^0(C, \mathcal E_{n_2})$ the subspace that restricts to $\lambda_2(mp) \subset H^0(C_2, E_2(mp))$.
-Then the vanishing sequence of $V_{n_1}$ is $(m-1,\dots,m-1,m)$ and that of $V_{n_2}$ is $(m, m+1, \dots, m+1)$.
-By the choice of $\phi$, we see that the two series are compatible at the node, and hence define a refined EHT limit linear series on $C$.
-Let $\lambda$ be the associated unique simple limit linear series.
-
-Let $X \to B$ be a smoothing of $C$, and $\mathscr{E}$ a vector bundle on $X$ whose restriction to $X_0 = C$ is $\mathcal E$.
-Set $d = d_1 + d_2 - r$ and $g = g(C_1) + g(C_2)$.
-\begin{proposition}\label{prop:attachtail}
-  Suppose $\lambda_v$ is isolated in their respective projection-ramification maps, for $v = 1,2$.
-  Then $\lambda$ is isolated in the projection-ramification map $\mathcal R$.
-  Suppose, furthermore, that the dimension of the fiber of the forgetful map $\beta$ at $\lambda$ is $(r+1)(d-1-rg)$.
-  Then the projection-ramification map is generically finite for the vector bundle $\mathscr E_\eta$ on $X_\eta$.
-\end{proposition}
+The fruit of our labor is the following corollary.
+\begin{corollary}\label{prop:degeneration}
+  Suppose $v \in \mathcal U_0$ is such that $\dim_v \mathcal U_0 = (r+1)(d-r-g)$ and $v$ is isolated in the fiber of $\rho$, then the projection-ramification map $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta)) \dashrightarrow \P H^0(X_\eta, \mathcal E_\eta \otimes \det E_\eta \otimes K_{X_\eta})$ is generically finite.
+\end{corollary}
 \begin{proof}
-  The projection-ramification map for $\lambda$ reduces to the projection-ramification map for $\lambda_v$ (up to twists) on components $C_v$.
-  So if both $\lambda_v$ are isolated in the fibers of their projection-ramification maps, so is $\lambda$.
-
-  If the dimension condition holds, then $\beta$ is open at $\lambda$ by \autoref{thm:lls}.
-  In particular, $\lambda$ is in the closure of $\Gr(r+1, H^0(X_\eta, \mathscr E_\eta))$.
-  By the semi-continuity of fiber dimension, it follows that the projection-ramification map 
-  \[ R \from \Gr(r+1, H^0(X_\eta, \mathscr E_\eta)) \to \P H^0(X_\eta, \mathscr E_\eta \otimes \det \mathscr E_\eta \otimes \omega_{X_\eta}^*)\]
-  is generically finite.
+  If $\dim_v U_0 = (r+1)(d-r-g)$, then $v$ is in the closure of $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta))$ by \autoref{thm:lls}.
+  The statement now follows from the upper semi-continuity of fiber dimension.
 \end{proof}
 
-\begin{theorem}\label{thm:prp1}
+
+\subsection{Maximal variation for generic scrolls of high degree}
+We now have all the tools to prove \autoref{thm:rationalnormalscrolls}
+\begin{theorem}[\autoref{thm:rationalnormalscrolls}]
   Let $E$ be a generic vector bundle on $\P^1$ of rank $r$ and degree $d = a(r-1) + b(2r-1)+1$, where $a, b$ are positive integers.
   Then the projection-ramification map is generically finite, and hence dominant, for $E$.
   In particular, the projection-ramification map is dominant for generic $E$ of degree $\geq (r-1)(2r-1)+1$.
 \end{theorem}
 \begin{proof}
-  Let $E$ be a generic vector bundle of rank $d \geq 0$ such that the projection-ramification map is dominant for $E$.
-  Set $C_1 = \P^1$ and $E_1 = E$.
+  We say that generic dominance holds for rank $r$ and degree $d$ if the projection-ramification map is dominant (equivalently, generically finite) for the generic vector bundle of rank $r$ and degree $d$.
+  The rank will be fixed througout, so let us drop it from the discussion.
+  Let us prove that if generic dominance holds for degrees $d_1$ and $d_2$, then it also holds for degree $d = d_1 + d_2 - 1 $.
+  With the base cases $d_1 = r$ (\autoref{prop:segre}) and $d_2 = 2r$ (\autoref{prop:222}), this proves the theorem.
+
+  Take $C_1 = C_2 = \P^1$, and let $C = C_1 \cup C_2$ be their nodal union at one point, which we take to be the point labeled $0$ on both $\P^1$s.
+  Let $X \to B$ be a smoothing of $C$.
+  Note that any vector bundle on $C$ is the restriction of a vector bundle on $X$.
+  Therefore, by \autoref{prop:degeneration}, it suffices to exhibit a vector bundle $E$ of degree $d$ on $C$ and a limit linear series $(V_n \mid n \in \Z)$ on $E$ such that the following conditions hold for the point $v$ of $\mathcal G (r+1, E')$ represented by $v$
+  \begin{enumerate}
+  \item $\dim_v \mathcal G(r+1, E) = (r+1)(d-r)$,
+  \item $\rho$ is defined at $v$, and
+  \item $v$ is an isolated point in the fiber of $\rho$.
+  \end{enumerate}
+
+  We construct $E$ as follows.
+  Let $E_1$ be a generic vector bundle of of rank $r$ and degree $d_1$ on $C_1$, and $E_2'$ a generic vector bundle of degree $d_2 - 1$.
+  Choose a generic isomorphism $E_1|_0 \cong E_2'|_0$, and construct the vector bundle $E$ on $C$ by gluing $E_1$ and $E_2 \otimes \O(-1)$ along this isomorphism.
+  
+
+  
+  Choose a generic isomorphism $E_1|_0 \cong E_2 \otimes \O(-1)|_0$, 
+  
+  
   Take $C_2 = \P^1$ and $E_2 = \O(1)\oplus\O(2)^{r-1}$ or $E_2 = \O(2) \oplus \O(3)^{r-1}$.
   Pick points $p_v \in C_v$ for $v = 1, 2$.
   Let $\lambda_1 \subset H^0(E_1)$ be an $(r+1)$-dimensional subspace with vanishing sequence $(0, \dots, 0, 1)$ at $p_1$, and $\lambda_2 \subset H^0(E_2)$ an $(r+1)$-dimensional subspace with vanishing sequence $(0, 1, \dots, 1)$.

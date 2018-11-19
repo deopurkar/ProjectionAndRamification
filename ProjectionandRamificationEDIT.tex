@@ -1262,9 +1262,9 @@ The main theorem of \cite{oss:14} is the following representability theorem.
 \begin{theorem}[{\cite[Theorem~3.4.7]{oss:14}}]
   \label{thm:lls}
   The functor that associates to a $B$-scheme $S \to B$ the set of limit linear series on $\mathcal E_S$ is representable by a projective $B$-scheme $\mathcal G(k, \mathcal E)$ isomorphic to the Grassmannian $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$ over $\eta$.
-  The locus of simple linear series ${\mathcal G}^{\rm simple}(k, \mathcal E) \subset {\mathcal G}(k, \mathcal E)$ is an open subscheme, and the map ${\mathcal G}^{\rm simple}(k, \mathcal E) \to B$ has universal relative dimension at least $k(d-k-(g-1))$.
+  The locus of simple linear series ${\mathcal G}^{\rm simple}(k, \mathcal E) \subset {\mathcal G}(k, \mathcal E)$ is an open subscheme, and the map ${\mathcal G}^{\rm simple}(k, \mathcal E) \to B$ has universal relative dimension at least $k(d-k-r(g-1))$.
 \end{theorem}
-The last stamement implies that if $v \in {\mathcal G}^{\rm simple}$ is such that ${\mathcal G}^{\rm simple}$ has relative dimension at most $k(d-k-(g-1))$ at $v$, then it has relative dimension exactly $k(d-k-(g-1))$ at $v$ and, futhermore, it is an open map near $v$.
+The last stamement implies that if $v \in {\mathcal G}^{\rm simple}$ is such that ${\mathcal G}^{\rm simple}$ has relative dimension at most $k(d-k-r(g-1))$ at $v$, then it has relative dimension exactly $k(d-k-r(g-1))$ at $v$ and, futhermore, it is an open map near $v$.
 In particular, $v$ is in the closure of $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
 \begin{remark}
   Osserman proves a stronger theorem, namely a relative version of the statement above, over the stack of vector bundles on $X$.
@@ -1383,23 +1383,23 @@ Let $v_1, \dots, v_{r+1}$ be a basis of $V$ adapted to the vanishing sequence, n
 \end{equation}
 for some $\widetilde v_1, \dots, \widetilde v_{r+1} \in E_p$ such that the images of $\widetilde v_1, \dots, \widetilde v_i$ in the fiber $E|_p$ are linearly independent, and the same holds for the images of $\widetilde v_{i+1}, \dots, \widetilde v_{r+1}$.
 Here we are slightly abusing the notation by denoting $v_i$ and its image in $E_p$ under the natural evaluation map by the same letter.
-Let $V_0 \subset E|_p$ be spanned by the images of $\widetilde v_1, \dots, \widetilde v_i$, and $V_1 \subset E|_p$ by the images of $\widetilde v_{i+1}, \dots, \widetilde v_{r+1}$.
-It is easy to check that a different choice of basis adapted to the vanishing sequence gives the same $V_0$ and $V_1$.
-By construction, $\dim V_0 = i$ and $\dim V_1 = r+1-i$, and therefore, $\dim (V_0 \cap V_1) \geq 1$.
+Let $V^0 \subset E|_p$ be spanned by the images of $\widetilde v_1, \dots, \widetilde v_i$, and $V^1 \subset E|_p$ by the images of $\widetilde v_{i+1}, \dots, \widetilde v_{r+1}$.
+It is easy to check that a different choice of basis adapted to the vanishing sequence gives the same $V^0$ and $V^1$.
+By construction, $\dim V_0 = i$ and $\dim V^1 = r+1-i$, and therefore, $\dim (V^0 \cap V^1) \geq 1$.
 We say that $V$ has \emph{transverse vanishing} at $p$ if 
 \begin{equation}\label{eq:genericity}
-  \dim (V_0 \cap V_1) = 1.
+  \dim (V^0 \cap V^1) = 1.
 \end{equation}
-Note that if $V$ is base-point free at $p$, then $\dim V_0 = r$ and $\dim V_1 = 1$, so $V$ automatically has transverse vanishing.
+Note that if $V$ is base-point free at $p$, then $\dim V^0 = r$ and $\dim V^1 = 1$, so $V$ automatically has transverse vanishing.
 
 \begin{proposition}\label{prop:agreement}
   Suppose $V \subset H^0(C, E)$ is an $(r+1)$-dimensional subspace with vanishing sequence \eqref{eqn:specialvs} and transverse vanishing at $p$.
   Then the ramification section $r_V$ of $V$ vanishes to order $(r+1)a + (r-i)$ at $p$.
-  Furthermore, writing $r_V = t^{(r+1)a+r-i} \cdot \widetilde r$, the one-dimensional subspace of $E|_p$ spanned by $\widetilde r|_p$ is $V_0 \cap V_1$.
+  Furthermore, writing $r_V = t^{(r+1)a+r-i} \cdot \widetilde r$, the one-dimensional subspace of $E|_p$ spanned by $\widetilde r|_p$ is $V^0 \cap V^1$.
 \end{proposition}
 \begin{proof}
   Thanks to transverse vanishing, there exists a basis $\{\overline s_1, \dots, \overline s_{r} \}$ of $E|_p$ such that
-  \[ V_0 = \langle  \overline s_1, \dots, \overline s_i \rangle \text{ and } V_1 = \langle  \overline s_{i+1}, \dots, \overline s_r, \overline s_1 \rangle.\]
+  \[ V^0 = \langle  \overline s_1, \dots, \overline s_i \rangle \text{ and } V^1 = \langle  \overline s_{i+1}, \dots, \overline s_r, \overline s_1 \rangle.\]
   Let $v_1, \dots, v_{r+1}$ be a basis of $V$ adapted to the vanishing sequence such that if $\widetilde v_i$ are defined as in \eqref{eqn:basis} then the images of $\widetilde v_1, \dots, \widetilde v_r$ in $E|_p$ are $\overline s_1, \dots, \overline s_r$, respectively, and the image of $\widetilde v_{r+1}$ is $\overline s_1$.
   In particular, the $r$ elements $\widetilde v_1, \dots, \widetilde v_r \in E_p$ give a trivialization of $E$ around $p$.
   Write
@@ -1423,7 +1423,7 @@ Note that if $V$ is base-point free at $p$, then $\dim V_0 = r$ and $\dim V_1 = 
   Thus the order of vanishing of $r_V$ is as claimed.
   Furthermore, $\widetilde r$ is given by
   \[ \widetilde r = \widetilde v_1 + t (\cdots).\]
-  Since the image of $\widetilde v_1$, namely $\overline s_1$, spans $V_0 \cap V_1$, the proof is complete.
+  Since the image of $\widetilde v_1$, namely $\overline s_1$, spans $V^0 \cap V^1$, the proof is complete.
 \end{proof}
 
 We are primarily interested in generic $(r+1)$-dimensional subspaces $V \subset H^0(C, E)$.
@@ -1517,18 +1517,18 @@ The second condition we want to impose is that the vanishing sequence of $W_1 \s
 as in \eqref{eqn:specialvs}; imposing a particular vanishing sequence is again an open condition (see \cite[Proposition~4.2.5]{oss:14}).
 Since $(W_1, W_2)$ is refined, it follows that the vanishing sequence of $W_2 \subset H^0(C_2, E_{n_2}|_{C_2})$ at $p$ is
 \[ (\underbrace{b-a-1, \dots, b-a-1}_{r+1-i}, \underbrace{b-a, \dots, b-a}_{i}).\]
-Recall from \autoref{sec:prnodal} that $W_1$ yields two vector spaces $V_0$ and $V_1$ in the fiber $E_{n_1}|_p$, which we may identify canonically (up to scaling) with the fiber $E|_p$.
-Likewise, $W_2$ yields two analogous vector spaces, call them $\Lambda_0$ and $\Lambda_1$, in $E|_p$.
+Recall from \autoref{sec:prnodal} that $W_1$ yields two vector spaces $V^0$ and $V^1$ in the fiber $E_{n_1}|_p$, which we may identify canonically (up to scaling) with the fiber $E|_p$.
+Likewise, $W_2$ yields two analogous vector spaces, call them $\Lambda^0$ and $\Lambda^1$, in $E|_p$.
 The gluing condition in the definition of EHT limit linear series (\autoref{def:eht}) and the definition of these vector spaces immediately shows that
 \begin{equation}\label{eqn:vlambdaswitch}
-  V_0 = \Lambda_1 \text{ and } V_1 = \Lambda_0.
+  V^0 = \Lambda^1 \text{ and } V^1 = \Lambda^0.
 \end{equation}
-The third condition we want to impose is that these two vector spaces be transverse, namely $\dim (V_0 \cap V_1) = 1$.
+The third condition we want to impose is that these two vector spaces be transverse, namely $\dim (V^0 \cap V^1) = 1$.
 
 Let $\mathcal U \subset {\mathcal G}(r+1, \mathcal E)$ be the complement of the union of the following closed sets:
 \begin{enumerate}
 \item the closure of the subset of $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta))$ corresponding to $V \subset H^0(X_\eta, \mathcal E_\eta)$ for which the evaluation map $V\otimes\O_{X_\eta} \to \mathcal E_\eta$ has generic rank less than $r$.
-\item the set of limit linear series $(V_n \mid n \in \Z)$ on $C$ such that the associated EHT limit linear series $(W_1, W_2)$ is not refined, or does not have the vanishing sequence as in \eqref{eqn:llsvs}, or does not satisfy the transversality condition $\dim (V_0 \cap V_1) = 1$.
+\item the set of limit linear series $(V_n \mid n \in \Z)$ on $C$ such that the associated EHT limit linear series $(W_1, W_2)$ is not refined, or does not have the vanishing sequence as in \eqref{eqn:llsvs}, or does not satisfy the transversality condition $\dim (V^0 \cap V^1) = 1$.
 \end{enumerate}
 Give $\mathcal U$ the reduced scheme structure.
 
@@ -1567,8 +1567,8 @@ Consider the two extremal sections, namely those corresponding to $n = n_1$ and 
   we see that $r_{n_1}|_s$ and $r_{n_2}|_s$ have complementary orders of vanishing, leading to an equality in condition~\eqref{ieq:eht} of \autoref{def:eht}.
 
   We must next ensure that condition~\eqref{gluing:eht} of \autoref{def:eht} holds, that is, the images of $r_{n_i}|_s$ in the appropriate twists of $E_{n_i}|_p$ are equal, at least up to scaling.
-  By \autoref{prop:agreement}, the image of $r_{n_1}|_s$ in the appropriate twist of $E_{n_1}|_p$ spans the line $(V_0 \cap V_1)$, and the image of $r_{n_2}|_s$ spans the line $\Lambda_0 \cap \Lambda_1$.
-  But by \eqref{eqn:vlambdaswitch}, we have $V_1 = \Lambda_1$ and $V_0 = \Lambda_0$, so the two lines are equal.
+  By \autoref{prop:agreement}, the image of $r_{n_1}|_s$ in the appropriate twist of $E_{n_1}|_p$ spans the line $(V^0 \cap V^1)$, and the image of $r_{n_2}|_s$ spans the line $\Lambda^0 \cap \Lambda^1$.
+  But by \eqref{eqn:vlambdaswitch}, we have $V^1 = \Lambda^0$ and $V^0 = \Lambda^1$, so the two lines are equal.
 \end{proof}
 
 Thanks to \autoref{lem:rameht}, we apply \autoref{prop:llseht}, and conclude that there exists a unique (1-dimensional) limit linear series $(R_n \mid n \in \Z)$ of $\mathcal E'$ on $X_S$ for which $R_{n_1'} = \det V_{n_1}$ and $R_{n_2'} = \det V_{n_2}$, at least if $S$ is reduced.
@@ -1583,10 +1583,10 @@ Note that $\mathcal U$ has the reduced scheme structure.
 
 The fruit of our labor is the following corollary.
 \begin{corollary}\label{prop:degeneration}
-  Suppose $v \in \mathcal U_0$ is such that $\dim_v \mathcal U_0 = (r+1)(d-r-g)$ and $v$ is isolated in the fiber of $\rho$, then the projection-ramification map $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta)) \dashrightarrow \P H^0(X_\eta, \mathcal E_\eta \otimes \det E_\eta \otimes K_{X_\eta})$ is generically finite.
+  Suppose $v \in \mathcal U_0$ is such that $\dim_v \mathcal U_0 = (r+1)(d-rg-1)$ and $v$ is isolated in the fiber of $\rho$, then the projection-ramification map $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta)) \dashrightarrow \P H^0(X_\eta, \mathcal E_\eta \otimes \det E_\eta \otimes K_{X_\eta})$ is generically finite.
 \end{corollary}
 \begin{proof}
-  If $\dim_v U_0 = (r+1)(d-r-g)$, then $v$ is in the closure of $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta))$ by \autoref{thm:lls}.
+  If $\dim_v U_0 = (r+1)(d-rg-1)$, then $v$ is in the closure of $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta))$ by \autoref{thm:lls}.
   The statement now follows from the upper semi-continuity of fiber dimension.
 \end{proof}
 
@@ -1607,55 +1607,53 @@ We now have all the tools to prove \autoref{thm:rationalnormalscrolls}
   Take $C_1 = C_2 = \P^1$, and let $C = C_1 \cup C_2$ be their nodal union at one point, which we take to be the point labeled $0$ on both $\P^1$s.
   Let $X \to B$ be a smoothing of $C$.
   Note that any vector bundle on $C$ is the restriction of a vector bundle on $X$.
-  Therefore, by \autoref{prop:degeneration}, it suffices to exhibit a vector bundle $E$ of degree $d$ on $C$ and a limit linear series $(V_n \mid n \in \Z)$ on $E$ such that the following conditions hold for the point $v$ of $\mathcal G (r+1, E')$ represented by $v$
+  Therefore, by \autoref{prop:degeneration}, it suffices to construct a vector bundle $E$ of degree $d$ on $C$ and a limit linear series $(V_n \mid n \in \Z)$ on $E$ such that the following conditions hold for the point $v$ of $\mathcal G (r+1, E')$ represented by $(V_n \mid n \in \Z)$:
   \begin{enumerate}
-  \item $\dim_v \mathcal G(r+1, E) = (r+1)(d-r)$,
+  \item $\dim_v \mathcal G(r+1, E) = (r+1)(d-1)$,
   \item $\rho$ is defined at $v$, and
   \item $v$ is an isolated point in the fiber of $\rho$.
   \end{enumerate}
 
   We construct $E$ as follows.
-  Let $E_1$ be a generic vector bundle of of rank $r$ and degree $d_1$ on $C_1$, and $E_2'$ a generic vector bundle of degree $d_2 - 1$.
-  Choose a generic isomorphism $E_1|_0 \cong E_2'|_0$, and construct the vector bundle $E$ on $C$ by gluing $E_1$ and $E_2 \otimes \O(-1)$ along this isomorphism.
-  
+  Let $E_1$ be a generic vector bundle of degree $d_1$ on $C_1$, and $E_2'$ a generic vector bundle of degree $d_2 - 1$ on $C_2$.
+  Choose a generic isomorphism $E_1|_0 \cong E_2'|_0$, and construct the vector bundle $E$ on $C$ by gluing $E_1$ and $E_2'$ along this isomorphism.
+  Choose $n_1 = a$ and $n_2 = b+a$ for sufficiently negative $a$ and sufficiently positive $b$.
+  The isomorphism $E_1 |_0 \cong E_2'|_0$ yields isomorphisms, canonical up to scaling, of $E_1(m)|_0$ and $E_2'(n)|_0$ for any $m, n \in \Z$.
 
-  
-  Choose a generic isomorphism $E_1|_0 \cong E_2 \otimes \O(-1)|_0$, 
-  
-  
-  Take $C_2 = \P^1$ and $E_2 = \O(1)\oplus\O(2)^{r-1}$ or $E_2 = \O(2) \oplus \O(3)^{r-1}$.
-  Pick points $p_v \in C_v$ for $v = 1, 2$.
-  Let $\lambda_1 \subset H^0(E_1)$ be an $(r+1)$-dimensional subspace with vanishing sequence $(0, \dots, 0, 1)$ at $p_1$, and $\lambda_2 \subset H^0(E_2)$ an $(r+1)$-dimensional subspace with vanishing sequence $(0, 1, \dots, 1)$.
-  Assume that $\lambda_v$ are isolated in the respective fibers of their projection-ramification maps.
-  Furthermore, assume that the image $\ell$ of $\lambda_2$ in $E_2|_{p_2}$ is generic in the sense that the kernel of
-  \[ E_2 \to E_2|_{p_2}/ \ell \]
-  is the generic vector bundle $E_2^{\rm gen}$ (which will be either $\O(1)^r$ or $\O(2)^r$).
-  Let $\lambda$ be the limit linear series on $C = C_1 \cup C_2$ constructed from $\lambda_1$ and $\lambda_2$ as above.
-  Then, we get
+  Having constructed $E$, we must now construct $(V_n \mid n \in \Z)$.
+  By \autoref{prop:llseht}, it is enough to construct $V_{n_1} \subset H^0(C_1, E_1 \otimes \O(a))$ and $V_{n_2} \subset H^0(C_2, E_2'(b-a))$, provided they define a refined EHT limit linear series.
+  Let $V \subset H^0(C_1, E_1)$ be a generic $(r+1)$-dimensional vector space.
+  Then it will have the vanishing sequence $(0, \dots, 0, 1)$.
+  Hence, we have $V^0 = E|_0$ and $V^1 \subset E|_0$ is $1$-dimensional (see \autoref{sec:prnodal} for the definition of these two subspaces).
+  Furthermore, the genericity of $V$ implies that $V^1$ is a general $1$-dimensional subspace.
+  Let $\Lambda \subset H^0(C_2, E_2'(1))$ be the image of a general $(r+1)$ dimensional subspace of $H^0(C_2, E_2)$, where $E_2$ is the vector bundle of degree $d_2$ defined by the sequence
+  \[ 0 \to E_2 \to E_2'(1) \to E'_2(1)|_0 / V^1 \to 0.\]
+  Then $\Lambda \subset H^0(C_2, E_2'(1))$ has the vanishing sequence $(0, 1, \dots, 1)$, with $\Lambda^0 = V^1$ and $\Lambda^1 = V^0$.
+  Let $V_{n_1} \subset H^0(C_1, E_1 \otimes \O(a))$ be the image of $V$ and $V_{n_2} \subset H^0(C_2,E_2 \otimes \O(b-a))$ the image of $\Lambda$.
+  Then $V_{n_1}$ has the vanishing sequence $(a, \dots, a, a+1)$, and $\Lambda$ the complementary vanishing sequence $(b-a-1, b-a, \dots, b-a)$.
+  By the construction of $\Lambda$, there exist bases of $V_{n_1}$ and $V_{n_2}$ that satisfy the gluing condition at $0$.
+  In conclusion, $V_{n_1}$ and $V_{n_2}$ form a refined EHT limit linear series, and hence define a limit linear series $v = (V_n \mid n \in \Z)$.
+
+  It is easy to check that $\dim_v \G(r+1, E) = (r+1)(d-1)$.
+  Indeed, for every limit linear series $w = (W_n \mid n \in \Z)$ in an open subset around $v$, the EHT limit linear series associated to $w$ determines $w$ and has the same vanishing sequence as $v$.
+  In particular, $W_{n_1} \subset H^0(C_1, E_1(a))$ is the image of an $(r+1)$-dimensional subspace $W \subset H^0(C_1, E_1)$ with vanishing sequence $(0, \dots, 1)$, and $W_{n_2} \subset H^0(C_2, E_2(b-a))$ is the image of an $(r+1)$-dimensional subspace $M \subset H^0(C_2, E_2(1))$ with vanishing sequence $(0,1,\dots,1)$.
+  Furthermore, the gluing condition implies that $M$ is in fact the image of an $(r+1)$-dimensional subspace of the kernel of the map
+  \[ E_2'(1) \to E_2'(1)/W^1.\]
+  By the genericity of $V$, the isomorphism type of the kernel of this map is constant around $v$; that is, the kernel is isomorphic to $E_2$.
+  So, a dimension count for $\mathcal G(r+1, E)$ around $v$ gives
   \begin{align*}
-    \dim_\lambda \beta^{-1}(\beta(\lambda)) &= \dim \Gr(r+1, H^0(E_1)) + \dim \Gr(r+1, H^0(E_2^{\rm gen}))\\
-                                            &= (r+1)(\deg E + \deg E_2^{\rm gen}-2) \\
-                                            &= (r+1)(\deg E + \deg E_2 - r - 1) \\
-                                            &= (r+1)(\deg \mathcal E - 1).
+    \dim_v \mathcal G(r+1, E) &= \dim \Gr(r+1, H^0(C_1, E_1)) + \dim \Gr(r+1, H^0(C_2, E_2))\\
+                              &= (r+1)(d_1-1) + (r+1)(d_2-1)\\
+                              &= (r+1)(d_1+d_2-2)\\
+                              &= (r+1)(d-1).\\
   \end{align*}
-  Here is how the dimension count goes: it suffices to count dimensions for the refined EHT limit linear series associated to $\lambda$, since $\lambda$ can be recovered uniquely from it.
-  For the EHT limit linear series, we begin by choosing an $(r+1)$-dimensional subspace of $H^0(E_1)$, giving us the first term in the dimension count.
-  This choice gives a one-dimensional subspace $\Lambda_1 \in E_1|_{p_1} = \mathcal E|_p = E_2|_{p_2}$.
-  We must choose an $(r+1)$-dimensional subspace of $H^0(E_2)$ with the complementary vanishing sequence and satisfying the compatibility condition over $p$.
-  These two conditions force it to be a subspace of $H^0(E_2')$, where $E_2'$ is the kernel of
-  \[E_2 \to E_2|_{p_2}/\Lambda_1.\]
-  Since the kernel is isomorphic to $E_2^{\rm gen}$, we get the second term in the dimension count.
-  
-  Let $\pi \from X \to B$ be a smoothing of $B$.
-  Every vector bundle on $C$ is the restriction of a vector bundle on $X$.
-  Indeed, this is clearly true for line bundles on $C$, and hence for vector bundles of arbitrary rank, as these are direct sums of line bundles. 
-  Let $\mathscr E$ be a vector bundle on $X$ whose restriction to $C$ is $\mathcal E$.
-  By \autoref{prop:attachtail}, the projection-ramification map is generically finite, and hence dominant, for $\mathcal E_\eta$.
-  By the semi-continuity of fiber dimension, the same is true for a generic vector bundle of rank $r$ and degree $\deg E + \deg E_2 - r $.
-  The two choices of $E_2$ give $\deg E_2 - r = r-1$ and $\deg E_2 - r = 2r-1$.
 
-  In summary, dominance for a generic bundle of rank $r$ and degree $d$ implies the same for a generic bundle of rank $r$ and degree $d+r-1$ and degree $d+2r-1$.
-  Starting with the base case $d = 1$, namely $E = \O^{r-1} \oplus \O(1)$, we obtain the statement by induction.
+  Finally, we must check that $v$ is an isolated point in the fiber of
+  \[ \rho \from \mathcal G(r+1, E) \dashrightarrow \mathcal G(1, E \otimes \det E \otimes \omega_C).\]
+  For any $w \in \mathcal G(r+1, E)$ in an open set around $v$, either $V \neq W$ or $\Lambda \neq M$, where $V, \Lambda, W, M$ are as above.
+  By construction, $V \subset H^0(r+1, H^0(C_1, E_1))$ and $\Lambda \subset H^0(r+1, H^0(C_2, E_2'))$ are isolated in their respective projection-ramification maps.
+  Therefore, either $\rho_{C_1} (V) \neq \rho_{C_1}(W)$ or $\rho_{C_2}(\Lambda) \neq \rho_{C_2}(M)$.
+  In either case, we obtain that $\rho(v) \neq \rho(w)$, and hence conclude that $v$ is an isolated point in the fiber of $\rho$.
 \end{proof}
 
 

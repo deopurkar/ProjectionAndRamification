@@ -1662,28 +1662,96 @@ We now have all the tools to prove \autoref{thm:rationalnormalscrolls}
 
 \section{The Projection-Ramification enumerative problem} % (fold)
 \label{sec:enumerativeproblems}
+In this section, we calculate the degree of the projection-ramification map for as many varieties of minimal degree as we can, leading to a proof of \autoref{Thm:Examples}.
+After treating the relatively easy cases by hand, we relate the projection-ramification map for the veronese surface and the quartic normal scroll with classical geometry of cubic plane curves.
 
-Our objectives in this section are to prove \autoref{Thm:Examples}, and also to relate special instances of the projection-ramification enumerative problem with constructions in classical algebraic geometry.
-
+\subsection{Rational normal curves}
+\label{sub:a_rnc}
+Let $X \subset \P^n$ be a rational normal curve.
+Plainly, $X$ is incompressible, and hence the projection-ramification map
+\[ \rho \from \Gr(2, n+1) \to \P^{2n-2}\]
+is a regular map.
+Therefore, we get
+\begin{align*}
+  \deg \rho &= c_1(\rho^* \O(1))^{2n-2}\\
+            &= c_1(\O_{\Gr(r+1, n+1)}(1))^{2n-2} \\
+            &= \frac{(2n-2)!}{n!(n-1)!}.
+\end{align*}
 
 \subsection{Quadric hypersurfaces} % (fold)
 \label{sub:a_quadric_surface}
-A smooth quadric hypersurface $X \subset \P^{n}$ defined by an equation $F(x_{0},x_{1},x_{2}, ...) = 0$ induces the classical {\sl polarity isomorphism} $\P^{n} \longleftrightarrow (\P^{n})^{\smvee}$ given by 
-\begin{align*}
-  p = [p_{0}:p_{1}:p_{2}: ...] \mapsto [\partial_{0}F(p):\partial_{1}F(p):\partial_{2}F(p): ...]
-\end{align*}
-where $\partial_{i}$ denotes derivative with respect to the $i$-th variable $x_{i}$. The duality morphism is equal to $\rho_{X}$, and hence $\deg \rho_{X} = 1$.  
-
-
-% subsection a_quadric_surface (end)
+A smooth quadric hypersurface $X \subset \P^{n}$ defined by a homogeneous quadric equation $F(X_{0},\dots,X_n) = 0$.
+An easy calculation shows that the projection-ramification map
+\[ \rho \from \P^n \to (\P^n)^*\]
+is given in coordinates by
+\[ p = [p_0: \dots:p_n] \mapsto \left[ \frac{\partial F}{\partial X_0}(p): \dots: \frac{\partial F}{\partial X_n}(p) \right].\]
+In other words, it is the \emph{polarity isomorphism} induced by $F$, namely the isomorphism between a projective space and its dual given by the non-degenerate bilinear form associated to $F$.
+In particular, we get $\deg \rho = 1$.
 
 \subsection{The Veronese surface} % (fold)
-
-Let $\P^{2} \simeq X \subset \P^{5}$ be the Veronese surface. Then the projection-ramification morphism 
+\label{sub:veronese}
+Let $\P^{2} \cong X \subset \P^{5}$ be the Veronese surface, the image of $\P^2$ under the complete linear series $\O(2)$.
+In this case, the projection-ramification map
 \begin{align*}
-  \rho_{X}: \Gr(3,6) \dashrightarrow \P^{9}
+  \rho \from  \Gr(3,H^0(\P^2, \O(2))) \cong \Gr(3, 6) \dashrightarrow \P H^0(\P^2, \O(3))^* \cong \P^9
 \end{align*}
-assigns to a general net of conics $N$ the cubic curve $C \subset \P^{2}$ consisting of the nodes of the singular members of $N$.  We will outline the classical algebraic geometry (the relationship between cubic curves and their Hessians) underlying the claim that the degree of $\rho_{X}$ is $3$. 
+can be described as follows.
+Let $N \subset H^0(\P^2, \O(2))$ be a net of conics.
+Then $\rho(N)$ corresponds to the cubic curve traced out by the nodes of the singular members of $N$, called the \emph{Steinerian} of $N$.
+\begin{proposition}
+  Let $C \subset \P^2$ be a general cubic.
+  The fiber of $\rho$ over $C$ is in natural bijection with the set of non-trivial $2$-torsion line bundles on $C$.
+  In particular, we have $\deg \rho = 3$.
+\end{proposition}
+The rest of \autoref{sub:veronese} is devoted to the proof of this assertion.
+
+For the proof, we recall some classical projective geometry of nets of conics from \cite{dolgachev}.
+To distinguish the various copies of $\P^2$ that naturally arise in this story, write $\P^2 = \P V$ for a 3 dimensional vector space $V$.
+Let $N \subset H^0(\P V, \O(2)) = \Sym^2V$ be a general net of conics on $\P V$.
+Given a point $x \in \P N^*$, we denote the associated conic by $Q_x$.
+
+The net $N$ gives rise to two cubic curves, the Steinerian, and the Cayleyan, both of which play a crucial role.
+First, let $D \subset \P N^*$ be the locus of singular conics in $N$.
+It is easy to see that $D$ is itself a plane cubic, called the \emph{discriminant cubic}.
+In fact, $D$ is naturally isomorphic to the Steinerian $C \subset \P V$ introduced above by the map
+\[ D \ni x \mapsto \text{Singular point of $Q_x$} \in \P V.\]
+Note that $Q_x$, being a singular conic in a general net, is the union of two lines.
+Such lines are called \emph{Reye lines}.
+More precisely, a \emph{Reye line} is a line that is a component of $Q_x$ for some $x \in \P N^*$ (equivalently, $x \in D$).
+Let $C' \subset \P V^*$ be the locus of Reye lines.
+A simple calculation shows that $C'$ is \emph{also} a plane cubic; it is called the \emph{Cayleyan} of $N$.
+The Cayleyan is not isomorphic, in general, to the Steinerian or the discriminant, but is closely related.
+Evidently, we have a degree 2 map
+\[ C' \to D\]
+given by
+\[ L \mapsto x,\]
+if $L$ is a component of $Q_x$.
+Said differently, we have a (fixed-point free) involution on the Cayleyan $C'$ given by
+\[ L \mapsto L',\]
+where $L'$ is the other component of the singular conic containing $L$.
+The discriminant $D$ (and the Steinerian $C$) is the quotient of $C'$ by this involution.
+The \'etale double cover $C' \to C$ defined above gives an non-trivial $\eta \in \Jac(C)[2]$.
+
+Let $U \subset \P H^0(\P^2, \O(3))$ be the locus of smooth cubic curves, and let $J \to U$ be the Jacobian of the universal cubic over $U$.
+Let $J[2] \subset J$ be the locus of 2-torsion elements, and $J[2]^* \subset J$ the locus of non-trivial 2-torsion elements.
+The discussion above shows that the projection-ramification map
+\[ \rho \dashrightarrow \Gr(3, H^0(\P^2, \O(2))) \to \P H^0(\P^2, \O(3))\]
+factors as
+\begin{alignat*}{2}
+  \Gr(3, H^0(\P^2, \O(2))) &\dashrightarrow J[2]^*& &\dashrightarrow \P H^0(\P^2, \O(3))\\
+  N &\mapsto (C, \eta)& &\mapsto C.
+\end{alignat*}
+
+
+
+
+Let $D \subset \P N^*$ be the locus of singular conics in this set, called the \emph{discriminant curve}.
+It is easy to check that $D \subset \P N^*$ is a plane cubic.
+In fact, we have an embedding $D \subset \P^2$
+
+An element of $D$ corresponds to a singular element of $N$, which is the union of two lines in $\P^2$.
+A line in $\P^2$ which is a component of a singular element of $N$ is called a \emph{Reye line}.
+A simple calculation shows that the locus of 
 
 Suppose $N = \langle Q_{1}, Q_{2}, Q_{3} \rangle$ is a general net of conics in $\P^{2}$, with $Q_{i}$ general ternary quadratic forms. For each line $L \subset \P^{2}$, the net $N$ restricts either to the complete linear series of two points on $L$ or it restricts to a pencil.   The latter type of line a {\sl Reye} line. 
 

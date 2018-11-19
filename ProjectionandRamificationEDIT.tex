@@ -214,7 +214,7 @@ Recall that if $X \subset \P^n$ is a smooth rational normal scroll, then $X$ is 
   In particular, the conclusion holds if $E$ is general of degree at least $(r-1)(2r-1) + 1$.
 \end{maintheorem}
 Thus, at least among the general scrolls, the projection-ramification map is dominant except possibly in small degrees.
-We prove \autoref{theorem:rationalnormalscrolls} by degeneration, using the theory of limit linear series of higher rank developed by Osserman \cite{oss:14}.
+We prove \autoref{theorem:rationalnormalscrolls} by degeneration, using the theory of limit linear series of higher rank developed by Osserman \cite{oss:14}. In the course of proving the theorem, we also demonstrate dominance in the case of $E = \O(2)^{r}$.
 
 \subsection{Enumerative problems}
 \autoref{theorem:minimaldegree} and \autoref{theorem:rationalnormalscrolls} motivate a gamut of enumerative questions.
@@ -294,7 +294,7 @@ There is a related question of computing the number of rational functions on $\P
 This question is much more elementary, and yields the Catalan numbers, as we have seen.
 
 In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, thanks to Chisini's conjecture (now Kulikov's theorem \cite{1064-5632-63-6-A03}).
-Kulikov's theorem asserts that a branched cover $S \to P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^{2}$, with finitely many well-understood exceptions.
+Kulikov's theorem asserts that a branched cover $S \to \P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^{2}$, with finitely many well-understood exceptions.
 In contrast, the enumerative problem regarding ramification divisors persists in all dimensions, thanks to \autoref{theorem:minimaldegree}, and poses a significant challenge.
 In some sense, the ``branch'' and ``ramification'' enumerative stories trade places, at least in terms of difficulty, but perhaps also in terms of structure.
 
@@ -910,7 +910,7 @@ The map $d_V$ gives a map
 
 Let $R = R(V) \subset X$ be the ramification divisor of the projection given by $V$.
 Note that $R$ is a divisor of class $\pi^*(\det E \otimes K_C) \otimes \O_X(1)$.
-Therefore, $R \subset X$ is a sub-scroll, or equivalently, a fiber of $R \to C$ are hyperplanes in the corresponding fiber of $X \to C$.
+Therefore, $R \subset X$ is a sub-scroll, or equivalently, the fibers of $R \to C$ are hyperplanes in the corresponding fiber of $X \to C$.
 We can obtain an explicit description of these hyperplanes in two ways, one using the original definition, and one using the differential construction.
 Fix a point $c \in C$, and a uniformizer $t$ of $C$ at $c$.
 Let $X_c \subset X$ and $R_c \subset R$ be the fibers of $X \to C$ and $R \to C$ over $c$, respectively.
@@ -962,7 +962,7 @@ or equivalently a map
 By construction, $\rho$ is equivariant with respect to the action of $\Aut(X)$, and in particular, by the subgroup $\Aut(X/\P^1)$.
 
 We engineer the failure of maximal variation using the following observation.
-\begin{proposition}
+\begin{proposition}\label{prop:trivialStabilizer}
   A generic point of $\Gr(r+1, H^0(\P^1, E))$ has a trivial stabilizer under the action of $\Aut(\P E/\P^1)$.
 \end{proposition}
 \begin{proof}
@@ -978,8 +978,8 @@ We engineer the failure of maximal variation using the following observation.
   Since $t \in \P^1$ is general, it follows that it must be the identity.
 \end{proof}
 
-\begin{proposition}
-  There exist ample vector bundles $E$ of every rank $\geq 4$ such that a general point of $\P H^0(\P^1, E \otimes \det E \otimes K_{\P^1})^*$ has a positive-dimensional stabilizer under $\Aut(\P E/\P^1)$.
+\begin{proposition}\label{prop:specialE}
+  There exist ample vector bundles $E$ of every rank $\geq 4$ such that a general point of $\P H^0(\P^1, E \otimes \det E \otimes K_{\P^1})$ has a positive-dimensional stabilizer under $\Aut(\P E/\P^1)$.
   In particular, we may take $E = \O(1)^{r-1} \oplus \O(k+1)$ where $k \geq 1$ and $r \geq 4$.
 \end{proposition}
 \begin{proof}
@@ -1018,56 +1018,19 @@ We engineer the failure of maximal variation using the following observation.
   Finally, note that the requirement \eqref{eqn:requirement} is satisfied for $a = 1$ and $b = k+1$ if $k \geq 1$ and $r \geq 4$.
 \end{proof}
 
+As a corollary, we obtain the claim in \autoref{Thm:Counterexamples}:
 
 
-In the next section, we show \autoref{problem:DominantWronskian} has genuine content  by demonstrating that $Wr_{\underline{d}}$ fails to be dominant for degree vectors of the form $(1,1,1, \dots, k+1)$, $r \geq 4$.
-Let $E = \O(1)^{r-1} \oplus \O(k+1)$ be the vector bundle over
-$\P^{1}$, and set $X = \P E$. We will prove:
-\begin{theorem}
-    The projection-ramification map for the embedding of $X$ given by $\O_{E}(1)$ is not
-    dominant once $k(r-3) > 1$.
+\begin{corollary}
+    There exist non-degenerate, smooth projective varieties $X \subset \P^{n}$ of every dimension $r \geq 4$ for which the projection-ramification map is not generically finite.
     \label{NonDominance}
-\end{theorem}
+\end{corollary}
 
-\begin{remark}
-The basic phenomenon underlying this example is: a general point in the source Grassmannian
-has trivial $Aut(X)$-stabilizer, yet every point of $|R|$ has positive dimensional stabilizer. 
-\end{remark}
-
-\begin{remark}
-If $k = 1$ and $r \geq 5$, then $X$ is a balanced
-scroll. Therefore, the non-dominance of projection-ramification is not directly
-connected to the eccentricity of the splitting type of a scroll. Rather,
-among balanced scrolls, non-dominance of $\rho_{X}$ happens only in ``low''
-degree -- see \autoref{thm:prp1}.
-\end{remark}
-
-
-As an immediate corollary, we  get a result concerning  Grassmannians in their Plucker
-embeddings. Recall that an $r$ dimensional variety $X \subset \P^{n}$ is
-{\sl compressible} if there exists a $(n-r-1)$-dimensional linear space
-$\Lambda \subset \P^{N}$ with the property that the projection $p_{\Lambda}: X
-\dashrightarrow \P^{r}$ is not dominant. 
-
-\begin{proof}[Proof of \autoref{NonDominance}] We will show: the general element in the ramification divisor class $|R|$ has a positive dimensional stabilizer under the action of $Aut(X)$.  We leave it to the reader to check that the Grassmannian $\Gr$ does not have generic stabilizer under $\Aut(X)$.  The theorem then follows by the $Aut(X)$-equivariance of $\rho\from \G \dashrightarrow |R|$.
-
-
-In terms of the affine coordinates $(x_{1}, \dots, x_{r}, t)$ introduced in the previous section, we find ourselves in the situation corresponding to the degree vector $\underline{d} = (1, ..., 1, k+1)$.  The degree vector corresponding to ramification divisors is then $\underline{e} = (r+k+1, r+k+1, \dots, r+2k+1)$.  
-
-In these affine coordinates, the substitutions
-\begin{align}\label{substitutions}
-	x_{1} \mapsto & x_{1} + p_{1}(t)x_{r}\\
-	x_{2} \mapsto & x_{2} + p_{2}(t)x_{r}\\
-	\vdots&\\
-	x_{n} \mapsto & x_{r}
-\end{align}
-produce distinct automorphisms in $Aut(X)$ per choice of the $p_{i}$, where each $p_{i}(t)$ has degree $\leq k$.  
-
-If $\sum^{r}_{j=1}a_{j}x_{j}$ represents a general element of $V(\underline{e})$, then the  substitutions \eqref{substitutions} have the effect of replacing the coefficient $a_{r}(t)$  with $a_{r} + \sum_{j=1}^{r-1}a_{j}p_{j}$, and preserving all other coefficients $a_{i}$. 
-
-Now if $(r-3)k > 1$, then the dimension of the vector space of choices for the polynomials $p_{i}$ exceeds the dimension of degree $r+2k+1$ polynomials $a_{r}$. Hence there exists a particular choice of $p_{i}$'s (not all zero) such that the above automorphism fixes the equation $\sum^{r}_{j=1}a_{j}x_{j}$. Scaling these  $p_{i}$'s by constants produces the positive dimensional stabilizer mentioned in the theorem.
-	
+\begin{proof}
+    Take $X = \P E$ appearing in \autoref{prop:specialE} embedded by the complete linear series $\O_{X}(1)$.  The projection-ramification map $\rho_{X}: \Gr(r+1, H^0(\P^1, E)) \dashrightarrow \P H^0(\P^1, E \otimes \det E \otimes K_{\P^1})$ is evidently $\Aut (\P E/\P^{1})$-equivariant.  The corollary immediately follows from this equivariance, \autoref{prop:trivialStabilizer}, and \autoref{prop:specialE}.
 \end{proof}
+
+
 
 
 

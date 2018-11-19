@@ -215,6 +215,7 @@ Recall that if $X \subset \P^n$ is a smooth rational normal scroll, then $X$ is 
 \end{maintheorem}
 Thus, at least among the general scrolls, the projection-ramification map is dominant except possibly in small degrees.
 We prove \autoref{thm:rationalnormalscrolls} by degeneration, using the theory of limit linear series of higher rank developed by Teixidor i Bigas \cite{tei:} and Osserman \cite{oss:14}.
+In the course of proving the theorem, we also demonstrate dominance in the case of $E = \O(1)^{r}$ and $E = \O(2)^r$.
 
 \subsection{Enumerative problems}
 \autoref{theorem:minimaldegree} and \autoref{thm:rationalnormalscrolls} motivate a gamut of enumerative questions.
@@ -294,7 +295,7 @@ There is a related question of computing the number of rational functions on $\P
 This question is much more elementary, and yields the Catalan numbers, as we have seen.
 
 In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, thanks to Chisini's conjecture (now Kulikov's theorem \cite{1064-5632-63-6-A03}).
-Kulikov's theorem asserts that a branched cover $S \to P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^{2}$, with finitely many well-understood exceptions.
+Kulikov's theorem asserts that a branched cover $S \to \P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^{2}$, with finitely many well-understood exceptions.
 In contrast, the enumerative problem regarding ramification divisors persists in all dimensions, thanks to \autoref{theorem:minimaldegree}, and poses a significant challenge.
 In some sense, the ``branch'' and ``ramification'' enumerative stories trade places, at least in terms of difficulty, but perhaps also in terms of structure.
 
@@ -910,7 +911,7 @@ The map $d_V$ gives a map
 
 Let $R = R(V) \subset X$ be the ramification divisor of the projection given by $V$.
 Note that $R$ is a divisor of class $\pi^*(\det E \otimes K_C) \otimes \O_X(1)$.
-Therefore, $R \subset X$ is a sub-scroll, or equivalently, a fiber of $R \to C$ are hyperplanes in the corresponding fiber of $X \to C$.
+Therefore, $R \subset X$ is a sub-scroll, or equivalently, the fibers of $R \to C$ are hyperplanes in the corresponding fiber of $X \to C$.
 We can obtain an explicit description of these hyperplanes in two ways, one using the original definition, and one using the differential construction.
 Fix a point $c \in C$, and a uniformizer $t$ of $C$ at $c$.
 Let $X_c \subset X$ and $R_c \subset R$ be the fibers of $X \to C$ and $R \to C$ over $c$, respectively.
@@ -962,7 +963,7 @@ or equivalently a map
 By construction, $\rho$ is equivariant with respect to the action of $\Aut(X)$, and in particular, by the subgroup $\Aut(X/\P^1)$.
 
 We engineer the failure of maximal variation using the following observation.
-\begin{proposition}\label{prop:nogenstab}
+\begin{proposition}\label{prop:trivialStabilizer}
   A generic point of $\Gr(r+1, H^0(\P^1, E))$ has a trivial stabilizer under the action of $\Aut(\P E/\P^1)$.
 \end{proposition}
 \begin{proof}
@@ -978,8 +979,9 @@ We engineer the failure of maximal variation using the following observation.
   Since $t \in \P^1$ is general, it follows that it must be the identity.
 \end{proof}
 
-\begin{proposition}\label{prop:existgenstab}
-  There exist ample vector bundles $E$ of every rank $\geq 4$ such that a general point of $\P H^0(\P^1, E \otimes \det E \otimes K_{\P^1})^*$ has a positive-dimensional stabilizer under $\Aut(\P E/\P^1)$.
+
+\begin{proposition}\label{prop:specialE}
+  There exist ample vector bundles $E$ of every rank $\geq 4$ such that a general point of $\P H^0(\P^1, E \otimes \det E \otimes K_{\P^1})$ has a positive-dimensional stabilizer under $\Aut(\P E/\P^1)$.
   In particular, we may take $E = \O(1)^{r-1} \oplus \O(k+1)$ where $k \geq 1$ and $r \geq 4$.
 \end{proposition}
 \begin{proof}
@@ -1023,9 +1025,9 @@ We engineer the failure of maximal variation using the following observation.
   There exist ample vector bundles $E$ of rank $r$ and degree $d$ on $\P^1$ such that for $X = \P E$ and the complete linear series $L = \O_X(1)$, the projection-ramification map $\rho_X$ is not generically finite onto its image.
 \end{corollary}
 \begin{proof}
-  Take $E$ such that the action of $\Aut(X/\P^1)$ on a generic point of $|K_X\otimes L^{r+1}|$ has a positive-dimensional stabilizer (see \autoref{prop:existgenstab}).
+  Take $E$ such that the action of $\Aut(X/\P^1)$ on a generic point of $|K_X\otimes L^{r+1}|$ has a positive-dimensional stabilizer (see \autoref{prop:specialE}).
   Since $\rho_X \from \Gr(r+1, H^0(X, L)) \dashrightarrow |K_X \otimes L^{r+1}|$ is equivariant with respect to the action of $\Aut(X/\P^1)$, and a generic
-  point of the source does not have a positive-dimensional stabilizer, it follows that $\rho_X$ cannot be dominant.
+  point of the source does not have a positive-dimensional stabilizer (see \autoref{prop:trivialStabilizer}), it follows that $\rho_X$ cannot be dominant.
   Since the dimension of the source and target of $\rho_X$ are the same, $\rho_X$ is not generically finite.
 \end{proof}
 
@@ -1059,6 +1061,7 @@ Given an ample vector bundle $E$ on $\P^1$, we say that \emph{maximal variation 
   In this case, it is easy to check that the action of $\Aut (\P E / \P^1) = \PGL_r$ has a unique open orbit and trivial generic stabilizers on both the source and the target of $\rho$.
   Hence, $\rho$ must be birational.  
 \end{proof}
+
 
 \begin{proposition}\label{prop:222}
   Maximal variation holds for $E = \O(2)^r$.

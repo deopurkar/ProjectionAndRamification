@@ -116,7 +116,7 @@
 \begin{document}
 
 \begin{abstract}
-    When a projective variety is linearly projected to a projective space of the same dimension, a ramification divisor forms. We study basic properties of this projection-ramification assignment, and uncover enumerative phenomena extending the classical appearance of Catalan numbers in the geometry of rational normal curves.
+  When a projective variety is linearly projected to a projective space of the same dimension, a ramification divisor forms. We study basic properties of this projection-ramification assignment, and uncover enumerative phenomena extending the classical appearance of Catalan numbers in the geometry of rational normal curves.
 \end{abstract}
 
 
@@ -140,7 +140,7 @@ The goal of this paper is to explore the relationship between the geometry of $X
 A simple argument shows that $\rho_X$ is itself a linear projection of $\Gr(n-r, n+1)$ in its Pl\"ucker embedding.
 When $X$ is a smooth curve over a field of characteristic $0$, the map $\rho_X$ is regular everywhere on $\Gr(n-r, n+1)$.
 When $X$ is a rational normal curve, the map $\rho_X$ is also finite.
-In this case, the ramification divisor of a map $\P^1 \to \P^1$ of degree $n$ represented by the rational function $f/g$ is cut out by the \emph{Wronskian} expression, namely the degree $(2n-2)$ polynomial $f'g - g'f$.
+In this case, the ramification divisor of a map $\P^1 \to \P^1$ of degree $n$ represented by the rational function $f/g$ is cut out by the Jacobian expression, namely the degree $(2n-2)$ polynomial $f'g - g'f$.
 Since $\rho_X$ is regular, its degree is the degree of the Grassmannian, which in this case is the Catalan number $\frac{(2n-2)!}{n!(n-1)!}$.
 When $X$ has dimension 2 or more, $\rho_X$ may not be regular on the entire Grassmannian, which makes it difficult to understand.
 Nevertheless, it appears that the geometry of $\rho_X$ is related to some fascinating areas of classical projective geometry, and the enumerative questions surrounding $\rho_X$ hint at a rich underlying structure. 
@@ -151,7 +151,7 @@ Our focus is the following question.
   Is $\rho_{X}$ generically finite onto its image? In other words, does the image of $\rho_X$ have maximal possible dimension?
 \end{question}
 
-To our knowledge, this question first appeared in the work of Flenner and Manaresi \cite{MANAFlenn:}.
+To our knowledge, this question first appeared in the work of Flenner and Manaresi \cite{fle.man:98}.
 Our first result answers this question affirmatively for a large class of varieties.
 We say that $X \subset \P^n$ is \emph{incompressible} if for every $(n-r-1)$-dimensional linear subspace $L \subset \P^n$, the projection map $p_L \from X \dashrightarrow \P^r$ is dominant.
 Recall that the dual variety $X^* \subset {\P^n}^*$ is the closure of the locus of hyperplanes in $\P^n$ whose intersection with the smooth part of $X$ is singular.
@@ -173,7 +173,7 @@ Indeed, consider $X = \P^{r-1} \times \P^1 \subset \P^{2r-1}$, embedded by the S
 Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho_X$ is dominant (see \autoref{Thm:Examples}).
 
 To our knowledge, the known results about maximal variation operate under condition \eqref{item:incomp} in \autoref{thm:main}.
-For example, in \cite{MANAFlenn:}, the authors deduce maximal variation under the condition that for every $(n-r-1)$-dimensional linear subspace $L \subset \P^n$, the join $J(L, X)$ equals $\P^n$, or under the condition that $X$ is smooth and the twisted normal bundle $N_{X/\P^n}(-1)$ is ample.
+For example, in \cite{fle.man:98}, the authors deduce maximal variation under the condition that for every $(n-r-1)$-dimensional linear subspace $L \subset \P^n$, the join $J(L, X)$ equals $\P^n$, or under the condition that $X$ is smooth and the twisted normal bundle $N_{X/\P^n}(-1)$ is ample.
 Either condition implies that $X$ is incompressible, and hence falls under condition \eqref{item:incomp}.
 If $X$ is a curve or a smooth complete intersection, then $X$ is incompressible, and covered by condition \eqref{item:incomp}.
 
@@ -214,7 +214,7 @@ Recall that if $X \subset \P^n$ is a smooth rational normal scroll, then $X$ is 
   In particular, the conclusion holds if $E$ is general of degree at least $(r-1)(2r-1) + 1$.
 \end{maintheorem}
 Thus, at least among the general scrolls, the projection-ramification map is dominant except possibly in small degrees.
-We prove \autoref{thm:rationalnormalscrolls} by degeneration, using the theory of limit linear series of higher rank developed by Teixidor i Bigas \cite{tei:} and Osserman \cite{oss:14}.
+We prove \autoref{thm:rationalnormalscrolls} by degeneration, using the theory of limit linear series of higher rank developed by Teixidor i Bigas \cite{tei-i-big:91} and Osserman \cite{oss:14}.
 In the course of proving the theorem, we also demonstrate dominance in the case of $E = \O(1)^{r}$ and $E = \O(2)^r$.
 
 \subsection{Enumerative problems}
@@ -294,7 +294,7 @@ As is well known, the Hurwitz numbers are difficult to compute, but they exhibit
 There is a related question of computing the number of rational functions on $\P^1$ with a prescribed ramification set.
 This question is much more elementary, and yields the Catalan numbers, as we have seen.
 
-In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, thanks to Chisini's conjecture (now Kulikov's theorem \cite{1064-5632-63-6-A03}).
+In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, thanks to Chisini's conjecture (now Kulikov's theorem \cite{kul:99}).
 Kulikov's theorem asserts that a branched cover $S \to \P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^{2}$, with finitely many well-understood exceptions.
 In contrast, the enumerative problem regarding ramification divisors persists in all dimensions, thanks to \autoref{theorem:minimaldegree}, and poses a significant challenge.
 In some sense, the ``branch'' and ``ramification'' enumerative stories trade places, at least in terms of difficulty, but perhaps also in terms of structure.
@@ -302,12 +302,12 @@ In some sense, the ``branch'' and ``ramification'' enumerative stories trade pla
 The projection-ramification map generalizes the Wronski map
 \[ \rho \from \Gr(2, n+1) \to \P^{2n-2}.\]
 The geometry surrounding the Wronski map has received a lot of attention, thanks to the B. and M. Shapiro conjecture.
-This conjecture states that the pre-image of any point in $\P^{2n-2}$ defined by a set of $(2n-2)$ real points on $\P^1$ consists entirely of real points in $\Gr(2, n+1)$ \cite{sottile2000} (the conjecture has been proved by Eremenko and Gabrielov \cite{Erem/Gabr1}).
+This conjecture states that the pre-image of any point in $\P^{2n-2}$ defined by a set of $(2n-2)$ real points on $\P^1$ consists entirely of real points in $\Gr(2, n+1)$ \cite{sot:00} (the conjecture has been proved by Eremenko and Gabrielov \cite{ere.gab:02}).
 \autoref{theorem:minimaldegree} potentially sets the stage for a higher-dimensional generalization of the body of work around the Shapiro conjecture.
 
 The study of $\rho_X$ in positive characteristic is likely to bring new surprises and require different techniques.
 We do not know if \autoref{thm:main} or \autoref{theorem:minimaldegree} holds in positive characteristic; our proof certainly does not.
-The answers to the enumerative questions \autoref{q:degree} do depend on the characteristic, even in the simplest case of rational normal curves, due to the presence of inseparable covers \cite{MR2218904}.
+The answers to the enumerative questions \autoref{q:degree} do depend on the characteristic, even in the simplest case of rational normal curves, due to the presence of inseparable covers \cite{oss:06}.
 
 \subsection{Notation and conventions} We work over an algebraically closed field
 $k$ of characteristic $0$ (We use Bertini's theorem and generic smoothness. We
@@ -333,6 +333,14 @@ is an isomorphism over a general point in $X$.  If $(L,V)$ is properly ramified,
 is the closure of the scheme defined by the determinant of $e \from V \otimes \O_{X^{\rm sm}} \to P(L)|_{X^{\rm sm}}$.
 \end{definition}
 In most cases, $L$ is clear from context, so we drop it from the notation and denote the ramification divisor simply by $R(V)$.
+\begin{remark}\label{def:Jacobian}
+  Suppose for simplicity that $V$ is a base-point free linear series that yields a surjective map $\phi \from X \to \P V$.
+  Then the ramification divisor may be defined as the degeneracy locus of the map
+  \[ d \phi \from T_{X} \to \phi^* T_{\P V}\]
+  on tangent spaces.
+  The degeneracy locus is the zero locus of $\det \phi$, which in local coordinates, is given by the determinant of the Jacobian matrix $\left( \frac{\partial \phi_i}{\partial x_j} \right)$.
+  Therefore, the ramification divisor $R(L, V)$ is also often called the \emph{Jacobian} of the linear series $(L, V)$ (see, for example, \cite[1.1.7]{dol:12}).
+\end{remark}
 
 A projection $(L, V)$ gives the evaluation map
 \[e \from V \otimes \O_X \to L.\]
@@ -1176,7 +1184,7 @@ We do this by a degeneration argument.
 We degenerate a vector bundle $E$ to a vector bundle $E_0$ on the nodal rational curve $P_0 = \P^1 \cup \P^1$, and show that the projection-ramification map for $E_0$ is dominant.
 For this to work, we have to define the projection-ramification map for nodal curves.
 It turns out that with the most n\"aive definition of linear series on scrolls on nodal curves, we do not get a dominant projection-ramification map.
-We have to work with the limit linear series of higher rank as developed in \cite{tei:} and\cite{oss:14}.
+We have to work with the limit linear series of higher rank as developed in \cite{tei-i-big:91} and\cite{oss:14}.
 
 \subsection{Limit linear series}\label{sec:lls}
 We need limit linear series for the simplest singular curve, namely a (projective, connected) nodal curve $C$ which is the nodal union of two smooth (projective, connected) curves $C_1$ and $C_2$, but we need them for vector bundles of rank higher than $1$.
@@ -1697,130 +1705,89 @@ In this case, the projection-ramification map
 \end{align*}
 can be described as follows.
 Let $N \subset H^0(\P^2, \O(2))$ be a net of conics.
-Then $\rho(N)$ corresponds to the cubic curve traced out by the nodes of the singular members of $N$, called the \emph{Steinerian} of $N$.
-\begin{proposition}
-  Let $C \subset \P^2$ be a general cubic.
-  The fiber of $\rho$ over $C$ is in natural bijection with the set of non-trivial $2$-torsion line bundles on $C$.
+Then $\rho(N)$ corresponds to the cubic curve traced out by the nodes of the singular members of $N$, called the \emph{Jacobian} of $N$.
+\begin{proposition}\label{prop:veronese}
+  Let $R \subset \P^2$ be a general cubic.
+  The fiber of $\rho$ over $R$ is in natural bijection with the set of non-trivial $2$-torsion line bundles on $R$.
   In particular, we have $\deg \rho = 3$.
 \end{proposition}
 The rest of \autoref{sub:veronese} is devoted to the proof of this assertion.
 
-For the proof, we recall some classical projective geometry of nets of conics from \cite{dolgachev}.
+For the proof, we recall some classical projective geometry of cubics and nets of conics from \cite[\S~3]{dol:12}.
 To distinguish the various copies of $\P^2$ that naturally arise in this story, write $\P^2 = \P V$ for a 3 dimensional vector space $V$.
 Let $N \subset H^0(\P V, \O(2)) = \Sym^2V$ be a general net of conics on $\P V$.
 Given a point $x \in \P N^*$, we denote the associated conic by $Q_x$.
 
-The net $N$ gives rise to two cubic curves, the Steinerian, and the Cayleyan, both of which play a crucial role.
-First, let $D \subset \P N^*$ be the locus of singular conics in $N$.
-It is easy to see that $D$ is itself a plane cubic, called the \emph{discriminant cubic}.
-In fact, $D$ is naturally isomorphic to the Steinerian $C \subset \P V$ introduced above by the map
-\[ D \ni x \mapsto \text{Singular point of $Q_x$} \in \P V.\]
-Note that $Q_x$, being a singular conic in a general net, is the union of two lines.
-Such lines are called \emph{Reye lines}.
-More precisely, a \emph{Reye line} is a line that is a component of $Q_x$ for some $x \in \P N^*$ (equivalently, $x \in D$).
-Let $C' \subset \P V^*$ be the locus of Reye lines.
-A simple calculation shows that $C'$ is \emph{also} a plane cubic; it is called the \emph{Cayleyan} of $N$.
-The Cayleyan is not isomorphic, in general, to the Steinerian or the discriminant, but is closely related.
-Evidently, we have a degree 2 map
-\[ C' \to D\]
-given by
-\[ L \mapsto x,\]
-if $L$ is a component of $Q_x$.
-Said differently, we have a (fixed-point free) involution on the Cayleyan $C'$ given by
-\[ L \mapsto L',\]
-where $L'$ is the other component of the singular conic containing $L$.
-The discriminant $D$ (and the Steinerian $C$) is the quotient of $C'$ by this involution.
-The \'etale double cover $C' \to C$ defined above gives an non-trivial $\eta \in \Jac(C)[2]$.
+Associated to the net $N$ are three important cubic plane curves, namely the Jacobian curve, the discriminant curve, and the Hermite curve.
+We have already seen the Jacobian curve $R \subset \P V$.
+The \emph{discriminant curve} $D \subset \P N^*$ is the locus of $x \in \P N^*$ such that $Q_x$ is singular.
+Since a pencil of conics contains three singular members, we see that $D$ is a cubic curve.
+Note that if $Q_d$ is singular, then it is the union of two distinct lines in $\P V$.
+A component line of $Q_x$ is called a \emph{Reye line}.
+The \emph{Hermite curve} $E \subset \P V^*$ is the locus of Reye lines.
+We leave it to the reader to check that it is a cubic curve.
 
-Let $U \subset \P H^0(\P^2, \O(3))$ be the locus of smooth cubic curves, and let $J \to U$ be the Jacobian of the universal cubic over $U$.
-Let $J[2] \subset J$ be the locus of 2-torsion elements, and $J[2]^* \subset J$ the locus of non-trivial 2-torsion elements.
-The discussion above shows that the projection-ramification map
-\[ \rho \dashrightarrow \Gr(3, H^0(\P^2, \O(2))) \to \P H^0(\P^2, \O(3))\]
-factors as
-\begin{alignat*}{2}
-  \Gr(3, H^0(\P^2, \O(2))) &\dashrightarrow J[2]^*& &\dashrightarrow \P H^0(\P^2, \O(3))\\
-  N &\mapsto (C, \eta)& &\mapsto C.
-\end{alignat*}
+The three cubic curves introduced above are inter-related.
+First, we have an isomorphism $\tau \from D \to R$ defined by
+\begin{equation}\label{eqn:DR}
+  \tau \from d \mapsto \text{The singular point of $Q_d$}.
+\end{equation}
+Second, we have a degree 2 map $E \to D$ defined by
+\[ \ell \mapsto \text{The $d \in D$ such that $Q_d$ contains $\ell$}.\]
+Evidently, the fiber of this map over a given $x \in D$ corresponds to the two components of $Q_d$.
+The (\'etale) degree 2 map $E \to D \cong R$ gives a non-trivial two-torsion element $\eta \in \Jac(R)[2]$
+The element $\eta$ is characterized by the property that it is the unique non-trivial two-torsion element whose pull-back to $E$ is trivial.
 
-
-
-
-Let $D \subset \P N^*$ be the locus of singular conics in this set, called the \emph{discriminant curve}.
-It is easy to check that $D \subset \P N^*$ is a plane cubic.
-In fact, we have an embedding $D \subset \P^2$
-
-An element of $D$ corresponds to a singular element of $N$, which is the union of two lines in $\P^2$.
-A line in $\P^2$ which is a component of a singular element of $N$ is called a \emph{Reye line}.
-A simple calculation shows that the locus of 
-
-Suppose $N = \langle Q_{1}, Q_{2}, Q_{3} \rangle$ is a general net of conics in $\P^{2}$, with $Q_{i}$ general ternary quadratic forms. For each line $L \subset \P^{2}$, the net $N$ restricts either to the complete linear series of two points on $L$ or it restricts to a pencil.   The latter type of line a {\sl Reye} line. 
-
-\begin{lemma}
-   \label{lem:specialLines}
-   The set of Reye lines $C' \subset \P^{2*}$ is a smooth  cubic equipped with a fixed-point free involution $\tau$ with quotient isomorphic to $C$.
- \end{lemma}  
-
-\begin{proof}
-  Each Reye line $L$ arises from a unique singular conic of the net $N$, and hence possesses a conjugate line $L'$, which defines the fixed point free involution $\tau$. 
-
-  Let $S \to \P^{2*}$ denote the rank $2$ tautological subbundle. The forms $Q_{1},Q_{2},Q_{3}$ define a map of vector bundles 
-  \begin{align*}
-    \O^{3} \to \Sym^{2}S^{*}
-  \end{align*}
-  The determinant of this map defines the locus of Reye lines, and a simple Chern class calculation reveals the locus is a cubic $C' \subset \P^{2*}$.  The quotient of $C'$ by the involution sending $L$ to $L'$ is clearly identifiable with $C \subset \P^{2}$.
-\end{proof}
-
-
-If $L$ is a Reye line, then $L$ is a component of a unique singular member of the net $N$, and therefore has a conjugate line $L'$.  On $L$, there are now three points of significance: $x = L \cap L'$, which is clearly a point on $C$, and the residual pair of points $a_{L}, b_{L} \in L \cap C$. Similarly for $L'$.  We may view $C'$ as a $2:1$ unramified cover of $C$. Lying above the points $a_{L},b_{L} \in C$ are points $a_{L}',a_{L}'', b_{L}', b_{L}'' \in C'$. 
-
-\begin{lemma}
-  \label{lem:lineEq}
-  Maintain the setting above. Then on $C$ the following linear equivalences hold: $2a_{L} \sim 2b_{L} \sim 2a_{L'} \sim 2b_{L'}$.
-\end{lemma}
-
-\begin{proof}
-  Attached to $a_{L}$ and $b_{L}$ are the dual lines $a_{L}^{*}, b_{L}^{*} \subset \P^{2*}$. The intersections $a_{L}^{*} \cap C'$ and $b_{L}^{*} \cap C'$ both contain the point $[L] \in \P^{2*}$. The residual intersections of $C'$ with $a_{L}^{*}$ and $b_{L}^{*}$ are the points $a_{L}', a_{L}''$ and $b_{L}', b_{L}''$ in $C'$. Hence, on $C'$ we get a linear equivalence $a_{L}'+ a_{L}'' \sim b_{L}' +  b_{L}''$. Pushing this linear equivalence forward under the quotient map $C' \to C$ gives $2a_{L} \sim 2b_{L}$. 
-
-  Proceeding in a similar way, note that the points $[L], [L'] \in C'$ constitute the two points in $C'$ lying above $x \in C$. Further, on $C'$ we get the equivalence $[L] + a_{L}'+ a_{L}'' \sim [L'] + a_{L'}'+ a_{L'}''$ since both triads are collinear in $\P^{2*}$.  Pushing this equivalence forward to $C$ yields the equivalence $2a_{L} \sim 2a_{L'}.$ 
-\end{proof}
-
-
-
-
-\begin{lemma}
-  \label{lem:2torsionclass}
-  The class $\eta = a_{L}-b_{L} \in Jac(C)[2] \setminus \{0\}$ is independent of the point $x$ and the choice of Reye line $L$.
+Denote by $H$ the hyperplane divisor class on $R \subset \P^2$.
+\begin{lemma}\label{lem:reye}
+  For every $a \in R$, the line joining $a$ and $a+\eta$ is a Reye line.
+  Furthermore, this Reye line is a component of $Q_d$ where $d = \tau^{-1}(H-2a-\eta)$.
+  Finally, the conjugate Reye line, namely the other component of $Q_d$, passes through the points $b$ and $b+\eta$ where $b \in R$ differs from $a$ by a non-trivial two-torsion element other than $\eta$.
 \end{lemma}
 \begin{proof}
-  For each $x \in C$ there are two Reye lines $L,L'$ containing $x$, and two pairs of points $a_{L},b_{L}$ and $a_{L'},b_{L'}$ respectively. 
+  Let $\ell$ be a general Reye line, and let $d \in D$ be such that $\ell$ is a component of $Q_d$.
+  Let $x = \tau(d) \in R$ be the singular point of $Q_d$.
+  Note $\ell \cap R$ consists of three points, one of which is $x$.
+  It suffices to show that the other two, say $y$ and $z$, differ by $\eta$.
 
-  Now, if four points $p,q,r,s \in C$ satisfy $2p \sim 2q \sim 2r \sim 2s$, then it is always true that $p-q 
-  \sim r-s$, as a straightforward divisor calculation shows. 
+  The point $y$ defines a line in $\P V^*$.
+  This line intersects $E \subset \P V^*$ in three points, one of which is $\ell$, and the other two are the two components of $Q_{\tau^{-1}(y)}$, namely the two pre-images of $y \in R$ under the double covering $E \to R$.
+  Call these two points $y_1$ and $y_2$.
+  Define $z_1$ and $z_2$ analogously.
+  By construction, the triplets $y_1, y_2, \ell$ and $z_1, z_2, \ell$ are collinear triplets on $E \subset \P V^*$, and therefore we have the linear equivalence
+  \[ y_1 + y_2 \sim z_1 + z_2\]
+  on $E$.
+  By pushing this forward to $R$, we get
+  \[ 2y \sim 2z.\]
+  Therefore, $y - z$ is a (non-trivial) two torsion element in $\Jac(R)$.
+  However, the pull-back of $y-z$ is trivial on $E$, and hence $y - z = \eta$.
 
-  The lemma now follows by the fact that there are only finitely many $2$-torsion divisor classes on $C$, combined with the fact that $C'$ is irreducible.
+  Finally, let $m$ be the Reye line conjugate to $\ell$.
+  Then it passes contains $x$, and two other points of $R$, say $y'$ and $z'$.
+  By what we just proved, $y' - z' = \eta$.
+  But we also have $y' + z' \sim y + z$.
+  Hence $y - y'$ is a two-torsion element, non-trivial, and distinct from $\eta$.
+  The proof is now complete.  
 \end{proof}
 
-
-The $2$-torsion class $\eta$ defines a translation on $C$ which takes a point $x \in C$ to the unique point denoted $\eta(x) \in C$ which is linearly equivalent to $x + \eta$. Therefore, \autoref{lem:2torsionclass} allows us to describe the set of Reye lines as the lines joining $p$ with $\eta(p)$ for all points $p \in C$.  
-
-
-
-
-Thanks to \autoref{lem:2torsionclass}, we see the projection-ramification map $\rho_{X}$ factors as: 
-\begin{align}\label{eq:compose}
-  \rho_{X}: \Gr(3,6) \dashrightarrow Jac[2] \dashrightarrow \P^{9}
-\end{align}
-where $Jac[2]$ is the variety parametrizing pairs $(C,\eta)$ with $C$ a smooth plane cubic and $\eta \in Jac(C)[2]$ a non-trivial $2$-torsion element. 
-
-
-To conclude, we argue the first map in \eqref{eq:compose} is birational by constructing its inverse.  To this end, suppose $C$ is a smooth plane cubic, and $\eta \in Jac(C)[2]$ a chosen non-trivial $2$-torsion element. We will create from this data a net of conics $N$ whose set of nodes is $C$. Again, we think of $\eta$ as a translation $C \to C$ in the usual way.
-
-  For every point $p \in C$, we get a line $L_{p} \subset \P^{2}$ joining $p$ and $\eta(p)$. In this way, we obtain a map $f: C \to \P^{2*}$ which is $2:1$ onto its image, since $L_{p} = L_{q}$ if and only if $p=q$ or $\eta(p)=q$.  Since  $\eta:C \to C$ is fixed-point free, it is easy to see that $f$ is also unramified. Hence, the image of $f$ must be a smooth cubic. 
-
-  If $\beta \neq \eta \in Jac(C)[2]$ is any other non-trivial 2-torsion element, the pair of points $\beta(p), \beta(\eta(p))$ span a well-defined second line $L'_{p}$ containing the point $p$.  
-
-  The collection of singular conics $L_{p} \cup L_{p}'$ parametrized by $p \in C$ induces a map $C \to \P^{5}$, whose degree is $3$, since  through a general point in $\P^{2}$ there pass $3$ of the lines $L_{p}$.  Furthermore, a divisor class computation shows that the node point $L_{p} \cap L_{p'}$ is again on $C$. Hence the image of $C \to \P^{5}$ spans a plane which by construction is the desired net of conics $N$ whose locus of nodes is $C$.
-
+We now have all the tools to prove \autoref{prop:veronese}.
+\begin{proof}[Proof of \autoref{prop:veronese}]
+  Let $U \subset \P H^0(\P^2, \O(3))^*$ be the locus of smooth cubic curves, $J \to U$ be the universal Jacobian, $J[2] \subset J$ the closed subscheme of two-torsion classes, and $J[2]^* \subset J[2]$ the open and closed subscheme of non-trivial two-torsion classes.
+  The projection-ramification map for the Veronese surface factors as
+  \begin{alignat*}{2}
+    \rho \from \Gr(3, H^0(\P^2, \O(2))) &\dashrightarrow J[2]^* &&\dashrightarrow \P H^0(\P^2, \O(3))^*\\
+    N &\mapsto (R, \eta) &&\mapsto R.
+  \end{alignat*}
+  We construct $J[2]^* \to \Gr(3,H^0(\P^2, \O(2)))$ inverse to the first map.
+  Given $(R, \eta) \in J[2]^*$, we need to construct a net $N$ of conics with Jacobian $R$.
+  We use \autoref{lem:reye}, which tells us the singular elements of this net in terms of $R$ and $\eta$.
+  Let $\{\eta, \eta', \eta''\}$ be the three non-trivial 2 torsion line bundles on $R$.
+  Define the map $R \to \P H^0(\P^2, \O(2))^*$ by
+  \[ R \ni a \mapsto \left(\overline {a, a+\eta}\right) \cdot \left(\overline {a+\eta', a+\eta''}\right),\]
+  where $\overline {p,q}$ denotes the line joining $p$ and $q$.
+  We leave it to the reader to check that the image of $R$ is a plane cubic curve.
+  The span of the image of $R$ is the desired net $N$.  
+\end{proof}
 
 \subsection{Quartic surface scroll} Our next objective is to prove that $ \deg \rho_{X} = 2$ for a generic quartic surface scroll $X \subset \P^{5}$.  Our proof uncovers a  rich geometric picture similar to the case of the Veronese surface in the previous subsection.  
 
@@ -2324,6 +2291,6 @@ The ramification linear series $|R|$ is the projectivization of the vector space
 
 
  \bibliographystyle{amsalpha}
-   \bibliography{CommonMath}
-
+ \bibliography{CommonMath}
+   
 \end{document}

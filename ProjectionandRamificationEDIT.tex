@@ -30,7 +30,7 @@
 
 \usepackage{graphicx}
 
-\linespread{1.15}
+\linespread{1.1}
 
 \usepackage{eucal}
 
@@ -126,16 +126,14 @@
 
 \section{Introduction}\label{sec:intro}
 Let $X \subset \P^n$ be a smooth projective variety of dimension $r$, not contained in any hyperplane.
-Projection from a general $(n-r-1)$-dimensional linear subspace $L \subset \P^n$ defines a finite surjective map
-\begin{align*}
-  p_{L}\from X \to \P^{r}.
-\end{align*}
-Associated to $p_L$ is its ramification divisor $R_L \subset X$.
-A simple Riemann--Hurwitz calculation shows that $R_L$ lies in the linear series $|K_X + (r+1)H|$, where $K_X$ is the canonical class, and $H$ is the hyperplane class on $X$.
-The association $L \mapsto R_L$ defines a rational map
-\[ \rho_X \from \Gr(n-r, n+1) \dashrightarrow |K_X + (r+1)H|, \]
-which we call the \emph{projection-ramification} map.
-The goal of this paper is to explore the relationship between the geometry of $X$ and the properties of $\rho_X$.
+Projection from a general $(n-r-1)$-dimensional linear subspace $L \subset \P^n$ defines a finite surjective map $X \to \P^r$ and its ramification divisor $R(L) \subset X$.
+The goal of this paper is to study the relationship between the geometry of $X$ and the map $L \mapsto R(L)$.
+To make matters more precise, note that by the Riemann--Hurwitz formula, the ramification divisor $R(L)$ lies in the linear series $|K_X + (r+1)H|$, where $K_X$ is the canonical class, and $H$ is the hyperplane class on $X$.
+We can then interpret the map $L \mapsto R(L)$ as a (rational) map
+\[
+  \rho_X \from \Gr(n-r, n+1) \dashrightarrow |K_X + (r+1)H|.
+\]
+Our goal is to explore the relationship between the geometry of $X$ and various properties of $\rho_X$ such as generic fiber dimension and degree.
 
 A simple argument shows that $\rho_X$ is itself a linear projection of $\Gr(n-r, n+1)$ in its Pl\"ucker embedding.
 When $X$ is a smooth curve over a field of characteristic $0$, the map $\rho_X$ is regular everywhere on $\Gr(n-r, n+1)$.
@@ -333,7 +331,7 @@ is an isomorphism over a general point in $X$.  If $(L,V)$ is properly ramified,
 is the closure of the scheme defined by the determinant of $e \from V \otimes \O_{X^{\rm sm}} \to P(L)|_{X^{\rm sm}}$.
 \end{definition}
 In most cases, $L$ is clear from context, so we drop it from the notation and denote the ramification divisor simply by $R(V)$.
-\begin{remark}\label{def:Jacobian}
+\begin{remark}\label{rem:Jacobian}
   Suppose for simplicity that $V$ is a base-point free linear series that yields a surjective map $\phi \from X \to \P V$.
   Then the ramification divisor may be defined as the degeneracy locus of the map
   \[ d \phi \from T_{X} \to \phi^* T_{\P V}\]
@@ -1697,7 +1695,7 @@ In other words, it is the \emph{polarity isomorphism} induced by $F$, namely the
 In particular, we get $\deg \rho = 1$.
 
 \subsection{The Veronese surface} % (fold)
-\label{sub:veronese}
+\label{sec:veronese}
 Let $\P^{2} \cong X \subset \P^{5}$ be the Veronese surface, the image of $\P^2$ under the complete linear series $\O(2)$.
 In this case, the projection-ramification map
 \begin{align*}
@@ -1735,7 +1733,7 @@ First, we have an isomorphism $\tau \from D \to R$ defined by
 Second, we have a degree 2 map $E \to D$ defined by
 \[ \ell \mapsto \text{The $d \in D$ such that $Q_d$ contains $\ell$}.\]
 Evidently, the fiber of this map over a given $x \in D$ corresponds to the two components of $Q_d$.
-The (\'etale) degree 2 map $E \to D \cong R$ gives a non-trivial two-torsion element $\eta \in \Jac(R)[2]$
+The (\'etale) degree 2 map $E \to D \cong R$ gives a non-trivial two-torsion element $\eta \in \Pic(R)[2]$
 The element $\eta$ is characterized by the property that it is the unique non-trivial two-torsion element whose pull-back to $E$ is trivial.
 
 Denote by $H$ the hyperplane divisor class on $R \subset \P^2$.
@@ -1759,7 +1757,7 @@ Denote by $H$ the hyperplane divisor class on $R \subset \P^2$.
   on $E$.
   By pushing this forward to $R$, we get
   \[ 2y \sim 2z.\]
-  Therefore, $y - z$ is a (non-trivial) two torsion element in $\Jac(R)$.
+  Therefore, $y - z$ is a (non-trivial) two torsion element in $\Pic(R)$.
   However, the pull-back of $y-z$ is trivial on $E$, and hence $y - z = \eta$.
 
   Finally, let $m$ be the Reye line conjugate to $\ell$.
@@ -1772,7 +1770,7 @@ Denote by $H$ the hyperplane divisor class on $R \subset \P^2$.
 
 We now have all the tools to prove \autoref{prop:veronese}.
 \begin{proof}[Proof of \autoref{prop:veronese}]
-  Let $U \subset \P H^0(\P^2, \O(3))^*$ be the locus of smooth cubic curves, $J \to U$ be the universal Jacobian, $J[2] \subset J$ the closed subscheme of two-torsion classes, and $J[2]^* \subset J[2]$ the open and closed subscheme of non-trivial two-torsion classes.
+  Let $U \subset \P H^0(\P^2, \O(3))^*$ be the locus of smooth cubic curves, $J \to U$ be the universal Picard scheme, $J[2] \subset J$ the closed subscheme of two-torsion classes, and $J[2]^* \subset J[2]$ the open and closed subscheme of non-trivial two-torsion classes.
   The projection-ramification map for the Veronese surface factors as
   \begin{alignat*}{2}
     \rho \from \Gr(3, H^0(\P^2, \O(2))) &\dashrightarrow J[2]^* &&\dashrightarrow \P H^0(\P^2, \O(3))^*\\
@@ -1789,7 +1787,96 @@ We now have all the tools to prove \autoref{prop:veronese}.
   The span of the image of $R$ is the desired net $N$.  
 \end{proof}
 
-\subsection{Quartic surface scroll} Our next objective is to prove that $ \deg \rho_{X} = 2$ for a generic quartic surface scroll $X \subset \P^{5}$.  Our proof uncovers a  rich geometric picture similar to the case of the Veronese surface in the previous subsection.  
+\subsection{Quartic surface scroll}\label{sec:quartic_scroll}
+Our next objective is to prove that $ \deg \rho_{X} = 2$ for a generic quartic surface scroll $X \subset \P^{5}$.
+We begin by recasting $\rho_X$ in terms of nets of conics on $\P^2$, and bring in the projective geometry introduced in \autoref{sec:veronese}.
+
+The generic quartic surface scroll $X \subset \P^5$ is isomorphic to $\P^1 \times \P^1$, embedded by the complete linear system associated to $\O(1,2)$.
+Say $\P^1 \times \P^1 = \P U \times \P V$, where $U$ and $V$ are two-dimensional vector spaces.
+Then the projection-ramification map is a $\PGL(U) \times \PGL(V)$-equivariant map
+\[
+  \Gr(3, U \otimes \Sym^2 V) \dashrightarrow \P(U \otimes \Sym^4 V)^*.
+\]
+We take the quotient of both sides by the $\PGL(U) \times \PGL(V)$-action.
+We begin by identifying the two quotients.
+
+Let $S$ be a 3-dimensional quadratic space, that is, a vector space with a non-degenerate quadratic form $q$.
+Then we have $\Aut(S) =  \operatorname{O}(q) \cong \operatorname{O(3)}$.
+THe projective space $\P S$ is isomorphic to $\P^2$, and it comes with a distinguished smooth conic $Q \subset \P S$.
+The automorphism group of the pair $(\P S, Q)$ is $\Aut(Q) \cong \PGL_2$.
+\begin{lemma}\label{lem:quotgrass}
+  The quotient $\Gr(3, U \otimes \Sym^2V) / \PGL(U) \times \PGL(V)$ is birational to the quotient $\Hilb^3(\P S) / \Aut S$.
+\end{lemma}
+\begin{proof}
+  Let $W$ be a 3-dimensional vector space.
+  We have a birational isomorphism
+  \begin{align*}
+    \Gr(3, &U \otimes \Sym^3 V) / \PGL(U) \times \PGL(V)\\
+           &\sim (W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U) \times \GL(V).
+  \end{align*}
+  Interpret the space $(W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U)$ as the space of $2 \times 3$ matrices with entries in $\Sym^2 V$, modulo row and column transformations.
+  Set $S = \Sym^2 V$; it has a canonical (up to scaling) quadratic form given by the conic $Q \cong \P V\subset \P S$ embedded by $\O(2)$.
+  We can then interpret $(W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U)$ as the space of $2 \times 3$ matrices with entries in $S$.
+  We have a birational isomorphism
+  \begin{align*}
+    (W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U) &\sim \Hilb^3(\P S) \\
+    \text{$2 \times 3$ matrix $M$} &\mapsto \text{Vanishing locus of $2\times2$ minors of $M$}.
+  \end{align*}
+  By taking the further quotient by $\GL(V)$, we finish the proof.  
+\end{proof}
+
+\begin{lemma}\label{lem:quotram}
+  The quotient $\P(U \otimes \Sym^4 V)^* / \PGL(U) \times \PGL(V)$ is birational to the quotient $\Gr(2, (\Sym^2 S)/q) / Aut S$.
+\end{lemma}
+\begin{proof}
+  We have the birational isomorphism
+  \begin{align*}
+    (U \otimes \Sym^4 V) / \GL(U) &\sim \Gr(2, \Sym^4 V).
+  \end{align*}
+  Note that $q \in \Sym^2S$ spans the kernel of the natural surjection $\Sym^2 S \to \Sym^4 V$.
+  The assertion follows.  
+\end{proof}
+
+Via the birational isomorphisms in \autoref{lem:quotgrass} and \autoref{lem:quotram}, the projection-ramification map $\mu$ transforms into an $\Aut(S)$-equivariant map
+\[
+  \mu \from \Hilb^3\P S \dashrightarrow \Gr(2, \Sym^2S/q).
+\]
+We now describe this map $\mu$.
+To ease notation, we denote a linear form and its vanishing locus by the same letter.
+Let $\xi \in \Hilb^3 \P S$ be a general point corresponding to the three vertices of the triangle formed by three lines $L_i$ for $i = 1, 2, 3$.
+Two lines $L_i$ and $L_j$ define a pencil of quadratic forms on $Q$.
+Let $R_{ij}$ be the line whose intersection with $Q$ is the ramification divisor of the pencil $\langle  L_i, L_j \rangle$.
+It is easy to check that the quadrics $L_1 R_{23}$, $L_2 R_{13}$, and $L_3R_{12}$ span a 3-dimensional subspace of $\Sym^2 S$ that contains the quadric $q$.
+\begin{lemma}
+  In the setup above, the image of $\xi$ under $\mu$ is the image of $\langle  L_1R_{23}, L_2R_{13},L_3R_{12} \rangle$ in $\Sym^2S/q$.
+\end{lemma}
+\begin{proof}
+  The ideal of the point $\xi \in \Hilb^3(S)$ is cut out by $2 \times 3$ matrix of linear forms
+  \[
+    M =
+    \begin{pmatrix}
+      L_1 & 0 & L_3 \\
+      0 & L_2 & L_3
+    \end{pmatrix}.
+  \]
+  Let $U_0, U_1$ be a basis of $U$.
+  Under the isomorphism in \autoref{lem:quotgrass}, this $2 \times 3$ matrix corresponds to the point of $\Gr(3, U \otimes \Sym^2 V)$ given by the subspace of $U \otimes \Sym^3 V$ spanned by $U_0 M_{0,i} + U_1 M_{1,i}$ for $i = 1, 2, 3$.
+  From \eqref{eqn:Rmatrix}, the ramification divisor of this subspace is given by
+  \begin{align*}
+    R &= \det
+    \begin{pmatrix}
+      L_1 & 0 & U_0 L_1' \\
+      0 & L_2 & U_1 L_2' \\
+      L_3 & L_3 & (U_0+U_1)L_3'
+    \end{pmatrix} \\
+      &= U_0L_2(L_3'L_1 - L_1L_3') + U_1L_1(L_3'L_2-L_2L_3')\\
+      &= U_0L_2R_{13} + U_1 L_1R_{23}.
+  \end{align*}
+  In this calculation, $L_i'$ denotes the derivative $\frac{d}{dt}$ of $L_i$ considered as an element of $\k[t]$ by pullback under some parametrization $\spec \k[t] \to Q$ and trivialization of $\O(2)|_{\spec \k[t]}$.
+  Although the derivative depends on the choices, the forms $L_iL_j' - L_jL_i'$ do not, and they cut out precisely the ramification divisor of the pencil $\langle  L_i, L_j \rangle$.
+  Under the isomorphism in \eqref{lem:quotram}, the divisor $R$ corresponds to the 2 dimensional subspace of $\Sym^2 S/q$ spanned by $L_2R_{13}$ and $L_1R_{23}$ (The roles of $L_1, L_2, L_3$ can be changed by linear transformations of $M$, so we get that $L_3R_{12}$ also lies in this span).
+  The proof is thus complete.
+\end{proof}
 
 
 We begin with the following seemingly unrelated geometric figure: $C \subset \P^{2}$ is a smooth cubic curve, $a \in \P^{2} \setminus X$ a point, and $Q \subset \P^{2}$ the {\sl polar conic} of $a$ with respect to $C$ -- the unique conic which passes through the six points of ramification on $C$ of the projection from $a$.   We assume $a$ is chosen so that $Q$ is a smooth conic. 

@@ -1942,22 +1942,29 @@ Let $\xi' \in \Hilb^3\P S$ be the point defined by the three vertices of the tri
   By reordering if necessary, assume that we have $p_i^\perp = x_i$ as elements of $E$.
 
   Now, observe that the three Reye lines through the vertex $\Delta_1 \cap \Delta_2$ are $\Delta_1$, $\Delta_2$, and $p_3^\perp$, and likewise for the other two vertices.
-  The concurrence of the three lines, along with the equality $p_3^\perp = x_i$, yields the system of equations on $\Pic E$
+  The concurrence of the three lines, along with the equality $p_3^\perp = x_1$, yields the system of equations on $\Pic E$
   \begin{align*}
     \Delta_1 + \Delta_2 + x_3 &= H, \\
     \Delta_2 + \Delta_3 + x_1 &= H, \\
     \Delta_3 + \Delta_1 + x_2 &= H. \\
   \end{align*}
+  Of course, the same three equations hold if we replace $\Delta$ by $\nabla$.
+
   Note that the points $x_1, x_2, x_3 \in E$ are determined by $N$.
   Using $x_1 + x_2 + x_3 = H$, a simple calculation gives $2 \Delta_1 = 2x_1$.
   This equation has 4 solutions for $\Delta_1$, namely $x_1 + \epsilon$ for $\epsilon \in \Pic E[2]$.
   Also, $\Delta_1$ determines $\Delta_2$ and $\Delta_3$ by the equations above, which in turn determine the $\nabla_i$ using polarity or the property that $\nabla_i$ and $\Delta_i$ form a fiber of the map $E \to R$.
   Thus, it suffices to show that only two of the four solutions for $\Delta_1$ can be valid.
-  Note that $\Delta_2$, $\Delta_3$, and $p_1^\perp$ are concurrent lines in $\P S$, and the line $p_1^\perp$ is represented by $x_1 \in \P S^*$.
-  But $\Delta_1$, $\Delta_2$, and $\Delta_3$ are not concurrent, so $\Delta_1 \neq x_1$.
-  Suppose the involution of $E$ induced by $E \to R$ is given by the addition of $\epsilon_0 \in \Pic E [2]^*$.
-  Then the same argument shows that $\nabla_1 \neq x_1$, and hence $\Delta_1 \neq x_1 + \epsilon_0$.
-  Therefore, the only two possible solutions for $\Delta_1$ are $x_1 + \epsilon$ for $\epsilon \in \Pic E [2] \setminus \{0, \epsilon_0\}$.
+
+  Suppose $\Delta_1 = x_1$.
+  Then we get $\Delta_2 = x_2$, and $\Delta_3 = x_3$.
+  However, the lines represented by the $x_i$ are concurrent, whereas the lines $\Delta_i$ are not.
+  Therefore, we get that $\Delta_1 \neq x_1$.
+  The same argument shows that $\nabla_1 \neq x_1$.
+  Let the involution of $E$ induced by $E \to R$ be given by the addition of $\epsilon_0 \in \Pic E [2]^*$.
+  Since $\Delta_1$ and $\nabla_1$ form a fiber of $E \to R$, we have $\nabla_1 = \Delta_1 + \epsilon_0$.
+  So, $\nabla_1 \neq x_1$ translates into $\Delta_1 \neq x_1 + \epsilon_0$.
+  In summary, the only two possible solutions for $\Delta_1$ are $x_1 + \epsilon$ for $\epsilon \in \Pic E [2] \setminus \{0, \epsilon_0\}$.
   The proof is now complete.  
 \end{proof}
 

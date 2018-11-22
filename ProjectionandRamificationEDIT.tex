@@ -1781,8 +1781,8 @@ We now have all the tools to prove \autoref{prop:veronese}.
   We use \autoref{lem:reye}, which tells us the singular elements of this net in terms of $R$ and $\eta$.
   Let $\{\eta, \eta', \eta''\}$ be the three non-trivial 2 torsion line bundles on $R$.
   Define the map $R \to \P H^0(\P^2, \O(2))^*$ by
-  \[ R \ni a \mapsto \left(\overline {a, a+\eta}\right) \cdot \left(\overline {a+\eta', a+\eta''}\right),\]
-  where $\overline {p,q}$ denotes the line joining $p$ and $q$.
+  \[ R \ni a \mapsto \left(\langle {a, a+\eta} \rangle\right) \cdot \left(\langle {a+\eta', a+\eta''} \rangle \right),\]
+  where $\langle {p,q} \rangle$ denotes the line joining $p$ and $q$.
   We leave it to the reader to check that the image of $R$ is a plane cubic curve.
   The span of the image of $R$ is the desired net $N$.  
 \end{proof}
@@ -1847,7 +1847,7 @@ Let $\xi \in \Hilb^3 \P S$ be a general point corresponding to the three vertice
 Two lines $L_i$ and $L_j$ define a pencil of quadratic forms on $Q$.
 Let $R_{ij}$ be the line whose intersection with $Q$ is the ramification divisor of the pencil $\langle  L_i, L_j \rangle$.
 It is easy to check that the quadrics $L_1 R_{23}$, $L_2 R_{13}$, and $L_3R_{12}$ span a 3-dimensional subspace of $\Sym^2 S$ that contains the quadric $q$.
-\begin{lemma}
+\begin{lemma}\label{lem:mu}
   In the setup above, the image of $\xi$ under $\mu$ is the image of $\langle  L_1R_{23}, L_2R_{13},L_3R_{12} \rangle$ in $\Sym^2S/q$.
 \end{lemma}
 \begin{proof}
@@ -1876,6 +1876,89 @@ It is easy to check that the quadrics $L_1 R_{23}$, $L_2 R_{13}$, and $L_3R_{12}
   Although the derivative depends on the choices, the forms $L_iL_j' - L_jL_i'$ do not, and they cut out precisely the ramification divisor of the pencil $\langle  L_i, L_j \rangle$.
   Under the isomorphism in \eqref{lem:quotram}, the divisor $R$ corresponds to the 2 dimensional subspace of $\Sym^2 S/q$ spanned by $L_2R_{13}$ and $L_1R_{23}$ (The roles of $L_1, L_2, L_3$ can be changed by linear transformations of $M$, so we get that $L_3R_{12}$ also lies in this span).
   The proof is thus complete.
+\end{proof}
+
+Recall that the conic $Q \subset \P S$ gives an isomorphism $\P S \cong \P S^*$, called \emph{polarity} with respect to $Q$.
+On the vector spaces, it is the isomorphism induced by the bilinear form associated to $q$.
+Geometrically, it is characterized by the rule that the polar of a point $p \in Q$ is the tangent line to $Q$ at $p$.
+More generally, given a point $p \in \P S$, the pencil of lines through $p$ contains two lines tangent to $Q$; the polar of $p$ is the line joining the two points of tangency.
+We denote the polar of a point $p$ (resp. a line $L$) by $p^\perp$ (resp. $L^\perp$).
+
+Set $M_i = R_{jk}$, and let $N$ be the net spanned by $L_iM_i$ for $i = 1, 2, 3$.
+By the definition of $R_{jk}$, we see that $M_i$ is the polar line of the point $L_k \cap L_k$.
+In other words, the triangles $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$ are polar conjugates---lines in one are polars to the vertices of the other.
+
+Recall that $\xi \in \Hilb^3\P S$ is the point defined by the three vertices of the triangle formed by $(L_1, L_2, L_3)$.
+Let $\xi' \in \Hilb^3\P S$ be the point defined by the three vertices of the triangle formed by $(M_1, M_2, M_3)$.
+\begin{proposition}
+  In the setup above, $\xi$ and $\xi'$ are the only points of $\Hilb^3\P S$ that map to $N \in \Gr(2, \Sym^2S/q)$.
+  In particular, the degree of $\mu \from \Hilb^3\P S \dashrightarrow \Gr(2, \Sym^2S/q)$ is 2.
+\end{proposition}
+\begin{proof}
+  By \autoref{lem:mu}, we see immediately that $\mu(\xi') = \mu(\xi) = N$.
+  To show that no other triangles map to $N$, consider pairs of triplets $\Delta = (\Delta_1, \Delta_2, \Delta_3)$ and $\nabla = (\nabla_1, \nabla_2, \nabla_3)$ of lines in $\P S$ such that
+  \begin{enumerate}
+  \item $\Delta$ and $\nabla$ are polar conjugates with respect to $Q$, and
+  \item $\Delta_i\nabla_i$ is an element of $N$ for $i = 1, 2, 3$.
+  \end{enumerate}
+  It suffices to show that the only ones satisfying the two conditions are $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$, up to permutation.
+  
+  To show this, we need some observations.
+
+  First, suppose $A_1B_1$ and $A_2B_2$ are elements of the net $N$, where $A_i$ and $B_j$ are lines in $\P S$.
+  Then, by definition, $A_i$ and $B_j$ are Reye lines of the net $N$.
+  Let $p = A_1 \cap A_2$ and $q = B_1 \cap B_2$.
+  We claim that the third Reye line through $p$, in addition to $A_1$ and $A_2$, is the line $\langle p, q\rangle$.
+  Indeed, in the pencil of conics spanned by $A_1B_1$ and $A_2B_2$, the third singular conic is $\langle p, q\rangle \langle p', q'\rangle$, where $p' = A_1 \cap B_2$ and $q' = A_2 \cap B_1$.
+
+  Second, let $R \subset \P S$ be the Jacobian cubic and $E \subset \P S^*$ be the Hermite cubic of $N$.
+  Let $E^\perp \subset \P S$ be the image of $E$ under the polarity isomorphism induced by $Q$.
+  Explicitly, the points of $E^\perp$ are the polars of the Reye lines.
+  We claim that the six points of intersection of $R$ and $Q$ also lie on $E^\perp$.
+  Indeed, to show that $x \in R \cap Q$ also lies on $E^\perp$, it suffices to show that the line $T_xQ$ is a Reye line.
+  Since $x \in R$, there exists an element of $N$ of the form $AB$ where $A$ and $B$ are lines intersecting at $x$.
+  Note that in the pencil of conics spanned by $AB$ and $Q$, there is a singular conic containing $T_pQ$.
+  Therefore, $T_pQ$ is a Reye line.
+  
+  Third, since $R \cap E^\perp$ contain 6 points on the conic $Q$, the residual 3 points are collinear.
+  Let them correspond to $x_1, x_2, x_3 \in E$.
+  Denoting by $H$ the hyperplane class of $E \subset \P S^*$, we have the equation in $\Pic E$
+  \[ x_1 + x_2 + x_3 = H.\]
+  
+  Suppose we have two triangles $\Delta$ and $\nabla$ satisfying the two conditions above.
+  Consider the point $p_3 = \Delta_3 \cap \nabla_3$.
+  By the second condition, it lies on $R$.
+  By the polarity of $\Delta$ and $\nabla$, we have
+  \begin{align*}
+    p_3^\perp &= \langle \Delta_3^\perp, \nabla_3^\perp \rangle \\
+              &= \langle  \nabla_1 \cap \nabla_2, \Delta_1 \cap \Delta_2\rangle.
+  \end{align*}
+  By the first claim, we see that $p_3^\perp$ is a Reye line.
+  Hence $p_3$ lies on $E^\perp$, and hence on $R \cap E^\perp$.
+  Similarly, $p_1 = \Delta_1 \cap \nabla_1$ and $p_2 = \Delta_2 \cap \nabla_2$ also lie on $E^\perp$.
+  Since $N$ is general, we may assume that the $p_i$ do not lie on $Q$.
+  Hence, $p_1, p_2, p_3$ are the points corresponding to the three collinear points in $R \cap E^\perp$.
+  (The fact that $p_1, p_2, p_3$ are collinear is not surprising---it is because any two conjugate triangles are linearly perspective \cite[Theorem~2.1.9]{dol:12}).
+  By reordering if necessary, assume that we have $p_i^\perp = x_i$ as elements of $E$.
+
+  Now, observe that the three Reye lines through the vertex $\Delta_1 \cap \Delta_2$ are $\Delta_1$, $\Delta_2$, and $p_3^\perp$, and likewise for the other two vertices.
+  The concurrence of the three lines, along with the equality $p_3^\perp = x_i$, yields the system of equations on $\Pic E$
+  \begin{align*}
+    \Delta_1 + \Delta_2 + x_3 &= H, \\
+    \Delta_2 + \Delta_3 + x_1 &= H, \\
+    \Delta_3 + \Delta_1 + x_2 &= H. \\
+  \end{align*}
+  Note that the points $x_1, x_2, x_3 \in E$ are determined by $N$.
+  Using $x_1 + x_2 + x_3 = H$, a simple calculation gives $2 \Delta_1 = 2x_1$.
+  This equation has 4 solutions for $\Delta_1$, namely $x_1 + \epsilon$ for $\epsilon \in \Pic E[2]$.
+  Also, $\Delta_1$ determines $\Delta_2$ and $\Delta_3$ by the equations above, which in turn determine the $\nabla_i$ using polarity or the property that $\nabla_i$ and $\Delta_i$ form a fiber of the map $E \to R$.
+  Thus, it suffices to show that only two of the four solutions for $\Delta_1$ can be valid.
+  Note that $\Delta_2$, $\Delta_3$, and $p_1^\perp$ are concurrent lines in $\P S$, and the line $p_1^\perp$ is represented by $x_1 \in \P S^*$.
+  But $\Delta_1$, $\Delta_2$, and $\Delta_3$ are not concurrent, so $\Delta_1 \neq x_1$.
+  Suppose the involution of $E$ induced by $E \to R$ is given by the addition of $\epsilon_0 \in \Pic E [2]^*$.
+  Then the same argument shows that $\nabla_1 \neq x_1$, and hence $\Delta_1 \neq x_1 + \epsilon_0$.
+  Therefore, the only two possible solutions for $\Delta_1$ are $x_1 + \epsilon$ for $\epsilon \in \Pic E [2] \setminus \{0, \epsilon_0\}$.
+  The proof is now complete.  
 \end{proof}
 
 

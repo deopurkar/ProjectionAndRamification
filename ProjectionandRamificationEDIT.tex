@@ -772,11 +772,19 @@ We immediately get part~\eqref{item:dual} of \autoref{thm:main}.
   Now apply \autoref{thm:mainMain}.
 \end{proof}
 
+\begin{corollary}\label{cor:lowdim}
+  Let $X \subset \P^n$ be a non-degenerate smooth curve or a surface.
+  Then $\rho_X$ is generically finite onto its image.
+\end{corollary}
+\begin{proof}
+  Curves and surfaces have divisorial duals, so \autoref{cor:maintheorem} applies.
+\end{proof}
+
 
 \section{Projection-ramification for varieties of minimal degree}\label{sec:minimaldegree}
 In this section, we prove \autoref{theorem:minimaldegree}, which relates varieties of minimal degree and the projection-ramification map.
 We then prove \autoref{Thm:Counterexamples} by constructing examples of rational scrolls where maximal variation fails.
-Finally, we obtain an alternate description of the projection-ramification map for scrolls, which is used in \autoref{sec:proof_of_theorem:rationalnormalscrolls}.
+Finally, we obtain an alternate and more explicit description of the projection-ramification map for scrolls, which we use repeatedly.
 
 The following is an easy application of the Kodaira vanishing theorem.
 \begin{proposition}\label{lemma:KYmH}
@@ -1046,6 +1054,93 @@ We do not know, however, if this is the only reason for the failure of maximal v
   If $k = 1$ and $r \geq 4$, then $X$ is the most balanced scroll of its degree and rank, and hence, generic in moduli.
   Therefore, the non-dominance of projection-ramification is not directly connected to the eccentricity of the splitting type of a scroll. 
 \end{remark}
+
+\subsection{Eccentric threefold scrolls} % (fold)
+\label{sub:eccentric_threefolds}
+\autoref{Thm:Counterexamples} leaves open the case of threefold scrolls (surface scrolls are covered by \autoref{cor:lowdim}).
+We settle this case in this section by showing that the projection-ramification map for threefold scrolls is always generically finite, and thus the statement of \autoref{Thm:Counterexamples} is sharp in $r$.
+
+Let $E = \O(1) \oplus \O(1) \oplus \O(k+1)$, for $k \geq 0$.
+Set $X = \P E$ and $L = \O_X(1)$.
+\begin{proposition}
+  The map $\rho_X \from \Gr(4, H^0(X, L)) \dashrightarrow |K_X + 4L|$ is birational.
+\end{proposition}
+\begin{proof}
+  The proof is by direct calculation.
+  Consider the standard open subset $\A^1 = \spec \k[t] \subset \P^1$.
+  Choose trivializations of the four summands of $E$ over $\A^1$ given by sections $X_1, X_2, X_3$.
+  
+  Let $W \subset H^0(X, L)$ be a general 4-dimensional subspace.
+  Then the projection map $W \to H^0(\P^1, \O(1) \oplus \O(1))$ will be an isomorphism.
+  Therefore, we can choose a basis of $W$ of the form
+  \[
+    X_1 + aX_3, X_2 + bX_3, tX_1 + cX_3, tX_2 + d X_3,
+  \]
+  where $a, b, c, d \in \k[t]$ have degree at most $k+1$.
+  Using \eqref{eqn:Rmatrix}, we get that the ramification divisor of this $W$ is
+  \begin{equation}\label{eqn:threefoldram}
+    \begin{split}
+    \rho(W) &= (d-bt)X_1 + (at-c)X_2 + \left((a't-c')(bt-d) + (at-c)(d'-b't) \right) X_3 \\
+    &= \alpha X_1 + \beta X_2 + \gamma X_3, \text{ say}.
+  \end{split}
+\end{equation}
+  In this calculation, $p'$ denotes the derivative $\frac{dp}{dt}$.
+  Note that we have
+  \[ \gamma = \alpha'\beta - \beta'\alpha + \alpha a + \beta b.\]
+  The degrees of $\alpha, \beta, \gamma$ are (at most) $k+2$, $k+2$, and $2k+2$, respectively.
+
+  Consider the affine space $\A^{4k+8}$ whose coordinates correspond to the coefficients of $a, b, c, d$, and likewise, the affine space $\A^{4k+9}$ whose coordinates correspond to the coefficients of $\alpha, \beta, \gamma$.
+  The expression in \eqref{eqn:threefoldram} defines a map
+  \begin{align*}
+    \rho^* \from \A^{4k+8} &\to \A^{4k+9} \\
+    (a,b,c,d) &\mapsto (\alpha, \beta, \gamma).
+  \end{align*}
+  Note that the choice of basis of $W$ gives a birational isomorphism $\Gr(4, H^0(X, L)) \cong \A^{4k+8}$.
+  Via this isomorphism, the projection-ramification map $\rho$ is simply the composite of $\rho^*$ and the projection $\A^{4k+9} \dashrightarrow \P^{4k+8} = \P H^0(\P^1, E \otimes \det E \otimes \O(-2))^*$.
+
+  Let $(a,b,c,d) \in \A^{4k+8}$ be a generic point.
+  We show that the map induced by $\rho$ on tangent spaces is injective at this point.
+  For $\epsilon^2 = 0$, we have
+  \[
+    \rho^* \from (a + \hat a \epsilon, b+ {\hat b} \epsilon, c +  {\hat c} \epsilon + d +  {\hat d}\epsilon) \mapsto (\alpha + \hat{\alpha} \epsilon,\beta + \hat{\beta} \epsilon, \gamma + \hat{\gamma}\epsilon),
+  \]
+  where
+  \begin{align*}
+    \hat \alpha &= \hat d - \hat b t,\\
+    \hat \beta &=  \hat a t - \hat c, \text{ and }\\
+    \hat \gamma & = (bt-d)({\hat a}'t-{\hat c}') + (at-c)({\hat d}'-{\hat b}'t) + ({\hat a}t-{\hat c})(d'-b't) + ({\hat b}t-{\hat d})(a't-c).
+  \end{align*}
+  Suppose $\hat \alpha = \hat \beta = \hat \gamma = 0$.
+  Then $(bt-d)(\hat a t - \hat c) + (at-c) + (\hat d' - \hat b' t) = 0$.
+  However, for generic $a, b, c, d$, the polynomials $(bt-d)$ and $(at-c)$ have degree $(k+2)$ and are relatively prime.
+  So they no non-trivial syzygy with coefficients of degree at most $k+1$.
+  As a result, we get $\hat a t - \hat c = 0$ and $\hat d' - \hat b' t = 0$.
+  Along with $at -c = 0$ and $d - bt = 0$, we get $a = b = c = d = 0$.
+  Thus, $d \rho^*$ is injective.
+  To show that $d \rho$ is injective, it suffices to show that the image of $d \rho^*$ intersects the line joining $(0,0,0)$ an $(\alpha, \beta, \gamma)$ transversely.
+  For this, it suffices to show that the three equations $\hat \alpha = \alpha, \hat \beta = \beta, \hat \gamma = \gamma$ give no solutions in $(a,b,c,d)$.
+  Indeed, these three equations imply $(bt-d)(\hat a' t - \hat c') + (at-c)(\hat d' - \hat b' t) = 0$, and by the same reason as before, give $\hat a' t - \hat c' = \hat d' - \hat b' t = 0$.
+  But it is easy to see that the last two equations combined with $\hat a t - \hat c = at -c$ and $\hat b t - \hat d = bt - d$ have no solutions.    
+
+  Since the map induced by $\rho$ is injective tangent spaces, $\rho$ is generically finite, and hence dominant.
+  To show that $\rho$ is birational, it suffices to show that the generic fiber of $\rho$ is connected.
+  For this, it suffices to show that the generic fiber of $\rho^*$ is connected.
+  However, observe that the fiber of $\rho^*$ over $(\alpha, \beta, \gamma)$ is given by the equations
+  \[ \alpha = d - bt, \beta = at - c, \gamma = \alpha' beta - \beta' \alpha + \alpha a + \beta b,\]
+  which are affine linear equations in $a,b,c,d$.
+  Hence, the fibers of $\rho^*$ are affine spaces, which are connected.
+  The proof is now complete.  
+\end{proof}
+\end{proof} 
+
+\begin{corollary}\label{corollary:maxVariation3Scrolls}
+  The projection-ramification map $\rho_{X}$ is dominant for every smooth three dimensional rational normal scroll $X \subset \P^{n}$.
+\end{corollary}
+\begin{proof}
+  Every such $X$ isotrivially specializes to $\P \left(\O(1) \oplus \O(1) \oplus \O(k+1)\right)$.
+  The statement now follows from the upper semi-continuity of fiber dimension.
+\end{proof}
+
 
 \section{Maximal variation for generic scrolls}
 In this section, we establish that the projection-ramification map is generically finite (equivalently, dominant) for most scrolls, notwithstanding the examples provided by \autoref{Thm:Counterexamples}.
@@ -1666,6 +1761,23 @@ We now have all the tools to prove \autoref{thm:rationalnormalscrolls}
 \end{proof}
 
 
+\subsection{Recasting the projection-ramification map for scrolls} Let $E$ be a rank $r$ ample vector bundle on $\P^{1}$, and set $X = \P E$.  Then a general $r+1$-dimensional subspace 
+\begin{align*}
+    W \subset H^{0}(X, \O(1)) = H^{0}(\P^{1},E)
+\end{align*}
+yields a short exact sequence 
+\begin{align*}
+    0 \to (\det E)^{-1} \to W \otimes \O_{\P^{1}} \to E \to 0
+\end{align*}
+which corresponds to an element $w$ (up to scalar) of the extension space $\Ext^{1}(E,(\det E)^{-1})$. The assignment $W \mapsto [w] \in \P(\Ext^{1}(E,(\det E)^{-1}))$ is easily seen to be a birational map between $\G := \Gr(n+1,H^{0}(E))$ and $\P(\Ext^{1}(E,(\det E)^{-1}))$.
+
+The ramification linear series $|R|$ is the projectivization of the vector space $V = H^{0}(E \otimes \det E \otimes K_{\P^{1}})$.  By Serre duality, $V$ is dual to $\Ext^{1}(E,(\det E)^{-1})$.  Therefore, the projection-ramification map $\rho_{X}$ may be recast as a map
+\begin{align*}
+    \delta_{X}: \P(V^{*}) \dashrightarrow \P(V)
+\end{align*}
+
+
+
 \section{The Projection-Ramification enumerative problem} % (fold)
 \label{sec:enumerativeproblems}
 In this section, we calculate the degree of the projection-ramification map for as many varieties of minimal degree as we can, leading to a proof of \autoref{Thm:Examples}.
@@ -1967,485 +2079,6 @@ Let $\xi' \in \Hilb^3\P S$ be the point defined by the three vertices of the tri
   In summary, the only two possible solutions for $\Delta_1$ are $x_1 + \epsilon$ for $\epsilon \in \Pic E [2] \setminus \{0, \epsilon_0\}$.
   The proof is now complete.  
 \end{proof}
-
-
-We begin with the following seemingly unrelated geometric figure: $C \subset \P^{2}$ is a smooth cubic curve, $a \in \P^{2} \setminus X$ a point, and $Q \subset \P^{2}$ the {\sl polar conic} of $a$ with respect to $C$ -- the unique conic which passes through the six points of ramification on $C$ of the projection from $a$.   We assume $a$ is chosen so that $Q$ is a smooth conic. 
-
-To set notation moving forward, if $x \in \P^{2}$ is any point, we let $P_{x}(C)$ denote the polar conic of $x$ with respect to $C$.  Similarly, we let $P_{x}(Q)$ denote the polar line of $x$ with respect to the conic $Q$.
-
-\begin{lemma}\label{lemma:basicsaboutHessian}
-The Hessian $Hess(C) \subset \P^{2}$ consists of the points $x$ such that $P_{x}(C)$ is singular, and if $C$ is not a Fermat cubic $P_{x}(C)$ is the union of two distinct lines for every $x \in Hess(C)$.  Furthermore, if $x \in Hess(C)$, then the unique singularity $s(x)$ of $P_{x}(C)$ lies on $Hess(C)$, and the map $x \mapsto s(x)$ is translation by a $2$-torsion point $\eta \in \Jac( Hess(C))$.
-\end{lemma} 
-
-\begin{proof}
-    Standard. \todo{Reference, probably Dolgachev}
-\end{proof} 
-
-\begin{proposition}\label{proposition:polarline}
-Suppose $x \in Hess(C)$. Then the line $P_{x}(C)$ passes through the point $x + \eta \in Hess(C)$.
-\end{proposition}
-
-\begin{proof}
-    We have: 
-    \begin{align*}
-        P_{x}(Q) = P_{x}P_{a}(C) = P_{a}P_{x}(C).
-    \end{align*}
-
-Since $x \in Hess(C)$, $P_{x}(C)$ is a singular conic. Hence $P_{x}(Q)$ must pass through the singularity $\sing P_{x}(C)$, which by \autoref{lemma:basicsaboutHessian} is the point $x + \eta$.
-\end{proof}
-
-Next suppose $\ell_{1},m_{1}, \ell_{2}, m_{2}, \ell_{3}, m_{3}$ are six distinct lines in $\P^{2}$ with the  properties: 
-\begin{enumerate}
-    \item The three singular conics $\ell_{i} \cup m_{i}$ are polars of $C$.
-    \item The triangle $\ell_{1}\ell_{2} \ell_{3}$ is {\sl conjugate} to the triangle $m_{1}  m_{2}  m_{3}$ with respect to $Q$.
-\end{enumerate}
-The second condition above simply means that the vertices of one triangle are polar to the lines of the other triangle.  By basic projective geometry, the two triangles are then in {\sl linear perspective}, i.e. the three points $x_{1} := \ell_{1} \cap m_{1}, x_{2} := \ell_{2} \cap m_{2}, x_{3} := \ell_{3} \cap m_{3}$ are collinear.
-
-\begin{proposition}\label{proposition:importantReyeLineFact}
-Maintain the notation above, and recall the definition of Reye line from the previous subsection. The lines $P_{x_{i}}(Q)$ are Reye lines of the net of polar conics of $C$.
-\end{proposition}
-
-\begin{proof}
-    The triangles $\ell_{1}\ell_{2}\ell_{3}$ and $m_{1}m_{2}m_{3}$ are conjugate with respect to $Q$.  Hence it follows that the polar line $P_{x_{3}}(Q)$ equals $\ell := \overline{\ell_{12}m_{12}}$, where $\ell_{ij} = \ell_{i} \cap \ell_{j}$ and $m_{ij} = m_{i} \cap m_{j}$.
-    
-    We will prove that $\ell$ is one of the three Reye lines of the net of polars of $C$ which pass through the point $\ell_{12}$, the other two Reye lines being $\ell_{1}$ and $\ell_{2}$. From \autoref{lemma:basicsaboutHessian}, we can find points $y,z \in C$ and write: 
-    \begin{align*}
-        \ell_{1} = \overline{y, y + \eta}\\
-        \ell_{2} = \overline{z, z + \eta}
-    \end{align*}
-Then a divisor class computation shows that the third Reye line through $\ell_{12}$ must be $\overline{w,w + \eta}$, with $w$ satisfying 
-\begin{align*}
-    y+z+w \sim H + \epsilon,
-\end{align*}
-where $\epsilon$ is any one of the two non-trivial $2$-torsion elements on $Hess(C)$ differing from $\eta$.  We let $s \in Hess(C)$ denote the third point of intersection of the line $\overline{w,w + \eta}$ with $C$. (Notice that $w$ depends on the choice of $\epsilon$, but the line $\overline{w,w + \eta}$ is independent of this choice.)
-
-From this setup, we get: 
-\begin{align*}
-    x_{1} &\sim H-2y-\eta\\
-    x_{2} &\sim H-2z - \eta\\
-    s &\sim H-2w - \eta
-\end{align*}
-from which we get:
-\begin{align*}
-    s &\sim H-2w - \eta\\
-    &\sim H - 2[H+\epsilon -y-z] - \eta\\
-    &\sim 2y+2z-H-\eta\\
-    &\sim H-x_{1}-\eta + H-x_{2}-\eta-H-\eta\\
-    &\sim H-x_{1}-x_{2} - \eta.
-\end{align*}
-
-Therefore, to prove that $\ell$ is a Reye line, it suffices to show that the points $\ell_{12}, m_{12}$, and $s \sim H-x_{1}-x_{2}-\eta$ are collinear.  But, this is true if and only if their respective polar lines $P_{\ell_{12}}(Q), P_{m_{12}}(Q), P_{s}(Q)$ are concurrent.  The latter is true if and only if the lines $m_{3}, \ell_{3}, P_{s}(Q)$ are concurrent, which in turn  translates to the condition that $x_{3} \in P_{s}(Q)$.  But, $x_{3} \sim H-x_{1}-x_{2}$, and $s \sim H-x_{1}-x_{2}+\eta$, and so by \autoref{proposition:importantReyeLineFact}, we conclude that indeed $x_{3} \in P_{s}(Q)$, which is what we needed to show.
-\end{proof}
-
-\subsubsection{Returning to the projection ramification problem} Our next objective is to relate the geometry in the previous subsection to 
-
-
-
-\subsection{Rational curves, the differential construction, and the case of Segre varieties} % (fold)
-\label{sec:rational_curves_in_projective_space}
-\autoref{problem:degree} connects with an old story involving rational curves in projective space.  
-
-Let $\gamma: \P^{1} \to \P^{n}$ be a degree $d$ morphism. Its derivative 
-\begin{align*}
-    d\gamma:T_{\P^{1}} \to \gamma^{*}(T_{\P^{n}})
-  \end{align*}  
-may be viewed as a global section of the rank $r$ vector bundle $\gamma^{*}(T_{\P^{n}}) \otimes T_{\P^{1}}^{\smvee}$.  The splitting of $\gamma^{*}(T_{\P^{n}})$ is known to be balanced for a general morphism $\gamma$. In particular, if the divisibility
-\begin{align*}
-  n \mid d
-\end{align*}
-holds, and if we set $\ell := d+d/n-2$, then a general $\gamma$ satisfies: 
-\begin{align*}
-  (\gamma^{*}T_{\P^{n}}) \otimes T_{\P^{1}}^{\smvee} \simeq \bigoplus_{i=1}^{n} \O_{\P^{1}}(\ell).
-\end{align*} 
-The direct sum decomposition is not canonical, it is only defined up to the
-action of $GL_{n}(k)$.  
-
-Assuming $\gamma$ is an immersion, the element $d \gamma \in
-H^{0}(\P^{1},\bigoplus_{i=1}^{n} \O_{\P^{1}}(\ell))$ does not vanish anywhere,
-and hence defines a degree $\ell$ map $$D(\gamma) : \P^{1} \to \P^{n-1},$$
-only well-defined up to the action of post-composition by $PGL_{n}(k)$. 
-
-\begin{definition}
-  Let $M^{n}_{d}$ denote the moduli stack parametrizing $PGL_{n+1}(k)$
-  equivalence classes of degree $d$ maps $\gamma : \P^{1} \to \P^{n}$, and let
-  $U^{n}_{d} \subset M^{n}_{d}$ denote the open substack parametrizing local immersions with $\gamma^{*}(T_{\P^{n}})$ balanced.
-\end{definition}
-
-\begin{remark}
-Notice:  $\dim M^{n}_d= (k+1)(n+1) - (n+1)^{2} = (n+1)(k-n) = \dim \G(n, k).$  Furthermore, notice  $PGL_{2}(k)$ acts on $U^{n}_{d}$ and $M^{n}_{d}$ by pre-composition. 
-\end{remark}  
-
-\begin{remark}
-  Though $M^{n}_{d}$ is an Artin stack, the open substack $U^{n}_{d}$ is a scheme, provided $n \leq d$, represented by an open subset of $\Gr(n+1,d+1)$. 
-\end{remark}
-
-
-
-
-When $n \mid d$, and $\ell := d+d/n-2$, we get the morphism of stacks: 
-\begin{align*}
-  D^{n}_{d} &: U^{n}_{d} \to M^{n-1}_{\ell}\\
-  \gamma &\longmapsto D(\gamma)
-\end{align*}
-which we call the {\sl differential construction}. Interestingly, the dimensions of the domain and codomain of the differential construction are equal, and this leads to another collection of enumerative problems: 
-\begin{problem}\label{problem:differential}
-   Compute the degrees of the differential constructions $D^{n}_{d} : U^{n}_{d} \to M^{n-1}_{\ell}$. 
- \end{problem} 
-
-\begin{remark}
-  The maps $D^{n}_{d}$ are clearly $PGL_{2}(k)$ equivariant.  The image of the differential construction $D^{n}_{d}$ need not be the open set $U^{n-1}_{\ell}$. \todo{Sure?}
-\end{remark}
-
-
- The $n=d$ instances of \autoref{problem:differential} are immediate: 
-
- \begin{proposition}\label{proposition:trivialdegree}
-   The degree of the differential construction $D^{d}_{d}$ is $1$.
- \end{proposition}
-\begin{proof}
-  The space $U^{d}_{d}$ is a single $PGL_{2}(k)$ orbit.
-\end{proof}
- 
-\begin{definition}\label{definition:pointlinescroll}
-  Let $\gamma: \P^{1} \to \P^{n}$ be any map. We define the {\sl point-hyperplane scroll} of $\gamma$ to be 
-  \begin{align*}
-        X_{\gamma} := \big\{(t, \Lambda) \mid \gamma(t) \in \Lambda \big\} \subset \P^{1} \times (\P^{n})^{\smvee}
-      \end{align*}
-      We denote by $\pi_{1}, \pi_{2}$ the projections of $X_{\gamma}$ to $\P^{1}$ and $(\P^{n})^{\smvee}$ respectively. Finally, we set $X_{\gamma}^{\smvee} := \P(\gamma^{*}T_{\P^{n}})$.   
-\end{definition}
-
-\begin{remark}
-  The $\P^{n-1}$-bundle $X_{\gamma}$ is isomorphic to $\P(\gamma^{*}T^{\smvee}_{\P^{n}})$. Hence, for a general map $\gamma: \P^{1} \to \P^{n}$, $X_{\gamma}$ and $X_{\gamma}^{\smvee}$ are balanced scrolls.
-\end{remark}
-
-\begin{proposition}\label{proposition:transfer}
- Let $\gamma: \P^{1} \to \P^{n}$ be a non constant map.
-
- \begin{enumerate} 
-  \item The image of $\gamma: \P^{1} \to \P^{n}$ is non-degenerate if and only if $\pi_{2} : X_{\gamma} \to (\P^{n})^{\smvee}$ is finite; in any case,  $\deg \pi_{2} = \deg \gamma.$ 
-  \item The ramification divisor $R(\pi_{2}) \subset X_{\gamma}$ is a smooth, codimension $1$ subscroll of $X_{\gamma}$ if and only if $\gamma$ is an immersion. 
-  \item Assuming $\gamma$ is an immersion, the dual section $R^{\smvee}(\pi_{2}) \subset X^{\smvee}_{\gamma}$ is induced by the inclusion $d \gamma: T_{\P^{1}} \hookrightarrow \gamma^{*}T_{\P^{n}}$.
-\end{enumerate}
-\end{proposition}
-
-\begin{proof}
-  \todo{PROVE}
-\end{proof}
-
-Let $X = \P^{1} \times \P^{n-1}$, and denote by $h$ and $f$ the divisor classes of the pullback of a hyperplane in $\P^{n-1}$ and a point in $\P^{1}$, respectively.  When $n \mid k$,  \autoref{proposition:transfer} sets up a commuting diagram: 
-
-\begin{center}
-\begin{tikzcd}
-  & U^{n}_{k} \ar[rr, leftrightarrow, "\text{duality}"] \ar[dd, "D^{n}_{k}"] & &PGL_{n+1}\Big\backslash \left \{ \begin{tabular}{c} \text{Deg. $k$ maps} \\$X \to (\P^{n})^{\smvee}$ \\ \text{induced by $|h+\frac{k}{n}f|$} \end{tabular} \right \}\Big/PGL_{n} \ar[dd, "\rho_{X}"] \\
-  &  &  & \\
-  & M^{n-1}_{\ell}  \ar[rr, leftrightarrow, "\text{duality}"]  && \left \{ \begin{tabular}{c} \text{Smooth divisors $R \subset X$} \\\text{with div. class $|h + \ell f|$} \end{tabular} \right \} \big/ PGL_{n}
-\end{tikzcd}
-\end{center}
-
-From this, we conclude: 
-\begin{proposition}\label{proposition:equivalence}
-  Let $k = nm$, and let $X \subset \P^{n(m+1)-1}$ be the variety $\P^{1} \times \P^{n-1}$ embedded by the linear series $|h+mf|$. Then 
-  \begin{align*}
-    \deg \rho_{X} = \deg D^{n}_{k}.
-  \end{align*}
-\end{proposition}
-
-\begin{corollary}
-  If $X \subset \P^{2n-1}$ is a Segre embedding of $\P^{1} \times \P^{n-1}$, then $\deg \rho_{X} = 1$.
-\end{corollary} 
-
-\begin{proof}
-  The corollary follows at once from \autoref{proposition:equivalence} and \autoref{proposition:trivialdegree}.
-\end{proof}
-
-\subsection{Quartic surface scrolls}
-
-
-
-
-
-\subsubsection{The explicit differential construction for trinodal quartics}
-
-A trinodal quartic $R$ can be obtained as an abstract curve by identifying three pairs of points $\{a',a''\}, \{b',b''\}, \{c',c''\}$ on $\P^{1}$. These pairs can be encoded by the three binary quadratic forms (up to scale)  defining them.  In terms of these three quadratic forms, we will now describe the differential construction $D^{2}_{4}$. 
-
-
-In what follows, we let $\{ q_{1},q_{2},q_{3} \}$ denote a point in $\Sym^{3} \P H^{0}(\O_{\P^{1}}(2))$.
-
-\begin{definition}
-  \label{definition:nodemap}
-  Let
-  \begin{align*}
-    \nu: \Sym^{3}\P H^{0}(\O_{\P^{1}}(2)) \dashrightarrow \Gr(3,5)
-  \end{align*}
-  denote the map given by the formula:
-  \begin{align*}
-    \nu \left(\{q_{1},q_{2},q_{3}\}\right ) =    \left\{ \begin{tabular}{c}
-      v. space of meromorphic $1$-forms $\omega$ on $\P^{1}$ with at worst \\
-      simple poles at the zeros of $q_{i}$ and with {\sl opposite} residues\\
-      at the pairs of zeros of $q_{i}$, for all $i = 1,2,3$
-    \end{tabular}\right\}
-  \end{align*}
- 
-\end{definition}
-
-
-
-\begin{proposition}
-  \label{proposition:symtwoptwo}
-The map $\nu$ is birational.
-\end{proposition}
-\begin{proof}
-  Suppose a general three dimensional space $W \subset H^{0}(\O_{\P^{1}}(4))$ is given. Then the induced degree four map $\P^{1} \to \P W^{\smvee}$ is the normalization of a trinodal quartic $R$. The vector space $W$ is naturally identified with the sections of the dualizing sheaf of $R$, which consist of meromorphic $1$-forms on $\P^{1}$ with the properties stated in the proposition.
-\end{proof}
-
-\begin{definition}
-  \label{definition:pi}
-  Let
-  \begin{align*}
-    \pi: \Sym^{3}\P^{2} \dashrightarrow \Gr(2,5)
-  \end{align*}
-  be given by the formula
-  \begin{align*}
-\pi\left (\{q_{1},q_{2},q_{3}\}\right ) =    \left\{ \begin{tabular}{l}
-      v. space of meromorphic $1$-forms $\omega$ with at worst simple\\
-      poles at the zeros of $q_{i}$ and with {\sl equal} residues\\
-      at the pairs of zeros of $q_{i}$, for all $i = 1,2,3$
-    \end{tabular}\right\}
-  \end{align*}
- 
-\end{definition}
-
-\begin{proposition}
-  \label{proposition:reinterpretTangent}
-  The rational map $\pi \circ \nu^{-1} : \Gr(3,5) \dashrightarrow \Gr(2,5)$ is the differential construction $D^{2}_{4}$.
-\end{proposition}
-\begin{proof}
-  Let $\gamma : \P^{1} \to \P^{2}$ be a general map induced by a three dimensional vector space $W \subset H^{0}(\O_{\P^{1}}(4))$ having image $R$, and let $(q_{1},q_{2},q_{3})$ be $\nu^{-1}(\varphi)$. The pencil $D(\gamma)$ is cut out by the perspective conics. \todo{Why?} According to \autoref{theorem:perspectiveconics}, the linear series on $R$ cut out by perspective conics is $\O_{R}(1) \otimes \eta$, where $\eta$ is the distinguished element $(-1,-1,-1) \in \Pic(R)[2]$.
-  If the space of sections of the line bundle $\O_{R}(1)$ is identified with $\nu(q_{1},q_{2},q_{3})$, then it follows that the space of sections of the twist $\O_{R}(1)\otimes \eta$ equals $\pi(q_{1},q_{2},q_{3})$. 
-\end{proof}
-
-\begin{definition}
-  \label{definition:jacobiantwoquadrics}
-  Let $\{a(x,y),b(x,y)\}$ be two homogeneous quadratic polynomials with no common zeros. Their {\sl Jacobian} is
-  \begin{align*}
-    J(a,b):= a_{x}b_{y}-a_{y}b_{x}.
-  \end{align*}
-
-\end{definition}
-
-Note that the Jacobian vanishes precisely at the two branch points of the map $[x : y] \mapsto [a(x,y):b(x,y)]$.
-
-\begin{theorem}
-  \label{theorem:onlyapencil}
-  Let $\left\{ q_{1},q_{2},q_{3} \right\} \in \Sym^{3}\P^{2}$ have six distinct roots. Then the vector space
-  \begin{align*}
-    \langle q_{1}J(q_{2},q_{3}), q_{2}J(q_{1},q_{3}), q_{3}J(q_{1},q_{2}) \rangle 
-  \end{align*}
-  is equal to  $\pi(q_{1},q_{2},q_{3}) \in \Gr(2,5)$.
-\end{theorem}
-\begin{proof}
-  By $SL_2(k)$-equivariance, it suffices to prove the theorem for three quadratic functions $\left\{ xy, q_{2}, q_{3} \right\}$ where $q_{2}$ and $q_{3}$ are general.
- 
-  Let $\alpha_{1}, \alpha_{2}$, and $\beta_{1}, \beta_{2}$ denote the roots of $q_{2}, q_{3}$. Note that these roots are assumed to be in ${\bf A}^{1} \subset \P^{1}$.  We let $t = x/y$ denote the affine coordinate.
-
-  The vector space $\Pi := \pi(t, q_{2}(t), q_{3}(t))$ is equal to the vector space of forms
-  \begin{align*}
-    \omega = \frac{f(t)dt}{tq_{2}(t)q_{3}(t)},
-  \end{align*}
-  with $\deg(f) \leq 4$, and with the additional constraints
-
- \begin{align*}
-    \res_{\alpha_{1}}\omega = \res_{ \alpha_{2}} \omega\\
-    \res_{\beta_{1}}\omega = \res_{ \beta_{2}} \omega\\
-    \res_{0}\omega = \res_{\infty} \omega
-  \end{align*}
-
-  Since we know a priori that the space of such forms is two dimensional, we conclude in particular that there exists a nonzero $\omega \in \Pi$ which is nonzero and vanishing at $\alpha_{1}$.  However, the first residue condition then forces $\omega$ to vanish at $\alpha_{2}$ as well. (This is clear from the geometry: an element of the pencil of perspective conics is cut out by a (possibly singular) conic in $\P^{2}$. If it contains a node, then its pullback to $\P^1$ must vanish at both points above the node.)
-
-  Therefore, there exists an $\omega \in \Pi$ of the form $$ \omega = \frac{(t-\alpha_{1})(t-\alpha_{2})g(t)dt}{tq_{2}q_{3}} = \frac{g(t)dt}{tq_{3}}.$$
-  The residue conditions at $\beta_{i}$, and $0, \infty$ together imply, up to nonzero scaling,
-  \begin{align*}
-    g(t) = t^{2} - \beta_{1}\beta_{2}.
-  \end{align*}
-  The roots $\pm \sqrt{\beta_{1}\beta_{2}}$ are precisely the branch points of the map $[x:y] \to [xy : q_{3}]$.  Therefore $\omega$ vanishes at the roots of the quartic polynomial $q_{1}j(xy,q_{3})$. The theorem follows by arguing in the same manner for the two other pairs of roots.
-
-\end{proof}
-
-Given a general triple $\{a,b,c\}$ of binary quadratic forms, we can create the three quartic binary forms $a[b,c], b[c,a], c[a,b]$, where $[p,q]$ denotes $p_{x}q_{y} - p_{y}q_{x}$.  As we know, these three forms are actually linearly dependent, yielding a pencil of binary quartics. 
-
-In this way, we obtain an {\sl a priori} rational map
-\begin{align*}
- 	D: \Hilb^{3}(\P^{2}) \dashrightarrow \Gr(2,5)
- \end{align*} 
- where the domain is the Hilbert scheme of $3$ points on $\P^{2}$. 
-
- The main observation is: 
- \begin{proposition}
- 	\label{proposition:Dregular}
- 	The rational map $D$ extends to a regular map.
- \end{proposition}
-
- \begin{proof}
- 	This is best seen by describing $D$ geometrically, and noting that the geometric construction makes sense at every point of $H$.
-
- 	If $\{a,b,c\}$ is a general subset of $\P^{2}$, then the quartic pencil $D(\{a,b,c\})$ is obtained as follows.  Recall that in $\P^{2}$ we have the canonical discriminant conic $C$ parametrizing square forms. A point $a \in \P^{2}$ defines a line $Pol(a) \subset \P^{2}$ spanned by the two points of $C$ which correspond to the roots of $a$. Furthermore, a pair of points $b,c \in \P^{2}$ defines the line $\overline{b,c} \subset \P^{2}$. 
-
- 	To the triple $\{a,b,c\}$ we attach the triple of pairs of lines $Pol(a) \cup \overline{b,c}$ (and permutations), which cut the conic $C$ at $3$ members of a degree $4$ pencil. 
-
- 	This geometric construction works even for non-reduced schemes.  For example, if $Z \subset \P^{2}$ is a fat point concentrated at a point $a \in \P^{2}$, we assign the degree $4$ pencil on $C$ as: The degree $2$ pencil corresponding to $Pol(a)$ with two base points at $Pol(a) \cap C$.
- \end{proof}
-
- The map $D$ is only generically finite; the locus of collinear triples is contracted, and has the same image as the locus of fat schemes.   However, it is easy to exhibit a point in $G$ over which there are exactly two preimages. 
-
- \begin{lemma}
- 	\label{lemma:TwoPreimages}
- 	Let $\Lambda \in \Gr(2,5)$ denote the unique pencil of binary quartics with simple base points at $0,1,\infty$ in $\P^{1}$. Then the preimage $D^{-1}(\Lambda)$ consists of two non-reduced points.
- \end{lemma}
-
- \begin{proof}
- 	The two configurations are described as follows: View the three points $0,1,\infty$ on the diagonal conic $C$. Then the triple $\{0,1,\infty\}$ clearly maps to $\Lambda$, as does the triangle created by $Pol(0), Pol(1), Pol(\infty)$. 
-
- 	A simple infinitesimal calculation shows any non-trivial first-order deformation of either of these configurations will have the effect of either removing the base-points, or moving their location. 
-
- 	Furthermore, it is clear that these are the only two possible configurations giving rise to the pencil $\Lambda$. 
- \end{proof}
-
-The previous lemma immediately gives:
-
-\begin{theorem}
-  	Let $X \subset \P^{5}$ be a balanced quartic surface scroll. Then $\deg \rho_{X} = 2$.
-  \end{theorem}  
-
-
-\subsection{Eccentric surface scrolls} % (fold)
-\label{sub:surfaces}
-
-% subsection surfaces (end)
-Let $E = \O(1) \oplus \O(k+1)$, $X = \P E$. Choose an affine coordinate $t$ on $\P^{1}$, and consider the projection-ramification enumerative problem for $X \subset \P^{k+3}$.  We claim: 
-\begin{proposition}\label{proposition:rhobirationalsurfaces}
-Maintaining the setting above,	$\rho_{X}$ is birational.
-\end{proposition}
-
-
-Let $A= H^{0}(\O_{X}(1))$. This vector space will be identified with the space of expressions of the form $\ell(t)x_{1} + q_{k+1}(t)x_{2}$, where $\ell, q_{k+1}$ are polynomials of degrees at most $1$ and $k+1$ respectively. In what follows, subscripts of polynomials in $t$ represent the degree.
-
-If $W \subset A$ is a general three dimensional vector space, then there will be a unique triple of elements in $W$ of the form
-\begin{align*}
-	w_{0} &= t(x_{1} + q_{k}(t)x_{2})\\
-	w_{\infty} &= (x_{1} + r_{k}(t)x_{2})\\
-	w_{*} &= s_{k+1}(t)x_{2}
-\end{align*}
-
-The Wronski determinant of this triple is: 
-
-\begin{align}\label{equation:jacobsurface}
-	sx_{1} + \left[s(qt)' - s'(qt) - t(r's-s'r)\right]x_{2}
-\end{align}
-
-\begin{proof}[Proof of \autoref{proposition:rhobirationalsurfaces}]
-	Let $r := \sigma x_{1} + \tau x_{2} \in H^{0}(X,\O(R))$ be a general element, we can extract the unique vector space $W$ obeying $\rho_{X}(W) = [r] \in |R|$ as follows: First, we set $s := \sigma$. Secondly, given $s$, the equation $\left[s(qt)' - s'(qt) - t(r's-s'r)\right] = \tau$ is a system of $2k+2$ linear equations involving the $2k+2$ coefficients of the pair $(q,r)$. We know (from \autoref{thm:main})  this system has a finite, positive number of solutions. Hence it must have a unique solution, proving the proposition.
-\end{proof}
-
-\subsection{Eccentric threefold scrolls} % (fold)
-\label{sub:eccentric_threefolds}
-Now let $E = \O(1) \oplus \O(1) \oplus \O(k+1)$, $k \geq 0$, and set $X := \P E$.  Embed $X \subset \P^{k+5}$ via the natural $\O(1)$ on $X$. Again, we choose affine coordinate $t \in \P^{1}$ and relative coordinates $x_{1},x_{2},x_{3}$ on $X$ corresponding to the three factors of the splitting of $E$. 
-
-\begin{proposition}\label{proposition:threefold}
-Maintain the setting above. Then	$\rho_{X}$ is birational.
-\end{proposition}
-% subsection eccentric_threefolds (end)
-
-Suppose $W \subset H^{0}(E)$ is a general $4$ dimensional vector space. Then the projection $W \to H^{0}(\O(1)\oplus \O(1))$ will be an isomorphism.  Hence, there will be $4$ uniquely defined elements of $W$ of the form: 
-\begin{align*}
-	x_{1} + ax_{3}\\
-	x_{2} + bx_{3}\\
-	tx_{1} + cx_{3}\\
-	tx_{2} + d x_{3}
-\end{align*}
-where $a,b,c,d$ are degree $\leq k+1$ polynomials in $t$.
-The Wronski determinant for this tuple of equations is: 
-\begin{align}\label{eq:jacobianthreefold}
-	\alpha x_{1} + \beta x_{2} + \gamma x_{3} = (d-bt)x_{1} + (at-c)x_{2} + \left[a't(bt-d) + b't(c-at) + c'(d-bt)+ d'(at-c) \right]x_{3}.
-\end{align}
-
-\begin{proof}[Proof of \autoref{proposition:threefold}]
-	We replace the Grassmannian $\Gr(4,H^{0}(E))$ with the affine open subset $\A^{4k+8}$ parametrizing quadruples $(a,b,c,d)$. Then the ramification divisor equation \eqref{eq:jacobianthreefold} defines a map 
-	\begin{align*}
-	 	\rho^{*}: \A^{4k+8} \to \A^{4k+9}
-	 \end{align*} 
-	 where the latter $\A^{4k+9}$ is the vector space of triples $(\alpha,\beta,\gamma)$ with $\deg \alpha, \beta \leq k+2$ and $\deg \gamma \leq 2k+2$. The projection-ramification $\rho_{X}$ map $\rho$ is recovered by composing $\rho^{*}$ with the projection $\A^{4k+9} \dashrightarrow \P^{4k+8}$. 
-
-	 First, if $(a,b,c,d)$ are general, then one can directly use the relative primeness of $d-bt$ and $at-c$ (we omit this simple calculation) to conclude that $\rho^{*}$ is generically injective on tangent spaces, and hence the generic fiber of $\rho^{*}$ is finite.
-
-
-	 We next show  $\rho_{X}$ is dominant. In light of the previous paragraph, it suffices to prove: If $(\alpha, \beta, \gamma)$ is a general point in the image of $\rho^{*}$, and $\lambda \neq 0,1$ is a constant, then $\lambda(\alpha, \beta, \gamma)$ is not in the image of $\rho^{*}$. 
-
-	 To this end, suppose $(a,b,c,d)$ is a general point in $\A^{4k+8}$. Then  $\alpha := d-bt$ and $\beta := at-c$ will be degree $k+2$ polynomials which are relatively prime.  
-
-
-	 For any polynomial $p(t)$, let $p^{+}$ denote the highest degree coefficient of $p$. Observe that $\beta^{+} = a^{+}$.  Furthermore, the expression for $\gamma$ is easily seen to be 
-	 \begin{align}\label{gammaEq}
-	  	\gamma = (\alpha'\beta - \beta' \alpha) + \alpha a + \beta b
-	  \end{align} 
-	  where $'$ denotes $d/dt$. 
-
-	  If we scale by $\lambda$, we get: 
-	  \begin{align}
-	      \label{firstEquations}
-	  	\lambda \alpha &= \lambda (d-bt)\\
-	  	\lambda \beta &= \lambda (at-c) \nonumber\\
-	  	\lambda \gamma &= \lambda(\alpha'\beta - \beta' \alpha) + \lambda \alpha a + \lambda \beta b \nonumber
-	  \end{align}
-
-	  At the same time, if $\lambda(\alpha, \beta, \gamma)$ is also realized by some quadruple $(\tilde{a}, \tilde{b}, \tilde{c}, \tilde{d})$ then we get the equations: 
-	  \begin{align}\label{secondEquation}
-	  	\lambda \alpha &= \tilde{d} - \tilde{b}t\\
-	  	\lambda \beta &= \tilde{a}t - \tilde{c} \nonumber\\
-	  	\lambda \gamma &= \lambda^{2}(\alpha'\beta - \beta' \alpha) + \lambda \alpha \tilde{a} + \lambda \beta \tilde{b}\nonumber
-	  \end{align}
-	  The second equation gives $\tilde{a}^{+} = \lambda \beta^{+}$.  The last equation gives: $\gamma = \lambda(\alpha'\beta - \beta' \alpha) + \alpha \tilde{a} + \beta \tilde{b}$.  Combining with \eqref{gammaEq}, we get 
-	  \begin{align*}\label{alphasbetas}
-	    	\alpha (a - \beta') + \beta (b + \alpha') &= \alpha(\tilde{a} - \lambda\beta') + \beta(\tilde{b} + \lambda \alpha').
-	    \end{align*} 
-	    Since $\alpha$ and $\beta$ are relatively prime and have degree greater than $a,b,\tilde{a},\tilde{b}$, we deduce:
-	    \begin{align*}
-	     	a-\beta' &= \tilde{a} - \lambda \beta'\\
-	     	b+\alpha' &= \tilde{b} + \lambda \alpha'
-	     \end{align*} 
-	     By examining top coefficients, and using $a^{+} = \beta^{+}$, $\tilde{a}^{+} = \lambda \beta^{+}$ we get: 
-	     \begin{align*}
-	     	\beta^{+} - (k+2)\beta^{+} &= \lambda\beta^{+} - \lambda(k+2)\beta^{+}
-	     \end{align*}
-	     or 
-	     \begin{align*}
-	     	(1-\lambda)\beta^{+} &= (1-\lambda)(k+2)\beta^{+}
-	     \end{align*}
-	     Given our assumption on $\lambda$, this is only possible if $\beta^{+} = 0$.  However, since $(a,b,c,d)$ were chosen generically, $\beta^{+} = a^{+}$ would not be zero, providing our desired contradiction.
-
-	     Finally, we argue $\deg \rho_{X} = 1$. It suffices to show that a general ramification equation $\alpha x_{1} + \beta x_{2} + \gamma x_{3}$ of the form \eqref{eq:jacobianthreefold} arises from a unique choice of polynomials $(a,b,c,d)$.  The conditions $d-bt = \alpha$ and $at-c=\beta$ produce an affine linear subspace $\Lambda$ in the vector space of choices $(a,b,c,d)$. With respect to linear coordinates on $\Lambda,$ the expression for $\gamma$ is also linear, and hence the available choices of $(a,b,c,d)$ producing \autoref{eq:jacobianthreefold} is an intersection of affine linear spaces.  Since we already know $\rho^{*}$ is generically finite, it follows that $\deg \rho_{X} = 1$ as desired.
-
-\end{proof} 
-
-Since every smooth three dimensional rational normal scroll specializes isotrivially to the scroll $X$ in \autoref{proposition:threefold}, we immediately get: 
-
-\begin{corollary}\label{corollary:maxVariation3Scrolls}
-	The projection-ramification map $\rho_{X}$ is dominant for every smooth three dimensional rational normal scroll $X \subset \P^{n}$.
-\end{corollary}
-
-\subsection{Recasting the projection-ramification map for scrolls} Let $E$ be a rank $r$ ample vector bundle on $\P^{1}$, and set $X = \P E$.  Then a general $r+1$-dimensional subspace 
-\begin{align*}
-    W \subset H^{0}(X, \O(1)) = H^{0}(\P^{1},E)
-\end{align*}
-yields a short exact sequence 
-\begin{align*}
-    0 \to (\det E)^{-1} \to W \otimes \O_{\P^{1}} \to E \to 0
-\end{align*}
-which corresponds to an element $w$ (up to scalar) of the extension space $\Ext^{1}(E,(\det E)^{-1})$. The assignment $W \mapsto [w] \in \P(\Ext^{1}(E,(\det E)^{-1}))$ is easily seen to be a birational map between $\G := \Gr(n+1,H^{0}(E))$ and $\P(\Ext^{1}(E,(\det E)^{-1}))$.
-
-The ramification linear series $|R|$ is the projectivization of the vector space $V = H^{0}(E \otimes \det E \otimes K_{\P^{1}})$.  By Serre duality, $V$ is dual to $\Ext^{1}(E,(\det E)^{-1})$.  Therefore, the projection-ramification map $\rho_{X}$ may be recast as a map
-\begin{align*}
-    \delta_{X}: \P(V^{*}) \dashrightarrow \P(V)
-\end{align*}
 
 
 

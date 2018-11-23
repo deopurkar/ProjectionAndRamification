@@ -1,0 +1,5 @@
+echo "Running bibtool on $1 and saving to new$1"
+bibtool -r rules.rsc "$1" > "new$1"
+echo "Moving new$1 to $1"
+mv "new$1" $1
+

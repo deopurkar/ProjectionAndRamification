@@ -149,7 +149,7 @@ Our focus is the following question.
   Is $\rho_{X}$ generically finite onto its image? In other words, does the image of $\rho_X$ have maximal possible dimension?
 \end{question}
 
-To our knowledge, this question first appeared in the work of Flenner and Manaresi \cite{fle.man:98}.
+To our knowledge, this question first appeared explicitly in the work of Flenner and Manaresi \cite{fle.man:98}, with the authors' original motivation being to understand St\"uckrad-Vogel cycles.  
 Our first result answers this question affirmatively for a large class of varieties.
 We say that $X \subset \P^n$ is \emph{incompressible} if for every $(n-r-1)$-dimensional linear subspace $L \subset \P^n$, the projection map $p_L \from X \dashrightarrow \P^r$ is dominant.
 Recall that the dual variety $X^* \subset {\P^n}^*$ is the closure of the locus of hyperplanes in $\P^n$ whose intersection with the smooth part of $X$ is singular.
@@ -247,7 +247,7 @@ For $X$ of codimension $1$, namely a quadric hypersurface, the projection-ramifi
 is again regular, and is in fact the duality isomorphism induced by the (non-degenerate) quadric $X$.
 
 The case of the Veronese surface and of the quartic surface scroll in \autoref{Thm:Examples} are particularly delightful; these are treated in \autoref{sec:enumerativeproblems}.
-They involve intricate classical projective geometry that intertwines cubic plane curves, Steinerians and Cayleyans, and apolarity.
+They involve intricate classical projective geometry that intertwines cubic plane curves, Steinerians and Cayleyans, conjugate triangles, and polarity.
 
 The cases of the most unbalanced surface and threefold scrolls follow from direct calculation.
 Note, however, that for the most unbalanced scroll in dimension 4 and higher, the projection-ramification map is not dominant.
@@ -301,7 +301,7 @@ The projection-ramification map generalizes the Wronski map
 \[ \rho \from \Gr(2, n+1) \to \P^{2n-2}.\]
 The geometry surrounding the Wronski map has received a lot of attention, thanks to the B. and M. Shapiro conjecture.
 This conjecture states that the pre-image of any point in $\P^{2n-2}$ defined by a set of $(2n-2)$ real points on $\P^1$ consists entirely of real points in $\Gr(2, n+1)$ \cite{sot:00} (the conjecture has been proved by Eremenko and Gabrielov \cite{ere.gab:02}).
-\autoref{theorem:minimaldegree} potentially sets the stage for a higher-dimensional generalization of the body of work around the Shapiro conjecture.
+\autoref{theorem:minimaldegree} potentially sets the stage for a higher-dimensional generalization of the body of work around the Shapiro conjecture.  In particular, it would be interesting to find a uniform topological picture explaining the enumerative numbers $\deg \rho_{X}$ similar to the ``nets" introduced by Eremenko and Gabrielov, which explained the appearance of Catalan numbers.
 
 The study of $\rho_X$ in positive characteristic is likely to bring new surprises and require different techniques.
 We do not know if \autoref{thm:main} or \autoref{theorem:minimaldegree} holds in positive characteristic; our proof certainly does not.
@@ -1113,7 +1113,7 @@ Set $X = \P E$ and $L = \O_X(1)$.
   Suppose $\hat \alpha = \hat \beta = \hat \gamma = 0$.
   Then $(bt-d)(\hat a t - \hat c) + (at-c) + (\hat d' - \hat b' t) = 0$.
   However, for generic $a, b, c, d$, the polynomials $(bt-d)$ and $(at-c)$ have degree $(k+2)$ and are relatively prime.
-  So they no non-trivial syzygy with coefficients of degree at most $k+1$.
+  So they have no non-trivial syzygy with coefficients of degree at most $k+1$.
   As a result, we get $\hat a t - \hat c = 0$ and $\hat d' - \hat b' t = 0$.
   Along with $at -c = 0$ and $d - bt = 0$, we get $a = b = c = d = 0$.
   Thus, $d \rho^*$ is injective.
@@ -1126,7 +1126,7 @@ Set $X = \P E$ and $L = \O_X(1)$.
   To show that $\rho$ is birational, it suffices to show that the generic fiber of $\rho$ is connected.
   For this, it suffices to show that the generic fiber of $\rho^*$ is connected.
   However, observe that the fiber of $\rho^*$ over $(\alpha, \beta, \gamma)$ is given by the equations
-  \[ \alpha = d - bt, \beta = at - c, \gamma = \alpha' beta - \beta' \alpha + \alpha a + \beta b,\]
+  \[ \alpha = d - bt, \beta = at - c, \gamma = \alpha' \beta - \beta' \alpha + \alpha a + \beta b,\]
   which are affine linear equations in $a,b,c,d$.
   Hence, the fibers of $\rho^*$ are affine spaces, which are connected.
   The proof is now complete.  

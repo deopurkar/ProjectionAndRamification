@@ -137,11 +137,36 @@ The set of critical points of this map is the ramification divisor $R(L) \subset
 By the Riemann--Hurwitz formula, $R(L)$ lies in the linear series $|K_X + (r+1)H|$, where $K_X$ is the canonical class, and $H$ is the hyperplane class on $X$.
 The association $L \leadsto R(L)$ gives a rational map
 \[
-  \rho \from \Gr(n-r-1, n+1) \dashrightarrow |K_X + (r+1)H|.
+  \rho \from \Gr(n-r, n+1) \dashrightarrow |K_X + (r+1)H|.
 \]
-We can rephrase in terms of $\rho$ the questions raised in the introduction: is $\rho$ generically finite, and if so, what is the degree of $\rho$?
+In terms of $\rho$, we can formulate the two questions raised in the introduction more precisely.
+Knowing the behavior of the ramification locus under a perturbation is equivalent to knowing whether the map $\rho$ is generically finite, or equivalently, whether the image of $\rho$ has the maximal possible dimension.
+In the literature, this question is known as the question of maximal variation of the ramification locus.
+Knowing the number of maps with the same ramification locus is knowing the degree of $\rho$.
 Our main goal is to answer these questions.
 
+\subsection{Maximal variation}
+The question of maximal variation of $\rho$ first appeared explicitly in the work of FLenner and Manaresi \cite{fle.man:98} in connection with the transcendence degree of the St\"uckrad-Vogel cycle in intersection theory. 
+We prove that $\rho$ has maximal variation for a large class of $X \subset \P^n$.
+\begin{maintheorem}\label{thm:main}
+  Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over a field of characteristic zero.
+  Suppose at least one of the following holds:
+  \begin{enumerate}
+  \item\label{item:incomp}(incompressibility) for every linear subspace $L \subset \P^n$ of dimension $(n-r-1)$, projection from $L$ restrict to a dominant rational map $X \dashrightarrow \P^r$;
+  \item\label{item:dual}(divisorial dual) the dual variety $X^* \subset {\P^n}^*$ is a hypersurface.
+  \end{enumerate}
+  Then $\rho_{X}$ is generically finite onto its image.
+\end{maintheorem}
+Recall that the dual variety $X^* \subset {\P^n}^*$ is the locus of hyperplanes $H \subset \P^n$ such that $X \cap H$ is singular.
+We call $X \subset \P^n$ satisfying \eqref{item:incomp} \emph{incompressible} as it cannot be projected down (compressed) to a smaller dimensional subvariety by a linear projection.
+The main result of \cite{fle.man:98} obtained the conclusion of \autoref{thm:main} assuming incompressibility.
+
+\autoref{thm:main} substantially increases the class of varieties where we now know maximal variation.
+Indeed, it is easy to see that if $X$ is a smooth surface over a field of characteristic $0$, then the dual variety $X^*$ is a hypersurface.
+Therefore, maximal variation holds for all surfaces.
+Note, in contrast, that not all surfaces are incompressible.
+The smallest counterexample is the cubic surface scroll $X \subset \P^4$---the projection from the directrix $L \subset X$ projects $X$ onto a $\P^1$.
+Thus, even for surfaces, \autoref{item:dual} of \autoref{thm:main} covers new ground.
 
 
 
@@ -163,15 +188,7 @@ To our knowledge, this question first appeared explicitly in the work of Flenner
 Our first result answers this question affirmatively for a large class of varieties.
 We say that $X \subset \P^n$ is \emph{incompressible} if for every $(n-r-1)$-dimensional linear subspace $L \subset \P^n$, the projection map $p_L \from X \dashrightarrow \P^r$ is dominant.
 Recall that the dual variety $X^* \subset {\P^n}^*$ is the closure of the locus of hyperplanes in $\P^n$ whose intersection with the smooth part of $X$ is singular.
-\begin{maintheorem}\label{thm:main}
-  Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over a field of characteristic zero.
-  Suppose at least one of the following holds:
-  \begin{enumerate}
-  \item\label{item:incomp} $X$ is incompressible, 
-  \item\label{item:dual} the dual variety $X^* \subset {\P^n}^*$ is a hypersurface.
-  \end{enumerate}
-  Then $\rho_{X}$ is generically finite onto its image.
-\end{maintheorem} 
+
 We do not assume that $X$ is smooth in the statement of \autoref{thm:main}.
 This requires defining $\rho_X$ more carefully.
 To state the conclusion informally, if we move a generic $L \subset \P^n$ of complementary dimension, then the ramification locus $R_L \subset X$ also moves.

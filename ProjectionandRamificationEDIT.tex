@@ -123,17 +123,27 @@
 \maketitle
 \tableofcontents
 
-
 \section{Introduction}\label{sec:intro}
-Let $X \subset \P^n$ be a smooth projective variety of dimension $r$, not contained in any hyperplane.
-Projection from a general $(n-r-1)$-dimensional linear subspace $L \subset \P^n$ defines a finite surjective map $X \to \P^r$ and its ramification divisor $R(L) \subset X$.
-The goal of this paper is to study the relationship between the geometry of $X$ and the map $L \mapsto R(L)$.
-To make matters more precise, note that by the Riemann--Hurwitz formula, the ramification divisor $R(L)$ lies in the linear series $|K_X + (r+1)H|$, where $K_X$ is the canonical class, and $H$ is the hyperplane class on $X$.
-We can then interpret the map $L \mapsto R(L)$ as a (rational) map
+Let $f \from X \to Y$ be a map between smooth algebraic varieties.
+A fundamental object associated to $f$ is the set $R(f) \subset X$ consisting of critical points of $f$, namely the points $x \in X$ at which $df \from T_xX \to T_{f(x)}Y$ has less than maximal rank.
+To what extent can $f$ be recovered from $R(f)$?
+For example, does every non-trivial perturbation of $f$ induce a non-trivial perturbation of $R(f)$?
+If this is the case, then how many other $g \from X \to Y$ have $R(g) = R(f)$?
+The goal of this paper is to explore these questions when $X$ is a smooth projective variety and $Y$ is a projective space of the same dimension as $X$.
+
+More precisely, let $X \subset \P^n$ be a smooth projective variety of dimension $r$, not contained in a hyperplane.
+A general $(n-r-1)$-dimensional linear subspace $L \subset \P^n$ defines a finite surjective map $X \to \P^r$.
+The set of critical points of this map is the ramification divisor $R(L) \subset X$.
+By the Riemann--Hurwitz formula, $R(L)$ lies in the linear series $|K_X + (r+1)H|$, where $K_X$ is the canonical class, and $H$ is the hyperplane class on $X$.
+The association $L \leadsto R(L)$ gives a rational map
 \[
-  \rho_X \from \Gr(n-r, n+1) \dashrightarrow |K_X + (r+1)H|.
+  \rho \from \Gr(n-r-1, n+1) \dashrightarrow |K_X + (r+1)H|.
 \]
-Our goal is to explore the relationship between the geometry of $X$ and various properties of $\rho_X$ such as generic fiber dimension and degree.
+We can rephrase in terms of $\rho$ the questions raised in the introduction: is $\rho$ generically finite, and if so, what is the degree of $\rho$?
+Our main goal is to answer these questions.
+
+
+
 
 A simple argument shows that $\rho_X$ is itself a linear projection of $\Gr(n-r, n+1)$ in its Pl\"ucker embedding.
 When $X$ is a smooth curve over a field of characteristic $0$, the map $\rho_X$ is regular everywhere on $\Gr(n-r, n+1)$.

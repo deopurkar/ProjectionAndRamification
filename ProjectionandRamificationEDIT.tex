@@ -154,7 +154,8 @@ Our main goal is to answer these questions.
 
 \subsection{Maximal variation}
 The question of maximal variation of $\rho$ first appeared explicitly in the work of Flenner and Manaresi \cite{fle.man:98} in connection with the transcendence degree of the St\"uckrad-Vogel cycle in intersection theory. 
-We prove that $\rho$ has maximal variation for a large class of $X \subset \P^n$.
+They established maximal variation under a condition we call incompressibility.
+We prove the following more general theorem.
 \begin{maintheorem}\label{thm:main}
   Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over a field of characteristic zero.
   Suppose at least one of the following holds:
@@ -270,7 +271,7 @@ The following result summarizes our knowledge of the degree of $\rho$.
   \item If $X = \P(\O_{\P^{1}}(1) \oplus \O_{\P^{1}}(1) \oplus \O_{\P^{1}}(k+1)) \subset \P^{k+5}$ is the threefold scroll with the most imbalanced splitting type, then $\deg \rho = 1$.
 \end{enumerate} 
 \end{maintheorem}
-In the main text, the items in \autoref{thm:examples} are \autoref{sec:arnc}, \autoref{sec:aquadricsurface}, \autoref{prop:segre}, \autoref{prop:veronese}, \autoref{prop:quarticscroll}, \autoref{prop:eccentric_surface}, and \autoref{prop:eccentric_threefold}, respectively.
+In the main text, the items in \autoref{thm:examples} are treated in \autoref{sec:arnc}, \autoref{sec:aquadricsurface}, \autoref{prop:segre}, \autoref{prop:veronese}, \autoref{prop:quarticscroll}, \autoref{prop:eccentric_surface}, and \autoref{prop:eccentric_threefold}, respectively.
 
 \subsection{Further remarks}
 There are two natural enumerative problems regarding finite coverings of curves.
@@ -369,10 +370,16 @@ In \autoref{sec:enumerativeproblems}, we turn to the enumerative problem of find
 We treat the cases of rational normal curves and quadric hypersurfaces quickly in \autoref{sec:arnc} and \autoref{sec:aquadricsurface}.
 We devote \autoref{sec:veronese} to the case of the Veronese surface and \autoref{sec:quartic_scroll} to the case of the quartic surface scroll.
 
+\subsection*{Acknowledgements}
+A.D. thanks the Australian Research Council for the grant number \emph{DE180101360} that supported a part of this project.
+A.D. and A.P. conducted a part of this research at the Banff International Research Center while attending the workshop titled \emph{Moduli spaces, birational geometry, and wall crossings} organized by Dan Abramovich, Jim Bryan, and Dawei Chen, and are grateful for the opportunity.
+We also thank Izzet Coskun for enlightening discussions related to the project.
+
+
 \section{The projection-ramification map}\label{sec:prmap}
-In this section, we define a projection-ramification map for a pair $(X, L)$ consisting of a proper, normal, variety $X$ and a sufficiently positive line bundle $L$ on $X$.
-For $X \subset \P^n$, taking $L = \O(1)$ recovers the projection-ramification map introduced in \autoref{sec:intro}.
-Working with abstract pairs, however, offers more flexibility that is helpful in inductive proofs.
+In this section, we define a projection-ramification map for a linear series on a proper, normal, variety $X$.
+For $X \subset \P^n$, taking the linear series cut out by the hyperplanes recovers the projection-ramification map introduced in \autoref{sec:intro}.
+Working with abstract linear series, however, offers more flexibility that is helpful in inductive proofs.
 
 Let $X$ be a proper variety of dimension $r$ over an algebraically closed field $k$ of characteristic zero.
 A \emph{linear series} on $X$ is a pair $(L, W)$ consisting of a line bundle $L$ on $X$ and a subspace $W \subset H^0(X, L)$.

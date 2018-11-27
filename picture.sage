@@ -57,14 +57,14 @@ allAffineCurves = [(f).substitute({f.parent()(X):x, f.parent()(Y):y, f.parent()(
 pts = 500
 M = 5.5
 affinePlots = [implicit_plot(allAffineCurves[0], (-M,M),(-M,M), plot_points = pts, linewidth=1, color='black', linestyle="dotted"),
-               implicit_plot(allAffineCurves[1], (-M,M),(-M,M), plot_points = pts, linewidth=2, color='purple'),
+               implicit_plot(allAffineCurves[1], (-M,M),(-M,M), plot_points = pts, linewidth=2, color='green'),
                implicit_plot(allAffineCurves[2], (-M,M),(-M,M), plot_points = pts, linewidth=2, color='orange'),
-               implicit_plot(allAffineCurves[3], (-M,M),(-M,M), plot_points = pts, linewidth=1, color='blue', linestyle="dashed"),
-               implicit_plot(allAffineCurves[4], (-M,M),(-M,M), plot_points = pts, linewidth=1, color='blue', linestyle="dashed"),
-               implicit_plot(allAffineCurves[5], (-M,M),(-M,M), plot_points = pts, linewidth=1, color='blue', linestyle="dashed"),
-               implicit_plot(allAffineCurves[6], (-M,M),(-M,M), plot_points = pts, linewidth=1, color='green', linestyle="dashed"),
-               implicit_plot(allAffineCurves[7], (-M,M),(-M,M), plot_points = pts, linewidth=1, color='green', linestyle="dashed"),
-               implicit_plot(allAffineCurves[8], (-M,M),(-M,M), plot_points = pts, linewidth=1, color='green', linestyle="dashed"),
-               point([X1,Y1], marker="o", size=30, color='crimson', alpha=1, zorder=10),
-               point([X2,Y2], marker="o", size=30, color='crimson', alpha=1, zorder=10)]
+               implicit_plot(allAffineCurves[3], (-M,M),(-M,M), plot_points = pts, linewidth=1.5, color='blue', linestyle="dashed"),
+               implicit_plot(allAffineCurves[4], (-M,M),(-M,M), plot_points = pts, linewidth=1.5, color='blue', linestyle="dashed"),
+               implicit_plot(allAffineCurves[5], (-M,M),(-M,M), plot_points = pts, linewidth=1.5, color='blue', linestyle="dashed"),
+               implicit_plot(allAffineCurves[6], (-M,M),(-M,M), plot_points = pts, linewidth=1.5, color='magenta', linestyle="dashed"),
+               implicit_plot(allAffineCurves[7], (-M,M),(-M,M), plot_points = pts, linewidth=1.5, color='magenta', linestyle="dashed"),
+               implicit_plot(allAffineCurves[8], (-M,M),(-M,M), plot_points = pts, linewidth=1.5, color='magenta', linestyle="dashed"),
+               point([X1,Y1], marker="o", size=50, color='red', alpha=1, zorder=10),
+               point([X2,Y2], marker="o", size=50, color='red', alpha=1, zorder=10)]
 

@@ -58,8 +58,8 @@
 
 
 
-\title{Projection and Ramification}
-\author{Anand Deopurkar, Eduard Duryev, \& Anand Patel}
+\title[Projection and ramification]{On the ramification divisors of general projections}
+\author[Deopurkar, Duryev, Patel]{Anand Deopurkar \and Eduard Duryev \and  Anand Patel}
 
 
 
@@ -116,12 +116,17 @@
 \begin{document}
 
 \begin{abstract}
-  When a projective variety is linearly projected to a projective space of the same dimension, a ramification divisor forms. We study basic properties of this projection-ramification assignment, and uncover enumerative phenomena extending the classical appearance of Catalan numbers in the geometry of rational normal curves.
+  We study the the ramification divisors of a general projection of a smooth projective variety onto a linear subspace of the same dimension.
+  We prove that the ramification divisors vary in a maximal dimensional family for a large class of varieties.
+  Going further, we study the map that associates to a linear projection its ramification divisor.
+  We show that this map is dominant for most (but not all!) varieties of minimal degree, using limit linear series of higher rank.
+  We find the degree of this map in some cases, extending the classical appearance of Catalan numbers in the geometry of rational normal curves.
+  We give a geometric explanation of the fibers in terms of torsion points of naturally ocurring elliptic curves in the case of the Veronese surface and the quartic rational scroll.
 \end{abstract}
 
 
 \maketitle
-\tableofcontents
+%\tableofcontents
 
 \section{Introduction}\label{sec:intro}
 Let $f \from X \to Y$ be a map between smooth algebraic varieties.
@@ -155,9 +160,9 @@ We prove that $\rho$ has maximal variation for a large class of $X \subset \P^n$
   \item\label{item:incomp}(incompressibility) for every linear subspace $L \subset \P^n$ of dimension $(n-r-1)$, projection from $L$ restrict to a dominant rational map $X \dashrightarrow \P^r$;
   \item\label{item:dual}(divisorial dual) the dual variety $X^* \subset {\P^n}^*$ is a hypersurface.
   \end{enumerate}
-  Then $\rho_{X}$ is generically finite onto its image.
+  Then $\rho$ is generically finite onto its image.
 \end{maintheorem}
-Recall that the dual variety $X^* \subset {\P^n}^*$ is the locus of hyperplanes $H \subset \P^n$ such that $X \cap H$ is singular.
+Recall that the dual variety $X^* \subset {\P^n}^*$ is the closure of the locus of hyperplanes $H \subset \P^n$ such that the intersection of $H$ with the smooth locus of $X$ is singular.
 We call $X \subset \P^n$ satisfying \eqref{item:incomp} \emph{incompressible} as it cannot be projected down (compressed) to a smaller dimensional subvariety by a linear projection.
 The main result of \cite{fle.man:98} obtained the conclusion of \autoref{thm:main} assuming incompressibility.
 
@@ -166,120 +171,125 @@ Indeed, it is easy to see that if $X$ is a smooth surface over a field of charac
 Therefore, maximal variation holds for all surfaces.
 Note, in contrast, that not all surfaces are incompressible.
 The smallest counterexample is the cubic surface scroll $X \subset \P^4$---the projection from the directrix $L \subset X$ projects $X$ onto a $\P^1$.
-Thus, even for surfaces, \autoref{item:dual} of \autoref{thm:main} covers new ground.
-
-
-
-A simple argument shows that $\rho_X$ is itself a linear projection of $\Gr(n-r, n+1)$ in its Pl\"ucker embedding.
-When $X$ is a smooth curve over a field of characteristic $0$, the map $\rho_X$ is regular everywhere on $\Gr(n-r, n+1)$.
-When $X$ is a rational normal curve, the map $\rho_X$ is also finite.
-In this case, the ramification divisor of a map $\P^1 \to \P^1$ of degree $n$ represented by the rational function $f/g$ is cut out by the Jacobian expression, namely the degree $(2n-2)$ polynomial $f'g - g'f$.
-Since $\rho_X$ is regular, its degree is the degree of the Grassmannian, which in this case is the Catalan number $\frac{(2n-2)!}{n!(n-1)!}$.
-When $X$ has dimension 2 or more, $\rho_X$ may not be regular on the entire Grassmannian, which makes it difficult to understand.
-Nevertheless, it appears that the geometry of $\rho_X$ is related to some fascinating areas of classical projective geometry, and the enumerative questions surrounding $\rho_X$ hint at a rich underlying structure. 
-
-\subsection{Maximal variation}
-Our focus is the following question.
-\begin{question}\label{q:maxvar}
-  Is $\rho_{X}$ generically finite onto its image? In other words, does the image of $\rho_X$ have maximal possible dimension?
-\end{question}
-
-To our knowledge, this question first appeared explicitly in the work of Flenner and Manaresi \cite{fle.man:98}, with the authors' original motivation being to understand St\"uckrad-Vogel cycles.  
-Our first result answers this question affirmatively for a large class of varieties.
-We say that $X \subset \P^n$ is \emph{incompressible} if for every $(n-r-1)$-dimensional linear subspace $L \subset \P^n$, the projection map $p_L \from X \dashrightarrow \P^r$ is dominant.
-Recall that the dual variety $X^* \subset {\P^n}^*$ is the closure of the locus of hyperplanes in $\P^n$ whose intersection with the smooth part of $X$ is singular.
-
-We do not assume that $X$ is smooth in the statement of \autoref{thm:main}.
-This requires defining $\rho_X$ more carefully.
-To state the conclusion informally, if we move a generic $L \subset \P^n$ of complementary dimension, then the ramification locus $R_L \subset X$ also moves.
+Thus, even for surfaces, condition \eqref{item:dual} of \autoref{thm:main} covers new ground.
+In general, let $X$ be of arbitrary dimension embedded in $\P^n$ by a sufficiently positive line bundle (for example, by a sufficiently high Veronese re-embedding).
+Then $X \subset \P^n$ may not be incompressible, but the dual variety $X^*$ will be a hypersurface.
+As a result, $X \subset \P^n$ is covered by condition \eqref{item:dual} of \autoref{thm:main}.
 
 The hypotheses in \autoref{thm:main} are sufficient, but not necessary.
 Indeed, consider $X = \P^{r-1} \times \P^1 \subset \P^{2r-1}$, embedded by the Segre embedding, for $r \geq 3$.
 Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho_X$ is dominant (see \autoref{Thm:Examples}).
 
-To our knowledge, the known results about maximal variation operate under condition \eqref{item:incomp} in \autoref{thm:main}.
-For example, in \cite{fle.man:98}, the authors deduce maximal variation under the condition that for every $(n-r-1)$-dimensional linear subspace $L \subset \P^n$, the join $J(L, X)$ equals $\P^n$, or under the condition that $X$ is smooth and the twisted normal bundle $N_{X/\P^n}(-1)$ is ample.
-Either condition implies that $X$ is incompressible, and hence falls under condition \eqref{item:incomp}.
-If $X$ is a curve or a smooth complete intersection, then $X$ is incompressible, and covered by condition \eqref{item:incomp}.
-
-\autoref{thm:main} substantially increases the class of varieties where we now know maximal variation.
-For example, it is easy to see that if $X$ is a smooth surface over a field of characteristic $0$, then $X^*$ is a hypersurface.
-Therefore, maximal variation holds for all surfaces, although incompressibility may not (The cubic surface scroll $X \subset \P^4$ is the smallest counter example, as the projection from the directrix line of $X$ is not dominant).
-As another source of new examples, take a sufficiently high degree Veronese re-embedding $X \subset \P^N$ of any smooth $X$.
-Then $X^*$ is divisorial, and hence $X$ is covered under \autoref{thm:main}.
-But $X \subset \P^N$ will be compressible.
-
-Given that maximal variation holds in such a large class of varieties, it is natural to wonder if it always holds.
+Given that maximal variation holds for a large class of varieties, it is natural to wonder if it always holds.
 This is not the case.
 \begin{maintheorem}
   \label{Thm:Counterexamples}
-  There exist smooth, non-degenerate, rational normal scrolls $X^{r} \subset \P^{n}$ of every dimension $r \geq 4$ and degree $d \geq r+1$ such that the projection-ramification map $\rho_{X}$ is not generically finite onto its image.
+  There exist smooth, non-degenerate, rational normal scrolls $X \subset \P^{n}$ of every dimension $r \geq 4$ and degree $d \geq r+1$ for which the projection-ramification map $\rho$ is not generically finite onto its image.
 \end{maintheorem}
-\autoref{Thm:Counterexamples} provides the first known examples of varieties with non-maximal variation of ramification divisors.
-We describe the rational normal scrolls in \autoref{Thm:Counterexamples} in \autoref{sec:proof_of_second_result}; they include some of general moduli.
+The existence such varieties has been alluded to by Zak \cite{zak:}, but we do not know any explicit examples written down in the literature.
+We describe the rational normal scrolls in \autoref{Thm:Counterexamples} explicitly; they include scrolls of general moduli.
 
-We now turn our attention to cases where the projection-ramification map $\rho_X$ may be dominant.
-The next result classifies $X \subset \P^n$ for which the source and the target of $\rho_X$ are of the same dimension.
+Having considered the question of maximal variation in general, we turn our attention to cases where the map $\rho$ has a chance to be dominant.
+Our next result classifies such $X \subset \P^n$.
 \begin{maintheorem}\label{theorem:minimaldegree}
   Let $X \subset \P^{n}$ be a smooth, non-degenerate projective variety of dimension $r$ over a field of characteristic zero.
   We have the inequality
-  \[ \dim \Gr(n-r, n+1) \leq \dim |K_X + (r+1)H|,\]
-  where equality holds if and only if $X$ is a variety of minimal degree, that is $\deg X = n-r+1$.
+  \[ \dim \Gr(n-r, n+1) \leq \dim |K_X + (r+1)H|.\]
+  Equality holds if and only if $X$ is a variety of minimal degree, that is $\deg X = n-r+1$.
 \end{maintheorem}
-Recall the list of smooth varieties of minimal degree: rational normal curves, quadric hypersurfaces, the Veronese surface in $\P^5$, and rational normal scrolls.
-By \autoref{thm:main}, $\rho_X$ is dominant for the first three, so we are led to investigate the scrolls.
-It came to us as a surprise that $\rho_X$ is \emph{not} dominant for all scrolls (see \autoref{Thm:Counterexamples}).
-Nevertheless, it is dominant for most scrolls, which we now make precise.
 
-Recall that if $X \subset \P^n$ is a smooth rational normal scroll, then $X$ is isomorphic to the projectivization of an ample vector bundle $E$ on $\P^1$, and the embedding is given by the complete linear series $|\O_{\P E}(1)|$.
+Recall the list of smooth varieties of minimal degree: quadric hypersurfaces, the Veronese surface in $\P^5$, and rational normal scrolls.
+By \autoref{thm:main}, $\rho$ is dominant for hypersurfaces and surfaces, so what remains are the scrolls.
+Among the scrolls, the curves (rational normal curves) and surfaces are again covered by \autoref{thm:main}.
+For threefold scrolls, show by an explicit calculation and a degeneration argument that $\rho$ is dominant (\autoref{corollary:maxVariation3Scrolls}).
+In higher dimensions, the story is complicated, as evidenced by \autoref{Thm:Counterexamples}.
+Nevertheless, we prove the following.
 \begin{maintheorem}
   \label{thm:rationalnormalscrolls}
   Let $X = \P E \subset \P^n$ be a rational normal scroll, where $E$ is a ample vector bundle of rank $r$ on $\P^1$, general in its moduli.
-  If $\deg E = a \cdot (r-1) + b \cdot (2r-1) + 1$ for non-negative integers $a, b$, then the projection-ramification map $\rho_X$ is dominant for $X$.
+  If $\deg E = a \cdot (r-1) + b \cdot (2r-1) + 1$ for non-negative integers $a, b$, then the projection-ramification map $\rho$ is dominant for $X$.
   In particular, the conclusion holds if $E$ is general of degree at least $(r-1)(2r-1) + 1$.
 \end{maintheorem}
-Thus, at least among the general scrolls, the projection-ramification map is dominant except possibly in small degrees.
-We prove \autoref{thm:rationalnormalscrolls} by degeneration, using the theory of limit linear series of higher rank developed by Teixidor i Bigas \cite{tei-i-big:91} and Osserman \cite{oss:14}.
-In the course of proving the theorem, we also demonstrate dominance in the case of $E = \O(1)^{r}$ and $E = \O(2)^r$.
+The proof goes by degeneration.
+We degenerate $X$ to a reducible variety $X_0$, namely the projectivization of a vector bundle on a two-component nodal rational curve.
+Suppose we could define a projection-ramification map for $X_0$ and show that it is dominant, then the same holds $X$, by the upper semi-continuity of fiber dimensions.
+Although promising, this line of attack fails with the most n\"aive definition of the projection-ramification map.
+The right definition requires more sophisticated tools, specifically, the spaces of limit linear series for vector bundles of higher rank developed by Texidor i Bigas \cite{tei-i-big:91} and Osserman \cite{oss:14}.
 
 \subsection{Enumerative problems}
-\autoref{theorem:minimaldegree} and \autoref{thm:rationalnormalscrolls} motivate a gamut of enumerative questions.
-\begin{question}\label{q:degree}
- When $X \subset \P^n$ is a variety of minimal degree, what is the degree of $\rho_X$?
-\end{question}
+\autoref{theorem:minimaldegree} and \autoref{thm:rationalnormalscrolls} motivate a natural set of enumerative questions: for $X \subset \P^n$ of minimal degree, what is the degree of the projection-ramification map $\rho$?
+We make the convention that if $\rho$ is not dominant, then its degree is $0$.
 
-
-The following result summarizes our knowledge of the answers to \autoref{q:degree}.
-\begin{maintheorem}\label{Thm:Examples}\mbox{}
-\begin{enumerate}
-  \item If $X \subset \P^{n}$ is a rational normal curve, then $\rho_X$ is regular and $\deg \rho_{X} = \frac{(2n-2)!}{n!(n-1)!}$.
-  \item  If $X \subset \P^{n}$ is a quadric hypersurface, then $\rho_{X}$ is an isomorphism.
-
-  \item  If  $X = \P^{r-1} \times \P^{1} \hookrightarrow \P^{2r-1}$ is the Segre embedding, then $ \rho_{X}$ is birational.
-
-  \item  If $X \subset \P^{5}$ is the Veronese surface, then $ \deg \rho_{X} = 3$.
-  \item If $X \subset \P^{5}$ is a general quartic surface scroll, then $\deg \rho_{X} = 2$.
-  \item If $X = \P(\O_{\P^{1}}(1) \oplus \O_{\P^{1}}(k+1)) \subset \P^{k+3}$ is the surface scroll with most imbalanced splitting type, then $\rho_{X}$ is birational.
-  \item If $X = \P(\O_{\P^{1}}(1) \oplus \O_{\P^{1}}(1) \oplus \O_{\P^{1}}(k+1)) \subset \P^{k+5}$ is the threefold scroll with most imbalanced splitting type, then $\rho_{X}$ is birational.
-\end{enumerate} 
-\end{maintheorem}
-
-For $X$ of dimension $1$, namely a rational normal curve, the projection-ramification map
-\[ \rho_X \from \Gr(2, n+1) \to \P^{2n-2}\]
-is regular, and defined by the Pl\"ucker line bundle on the Grassmannian.
-Therefore, its degree is the top self-intersection of the Pl\"ucker line bundle, which in this case is the Catalan number $\frac{(2n-2)!}{n!(n-1)!}$.
+For $X$ of dimension 1, namely a rational normal curve, the answer is easy to find---the degree of $\rho$ is the Catalan number $\frac{(2n-2)!}{n!(n-1)!}$.
+Indeed, in this case, the projection-ramification map
+\[ \rho \Gr(2, n+1) \to \P^{2n-2}\]
+is regular, and the pullback of $\O(1)$ is the Pl\"ucker line bundle.
+Therefore, the degree of $\rho$ is the top self-intersection of the Pl\"ucker bundle.
+Schubert calculus gives that this is the Catalan number.
 
 For $X$ of codimension $1$, namely a quadric hypersurface, the projection-ramification map
 \[ \rho_X \from \Gr(n, n+1) = \P^{n} \to {\P^n}^* \]
 is again regular, and is in fact the duality isomorphism induced by the (non-degenerate) quadric $X$.
+In particular, it has degree $1$.
 
-The case of the Veronese surface and of the quartic surface scroll in \autoref{Thm:Examples} are particularly delightful; these are treated in \autoref{sec:enumerativeproblems}.
-They involve intricate classical projective geometry that intertwines cubic plane curves, Steinerians and Cayleyans, conjugate triangles, and polarity.
+The cases of the Veronese surface $X \cong \P^2 \subset \P^5$ and the quartic surface scroll $X = \P(\O(2) \oplus \O(2)) \subset \P^5$ are particularly delightful.
+In these cases, the fibers of $\rho$ have an interpretation in terms of two torsion points of certain elliptic curves, which we now describe.
+For the Veronese surface, the target of $\rho$ is the linear series of cubics in $\P^2$.
+The points of fiber of $\rho$ over a cubic $R \subset \P^2$ correspond naturally to the non-trivial two torsion points of $\Pic R$.
+In particular, the degree of $\rho$ is $3$.
+For the quartic surface scroll, the target of $\rho$ modulo the action of $\Aut X$ is birational to the moduli space of $(R, \eta)$ where $R$ is a plane cubic and $\eta$ is a non-trivial two torsion point of $\Pic R$.
+The points of the fiber of $\rho$ over $(R, \eta)$ corresponds naturally to the two torsion points of $\Pic R$ other than $0$ and $\eta$.
+In particular, the degree of $\rho$ is $2$.
+In this case, the source of $\rho$ modulo the action of $\Aut X$ has several known moduli interpretations.
+It birational to the moduli of undered triplets of unordered pairs of points on $\P^1$, namely $M_{0,6}/(S_2 \times S_2 \times S_2 \rtimes S_3)$.
+This space, in turn, is isomorphic to the moduli space of hyperelliptic curves with a maximal isotropic subspace of the $\F_2$-vector space of $2$ torsion points, or equivalently, to the moduli of principally polarized abelian surfaces with a maximal isotropic subspace of the $\F_2$-vector space of $2$-torsion points \cite[Example~4.2]{dol.how:15}.
+The involution on this space induced by the $2$-to-$1$ map $\rho$ coincides with the classical Richelot or Fricke involution \cite[Remark~4.3]{dol.how:15}.
 
-The cases of the most unbalanced surface and threefold scrolls follow from direct calculation.
-Note, however, that for the most unbalanced scroll in dimension 4 and higher, the projection-ramification map is not dominant.
-For scrolls, $\rho_X$ is not regular.
-Furthermore, the complexity of the base locus of $\rho_X$ effectively blocks any straightforward application of the excess intersection formula.
+
+The following result summarizes our knowledge of the degree of $\rho$.
+\begin{maintheorem}\label{Thm:Examples}
+  Let $\rho$ be the projection-ramification map for $X \subset \P^n$ of minimal degree.
+\begin{enumerate}
+  \item If $X \subset \P^{n}$ is a rational normal curve, then $\rho$ is regular and $\deg \rho = \frac{(2n-2)!}{n!(n-1)!}$.
+  \item  If $X \subset \P^{n}$ is a quadric hypersurface, then $\rho$ is an isomorphism; in particular, $\deg \rho = 1$.
+
+  \item  If  $X = \P^{r-1} \times \P^{1} \hookrightarrow \P^{2r-1}$ is the Segre embedding, then $\deg \rho = 1$.
+
+  \item  If $X \subset \P^{5}$ is the Veronese surface, then $ \deg \rho = 3$.
+  \item If $X \subset \P^{5}$ is a general quartic surface scroll, then $\deg \rho = 2$.
+  \item If $X = \P(\O_{\P^{1}}(1) \oplus \O_{\P^{1}}(k+1)) \subset \P^{k+3}$ is the surface scroll with most imbalanced splitting type, then $\deg \rho = 1$.
+  \item If $X = \P(\O_{\P^{1}}(1) \oplus \O_{\P^{1}}(1) \oplus \O_{\P^{1}}(k+1)) \subset \P^{k+5}$ is the threefold scroll with most imbalanced splitting type, then $\deg \rho = 1$.
+\end{enumerate} 
+\end{maintheorem}
+
+\subsection{Further remarks}
+There are two natural enumerative problems regarding finite coverings of curves.
+The first problem, originating in the work of Hurwitz, is to compute the number of branched covers $C \to \P^1$ with a specified set of branch points $B \subset \P^1$.
+These numbers, called the Hurwitz numbers, are difficult to compute, but they exhibit remarkable structure \cite{ell.ven.wes:09,eke.lan.sha.ea:01}.
+The second problem is to compute the number of maps $C \to \P^1$ with a prescribed set of ramification points $R \subset C$.
+This problem is much more elementary, and solvable using Schubert calculus.
+For $C = \P^1$, the numbers are the Catalan numbers, as we have seen.
+
+In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, thanks to Chisini's conjecture (proved by Kulikov \cite{kul:99}).
+A branched cover $S \to \P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^2$, with finitely many well-understood examples.
+In contrast, as hinted by \autoref{theorem:minimaldegree}, the enumerative problem regarding the ramification divisor persists, and poses a significant challenge.
+In some sense, the enumerative problems regarding branch and ramification divisors trade places, certainly in terms of difficulty, but hopefully also in terms of structure.
+
+
+\subsection{Further questions}
+
+
+The projection-ramification map generalizes the Wronski map
+\[ \rho \from \Gr(2, n+1) \to \P^{2n-2}.\]
+The geometry surrounding the Wronski map has received a lot of attention, thanks to the B. and M. Shapiro conjecture.
+This conjecture states that the pre-image of any point in $\P^{2n-2}$ defined by a set of $(2n-2)$ real points on $\P^1$ consists entirely of real points in $\Gr(2, n+1)$ \cite{sot:00} (the conjecture has been proved by Eremenko and Gabrielov \cite{ere.gab:02}).
+\autoref{theorem:minimaldegree} potentially sets the stage for a higher-dimensional generalization of the body of work around the Shapiro conjecture.  In particular, it would be interesting to find a uniform topological picture explaining the enumerative numbers $\deg \rho_{X}$ similar to the ``nets" introduced by Eremenko and Gabrielov, which explained the appearance of Catalan numbers.
+
+The study of $\rho_X$ in positive characteristic is likely to bring new surprises and require different techniques.
+We do not know if \autoref{thm:main} or \autoref{theorem:minimaldegree} holds in positive characteristic; our proof certainly does not.
+The answers to the enumerative questions \autoref{q:degree} do depend on the characteristic, even in the simplest case of rational normal curves, due to the presence of inseparable covers \cite{oss:06}.
+
+
 
 A smooth rational normal scroll $X \subset \P^n$ of degree $d$ and dimension $r$ is isomorphic to the projectivization of an ample vector bundle $E$ on $\P^1$, which in turn is isomorphic to a direct sum $\O(a_1) \oplus \dots \oplus \O(a_r)$ for positive integers $a_1, \dots, a_r$ satisfying $d = a_1 + \dots + a_r$.
 Let $\Sigma_{r,d}$ be the set of $r$-term partitions of $d$.
@@ -310,29 +320,6 @@ We plan to return to a more complete enumerative investigation of $\rho$ in a fu
   
   \caption{Degree of $\rho_X$ for $X = \P(\O(a_1) \oplus \O(a_2))$} \label{tab:computation}
 \end{table}
-
-
-\subsection{Further remarks and questions}
-One of the  central enumerative problems concerning branch divisors, originating in the work of Hurwitz, is to compute the number of branched covers of the projective line with specified branch set in $\P^1$.
-This number is called the Hurwitz number.
-As is well known, the Hurwitz numbers are difficult to compute, but they exhibit remarkable structure.
-There is a related question of computing the number of rational functions on $\P^1$ with a prescribed ramification set.
-This question is much more elementary, and yields the Catalan numbers, as we have seen.
-
-In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, thanks to Chisini's conjecture (now Kulikov's theorem \cite{kul:99}).
-Kulikov's theorem asserts that a branched cover $S \to \P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^{2}$, with finitely many well-understood exceptions.
-In contrast, the enumerative problem regarding ramification divisors persists in all dimensions, thanks to \autoref{theorem:minimaldegree}, and poses a significant challenge.
-In some sense, the ``branch'' and ``ramification'' enumerative stories trade places, at least in terms of difficulty, but perhaps also in terms of structure.
-
-The projection-ramification map generalizes the Wronski map
-\[ \rho \from \Gr(2, n+1) \to \P^{2n-2}.\]
-The geometry surrounding the Wronski map has received a lot of attention, thanks to the B. and M. Shapiro conjecture.
-This conjecture states that the pre-image of any point in $\P^{2n-2}$ defined by a set of $(2n-2)$ real points on $\P^1$ consists entirely of real points in $\Gr(2, n+1)$ \cite{sot:00} (the conjecture has been proved by Eremenko and Gabrielov \cite{ere.gab:02}).
-\autoref{theorem:minimaldegree} potentially sets the stage for a higher-dimensional generalization of the body of work around the Shapiro conjecture.  In particular, it would be interesting to find a uniform topological picture explaining the enumerative numbers $\deg \rho_{X}$ similar to the ``nets" introduced by Eremenko and Gabrielov, which explained the appearance of Catalan numbers.
-
-The study of $\rho_X$ in positive characteristic is likely to bring new surprises and require different techniques.
-We do not know if \autoref{thm:main} or \autoref{theorem:minimaldegree} holds in positive characteristic; our proof certainly does not.
-The answers to the enumerative questions \autoref{q:degree} do depend on the characteristic, even in the simplest case of rational normal curves, due to the presence of inseparable covers \cite{oss:06}.
 
 \subsection{Notation and conventions} We work over an algebraically closed field
 $k$ of characteristic $0$ (We use Bertini's theorem and generic smoothness. We

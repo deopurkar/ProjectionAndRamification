@@ -164,6 +164,8 @@ We prove that $\rho$ has maximal variation for a large class of $X \subset \P^n$
   \end{enumerate}
   Then $\rho$ is generically finite onto its image.
 \end{maintheorem}
+In the main text, \autoref{thm:main} is \autoref{cor:maintheorem}.
+
 Recall that the dual variety $X^* \subset {\P^n}^*$ is the closure of the locus of hyperplanes $H \subset \P^n$ such that the intersection of $H$ with the smooth locus of $X$ is singular.
 We call $X \subset \P^n$ satisfying \eqref{item:incomp} \emph{incompressible} as it cannot be projected down (compressed) to a smaller dimensional subvariety by a linear projection.
 The main result of \cite{fle.man:98} obtained the conclusion of \autoref{thm:main} assuming incompressibility.
@@ -188,7 +190,9 @@ This is not the case.
   \label{thm:counterexamples}
   There exist smooth, non-degenerate, rational normal scrolls $X \subset \P^{n}$ of every dimension $r \geq 4$ and degree $d \geq r+1$ for which the projection-ramification map $\rho$ is not generically finite onto its image.
 \end{maintheorem}
-The existence such varieties has been alluded to by Zak \cite{zak:}, but we do not know any explicit examples written down in the literature.
+In the main text, \autoref{thm:counterexamples} is \autoref{cor:actualcounterexamples}.
+
+The existence varieties for which the projection-ramification map is not generically finite has been alluded to by Zak \cite{zak:}, but we do not know any explicit examples written down in the literature.
 We describe the rational normal scrolls in \autoref{thm:counterexamples} explicitly; they include scrolls of general moduli.
 
 Having considered the question of maximal variation in general, we turn our attention to cases where the map $\rho$ has a chance to be dominant.
@@ -199,6 +203,7 @@ Our next result classifies such $X \subset \P^n$.
   \[ \dim \Gr(n-r, n+1) \leq \dim |K_X + (r+1)H|.\]
   Equality holds if and only if $X$ is a variety of minimal degree, that is $\deg X = n-r+1$.
 \end{maintheorem}
+In the main text, \autoref{thm:minimaldegree} is \autoref{thm:actualminimaldegree}.
 
 Recall the list of smooth varieties of minimal degree: quadric hypersurfaces, the Veronese surface in $\P^5$, and rational normal scrolls.
 By \autoref{thm:main}, $\rho$ is dominant for hypersurfaces and surfaces, so what remains are the scrolls.
@@ -212,7 +217,9 @@ Nevertheless, we prove the following.
   If $\deg E = a \cdot (r-1) + b \cdot (2r-1) + 1$ for non-negative integers $a, b$, then the projection-ramification map $\rho$ is dominant for $X$.
   In particular, the conclusion holds if $E$ is general of degree at least $(r-1)(2r-1) + 1$.
 \end{maintheorem}
-The proof goes by degeneration.
+In the main text, \autoref{thm:rationalnormalscrolls} is \autoref{thm:actualrationalnormalscrolls}.
+
+The proof of \autoref{thm:rationalnormalscrolls} goes by degeneration.
 We degenerate $X$ to a reducible variety $X_0$, namely the projectivization of a vector bundle on a two-component nodal rational curve.
 Suppose we could define a projection-ramification map for $X_0$ and show that it is dominant, then the same holds $X$, by the upper semi-continuity of fiber dimensions.
 Although promising, this line of attack fails with the most n\"aive definition of the projection-ramification map.
@@ -263,6 +270,7 @@ The following result summarizes our knowledge of the degree of $\rho$.
   \item If $X = \P(\O_{\P^{1}}(1) \oplus \O_{\P^{1}}(1) \oplus \O_{\P^{1}}(k+1)) \subset \P^{k+5}$ is the threefold scroll with the most imbalanced splitting type, then $\deg \rho = 1$.
 \end{enumerate} 
 \end{maintheorem}
+In the main text, the items in \autoref{thm:examples} are \autoref{sec:arnc}, \autoref{sec:aquadricsurface}, \autoref{prop:segre}, \autoref{prop:veronese}, \autoref{prop:quarticscroll}, \autoref{prop:eccentric_surface}, and \autoref{prop:eccentric_threefold}, respectively.
 
 \subsection{Further remarks}
 There are two natural enumerative problems regarding finite coverings of curves.
@@ -355,7 +363,7 @@ In \autoref{sec:proof_of_theorem:main} we prove \autoref{thm:main}, first assumi
 The notion of non-defectivity abstracts the condition of having a divisorial dual variety.
 Before proving \autoref{thm:mainMain}, we study this notion in \autoref{sec:non-defectivity}.
 In \autoref{sec:minimaldegree}, we prove \autoref{thm:minimaldegree} as \autoref{thm:actualminimaldegree}.
-In the same section, we derive explicit formulas for the ramification divisors for scrolls (\autoref{sec:prscroll}), give the examples advertised in \autoref{thm:counterexamples} (\autoref{sec:failure}), and treat the threefold scrolls (\autoref{sec:eccentric_threefolds}).
+In the same section, we derive explicit formulas for the ramification divisors for scrolls (\autoref{sec:prscrolls}), give the examples advertised in \autoref{thm:counterexamples} (\autoref{sec:failure}), and treat the threefold scrolls (\autoref{sec:eccentric_threefolds}).
 In \autoref{sec:generic}, we prove \autoref{thm:rationalnormalscrolls} as \autoref{thm:actualrationalnormalscrolls}, after having treated some low degree examples by hand in \autoref{sec:lowdegree}, introduced limit linear series for vector bundles of higher rank in \autoref{sec:lls}, and defined the projection-ramification map for limit linear series in \autoref{sec:prnongeneric} and \autoref{sec:prlls}.
 In \autoref{sec:enumerativeproblems}, we turn to the enumerative problem of finding the degree of $\rho$.
 We treat the cases of rational normal curves and quadric hypersurfaces quickly in \autoref{sec:arnc} and \autoref{sec:aquadricsurface}.
@@ -1087,6 +1095,7 @@ We engineer the failure of maximal variation using the following observation.
 \end{proof}
 
 \begin{corollary}[\autoref{thm:counterexamples}]
+  \label{cor:actualcounterexamples}
   Let $r \geq 3$ and $d \geq r+1$.
   There exist ample vector bundles $E$ of rank $r$ and degree $d$ on $\P^1$ such that for $X = \P E$ and the complete linear series $L = \O_X(1)$, the projection-ramification map $\rho_X$ is not generically finite onto its image.
 \end{corollary}
@@ -1114,7 +1123,7 @@ We settle this case in this section by showing that the projection-ramification 
 
 Let $E = \O(1) \oplus \O(1) \oplus \O(k+1)$, for $k \geq 0$.
 Set $X = \P E$ and $L = \O_X(1)$.
-\begin{proposition}
+\begin{proposition}\label{prop:eccentric_threefold}
   The map $\rho_X \from \Gr(4, H^0(X, L)) \dashrightarrow |K_X + 4L|$ is birational.
 \end{proposition}
 \begin{proof}
@@ -1192,6 +1201,12 @@ Set $X = \P E$ and $L = \O_X(1)$.
   The statement now follows from the upper semi-continuity of fiber dimension.
 \end{proof}
 
+The case of eccentric surface scrolls follows by similar calculations as in the proof of \autoref{prop:eccentric_threefold}; we omit the details.
+\begin{proposition}\label{prop:eccentric_surface}
+  Let $E = \O(1) \oplus \O(k+1)$, for $k \geq 0$.
+  Set $X = \P E$ and $L = \O_X(1)$.
+  Then the projection-ramification map $\rho_X \from \Gr(3, H^0(X, L)) \dashrightarrow |K_X + 3L|$ is birational.
+\end{proposition}
 
 \section{Maximal variation for generic scrolls}\label{sec:generic}
 In this section, we establish that the projection-ramification map is generically finite (equivalently, dominant) for most scrolls, notwithstanding the examples provided by \autoref{thm:counterexamples}.
@@ -1429,7 +1444,7 @@ In particular, $v$ is in the closure of $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
 
 Although the definition of a limit linear series demands that we specify infinitely many vector bundles $V_n$, one for each $n \in \Z$, this is neither practical nor necessary.
 In the best case, only specifying the extremal ones, namely $V_{n_1}$ and $V_{n_2}$, suffices, provided that they satisfy some compatibility conditions.
-The original definition of limit linear series due to Eisenbud--Harris \cite{eis.har:86} in the rank 1 case and Teixidor i Bigas \cite{tei-i-big:91} in the general case, took this minimalist approach.
+The original definition of limit linear series due to Eisenbud--Harris \cite{eis.har:86,eis.har:84} in the rank 1 case and Teixidor i Bigas \cite{tei-i-big:91} in the general case, took this minimalist approach.
 
 Let $E_n$ be the restriction of $\mathcal E_n$ to the central fiber $C = X_0$, and set $p = C_1 \cap C_2$.
 \begin{definition}[EHT limit linear series]
@@ -1674,7 +1689,7 @@ The second condition we want to impose is that the vanishing sequence of $W_1 \s
 as in \eqref{eqn:specialvs}; imposing a particular vanishing sequence is again an open condition (see \cite[Proposition~4.2.5]{oss:14}).
 Since $(W_1, W_2)$ is refined, it follows that the vanishing sequence of $W_2 \subset H^0(C_2, E_{n_2}|_{C_2})$ at $p$ is
 \[ (\underbrace{b-a-1, \dots, b-a-1}_{r+1-i}, \underbrace{b-a, \dots, b-a}_{i}).\]
-Recall from \autoref{sec:prnodal} that $W_1$ yields two vector spaces $V^0$ and $V^1$ in the fiber $E_{n_1}|_p$, which we may identify canonically (up to scaling) with the fiber $E|_p$.
+Recall from \autoref{sec:prnongeneric} that $W_1$ yields two vector spaces $V^0$ and $V^1$ in the fiber $E_{n_1}|_p$, which we may identify canonically (up to scaling) with the fiber $E|_p$.
 Likewise, $W_2$ yields two analogous vector spaces, call them $\Lambda^0$ and $\Lambda^1$, in $E|_p$.
 The gluing condition in the definition of EHT limit linear series (\autoref{def:eht}) and the definition of these vector spaces immediately shows that
 \begin{equation}\label{eqn:vlambdaswitch}
@@ -1782,7 +1797,7 @@ We now have all the tools to prove \autoref{thm:rationalnormalscrolls}
   By \autoref{prop:llseht}, it is enough to construct $V_{n_1} \subset H^0(C_1, E_1 \otimes \O(a))$ and $V_{n_2} \subset H^0(C_2, E_2'(b-a))$, provided they define a refined EHT limit linear series.
   Let $V \subset H^0(C_1, E_1)$ be a generic $(r+1)$-dimensional vector space.
   Then it will have the vanishing sequence $(0, \dots, 0, 1)$.
-  Hence, we have $V^0 = E|_0$ and $V^1 \subset E|_0$ is $1$-dimensional (see \autoref{sec:prnodal} for the definition of these two subspaces).
+  Hence, we have $V^0 = E|_0$ and $V^1 \subset E|_0$ is $1$-dimensional (see \autoref{sec:prnongeneric} for the definition of these two subspaces).
   Furthermore, the genericity of $V$ implies that $V^1$ is a general $1$-dimensional subspace.
   Let $\Lambda \subset H^0(C_2, E_2'(1))$ be the image of a general $(r+1)$ dimensional subspace of $H^0(C_2, E_2)$, where $E_2$ is the vector bundle of degree $d_2$ defined by the sequence
   \[ 0 \to E_2 \to E_2'(1) \to E'_2(1)|_0 / V^1 \to 0.\]
@@ -1858,7 +1873,7 @@ Then $\rho(N)$ corresponds to the cubic curve traced out by the nodes of the sin
   The fiber of $\rho$ over $R$ is in natural bijection with the set of non-trivial $2$-torsion line bundles on $R$.
   In particular, we have $\deg \rho = 3$.
 \end{proposition}
-The rest of \autoref{sub:veronese} is devoted to the proof of this assertion.
+The rest of \autoref{sec:veronese} is devoted to the proof of this assertion.
 
 For the proof, we recall some classical projective geometry of cubics and nets of conics from \cite[\S~3]{dol:12}.
 To distinguish the various copies of $\P^2$ that naturally arise in this story, write $\P^2 = \P V$ for a 3 dimensional vector space $V$.
@@ -2039,7 +2054,7 @@ In other words, the triangles $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$ are polar 
 
 Recall that $\xi \in \Hilb^3\P S$ is the point defined by the three vertices of the triangle formed by $(L_1, L_2, L_3)$.
 Let $\xi' \in \Hilb^3\P S$ be the point defined by the three vertices of the triangle formed by $(M_1, M_2, M_3)$.
-\begin{proposition}
+\begin{proposition}\label{prop:quarticscroll}
   In the setup above, $\xi$ and $\xi'$ are the only points of $\Hilb^3\P S$ that map to $N \in \Gr(2, \Sym^2S/q)$.
   In particular, the degree of $\mu \from \Hilb^3\P S \dashrightarrow \Gr(2, \Sym^2S/q)$ is 2.
 \end{proposition}

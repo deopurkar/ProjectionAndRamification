@@ -136,8 +136,8 @@ We can then interpret the map $L \mapsto R(L)$ as a (rational) map
 Our goal is to explore the relationship between the geometry of $X$ and various properties of $\rho_X$ such as generic fiber dimension and degree.
 
 A simple argument shows that $\rho_X$ is itself a linear projection of $\Gr(n-r, n+1)$ in its Pl\"ucker embedding.
-When $X$ is a smooth curve over a field of characteristic $0$, the map $\rho_X$ is regular everywhere on $\Gr(n-r, n+1)$.
-When $X$ is a rational normal curve, the map $\rho_X$ is also finite.
+When $X$ is a smooth curve over a field of characteristic $0$, the map $\rho_X$ is regular everywhere on $\Gr(n-r, n+1)$, and 
+when $X$ is a rational normal curve, the map $\rho_X$ is also finite.
 In this case, the ramification divisor of a map $\P^1 \to \P^1$ of degree $n$ represented by the rational function $f/g$ is cut out by the Jacobian expression, namely the degree $(2n-2)$ polynomial $f'g - g'f$.
 Since $\rho_X$ is regular, its degree is the degree of the Grassmannian, which in this case is the Catalan number $\frac{(2n-2)!}{n!(n-1)!}$.
 When $X$ has dimension 2 or more, $\rho_X$ may not be regular on the entire Grassmannian, which makes it difficult to understand.
@@ -310,6 +310,8 @@ The answers to the enumerative questions \autoref{q:degree} do depend on the cha
 \subsection{Notation and conventions} We work over an algebraically closed field
 $k$ of characteristic $0$ (We use Bertini's theorem and generic smoothness. We
 also appeal to the Kodaira Vanishing theorem.) By a {\sl proper variety}, we mean a proper, integral, finite-type $k$-scheme. For any scheme $X$, we let $X^{\rm sm}$ denote its smooth locus. If $F$ is a coherent sheaf, we let $P(F)$ denote its sheaf of principal parts. We will let $e\from H^{0}(X,F) \to P(F)$ denote the natural evaluation morphism -- we suppress the dependence on $F$. If $s$ is a global section of a locally free sheaf, we let $v(s)$ denote the vanishing scheme of $s$.  If $L$ is a line bundle, we let $|L|$ denote the projective space $\P(H^{0}(L))$.  If $L$ is a line bundle on a smooth variety $Y$, and $s \in H^{0}(Y,L)$ is a section, then the {\sl singular scheme} $\sing(v(s))$ of $s$ is the vanishing scheme of $e(s) \in H^{0}(Y,P(L))$; if $K$, the kernel sheaf of $e \from H^{0}(Y,L) \otimes \cO_{Y} \to P(L)$, is locally free, then $\sing(v(s))$ is the largest closed subscheme $T \subset Y$  such that $s\from \cO_{T} \to H^{0}(Y,L) \otimes \cO_{T}$ factors through $K|_{T}$.  
+
+\subsection{Acknowledgements} First and foremost, we thank Fyodor Zak for generously sharing numerous useful comments, ideas, and encouragement over the span of several months.  We also thank Izzet Coskun, Joe Harris, Mirella Manaresi, and Dennis Tseng for useful conversations. 
 
 \section{The projection-ramification map}\label{sec:prmap}
 In this section, we define a projection-ramification map for a pair $(X, L)$ consisting of a proper, normal, variety $X$ and a sufficiently positive line bundle $L$ on $X$.

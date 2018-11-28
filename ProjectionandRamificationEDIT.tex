@@ -160,7 +160,7 @@ We prove the following more general theorem.
   Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over a field of characteristic zero.
   Suppose at least one of the following holds:
   \begin{enumerate}
-  \item\label{item:incomp}(incompressibility) for every linear subspace $L \subset \P^n$ of dimension $(n-r-1)$, projection from $L$ restrict to a dominant rational map $X \dashrightarrow \P^r$;
+  \item\label{item:incomp}(incompressibility) for every linear subspace $L \subset \P^n$ of dimension $(n-r-1)$, projection from $L$ restricts to a dominant rational map $X \dashrightarrow \P^r$;
   \item\label{item:dual}(divisorial dual) the dual variety $X^* \subset {\P^n}^*$ is a hypersurface.
   \end{enumerate}
   Then $\rho$ is generically finite onto its image.
@@ -172,7 +172,7 @@ We call $X \subset \P^n$ satisfying \eqref{item:incomp} \emph{incompressible} as
 The main result of \cite{fle.man:98} obtained the conclusion of \autoref{thm:main} assuming incompressibility.
 
 \autoref{thm:main} substantially increases the class of varieties where we now know maximal variation.
-Indeed, it is easy to see that if $X$ is a smooth surface over a field of characteristic $0$, then the dual variety $X^*$ is a hypersurface.
+Indeed, it is easy to see that if $X$ is a smooth surface over a field of characteristic zero, then the dual variety $X^*$ is a hypersurface.
 Therefore, maximal variation holds for all surfaces.
 Note, in contrast, that not all surfaces are incompressible.
 The smallest counterexample is the cubic surface scroll $X \subset \P^4$---the projection from the directrix $L \subset X$ projects $X$ onto a $\P^1$.
@@ -183,7 +183,7 @@ As a result, $X \subset \P^n$ is covered by condition \eqref{item:dual} of \auto
 
 The hypotheses in \autoref{thm:main} are sufficient, but not necessary.
 Indeed, consider $X = \P^{r-1} \times \P^1 \subset \P^{2r-1}$, embedded by the Segre embedding, for $r \geq 3$.
-Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho_X$ is dominant (see \autoref{thm:examples}).
+Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho$ is dominant (see \autoref{thm:examples}).
 
 Given that maximal variation holds for a large class of varieties, it is natural to wonder if it always holds.
 This is not the case.
@@ -209,7 +209,7 @@ In the main text, \autoref{thm:minimaldegree} is \autoref{thm:actualminimaldegre
 Recall the list of smooth varieties of minimal degree: quadric hypersurfaces, the Veronese surface in $\P^5$, and rational normal scrolls.
 By \autoref{thm:main}, $\rho$ is dominant for hypersurfaces and surfaces, so what remains are the scrolls.
 Among the scrolls, the curves (rational normal curves) and surfaces are again covered by \autoref{thm:main}.
-For threefold scrolls, show by an explicit calculation and a degeneration argument that $\rho$ is dominant (\autoref{cor:maxvariation3scrolls}).
+For threefold scrolls, we show by an explicit calculation and a degeneration argument that $\rho$ is dominant (\autoref{cor:maxvariation3scrolls}).
 In higher dimensions, the story is complicated, as evidenced by \autoref{thm:counterexamples}.
 Nevertheless, we prove the following.
 \begin{maintheorem}
@@ -228,7 +228,7 @@ The right definition requires more sophisticated tools, specifically, the spaces
 
 \subsection{Enumerative problems}
 \autoref{thm:minimaldegree} and \autoref{thm:rationalnormalscrolls} motivate a natural set of enumerative questions: for $X \subset \P^n$ of minimal degree, what is the degree of the projection-ramification map $\rho$?
-We make the convention that if $\rho$ is not dominant, then its degree is $0$.
+We make the convention that if a map is not dominant, then its degree is $0$.
 
 For $X$ of dimension 1, namely a rational normal curve, the answer is easy to find---the degree of $\rho$ is the Catalan number $\frac{(2n-2)!}{n!(n-1)!}$.
 Indeed, in this case, the projection-ramification map
@@ -250,9 +250,9 @@ In particular, the degree of $\rho$ is $3$.
 For the quartic surface scroll, the target of $\rho$ modulo the action of $\Aut X$ is birational to the moduli space of $(R, \eta)$ where $R$ is a plane cubic and $\eta$ is a non-trivial two torsion point of $\Pic R$.
 The points of the fiber of $\rho$ over $(R, \eta)$ corresponds naturally to the two torsion points of $\Pic R$ other than $0$ and $\eta$.
 In particular, the degree of $\rho$ is $2$.
-In this case, the source of $\rho$ modulo the action of $\Aut X$ has several known moduli interpretations.
-It birational to the moduli of undered triplets of unordered pairs of points on $\P^1$, namely $M_{0,6}/(S_2 \times S_2 \times S_2 \rtimes S_3)$.
-This space, in turn, is isomorphic to the moduli space of hyperelliptic curves with a maximal isotropic subspace of the $\F_2$-vector space of $2$ torsion points, or equivalently, to the moduli of principally polarized abelian surfaces with a maximal isotropic subspace of the $\F_2$-vector space of $2$-torsion points \cite[Example~4.2]{dol.how:15}.
+In this case, the source of $\rho$, the Grassmannian $\Gr(3, H^0(X, \O(1)))$, modulo the action of $\Aut X$ has several known moduli interpretations.
+It is birational to the moduli of undered triplets of unordered pairs of points on $\P^1$, namely $M_{0,6}/(S_2 \times S_2 \times S_2 \rtimes S_3)$.
+This space, in turn, is isomorphic to the moduli of hyperelliptic curves with a maximal isotropic subspace of the $\F_2$-vector space of $2$ torsion points, or equivalently, to the moduli of principally polarized abelian surfaces with a maximal isotropic subspace of the $\F_2$-vector space of $2$-torsion points \cite[Example~4.2]{dol.how:15}.
 The involution on this space induced by the $2$-to-$1$ map $\rho$ coincides with the classical Richelot or Fricke involution \cite[Remark~4.3]{dol.how:15}.
 See \autoref{rem:richelot} for more details.
 
@@ -284,14 +284,15 @@ For $C = \P^1$, the numbers are the Catalan numbers, as we have seen.
 In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, thanks to Chisini's conjecture (proved by Kulikov \cite{kul:08}).
 A branched cover $S \to \P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^2$, with finitely many well-understood examples.
 In contrast, as hinted by \autoref{thm:minimaldegree}, the enumerative problem regarding the ramification divisor persists, and poses a significant challenge.
-In some sense, the enumerative problems regarding branch and ramification divisors trade places, certainly in terms of difficulty, but hopefully also in terms of structure.
+In some sense, the enumerative problems regarding the branch and ramification divisors trade places, certainly in terms of difficulty, but hopefully also in terms of structure.
 
 
 \subsection{Further questions}
 Our work raises several questions, some of which we hope to return to in a sequel.
 \subsubsection{The enumerative problem for scrolls}\label{sec:qscroll}.
 Recall that every vector bundle on $\P^1$ is isomorphic to a direct sum of line bundles.
-In particular, an ample vector bundle of rank $r$ and degree $d$ is isomorphic to $\O(a_1) \oplus \cdots \oplus \O(a_r)$ for positive integers $a_1, \dots, a_r$ satisfying $a_1 \leq \cdots \leq a_r$ and $a_1 + \cdots + a_r = d$, or equivalently, by an $r$-term partition of $d$.
+In particular, an ample vector bundle of rank $r$ and degree $d$ is isomorphic to $\O(a_1) \oplus \cdots \oplus \O(a_r)$ for positive integers $a_1, \dots, a_r$ satisfying $a_1 \leq \cdots \leq a_r$ and $a_1 + \cdots + a_r = d$.
+It is thus speficied up to isomorphism by an $r$-term partition of $d$.
 Let $\Sigma_{r,d}$ be the set of $r$-term partitions of $d$.
 We get a function $\phi \from \Sigma_{r,d} \to \Z_{\geq 0}$ defined by
 \[ \phi(a_1, \dots, a_r) = \text{Degree of the projection-ramification map for $X \subset \P^{r+d}$},\]
@@ -302,11 +303,11 @@ In this case, by the lower semi-continuity of degrees of rational maps, we get
 \[ \phi(a_1, \dots, a_r) \leq \phi(b_1,\dots, b_r).\]
 Thus, $\phi$ is order preserving.
 
-We hope that the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ admits some structure, such as a nice recurrence relation or generating function.
+We hope that the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ admits a deeper structure, such as a recurrence relation or generating function.
 \autoref{thm:minimaldegree} and \autoref{thm:examples} only scratch the surface as far as $\phi$ is concerned.
 \autoref{thm:minimaldegree} states that $\phi$ is not identically zero, at least if $d$ is sufficiently large.
 \autoref{thm:examples} computes $\phi$ for the partitions $(d)$, $(1, \dots, 1)$, $(1, k+1)$, $(1,1,k+1)$, and $(2,2)$.
-Some more examples, calculated using randomized trials over finite fields in \texttt{Macaulay2} and \texttt{MAGMA}, are tabulated in \autoref{tab:computation}.
+Some more examples, calculated using randomized trials over finite fields in \texttt{Macaulay2} \cite{gra.sti:} and \texttt{Magma} \cite{bos.can.pla:97}, are tabulated in \autoref{tab:computation}.
 We plan to return to a more complete enumerative investigation of $\phi$ in a future paper.
 \begin{table}
   \centering
@@ -327,7 +328,7 @@ We plan to return to a more complete enumerative investigation of $\phi$ in a fu
 The study of the maximal variation of $\rho$ and its degree in positive characteristics will surely bring new surprises and require new techniques.
 We do not know if \autoref{thm:main} or \autoref{thm:minimaldegree} holds in positive characteristic; our proofs certainly do not.
 The degrees in \autoref{thm:examples}, and likewise the values of the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ defined in \autoref{sec:qscroll}, depend on the characteristic due to the presence of inseparable covers.
-Indeed, this is the case even for rational normal curves \cite{oss:06}.
+Indeed, this is true even for rational normal curves \cite{oss:06}.
 
 
 \subsubsection{Picture over the real numbers}
@@ -341,10 +342,10 @@ In particular, it would be interesting to find a uniform topological picture exp
 \subsection{Notation and conventions}
 We work over an algebraically closed field $\k$ of characteristic zero, not simply for convenience, but for necessity---we appeal to Bertini's theorem, generic smoothness, and Kodaira vanishing.
 All schemes are of finite type over $\k$.
-A \emph{variety} is an integral scheme.
+A variety is a separated integral scheme.
 For a scheme $X$, we let $X^{\rm sm} \subset X$ be the smooth locus.
 
-We go back and forth without comment between divisors and line bundles, and likewise, locally free sheaves and vector bundles.
+We go back and forth without comment between divisors and line bundles, and likewise, between locally free sheaves and vector bundles.
 We follow Grothendieck's convention for projectivization.
 That is, the projectivization $\P E$ of a vector bundle $E$ is the space of one dimensional quotients of $E$.
 For a line bundle $L$ on $X$, we denote by $|L|$ the projective space $\P H^0(X, L)^*$.
@@ -365,7 +366,7 @@ The notion of non-defectivity abstracts the condition of having a divisorial dua
 Before proving \autoref{thm:mainMain}, we study this notion in \autoref{sec:non-defectivity}.
 In \autoref{sec:minimaldegree}, we prove \autoref{thm:minimaldegree} as \autoref{thm:actualminimaldegree}.
 In the same section, we derive explicit formulas for the ramification divisors for scrolls (\autoref{sec:prscrolls}), give the examples advertised in \autoref{thm:counterexamples} (\autoref{sec:failure}), and treat the threefold scrolls (\autoref{sec:eccentric_threefolds}).
-In \autoref{sec:generic}, we prove \autoref{thm:rationalnormalscrolls} as \autoref{thm:actualrationalnormalscrolls}, after having treated some low degree examples by hand in \autoref{sec:lowdegree}, introduced limit linear series for vector bundles of higher rank in \autoref{sec:lls}, and defined the projection-ramification map for limit linear series in \autoref{sec:prnongeneric} and \autoref{sec:prlls}.
+In \autoref{sec:generic}, we prove \autoref{thm:rationalnormalscrolls} as \autoref{thm:actualrationalnormalscrolls}, after treating some low degree examples by hand in \autoref{sec:lowdegree}, introducing limit linear series for vector bundles of higher rank in \autoref{sec:lls}, and defining the projection-ramification map for limit linear series in \autoref{sec:prnongeneric} and \autoref{sec:prlls}.
 In \autoref{sec:enumerativeproblems}, we turn to the enumerative problem of finding the degree of $\rho$.
 We treat the cases of rational normal curves and quadric hypersurfaces quickly in \autoref{sec:arnc} and \autoref{sec:aquadricsurface}.
 We devote \autoref{sec:veronese} to the case of the Veronese surface and \autoref{sec:quartic_scroll} to the case of the quartic surface scroll.
@@ -2172,10 +2173,11 @@ We invite the reader to look at \autoref{fig:quarticscroll} for the configuratio
   \includegraphics{quartic_scroll}
   \caption{
     The figure shows the unique pair of polar conjugate triangles of Reye lines associated to a net of conics as proved in \autoref{prop:quarticscroll}.
-    The net of conics includes the distinguished conic $Q$, seen here as a hyperbola (dotted black).
+    The net includes the distinguished conic $Q$, seen here as a hyperbola (dotted black).
     The Jacobian cubic $R$ (green) and the dual of the Hermite cubic $E^\perp$ (orange) intersect in 6 points on $Q$ (4 of which are real and visible), and 3 other collinear points, two of which, say $p_1$ and $p_2$, are marked (red), and the third, say $p_3$, is at infinity.
     The Reye lines forming the two polar conjugate triangles (dashed pink and dashed blue) come in conjugate pairs.
     The lines in each pair intersect at $p_1$, $p_2$, and $p_3$.
+    (The figure was produced using \texttt{Sage} \cite{the:17}.)
   }
   \label{fig:quarticscroll}
 \end{figure}

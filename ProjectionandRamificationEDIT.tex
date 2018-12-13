@@ -13,7 +13,7 @@
   stmaryrd,
   diagbox
 }
-\usepackage[draft]{showlabels}
+%\usepackage[draft]{showlabels}
 \usepackage[table]{xcolor}
 \usepackage{tikz, tikz-cd}
 
@@ -123,7 +123,7 @@
   Going further, we study the map that associates to a linear projection its ramification divisor.
   We show that this map is dominant for most (but not all!) varieties of minimal degree, using limit linear series of higher rank.
   We find the degree of this map in some cases, extending the classical appearance of Catalan numbers in the geometry of rational normal curves.
-  We give a geometric explanation of the fibers in terms of torsion points of naturally ocurring elliptic curves in the case of the Veronese surface and the quartic rational suface scroll.
+  We give a geometric explanation of the fibers in terms of torsion points of naturally ocurring elliptic curves in the case of the Veronese surface and the quartic rational surface scroll.
 \end{abstract}
 
 
@@ -133,10 +133,10 @@
 \section{Introduction}\label{sec:intro}
 Let $f \from X \to Y$ be a map between smooth algebraic varieties.
 A fundamental object associated to $f$ is the set $R(f) \subset X$ consisting of critical points of $f$, namely the points $x \in X$ at which $df \from T_xX \to T_{f(x)}Y$ has less than maximal rank.
-To what extent can $f$ be recovered from $R(f)$?
+One might ask: To what extent can $f$ be recovered from $R(f)$?
 For example, does every non-trivial perturbation of $f$ induce a non-trivial perturbation of $R(f)$?
 If this is the case, then how many other $g \from X \to Y$ have $R(g) = R(f)$?
-The goal of this paper is to explore these questions when $X$ is a smooth projective variety and $Y$ is a projective space of the same dimension as $X$.
+The goal of this paper is to better understand these questions when $X$ is a smooth projective variety and $Y$ is a projective space of the same dimension as $X$.
 
 More precisely, let $X \subset \P^n$ be a smooth projective variety of dimension $r$, not contained in a hyperplane.
 A general $(n-r-1)$-dimensional linear subspace $L \subset \P^n$ defines a finite surjective map $X \to \P^r$.
@@ -146,15 +146,14 @@ The association $L \leadsto R(L)$ gives a rational map
 \[
   \rho \from \Gr(n-r, n+1) \dashrightarrow |K_X + (r+1)H|.
 \]
-In terms of $\rho$, we can formulate the two questions raised in the introduction more precisely.
-Knowing the behavior of the ramification locus under a perturbation is equivalent to knowing whether the map $\rho$ is generically finite, or equivalently, whether the image of $\rho$ has the maximal possible dimension.
+In terms of $\rho$, we can formulate questions more precisely.  Knowing the behavior of the ramification locus under a perturbation is equivalent to knowing whether the map $\rho$ is generically finite, or equivalently, whether the image of $\rho$ has the maximal possible dimension.
 In the literature, this question is known as the question of maximal variation of the ramification locus.
 Knowing the number of maps with the same ramification locus is knowing the degree of $\rho$.
-Our main goal is to answer these questions.
+Our main goal is to address these questions.
 
 \subsection{Maximal variation}
-The question of maximal variation of $\rho$ first appeared explicitly in the work of Flenner and Manaresi \cite{fle.man:98} in connection with the transcendence degree of the St\"uckrad-Vogel cycle in intersection theory. 
-They established maximal variation under a condition we call incompressibility.
+Although very classical in nature, the question of maximal variation of $\rho$ first appeared explicitly in the work of Flenner and Manaresi \cite{fle.man:98} in connection with the transcendence degree of the St\"uckrad-Vogel cycle in intersection theory. 
+They established maximal variation under a geometric condition we call ``incompressibility.''
 We prove the following more general theorem.
 \begin{maintheorem}\label{thm:main}
   Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over a field of characteristic zero.
@@ -169,16 +168,16 @@ In the main text, \autoref{thm:main} is \autoref{cor:maintheorem}.
 
 Recall that the dual variety $X^* \subset {\P^n}^*$ is the closure of the locus of hyperplanes $H \subset \P^n$ such that the intersection of $H$ with the smooth locus of $X$ is singular.
 We call $X \subset \P^n$ satisfying \eqref{item:incomp} \emph{incompressible} as it cannot be projected down (compressed) to a smaller dimensional subvariety by a linear projection.
-The main result of \cite{fle.man:98} obtained the conclusion of \autoref{thm:main} assuming incompressibility.
+The maximal variation result of \cite{fle.man:98} obtained the conclusion of \autoref{thm:main} assuming incompressibility.
 
 \autoref{thm:main} substantially increases the class of varieties where we now know maximal variation.
-Indeed, it is easy to see that if $X$ is a smooth surface over a field of characteristic zero, then the dual variety $X^*$ is a hypersurface.
+Indeed, it is easy to see that if $X$ is any smooth surface over a field of characteristic zero, then the dual variety $X^*$ is a hypersurface.
 Therefore, maximal variation holds for all surfaces.
 Note, in contrast, that not all surfaces are incompressible.
 The smallest counterexample is the cubic surface scroll $X \subset \P^4$---the projection from the directrix $L \subset X$ projects $X$ onto a $\P^1$.
 Thus, even for surfaces, condition \eqref{item:dual} of \autoref{thm:main} covers new ground.
 In general, let $X$ be of arbitrary dimension embedded in $\P^n$ by a sufficiently positive line bundle (for example, by a sufficiently high Veronese re-embedding).
-Then $X \subset \P^n$ may not be incompressible, but the dual variety $X^*$ will be a hypersurface.
+Then $X \subset \P^n$ is usually not incompressible, but the dual variety $X^*$ will be a hypersurface.
 As a result, $X \subset \P^n$ is covered by condition \eqref{item:dual} of \autoref{thm:main}.
 
 The hypotheses in \autoref{thm:main} are sufficient, but not necessary.
@@ -193,8 +192,8 @@ This is not the case.
 \end{maintheorem}
 In the main text, \autoref{thm:counterexamples} is \autoref{cor:actualcounterexamples}.
 
-The existence of varieties for which the projection-ramification map is not generically finite has been alluded to by Zak \cite{zak:}, but we do not know any explicit examples written down in the literature.
-We describe the rational normal scrolls in \autoref{thm:counterexamples} explicitly; they include scrolls of general moduli.
+The possible existence of varieties for which the projection-ramification map is not generically finite has been alluded to by Zak \cite{zak:}, and our examples of rational normal scrolls in \autoref{thm:counterexamples} are the first known instances.
+We describe these rational normal scrolls  explicitly; it is worth mentioning that they include scrolls of general moduli.
 
 Having considered the question of maximal variation in general, we turn our attention to cases where the map $\rho$ has a chance of being dominant.
 Our next result classifies such $X \subset \P^n$.
@@ -276,20 +275,19 @@ In the main text, the items in \autoref{thm:examples} are treated in \autoref{se
 \subsection{Further remarks}
 There are two natural enumerative problems regarding finite coverings of curves.
 The first problem, originating in the work of Hurwitz, is to compute the number of branched covers $C \to \P^1$ with a specified set of branch points $B \subset \P^1$.
-These numbers, called the Hurwitz numbers, are difficult to compute, but they exhibit remarkable structure \cite{eke.lan.sha.ea:99,eke.lan.sha.ea:01}.
-The second problem is to compute the number of maps $C \to \P^1$ with a prescribed set of ramification points $R \subset C$.
-This problem is much more elementary, and solvable using Schubert calculus.
-For $C = \P^1$, the numbers are the Catalan numbers, as we have seen.
+These  Hurwitz numbers are difficult to compute, but they exhibit remarkable structure \cite{eke.lan.sha.ea:99,eke.lan.sha.ea:01}.
+The second problem is to compute the number of maps $C \to \P^1$ with a prescribed set of ramification points $R \subset C$.  In fact, it is easy to see that this problem is only meaningful when $C = \P^{1}$, in which case it is immediately and easily answered by Schubert calculus, yielding the Catalan numbers.
 
-In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, thanks to Chisini's conjecture (proved by Kulikov \cite{kul:08}).
-A branched cover $S \to \P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^2$, with finitely many well-understood examples.
+
+In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, as evidenced by Chisini's conjecture (proved by Kulikov \cite{kul:08}).
+A branched cover $S \to \P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^2$, with finitely many well-understood counterexamples.
 In contrast, as hinted by \autoref{thm:minimaldegree}, the enumerative problem regarding the ramification divisor persists, and poses a significant challenge.
 In some sense, the enumerative problems regarding the branch and ramification divisors trade places, certainly in terms of difficulty, but hopefully also in terms of structure.
 
 
 \subsection{Further questions}
-Our work raises several questions, some of which we hope to return to in a sequel.
-\subsubsection{The enumerative problem for scrolls}\label{sec:qscroll}.
+Our work raises several questions, some of which we hope to return to in the future.
+\subsubsection{The enumerative problem for scrolls}\label{sec:qscroll}
 Recall that every vector bundle on $\P^1$ is isomorphic to a direct sum of line bundles.
 In particular, an ample vector bundle of rank $r$ and degree $d$ is isomorphic to $\O(a_1) \oplus \cdots \oplus \O(a_r)$ for positive integers $a_1, \dots, a_r$ satisfying $a_1 \leq \cdots \leq a_r$ and $a_1 + \cdots + a_r = d$.
 It is thus speficied up to isomorphism by an $r$-term partition of $d$.
@@ -308,7 +306,7 @@ We hope that the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ admits a 
 \autoref{thm:minimaldegree} states that $\phi$ is not identically zero, at least if $d$ is sufficiently large.
 \autoref{thm:examples} computes $\phi$ for the partitions $(d)$, $(1, \dots, 1)$, $(1, k+1)$, $(1,1,k+1)$, and $(2,2)$.
 Some more examples, calculated using randomized trials over finite fields in \texttt{Macaulay2} \cite{gra.sti:} and \texttt{Magma} \cite{bos.can.pla:97}, are tabulated in \autoref{tab:computation}.
-We plan to return to a more complete enumerative investigation of $\phi$ in a future paper.
+ There seems to be some enchanting combinatorics behind $\phi$. As a sample, we point out that the sequence of numbers $1,2,6,22, 92, 422$ appearing down the diagonal in \autoref{tab:computation} are the number of Baxter permutations on $n=1,2, \dots, 6$ letters.  We plan on conducting a more complete enumerative investigation of $\phi$ in a future paper. 
 \begin{table}
   \centering
   \rowcolors{2}{gray!10}{white}
@@ -324,9 +322,15 @@ We plan to return to a more complete enumerative investigation of $\phi$ in a fu
   \end{tabular}
 \end{table}
 
+\subsubsection{Non-maximal variation} Given that our counterexamples to maximal variation are all scrolls over curves, it is natural to wonder whether failure of maximal variation can only occur for scrolls.  Ideally, we would seek a clean classification of varieties failing maximal variation -- a good start would be to precisely classify all  rational normal scrolls which fail maximal variation.
+
+It would especially be nice to establish maximal variation for all threefolds -- by \autoref{thm:main} along with the well-known fact that the only threefolds which have degenerate duals are scrolls, we need only establish maximal variation for scrolls, i.e. $\P^{2}$-bundles over curves.
+
+\subsubsection{Compressible varieties}  Another problem which naturally emerges from our work is to classify those varieties which are compressible.  For example, it is easy to see that smooth, non-degenerate complete intersection varieties are automatically incompressible.  Therefore, it might be possible to prove incompressibility for varieties of small codimension in large projective spaces.  It may also be possible to classify the compressible varieties having a fixed small codimension, starting with codimension two.
+
 \subsubsection{Positive characteristics}
-The study of the maximal variation of $\rho$ and its degree in positive characteristics will surely bring new surprises and require new techniques.
-We do not know if \autoref{thm:main} or \autoref{thm:minimaldegree} holds in positive characteristic; our proofs certainly do not.
+The analysis of maximal variation and the computation of the degree of $\rho$  will surely bring new surprises and require new techniques in positive characteristics.
+We do not know if \autoref{thm:main} or \autoref{thm:minimaldegree} holds in positive characteristic; our proofs certainly do not work.
 The degrees in \autoref{thm:examples}, and likewise the values of the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ defined in \autoref{sec:qscroll}, depend on the characteristic due to the presence of inseparable covers.
 Indeed, this is true even for rational normal curves \cite{oss:06}.
 
@@ -337,7 +341,7 @@ Consider the projection-ramification map of a rational normal curve of degree $n
 The real algebraic geometry surrounding $\rho$ plays an important role in real enumerative geometry, the theory of real algebraic curves, and control theory, thanks to the B. and M. Shapiro conjecture.
 Proved by Eremenko and Gabrielov, this conjecture states that if $L \in \Gr(2, n+1)$ is such that the ramification divisor $\rho(L)$ is the sum of $(2n-2)$ real points in $\P^1$, then $L$ is a real point of $\Gr(2, n+1)$ \cite{sot:00, ere.gab:02}.
 \autoref{thm:minimaldegree} potentially sets the stage for a higher-dimensional generalization of the body of work around the Shapiro conjecture.
-In particular, it would be interesting to find a uniform topological picture explaining the numbers $\deg \rho$, similar to the ``nets'' introduced by Eremenko and Gabrielov that explain the appearance of Catalan numbers.
+In particular, it would be interesting to find a uniform topological picture explaining the numbers $\deg \rho$, similar to the ``nets'' introduced by Eremenko and Gabrielov which elegantly explain the appearance of Catalan numbers.
 
 \subsection{Notation and conventions}
 We work over an algebraically closed field $\k$ of characteristic zero, not simply for convenience, but for necessity---we appeal to Bertini's theorem, generic smoothness, and Kodaira vanishing.
@@ -373,9 +377,9 @@ We devote \autoref{sec:veronese} to the case of the Veronese surface and \autore
 
 \subsection*{Acknowledgements}
 First and foremost, we thank Fyodor Zak for generously sharing numerous useful comments, ideas, and encouragement over the span of several months.
-We also thank Izzet Coskun, Joe Harris, Mirella Manaresi, and Dennis Tseng for useful conversations. 
+We also thank Izzet Coskun, Joe Harris, Mirella Manaresi, Brian Osserman, and Dennis Tseng for useful conversations. 
 A.D. thanks the Australian Research Council for the grant number \texttt{DE180101360} that supported a part of this project.
-A.D. and A.P. conducted a part of this research at the Banff International Research Center while attending the workshop titled \emph{Moduli spaces, birational geometry, and wall crossings} organized by Dan Abramovich, Jim Bryan, and Dawei Chen, and are grateful for the opportunity.
+A.D. and A.P. conducted a part of this research at the Banff International Research Center while attending the workshop titled \emph{Moduli spaces, birational geometry, and wall crossings} organized by Dan Abramovich, Jim Bryan, and Dawei Chen, and are grateful for the opportunity to attend.
 
 \section{The projection-ramification map}\label{sec:prmap}
 In this section, we define a projection-ramification map for a linear series on a proper, normal, variety $X$.
@@ -933,7 +937,7 @@ As a consequence, we immediately deduce \autoref{thm:minimaldegree}.
 
 \subsection{Projection-ramification for scrolls}\label{sec:prscrolls}
 \autoref{thm:minimaldegree} motivates a deeper investigation of the projection-ramification map for varieties of minimal degree.
-Indeed, for $X \subset \P^n$ of minimal degree, the projection-ramification map is potentially generically finite.
+Indeed, for $X \subset \P^n$ of minimal degree, the projection-ramification map is potentially generically finite and dominant.
 Recall that a large class of varieties of minimal degree are the rational normal scrolls, namely $X = \P E$ for an ample vector bundle $E$ on $\P^1$ embedded by the complete linear series $\O_X(1)$.
 If $\dim X \geq 3$, then $X$ is neither incompressible nor does it have a divisorial dual variety.
 Therefore, for such $X$, \autoref{thm:main} leaves the question of maximal variation unanswered.
@@ -1035,7 +1039,7 @@ Note that the expression above is the determinant of the $(r+1) \times (r+1)$ ma
 This gives an equation for $R_U \subset X_U = \Proj \O_U[X_1, \dots, X_r]$.
 
 \subsection{Failure of maximal variation}\label{sec:failure}
-In this section, we show that there exists ample vector bundles $E$ of rank $r \geq 4$ on $\P^1$ such that the projection-ramification map for $X = \P E$ is not generically finite.
+In this section, we show that there exist ample vector bundles $E$ of rank $r \geq 4$ on $\P^1$ such that the projection-ramification map for $X = \P E$ is not generically finite.
 In other words, a generic projection of $X$ can be deformed in a one-parameter family so that the ramification divisor remains unchanged.
 
 Recall that the projection-ramification map for $X = \P E$ and the complete linear series of $L = \O_X(1)$ is a map
@@ -1115,8 +1119,8 @@ We engineer the failure of maximal variation using the following observation.
 \end{proof}
 
 \begin{remark}
-In all the examples of scrolls where we know that maximal variation fails, the failure can be explained by the presence of generic stabilizers.
-We do not know, however, if this is the only reason for the failure of maximal variation.
+In all the examples of scrolls where we know that maximal variation fails, the failure is implied by the presence of generic stabilizers.
+We do not know, however, if the presence of stabilizers is {\sl equivalent} to the failure of maximal variation.
 \end{remark}
 
 \begin{remark}
@@ -1191,7 +1195,7 @@ Set $X = \P E$ and $L = \O_X(1)$.
   Indeed, these three equations imply $(bt-d)(\hat a' t - \hat c') + (at-c)(\hat d' - \hat b' t) = 0$, and by the same reason as before, give $\hat a' t - \hat c' = \hat d' - \hat b' t = 0$.
   But it is easy to see that the last two equations combined with $\hat a t - \hat c = at -c$ and $\hat b t - \hat d = bt - d$ have no solutions.    
 
-  Since the map induced by $\rho$ is injective tangent spaces, $\rho$ is generically finite, and hence dominant.
+  Since the map induced by $\rho$ is injective on tangent spaces, $\rho$ is generically finite, and hence dominant.
   To show that $\rho$ is birational, it suffices to show that the generic fiber of $\rho$ is connected.
   For this, it suffices to show that the generic fiber of $\rho^*$ is connected.
   However, observe that the fiber of $\rho^*$ over $(\alpha, \beta, \gamma)$ is given by the equations
@@ -1772,7 +1776,7 @@ The fruit of our labor is the following corollary.
 
 
 \subsection{Maximal variation for generic scrolls of high degree}
-We now have all the tools to prove \autoref{thm:rationalnormalscrolls}
+We now have all the tools to prove \autoref{thm:rationalnormalscrolls}.
 \begin{theorem}[\autoref{thm:rationalnormalscrolls}]
   \label{thm:actualrationalnormalscrolls}
   Let $E$ be a generic vector bundle on $\P^1$ of rank $r$ and degree $d = a(r-1) + b(2r-1)+1$, where $a, b$ are positive integers.
@@ -1974,7 +1978,7 @@ We begin by identifying the two quotients.
 
 Let $S$ be a 3-dimensional quadratic space, that is, a vector space with a non-degenerate quadratic form $q$.
 Then we have $\Aut(S) =  \operatorname{O}(q) \cong \operatorname{O(3)}$.
-THe projective space $\P S$ is isomorphic to $\P^2$, and it comes with a distinguished smooth conic $Q \subset \P S$.
+The projective space $\P S$ is isomorphic to $\P^2$, and it comes with a distinguished smooth conic $Q \subset \P S$.
 The automorphism group of the pair $(\P S, Q)$ is $\Aut(Q) \cong \PGL_2$.
 \begin{lemma}\label{lem:quotgrass}
   The quotient $\Gr(3, U \otimes \Sym^2V) / \PGL(U) \times \PGL(V)$ is birational to the quotient $\Hilb^3(\P S) / \Aut S$.
@@ -2182,6 +2186,8 @@ We invite the reader to look at \autoref{fig:quarticscroll} for the configuratio
   \label{fig:quarticscroll}
 \end{figure}
 
+
+\pagebreak
 
  \bibliographystyle{siam}
  \bibliography{CommonMath}

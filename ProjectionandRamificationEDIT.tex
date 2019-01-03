@@ -173,7 +173,7 @@ The maximal variation result of \cite{fle.man:98} obtained the conclusion of \au
 Indeed, it is easy to see that if $X$ is any smooth surface over a field of characteristic zero, then the dual variety $X^*$ is a hypersurface.
 Therefore, maximal variation holds for all surfaces.
 Note, in contrast, that not all surfaces are incompressible.
-The smallest counterexample is the cubic surface scroll $X \subset \P^4$---the projection from the directrix $L \subset X$ projects $X$ onto a $\P^1$.
+The first counterexample is the cubic surface scroll $X \subset \P^4$---the projection from the directrix $L \subset X$ projects $X$ onto a $\P^1$.
 Thus, even for surfaces, condition \eqref{item:dual} of \autoref{thm:main} covers new ground.
 In general, let $X$ be of arbitrary dimension embedded in $\P^n$ by a sufficiently positive line bundle (for example, by a sufficiently high Veronese re-embedding).
 Then $X \subset \P^n$ is usually not incompressible, but the dual variety $X^*$ will be a hypersurface.
@@ -241,16 +241,16 @@ is again regular, and is in fact the duality isomorphism induced by the (non-deg
 In particular, it has degree $1$.
 
 The cases of the Veronese surface $X \cong \P^2 \subset \P^5$ and the quartic surface scroll $X = \P(\O(2) \oplus \O(2)) \subset \P^5$ are particularly delightful.
-In these cases, the fibers of $\rho$ have an interpretation in terms of two torsion points of certain elliptic curves, which we now describe.
+In these cases, the fibers of $\rho$ have an interpretation in terms of 2-torsion points of certain elliptic curves, which we now describe.
 For the Veronese surface, the target of $\rho$ is the linear series of cubics in $\P^2$.
-The points of fiber of $\rho$ over a cubic $R \subset \P^2$ correspond naturally to the non-trivial two torsion points of $\Pic R$.
+The points of fiber of $\rho$ over a cubic $R \subset \P^2$ correspond naturally to the non-trivial 2-torsion points of $\Pic R$.
 In particular, the degree of $\rho$ is $3$.
-For the quartic surface scroll, the target of $\rho$ modulo the action of $\Aut X$ is birational to the moduli space of $(R, \eta)$ where $R$ is a plane cubic and $\eta$ is a non-trivial two torsion point of $\Pic R$.
-The points of the fiber of $\rho$ over $(R, \eta)$ corresponds naturally to the two torsion points of $\Pic R$ other than $0$ and $\eta$.
+For the quartic surface scroll, the target of $\rho$ modulo the action of $\Aut X$ is birational to the moduli space of $(R, \eta)$ where $R$ is a plane cubic and $\eta$ is a non-trivial 2-torsion point of $\Pic R$.
+The points of the fiber of $\rho$ over $(R, \eta)$ correspond naturally to the 2-torsion points of $\Pic R$ other than $0$ and $\eta$.
 In particular, the degree of $\rho$ is $2$.
-In this case, the source of $\rho$, the Grassmannian $\Gr(3, H^0(X, \O(1)))$, modulo the action of $\Aut X$ has several known moduli interpretations.
+In this case, the source of $\rho$ (the Grassmannian $\Gr(3, H^0(X, \O(1)))$ modulo the action of $\Aut X$) has several known moduli interpretations.
 It is birational to the moduli of undered triplets of unordered pairs of points on $\P^1$, namely $M_{0,6}/(S_2 \times S_2 \times S_2 \rtimes S_3)$.
-This space, in turn, is isomorphic to the moduli of hyperelliptic curves with a maximal isotropic subspace of the $\F_2$-vector space of $2$ torsion points, or equivalently, to the moduli of principally polarized abelian surfaces with a maximal isotropic subspace of the $\F_2$-vector space of $2$-torsion points \cite[Example~4.2]{dol.how:15}.
+This space, in turn, is isomorphic to the moduli of hyperelliptic curves with a maximal isotropic subspace of the $\F_2$-vector space of $2$-torsion points, or equivalently, to the moduli of principally polarized abelian surfaces with a maximal isotropic subspace of the $\F_2$-vector space of $2$-torsion points \cite[Example~4.2]{dol.how:15}.
 The involution on this space induced by the $2$-to-$1$ map $\rho$ coincides with the classical Richelot or Fricke involution \cite[Remark~4.3]{dol.how:15}.
 See \autoref{rem:richelot} for more details.
 
@@ -305,7 +305,8 @@ We hope that the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ admits a 
 \autoref{thm:minimaldegree} states that $\phi$ is not identically zero, at least if $d$ is sufficiently large.
 \autoref{thm:examples} computes $\phi$ for the partitions $(d)$, $(1, \dots, 1)$, $(1, k+1)$, $(1,1,k+1)$, and $(2,2)$.
 Some more examples, calculated using randomized trials over finite fields in \texttt{Macaulay2} \cite{gra.sti:} and \texttt{Magma} \cite{bos.can.pla:97}, are tabulated in \autoref{tab:computation}.
- There seems to be some enchanting combinatorics behind $\phi$. As a sample, we point out that the sequence of numbers $1,2,6,22, 92, 422$ appearing down the diagonal in \autoref{tab:computation} are the number of Baxter permutations on $n=1,2, \dots, 6$ letters.  We plan on conducting a more complete enumerative investigation of $\phi$ in a future paper. 
+There seems to be some enchanting combinatorics behind $\phi$. As a sample, we point out that the sequence of numbers $\phi(n)$ are the Catalan numbers, and the sequence $\phi(\lfloor n/2 \rfloor, \lceil n/2 \rceil)$ (appearing down the diagonal in \autoref{tab:computation}: $1, 2, 6, 22, 92, 422, \dots$) seems to be \cite[A001181]{oeis:}, the number of Baxter permutations on $n$ letters.
+We plan on conducting a more complete enumerative investigation of $\phi$ in a future paper. 
 \begin{table}
   \centering
   \rowcolors{2}{gray!10}{white}
@@ -744,7 +745,7 @@ The determinant of the matrix \eqref{matrix}
   t - \sum_{i}s_{i}\partial_{i}t
 \end{align*}
 is an analytic local equation for the ramification divisor $R(V)$ near $x$.
-Evidently, $R(V)$ shares the same tangent cone as $v(t)$ at $x$.
+By applying the Euler identity to the degree 2 part of $t$ (expressed as a power series in the $s_i$), we see that $R(V)$ shares the same tangent cone as $v(t)$ at $x$.
 The proposition follows.
 \end{proof}
 
@@ -806,7 +807,7 @@ We now have all the tools for the proof of \autoref{thm:mainMain}.
   Let $(C, 0)$ be a pointed smooth curve and $V \subset W \otimes \O_C$ a sub-bundle of rank $(r+1)$ such that
   \begin{enumerate}
   \item $V_{0} = V$, and 
-  \item $V_{c} \neq W_{0}$ for $c \in C \setminus \{0\}$.
+  \item $V_{c} \neq V_{0}$ for $c \in C \setminus \{0\}$.
   \end{enumerate}
   We must show that $R(V_c) \neq R(V)$ for a general $c \in C$.
 
@@ -824,7 +825,7 @@ We now have all the tools for the proof of \autoref{thm:mainMain}.
   If $\rk e_c = (r+1)$ for a general $c \in C$, then $x \not \in R(V_c)$, and hence $R(V_c) \neq R(V)$.
   Otherwise, by shrinking $C$ if necessary, assume $\rk e_c = r$ for all $c \in C$.
   In other words, $\dim (V_c \otimes \mathfrak m_x^2) = 1$ for all $c \in C$.
-  Let $b_c \in V_C \otimes \mathfrak m_x^2$ be a non-zero element.
+  Let $b_c \in V_c \otimes \mathfrak m_x^2$ be a non-zero element.
   Since $v(b_0)$ has an ordinary double-point singularity at $x$, so does $v(b_c)$.
   Also, since $\rk (e_c) = r$ and $V_c \not \in W \otimes \mathfrak m_x$ for a general $c$, there exists $u_c \in V_c$ not vanishing at $x$, and a set of $(r-1)$ other elements that vanish at $x$ but reduce to linearly independent elements modulo $\mathfrak m_x^2$.
   That is, $V_c$ satisfies the hypotheses of \autoref{lem:basepointfree} for a general $c \in C$.
@@ -894,7 +895,7 @@ The following is an easy application of the Kodaira vanishing theorem.
   \end{equation}
   Therefore, we conclude that
   \begin{equation}
-    (n-r) \leq h^0(K_D + rH).
+    n-r \leq h^0(K_X + rH).
   \end{equation}
   Let $m > r$, and assume that \eqref{eqn:KYmH} holds for $X$ for $m-1$.
   The long exact sequence in cohomology associated to \eqref{eqn:mainexact} gives
@@ -950,7 +951,7 @@ Let $(L, V)$ be a projection of $X$.
 Recall from \eqref{eqn:ramsection} that such a projection gives a map
 \[ r_V \from \det V \to H^0(X, K_X \otimes L^{r+1}),\]
 whose zero locus is the ramification divisor $R(V) \subset X$.
-Note that we have an isomorphism $K_X \cong \pi^* (\det E \otimes K_C) \otimes L^{-r}$, and hence, we may view $r_v$ as a map
+Note that we have an isomorphism $K_X \cong \pi^* (\det E \otimes K_C) \otimes L^{-r}$, and hence, we may view $r_V$ as a map
 \[ r_V \from \det V \to H^0(C, E \otimes \det E \otimes K_C).\]
 
 We now describe another construction of a section of $E \otimes \det E \otimes K_C$ from $V$, which we call the \emph{differential construction}.
@@ -2176,6 +2177,7 @@ We invite the reader to look at \autoref{fig:quarticscroll} for the configuratio
 \begin{figure}
   \centering
   \includegraphics{quartic_scroll}
+  %The smiling octopus.
   \caption{
     The figure shows the unique pair of polar conjugate triangles of Reye lines associated to a net of conics as proved in \autoref{prop:quarticscroll}.
     The net includes the distinguished conic $Q$, seen here as a hyperbola (dotted black).

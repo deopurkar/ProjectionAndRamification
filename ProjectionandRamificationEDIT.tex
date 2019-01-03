@@ -118,12 +118,11 @@
 \begin{document}
 
 \begin{abstract}
-  We study the ramification divisors of a general projection of a smooth projective variety onto a linear subspace of the same dimension.
+  We study the ramification divisors of projections of a smooth projective variety onto a linear subspace of the same dimension.
   We prove that the ramification divisors vary in a maximal dimensional family for a large class of varieties.
   Going further, we study the map that associates to a linear projection its ramification divisor.
-  We show that this map is dominant for most (but not all!) varieties of minimal degree, using limit linear series of higher rank.
-  We find the degree of this map in some cases, extending the classical appearance of Catalan numbers in the geometry of rational normal curves.
-  We give a geometric explanation of the fibers in terms of torsion points of naturally ocurring elliptic curves in the case of the Veronese surface and the quartic rational suface scroll.
+  We show that this map is dominant for most (but not all!) varieties of minimal degree, using (linked) limit linear series of higher rank.
+  We find the degree of this map in some cases, extending the classical appearance of Catalan numbers in the geometry of rational normal curves, and give a geometric explanation of its fibers in terms of torsion points of naturally occurring elliptic curves in the case of the Veronese surface and the quartic rational surface scroll.
 \end{abstract}
 
 
@@ -133,10 +132,10 @@
 \section{Introduction}\label{sec:intro}
 Let $f \from X \to Y$ be a map between smooth algebraic varieties.
 A fundamental object associated to $f$ is the set $R(f) \subset X$ consisting of critical points of $f$, namely the points $x \in X$ at which $df \from T_xX \to T_{f(x)}Y$ has less than maximal rank.
-To what extent can $f$ be recovered from $R(f)$?
+One might ask: To what extent can $f$ be recovered from $R(f)$?
 For example, does every non-trivial perturbation of $f$ induce a non-trivial perturbation of $R(f)$?
 If this is the case, then how many other $g \from X \to Y$ have $R(g) = R(f)$?
-The goal of this paper is to explore these questions when $X$ is a smooth projective variety and $Y$ is a projective space of the same dimension as $X$.
+The goal of this paper is to better understand these questions when $X$ is a smooth projective variety and $Y$ is a projective space of the same dimension as $X$.
 
 More precisely, let $X \subset \P^n$ be a smooth projective variety of dimension $r$, not contained in a hyperplane.
 A general $(n-r-1)$-dimensional linear subspace $L \subset \P^n$ defines a finite surjective map $X \to \P^r$.
@@ -146,21 +145,20 @@ The association $L \leadsto R(L)$ gives a rational map
 \[
   \rho \from \Gr(n-r, n+1) \dashrightarrow |K_X + (r+1)H|.
 \]
-In terms of $\rho$, we can formulate the two questions raised in the introduction more precisely.
-Knowing the behavior of the ramification locus under a perturbation is equivalent to knowing whether the map $\rho$ is generically finite, or equivalently, whether the image of $\rho$ has the maximal possible dimension.
+In terms of $\rho$, we can formulate questions more precisely.  Knowing the behavior of the ramification locus under a perturbation is equivalent to knowing whether the map $\rho$ is generically finite, or equivalently, whether the image of $\rho$ has the maximal possible dimension.
 In the literature, this question is known as the question of maximal variation of the ramification locus.
 Knowing the number of maps with the same ramification locus is knowing the degree of $\rho$.
-Our main goal is to answer these questions.
+Our main goal is to address these questions.
 
 \subsection{Maximal variation}
-The question of maximal variation of $\rho$ first appeared explicitly in the work of Flenner and Manaresi \cite{fle.man:98} in connection with the transcendence degree of the St\"uckrad-Vogel cycle in intersection theory. 
-They established maximal variation under a condition we call incompressibility.
+Although very classical in nature, the question of maximal variation of $\rho$ first appeared explicitly in the work of Flenner and Manaresi \cite{fle.man:98} in connection with the transcendence degree of the St\"uckrad-Vogel cycle in intersection theory. 
+They established maximal variation under a geometric condition we call ``incompressibility.''
 We prove the following more general theorem.
 \begin{maintheorem}\label{thm:main}
   Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over a field of characteristic zero.
   Suppose at least one of the following holds:
   \begin{enumerate}
-  \item\label{item:incomp}(incompressibility) for every linear subspace $L \subset \P^n$ of dimension $(n-r-1)$, projection from $L$ restrict to a dominant rational map $X \dashrightarrow \P^r$;
+  \item\label{item:incomp}(incompressibility) for every linear subspace $L \subset \P^n$ of dimension $(n-r-1)$, projection from $L$ restricts to a dominant rational map $X \dashrightarrow \P^r$;
   \item\label{item:dual}(divisorial dual) the dual variety $X^* \subset {\P^n}^*$ is a hypersurface.
   \end{enumerate}
   Then $\rho$ is generically finite onto its image.
@@ -169,21 +167,21 @@ In the main text, \autoref{thm:main} is \autoref{cor:maintheorem}.
 
 Recall that the dual variety $X^* \subset {\P^n}^*$ is the closure of the locus of hyperplanes $H \subset \P^n$ such that the intersection of $H$ with the smooth locus of $X$ is singular.
 We call $X \subset \P^n$ satisfying \eqref{item:incomp} \emph{incompressible} as it cannot be projected down (compressed) to a smaller dimensional subvariety by a linear projection.
-The main result of \cite{fle.man:98} obtained the conclusion of \autoref{thm:main} assuming incompressibility.
+The maximal variation result of \cite{fle.man:98} obtained the conclusion of \autoref{thm:main} assuming incompressibility.
 
 \autoref{thm:main} substantially increases the class of varieties where we now know maximal variation.
-Indeed, it is easy to see that if $X$ is a smooth surface over a field of characteristic $0$, then the dual variety $X^*$ is a hypersurface.
+Indeed, it is easy to see that if $X$ is any smooth surface over a field of characteristic zero, then the dual variety $X^*$ is a hypersurface.
 Therefore, maximal variation holds for all surfaces.
 Note, in contrast, that not all surfaces are incompressible.
 The smallest counterexample is the cubic surface scroll $X \subset \P^4$---the projection from the directrix $L \subset X$ projects $X$ onto a $\P^1$.
 Thus, even for surfaces, condition \eqref{item:dual} of \autoref{thm:main} covers new ground.
 In general, let $X$ be of arbitrary dimension embedded in $\P^n$ by a sufficiently positive line bundle (for example, by a sufficiently high Veronese re-embedding).
-Then $X \subset \P^n$ may not be incompressible, but the dual variety $X^*$ will be a hypersurface.
+Then $X \subset \P^n$ is usually not incompressible, but the dual variety $X^*$ will be a hypersurface.
 As a result, $X \subset \P^n$ is covered by condition \eqref{item:dual} of \autoref{thm:main}.
 
 The hypotheses in \autoref{thm:main} are sufficient, but not necessary.
 Indeed, consider $X = \P^{r-1} \times \P^1 \subset \P^{2r-1}$, embedded by the Segre embedding, for $r \geq 3$.
-Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho_X$ is dominant (see \autoref{thm:examples}).
+Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho$ is dominant (see \autoref{thm:examples}).
 
 Given that maximal variation holds for a large class of varieties, it is natural to wonder if it always holds.
 This is not the case.
@@ -193,10 +191,10 @@ This is not the case.
 \end{maintheorem}
 In the main text, \autoref{thm:counterexamples} is \autoref{cor:actualcounterexamples}.
 
-The existence varieties for which the projection-ramification map is not generically finite has been alluded to by Zak \cite{zak:}, but we do not know any explicit examples written down in the literature.
-We describe the rational normal scrolls in \autoref{thm:counterexamples} explicitly; they include scrolls of general moduli.
+The possible existence of varieties for which the projection-ramification map is not generically finite has been alluded to by Zak \cite{zak:}, and our examples of rational normal scrolls in \autoref{thm:counterexamples} are the first known instances.
+We describe these rational normal scrolls  explicitly; it is worth mentioning that they include scrolls of general moduli.
 
-Having considered the question of maximal variation in general, we turn our attention to cases where the map $\rho$ has a chance to be dominant.
+Having considered the question of maximal variation in general, we turn our attention to cases where the map $\rho$ has a chance of being dominant.
 Our next result classifies such $X \subset \P^n$.
 \begin{maintheorem}\label{thm:minimaldegree}
   Let $X \subset \P^{n}$ be a smooth, non-degenerate projective variety of dimension $r$ over a field of characteristic zero.
@@ -209,7 +207,7 @@ In the main text, \autoref{thm:minimaldegree} is \autoref{thm:actualminimaldegre
 Recall the list of smooth varieties of minimal degree: quadric hypersurfaces, the Veronese surface in $\P^5$, and rational normal scrolls.
 By \autoref{thm:main}, $\rho$ is dominant for hypersurfaces and surfaces, so what remains are the scrolls.
 Among the scrolls, the curves (rational normal curves) and surfaces are again covered by \autoref{thm:main}.
-For threefold scrolls, show by an explicit calculation and a degeneration argument that $\rho$ is dominant (\autoref{cor:maxvariation3scrolls}).
+For threefold scrolls, we show by an explicit calculation and a degeneration argument that $\rho$ is dominant (\autoref{cor:maxvariation3scrolls}).
 In higher dimensions, the story is complicated, as evidenced by \autoref{thm:counterexamples}.
 Nevertheless, we prove the following.
 \begin{maintheorem}
@@ -224,11 +222,11 @@ The proof of \autoref{thm:rationalnormalscrolls} goes by degeneration.
 We degenerate $X$ to a reducible variety $X_0$, namely the projectivization of a vector bundle on a two-component nodal rational curve.
 Suppose we could define a projection-ramification map for $X_0$ and show that it is dominant, then the same holds $X$, by the upper semi-continuity of fiber dimensions.
 Although promising, this line of attack fails with the most n\"aive definition of the projection-ramification map.
-The right definition requires more sophisticated tools, specifically, the spaces of limit linear series for vector bundles of higher rank developed by Texidor i Bigas \cite{tei-i-big:91} and Osserman \cite{oss:14}.
+The right definition requires more sophisticated tools, specifically, the spaces of (linked) limit linear series for vector bundles of higher rank developed by Texidor i Bigas \cite{tei-i-big:91} and Osserman \cite{oss:14}.
 
 \subsection{Enumerative problems}
 \autoref{thm:minimaldegree} and \autoref{thm:rationalnormalscrolls} motivate a natural set of enumerative questions: for $X \subset \P^n$ of minimal degree, what is the degree of the projection-ramification map $\rho$?
-We make the convention that if $\rho$ is not dominant, then its degree is $0$.
+We make the convention that if a map is not dominant, then its degree is $0$.
 
 For $X$ of dimension 1, namely a rational normal curve, the answer is easy to find---the degree of $\rho$ is the Catalan number $\frac{(2n-2)!}{n!(n-1)!}$.
 Indeed, in this case, the projection-ramification map
@@ -250,11 +248,11 @@ In particular, the degree of $\rho$ is $3$.
 For the quartic surface scroll, the target of $\rho$ modulo the action of $\Aut X$ is birational to the moduli space of $(R, \eta)$ where $R$ is a plane cubic and $\eta$ is a non-trivial two torsion point of $\Pic R$.
 The points of the fiber of $\rho$ over $(R, \eta)$ corresponds naturally to the two torsion points of $\Pic R$ other than $0$ and $\eta$.
 In particular, the degree of $\rho$ is $2$.
-In this case, the source of $\rho$ modulo the action of $\Aut X$ has several known moduli interpretations.
-It birational to the moduli of undered triplets of unordered pairs of points on $\P^1$, namely $M_{0,6}/(S_2 \times S_2 \times S_2 \rtimes S_3)$.
-This space, in turn, is isomorphic to the moduli space of hyperelliptic curves with a maximal isotropic subspace of the $\F_2$-vector space of $2$ torsion points, or equivalently, to the moduli of principally polarized abelian surfaces with a maximal isotropic subspace of the $\F_2$-vector space of $2$-torsion points \cite[Example~4.2]{dol.how:15}.
+In this case, the source of $\rho$, the Grassmannian $\Gr(3, H^0(X, \O(1)))$, modulo the action of $\Aut X$ has several known moduli interpretations.
+It is birational to the moduli of undered triplets of unordered pairs of points on $\P^1$, namely $M_{0,6}/(S_2 \times S_2 \times S_2 \rtimes S_3)$.
+This space, in turn, is isomorphic to the moduli of hyperelliptic curves with a maximal isotropic subspace of the $\F_2$-vector space of $2$ torsion points, or equivalently, to the moduli of principally polarized abelian surfaces with a maximal isotropic subspace of the $\F_2$-vector space of $2$-torsion points \cite[Example~4.2]{dol.how:15}.
 The involution on this space induced by the $2$-to-$1$ map $\rho$ coincides with the classical Richelot or Fricke involution \cite[Remark~4.3]{dol.how:15}.
-
+See \autoref{rem:richelot} for more details.
 
 The following result summarizes our knowledge of the degree of $\rho$.
 \begin{maintheorem}\label{thm:examples}
@@ -276,22 +274,22 @@ In the main text, the items in \autoref{thm:examples} are treated in \autoref{se
 \subsection{Further remarks}
 There are two natural enumerative problems regarding finite coverings of curves.
 The first problem, originating in the work of Hurwitz, is to compute the number of branched covers $C \to \P^1$ with a specified set of branch points $B \subset \P^1$.
-These numbers, called the Hurwitz numbers, are difficult to compute, but they exhibit remarkable structure \cite{eke.lan.sha.ea:99,eke.lan.sha.ea:01}.
-The second problem is to compute the number of maps $C \to \P^1$ with a prescribed set of ramification points $R \subset C$.
-This problem is much more elementary, and solvable using Schubert calculus.
-For $C = \P^1$, the numbers are the Catalan numbers, as we have seen.
+These  Hurwitz numbers are difficult to compute, but they exhibit remarkable structure \cite{eke.lan.sha.ea:99,eke.lan.sha.ea:01}.
+The second problem is to compute the number of maps $C \to \P^1$ with a prescribed set of ramification points $R \subset C$.  In fact, it is easy to see that this problem is only meaningful when $C = \P^{1}$, in which case it is immediately and easily answered by Schubert calculus, yielding the Catalan numbers.
 
-In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, thanks to Chisini's conjecture (proved by Kulikov \cite{kul:08}).
-A branched cover $S \to \P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^2$, with finitely many well-understood examples.
+
+In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, as evidenced by Chisini's conjecture (proved by Kulikov \cite{kul:08}).
+A branched cover $S \to \P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^2$, with finitely many well-understood counterexamples.
 In contrast, as hinted by \autoref{thm:minimaldegree}, the enumerative problem regarding the ramification divisor persists, and poses a significant challenge.
-In some sense, the enumerative problems regarding branch and ramification divisors trade places, certainly in terms of difficulty, but hopefully also in terms of structure.
+In some sense, the enumerative problems regarding the branch and ramification divisors trade places, certainly in terms of difficulty, but hopefully also in terms of structure.
 
 
 \subsection{Further questions}
-Our work raises several questions, some of which we hope to return to in a sequel.
-\subsubsection{The enumerative problem for scrolls}\label{sec:qscroll}.
+Our work raises several questions, some of which we hope to return to in the future.
+\subsubsection{The enumerative problem for scrolls}\label{sec:qscroll}
 Recall that every vector bundle on $\P^1$ is isomorphic to a direct sum of line bundles.
-In particular, an ample vector bundle of rank $r$ and degree $d$ is isomorphic to $\O(a_1) \oplus \cdots \oplus \O(a_r)$ for positive integers $a_1, \dots, a_r$ satisfying $a_1 \leq \cdots \leq a_r$ and $a_1 + \cdots + a_r = d$, or equivalently, by an $r$-term partition of $d$.
+In particular, an ample vector bundle of rank $r$ and degree $d$ is isomorphic to $\O(a_1) \oplus \cdots \oplus \O(a_r)$ for positive integers $a_1, \dots, a_r$ satisfying $a_1 \leq \cdots \leq a_r$ and $a_1 + \cdots + a_r = d$.
+It is thus speficied up to isomorphism by an $r$-term partition of $d$.
 Let $\Sigma_{r,d}$ be the set of $r$-term partitions of $d$.
 We get a function $\phi \from \Sigma_{r,d} \to \Z_{\geq 0}$ defined by
 \[ \phi(a_1, \dots, a_r) = \text{Degree of the projection-ramification map for $X \subset \P^{r+d}$},\]
@@ -302,12 +300,12 @@ In this case, by the lower semi-continuity of degrees of rational maps, we get
 \[ \phi(a_1, \dots, a_r) \leq \phi(b_1,\dots, b_r).\]
 Thus, $\phi$ is order preserving.
 
-We hope that the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ admits some structure, such as a nice recurrence relation or generating function.
+We hope that the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ admits a deeper structure, such as a recurrence relation or generating function.
 \autoref{thm:minimaldegree} and \autoref{thm:examples} only scratch the surface as far as $\phi$ is concerned.
 \autoref{thm:minimaldegree} states that $\phi$ is not identically zero, at least if $d$ is sufficiently large.
 \autoref{thm:examples} computes $\phi$ for the partitions $(d)$, $(1, \dots, 1)$, $(1, k+1)$, $(1,1,k+1)$, and $(2,2)$.
-Some more examples, calculated using randomized trials over finite fields in \texttt{Macaulay2} and \texttt{MAGMA}, are tabulated in \autoref{tab:computation}.
-We plan to return to a more complete enumerative investigation of $\phi$ in a future paper.
+Some more examples, calculated using randomized trials over finite fields in \texttt{Macaulay2} \cite{gra.sti:} and \texttt{Magma} \cite{bos.can.pla:97}, are tabulated in \autoref{tab:computation}.
+ There seems to be some enchanting combinatorics behind $\phi$. As a sample, we point out that the sequence of numbers $1,2,6,22, 92, 422$ appearing down the diagonal in \autoref{tab:computation} are the number of Baxter permutations on $n=1,2, \dots, 6$ letters.  We plan on conducting a more complete enumerative investigation of $\phi$ in a future paper. 
 \begin{table}
   \centering
   \rowcolors{2}{gray!10}{white}
@@ -323,11 +321,17 @@ We plan to return to a more complete enumerative investigation of $\phi$ in a fu
   \end{tabular}
 \end{table}
 
+\subsubsection{Non-maximal variation} Given that our counterexamples to maximal variation are all scrolls over curves, it is natural to wonder whether failure of maximal variation can only occur for scrolls.  Ideally, we would seek a clean classification of varieties failing maximal variation -- a good start would be to precisely classify all  rational normal scrolls which fail maximal variation.
+
+It would especially be nice to establish maximal variation for all threefolds -- by \autoref{thm:main} along with the well-known fact that the only threefolds which have degenerate duals are scrolls, we need only establish maximal variation for scrolls, i.e. $\P^{2}$-bundles over curves.
+
+\subsubsection{Compressible varieties}  Another problem which naturally emerges from our work is to classify those varieties which are compressible.  For example, it is easy to see that smooth, non-degenerate complete intersection varieties are automatically incompressible.  Therefore, it might be possible to prove incompressibility for varieties of small codimension in large projective spaces.  It may also be possible to classify the compressible varieties having a fixed small codimension, starting with codimension two.
+
 \subsubsection{Positive characteristics}
-The study of the maximal variation of $\rho$ and its degree in positive characteristics will surely bring new surprises and require new techniques.
-We do not know if \autoref{thm:main} or \autoref{thm:minimaldegree} holds in positive characteristic; our proofs certainly do not.
+The analysis of maximal variation and the computation of the degree of $\rho$  will surely bring new surprises and require new techniques in positive characteristics.
+We do not know if \autoref{thm:main} or \autoref{thm:minimaldegree} holds in positive characteristic; our proofs certainly do not work.
 The degrees in \autoref{thm:examples}, and likewise the values of the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ defined in \autoref{sec:qscroll}, depend on the characteristic due to the presence of inseparable covers.
-Indeed, this is the case even for rational normal curves \cite{oss:06}.
+Indeed, this is true even for rational normal curves \cite{oss:06}.
 
 
 \subsubsection{Picture over the real numbers}
@@ -336,15 +340,15 @@ Consider the projection-ramification map of a rational normal curve of degree $n
 The real algebraic geometry surrounding $\rho$ plays an important role in real enumerative geometry, the theory of real algebraic curves, and control theory, thanks to the B. and M. Shapiro conjecture.
 Proved by Eremenko and Gabrielov, this conjecture states that if $L \in \Gr(2, n+1)$ is such that the ramification divisor $\rho(L)$ is the sum of $(2n-2)$ real points in $\P^1$, then $L$ is a real point of $\Gr(2, n+1)$ \cite{sot:00, ere.gab:02}.
 \autoref{thm:minimaldegree} potentially sets the stage for a higher-dimensional generalization of the body of work around the Shapiro conjecture.
-In particular, it would be interesting to find a uniform topological picture explaining the numbers $\deg \rho$, similar to the ``nets'' introduced by Eremenko and Gabrielov that explain the appearance of Catalan numbers.
+In particular, it would be interesting to find a uniform topological picture explaining the numbers $\deg \rho$, similar to the ``nets'' introduced by Eremenko and Gabrielov which elegantly explain the appearance of Catalan numbers.
 
 \subsection{Notation and conventions}
 We work over an algebraically closed field $\k$ of characteristic zero, not simply for convenience, but for necessity---we appeal to Bertini's theorem, generic smoothness, and Kodaira vanishing.
 All schemes are of finite type over $\k$.
-A \emph{variety} is an integral scheme.
+A variety is a separated integral scheme.
 For a scheme $X$, we let $X^{\rm sm} \subset X$ be the smooth locus.
 
-We go back and forth without comment between divisors and line bundles, and likewise, locally free sheaves and vector bundles.
+We go back and forth without comment between divisors and line bundles, and likewise, between locally free sheaves and vector bundles.
 We follow Grothendieck's convention for projectivization.
 That is, the projectivization $\P E$ of a vector bundle $E$ is the space of one dimensional quotients of $E$.
 For a line bundle $L$ on $X$, we denote by $|L|$ the projective space $\P H^0(X, L)^*$.
@@ -365,16 +369,16 @@ The notion of non-defectivity abstracts the condition of having a divisorial dua
 Before proving \autoref{thm:mainMain}, we study this notion in \autoref{sec:non-defectivity}.
 In \autoref{sec:minimaldegree}, we prove \autoref{thm:minimaldegree} as \autoref{thm:actualminimaldegree}.
 In the same section, we derive explicit formulas for the ramification divisors for scrolls (\autoref{sec:prscrolls}), give the examples advertised in \autoref{thm:counterexamples} (\autoref{sec:failure}), and treat the threefold scrolls (\autoref{sec:eccentric_threefolds}).
-In \autoref{sec:generic}, we prove \autoref{thm:rationalnormalscrolls} as \autoref{thm:actualrationalnormalscrolls}, after having treated some low degree examples by hand in \autoref{sec:lowdegree}, introduced limit linear series for vector bundles of higher rank in \autoref{sec:lls}, and defined the projection-ramification map for limit linear series in \autoref{sec:prnongeneric} and \autoref{sec:prlls}.
+In \autoref{sec:generic}, we prove \autoref{thm:rationalnormalscrolls} as \autoref{thm:actualrationalnormalscrolls}, after treating some low degree examples by hand in \autoref{sec:lowdegree}, introducing (linked) limit linear series for vector bundles of higher rank in \autoref{sec:lls}, and defining the projection-ramification map for linked linear series in \autoref{sec:prnongeneric} and \autoref{sec:prlls}.
 In \autoref{sec:enumerativeproblems}, we turn to the enumerative problem of finding the degree of $\rho$.
 We treat the cases of rational normal curves and quadric hypersurfaces quickly in \autoref{sec:arnc} and \autoref{sec:aquadricsurface}.
 We devote \autoref{sec:veronese} to the case of the Veronese surface and \autoref{sec:quartic_scroll} to the case of the quartic surface scroll.
 
 \subsection*{Acknowledgements}
-A.D. thanks the Australian Research Council for the grant number \emph{DE180101360} that supported a part of this project.
-A.D. and A.P. conducted a part of this research at the Banff International Research Center while attending the workshop titled \emph{Moduli spaces, birational geometry, and wall crossings} organized by Dan Abramovich, Jim Bryan, and Dawei Chen, and are grateful for the opportunity.
-We also thank Izzet Coskun for enlightening discussions related to the project.
-
+First and foremost, we thank Fyodor Zak for generously sharing numerous useful comments, ideas, and encouragement over the span of several months.
+We also thank Izzet Coskun, Joe Harris, Mirella Manaresi, Brian Osserman, and Dennis Tseng for useful conversations. 
+A.D. thanks the Australian Research Council for the grant number \texttt{DE180101360} that supported a part of this project.
+A.D. and A.P. conducted a part of this research at the Banff International Research Center while attending the workshop titled \emph{Moduli spaces, birational geometry, and wall crossings} organized by Dan Abramovich, Jim Bryan, and Dawei Chen, and are grateful for the opportunity to attend.
 
 \section{The projection-ramification map}\label{sec:prmap}
 In this section, we define a projection-ramification map for a linear series on a proper, normal, variety $X$.
@@ -932,7 +936,7 @@ As a consequence, we immediately deduce \autoref{thm:minimaldegree}.
 
 \subsection{Projection-ramification for scrolls}\label{sec:prscrolls}
 \autoref{thm:minimaldegree} motivates a deeper investigation of the projection-ramification map for varieties of minimal degree.
-Indeed, for $X \subset \P^n$ of minimal degree, the projection-ramification map is potentially generically finite.
+Indeed, for $X \subset \P^n$ of minimal degree, the projection-ramification map is potentially generically finite and dominant.
 Recall that a large class of varieties of minimal degree are the rational normal scrolls, namely $X = \P E$ for an ample vector bundle $E$ on $\P^1$ embedded by the complete linear series $\O_X(1)$.
 If $\dim X \geq 3$, then $X$ is neither incompressible nor does it have a divisorial dual variety.
 Therefore, for such $X$, \autoref{thm:main} leaves the question of maximal variation unanswered.
@@ -1034,7 +1038,7 @@ Note that the expression above is the determinant of the $(r+1) \times (r+1)$ ma
 This gives an equation for $R_U \subset X_U = \Proj \O_U[X_1, \dots, X_r]$.
 
 \subsection{Failure of maximal variation}\label{sec:failure}
-In this section, we show that there exists ample vector bundles $E$ of rank $r \geq 4$ on $\P^1$ such that the projection-ramification map for $X = \P E$ is not generically finite.
+In this section, we show that there exist ample vector bundles $E$ of rank $r \geq 4$ on $\P^1$ such that the projection-ramification map for $X = \P E$ is not generically finite.
 In other words, a generic projection of $X$ can be deformed in a one-parameter family so that the ramification divisor remains unchanged.
 
 Recall that the projection-ramification map for $X = \P E$ and the complete linear series of $L = \O_X(1)$ is a map
@@ -1114,8 +1118,8 @@ We engineer the failure of maximal variation using the following observation.
 \end{proof}
 
 \begin{remark}
-In all the examples of scrolls where we know that maximal variation fails, the failure can be explained by the presence of generic stabilizers.
-We do not know, however, if this is the only reason for the failure of maximal variation.
+In all the examples of scrolls where we know that maximal variation fails, the failure is implied by the presence of generic stabilizers.
+We do not know, however, if the presence of stabilizers is {\sl equivalent} to the failure of maximal variation.
 \end{remark}
 
 \begin{remark}
@@ -1190,7 +1194,7 @@ Set $X = \P E$ and $L = \O_X(1)$.
   Indeed, these three equations imply $(bt-d)(\hat a' t - \hat c') + (at-c)(\hat d' - \hat b' t) = 0$, and by the same reason as before, give $\hat a' t - \hat c' = \hat d' - \hat b' t = 0$.
   But it is easy to see that the last two equations combined with $\hat a t - \hat c = at -c$ and $\hat b t - \hat d = bt - d$ have no solutions.    
 
-  Since the map induced by $\rho$ is injective tangent spaces, $\rho$ is generically finite, and hence dominant.
+  Since the map induced by $\rho$ is injective on tangent spaces, $\rho$ is generically finite, and hence dominant.
   To show that $\rho$ is birational, it suffices to show that the generic fiber of $\rho$ is connected.
   For this, it suffices to show that the generic fiber of $\rho^*$ is connected.
   However, observe that the fiber of $\rho^*$ over $(\alpha, \beta, \gamma)$ is given by the equations
@@ -1350,10 +1354,12 @@ We do this by a degeneration argument.
 We degenerate a vector bundle $E$ to a vector bundle $E_0$ on the nodal rational curve $P_0 = \P^1 \cup \P^1$, and show that the projection-ramification map for $E_0$ is dominant.
 For this to work, we have to define the projection-ramification map for nodal curves.
 It turns out that with the most n\"aive definition of linear series on scrolls on nodal curves, we do not get a dominant projection-ramification map.
-We have to work with the limit linear series of higher rank as developed in \cite{tei-i-big:91} and\cite{oss:14}.
+As a remedy, we work with the (linked) limit linear series of higher rank as developed in \cite{tei-i-big:91} and \cite{oss:14}.
+In the literature, there are a few different versions of the notion of a limit linear series.
+We use \cite{oss:14} for the foundations of the theory, and following the terminology there, call our limit linear series linked linear series.
 
-\subsection{Limit linear series}\label{sec:lls}
-We need limit linear series for the simplest singular curve, namely a (projective, connected) nodal curve $C$ which is the nodal union of two smooth (projective, connected) curves $C_1$ and $C_2$, but we need them for vector bundles of rank higher than $1$.
+\subsection{Linked linear series}\label{sec:lls}
+We need linked linear series for the simplest singular curve, namely a (projective, connected) nodal curve $C$ which is the nodal union of two smooth (projective, connected) curves $C_1$ and $C_2$, but we need them for vector bundles of rank higher than $1$.
 Let $B$ be the spectrum of a DVR with special point $0$, general point $\eta$.
 Let $\pi \from X \to B$ be a smoothing of $C$ with non-singular total space $X$.
 That is, $\pi$ is a flat, proper, family of connected curves, smooth over $\eta$, and isomorphic to $C$ over $0$.
@@ -1367,7 +1373,7 @@ The \emph{degree} or \emph{total degree} of $E$ is the sum $\deg E = \deg E|_{C_
 Once and for all, fix a vector bundle $\mathcal E$ of rank $r$ on $X$, and set $E = \mathcal E|_C$.
 Let $E$ have degree $d$ and multi-degree $(w_1, w_2)$.
 Fix a positive integer $k$.
-Our next task is to recall the definition of the space of limit linear series of dimension $k$.
+Our next task is to recall the definition of the space of linked linear series of dimension $k$.
 It will be a $B$-scheme whose fiber over $\eta$ is the Grassmannian $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
 The key idea is to not only consider the sections of $\mathcal E$, but also of its various twists, namely the vector bundles obtained by tensoring with the powers of $\O_X(C_i)$.
 
@@ -1400,10 +1406,10 @@ Observe that
 We say that $\mathcal E$ has multi-degree $w$ if for every $s \in S$ mapping to $0 \in B$, the degree of $\mathcal E|_s$ on $C_v$ is $w_v$ for $v = 1, 2$.
 Note that, if $\mathcal E$ has multi-degree $(w_1, w_2)$, then $\mathcal E_n$ has multi-degree $(w_1-rn, w_2+rn)$.
 
-\begin{definition}[Limit linear series]
+\begin{definition}[linked linear series]
   \label{def:lls}
   Let $S$ be a $B$-scheme.
-  A \emph{$k$-dimensional limit linear series} on $\mathcal E_S$ consists of sub-bundles $V_n \to \pi_* (\mathcal E_n)_S$ of rank $k$ for every $n \in \Z$ satisfying the following compatibility condition.
+  A \emph{$k$-dimensional linked linear series} on $\mathcal E_S$ consists of sub-bundles $V_n \to \pi_* (\mathcal E_n)_S$ of rank $k$ for every $n \in \Z$ satisfying the following compatibility condition.
   For every $m, n \in \Z$, the map
   \begin{equation}\label{lls:compatibility}
     \pi_* \theta_n \from \pi_* (\mathcal E_m)_S \to \pi_* (\mathcal E_{m+n})_S \text{ maps } V_m \to V_{m+n}.
@@ -1423,23 +1429,23 @@ Alternatively, if $F_0 \to F_1 \to \cdots $ is a complex of vector bundles on $S
 
 
 \begin{remark}
-\autoref{def:lls} defines limit linear series on a particular vector bundle $\mathcal E$.
-We can also vary the choice of the vector bundle, as is done in \cite{oss:14}; in that case, one imposes an additional vanishing condition on the vector bundles to ensure boundedness of the moduli space of limit linear series.
+\autoref{def:lls} defines linked linear series on a particular vector bundle $\mathcal E$.
+We can also vary the choice of the vector bundle, as is done in \cite{oss:14}; in that case, one imposes an additional vanishing condition on the vector bundles to ensure boundedness of the moduli space of linked linear series.
 \end{remark}
 
 
-\begin{definition}[Simple limit linear series]
+\begin{definition}[Simple linked linear series]
   \label{def:simple_lls}
-Let $S = \spec K$, where $K$ is a field, and let $V = (V_n \mid n \in \Z)$ be a limit linear series on $S$.
+Let $S = \spec K$, where $K$ is a field, and let $V = (V_n \mid n \in \Z)$ be a linked linear series on $S$.
 We say  $V$ is \emph{simple} if there exist integers $w_1, \dots, w_k$, not necessarily distinct, and elements $v_i \in V_{w_i}$ such that for every $w \in \Z$, the images of $v_1, \dots, v_k$ in $V_w$ form a basis of $V_w$.
 \end{definition}
 
-Note that if $S \to B$ maps to the generic point $\eta$, then the data of a limit linear series $V = (V_n)$ is equivalent to the data of an individual $V_n$ for any $n \in \Z$, and in particular, for $n = 0$.
-As a result, the functor that associates to $S \to \eta$ the set of $k$-dimensional limit linear series of $\mathcal E_S$ is represented by the Grassmannian $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
+Note that if $S \to B$ maps to the generic point $\eta$, then the data of a linked linear series $V = (V_n)$ is equivalent to the data of an individual $V_n$ for any $n \in \Z$, and in particular, for $n = 0$.
+As a result, the functor that associates to $S \to \eta$ the set of $k$-dimensional linked linear series of $\mathcal E_S$ is represented by the Grassmannian $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
 The main theorem of \cite{oss:14} is the following representability theorem.
 \begin{theorem}[{\cite[Theorem~3.4.7]{oss:14}}]
   \label{thm:lls}
-  The functor that associates to a $B$-scheme $S \to B$ the set of limit linear series on $\mathcal E_S$ is representable by a projective $B$-scheme $\mathcal G(k, \mathcal E)$ isomorphic to the Grassmannian $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$ over $\eta$.
+  The functor that associates to a $B$-scheme $S \to B$ the set of linked linear series on $\mathcal E_S$ is representable by a projective $B$-scheme $\mathcal G(k, \mathcal E)$ isomorphic to the Grassmannian $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$ over $\eta$.
   The locus of simple linear series ${\mathcal G}^{\rm simple}(k, \mathcal E) \subset {\mathcal G}(k, \mathcal E)$ is an open subscheme, and the map ${\mathcal G}^{\rm simple}(k, \mathcal E) \to B$ has universal relative dimension at least $k(d-k-r(g-1))$.
 \end{theorem}
 The last stamement implies that if $v \in {\mathcal G}^{\rm simple}$ is such that ${\mathcal G}^{\rm simple}$ has relative dimension at most $k(d-k-r(g-1))$ at $v$, then it has relative dimension exactly $k(d-k-r(g-1))$ at $v$ and, futhermore, it is an open map near $v$.
@@ -1449,7 +1455,7 @@ In particular, $v$ is in the closure of $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
   But the statement above is enough for our purposes.  
 \end{remark}
 
-Although the definition of a limit linear series demands that we specify infinitely many vector bundles $V_n$, one for each $n \in \Z$, this is neither practical nor necessary.
+Although the definition of a linked linear series demands that we specify infinitely many vector bundles $V_n$, one for each $n \in \Z$, this is neither practical nor necessary.
 In the best case, only specifying the extremal ones, namely $V_{n_1}$ and $V_{n_2}$, suffices, provided that they satisfy some compatibility conditions.
 The original definition of limit linear series due to Eisenbud--Harris \cite{eis.har:86,eis.har:84} in the rank 1 case and Teixidor i Bigas \cite{tei-i-big:91} in the general case, took this minimalist approach.
 
@@ -1475,13 +1481,13 @@ Note that, due to the vanishing condition on the twists of $E$, the restriction 
 is an isomorphism.
 Via this isomorphism, we sometimes treat $W_i$ as a subspace of $H^0(C_i, \mathcal E_{n_i}|_{C_i})$.
 
-Although the notions of a limit linear series and an EHT limit linear series differ in general, they essentially agree when we restrict to the simple limit linear series and the refined EHT limit linear series.
+Although the notions of a linked linear series and an EHT limit linear series differ in general, they essentially agree when we restrict to the simple linked linear series and the refined EHT limit linear series.
 More precisely, we have the following statement.
 \begin{proposition}\label{prop:llseht}
-  Let $S$ be a $B$-scheme, and $V = (V_n \mid n \in \Z)$ a limit linear series on $\mathcal E_S$.
+  Let $S$ be a $B$-scheme, and $V = (V_n \mid n \in \Z)$ a linked linear series on $\mathcal E_S$.
   For every $s \in S$ over $0 \in B$, taking $W_i = V_{n_i}|_s$ for $i = 1, 2$ gives an EHT limit linear series.
   Conversely, assume that $S$ reduced, and let $\mathcal W_i \subset \pi_*(\mathcal E_{n_i})_S$ be sub-bundles whose restrictions to every $s \in S$ over $\eta \in B$ agree under the isomorphism $(\mathcal E_{n_1})_\eta \cong (\mathcal E_{n_2})_\eta$, and to eveny $s \in S$ over $0 \in B$ define a refined EHT limit linear series.
-  Then there exists a unique limit linear series $V = (V_n \mid n \in \Z)$ on $\mathcal E_S$ such that $\mathcal W_i = V_{n_i}$.
+  Then there exists a unique linked linear series $V = (V_n \mid n \in \Z)$ on $\mathcal E_S$ such that $\mathcal W_i = V_{n_i}$.
   Furthermore, for every $s \in S$ over $0$, the series $V|_s$ is simple.
 \end{proposition}
 \begin{proof}
@@ -1532,17 +1538,17 @@ More precisely, we have the following statement.
   obtained by composing $\iota = \pi_*(\theta_{n_1-n} \oplus \theta_{n_2-n})$ and the projections $\pi_*(\mathcal E_{n_i})_S \to \pi_*(\mathcal E_{n_i})_S / \mathcal W_i$.
   We proved that, for every $\spec K \to S$, the kernel of $\overline \iota \otimes_{\O_S} K$ is $k$-dimensional.
   Since $S$ is reduced, it is easy to prove that $V_n = \ker \iota$ is a sub-bundle of $\pi_*(\mathcal E_n)$.
-  It is also easy to check that $V = (V_n \mid n \in \Z)$ a limit linear series, the only one that satisfies $V_{n_i} = \mathcal W_i$.
+  It is also easy to check that $V = (V_n \mid n \in \Z)$ a linked linear series, the only one that satisfies $V_{n_i} = \mathcal W_i$.
   The proof is now complete.
 \end{proof}
 
-\autoref{prop:llseht} allows us to combine the economy of specifying an EHT limit linear series with the convenient functorial definition of a limit linear series.
-We use this in the definition of the projection-ramification map in terms of limit linear series.
+\autoref{prop:llseht} allows us to combine the economy of specifying an EHT limit linear series with the convenient functorial definition of a linked linear series.
+We use this in the definition of the projection-ramification map in terms of linked linear series.
 
 \subsection{Projection-ramification with non-generic vanishing sequence}
 \label{sec:prnongeneric}
 We consider the projection-ramification map for linear series with a non-generic vanishing sequence.
-The analysis of such series plays a key role in defining the projection-ramification map for limit linear series.
+The analysis of such series plays a key role in defining the projection-ramification map for linked linear series.
 
 Let $C$ be a smooth curve and $p \in C$ a point.
 Let $E$ be a vector bundle on $C$ of rank $r$.
@@ -1607,7 +1613,7 @@ Note that if $V$ is base-point free at $p$, then $\dim V^0 = r$ and $\dim V^1 = 
 We are primarily interested in generic $(r+1)$-dimensional subspaces $V \subset H^0(C, E)$.
 A generic such $V$ has the vanishing sequence
 \[ (0, \dots, 0, 1).\]
-For limit linear series, it is important to also study the $V$ with complementary vanishing sequence, namely
+For linked linear series, it is important to also study the $V$ with complementary vanishing sequence, namely
 \[ (0,1, \dots, 1),\]
 which we now do.
 For simplicity, we restrict to $C = \P^1$.
@@ -1656,7 +1662,7 @@ Denote this isomorphism class by $E'_{\rm gen}$.
   Follows from \autoref{prop:domred} and that the projection-ramification map is dominant for $E' = \O(1)^r$ and $E' = \O(2)^r$.
 \end{proof}
 
-\subsection{Projection-ramification for limit linear series}
+\subsection{Projection-ramification for linked linear series}
 \label{sec:prlls}
 Recall the setup from \autoref{sec:lls}: $C = C_1 \cup C_2$ is a nodal union of two smooth projective curves of genus $g_1$ and $g_2$, and $\pi \from X \to B$ be a smoothing of $C$.
 Let $\mathcal E$ be a vector bundle of rank $r$ on $X$ whose restriction $E$ to $C$ has multi-degree $(w_1, w_2)$.
@@ -1686,8 +1692,8 @@ that extends the projection-ramification map
 on $X_\eta$.
 For technical reasons, we define the map in \eqref{eq:Rtilde} only on the reduced scheme underlying ${\mathcal G}(r+1, \mathcal E)$.
 
-Before defining the map, we identify three conditions on limit linear series on the central fiber that are required for the map to be defined.
-To do this, consider a limit linear series $(V_n \mid n \in \Z)$ on $C$, and let $(W_1, W_2)$ be the associated EHT limit linear series namely $W_1 = V_{n_1}$ and $W_2 = V_{n_2}$ (see \autoref{prop:llseht}).
+Before defining the map, we identify three conditions on linked linear series on the central fiber that are required for the map to be defined.
+To do this, consider a linked linear series $(V_n \mid n \in \Z)$ on $C$, and let $(W_1, W_2)$ be the associated EHT limit linear series namely $W_1 = V_{n_1}$ and $W_2 = V_{n_2}$ (see \autoref{prop:llseht}).
 The first condition we want to impose is that $(W_1, W_2)$ be a refined EHT limit linear series; this is an open condition (see \cite[Proposition~4.1.5]{oss:14}).
 The second condition we want to impose is that the vanishing sequence of $W_1 \subset H^0(C_1, E_{n_1}|_{C_1})$ at $p$ is of the form
 \begin{equation}\label{eqn:llsvs}
@@ -1707,11 +1713,11 @@ The third condition we want to impose is that these two vector spaces be transve
 Let $\mathcal U \subset {\mathcal G}(r+1, \mathcal E)$ be the complement of the union of the following closed sets:
 \begin{enumerate}
 \item the closure of the subset of $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta))$ corresponding to $V \subset H^0(X_\eta, \mathcal E_\eta)$ for which the evaluation map $V\otimes\O_{X_\eta} \to \mathcal E_\eta$ has generic rank less than $r$.
-\item the set of limit linear series $(V_n \mid n \in \Z)$ on $C$ such that the associated EHT limit linear series $(W_1, W_2)$ is not refined, or does not have the vanishing sequence as in \eqref{eqn:llsvs}, or does not satisfy the transversality condition $\dim (V^0 \cap V^1) = 1$.
+\item the set of linked linear series $(V_n \mid n \in \Z)$ on $C$ such that the associated EHT limit linear series $(W_1, W_2)$ is not refined, or does not have the vanishing sequence as in \eqref{eqn:llsvs}, or does not satisfy the transversality condition $\dim (V^0 \cap V^1) = 1$.
 \end{enumerate}
 Give $\mathcal U$ the reduced scheme structure.
 
-Let $S$ be a reduced $B$-scheme with a map to $\mathcal U$ given by the limit linear series $(V_n \mid n \in \Z)$.
+Let $S$ be a reduced $B$-scheme with a map to $\mathcal U$ given by the linked linear series $(V_n \mid n \in \Z)$.
 On $X_S$, we have a diagram analogous to \eqref{eqn:differential_construction}, namely
 \begin{equation}
   \label{eq:llspr}
@@ -1750,7 +1756,7 @@ Consider the two extremal sections, namely those corresponding to $n = n_1$ and 
   But by \eqref{eqn:vlambdaswitch}, we have $V^1 = \Lambda^0$ and $V^0 = \Lambda^1$, so the two lines are equal.
 \end{proof}
 
-Thanks to \autoref{lem:rameht}, we apply \autoref{prop:llseht}, and conclude that there exists a unique (1-dimensional) limit linear series $(R_n \mid n \in \Z)$ of $\mathcal E'$ on $X_S$ for which $R_{n_1'} = \det V_{n_1}$ and $R_{n_2'} = \det V_{n_2}$, at least if $S$ is reduced.
+Thanks to \autoref{lem:rameht}, we apply \autoref{prop:llseht}, and conclude that there exists a unique (1-dimensional) linked linear series $(R_n \mid n \in \Z)$ of $\mathcal E'$ on $X_S$ for which $R_{n_1'} = \det V_{n_1}$ and $R_{n_2'} = \det V_{n_2}$, at least if $S$ is reduced.
 The transformation
 \[ (V_n \mid n \in Z) \mapsto (R_n \mid n \in \Z)\]
 defines a morphism
@@ -1771,7 +1777,7 @@ The fruit of our labor is the following corollary.
 
 
 \subsection{Maximal variation for generic scrolls of high degree}
-We now have all the tools to prove \autoref{thm:rationalnormalscrolls}
+We now have all the tools to prove \autoref{thm:rationalnormalscrolls}.
 \begin{theorem}[\autoref{thm:rationalnormalscrolls}]
   \label{thm:actualrationalnormalscrolls}
   Let $E$ be a generic vector bundle on $\P^1$ of rank $r$ and degree $d = a(r-1) + b(2r-1)+1$, where $a, b$ are positive integers.
@@ -1787,7 +1793,7 @@ We now have all the tools to prove \autoref{thm:rationalnormalscrolls}
   Take $C_1 = C_2 = \P^1$, and let $C = C_1 \cup C_2$ be their nodal union at one point, which we take to be the point labeled $0$ on both $\P^1$s.
   Let $X \to B$ be a smoothing of $C$.
   Note that any vector bundle on $C$ is the restriction of a vector bundle on $X$.
-  Therefore, by \autoref{prop:degeneration}, it suffices to construct a vector bundle $E$ of degree $d$ on $C$ and a limit linear series $(V_n \mid n \in \Z)$ on $E$ such that the following conditions hold for the point $v$ of $\mathcal G (r+1, E')$ represented by $(V_n \mid n \in \Z)$:
+  Therefore, by \autoref{prop:degeneration}, it suffices to construct a vector bundle $E$ of degree $d$ on $C$ and a linked linear series $(V_n \mid n \in \Z)$ on $E$ such that the following conditions hold for the point $v$ of $\mathcal G (r+1, E')$ represented by $(V_n \mid n \in \Z)$:
   \begin{enumerate}
   \item $\dim_v \mathcal G(r+1, E) = (r+1)(d-1)$,
   \item $\rho$ is defined at $v$, and
@@ -1812,10 +1818,10 @@ We now have all the tools to prove \autoref{thm:rationalnormalscrolls}
   Let $V_{n_1} \subset H^0(C_1, E_1 \otimes \O(a))$ be the image of $V$ and $V_{n_2} \subset H^0(C_2,E_2 \otimes \O(b-a))$ the image of $\Lambda$.
   Then $V_{n_1}$ has the vanishing sequence $(a, \dots, a, a+1)$, and $\Lambda$ the complementary vanishing sequence $(b-a-1, b-a, \dots, b-a)$.
   By the construction of $\Lambda$, there exist bases of $V_{n_1}$ and $V_{n_2}$ that satisfy the gluing condition at $0$.
-  In conclusion, $V_{n_1}$ and $V_{n_2}$ form a refined EHT limit linear series, and hence define a limit linear series $v = (V_n \mid n \in \Z)$.
+  In conclusion, $V_{n_1}$ and $V_{n_2}$ form a refined EHT limit linear series, and hence define a linked linear series $v = (V_n \mid n \in \Z)$.
 
   It is easy to check that $\dim_v \G(r+1, E) = (r+1)(d-1)$.
-  Indeed, for every limit linear series $w = (W_n \mid n \in \Z)$ in an open subset around $v$, the EHT limit linear series associated to $w$ determines $w$ and has the same vanishing sequence as $v$.
+  Indeed, for every linked linear series $w = (W_n \mid n \in \Z)$ in an open subset around $v$, the EHT limit linear series associated to $w$ determines $w$ and has the same vanishing sequence as $v$.
   In particular, $W_{n_1} \subset H^0(C_1, E_1(a))$ is the image of an $(r+1)$-dimensional subspace $W \subset H^0(C_1, E_1)$ with vanishing sequence $(0, \dots, 1)$, and $W_{n_2} \subset H^0(C_2, E_2(b-a))$ is the image of an $(r+1)$-dimensional subspace $M \subset H^0(C_2, E_2(1))$ with vanishing sequence $(0,1,\dots,1)$.
   Furthermore, the gluing condition implies that $M$ is in fact the image of an $(r+1)$-dimensional subspace of the kernel of the map
   \[ E_2'(1) \to E_2'(1)/W^1.\]
@@ -1973,7 +1979,7 @@ We begin by identifying the two quotients.
 
 Let $S$ be a 3-dimensional quadratic space, that is, a vector space with a non-degenerate quadratic form $q$.
 Then we have $\Aut(S) =  \operatorname{O}(q) \cong \operatorname{O(3)}$.
-THe projective space $\P S$ is isomorphic to $\P^2$, and it comes with a distinguished smooth conic $Q \subset \P S$.
+The projective space $\P S$ is isomorphic to $\P^2$, and it comes with a distinguished smooth conic $Q \subset \P S$.
 The automorphism group of the pair $(\P S, Q)$ is $\Aut(Q) \cong \PGL_2$.
 \begin{lemma}\label{lem:quotgrass}
   The quotient $\Gr(3, U \otimes \Sym^2V) / \PGL(U) \times \PGL(V)$ is birational to the quotient $\Hilb^3(\P S) / \Aut S$.
@@ -2059,6 +2065,34 @@ Set $M_i = R_{jk}$, and let $N$ be the net spanned by $L_iM_i$ for $i = 1, 2, 3$
 By the definition of $R_{jk}$, we see that $M_i$ is the polar line of the point $L_k \cap L_k$.
 In other words, the triangles $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$ are polar conjugates---lines in one are polars to the vertices of the other.
 
+\begin{remark}\label{rem:richelot}
+  The space $\Hilb^3 \P S / \Aut S$ and its birational involution (called the Richelot involution) induced by
+  \begin{equation}\label{eqn:richelot}
+    \tau \from \Hilb^3 \P S \dashrightarrow \Hilb^3 \P S
+  \end{equation}
+  that sends a triangle formed by the lines $(\ell_1, \ell_2, \ell_3)$ to the triangle formed by the points $(\ell_1^\perp, \ell_2^\perp, \ell_3^\perp)$ have well-known moduli interpretations, which we learned from \cite[Example~4.2]{dol.how:15}.
+  Intersecting the lines $\ell_i$ with $Q$ for $i = 1, 2, 3$ gives a triple of pairs of points on $Q \cong \P^1$.
+  The double cover of $\P^1$ branched along these six points gives a genus 2 curve $C$.
+  The grouping of the six points in three pairs $\{p_i, q_i\}$ for $i = 1, 2, 3$ gives a 2-dimensional subspace of the 4-dimensional $\F_2$-vector space $\Pic C [2]$, namely $\{0\} \cup \{p_i - q_i \mid i = 1,2,3\}$.
+  This vector space is a maximal isotropic subspace for the Weil pairing on $\Pic C[2]$.
+  Conversely, a genus 2 curve $C$ with a maximal isotropic subspace of $\Pic C[2]$ defines six points on $\P^1$ grouped into a triple of pairs.
+  Thus, $\Hilb^3 \P S / \Aut S$ is birational to the moduli space of genus 2 curves along with an isotropic subspace of two torsion points in its Jacobian.
+
+  Since general principally polarized abelian surfaces are Jacobians of genus 2 curves, $\Hilb^3 \P S / \Aut S$ is also birational to the moduli of $(A, G)$, where $A$ is a principally polarized abelian surface and $G \subset A[2]$ is a maximal isotropic subspace for the Weil pairing.
+  In this interpretation, the involution $\tau$ is called the Fricke involution; it sends $(A, G)$ to $(A/G, A[2]/G)$ (see \cite[Page~2]{muk:12}).
+
+  Using the Torelli theorem, the moduli space of $(A, G)$ can be described as the quotient $H_2/\Gamma_0(2)$, where $H_2$ is the Siegel upper half space of degree 2, and $\Gamma_0(2) \subset \operatorname{Sp}(4, \Z)$ is the congruence subgroup consisting of matrices $\begin{pmatrix} A & B \\ C & D \end{pmatrix}$ where $A, B, C, D$ are $2 \times 2$ blocks and $C \equiv 0 \pmod 2$.
+  In this interpretation, the involution $\tau$ is induced by the action of $\frac{1}{\sqrt 2} \begin{pmatrix} 0 & I_2 \\ -2 I_2 & 0 \end{pmatrix} \in \operatorname{Sp}(4, \R)$ on $H_2$ (again, see \cite[Page~2]{muk:12}).
+
+  Finally, suppose we pass to ordered triples of pairs, or equivalently to $(\P S)^3 / \Aut S$.
+  Then the moduli interpretation changes slightly.
+  Now the space is the moduli space of $(A, \psi)$, where $A$ is a principally polarized abelian surface and $\psi \from \F_2^2 \to A[2]$ is an isomorphism onto a maximal isotropic subspace (note that $\psi$ is equivalent to a maximal isotropic $G \subset A[2]$ along with a basis of $G$).
+  The moduli space of $(A, \psi)$ is the quotient $H_2 / \Gamma_1(2)$ where $\Gamma_1(2) \subset \operatorname{Sp}(4, \Z)$ is defined by the congruence conditions $A - I_2 \equiv 0 \pmod 2$ in addition to $C \equiv 0 \pmod 2$.
+  The Fricke involution continues to act on $H_2 / \Gamma_1(2)$.
+  The Satake compactification of $H_2 / \Gamma_1(2)$ is the Igusa quartic threefold in $\P^4$ on which the Fricke involution acts by a linear transformation of $\P^4$.
+  The quotient of the Igusa quaric by the Fricke involution is isomorphic to a double cover of $\P^3$ branched along the union of 4 planes  \cite[Theorem~2]{muk:12}.
+\end{remark}
+
 Recall that $\xi \in \Hilb^3\P S$ is the point defined by the three vertices of the triangle formed by $(L_1, L_2, L_3)$.
 Let $\xi' \in \Hilb^3\P S$ be the point defined by the three vertices of the triangle formed by $(M_1, M_2, M_3)$.
 \begin{proposition}\label{prop:quarticscroll}
@@ -2143,15 +2177,18 @@ We invite the reader to look at \autoref{fig:quarticscroll} for the configuratio
   \centering
   \includegraphics{quartic_scroll}
   \caption{
-    The diagram shows the unique pair of polar conjugate triangles of Reye lines associated to a net of conics as proved in \autoref{prop:quarticscroll}.
-    The net of conics includes the distinguished conic $Q$, seen here as a hyperbola (dotted black).
+    The figure shows the unique pair of polar conjugate triangles of Reye lines associated to a net of conics as proved in \autoref{prop:quarticscroll}.
+    The net includes the distinguished conic $Q$, seen here as a hyperbola (dotted black).
     The Jacobian cubic $R$ (green) and the dual of the Hermite cubic $E^\perp$ (orange) intersect in 6 points on $Q$ (4 of which are real and visible), and 3 other collinear points, two of which, say $p_1$ and $p_2$, are marked (red), and the third, say $p_3$, is at infinity.
     The Reye lines forming the two polar conjugate triangles (dashed pink and dashed blue) come in conjugate pairs.
     The lines in each pair intersect at $p_1$, $p_2$, and $p_3$.
+    (The figure was produced using \texttt{Sage} \cite{the:17}.)
   }
   \label{fig:quarticscroll}
 \end{figure}
 
+
+\pagebreak
 
  \bibliographystyle{siam}
  \bibliography{CommonMath}

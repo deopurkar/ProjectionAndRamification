@@ -1,0 +1,87 @@
+\begin{thebibliography}{10}
+
+\bibitem{bos.can.pla:97}
+{\sc W.~Bosma, J.~Cannon, and C.~Playoust}, {\em The {M}agma algebra system.
+  {I}. {T}he user language}, J. Symbolic Comput., 24 (1997), pp.~235--265.
+\newblock Computational algebra and number theory (London, 1993).
+
+\bibitem{dol.how:15}
+{\sc I.~Dolgachev and B.~Howard}, {\em Configuration spaces of complex and real
+  spheres}, in Recent advances in algebraic geometry, vol.~417 of London Math.
+  Soc. Lecture Note Ser., Cambridge Univ. Press, Cambridge, 2015, pp.~156--179.
+
+\bibitem{dol:12}
+{\sc I.~V. Dolgachev}, {\em Classical algebraic geometry, a modern view},
+  Cambridge University Press, Cambridge, 2012.
+
+\bibitem{eis.har:84}
+{\sc D.~Eisenbud and J.~Harris}, {\em Limit linear series, the irrationality of
+  {$M\sb{g}$}, and other applications}, Bull. Amer. Math. Soc. (N.S.), 10
+  (1984), pp.~277--280.
+
+\bibitem{eis.har:86}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Limit linear series:
+  basic theory}, Invent. Math., 85 (1986), pp.~337--371.
+
+\bibitem{eke.lan.sha.ea:99}
+{\sc T.~Ekedahl, S.~Lando, M.~Shapiro, and A.~Vainshtein}, {\em On {H}urwitz
+  numbers and {H}odge integrals}, C. R. Acad. Sci. Paris S\'{e}r. I Math., 328
+  (1999), pp.~1175--1180.
+
+\bibitem{eke.lan.sha.ea:01}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Hurwitz numbers and
+  intersections on moduli spaces of curves}, Invent. Math., 146 (2001),
+  pp.~297--327.
+
+\bibitem{ere.gab:02}
+{\sc A.~Eremenko and A.~Gabrielov}, {\em Rational functions with real critical
+  points and the {B. and M. Shapiro} conjecture in real enumerative geometry},
+  Annals of Mathematics, 155 (2002), pp.~105--129.
+
+\bibitem{fle.man:98}
+{\sc H.~Flenner and M.~Manaresi}, {\em Variation of ramification loci of
+  generic projections}, Mathematische Nachrichten, 194 (1998), pp.~79--92.
+
+\bibitem{gra.sti:}
+{\sc D.~R. Grayson and M.~E. Stillman}, {\em Macaulay2, a software system for
+  research in algebraic geometry}.
+\newblock Available at \url{http://www.math.uiuc.edu/Macaulay2/}.
+
+\bibitem{kul:08}
+{\sc V.~S. Kulikov}, {\em On {C}hisini's conjecture. {II}}, Izv. Ross. Akad.
+  Nauk Ser. Mat., 72 (2008), pp.~63--76.
+
+\bibitem{muk:12}
+{\sc S.~Mukai}, {\em Igusa quartic and {S}teiner surfaces}, in Compact moduli
+  spaces and vector bundles, vol.~564 of Contemp. Math., Amer. Math. Soc.,
+  Providence, RI, 2012, pp.~205--210.
+
+\bibitem{oss:06}
+{\sc B.~Osserman}, {\em Rational functions with given ramification in
+  characteristic {$p$}}, Compos. Math., 142 (2006), pp.~433--450.
+
+\bibitem{oss:14}
+{\sc B.~{Osserman}}, {\em Limit linear series moduli stacks in higher rank},
+  arXiv:1405.2937 [math.AG],  (2014).
+\newblock Preprint.
+
+\bibitem{sot:00}
+{\sc F.~Sottile}, {\em Real schubert calculus: polynomial systems and a
+  conjecture of shapiro and shapiro}, Experiment. Math., 9 (2000),
+  pp.~161--182.
+
+\bibitem{tei-i-big:91}
+{\sc M.~Teixidor~i Bigas}, {\em Brill-{N}oether theory for stable vector
+  bundles}, Duke Math. J., 62 (1991), pp.~385--400.
+
+\bibitem{the:17}
+{\sc {The Sage Developers}}, {\em {S}ageMath, the {S}age {M}athematics
+  {S}oftware {S}ystem ({V}ersion 7.5.1)}, 2017.
+\newblock {\tt http://www.sagemath.org}.
+
+\bibitem{zak:}
+{\sc F.~Zak}, {\em Review of ``{Variation of ramification loci of generic
+  projections}'' by {Flenner} and {Manaresi}}.
+\newblock MathSciNet MR1653078.
+
+\end{thebibliography}

@@ -1167,7 +1167,13 @@ Set $X = \P E$ and $L = \O_X(1)$.
 \end{equation}
   In this calculation, $p'$ denotes the derivative $\frac{dp}{dt}$.
   Note that we have
-  \[ \gamma = \alpha'\beta - \beta'\alpha + \alpha a + \beta b.\]
+  \begin{equation}\label{eqn:alphabetagamma}
+    \begin{align*}
+    \alpha &= d-bt\\
+    \beta &= at-c\\
+    \gamma &= \alpha'\beta - \beta'\alpha + \alpha a + \beta b.
+    \end{align*}
+  \end{equation}
   The degrees of $\alpha, \beta, \gamma$ are (at most) $k+2$, $k+2$, and $2k+2$, respectively.
 
   Consider the affine space $\A^{4k+8}$ whose coordinates correspond to the coefficients of $a, b, c, d$, and likewise, the affine space $\A^{4k+9}$ whose coordinates correspond to the coefficients of $\alpha, \beta, \gamma$.
@@ -1177,7 +1183,8 @@ Set $X = \P E$ and $L = \O_X(1)$.
     (a,b,c,d) &\mapsto (\alpha, \beta, \gamma).
   \end{align*}
   Note that the choice of basis of $W$ gives a birational isomorphism $\Gr(4, H^0(X, L)) \cong \A^{4k+8}$.
-  Via this isomorphism, the projection-ramification map $\rho$ is simply the composite of $\rho^*$ and the projection $\A^{4k+9} \dashrightarrow \P^{4k+8} = \P H^0(\P^1, E \otimes \det E \otimes \O(-2))^*$.
+  Via this isomorphism, the projection-ramification map $\rho$ is simply the composite of $\rho^*$ and the standard projection $\pi \from \A^{4k+9} \setminus \{0\} \to \P^{4k+8} = \P H^0(\P^1, E \otimes \det E \otimes \O(-2))^*$.
+  Let $Z \subset \A^{4k+9}$ be the image of $\rho^*$.
 
   Let $(a,b,c,d) \in \A^{4k+8}$ be a generic point.
   We show that the map induced by $\rho$ on tangent spaces is injective at this point.
@@ -1189,7 +1196,8 @@ Set $X = \P E$ and $L = \O_X(1)$.
   \begin{align*}
     \hat \alpha &= \hat d - \hat b t,\\
     \hat \beta &=  \hat a t - \hat c, \text{ and }\\
-    \hat \gamma & = (bt-d)({\hat a}'t-{\hat c}') + (at-c)({\hat d}'-{\hat b}'t) + ({\hat a}t-{\hat c})(d'-b't) + ({\hat b}t-{\hat d})(a't-c').
+    \hat \gamma & = (bt-d)({\hat a}'t-{\hat c}') + (at-c)({\hat d}'-{\hat b}'t) \\
+    & \qquad + ({\hat a}t-{\hat c})(d'-b't) + ({\hat b}t-{\hat d})(a't-c').
   \end{align*}
   Suppose $\hat \alpha = \hat \beta = \hat \gamma = 0$.
   Then $(bt-d)(\hat a' t - \hat c') + (at-c) (\hat d' - \hat b' t) = 0$.
@@ -1197,20 +1205,61 @@ Set $X = \P E$ and $L = \O_X(1)$.
   So they have no non-trivial syzygy with coefficients of degree at most $k+1$.
   As a result, we get $\hat a' t - \hat c' = 0$ and $\hat d' - \hat b' t = 0$.
   Along with $\hat a t - \hat c = 0$ and $\hat d - \hat b t = 0$, we get $\hat a = \hat b = \hat c = \hat d = 0$.
-  Thus, $d \rho^*$ is injective.
-  To show that $d \rho$ is injective, it suffices to show that the image of $d \rho^*$ intersects the line joining $(0,0,0)$ and $(\alpha, \beta, \gamma)$ transversely.
-  For this, it suffices to show that the three equations $\hat \alpha = \alpha, \hat \beta = \beta, \hat \gamma = \gamma$ give no solutions in $\hat a, \hat b, \hat c, \hat d$.
-  Indeed, these three equations imply $(bt-d)(\hat a' t - \hat c') + (at-c)(\hat d' - \hat b' t) = 0$, and by the same reason as before, give $\hat a' t - \hat c' = \hat d' - \hat b' t = 0$.
-  But it is elementary to see by considering the degree that the last two equations combined with $\hat a t - \hat c = at -c$ and $\hat b t - \hat d = bt - d$ have no solutions in $\hat a, \hat b, \hat c, \hat d$ if $a, b, c, d$ are general.
+  Thus, $d \rho^*$ is injective, and hence $\rho^* \from \A^{4k+8} \to Z$ is generically finite.
 
-  Since the map induced by $\rho$ is injective on tangent spaces, $\rho$ is generically finite, and hence dominant.
-  To show that $\rho$ is birational, it suffices to show that the generic fiber of $\rho$ is connected.
-  For this, it suffices to show that the generic fiber of $\rho^*$ is connected.
-  However, observe that the fiber of $\rho^*$ over $(\alpha, \beta, \gamma)$ is given by the equations
-  \[ \alpha = d - bt, \beta = at - c, \gamma = \alpha' \beta - \beta' \alpha + \alpha a + \beta b,\]
-  which are affine linear equations in $a,b,c,d$.
-  Hence, the fibers of $\rho^*$ are affine spaces, which are connected.
-  The proof is now complete.  
+  % To show that $d \rho$ is injective, it suffices to show that the image of $d \rho^*$ intersects the line joining $(0,0,0)$ and $(\alpha, \beta, \gamma)$ transversely.
+  % For this, it suffices to show that the three equations $\hat \alpha = \alpha, \hat \beta = \beta, \hat \gamma = \gamma$ give no solutions in $\hat a, \hat b, \hat c, \hat d$.
+  % Indeed, these three equations imply $(bt-d)(\hat a' t - \hat c') + (at-c)(\hat d' - \hat b' t) = 0$, and by the same reason as before, give $\hat a' t - \hat c' = \hat d' - \hat b' t = 0$.
+  % But it is elementary to see by considering the degree that the last two equations combined with $\hat a t - \hat c = at -c$ and $\hat b t - \hat d = bt - d$ have no solutions in $\hat a, \hat b, \hat c, \hat d$ if $a, b, c, d$ are general.
+
+  % Since the map induced by $\rho$ is injective on tangent spaces, $\rho$ is generically finite, and hence dominant.
+  % To show that $\rho$ is birational, it suffices to show that the generic fiber of $\rho$ is connected.
+  % For this, it suffices to show that the generic fiber of $\rho^*$ is connected.
+  % However, observe that the fiber of $\rho^*$ over $(\alpha, \beta, \gamma)$ is given by the equations
+  % \[ \alpha = d - bt, \beta = at - c, \gamma = \alpha' \beta - \beta' \alpha + \alpha a + \beta b,\]
+  % which are affine linear equations in $a,b,c,d$.
+  % Hence, the fibers of $\rho^*$ are affine spaces, which are connected.
+  % The proof is now complete.
+
+  We now prove that if $(\alpha, \beta, \gamma)$ is a general point in the image of $\rho^{*}$, and $\lambda \neq 0,1$ is a constant, then $\lambda(\alpha, \beta, \gamma)$ is not in the image of $\rho^{*}$.
+  In other words, the projection $\pi \from \A^{4k+9} \setminus \{0\} \to \P^{4k+8}$ restricted to $Z \setminus \{0\}$ is generically injective.  
+  To this end, suppose $(a,b,c,d)$ is a general point in $\A^{4k+8}$.
+  Then  $\alpha = d-bt$ and $\beta = at-c$ will be degree $k+2$ polynomials which are relatively prime.  
+  For any polynomial $p(t)$, let $p^{+}$ denote the highest degree coefficient of $p$.
+  Observe that $\beta^{+} = a^{+}$.  
+  If $\lambda(\alpha, \beta, \gamma)$ is also realized by some quadruple $(\tilde{a}, \tilde{b}, \tilde{c}, \tilde{d})$ then we get the equations: 
+	  \begin{align}\label{secondEquation}
+	  	\lambda \alpha &= \tilde{d} - \tilde{b}t\\
+	  	\lambda \beta &= \tilde{a}t - \tilde{c} \nonumber\\
+	  	\lambda \gamma &= \lambda^{2}(\alpha'\beta - \beta' \alpha) + \lambda \alpha \tilde{a} + \lambda \beta \tilde{b}\nonumber
+	  \end{align}
+	  The second equation gives $\tilde{a}^{+} = \lambda \beta^{+}$.
+          The last equation gives
+          \[
+            \gamma = \lambda(\alpha'\beta - \beta' \alpha) + \alpha \tilde{a} + \beta \tilde{b}.
+          \]
+          Combining the above with the equation for $\gamma$ in \eqref{eqn:alphabetagamma}, we get 
+	  \begin{align*}\label{alphasbetas}
+	    	\alpha (a - \beta') + \beta (b + \alpha') &= \alpha(\tilde{a} - \lambda\beta') + \beta(\tilde{b} + \lambda \alpha').
+          \end{align*} 
+          Since $\alpha$ and $\beta$ are relatively prime and have degree greater than $a,b,\tilde{a},\tilde{b}$, the same syzygy argument gives
+          \begin{align*}
+            a-\beta' &= \tilde{a} - \lambda \beta'\\
+            b+\alpha' &= \tilde{b} + \lambda \alpha'.
+          \end{align*} 
+	     By examining top coefficients, and using $a^{+} = \beta^{+}$, $\tilde{a}^{+} = \lambda \beta^{+}$ we get
+	     \begin{align*}
+	     	\beta^{+} - (k+2)\beta^{+} &= \lambda\beta^{+} - \lambda(k+2)\beta^{+}, \text{ or equivalently}\\
+               (1-\lambda)\beta^{+} &= (1-\lambda)(k+2)\beta^{+}.
+	     \end{align*}
+	     Given our assumption on $\lambda$, this is only possible if $\beta^{+} = 0$.  However, since $(a,b,c,d)$ were chosen generically, $\beta^{+} = a^{+}$ would not be zero, providing our desired contradiction.
+
+             We have proved that $\pi \from Z \setminus \{0\} \to \P^{4k+8}$ is of degree 1.
+             Therefore, it suffices to show that the degree of $\rho^* \from \A^{4k+8} \to Z$ is 1.
+             Since we know that the map is generically finite, it suffices to show that a generic fiber is connected.
+             Let $(\alpha,\beta,\gamma) \in Z$ be a generic point.
+             The preimage of this point is cut out by the equations in \eqref{eqn:alphabetagamma}.
+             Note that these are affine linear equations in $a, b, c, d$, and hence their intersection is an affine space, which is connected.
 \end{proof}
 
 \begin{corollary}\label{cor:maxvariation3scrolls}

@@ -364,13 +364,21 @@ and the evaluation map
 \[ e \from H^0(X, F) \otimes \O_X \to P(F).\]
 
 \subsection{Organization}
-In \autoref{sec:prmap} we give a precise definition of the projection-ramification map $\rho$ for linear series on normal varieties.
-In \autoref{sec:proof_of_theorem:main} we prove \autoref{thm:main}, first assuming incompressibility (\autoref{prop:incompress}), and then assuming non-defectivity (\autoref{thm:mainMain}).
-The notion of non-defectivity abstracts the condition of having a divisorial dual variety.
-Before proving \autoref{thm:mainMain}, we study this notion in \autoref{sec:non-defectivity}.
-In \autoref{sec:minimaldegree}, we prove \autoref{thm:minimaldegree} as \autoref{thm:actualminimaldegree}.
-In the same section, we derive explicit formulas for the ramification divisors for scrolls (\autoref{sec:prscrolls}), give the examples advertised in \autoref{thm:counterexamples} (\autoref{sec:failure}), and treat the threefold scrolls (\autoref{sec:eccentric_threefolds}).
-In \autoref{sec:generic}, we prove \autoref{thm:rationalnormalscrolls} as \autoref{thm:actualrationalnormalscrolls}, after treating some low degree examples by hand in \autoref{sec:lowdegree}, introducing (linked) limit linear series for vector bundles of higher rank in \autoref{sec:lls}, and defining the projection-ramification map for linked linear series in \autoref{sec:prnongeneric} and \autoref{sec:prlls}.
+In \autoref{sec:prmap}, we give basic definitions, culminating in the precise general definition of $\rho$ (\autoref{def:ProjectionRamification}).
+The subsequence sections are logically independent of each other and can be read in any order after \autoref{sec:prmap}.
+
+In \autoref{sec:proof_of_theorem:main}, we prove \autoref{thm:main}\eqref{item:incomp} (\autoref{prop:incompress}).
+We then introduce the notion of non-defectivity, which generalizes the condition of having a divisorial dual.
+After establishing basic properties of non-defectivity, we prove \autoref{thm:main}\eqref{item:dual} (\autoref{thm:mainMain}).
+
+In \autoref{sec:minimaldegree}, we prove \autoref{thm:minimaldegree} (\autoref{thm:actualminimaldegree}).
+In the same section, we derive explicit formulas for the ramification divisors for scrolls in \autoref{sec:prscrolls}, give the examples advertised in \autoref{thm:counterexamples} (\autoref{sec:failure}), and treat the threefold scrolls in \autoref{sec:eccentric_threefolds}.
+
+In \autoref{sec:generic}, the main goal is the proof of \autoref{thm:rationalnormalscrolls} (\autoref{thm:actualrationalnormalscrolls}).
+For this, we lay the groundwork by doing some low degree cases by hand (\autoref{sec:lowdegree}).
+We then recall the theory of (linked) limit linear series for vector bundles of higher rank in \autoref{sec:lls}, and define the projection-ramification map for linked linear series in \autoref{sec:prnongeneric} and \autoref{sec:prlls}.
+By a degeneration argument involving linked linear series, we prove \autoref{thm:rationalnormalscrolls} in \autoref{sec:llsproof}.
+
 In \autoref{sec:enumerativeproblems}, we turn to the enumerative problem of finding the degree of $\rho$.
 We treat the cases of rational normal curves and quadric hypersurfaces quickly in \autoref{sec:arnc} and \autoref{sec:aquadricsurface}.
 We devote \autoref{sec:veronese} to the case of the Veronese surface and \autoref{sec:quartic_scroll} to the case of the quartic surface scroll.
@@ -1539,7 +1547,7 @@ More precisely, we have the following statement.
   obtained by composing $\iota = \pi_*(\theta_{n_1-n} \oplus \theta_{n_2-n})$ and the projections $\pi_*(\mathcal E_{n_i})_S \to \pi_*(\mathcal E_{n_i})_S / \mathcal W_i$.
   We proved that, for every $\spec K \to S$, the kernel of $\overline \iota \otimes_{\O_S} K$ is $k$-dimensional.
   Since $S$ is reduced, it is easy to prove that $V_n = \ker \iota$ is a sub-bundle of $\pi_*(\mathcal E_n)$.
-  It is also easy to check that $V = (V_n \mid n \in \Z)$ a linked linear series, the only one that satisfies $V_{n_i} = \mathcal W_i$.
+  It is also easy to check that $V = (V_n \mid n \in \Z)$ is a linked linear series, the only one that satisfies $V_{n_i} = \mathcal W_i$.
   The proof is now complete.
 \end{proof}
 
@@ -1777,7 +1785,7 @@ The fruit of our labor is the following corollary.
 \end{proof}
 
 
-\subsection{Maximal variation for generic scrolls of high degree}
+\subsection{Maximal variation for generic scrolls of high degree}\label{sec:llsproof}
 We now have all the tools to prove \autoref{thm:rationalnormalscrolls}.
 \begin{theorem}[\autoref{thm:rationalnormalscrolls}]
   \label{thm:actualrationalnormalscrolls}

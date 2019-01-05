@@ -66,7 +66,7 @@
 %-----------------------------------------------
 \def\labelitemi{--}
 \newcommand{\todo}[1]{\fbox{ToDo: #1}}
-\renewcommand{\k}{k}
+\renewcommand{\k}{\mathbb{K}}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Bl}{Bl}
 \DeclareMathOperator{\Br}{Br}
@@ -1168,11 +1168,11 @@ Set $X = \P E$ and $L = \O_X(1)$.
   In this calculation, $p'$ denotes the derivative $\frac{dp}{dt}$.
   Note that we have
   \begin{equation}\label{eqn:alphabetagamma}
-    \begin{align*}
+    \begin{split}
     \alpha &= d-bt\\
     \beta &= at-c\\
     \gamma &= \alpha'\beta - \beta'\alpha + \alpha a + \beta b.
-    \end{align*}
+    \end{split}
   \end{equation}
   The degrees of $\alpha, \beta, \gamma$ are (at most) $k+2$, $k+2$, and $2k+2$, respectively.
 
@@ -1381,9 +1381,9 @@ Compared to \autoref{prop:segre}, our proof of \autoref{prop:222} is significant
   \end{equation}
   is $(x-a_i)\cdot H^0(\P^1, \O(1))$.
   By \eqref{eqn:big} and \eqref{eqn:q}, we conclude that the image of the map
-  \[ S \from W_i = \langle qE_{i,j} \mid j \in\{1, \dots, r+1\} \setminus \{i\} \to H^0(\P^1, \O(2r-1)) \otimes X_i\]
+  \[ S \from W_i = \langle qE_{i,j} \mid j \in\{1, \dots, r+1\} \setminus \{i\} \to H^0(\P^1, \O(2r)) \otimes X_i\]
   is $(x-a_i)H^0(\P^1, \O(2r-2)) \otimes X_i$.
-  In other words, the cokernel of the map is $X_i \otimes \k$ where the map
+  In other words, the cokernel of the map is $\k \otimes X_i$ where the map
   \[H^0(\P^1, \O(2r)) \otimes X_i \to \k \otimes X_i \]
   is given by evaluation at $a_i$.
   Putting together the maps for various $i$, we see that the cokernel of the map
@@ -1396,7 +1396,7 @@ Compared to \autoref{prop:segre}, our proof of \autoref{prop:222} is significant
 
   To show that $S$ is surjective, it is now enough to show that the map
   \begin{equation}\label{eqn:remainsur}
-    H^0(\P^1, \O(2)) \otimes \langle  E_{i,i} \mid i \in \{1, \dots, r+1\} \rangle \to \k \otimes \langle  X_1, \dots, X_r \rangle
+    H^0(\P^1, \O(2)) \otimes \langle  qE_{i,i} \mid i \in \{1, \dots, r+1\} \rangle \to \k \otimes \langle  X_1, \dots, X_r \rangle
   \end{equation}
   obtained by composing \eqref{eqn:mainmap} and \eqref{eqn:partialsur} is surjective.
   Recall from \eqref{eqn:diag} that we have $S(qE_{i,i}) = \det M_i$, where $M_i$ is obtained from $M$ by changing the $(i,i)$-th entry to $q$ and the $(i, r+1)$-th entry to $q'X_i$.
@@ -1411,7 +1411,7 @@ Our next goal is to bootstrap from \autoref{prop:segre} and \autoref{prop:222} t
 We do this by a degeneration argument.
 We degenerate a vector bundle $E$ to a vector bundle $E_0$ on the nodal rational curve $P_0 = \P^1 \cup \P^1$, and show that the projection-ramification map for $E_0$ is dominant.
 For this to work, we have to define the projection-ramification map for nodal curves.
-It turns out that with the most n\"aive definition of linear series on scrolls on nodal curves, we do not get a dominant projection-ramification map.
+It turns out that with the most na\"ive definition of linear series on scrolls on nodal curves, we do not get a dominant projection-ramification map.
 As a remedy, we work with the (linked) limit linear series of higher rank as developed in \cite{tei-i-big:91} and \cite{oss:14}.
 In the literature, there are a few different versions of the notion of a limit linear series.
 We use \cite{oss:14} for the foundations of the theory, and following the terminology there, call our limit linear series linked linear series.
@@ -1461,8 +1461,6 @@ Set
 \[ d_1 = w_1 - n_1 r, \text{ and } d_2 = w_2 + n_2 r, \text{ and } b = n_2 - n_1.\]
 Observe that
 \[ d_1 + d_2 - rb = d.\]
-We say that $\mathcal E$ has multi-degree $w$ if for every $s \in S$ mapping to $0 \in B$, the degree of $\mathcal E|_s$ on $C_v$ is $w_v$ for $v = 1, 2$.
-Note that, if $\mathcal E$ has multi-degree $(w_1, w_2)$, then $\mathcal E_n$ has multi-degree $(w_1-rn, w_2+rn)$.
 
 \begin{definition}[linked linear series]
   \label{def:lls}
@@ -1531,20 +1529,20 @@ Let $E_n$ be the restriction of $\mathcal E_n$ to the central fiber $C = X_0$, a
     \[ \widetilde \phi (s^1_v) = s^2_{k+1-v},\]
     where $\widetilde \phi \from E_{n_1}(-a^1_{v}\cdot p)|_p \to E_{n_2}(-a^2_{k+1-v} \cdot p) |_p$ is the isomorphism obtained by taking the appropriate twist of the identity map.
   \end{enumerate}
-  We say that $(W_1, W_2)$ is a \emph{refined EHT limit linear series} if all equality holds in \eqref{ieq:eht} for all $v = 1, \dots, k$.
+  We say that $(W_1, W_2)$ is a \emph{refined EHT limit linear series} if equality holds in \eqref{ieq:eht} for all $v = 1, \dots, k$.
 \end{definition}
 This definition is adapted from \cite[Definition~4.1.2]{oss:14}.
 Note that, due to the vanishing condition on the twists of $E$, the restriction map
 \[ H^0(C, E_{n_i}) \to H^0(C_i, E_{n_i}|_{C_i})\]
-is an isomorphism.
-Via this isomorphism, we sometimes treat $W_i$ as a subspace of $H^0(C_i, \mathcal E_{n_i}|_{C_i})$.
+is an injection.
+Via this injection, we sometimes treat $W_i$ as a subspace of $H^0(C_i, E_{n_i}|_{C_i})$.
 
 Although the notions of a linked linear series and an EHT limit linear series differ in general, they essentially agree when we restrict to the simple linked linear series and the refined EHT limit linear series.
 More precisely, we have the following statement.
 \begin{proposition}\label{prop:llseht}
   Let $S$ be a $B$-scheme, and $V = (V_n \mid n \in \Z)$ a linked linear series on $\mathcal E_S$.
   For every $s \in S$ over $0 \in B$, taking $W_i = V_{n_i}|_s$ for $i = 1, 2$ gives an EHT limit linear series.
-  Conversely, assume that $S$ reduced, and let $\mathcal W_i \subset \pi_*(\mathcal E_{n_i})_S$ be sub-bundles whose restrictions to every $s \in S$ over $\eta \in B$ agree under the isomorphism $(\mathcal E_{n_1})_\eta \cong (\mathcal E_{n_2})_\eta$, and to eveny $s \in S$ over $0 \in B$ define a refined EHT limit linear series.
+  Conversely, assume that $S$ reduced, and let $\mathcal W_i \subset \pi_*(\mathcal E_{n_i})_S$ for $i = 1,2$ be sub-bundles whose restrictions to every $s \in S$ over $\eta \in B$ agree under the isomorphism $(\mathcal E_{n_1})_\eta \cong (\mathcal E_{n_2})_\eta$, and to every $s \in S$ over $0 \in B$ define a refined EHT limit linear series.
   Then there exists a unique linked linear series $V = (V_n \mid n \in \Z)$ on $\mathcal E_S$ such that $\mathcal W_i = V_{n_i}$.
   Furthermore, for every $s \in S$ over $0$, the series $V|_s$ is simple.
 \end{proposition}
@@ -1566,21 +1564,21 @@ More precisely, we have the following statement.
   The compatibility condition in \autoref{def:lls} implies that we must choose $V_n$ so that $\iota (V_n) \subset W_1 \oplus W_2$.
   We claim that $\dim \iota^{-1}(W_1 \oplus W_2) = k$, so that there is a unique choice of $V_n$, namely $V_n = \iota^{-1}(W_1 \oplus W_2)$.
 
-  Suppose $s \in i^{-1}(W_1 \oplus W_2)$.
+  Suppose $s \in \iota^{-1}(W_1 \oplus W_2)$.
   Then $\iota(s)$ is a linear combination of $(s^1_1,0), \dots, (s^1_k, 0)$, and $(0, s^2_1), \dots, (0,s^2_k)$.
   Write $\iota(s) = (s_1, s_2)$.
   Since $s_i$ is obtained by applying $\theta_{n-n_i}$, and $\theta$ on $C_i$ at $p$ corresponds to multiplication by the uniformizer, we see that
   \begin{equation}\label{eqn:vanishing}
     \ord_p(s_1) \geq n - n_1, \text{ and likewise, } \ord_p(s_2) \geq n_2 - n.
   \end{equation}
-  Let $v_1 \in \{1, \dots, k\}$ be the smallest such that $a^1_v \geq n-n_1$, and $v_1+c$ the smallest such that $a^1_{v_1+c} > n-n_1$.
+  Let $v_1 \in \{1, \dots, k\}$ be the smallest such that $a^1_{v_1} \geq n-n_1$, and $v_1+c$ the smallest such that $a^1_{v_1+c} > n-n_1$.
   Since $(W_1, W_2)$ is refined, and $n_2 - n_1 = b$, we see that $v_2 = k+1-v_1$ is the largest such that $a^2_{v_2} \leq n_2 - n$, and $v_2 - c$ the smallest such that $a^2_{v_2 + c} < n_2 - n$.
-  The vanishing conditions \eqref{eqn:vanishing} imply that $\iota(s)$ bust be a linear combination of $(s^1_{v_1},0), \dots, (s^1_k,0)$ and $(0, s^2_{v_2-c}), \dots,  (0,s^2_k)$.
+  The vanishing conditions \eqref{eqn:vanishing} imply that $\iota(s)$ must be a linear combination of $(s^1_{v_1},0), \dots, (s^1_k,0)$ and $(0, s^2_{v_2-c}), \dots,  (0,s^2_k)$.
   Suppose
-  \[ \iota(s) = \sum_{\ell = i}^k \alpha_{\ell} \cdot (s^1_\ell,0) + \sum_{\ell = j}^{k} \beta_\ell \cdot (0,s^2_\ell),\]
+  \[ \iota(s) = \sum_{\ell = v_1}^k \alpha_{\ell} \cdot (s^1_\ell,0) + \sum_{\ell = v_2-c}^{k} \beta_\ell \cdot (0,s^2_\ell),\]
   where $\alpha_{\ell}$ and $\beta_{\ell}$ are elements of the field $K$.
   Since $s$ is a section on the entire nodal curve $C$, its two restrictions to $C_1$ and $C_2$ are equal at $p$.
-  In terms of the two components of $\iota(s)$, and in light of the gluing condition \eqref{gluing:eht} in \autoref{def:eht}, this equality is equivalent to $\alpha_{\ell} = \beta_{k+1-\ell}$.
+  In terms of the two components of $\iota(s)$, and in light of the gluing condition \eqref{gluing:eht} in \autoref{def:eht}, this equality is equivalent to $\alpha_{\ell} = \beta_{k+1-\ell}$ for $v_1 \leq \ell < v_1+c$.
   That is, $\iota(s)$ is a linear combination of the $k$ elements 
   \[ (s^1_{v_1} , s^2_{v_2}), \dots, (s^1_{v_1+c-1} , s^2_{v_2-c+1}), (s^1_{v_1+c},0), \dots, (s^1_k,0), (0,s^2_{v_2+1}), \dots, (s^2_{k},0).\]  
   Conversely, it is easy to see that any such linear combination lies in $W_1 \oplus W_2$.
@@ -1595,7 +1593,7 @@ More precisely, we have the following statement.
   \[ \overline \iota \from \pi_* (\mathcal E_n)_S \to \pi_*(\mathcal E_{n_1})_S / \mathcal W_1 \oplus \pi_*(\mathcal E_{n_2})_S / \mathcal W_2,\]
   obtained by composing $\iota = \pi_*(\theta_{n_1-n} \oplus \theta_{n_2-n})$ and the projections $\pi_*(\mathcal E_{n_i})_S \to \pi_*(\mathcal E_{n_i})_S / \mathcal W_i$.
   We proved that, for every $\spec K \to S$, the kernel of $\overline \iota \otimes_{\O_S} K$ is $k$-dimensional.
-  Since $S$ is reduced, it is easy to prove that $V_n = \ker \iota$ is a sub-bundle of $\pi_*(\mathcal E_n)$.
+  Since $S$ is reduced, it is easy to prove that $V_n = \ker \iota$ is a sub-bundle of $\pi_*(\mathcal E_n)$ (see \cite[B.3.4 with reduced $B$]{oss:14}).
   It is also easy to check that $V = (V_n \mid n \in \Z)$ is a linked linear series, the only one that satisfies $V_{n_i} = \mathcal W_i$.
   The proof is now complete.
 \end{proof}

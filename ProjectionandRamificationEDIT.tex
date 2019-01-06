@@ -246,7 +246,7 @@ For the Veronese surface, the target of $\rho$ is the linear series of cubics in
 The points of fiber of $\rho$ over a cubic $R \subset \P^2$ correspond naturally to the non-trivial 2-torsion points of $\Pic R$.
 In particular, the degree of $\rho$ is $3$.
 For the quartic surface scroll, the target of $\rho$ modulo the action of $\Aut X$ is birational to the moduli space of $(R, \eta)$ where $R$ is a plane cubic and $\eta$ is a non-trivial 2-torsion point of $\Pic R$.
-The points of the fiber of $\rho$ over $(R, \eta)$ correspond naturally to the 2-torsion points of $\Pic R$ other than $0$ and $\eta$.
+The points of the fiber of $\rho$ over $(R, \eta)$ correspond naturally to the two elements of $\Pic E[2] \setminus \pi^* \Pic R [2]$, where $E \to R$ is the \'etale double cover defined by $\eta$.
 In particular, the degree of $\rho$ is $2$.
 In this case, the source of $\rho$ (the Grassmannian $\Gr(3, H^0(X, \O(1)))$ modulo the action of $\Aut X$) has several known moduli interpretations.
 It is birational to the moduli of undered triplets of unordered pairs of points on $\P^1$, namely $M_{0,6}/(S_2 \times S_2 \times S_2 \rtimes S_3)$.
@@ -1955,7 +1955,7 @@ Associated to the net $N$ are three important cubic plane curves, namely the Jac
 We have already seen the Jacobian curve $R \subset \P V$.
 The \emph{discriminant curve} $D \subset \P N^*$ is the locus of $x \in \P N^*$ such that $Q_x$ is singular.
 Since a pencil of conics contains three singular members, we see that $D$ is a cubic curve.
-Note that if $Q_d$ is singular, then it is the union of two distinct lines in $\P V$.
+Note that if $Q_x$ is singular, then it is the union of two distinct lines in $\P V$.
 A component line of $Q_x$ is called a \emph{Reye line}.
 The \emph{Hermite curve} $E \subset \P V^*$ is the locus of Reye lines.
 We leave it to the reader to check that it is a cubic curve.
@@ -1963,19 +1963,19 @@ We leave it to the reader to check that it is a cubic curve.
 The three cubic curves introduced above are inter-related.
 First, we have an isomorphism $\tau \from D \to R$ defined by
 \begin{equation}\label{eqn:DR}
-  \tau \from d \mapsto \text{The singular point of $Q_d$}.
+  \tau \from x \mapsto \text{The singular point of $Q_x$}.
 \end{equation}
 Second, we have a degree 2 map $E \to D$ defined by
-\[ \ell \mapsto \text{The $d \in D$ such that $Q_d$ contains $\ell$}.\]
-Evidently, the fiber of this map over a given $x \in D$ corresponds to the two components of $Q_d$.
-The (\'etale) degree 2 map $E \to D \cong R$ gives a non-trivial two-torsion element $\eta \in \Pic(R)[2]$
-The element $\eta$ is characterized by the property that it is the unique non-trivial two-torsion element whose pull-back to $E$ is trivial.
+\[ \ell \mapsto \text{The $x \in D$ such that $Q_x$ contains $\ell$}.\]
+Evidently, the fiber of this map over a given $x \in D$ corresponds to the two components of $Q_x$.
+The (\'etale) degree 2 map $E \to D \cong R$ gives a non-trivial 2-torsion element $\eta \in \Pic(R)[2]$.
+The element $\eta$ is characterized by the property that it is the unique non-trivial 2-torsion element whose pull-back to $E$ is trivial.
 
 Denote by $H$ the hyperplane divisor class on $R \subset \P^2$.
 \begin{lemma}\label{lem:reye}
   For every $a \in R$, the line joining $a$ and $a+\eta$ is a Reye line.
   Furthermore, this Reye line is a component of $Q_d$ where $d = \tau^{-1}(H-2a-\eta)$.
-  Finally, the conjugate Reye line, namely the other component of $Q_d$, passes through the points $b$ and $b+\eta$ where $b \in R$ differs from $a$ by a non-trivial two-torsion element other than $\eta$.
+  Finally, the conjugate Reye line, namely the other component of $Q_d$, passes through the points $b$ and $b+\eta$ where $b \in R$ differs from $a$ by a non-trivial 2-torsion element other than $\eta$.
 \end{lemma}
 \begin{proof}
   Let $\ell$ be a general Reye line, and let $d \in D$ be such that $\ell$ is a component of $Q_d$.
@@ -1992,29 +1992,29 @@ Denote by $H$ the hyperplane divisor class on $R \subset \P^2$.
   on $E$.
   By pushing this forward to $R$, we get
   \[ 2y \sim 2z.\]
-  Therefore, $y - z$ is a (non-trivial) two torsion element in $\Pic(R)$.
+  Therefore, $y - z$ is a (non-trivial) 2-torsion element in $\Pic(R)$.
   However, the pull-back of $y-z$ is trivial on $E$, and hence $y - z = \eta$.
 
   Finally, let $m$ be the Reye line conjugate to $\ell$.
-  Then it passes contains $x$, and two other points of $R$, say $y'$ and $z'$.
+  Then it contains $x$, and two other points of $R$, say $y'$ and $z'$.
   By what we just proved, $y' - z' = \eta$.
   But we also have $y' + z' \sim y + z$.
-  Hence $y - y'$ is a two-torsion element, non-trivial, and distinct from $\eta$.
+  Hence $y - y'$ is a 2-torsion element, non-trivial, and distinct from $\eta$.
   The proof is now complete.  
 \end{proof}
 
 We now have all the tools to prove \autoref{prop:veronese}.
 \begin{proof}[Proof of \autoref{prop:veronese}]
-  Let $U \subset \P H^0(\P^2, \O(3))^*$ be the locus of smooth cubic curves, $J \to U$ be the universal Picard scheme, $J[2] \subset J$ the closed subscheme of two-torsion classes, and $J[2]^* \subset J[2]$ the open and closed subscheme of non-trivial two-torsion classes.
+  Let $U \subset \P H^0(\P^2, \O(3))^*$ be the locus of smooth cubic curves, $J \to U$ be the universal Picard scheme, $J[2] \subset J$ the closed subscheme of 2-torsion classes, and $J[2]^* \subset J[2]$ the open and closed subscheme of non-trivial 2-torsion classes.
   The projection-ramification map for the Veronese surface factors as
   \begin{alignat*}{2}
     \rho \from \Gr(3, H^0(\P^2, \O(2))) &\dashrightarrow J[2]^* &&\dashrightarrow \P H^0(\P^2, \O(3))^*\\
     N &\mapsto (R, \eta) &&\mapsto R.
   \end{alignat*}
-  We construct $J[2]^* \to \Gr(3,H^0(\P^2, \O(2)))$ inverse to the first map.
+  We construct $J[2]^* \to \Gr(3,H^0(\P^2, \O(2)))$ inverse to the first map, which shows that $\deg \rho = 3$, and identifies the fibers of $\rho$ as non-trivial 2-torsion points.
   Given $(R, \eta) \in J[2]^*$, we need to construct a net $N$ of conics with Jacobian $R$.
   We use \autoref{lem:reye}, which tells us the singular elements of this net in terms of $R$ and $\eta$.
-  Let $\{\eta, \eta', \eta''\}$ be the three non-trivial 2 torsion line bundles on $R$.
+  Let $\{\eta, \eta', \eta''\}$ be the three non-trivial 2-torsion line bundles on $R$.
   Define the map $R \to \P H^0(\P^2, \O(2))^*$ by
   \[ R \ni a \mapsto \left(\langle {a, a+\eta} \rangle\right) \cdot \left(\langle {a+\eta', a+\eta''} \rangle \right),\]
   where $\langle {p,q} \rangle$ denotes the line joining $p$ and $q$.
@@ -2052,12 +2052,13 @@ The automorphism group of the pair $(\P S, Q)$ is $\Aut(Q) \cong \PGL_2$.
   Interpret the space $(W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U)$ as the space of $2 \times 3$ matrices with entries in $\Sym^2 V$, modulo row and column transformations.
   Set $S = \Sym^2 V$; it has a canonical (up to scaling) quadratic form given by the conic $Q \cong \P V\subset \P S$ embedded by $\O(2)$.
   We can then interpret $(W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U)$ as the space of $2 \times 3$ matrices with entries in $S$.
-  We have a birational isomorphism
+  We have a rational map
   \begin{align*}
     (W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U) &\sim \Hilb^3(\P S) \\
-    \text{$2 \times 3$ matrix $M$} &\mapsto \text{Vanishing locus of $2\times2$ minors of $M$}.
+    \text{$2 \times 3$ matrix $M$} &\mapsto \text{Vanishing locus of $2\times 2$ minors of $M$}.
   \end{align*}
-  By taking the further quotient by $\GL(V)$, we finish the proof.  
+  It is easy to check that this map is a birational isomorphism---a general triple of points in $\P S$ is the zero locus of $2 \times 2$ minors of a matrix of linear forms, which is uniquely determined up to row and column transformations.
+  By taking a further quotient by $\GL(V)$, we finish the proof.  
 \end{proof}
 
 \begin{lemma}\label{lem:quotram}
@@ -2068,8 +2069,8 @@ The automorphism group of the pair $(\P S, Q)$ is $\Aut(Q) \cong \PGL_2$.
   \begin{align*}
     (U \otimes \Sym^4 V) / \GL(U) &\sim \Gr(2, \Sym^4 V).
   \end{align*}
-  Note that $q \in \Sym^2S$ spans the kernel of the natural surjection $\Sym^2 S \to \Sym^4 V$.
-  The assertion follows.  
+  Note that $q \in \Sym^2S$ spans the kernel of the natural surjection $\pi \from \Sym^2 S \to \Sym^4 V$.
+  So the claimed birational isomorphism is given by sending a two dimensional subspace $L \subset \Sym^4 V$ to the image of $\pi^{-1}L$ in $\Sym^2S/q$.
 \end{proof}
 
 Via the birational isomorphisms in \autoref{lem:quotgrass} and \autoref{lem:quotram}, the projection-ramification map $\mu$ transforms into an $\Aut(S)$-equivariant map
@@ -2095,7 +2096,7 @@ It is easy to check that the quadrics $L_1 R_{23}$, $L_2 R_{13}$, and $L_3R_{12}
     \end{pmatrix}.
   \]
   Let $U_0, U_1$ be a basis of $U$.
-  Under the isomorphism in \autoref{lem:quotgrass}, this $2 \times 3$ matrix corresponds to the point of $\Gr(3, U \otimes \Sym^2 V)$ given by the subspace of $U \otimes \Sym^3 V$ spanned by $U_0 M_{0,i} + U_1 M_{1,i}$ for $i = 1, 2, 3$.
+  Under the isomorphism in \autoref{lem:quotgrass}, this $2 \times 3$ matrix corresponds to the point of $\Gr(3, U \otimes \Sym^2 V)$ given by the subspace of $U \otimes \Sym^2 V$ spanned by $U_0 M_{0,i} + U_1 M_{1,i}$ for $i = 1, 2, 3$.
   From \eqref{eqn:Rmatrix}, the ramification divisor of this subspace is given by
   \begin{align*}
     R &= \det
@@ -2120,7 +2121,7 @@ More generally, given a point $p \in \P S$, the pencil of lines through $p$ cont
 We denote the polar of a point $p$ (resp. a line $L$) by $p^\perp$ (resp. $L^\perp$).
 
 Set $M_i = R_{jk}$, and let $N$ be the net spanned by $L_iM_i$ for $i = 1, 2, 3$.
-By the definition of $R_{jk}$, we see that $M_i$ is the polar line of the point $L_k \cap L_k$.
+By the definition of $R_{jk}$, we see that $M_i$ is the polar line of the point $L_j \cap L_k$.
 In other words, the triangles $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$ are polar conjugates---lines in one are polars to the vertices of the other.
 
 \begin{remark}\label{rem:richelot}
@@ -2134,7 +2135,7 @@ In other words, the triangles $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$ are polar 
   The grouping of the six points in three pairs $\{p_i, q_i\}$ for $i = 1, 2, 3$ gives a 2-dimensional subspace of the 4-dimensional $\F_2$-vector space $\Pic C [2]$, namely $\{0\} \cup \{p_i - q_i \mid i = 1,2,3\}$.
   This vector space is a maximal isotropic subspace for the Weil pairing on $\Pic C[2]$.
   Conversely, a genus 2 curve $C$ with a maximal isotropic subspace of $\Pic C[2]$ defines six points on $\P^1$ grouped into a triple of pairs.
-  Thus, $\Hilb^3 \P S / \Aut S$ is birational to the moduli space of genus 2 curves along with an isotropic subspace of two torsion points in its Jacobian.
+  Thus, $\Hilb^3 \P S / \Aut S$ is birational to the moduli space of genus 2 curves along with an isotropic subspace of 2-torsion points in its Jacobian.
 
   Since general principally polarized abelian surfaces are Jacobians of genus 2 curves, $\Hilb^3 \P S / \Aut S$ is also birational to the moduli of $(A, G)$, where $A$ is a principally polarized abelian surface and $G \subset A[2]$ is a maximal isotropic subspace for the Weil pairing.
   In this interpretation, the involution $\tau$ is called the Fricke involution; it sends $(A, G)$ to $(A/G, A[2]/G)$ (see \cite[Page~2]{muk:12}).
@@ -2148,7 +2149,7 @@ In other words, the triangles $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$ are polar 
   The moduli space of $(A, \psi)$ is the quotient $H_2 / \Gamma_1(2)$ where $\Gamma_1(2) \subset \operatorname{Sp}(4, \Z)$ is defined by the congruence conditions $A - I_2 \equiv 0 \pmod 2$ in addition to $C \equiv 0 \pmod 2$.
   The Fricke involution continues to act on $H_2 / \Gamma_1(2)$.
   The Satake compactification of $H_2 / \Gamma_1(2)$ is the Igusa quartic threefold in $\P^4$ on which the Fricke involution acts by a linear transformation of $\P^4$.
-  The quotient of the Igusa quaric by the Fricke involution is isomorphic to a double cover of $\P^3$ branched along the union of 4 planes  \cite[Theorem~2]{muk:12}.
+  The quotient of the Igusa quartic by the Fricke involution is isomorphic to a double cover of $\P^3$ branched along the union of 4 planes  \cite[Theorem~2]{muk:12}.
 \end{remark}
 
 Recall that $\xi \in \Hilb^3\P S$ is the point defined by the three vertices of the triangle formed by $(L_1, L_2, L_3)$.
@@ -2163,28 +2164,28 @@ We invite the reader to look at \autoref{fig:quarticscroll} for the configuratio
   To show that no other triangles map to $N$, consider pairs of triplets $\Delta = (\Delta_1, \Delta_2, \Delta_3)$ and $\nabla = (\nabla_1, \nabla_2, \nabla_3)$ of lines in $\P S$ such that
   \begin{enumerate}
   \item $\Delta$ and $\nabla$ are polar conjugates with respect to $Q$, and
-  \item $\Delta_i\nabla_i$ is an element of $N$ for $i = 1, 2, 3$.
+  \item $\Delta_i \cup \nabla_i$ is an element of $N$ for $i = 1, 2, 3$.
   \end{enumerate}
   It suffices to show that the only ones satisfying the two conditions are $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$, up to permutation.
   
   To show this, we need some observations.
 
-  First, suppose $A_1B_1$ and $A_2B_2$ are elements of the net $N$, where $A_i$ and $B_j$ are lines in $\P S$.
+  First, suppose $A_1 \cup B_1$ and $A_2\cup B_2$ are elements of the net $N$, where $A_i$ and $B_j$ are lines in $\P S$.
   Then, by definition, $A_i$ and $B_j$ are Reye lines of the net $N$.
-  Let $p = A_1 \cap A_2$ and $q = B_1 \cap B_2$.
-  We claim that the third Reye line through $p$, in addition to $A_1$ and $A_2$, is the line $\langle p, q\rangle$.
-  Indeed, in the pencil of conics spanned by $A_1B_1$ and $A_2B_2$, the third singular conic is $\langle p, q\rangle \langle p', q'\rangle$, where $p' = A_1 \cap B_2$ and $q' = A_2 \cap B_1$.
+  Let $p = A_1 \cap A_2$ and $t = B_1 \cap B_2$.
+  We claim that the third Reye line through $p$, in addition to $A_1$ and $A_2$, is the line $\langle p, t\rangle$.
+  Indeed, in the pencil of conics spanned by $A_1 \cup B_1$ and $A_2 \cup B_2$, the third singular conic is $\langle p, t\rangle \cup \langle p', t'\rangle$, where $p' = A_1 \cap B_2$ and $t' = A_2 \cap B_1$.
 
   Second, let $R \subset \P S$ be the Jacobian cubic and $E \subset \P S^*$ be the Hermite cubic of $N$.
-  Let $E^\perp \subset \P S$ be the image of $E$ under the polarity isomorphism induced by $Q$.
+  Let $E^\perp \subset \P S$ be the image of $E$ under the polarity isomorphism $\P S^* \to \P S$ induced by $Q$.
   Explicitly, the points of $E^\perp$ are the polars of the Reye lines.
   We claim that the six points of intersection of $R$ and $Q$ also lie on $E^\perp$.
   Indeed, to show that $x \in R \cap Q$ also lies on $E^\perp$, it suffices to show that the line $T_xQ$ is a Reye line.
-  Since $x \in R$, there exists an element of $N$ of the form $AB$ where $A$ and $B$ are lines intersecting at $x$.
-  Note that in the pencil of conics spanned by $AB$ and $Q$, there is a singular conic containing $T_pQ$.
-  Therefore, $T_pQ$ is a Reye line.
+  Since $x \in R$, there exists an element of $N$ of the form $A\cup B$ where $A$ and $B$ are lines intersecting at $x$.
+  Note that in the pencil of conics spanned by $A \cup B$ and $Q$, there is a singular conic containing $T_xQ$.
+  Therefore, $T_xQ$ is a Reye line.
   
-  Third, since $R \cap E^\perp$ contain 6 points on the conic $Q$, the residual 3 points are collinear.
+  Third, since $R \cap E^\perp$ contains 6 points on the conic $Q$, the residual 3 points are collinear.
   Let them correspond to $x_1, x_2, x_3 \in E$.
   Denoting by $H$ the hyperplane class of $E \subset \P S^*$, we have the equation in $\Pic E$
   \[ x_1 + x_2 + x_3 = H.\]
@@ -2197,11 +2198,11 @@ We invite the reader to look at \autoref{fig:quarticscroll} for the configuratio
     p_3^\perp &= \langle \Delta_3^\perp, \nabla_3^\perp \rangle \\
               &= \langle  \nabla_1 \cap \nabla_2, \Delta_1 \cap \Delta_2\rangle.
   \end{align*}
-  By the first claim, we see that $p_3^\perp$ is a Reye line.
+  By the first observation, we see that $p_3^\perp$ is a Reye line.
   Hence $p_3$ lies on $E^\perp$, and hence on $R \cap E^\perp$.
   Similarly, $p_1 = \Delta_1 \cap \nabla_1$ and $p_2 = \Delta_2 \cap \nabla_2$ also lie on $E^\perp$.
   Since $N$ is general, we may assume that the $p_i$ do not lie on $Q$.
-  Hence, $p_1, p_2, p_3$ are the points corresponding to the three collinear points in $R \cap E^\perp$.
+  Hence, $p_1, p_2, p_3$ are the three collinear points in $R \cap E^\perp$.
   (The fact that $p_1, p_2, p_3$ are collinear is not surprising---it is because any two polar conjugate triangles are in linear perspective \cite[Theorem~2.1.9]{dol:12}).
   By reordering if necessary, assume that we have $p_i^\perp = x_i$ as elements of $E$.
 
@@ -2218,7 +2219,7 @@ We invite the reader to look at \autoref{fig:quarticscroll} for the configuratio
   Using $x_1 + x_2 + x_3 = H$, a simple calculation gives $2 \Delta_1 = 2x_1$.
   This equation has 4 solutions for $\Delta_1$, namely $x_1 + \epsilon$ for $\epsilon \in \Pic E[2]$.
   Also, $\Delta_1$ determines $\Delta_2$ and $\Delta_3$ by the equations above, which in turn determine the $\nabla_i$ using polarity or the property that $\nabla_i$ and $\Delta_i$ form a fiber of the map $E \to R$.
-  Thus, it suffices to show that only two of the four solutions for $\Delta_1$ can be valid.
+  Thus, it suffices to show that at most two of the four solutions for $\Delta_1$ can be valid.
 
   Suppose $\Delta_1 = x_1$.
   Then we get $\Delta_2 = x_2$, and $\Delta_3 = x_3$.

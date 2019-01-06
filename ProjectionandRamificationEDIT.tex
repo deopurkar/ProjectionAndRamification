@@ -1880,9 +1880,9 @@ We now have all the tools to prove \autoref{thm:rationalnormalscrolls}.
 
   It is easy to check that $\dim_v \mathcal G(r+1, E) = (r+1)(d-1)$.
   Indeed, for every linked linear series $w = (W_n \mid n \in \Z)$ in an open subset around $v$, the EHT limit linear series associated to $w$ determines $w$ and has the same vanishing sequence as $v$.
-  In particular, $W_{n_1} \subset H^0(C_1, E_1(a))$ is the image of an $(r+1)$-dimensional subspace $V(w) \subset H^0(C_1, E_1)$ with vanishing sequence $(0, \dots, 0, 1)$, and $W_{n_2} \subset H^0(C_2, E_2'(b-a))$ is the image of an $(r+1)$-dimensional subspace of $H^0(C_2, E'_2(1))$ with vanishing sequence $(0,1,\dots,1)$.
-  The gluing condition, in turn, implies that this subspace is the image of an $(r+1)$-dimensional subspace $\Lambda(w)$ of the kernel of the map
-  \[ E_2'(1) \to E_2'(1)/W^1.\]
+  In particular, $W_{n_1} \subset H^0(C_1, E_1(a))$ is the image of an $(r+1)$-dimensional subspace $V(w) \subset H^0(C_1, E_1)$ with vanishing sequence $(0, \dots, 0, 1)$, and $W_{n_2} \subset H^0(C_2, E_2'(b-a))$ is the image of an $(r+1)$-dimensional subspace $\Lambda(w)$ of $H^0(C_2, E'_2(1))$ with vanishing sequence $(0,1,\dots,1)$.
+  The gluing condition, in turn, implies that $\Lambda(w)$ is the image of an $(r+1)$-dimensional subspace of the kernel of the map
+  \[ E_2'(1) \to E_2'(1)/V(w)^1.\]
   By the genericity of $V$, the isomorphism type of the kernel of this map is constant around $v$; that is, the kernel is isomorphic to $E_2$.
   So, a dimension count for $\mathcal G(r+1, E)$ around $v$ gives
   \begin{align*}
@@ -1895,7 +1895,7 @@ We now have all the tools to prove \autoref{thm:rationalnormalscrolls}.
   Finally, we must check that $v$ is an isolated point in the fiber of
   \[ \rho \from \mathcal G(r+1, E) \dashrightarrow \mathcal G(1, E \otimes \det E \otimes \omega_C).\]
   For any $w \in \mathcal G(r+1, E)$ in an open set around $v$ with $w \neq v$, either $V(w) \neq V$ or $\Lambda(w) \neq \Lambda$, where $V, \Lambda, V(w), \Lambda(w)$ are as above.
-  By construction, $V \subset H^0(r+1, H^0(C_1, E_1))$ and $\Lambda \subset H^0(r+1, H^0(C_2, E_2'))$ are isolated in their respective projection-ramification maps.
+  By construction, $V \subset H^0(r+1, H^0(C_1, E_1))$ and $\Lambda \subset H^0(r+1, H^0(C_2, E'_2(1)))$ are isolated in their respective projection-ramification maps.
   Therefore, either $\rho_{C_1} (V(w)) \neq \rho_{C_1}(V)$ or $\rho_{C_2}(\Lambda(w)) \neq \rho_{C_2}(\Lambda)$.
   In either case, we obtain that $\rho(v) \neq \rho(w)$, and hence conclude that $v$ is an isolated point in the fiber of $\rho$.
 \end{proof}

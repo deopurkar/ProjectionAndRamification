@@ -1873,15 +1873,15 @@ We now have all the tools to prove \autoref{thm:rationalnormalscrolls}.
   \[ 0 \to E_2 \to E_2'(1) \to E'_2(1)|_0 / V^1 \to 0.\]
   Let $\Lambda \subset H^0(C_2, E_2'(1))$ be the image of a general $(r+1)$ dimensional subspace of $H^0(C_2, E_2)$.
   Then $\Lambda \subset H^0(C_2, E_2'(1))$ has the vanishing sequence $(0, 1, \dots, 1)$, with $\Lambda^0 = V^1$ and $\Lambda^1 = V^0$.
-  Let $V_{n_1} \subset H^0(C_1, E_1 \otimes \O(a))$ be the image of $V$ and $V_{n_2} \subset H^0(C_2,E_2 \otimes \O(b-a))$ the image of $\Lambda$.
+  Let $V_{n_1} \subset H^0(C_1, E_1 \otimes \O(a))$ be the image of $V$ and $V_{n_2} \subset H^0(C_2,E'_2(b-a))$ the image of $\Lambda$.
   Then $V_{n_1}$ has the vanishing sequence $(a, \dots, a, a+1)$, and $\Lambda$ the complementary vanishing sequence $(b-a-1, b-a, \dots, b-a)$.
   By the construction of $\Lambda$, there exist bases of $V_{n_1}$ and $V_{n_2}$ that satisfy the gluing condition at $0$.
   In conclusion, $V_{n_1}$ and $V_{n_2}$ form a refined EHT limit linear series, and hence define a linked linear series $v = (V_n \mid n \in \Z)$.
 
   It is easy to check that $\dim_v \mathcal G(r+1, E) = (r+1)(d-1)$.
   Indeed, for every linked linear series $w = (W_n \mid n \in \Z)$ in an open subset around $v$, the EHT limit linear series associated to $w$ determines $w$ and has the same vanishing sequence as $v$.
-  In particular, $W_{n_1} \subset H^0(C_1, E_1(a))$ is the image of an $(r+1)$-dimensional subspace $V(w) \subset H^0(C_1, E_1)$ with vanishing sequence $(0, \dots, 0, 1)$, and $W_{n_2} \subset H^0(C_2, E_2(b-a))$ is the image of an $(r+1)$-dimensional subspace $\Lambda(w) \subset H^0(C_2, E_2(1))$ with vanishing sequence $(0,1,\dots,1)$.
-  Furthermore, the gluing condition implies that $V(w)$ is in fact the image of an $(r+1)$-dimensional subspace of the kernel of the map
+  In particular, $W_{n_1} \subset H^0(C_1, E_1(a))$ is the image of an $(r+1)$-dimensional subspace $V(w) \subset H^0(C_1, E_1)$ with vanishing sequence $(0, \dots, 0, 1)$, and $W_{n_2} \subset H^0(C_2, E_2'(b-a))$ is the image of an $(r+1)$-dimensional subspace of $H^0(C_2, E'_2(1))$ with vanishing sequence $(0,1,\dots,1)$.
+  The gluing condition, in turn, implies that this subspace is the image of an $(r+1)$-dimensional subspace $\Lambda(w)$ of the kernel of the map
   \[ E_2'(1) \to E_2'(1)/W^1.\]
   By the genericity of $V$, the isomorphism type of the kernel of this map is constant around $v$; that is, the kernel is isomorphic to $E_2$.
   So, a dimension count for $\mathcal G(r+1, E)$ around $v$ gives

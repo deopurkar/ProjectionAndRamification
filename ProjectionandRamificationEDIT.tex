@@ -138,20 +138,21 @@
 
 \section{Introduction}\label{sec:intro}
 Let $f \from X \to Y$ be a map between smooth algebraic varieties.
-A fundamental object associated to $f$ is the set $R(f) \subset X$ consisting of critical points of $f$---the points $x \in X$ at which $df \from T_xX \to T_{f(x)}Y$ has less than maximal rank.
-The broad goal of this paper is to investigate the extent to which $f$ can be recovered from $R(f)$.
-Particularly, we focus on the case when $X$ is a smooth projection variety and $Y$ is a projective space of the same dimension as $X$, and treat the following two questions: Does every non-trivial perturbation of $f$ induce a non-trivial perturbation of $R(f)$? If this is the case, then how many other $g \from X \to Y$ have $R(g) = R(f)$?
+A fundamental object associated to $f$ is the set $R(f) \subset X$ consisting of the critical points of $f$, namely the points $x \in X$ at which $df \from T_xX \to T_{f(x)}Y$ has less than maximal rank.
+It is natural to investigate the extent to which $f$ can be recovered from $R(f)$.
+In this paper, we explore this theme when $X$ is a smooth projection variety and $f$ is a linear projection onto a projective space of the same dimension as $X$.
+We treat the following two questions: Does every non-trivial perturbation of $f$ induce a non-trivial perturbation of $R(f)$? If this is the case, then how many other $g \from X \to Y$ have $R(g) = R(f)$?
 
 Let us make these questions precise in terms of a map $\rho$, called the \emph{projection-ramification} map.
 Let $X \subset \P^n$ be a smooth projective variety of dimension $r$, not contained in a hyperplane.
 Projection from a general $(n-r-1)$-dimensional linear subspace $L \subset \P^n$ defines a finite surjective map $X \to \P^r$.
 The set of critical points of this map is the ramification divisor, say $R(L) \subset X$.
 By the Riemann--Hurwitz formula, $R(L)$ lies in the linear series $|K_X + (r+1)H|$, where $K_X$ is the canonical class, and $H$ is the hyperplane class on $X$.
-The map
+The projection-ramification map
 \[
   \rho \from \Gr(n-r, n+1) \dashrightarrow |K_X + (r+1)H|.
 \]
-is defined by $\rho \from L \to R(L)$.
+is defined by $\rho \from L \mapsto R(L)$.
 In terms of $\rho$, the questions above become the following: Is $\rho$ generically finite (equivalently, does the image of $\rho$ have the maximal dimension)? If $\rho$ is generically finite, what is its degree?
 In the literature, the first question is known as the question of maximal variation of the ramification locus.
 
@@ -161,7 +162,7 @@ They established maximal variation under a geometric condition we call ``incompr
 Our first result is the following more general theorem.
 \begin{maintheorem}\label{thm:main}
   Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over a field of characteristic zero.
-  Suppose at least one of the following holds:
+  Suppose one of the following holds:
   \begin{enumerate}
   \item\label{item:incomp}(incompressibility) for every linear subspace $L \subset \P^n$ of dimension $(n-r-1)$, projection from $L$ restricts to a dominant rational map $X \dashrightarrow \P^r$;
   \item\label{item:dual}(divisorial dual) the dual variety $X^* \subset {\P^n}^*$ is a hypersurface.
@@ -171,21 +172,22 @@ Our first result is the following more general theorem.
 In the main text, \autoref{thm:main} is \autoref{cor:maintheorem}.
 
 The dual variety $X^* \subset {\P^n}^*$ is the closure of the locus of hyperplanes $H \subset \P^n$ such that the intersection of $H$ with the smooth locus of $X$ is singular.
-We call $X \subset \P^n$ satisfying \eqref{item:incomp} \emph{incompressible}---it cannot be projected down (``compressed'') to a smaller dimensional subvariety.
-The maximal variation result in\cite{fle.man:98} is equivalent to \eqref{item:incomp} of \autoref{thm:main}.
-Our proof is different, and much easier.
+If $X$ satisfies condition \eqref{item:incomp}, we say that $X$ is \emph{incompressible}---it cannot be projected down (``compressed'') to a smaller dimensional subvariety.
+The maximal variation result in \cite{fle.man:98} is equivalent to \autoref{thm:main} under condition \eqref{item:incomp}.
+Our proof of this part of the theorem is different from \cite{fle.man:98}, and shorter.
+
 
 \autoref{thm:main} substantially enlarges the class of varieties for which we know maximal variation.
 Indeed, there are several varieties that have a divisorial dual, but are compressible.
 For example, if $X$ is any smooth surface over a field of characteristic zero, then the dual variety $X^*$ is a hypersurface.
-In contrast, that $X$ may be compressible.
+But not all such $X$ are incompressible.
 The first example is the cubic surface scroll $X \subset \P^4$---the projection from the directrix $L \subset X$ projects $X$ onto a $\P^1$.
 Thus, even for surfaces, condition \eqref{item:dual} of \autoref{thm:main} covers new ground.
 In higher dimensions, let $X$ be embedded in $\P^n$ by a sufficiently positive line bundle (for example, by a sufficiently high Veronese re-embedding).
 Then $X \subset \P^n$ is usually not incompressible, but the dual variety $X^*$ will be a hypersurface.
 
 The hypotheses in \autoref{thm:main} are sufficient, but not necessary.
-Indeed, consider $X = \P^{r-1} \times \P^1 \subset \P^{2r-1}$, embedded by the Segre embedding, for $r \geq 3$.
+To see this, consider $X = \P^{r-1} \times \P^1 \subset \P^{2r-1}$, embedded by the Segre embedding, for $r \geq 3$.
 Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho$ is dominant (see \autoref{thm:examples}).
 
 Given that maximal variation holds for a large class of varieties, it is natural to wonder if it always holds.
@@ -196,7 +198,7 @@ This is not the case.
 \end{maintheorem}
 In the main text, \autoref{thm:counterexamples} is \autoref{cor:actualcounterexamples}.
 
-The possible existence of varieties for which the projection-ramification map is not generically finite has been alluded to by Zak \cite{zak:}, and our examples of rational normal scrolls in \autoref{thm:counterexamples} are the first known instances.
+The possible existence of varieties for which the projection-ramification map is not generically finite has been alluded to by Zak \cite{zak:}. Our examples of rational normal scrolls in \autoref{thm:counterexamples} are the first known instances.
 We describe these rational normal scrolls  explicitly; it is worth mentioning that they include scrolls of general moduli.
 
 Having considered the question of maximal variation in general, we turn our attention to cases where the map $\rho$ has a chance of being dominant.
@@ -311,7 +313,7 @@ We hope that the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ admits a 
 \autoref{thm:minimaldegree} states that $\phi$ is not identically zero, at least if $d$ is sufficiently large.
 \autoref{thm:examples} computes $\phi$ for the partitions $(d)$, $(1, \dots, 1)$, $(1, k+1)$, $(1,1,k+1)$, and $(2,2)$.
 Some more examples, calculated using randomized trials over finite fields in \texttt{Macaulay2} \cite{gra.sti:} and \texttt{Magma} \cite{bos.can.pla:97}, are tabulated in \autoref{tab:computation}.
-There seems to be some enchanting combinatorics behind $\phi$. As a sample, we point out that the sequence of numbers $\phi(n)$ are the Catalan numbers, and the sequence $\phi(\lfloor n/2 \rfloor, \lceil n/2 \rceil)$ (appearing down the diagonal in \autoref{tab:computation}: $1, 2, 6, 22, 92, 422, \dots$) seems to be \cite[A001181]{oeis:}, namely the number of Baxter permutations on $n-2$ letters.
+There seems to be some enchanting combinatorics behind $\phi$. As a sample, we point out that the sequence of numbers $\phi(n)$ are the Catalan numbers, and the sequence $\phi(\lfloor n/2 \rfloor, \lceil n/2 \rceil)$ (appearing down the diagonal in \autoref{tab:computation}: $1, 2, 6, 22, 92, 422, \dots$) seems to be \cite[A001181]{oei:}, namely the number of Baxter permutations on $n-2$ letters.
 We plan on conducting a more complete enumerative investigation of $\phi$ in a future paper. 
 \begin{table}
   \centering
@@ -1949,7 +1951,7 @@ Let $N \subset H^0(\P^2, \O(2))$ be a net of conics.
 Then $\rho(N)$ corresponds to the cubic curve traced out by the nodes of the singular members of $N$, called the \emph{Jacobian} of $N$.
 \begin{proposition}\label{prop:veronese}
   Let $R \subset \P^2$ be a general cubic.
-  The fiber of $\rho$ over $R$ is in natural bijection with the set of non-trivial $2$-torsion line bundles on $R$.
+  The fiber of $\rho$ over $[R]$ is in natural bijection with the set of non-trivial $2$-torsion line bundles on $R$.
   In particular, we have $\deg \rho = 3$.
 \end{proposition}
 The rest of \autoref{sec:veronese} is devoted to the proof of this assertion.
@@ -1959,7 +1961,7 @@ To distinguish the various copies of $\P^2$ that naturally arise in this story, 
 Let $N \subset H^0(\P V, \O(2)) = \Sym^2V$ be a general net of conics on $\P V$.
 Given a point $x \in \P N^*$, we denote the associated conic by $Q_x$.
 
-Associated to the net $N$ are three important cubic plane curves, namely the Jacobian curve, the discriminant curve, and the Hermite curve.
+There are three important cubic plane curves associated to the net $N$: the Jacobian curve, the discriminant curve, and the Hermite curve.
 We have already seen the Jacobian curve $R \subset \P V$.
 The \emph{discriminant curve} $D \subset \P N^*$ is the locus of $x \in \P N^*$ such that $Q_x$ is singular.
 Since a pencil of conics contains three singular members, we see that $D$ is a cubic curve.
@@ -1992,7 +1994,7 @@ Denote by $H$ the hyperplane divisor class on $R \subset \P^2$.
   It suffices to show that the other two, say $y$ and $z$, differ by $\eta$.
 
   The point $y$ defines a line in $\P V^*$.
-  This line intersects $E \subset \P V^*$ in three points, one of which is $\ell$, and the other two are the two components of $Q_{\tau^{-1}(y)}$, namely the two pre-images of $y \in R$ under the double covering $E \to R$.
+  This line intersects $E \subset \P V^*$ in three points, one of which is $\ell$, and the other two are the two components of $Q_{\tau^{-1}(y)}$; these correspond to the two pre-images of $y \in R$ under the double covering $E \to R$.
   Call these two points $y_1$ and $y_2$.
   Define $z_1$ and $z_2$ analogously.
   By construction, the triplets $y_1, y_2, \ell$ and $z_1, z_2, \ell$ are collinear triplets on $E \subset \P V^*$, and therefore we have the linear equivalence
@@ -2024,7 +2026,7 @@ We now have all the tools to prove \autoref{prop:veronese}.
   We use \autoref{lem:reye}, which tells us the singular elements of this net in terms of $R$ and $\eta$.
   Let $\{\eta, \eta', \eta''\}$ be the three non-trivial 2-torsion line bundles on $R$.
   Define the map $R \to \P H^0(\P^2, \O(2))^*$ by
-  \[ R \ni a \mapsto \left(\langle {a, a+\eta} \rangle\right) \cdot \left(\langle {a+\eta', a+\eta''} \rangle \right),\]
+  \[ R \ni a \mapsto \langle {a, a+\eta} \rangle \cup \langle {a+\eta', a+\eta''} \rangle ,\]
   where $\langle {p,q} \rangle$ denotes the line joining $p$ and $q$.
   We leave it to the reader to check that the image of $R$ is a plane cubic curve.
   The span of the image of $R$ is the desired net $N$.  
@@ -2062,10 +2064,11 @@ The automorphism group of the pair $(\P S, Q)$ is $\Aut(Q) \cong \PGL_2$.
   We can then interpret $(W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U)$ as the space of $2 \times 3$ matrices with entries in $S$.
   We have a rational map
   \begin{align*}
-    (W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U) &\sim \Hilb^3(\P S) \\
+    (W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U) &\dashrightarrow
+                                                              \Hilb^3(\P S) \\
     \text{$2 \times 3$ matrix $M$} &\mapsto \text{Vanishing locus of $2\times 2$ minors of $M$}.
   \end{align*}
-  It is easy to check that this map is a birational isomorphism---a general triple of points in $\P S$ is the zero locus of $2 \times 2$ minors of a matrix of linear forms, which is uniquely determined up to row and column transformations.
+  It is easy to check that this map is a birational isomorphism---a general triple of points in $\P S$ is the zero locus of $2 \times 2$ minors of a $2 \times 3$ matrix of linear forms, which is uniquely determined up to row and column transformations.
   By taking a further quotient by $\GL(V)$, we finish the proof.  
 \end{proof}
 
@@ -2081,21 +2084,21 @@ The automorphism group of the pair $(\P S, Q)$ is $\Aut(Q) \cong \PGL_2$.
   So the claimed birational isomorphism is given by sending a two dimensional subspace $L \subset \Sym^4 V$ to the image of $\pi^{-1}L$ in $\Sym^2S/q$.
 \end{proof}
 
-Via the birational isomorphisms in \autoref{lem:quotgrass} and \autoref{lem:quotram}, the projection-ramification map $\mu$ transforms into an $\Aut(S)$-equivariant map
+Via the birational isomorphisms in \autoref{lem:quotgrass} and \autoref{lem:quotram}, the projection-ramification map $\rho_X$ transforms into an $\Aut(S)$-equivariant map
 \[
   \mu \from \Hilb^3\P S \dashrightarrow \Gr(2, \Sym^2S/q).
 \]
-We now describe this map $\mu$.
+We now describe this map $\mu$ explicitly.
 To ease notation, we denote a linear form and its vanishing locus by the same letter.
 Let $\xi \in \Hilb^3 \P S$ be a general point corresponding to the three vertices of the triangle formed by three lines $L_i$ for $i = 1, 2, 3$.
-Two lines $L_i$ and $L_j$ define a pencil of quadratic forms on $Q$.
-Let $R_{ij}$ be the line whose intersection with $Q$ is the ramification divisor of the pencil $\langle  L_i, L_j \rangle$.
+Restricting the two lines $L_i$ and $L_j$ to $Q$ gives two quadratic forms $L_i|_Q$ and $L_j|_Q$ on $Q$.
+Let $R_{ij}$ be the line whose intersection with $Q$ is the ramification divisor of the pencil $\langle  L_i|_Q, L_j|_Q \rangle$.
 It is easy to check that the quadrics $L_1 R_{23}$, $L_2 R_{13}$, and $L_3R_{12}$ span a 3-dimensional subspace of $\Sym^2 S$ that contains the quadric $q$.
 \begin{lemma}\label{lem:mu}
   In the setup above, the image of $\xi$ under $\mu$ is the image of $\langle  L_1R_{23}, L_2R_{13},L_3R_{12} \rangle$ in $\Sym^2S/q$.
 \end{lemma}
 \begin{proof}
-  The ideal of the point $\xi \in \Hilb^3(S)$ is cut out by $2 \times 3$ matrix of linear forms
+  The ideal of the point $\xi \in \Hilb^3(S)$ is cut out by the $2 \times 3$ matrix of linear forms
   \[
     M =
     \begin{pmatrix}
@@ -2117,7 +2120,7 @@ It is easy to check that the quadrics $L_1 R_{23}$, $L_2 R_{13}$, and $L_3R_{12}
       &= U_0L_2R_{13} + U_1 L_1R_{23}.
   \end{align*}
   In this calculation, $L_i'$ denotes the derivative $\frac{d}{dt}$ of $L_i$ considered as an element of $\k[t]$ by pullback under some parametrization $\spec \k[t] \to Q$ and trivialization of $\O(2)|_{\spec \k[t]}$.
-  Although the derivative depends on the choices, the forms $L_iL_j' - L_jL_i'$ do not, and they cut out precisely the ramification divisor of the pencil $\langle  L_i, L_j \rangle$.
+  Although the derivative depends on the choices, the forms $L_iL_j' - L_jL_i'$ do not, and they cut out precisely the ramification divisor of the pencil $\langle  L_i|_Q, L_j|_Q \rangle$.
   Under the isomorphism in \eqref{lem:quotram}, the divisor $R$ corresponds to the 2 dimensional subspace of $\Sym^2 S/q$ spanned by $L_2R_{13}$ and $L_1R_{23}$ (The roles of $L_1, L_2, L_3$ can be changed by linear transformations of $M$, so we get that $L_3R_{12}$ also lies in this span).
   The proof is thus complete.
 \end{proof}
@@ -2132,7 +2135,8 @@ Set $M_i = R_{jk}$, and let $N$ be the net spanned by $L_iM_i$ for $i = 1, 2, 3$
 By the definition of $R_{jk}$, we see that $M_i$ is the polar line of the point $L_j \cap L_k$.
 In other words, the triangles $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$ are polar conjugates---lines in one are polars to the vertices of the other.
 
-\begin{remark}\label{rem:richelot}
+\begin{remark}[This is for context, and is not logically necessary for what comes next]
+  \label{rem:richelot}
   The space $\Hilb^3 \P S / \Aut S$ and its birational involution (called the Richelot involution) induced by
   \begin{equation}\label{eqn:richelot}
     \tau \from \Hilb^3 \P S \dashrightarrow \Hilb^3 \P S
@@ -2158,6 +2162,7 @@ In other words, the triangles $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$ are polar 
   The Fricke involution continues to act on $H_2 / \Gamma_1(2)$.
   The Satake compactification of $H_2 / \Gamma_1(2)$ is the Igusa quartic threefold in $\P^4$ on which the Fricke involution acts by a linear transformation of $\P^4$.
   The quotient of the Igusa quartic by the Fricke involution is isomorphic to a double cover of $\P^3$ branched along the union of 4 planes  \cite[Theorem~2]{muk:12}.
+  \qed
 \end{remark}
 
 Recall that $\xi \in \Hilb^3\P S$ is the point defined by the three vertices of the triangle formed by $(L_1, L_2, L_3)$.
@@ -2182,7 +2187,7 @@ We invite the reader to look at \autoref{fig:quarticscroll} for the configuratio
   Then, by definition, $A_i$ and $B_j$ are Reye lines of the net $N$.
   Let $p = A_1 \cap A_2$ and $t = B_1 \cap B_2$.
   We claim that the third Reye line through $p$, in addition to $A_1$ and $A_2$, is the line $\langle p, t\rangle$.
-  Indeed, in the pencil of conics spanned by $A_1 \cup B_1$ and $A_2 \cup B_2$, the third singular conic is $\langle p, t\rangle \cup \langle p', t'\rangle$, where $p' = A_1 \cap B_2$ and $t' = A_2 \cap B_1$.
+  To see this, note that in the pencil of conics spanned by $A_1 \cup B_1$ and $A_2 \cup B_2$, the third singular conic is $\langle p, t\rangle \cup \langle p', t'\rangle$, where $p' = A_1 \cap B_2$ and $t' = A_2 \cap B_1$.
 
   Second, let $R \subset \P S$ be the Jacobian cubic and $E \subset \P S^*$ be the Hermite cubic of $N$.
   Let $E^\perp \subset \P S$ be the image of $E$ under the polarity isomorphism $\P S^* \to \P S$ induced by $Q$.
@@ -2197,7 +2202,8 @@ We invite the reader to look at \autoref{fig:quarticscroll} for the configuratio
   Let them correspond to $x_1, x_2, x_3 \in E$.
   Denoting by $H$ the hyperplane class of $E \subset \P S^*$, we have the equation in $\Pic E$
   \[ x_1 + x_2 + x_3 = H.\]
-  
+
+  Having made the three necessary observations, we resume the proof.
   Suppose we have two triangles $\Delta$ and $\nabla$ satisfying the two conditions above.
   Consider the point $p_3 = \Delta_3 \cap \nabla_3$.
   By the second condition, it lies on $R$.

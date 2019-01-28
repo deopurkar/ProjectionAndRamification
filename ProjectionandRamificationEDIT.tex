@@ -404,7 +404,7 @@ In this section, we define a projection-ramification map for a linear series on 
 For $X \subset \P^n$, taking the linear series cut out by the hyperplanes recovers the projection-ramification map introduced in \autoref{sec:intro}.
 Working with abstract linear series, however, offers more flexibility that is helpful in inductive proofs.
 
-Let $X$ be a proper variety of dimension $r$ over an algebraically closed field $k$ of characteristic zero.
+Let $X$ be a proper variety of dimension $r$ over an algebraically closed field $\k$ of characteristic zero.
 A \emph{linear series} on $X$ is a pair $(L, W)$ consisting of a line bundle $L$ on $X$ and a subspace $W \subset H^0(X, L)$.
 The \emph{complete linear series} associated to $L$ is $(L, W)$ with $W = H^0(X, L)$.
 A \emph{projection} is a linear series $(L, V)$ with $\dim V = r+1$.
@@ -415,7 +415,7 @@ As a convention, we use $V$ for projections and $W$ for more general linear seri
   \label{def:properlyramified}
 We say that a projection $(L,V)$ is \emph{properly ramified} if the evaluation homomorphism
 \[e \from V \otimes \O_{X} \to P(L)\]
-is an isomorphism over a general point in $X$.  If $(L,V)$ is properly ramified, its \emph{ramification divisor}
+is an isomorphism at a general point in $X$.  If $(L,V)$ is properly ramified, its \emph{ramification divisor}
 \[R(L,V) \subset X\]
 is the closure of the scheme defined by the determinant of $e \from V \otimes \O_{X^{\rm sm}} \to P(L)|_{X^{\rm sm}}$.
 \end{definition}
@@ -516,8 +516,8 @@ We begin by proving part \eqref{item:incomp}, which is substantially easier.
   It is easy to check that $\rho$ is not constant; so it must be finite.
 \end{proof}
 
-For the proof of part \eqref{item:dual} of \autoref{thm:main}, we proceed inductively by showing that a general $(n-r-1)$-dimensional linear subspace which is incident to $X$ is an isolated point in its fiber under $\rho$.
-Again, it is more convenient to work with the more abstract set-up of a linear series, allowing for series that are not very ample.
+For the proof of part \eqref{item:dual} of \autoref{thm:main}, we exhibit a particular projection that is isolated in its fiber under $\rho$.
+We proceed inductively, and work with the more abstract set-up of a linear series, allowing for series that are not very ample.
 
 Let $X$ be a proper variety of dimension $r$, and let $(L, W)$ be a linear series on $X$.
 For an ideal sheaf $I \subset \O_X$ we denote by $W \otimes I$ the subspace of $W$ consisting of the sections that vanish modulo $I$. %he
@@ -561,9 +561,9 @@ Therefore, if there exists an $s \in |W \otimes \mathfrak m_x^2|$ such that $v(s
 We now define the conormal variety of a linear series, which plays an important role in our analysis of non-defectivity.
 Let $K$ be the kernel of the evaluation map
 \[ e \from W \otimes \O_X \to P(L).\]
-Let $U \subset X$ be an open subset such that $K|_U$ is locally free and the dual of the inclusion 
+Let $U \subset X$ be an open subset such that $K|_U$ is locally free and the map
 \[W^* \otimes \O_U \to K|_U^*\]
-is a surjection.
+(dual to the inclusion map) is a surjection.
 This surjection defines a closed embedding $\P(K|_U) \subset U \times |W|$.
 The \emph{conormal variety of $(L,W)$}, denoted by $P_{L,W}$, is the closure of $\P(K|_U)$ in $X \times |W|$.
 
@@ -650,7 +650,7 @@ The following observation relates non-defectivity with the non-degeneracy of the
   Since our ground field is of characteristic zero, we may assume that $P$ is smooth at $(x,s)$, that $x \in U \cap X^{\rm sm}$, and $\sigma \from P \to |W|$ is a local immersion at $(x,s)$.
   This implies that $x \in \sing(v(s))$ is isolated, and also that $x$ is a reduced point of the scheme $\sing(v(s))$.
   These two properties show that $v(s)$ possesses an ordinary double point at $x$.
-  To see this, choose local coordinates $(x_{1}, ..., x_{n})$ so that the complete local ring ${\widehat{\O}_{X,x}}$ is isomorphic to $k\llbracket x_{1},\dots, x_{r}\rrbracket$.
+  To see this, choose local coordinates $(x_{1}, ..., x_{n})$ so that the complete local ring ${\widehat{\O}_{X,x}}$ is isomorphic to $\k\llbracket x_{1},\dots, x_{r}\rrbracket$.
   After choosing a local trivialization for $L$ around $x$, the section $s$ corresponds to a power series $s(x_1,\dots,x_r)$ contained in $\mathfrak m_x^2 \widehat \O_{X,x}$.
   The germ of $\sing(v(s))$ at $x$ is cut out by the power series $\frac{\partial s}{\partial x_1}, \dots, \frac{\partial s}{\partial x_r}$.
   Since the germ of $\sing(v(s))$ at $x$ is the reduced point $x$, we get that $\frac{\partial s}{\partial x_1}, \dots, \frac{\partial s}{\partial x_r}$ are linearly independent as elements of $\mathfrak m_x / \mathfrak m_x^2$.
@@ -742,7 +742,7 @@ Throughout, $X$, $L$, and $W$ are as in the statement of \autoref{thm:mainMain}.
       \item $v(t)$ has an ordinary double point singularity at $x$.
     \end{enumerate}  
 
-    Let $\widehat{\O}_{X,x}$ denote the completion of the local ring at $x \in X$ along its maximal ideal.  Upon trivializing $L$, we may regard $s_{i}$ and $t$ as elements of $\widehat{\O}_{X,x}$, and can also assume  $\widehat{\O}_{X,x} = k\llbracket s_{1}, \dots s_{n}\rrbracket$.
+    Let $\widehat{\O}_{X,x}$ denote the completion of the local ring at $x \in X$ along its maximal ideal.  Upon trivializing $L$, we may regard $s_{i}$ and $t$ as elements of $\widehat{\O}_{X,x}$, and can also assume  $\widehat{\O}_{X,x} = \k\llbracket s_{1}, \dots s_{n}\rrbracket$.
     In the bases $(s_1, \dots, s_n, t)$ for $V$ and $(1, s_1, \dots, s_n)$ for $P(L)$, the evaluation map 
 \begin{align*}
   e\from V \otimes \widehat{\O}_{X,x} \to P(L) \otimes \widehat{\O}_{X,x}
@@ -763,7 +763,7 @@ The determinant of the matrix \eqref{matrix}
   t - \sum_{i}s_{i}\partial_{i}t
 \end{align*}
 is an analytic local equation for the ramification divisor $R(V)$ near $x$.
-By applying the Euler identity to the degree 2 part of $t$ (expressed as a power series in the $s_i$), we see that $R(V)$ shares the same tangent cone as $v(t)$ at $x$.
+By applying the Euler identity for homogeneous polynomials to the degree 2 part of $t$ (expressed as a power series in the $s_i$), we see that $R(V)$ shares the same tangent cone as $v(t)$ at $x$.
 The proposition follows.
 \end{proof}
 
@@ -782,7 +782,7 @@ The proposition follows.
 
   For smoothness, we again work in the completion $\widehat{\O}_{X,x}$.
   After trivializing $L$, we assume $u, a_{1}, ..., b$ are elements of $\widehat{\O}_{X,x}$.
-  We choose an element $z \in \widehat{\O}_{X,x}$ such that $(a_1, \dots, a_{r-1}, z)$ forms a system of coordinates, that is $\widehat{\O}_{X,x} \cong k\llbracket a_{1}, \dots , a_{r-1}, z \rrbracket$.
+  We choose an element $z \in \widehat{\O}_{X,x}$ such that $(a_1, \dots, a_{r-1}, z)$ forms a system of coordinates, that is $\widehat{\O}_{X,x} \cong \k\llbracket a_{1}, \dots , a_{r-1}, z \rrbracket$.
   With respect to the given basis of $V$ and the basis $1, a_1, \dots, a_{r-1}, z$ for $P(L)$, the evaluation map
   \begin{align*}
   e\from V \otimes \widehat{\O}_{X,x} \to P(L) \otimes \widehat{\O}_{X,x}

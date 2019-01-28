@@ -1428,7 +1428,7 @@ We use \cite{oss:14} for the foundations of the theory, and following the termin
 
 \subsection{Linked linear series}\label{sec:lls}
 We need linked linear series for the simplest singular curve, namely a (projective, connected) nodal curve $C$ which is the nodal union of two smooth (projective, connected) curves $C_1$ and $C_2$, but we need them for vector bundles of rank higher than $1$.
-Let $B$ be the spectrum of a DVR with special point $0$, general point $\eta$.
+Let $B$ be the spectrum of a DVR with special point $0$ and general point $\eta$.
 Let $\pi \from X \to B$ be a smoothing of $C$ with non-singular total space $X$.
 That is, $\pi$ is a flat, proper, family of connected curves, smooth over $\eta$, and isomorphic to $C$ over $0$.
 Such a family is a particularly simple example of an almost local smoothing family \cite[\S~2.1--2.2]{oss:14}.
@@ -1514,7 +1514,7 @@ The main theorem of \cite{oss:14} is the following representability theorem.
   The functor that associates to a $B$-scheme $S \to B$ the set of linked linear series on $\mathcal E_S$ is representable by a projective $B$-scheme $\mathcal G(k, \mathcal E)$ isomorphic to the Grassmannian $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$ over $\eta$.
   The locus of simple linear series ${\mathcal G}^{\rm simple}(k, \mathcal E) \subset {\mathcal G}(k, \mathcal E)$ is an open subscheme, and the map ${\mathcal G}^{\rm simple}(k, \mathcal E) \to B$ has universal relative dimension at least $k(d-k-r(g-1))$.
 \end{theorem}
-The last statement implies that if $v \in {\mathcal G}^{\rm simple}$ is such that ${\mathcal G}^{\rm simple}$ has relative dimension at most $k(d-k-r(g-1))$ at $v$, then it has relative dimension exactly $k(d-k-r(g-1))$ at $v$ and, furthermore, it is an open map near $v$.
+The last statement implies that if $v \in {\mathcal G}^{\rm simple}$ is such that ${\mathcal G}^{\rm simple}$ has relative dimension at most $k(d-k-r(g-1))$ at $v$, then it has relative dimension exactly $k(d-k-r(g-1))$ at $v$ and, furthermore, $\mathcal G(k, \mathcal E) \to B$ is an open map near $v$.
 In particular, $v$ is in the closure of $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
 \begin{remark}
   Osserman proves a stronger theorem, namely a relative version of the statement above, over the stack of vector bundles on $X$.
@@ -1635,7 +1635,7 @@ for some $\widetilde v_1, \dots, \widetilde v_{r+1} \in E_p$ such that the image
 Here we are slightly abusing the notation by denoting $v_i$ and its image in $E_p$ under the natural evaluation map by the same letter.
 Let $V^0 \subset E|_p$ be spanned by the images of $\widetilde v_1, \dots, \widetilde v_i$, and $V^1 \subset E|_p$ by the images of $\widetilde v_{i+1}, \dots, \widetilde v_{r+1}$.
 It is easy to check that a different choice of basis adapted to the vanishing sequence gives the same $V^0$ and $V^1$.
-By construction, $\dim V_0 = i$ and $\dim V^1 = r+1-i$, and therefore, $\dim (V^0 \cap V^1) \geq 1$.
+By construction, $\dim V^0 = i$ and $\dim V^1 = r+1-i$, and therefore, $\dim (V^0 \cap V^1) \geq 1$.
 We say that $V$ has \emph{transverse vanishing} at $p$ if 
 \begin{equation}\label{eq:genericity}
   \dim (V^0 \cap V^1) = 1.
@@ -1730,7 +1730,7 @@ Denote this isomorphism class by $E'_{\rm gen}$.
 
 \subsection{Projection-ramification for linked linear series}
 \label{sec:prlls}
-Recall the setup from \autoref{sec:lls}: $C = C_1 \cup C_2$ is a nodal union of two smooth projective curves of genus $g_1$ and $g_2$, and $\pi \from X \to B$ be a smoothing of $C$.
+Recall the setup from \autoref{sec:lls}: $C = C_1 \cup C_2$ is a nodal union of two smooth projective curves of genus $g_1$ and $g_2$, and $\pi \from X \to B$ is a smoothing of $C$.
 Let $\mathcal E$ be a vector bundle of rank $r$ on $X$ whose restriction $E$ to $C$ has multi-degree $(w_1, w_2)$.
 The integers $n_2 \geq n_1$ are such that we have vanishing $H^0(C_2, E_n|_{C_2}) = 0$ for all $n \leq n_1$ and $H^0(C_1, E_n|_{C_1}) = 0$ for $n \geq n_2$.
 For convenience, we decrease $n_1$ and increase $n_2$ so that the vanishing on $C_2$ holds for all $n \leq n_1 - (w_1-2g_1)$ and on $C_1$ for all $n \geq n_2 + (w_2-2g_2)$.

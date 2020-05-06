@@ -13,7 +13,7 @@
   stmaryrd,
   diagbox
 }
-%\usepackage[draft]{showlabels}
+\usepackage[draft]{showlabels}
 \usepackage[table]{xcolor}
 \usepackage{tikz, tikz-cd}
 
@@ -129,7 +129,6 @@
   We prove that for a large class of varieties, the ramification divisors of such projections vary in a maximal dimensional family.
   We study the map that associates to a linear projection its ramification divisor.
   By a degeneration argument involving (linked) limit linear series of higher rank, we show that this map is dominant for most (but not all!) varieties of minimal degree. 
-  We find the degree of this map in some cases, extending the classical appearance of Catalan numbers in the geometry of rational normal curves, and give a geometric explanation of its fibers in terms of torsion points of naturally occurring elliptic curves in the case of the Veronese surface and the quartic rational surface scroll.
 \end{abstract}
 
 
@@ -137,29 +136,31 @@
 %\tableofcontents
 
 \section{Introduction}\label{sec:intro}
-Let $f \from X \to Y$ be a map between smooth algebraic varieties.
-A fundamental object associated to $f$ is the set $R(f) \subset X$ consisting of the critical points of $f$, namely the points $x \in X$ at which $df \from T_xX \to T_{f(x)}Y$ has less than maximal rank.
-It is natural to investigate the extent to which $f$ can be recovered from $R(f)$.
-In this paper, we explore this theme when $X$ is a smooth projective variety and $f$ is a linear projection onto a projective space of the same dimension as $X$.
-We treat the following two questions: Does every non-trivial perturbation of $f$ induce a non-trivial perturbation of $R(f)$? If this is the case, then how many other $g \from X \to Y$ have $R(g) = R(f)$?
+% Let $f \from X \to Y$ be a map between smooth algebraic varieties.
+% A fundamental object associated to $f$ is the set $R(f) \subset X$ consisting of the critical points of $f$, namely the points $x \in X$ at which $df \from T_xX \to T_{f(x)}Y$ has less than maximal rank.
+% It is natural to investigate the extent to which $f$ can be recovered from $R(f)$.
+% In this paper, we explore this theme when $X$ is a smooth projective variety and $f$ is a linear projection onto a projective space of the same dimension as $X$.
 
-Let us make these questions precise in terms of a map $\rho$, called the \emph{projection-ramification} map.
 Let $X \subset \P^n$ be a smooth projective variety of dimension $r$, not contained in a hyperplane.
 Projection from a general $(n-r-1)$-dimensional linear subspace $L \subset \P^n$ defines a finite surjective map $X \to \P^r$.
-The set of critical points of this map is the ramification divisor, say $R(L) \subset X$.
+Its critical points form a divisor, called the ramification divisor, denoted by $R(L) \subset X$.
 By the Riemann--Hurwitz formula, $R(L)$ lies in the linear series $|K_X + (r+1)H|$, where $K_X$ is the canonical class, and $H$ is the hyperplane class on $X$.
-The projection-ramification map
+The \emph{projection-ramification map}
 \[
   \rho \from \Gr(n-r, n+1) \dashrightarrow |K_X + (r+1)H|.
 \]
 is defined by $\rho \from L \mapsto R(L)$.
-In terms of $\rho$, the questions above become the following: Is $\rho$ generically finite (equivalently, does the image of $\rho$ have the maximal dimension)? If $\rho$ is generically finite, what is its degree?
-In the literature, the first question is known as the question of maximal variation of the ramification locus.
 
-\subsection{Maximal variation}
-Although classical in nature, the question of maximal variation first appeared explicitly in the work of Flenner and Manaresi \cite{fle.man:98} in connection with the transcendence degree of the St\"uckrad-Vogel cycle in intersection theory. 
-They established maximal variation under a geometric condition we call ``incompressibility.''
-Our first result is the following more general theorem.
+We know very little about $\rho$, despite its evident importance in projective geometry.
+%For example, is $\rho$ (generically) injective? Is it generically finite? What is its degree? What are its fibers? 
+In this paper, we show that for a large class of varieties, $\rho$ is generically finite.
+In other words, non-trivial deformations of a general $L$ induce non-trivial deformations of $R(L)$.
+In short, the ramification locus ``varies maximally'' as the center of projection moves.
+
+Flenner and Manaresi  studied the question of maximal variation
+in connection with the transcendence degree of the St\"uckrad-Vogel cycle in intersection theory \cite{fle.man:98}. 
+They established maximal variation under a condition we call ``incompressibility.''
+We prove the following more general theorem.
 \begin{maintheorem}\label{thm:main}
   Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over $\C$.
   Suppose one of the following holds:
@@ -188,9 +189,9 @@ Then $X \subset \P^n$ is usually not incompressible, but the dual variety $X^*$ 
 
 The hypotheses in \autoref{thm:main} are sufficient, but not necessary.
 To see this, consider $X = \P^{r-1} \times \P^1 \subset \P^{2r-1}$, embedded by the Segre embedding, for $r \geq 3$.
-Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho$ is dominant (see \autoref{thm:examples}).
+Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho$ is dominant (see \autoref{prop:segre}).
 
-Given that maximal variation holds for a large class of varieties, it is natural to wonder if it always holds.
+It is natural to wonder if maximal variation always holds.
 This is not the case.
 \begin{maintheorem}
   \label{thm:counterexamples}
@@ -214,10 +215,11 @@ In the main text, \autoref{thm:minimaldegree} is \autoref{thm:actualminimaldegre
 The list of smooth varieties of minimial degree is well-known \cite[Theorem~19.9]{har:95}.
 It consists of quadric hypersurfaces, the Veronese surface in $\P^5$, and rational normal scrolls.
 By \autoref{thm:main}, $\rho$ is dominant for hypersurfaces and surfaces, so what remains are the scrolls.
-Among the scrolls, the curves (rational normal curves) and surfaces are again covered by \autoref{thm:main}.
-For threefold scrolls, we show by an explicit calculation and a degeneration argument that $\rho$ is dominant (\autoref{cor:maxvariation3scrolls}).
-In higher dimensions, the story is complicated, as evidenced by \autoref{thm:counterexamples}.
-Nevertheless, we prove the following.
+For scrolls, the story is complicated, as evidenced by \autoref{thm:counterexamples}.
+% Among the scrolls, the curves (rational normal curves) and surfaces are again covered by \autoref{thm:main}.
+% For threefold scrolls, we show by an explicit calculation and a degeneration argument that $\rho$ is dominant (\autoref{cor:maxvariation3scrolls}).
+% In higher dimensions, the story is complicated, as evidenced by 
+But for generic scrolls of high degree, we have maximal variation.
 \begin{maintheorem}
   \label{thm:rationalnormalscrolls}
   Let $X = \P E \subset \P^n$ be a rational normal scroll, where $E$ is an ample vector bundle of rank $r$ on $\P^1$, general in its moduli.
@@ -225,134 +227,134 @@ Nevertheless, we prove the following.
   In particular, the conclusion holds if $E$ is general of degree at least $(r-1)(2r-1) + 1$.
 \end{maintheorem}
 In the main text, \autoref{thm:rationalnormalscrolls} is \autoref{thm:actualrationalnormalscrolls}.
+The proof of \autoref{thm:rationalnormalscrolls} goes by degeneration using the spaces of (linked) limit linear series for vector bundles of higher rank developed by Teixidor i Bigas \cite{tei-i-big:91} and Osserman \cite{oss:14}.
+% We degenerate $X$ to a reducible variety $X_0 = $ the projectivization of a vector bundle on a two-component nodal rational curve.
+% Suppose we could define a projection-ramification map for $X_0$ and show that it is dominant, then the same would hold for $X$ by the upper semi-continuity of fiber dimensions.
+% This approach fails with a na\"ive definition of the projection-ramification map.
+% The right definition requires sophisticated tools.
 
-The proof of \autoref{thm:rationalnormalscrolls} goes by degeneration.
-We degenerate $X$ to a reducible variety $X_0 = $ the projectivization of a vector bundle on a two-component nodal rational curve.
-Suppose we could define a projection-ramification map for $X_0$ and show that it is dominant, then the same would hold for $X$ by the upper semi-continuity of fiber dimensions.
-This approach fails with a na\"ive definition of the projection-ramification map.
-The right definition requires sophisticated tools, specifically, the spaces of (linked) limit linear series for vector bundles of higher rank developed by Teixidor i Bigas \cite{tei-i-big:91} and Osserman \cite{oss:14}.
+\todo{Summarize the enumerative problem in a paragraph.}
+% \subsection{Enumerative problems}
+% \autoref{thm:minimaldegree} and \autoref{thm:rationalnormalscrolls} motivate a natural set of enumerative questions: for $X \subset \P^n$ of minimal degree, what is the degree of the projection-ramification map $\rho$?
+% We make the convention that if a map is not dominant, then its degree is $0$.
 
-\subsection{Enumerative problems}
-\autoref{thm:minimaldegree} and \autoref{thm:rationalnormalscrolls} motivate a natural set of enumerative questions: for $X \subset \P^n$ of minimal degree, what is the degree of the projection-ramification map $\rho$?
-We make the convention that if a map is not dominant, then its degree is $0$.
+% For $X$ of dimension 1, namely a rational normal curve, the answer is easy to find---the degree of $\rho$ is the Catalan number $\frac{(2n-2)!}{n!(n-1)!}$.
+% In this case, the projection-ramification map
+% \[ \rho \from \Gr(2, n+1) \to \P^{2n-2}\]
+% is regular, and the pullback of $\O(1)$ is the Pl\"ucker line bundle.
+% Therefore, the degree of $\rho$ is the top self-intersection of the Pl\"ucker bundle, which is easily computed using Schubert calculus.
 
-For $X$ of dimension 1, namely a rational normal curve, the answer is easy to find---the degree of $\rho$ is the Catalan number $\frac{(2n-2)!}{n!(n-1)!}$.
-In this case, the projection-ramification map
-\[ \rho \from \Gr(2, n+1) \to \P^{2n-2}\]
-is regular, and the pullback of $\O(1)$ is the Pl\"ucker line bundle.
-Therefore, the degree of $\rho$ is the top self-intersection of the Pl\"ucker bundle, which is easily computed using Schubert calculus.
+% For $X$ of codimension $1$, namely a quadric hypersurface, the projection-ramification map
+% \[ \rho \from \Gr(n, n+1) = \P^{n} \to {\P^n}^* \]
+% is again regular; it is the duality isomorphism induced by the (non-degenerate) quadric $X$.
+% In particular, it has degree $1$.
 
-For $X$ of codimension $1$, namely a quadric hypersurface, the projection-ramification map
-\[ \rho \from \Gr(n, n+1) = \P^{n} \to {\P^n}^* \]
-is again regular; it is the duality isomorphism induced by the (non-degenerate) quadric $X$.
-In particular, it has degree $1$.
+% The cases of the Veronese surface $X \cong \P^2 \subset \P^5$ and the quartic surface scroll $X = \P(\O(2) \oplus \O(2)) \subset \P^5$ are particularly delightful.
+% In these cases, the fibers of $\rho$ have an interpretation in terms of 2-torsion points of certain elliptic curves, which we now describe.
+% For the Veronese surface, the target of $\rho$ is the linear series of cubics in $\P^2$.
+% The points of the fiber of $\rho$ over the point represented by a cubic $R \subset \P^2$ correspond naturally to the non-trivial 2-torsion points of $\Pic R$.
+% In particular, the degree of $\rho$ is $3$.
+% For the quartic surface scroll, the target of $\rho$ modulo the action of $\Aut X$ is birational to the moduli space of $(R, \eta)$ where $R$ is a plane cubic and $\eta$ is a non-trivial 2-torsion point of $\Pic R$.
+% The points of the fiber of $\rho$ over the point represented by $(R, \eta)$ correspond naturally to the two elements of $\Pic E[2] \setminus \pi^* \Pic R [2]$, where $E \to R$ is the \'etale double cover defined by $\eta$.
+% In particular, the degree of $\rho$ is $2$.
+% In this case, the source of $\rho$ (the Grassmannian $\Gr(3, H^0(X, \O(1)))$ modulo the action of $\Aut X$) has several known moduli interpretations.
+% It is birational to the moduli of unordered triplets of unordered pairs of points on $\P^1$, namely $M_{0,6}/(S_2 \times S_2 \times S_2 \rtimes S_3)$.
+% This space, in turn, is isomorphic to the moduli of hyperelliptic curves with a maximal isotropic subspace of the $\F_2$-vector space of $2$-torsion points, or equivalently, to the moduli of principally polarized abelian surfaces with a maximal isotropic subspace of the $\F_2$-vector space of $2$-torsion points \cite[Example~4.2]{dol.how:15}.
+% The involution on this space induced by the $2$-to-$1$ map $\rho$ coincides with the classical Richelot or Fricke involution \cite[Remark~4.3]{dol.how:15}.
+% See \autoref{rem:richelot} for more details.
 
-The cases of the Veronese surface $X \cong \P^2 \subset \P^5$ and the quartic surface scroll $X = \P(\O(2) \oplus \O(2)) \subset \P^5$ are particularly delightful.
-In these cases, the fibers of $\rho$ have an interpretation in terms of 2-torsion points of certain elliptic curves, which we now describe.
-For the Veronese surface, the target of $\rho$ is the linear series of cubics in $\P^2$.
-The points of the fiber of $\rho$ over the point represented by a cubic $R \subset \P^2$ correspond naturally to the non-trivial 2-torsion points of $\Pic R$.
-In particular, the degree of $\rho$ is $3$.
-For the quartic surface scroll, the target of $\rho$ modulo the action of $\Aut X$ is birational to the moduli space of $(R, \eta)$ where $R$ is a plane cubic and $\eta$ is a non-trivial 2-torsion point of $\Pic R$.
-The points of the fiber of $\rho$ over the point represented by $(R, \eta)$ correspond naturally to the two elements of $\Pic E[2] \setminus \pi^* \Pic R [2]$, where $E \to R$ is the \'etale double cover defined by $\eta$.
-In particular, the degree of $\rho$ is $2$.
-In this case, the source of $\rho$ (the Grassmannian $\Gr(3, H^0(X, \O(1)))$ modulo the action of $\Aut X$) has several known moduli interpretations.
-It is birational to the moduli of unordered triplets of unordered pairs of points on $\P^1$, namely $M_{0,6}/(S_2 \times S_2 \times S_2 \rtimes S_3)$.
-This space, in turn, is isomorphic to the moduli of hyperelliptic curves with a maximal isotropic subspace of the $\F_2$-vector space of $2$-torsion points, or equivalently, to the moduli of principally polarized abelian surfaces with a maximal isotropic subspace of the $\F_2$-vector space of $2$-torsion points \cite[Example~4.2]{dol.how:15}.
-The involution on this space induced by the $2$-to-$1$ map $\rho$ coincides with the classical Richelot or Fricke involution \cite[Remark~4.3]{dol.how:15}.
-See \autoref{rem:richelot} for more details.
+% The following result summarizes our knowledge of the degree of $\rho$.
+% \begin{maintheorem}\label{thm:examples}
+%   Let $\rho$ be the projection-ramification map for $X \subset \P^n$ of minimal degree.
+% \begin{enumerate}
+%   \item If $X \subset \P^{n}$ is a rational normal curve, then $\rho$ is regular and $\deg \rho = \frac{(2n-2)!}{n!(n-1)!}$.
+%   \item  If $X \subset \P^{n}$ is a quadric hypersurface, then $\rho$ is an isomorphism; in particular, $\deg \rho = 1$.
 
-The following result summarizes our knowledge of the degree of $\rho$.
-\begin{maintheorem}\label{thm:examples}
-  Let $\rho$ be the projection-ramification map for $X \subset \P^n$ of minimal degree.
-\begin{enumerate}
-  \item If $X \subset \P^{n}$ is a rational normal curve, then $\rho$ is regular and $\deg \rho = \frac{(2n-2)!}{n!(n-1)!}$.
-  \item  If $X \subset \P^{n}$ is a quadric hypersurface, then $\rho$ is an isomorphism; in particular, $\deg \rho = 1$.
+%   \item  If  $X = \P^{r-1} \times \P^{1} \hookrightarrow \P^{2r-1}$ is the Segre embedding, then $\deg \rho = 1$.
 
-  \item  If  $X = \P^{r-1} \times \P^{1} \hookrightarrow \P^{2r-1}$ is the Segre embedding, then $\deg \rho = 1$.
+%   \item  If $X \subset \P^{5}$ is the Veronese surface, then $ \deg \rho = 3$.
+%   \item If $X \subset \P^{5}$ is a general quartic surface scroll, then $\deg \rho = 2$.
+%   \item If $X = \P(\O_{\P^{1}}(1) \oplus \O_{\P^{1}}(k+1)) \subset \P^{k+3}$ is the surface scroll with the most imbalanced splitting type, then $\deg \rho = 1$.
+%   \item If $X = \P(\O_{\P^{1}}(1) \oplus \O_{\P^{1}}(1) \oplus \O_{\P^{1}}(k+1)) \subset \P^{k+5}$ is the threefold scroll with the most imbalanced splitting type, then $\deg \rho = 1$.
+% \end{enumerate} 
+% \end{maintheorem}
+% In the main text, the items in \autoref{thm:examples} are treated in \autoref{sec:arnc}, \autoref{sec:aquadricsurface}, \autoref{prop:segre}, \autoref{prop:veronese}, \autoref{prop:quarticscroll}, \autoref{prop:eccentric_surface}, and \autoref{prop:eccentric_threefold}, respectively.
 
-  \item  If $X \subset \P^{5}$ is the Veronese surface, then $ \deg \rho = 3$.
-  \item If $X \subset \P^{5}$ is a general quartic surface scroll, then $\deg \rho = 2$.
-  \item If $X = \P(\O_{\P^{1}}(1) \oplus \O_{\P^{1}}(k+1)) \subset \P^{k+3}$ is the surface scroll with the most imbalanced splitting type, then $\deg \rho = 1$.
-  \item If $X = \P(\O_{\P^{1}}(1) \oplus \O_{\P^{1}}(1) \oplus \O_{\P^{1}}(k+1)) \subset \P^{k+5}$ is the threefold scroll with the most imbalanced splitting type, then $\deg \rho = 1$.
-\end{enumerate} 
-\end{maintheorem}
-In the main text, the items in \autoref{thm:examples} are treated in \autoref{sec:arnc}, \autoref{sec:aquadricsurface}, \autoref{prop:segre}, \autoref{prop:veronese}, \autoref{prop:quarticscroll}, \autoref{prop:eccentric_surface}, and \autoref{prop:eccentric_threefold}, respectively.
-
-\subsection{Further remarks}
-There are two natural enumerative problems regarding finite coverings of curves.
-The first problem is to compute the number of branched covers $C \to \P^1$ with a specified set of branch points $B \subset \P^1$; this number is called the Hurwitz number.
-The Hurwitz numbers are difficult to compute, but they exhibit remarkable structure \cite{eke.lan.sha.ea:99,eke.lan.sha.ea:01}.
-The second problem is to compute the number of maps $C \to \P^1$ with a prescribed set of ramification points $R \subset C$.
-By a dimension count, it is easy to see that this problem is only meaningful when $C = \P^{1}$, in which case it is immediately and easily answered by Schubert calculus, yielding the Catalan numbers.
-
-
-In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, due to Chisini's conjecture (proved by Kulikov \cite{kul:08}).
-By this conjecture, a branched cover $S \to \P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^2$ (with finitely many well-understood counterexamples).
-In contrast, as hinted by \autoref{thm:minimaldegree}, the enumerative problem regarding the ramification divisor persists, and poses a significant challenge.
-In some sense, the enumerative problems regarding the branch and ramification divisors trade places, certainly in terms of difficulty, but hopefully also in terms of structure.
+% \subsection{Further remarks}
+% There are two natural enumerative problems regarding finite coverings of curves.
+% The first problem is to compute the number of branched covers $C \to \P^1$ with a specified set of branch points $B \subset \P^1$; this number is called the Hurwitz number.
+% The Hurwitz numbers are difficult to compute, but they exhibit remarkable structure \cite{eke.lan.sha.ea:99,eke.lan.sha.ea:01}.
+% The second problem is to compute the number of maps $C \to \P^1$ with a prescribed set of ramification points $R \subset C$.
+% By a dimension count, it is easy to see that this problem is only meaningful when $C = \P^{1}$, in which case it is immediately and easily answered by Schubert calculus, yielding the Catalan numbers.
 
 
-\subsection{Further questions}
-Our work raises several questions, some of which we hope to return to in the future.
-\subsubsection{The enumerative problem for scrolls}\label{sec:qscroll}
-Recall that every vector bundle on $\P^1$ is isomorphic to a direct sum of line bundles.
-In particular, an ample vector bundle of rank $r$ and degree $d$ is isomorphic to $\O(a_1) \oplus \cdots \oplus \O(a_r)$ for positive integers $a_1, \dots, a_r$ satisfying $a_1 \leq \cdots \leq a_r$ and $a_1 + \cdots + a_r = d$.
-It is thus specified up to isomorphism by an $r$-term partition of $d$.
-Let $\Sigma_{r,d}$ be the set of $r$-term partitions of $d$.
-We get a function $\phi \from \Sigma_{r,d} \to \Z_{\geq 0}$ defined by
-\[ \phi(a_1, \dots, a_r) = \text{Degree of the projection-ramification map for $X \subset \P^{r+d}$},\]
-where $X = \P\left( \O(a_1) \oplus \dots \oplus \O(a_r) \right)$ is embedded in $\P^{r+d}$ by $\O_X(1)$.
-The set $\Sigma_{r,d}$ is partially ordered by the dominance order $\prec$.
-In terms of vector bundles, $\prec$ translates into isotrivial specialization: $(a_1, \dots, a_r) \prec (b_1, \dots, b_r)$ if and only if $\O(b_1) \oplus \dots \oplus \O(b_r)$ isotrivially specializes to $\O(a_1) \oplus \dots \oplus \O(a_r)$.
-By the lower semi-continuity of degrees of rational maps, we get
-\[ \phi(a_1, \dots, a_r) \leq \phi(b_1,\dots, b_r).\]
-Thus, $\phi$ is order preserving.
+% In higher dimensions, however, the analogue of the Hurwitz problem is expected to be much less interesting, due to Chisini's conjecture (proved by Kulikov \cite{kul:08}).
+% By this conjecture, a branched cover $S \to \P^2$ with generic branching is uniquely determined by its branch divisor $B \subset \P^2$ (with finitely many well-understood counterexamples).
+% In contrast, as hinted by \autoref{thm:minimaldegree}, the enumerative problem regarding the ramification divisor persists, and poses a significant challenge.
+% In some sense, the enumerative problems regarding the branch and ramification divisors trade places, certainly in terms of difficulty, but hopefully also in terms of structure.
 
-We hope that the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ admits a deeper structure, such as a recurrence relation or generating function.
-\autoref{thm:minimaldegree} and \autoref{thm:examples} only scratch the surface as far as $\phi$ is concerned.
-\autoref{thm:minimaldegree} states that $\phi$ is not identically zero, at least if $d$ is sufficiently large.
-\autoref{thm:examples} computes $\phi$ for the partitions $(d)$, $(1, \dots, 1)$, $(1, k+1)$, $(1,1,k+1)$, and $(2,2)$.
-Some more examples, calculated using randomized trials over finite fields in \texttt{Macaulay2} \cite{gra.sti:} and \texttt{Magma} \cite{bos.can.pla:97}, are tabulated in \autoref{tab:computation}.
-There seems to be some enchanting combinatorics behind $\phi$. As a sample, we point out that the sequence of numbers $\phi(n)$ are the Catalan numbers, and the sequence $\phi(\lfloor n/2 \rfloor, \lceil n/2 \rceil)$ (appearing down the diagonal in \autoref{tab:computation}: $1, 2, 6, 22, 92, 422, \dots$) seems to be \cite[A001181]{oei:}, namely the number of Baxter permutations on $n-2$ letters.
-We plan on conducting a more complete enumerative investigation of $\phi$ in a future paper. 
-\begin{table}
-  \centering
-  \rowcolors{2}{gray!10}{white}
-  \caption{Degrees of the projection-ramification maps for $X = \P(\O(a_1) \oplus \O(a_2))$} \label{tab:computation}
-  \begin{tabular}{l| r r r r}
-    \rowcolor{gray!25}
-    \diagbox{$a_1$}{$a_2$} & 1 & 2 & 3 & 4\\
-    \hline
-    1 & 1 & & &\\
-    2 & 1 & 2 & &\\
-    3 & 1 & 6 & 22 &\\
-    4 & 1 & 17 & 92 & 422\\
-  \end{tabular}
-\end{table}
+\todo{Summarize further questions in a paragraph.}
+% \subsection{Further questions}
+% Our work raises several questions, some of which we hope to return to in the future.
+% \subsubsection{The enumerative problem for scrolls}\label{sec:qscroll}
+% Recall that every vector bundle on $\P^1$ is isomorphic to a direct sum of line bundles.
+% In particular, an ample vector bundle of rank $r$ and degree $d$ is isomorphic to $\O(a_1) \oplus \cdots \oplus \O(a_r)$ for positive integers $a_1, \dots, a_r$ satisfying $a_1 \leq \cdots \leq a_r$ and $a_1 + \cdots + a_r = d$.
+% It is thus specified up to isomorphism by an $r$-term partition of $d$.
+% Let $\Sigma_{r,d}$ be the set of $r$-term partitions of $d$.
+% We get a function $\phi \from \Sigma_{r,d} \to \Z_{\geq 0}$ defined by
+% \[ \phi(a_1, \dots, a_r) = \text{Degree of the projection-ramification map for $X \subset \P^{r+d}$},\]
+% where $X = \P\left( \O(a_1) \oplus \dots \oplus \O(a_r) \right)$ is embedded in $\P^{r+d}$ by $\O_X(1)$.
+% The set $\Sigma_{r,d}$ is partially ordered by the dominance order $\prec$.
+% In terms of vector bundles, $\prec$ translates into isotrivial specialization: $(a_1, \dots, a_r) \prec (b_1, \dots, b_r)$ if and only if $\O(b_1) \oplus \dots \oplus \O(b_r)$ isotrivially specializes to $\O(a_1) \oplus \dots \oplus \O(a_r)$.
+% By the lower semi-continuity of degrees of rational maps, we get
+% \[ \phi(a_1, \dots, a_r) \leq \phi(b_1,\dots, b_r).\]
+% Thus, $\phi$ is order preserving.
 
-\subsubsection{Non-maximal variation} Given that our counterexamples to maximal variation are all scrolls over curves, it is natural to wonder whether failure of maximal variation can only occur for scrolls.  Ideally, we would seek a clean classification of varieties failing maximal variation -- a good start would be to precisely classify all  rational normal scrolls which fail maximal variation.
-It would especially be nice to establish maximal variation for all threefolds.
-All threefolds with non-degenerate duals are covered by \autoref{thm:main}.
-The ones that remain are threefolds with degenerate duals; it is well-known that these are $\P^2$-bundles over curves.
+% We hope that the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ admits a deeper structure, such as a recurrence relation or generating function.
+% \autoref{thm:minimaldegree} and \autoref{thm:examples} only scratch the surface as far as $\phi$ is concerned.
+% \autoref{thm:minimaldegree} states that $\phi$ is not identically zero, at least if $d$ is sufficiently large.
+% \autoref{thm:examples} computes $\phi$ for the partitions $(d)$, $(1, \dots, 1)$, $(1, k+1)$, $(1,1,k+1)$, and $(2,2)$.
+% Some more examples, calculated using randomized trials over finite fields in \texttt{Macaulay2} \cite{gra.sti:} and \texttt{Magma} \cite{bos.can.pla:97}, are tabulated in \autoref{tab:computation}.
+% There seems to be some enchanting combinatorics behind $\phi$. As a sample, we point out that the sequence of numbers $\phi(n)$ are the Catalan numbers, and the sequence $\phi(\lfloor n/2 \rfloor, \lceil n/2 \rceil)$ (appearing down the diagonal in \autoref{tab:computation}: $1, 2, 6, 22, 92, 422, \dots$) seems to be \cite[A001181]{oei:}, namely the number of Baxter permutations on $n-2$ letters.
+% We plan on conducting a more complete enumerative investigation of $\phi$ in a future paper. 
+% \begin{table}
+%   \centering
+%   \rowcolors{2}{gray!10}{white}
+%   \caption{Degrees of the projection-ramification maps for $X = \P(\O(a_1) \oplus \O(a_2))$} \label{tab:computation}
+%   \begin{tabular}{l| r r r r}
+%     \rowcolor{gray!25}
+%     \diagbox{$a_1$}{$a_2$} & 1 & 2 & 3 & 4\\
+%     \hline
+%     1 & 1 & & &\\
+%     2 & 1 & 2 & &\\
+%     3 & 1 & 6 & 22 &\\
+%     4 & 1 & 17 & 92 & 422\\
+%   \end{tabular}
+% \end{table}
 
-\subsubsection{Compressible varieties}  Another natural problem is to classify the compressible varieties.
-For example, it is easy to see that smooth, non-degenerate complete intersection varieties are incompressible.
-It may be possible to classify compressible varieties having a fixed small codimension, starting with codimension two.
+% \subsubsection{Non-maximal variation} Given that our counterexamples to maximal variation are all scrolls over curves, it is natural to wonder whether failure of maximal variation can only occur for scrolls.  Ideally, we would seek a clean classification of varieties failing maximal variation -- a good start would be to precisely classify all  rational normal scrolls which fail maximal variation.
+% It would especially be nice to establish maximal variation for all threefolds.
+% All threefolds with non-degenerate duals are covered by \autoref{thm:main}.
+% The ones that remain are threefolds with degenerate duals; it is well-known that these are $\P^2$-bundles over curves.
 
-\subsubsection{Positive characteristics}
-The analysis of maximal variation and the computation of the degree of $\rho$  will surely bring new surprises in positive characteristics.
-We do not know if \autoref{thm:main} or \autoref{thm:minimaldegree} holds in positive characteristic; our proofs certainly do not work.
-The degrees in \autoref{thm:examples}, and the values of the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ defined in \autoref{sec:qscroll} depend on the characteristic due to the presence of inseparable covers, even for rational normal curves \cite{oss:06}.
+% \subsubsection{Compressible varieties}  Another natural problem is to classify the compressible varieties.
+% For example, it is easy to see that smooth, non-degenerate complete intersection varieties are incompressible.
+% It may be possible to classify compressible varieties having a fixed small codimension, starting with codimension two.
+
+% \subsubsection{Positive characteristics}
+% The analysis of maximal variation and the computation of the degree of $\rho$  will surely bring new surprises in positive characteristics.
+% We do not know if \autoref{thm:main} or \autoref{thm:minimaldegree} holds in positive characteristic; our proofs certainly do not work.
+% The degrees in \autoref{thm:examples}, and the values of the enumerative function $\phi \from \Sigma_{r,d} \to \Z$ defined in \autoref{sec:qscroll} depend on the characteristic due to the presence of inseparable covers, even for rational normal curves \cite{oss:06}.
 
 
-\subsubsection{Picture over the real numbers}
-Consider the projection-ramification map of a rational normal curve of degree $n$
-\[ \rho \from \Gr(2, n+1) \to \P^{2n-2}.\]
-The map $\rho$ in this context is also called the \emph{Wronskian} map.
-The real algebraic geometry surrounding the Wronskian map plays an important role in real enumerative geometry, the theory of real algebraic curves, and control theory, thanks to the B. and M. Shapiro conjecture.
-Proved by Eremenko and Gabrielov, this conjecture states that if $L \in \Gr(2, n+1)$ is such that the ramification divisor $\rho(L)$ is the sum of $(2n-2)$ real points on $\P^1$, then $L$ is a real point of $\Gr(2, n+1)$ \cite{sot:00, ere.gab:02}.
-\autoref{thm:minimaldegree} potentially sets the stage for a higher-dimensional generalization of the body of work around the Shapiro conjecture.
-In particular, it would be interesting to find a uniform topological picture explaining the numbers $\deg \rho$, similar to the ``nets'' introduced by Eremenko and Gabrielov which elegantly explain the appearance of Catalan numbers.
+% \subsubsection{Picture over the real numbers}
+% Consider the projection-ramification map of a rational normal curve of degree $n$
+% \[ \rho \from \Gr(2, n+1) \to \P^{2n-2}.\]
+% The map $\rho$ in this context is also called the \emph{Wronskian} map.
+% The real algebraic geometry surrounding the Wronskian map plays an important role in real enumerative geometry, the theory of real algebraic curves, and control theory, thanks to the B. and M. Shapiro conjecture.
+% Proved by Eremenko and Gabrielov, this conjecture states that if $L \in \Gr(2, n+1)$ is such that the ramification divisor $\rho(L)$ is the sum of $(2n-2)$ real points on $\P^1$, then $L$ is a real point of $\Gr(2, n+1)$ \cite{sot:00, ere.gab:02}.
+% \autoref{thm:minimaldegree} potentially sets the stage for a higher-dimensional generalization of the body of work around the Shapiro conjecture.
+% In particular, it would be interesting to find a uniform topological picture explaining the numbers $\deg \rho$, similar to the ``nets'' introduced by Eremenko and Gabrielov which elegantly explain the appearance of Catalan numbers.
 
 \subsection{Notation and conventions}
 We work over an algebraically closed field $\k$ of characteristic zero, not simply for convenience, but for necessity---we appeal to generic smoothness and Kodaira vanishing.
@@ -382,16 +384,16 @@ We then introduce the notion of non-defectivity, which generalizes the condition
 After establishing basic properties of non-defectivity, we prove \autoref{thm:main}\eqref{item:dual} as \autoref{thm:mainMain}.
 
 In \autoref{sec:minimaldegree}, we prove \autoref{thm:minimaldegree} as \autoref{thm:actualminimaldegree}.
-In the same section, we derive explicit formulas for the ramification divisors for scrolls in \autoref{sec:prscrolls}, give the examples advertised in \autoref{thm:counterexamples} in \autoref{sec:failure}, and treat the threefold scrolls in \autoref{sec:eccentric_threefolds}.
+In the same section, we derive explicit formulas for the ramification divisors for scrolls in \autoref{sec:prscrolls}, give the examples advertised in \autoref{thm:counterexamples} in \autoref{sec:failure}.%, and treat the threefold scrolls in \autoref{sec:eccentric_threefolds}.
 
 In \autoref{sec:generic}, we prove \autoref{thm:rationalnormalscrolls} as \autoref{thm:actualrationalnormalscrolls}.
 For this, we begin by doing some low degree cases by hand in \autoref{sec:lowdegree}.
 We then recall the theory of (linked) limit linear series for vector bundles of higher rank in \autoref{sec:lls}, and define the projection-ramification map for linked linear series in \autoref{sec:prnongeneric} and \autoref{sec:prlls}.
 By a degeneration argument involving linked linear series, we prove \autoref{thm:rationalnormalscrolls} in \autoref{sec:llsproof}.
 
-In \autoref{sec:enumerativeproblems}, we turn to the enumerative problem of finding the degree of $\rho$, namely the results in \autoref{thm:examples}.
-We treat the cases of rational normal curves and quadric hypersurfaces quickly in \autoref{sec:arnc} and \autoref{sec:aquadricsurface}.
-We devote \autoref{sec:veronese} to the case of the Veronese surface and \autoref{sec:quartic_scroll} to the case of the quartic surface scroll.
+% In \autoref{sec:enumerativeproblems}, we turn to the enumerative problem of finding the degree of $\rho$, namely the results in \autoref{thm:examples}.
+% We treat the cases of rational normal curves and quadric hypersurfaces quickly in \autoref{sec:arnc} and \autoref{sec:aquadricsurface}.
+% We devote \autoref{sec:veronese} to the case of the Veronese surface and \autoref{sec:quartic_scroll} to the case of the quartic surface scroll.
 
 \subsection*{Acknowledgments}
 First and foremost, we thank Fyodor Zak for generously sharing numerous useful comments, ideas, and encouragement over the span of several months.
@@ -1146,146 +1148,149 @@ We do not know, however, if the presence of stabilizers is {\sl equivalent} to t
   Therefore, the non-dominance of projection-ramification is not directly connected to the eccentricity of the splitting type of a scroll. 
 \end{remark}
 
-\subsection{Eccentric threefold scrolls} % (fold)
-\label{sec:eccentric_threefolds}
-\autoref{thm:counterexamples} leaves open the case of threefold scrolls (surface scrolls are covered by \autoref{cor:lowdim}).
-We settle this case in this section by showing that the projection-ramification map for threefold scrolls is always generically finite, and thus the statement of \autoref{thm:counterexamples} is sharp in $r$.
+\todo{Summarize surface and threefold scrolls as a remark.}
+% \subsection{Eccentric threefold scrolls} % (fold)
+% \label{sec:eccentric_threefolds}
+% \autoref{thm:counterexamples} leaves open the case of threefold scrolls (surface scrolls are covered by \autoref{cor:lowdim}).
+% We settle this case in this section by showing that the projection-ramification map for threefold scrolls is always generically finite, and thus the statement of \autoref{thm:counterexamples} is sharp in $r$.
 
-Let $E = \O(1) \oplus \O(1) \oplus \O(k+1)$, for $k \geq 0$.
-Set $X = \P E$ and $L = \O_X(1)$.
-\begin{proposition}\label{prop:eccentric_threefold}
-  The map $\rho_X \from \Gr(4, H^0(X, L)) \dashrightarrow |K_X + 4L|$ is birational.
-\end{proposition}
-\begin{proof}
-  The proof is by direct calculation.
-  Consider the standard open subset $\A^1 = \spec \k[t] \subset \P^1$.
-  Choose trivializations of the three summands of $E$ over $\A^1$ given by sections $X_1, X_2, X_3$.
+% Let $E = \O(1) \oplus \O(1) \oplus \O(k+1)$, for $k \geq 0$.
+% Set $X = \P E$ and $L = \O_X(1)$.
+% \begin{proposition}\label{prop:eccentric_threefold}
+%   The map $\rho_X \from \Gr(4, H^0(X, L)) \dashrightarrow |K_X + 4L|$ is birational.
+% \end{proposition}
+% \begin{proof}
+%   The proof is by direct calculation.
+%   Consider the standard open subset $\A^1 = \spec \k[t] \subset \P^1$.
+%   Choose trivializations of the three summands of $E$ over $\A^1$ given by sections $X_1, X_2, X_3$.
   
-  Let $W \subset H^0(X, L)$ be a general 4-dimensional subspace.
-  Then the projection map $W \to H^0(\P^1, \O(1) \oplus \O(1))$ will be an isomorphism.
-  Therefore, we can choose a basis of $W$ of the form
-  \[
-    X_1 + aX_3, X_2 + bX_3, tX_1 + cX_3, tX_2 + d X_3,
-  \]
-  where $a, b, c, d \in \k[t]$ have degree at most $k+1$.
-  Using \eqref{eqn:Rmatrix}, we get that the ramification divisor of this $W$ is
-  \begin{equation}\label{eqn:threefoldram}
-    \begin{split}
-    \rho(W) &= (d-bt)X_1 + (at-c)X_2 + \left((a't-c')(bt-d) + (at-c)(d'-b't) \right) X_3 \\
-    &= \alpha X_1 + \beta X_2 + \gamma X_3, \text{ say}.
-  \end{split}
-\end{equation}
-  In this calculation, $p'$ denotes the derivative $\frac{dp}{dt}$.
-  Note that we have
-  \begin{equation}\label{eqn:alphabetagamma}
-    \begin{split}
-    \alpha &= d-bt\\
-    \beta &= at-c\\
-    \gamma &= \alpha'\beta - \beta'\alpha + \alpha a + \beta b.
-    \end{split}
-  \end{equation}
-  The degrees of $\alpha, \beta, \gamma$ are (at most) $k+2$, $k+2$, and $2k+2$, respectively.
+%   Let $W \subset H^0(X, L)$ be a general 4-dimensional subspace.
+%   Then the projection map $W \to H^0(\P^1, \O(1) \oplus \O(1))$ will be an isomorphism.
+%   Therefore, we can choose a basis of $W$ of the form
+%   \[
+%     X_1 + aX_3, X_2 + bX_3, tX_1 + cX_3, tX_2 + d X_3,
+%   \]
+%   where $a, b, c, d \in \k[t]$ have degree at most $k+1$.
+%   Using \eqref{eqn:Rmatrix}, we get that the ramification divisor of this $W$ is
+%   \begin{equation}\label{eqn:threefoldram}
+%     \begin{split}
+%     \rho(W) &= (d-bt)X_1 + (at-c)X_2 + \left((a't-c')(bt-d) + (at-c)(d'-b't) \right) X_3 \\
+%     &= \alpha X_1 + \beta X_2 + \gamma X_3, \text{ say}.
+%   \end{split}
+% \end{equation}
+%   In this calculation, $p'$ denotes the derivative $\frac{dp}{dt}$.
+%   Note that we have
+%   \begin{equation}\label{eqn:alphabetagamma}
+%     \begin{split}
+%     \alpha &= d-bt\\
+%     \beta &= at-c\\
+%     \gamma &= \alpha'\beta - \beta'\alpha + \alpha a + \beta b.
+%     \end{split}
+%   \end{equation}
+%   The degrees of $\alpha, \beta, \gamma$ are (at most) $k+2$, $k+2$, and $2k+2$, respectively.
 
-  Consider the affine space $\A^{4k+8}$ whose coordinates correspond to the coefficients of $a, b, c, d$, and likewise, the affine space $\A^{4k+9}$ whose coordinates correspond to the coefficients of $\alpha, \beta, \gamma$.
-  The expression in \eqref{eqn:threefoldram} defines a map
-  \begin{align*}
-    \rho^* \from \A^{4k+8} &\to \A^{4k+9} \\
-    (a,b,c,d) &\mapsto (\alpha, \beta, \gamma).
-  \end{align*}
-  Note that the choice of basis of $W$ gives a birational isomorphism $\Gr(4, H^0(X, L)) \cong \A^{4k+8}$.
-  Via this isomorphism, the projection-ramification map $\rho$ is simply the composite of $\rho^*$ and the standard projection $\pi \from \A^{4k+9} \setminus \{0\} \to \P^{4k+8} = \P H^0(\P^1, E \otimes \det E \otimes \O(-2))^*$.
-  Let $Z \subset \A^{4k+9}$ be the image of $\rho^*$.
+%   Consider the affine space $\A^{4k+8}$ whose coordinates correspond to the coefficients of $a, b, c, d$, and likewise, the affine space $\A^{4k+9}$ whose coordinates correspond to the coefficients of $\alpha, \beta, \gamma$.
+%   The expression in \eqref{eqn:threefoldram} defines a map
+%   \begin{align*}
+%     \rho^* \from \A^{4k+8} &\to \A^{4k+9} \\
+%     (a,b,c,d) &\mapsto (\alpha, \beta, \gamma).
+%   \end{align*}
+%   Note that the choice of basis of $W$ gives a birational isomorphism $\Gr(4, H^0(X, L)) \cong \A^{4k+8}$.
+%   Via this isomorphism, the projection-ramification map $\rho$ is simply the composite of $\rho^*$ and the standard projection $\pi \from \A^{4k+9} \setminus \{0\} \to \P^{4k+8} = \P H^0(\P^1, E \otimes \det E \otimes \O(-2))^*$.
+%   Let $Z \subset \A^{4k+9}$ be the image of $\rho^*$.
 
-  Let $(a,b,c,d) \in \A^{4k+8}$ be a generic point.
-  We show that the map induced by $\rho^*$ on tangent spaces is injective at this point.
-  For $\epsilon^2 = 0$, we have
-  \[
-    \rho^* \from (a + \hat a \epsilon, b+ {\hat b} \epsilon, c +  {\hat c} \epsilon + d +  {\hat d}\epsilon) \mapsto (\alpha + \hat{\alpha} \epsilon,\beta + \hat{\beta} \epsilon, \gamma + \hat{\gamma}\epsilon),
-  \]
-  where
-  \begin{align*}
-    \hat \alpha &= \hat d - \hat b t,\\
-    \hat \beta &=  \hat a t - \hat c, \text{ and }\\
-    \hat \gamma & = (bt-d)({\hat a}'t-{\hat c}') + (at-c)({\hat d}'-{\hat b}'t) \\
-    & \qquad + ({\hat a}t-{\hat c})(d'-b't) + ({\hat b}t-{\hat d})(a't-c').
-  \end{align*}
-  Suppose $\hat \alpha = \hat \beta = \hat \gamma = 0$.
-  Then $(bt-d)(\hat a' t - \hat c') + (at-c) (\hat d' - \hat b' t) = 0$.
-  However, for generic $a, b, c, d$, the polynomials $(bt-d)$ and $(at-c)$ have degree $(k+2)$ and are relatively prime.
-  So they have no non-trivial syzygy with coefficients of degree at most $k+1$.
-  As a result, we get $\hat a' t - \hat c' = 0$ and $\hat d' - \hat b' t = 0$.
-  Along with $\hat a t - \hat c = 0$ and $\hat d - \hat b t = 0$, we get $\hat a = \hat b = \hat c = \hat d = 0$.
-  Thus, $d \rho^*$ is injective, and hence $\rho^* \from \A^{4k+8} \to Z$ is generically finite.
+%   Let $(a,b,c,d) \in \A^{4k+8}$ be a generic point.
+%   We show that the map induced by $\rho^*$ on tangent spaces is injective at this point.
+%   For $\epsilon^2 = 0$, we have
+%   \[
+%     \rho^* \from (a + \hat a \epsilon, b+ {\hat b} \epsilon, c +  {\hat c} \epsilon + d +  {\hat d}\epsilon) \mapsto (\alpha + \hat{\alpha} \epsilon,\beta + \hat{\beta} \epsilon, \gamma + \hat{\gamma}\epsilon),
+%   \]
+%   where
+%   \begin{align*}
+%     \hat \alpha &= \hat d - \hat b t,\\
+%     \hat \beta &=  \hat a t - \hat c, \text{ and }\\
+%     \hat \gamma & = (bt-d)({\hat a}'t-{\hat c}') + (at-c)({\hat d}'-{\hat b}'t) \\
+%     & \qquad + ({\hat a}t-{\hat c})(d'-b't) + ({\hat b}t-{\hat d})(a't-c').
+%   \end{align*}
+%   Suppose $\hat \alpha = \hat \beta = \hat \gamma = 0$.
+%   Then $(bt-d)(\hat a' t - \hat c') + (at-c) (\hat d' - \hat b' t) = 0$.
+%   However, for generic $a, b, c, d$, the polynomials $(bt-d)$ and $(at-c)$ have degree $(k+2)$ and are relatively prime.
+%   So they have no non-trivial syzygy with coefficients of degree at most $k+1$.
+%   As a result, we get $\hat a' t - \hat c' = 0$ and $\hat d' - \hat b' t = 0$.
+%   Along with $\hat a t - \hat c = 0$ and $\hat d - \hat b t = 0$, we get $\hat a = \hat b = \hat c = \hat d = 0$.
+%   Thus, $d \rho^*$ is injective, and hence $\rho^* \from \A^{4k+8} \to Z$ is generically finite.
 
-  % To show that $d \rho$ is injective, it suffices to show that the image of $d \rho^*$ intersects the line joining $(0,0,0)$ and $(\alpha, \beta, \gamma)$ transversely.
-  % For this, it suffices to show that the three equations $\hat \alpha = \alpha, \hat \beta = \beta, \hat \gamma = \gamma$ give no solutions in $\hat a, \hat b, \hat c, \hat d$.
-  % Indeed, these three equations imply $(bt-d)(\hat a' t - \hat c') + (at-c)(\hat d' - \hat b' t) = 0$, and by the same reason as before, give $\hat a' t - \hat c' = \hat d' - \hat b' t = 0$.
-  % But it is elementary to see by considering the degree that the last two equations combined with $\hat a t - \hat c = at -c$ and $\hat b t - \hat d = bt - d$ have no solutions in $\hat a, \hat b, \hat c, \hat d$ if $a, b, c, d$ are general.
+%   % To show that $d \rho$ is injective, it suffices to show that the image of $d \rho^*$ intersects the line joining $(0,0,0)$ and $(\alpha, \beta, \gamma)$ transversely.
+%   % For this, it suffices to show that the three equations $\hat \alpha = \alpha, \hat \beta = \beta, \hat \gamma = \gamma$ give no solutions in $\hat a, \hat b, \hat c, \hat d$.
+%   % Indeed, these three equations imply $(bt-d)(\hat a' t - \hat c') + (at-c)(\hat d' - \hat b' t) = 0$, and by the same reason as before, give $\hat a' t - \hat c' = \hat d' - \hat b' t = 0$.
+%   % But it is elementary to see by considering the degree that the last two equations combined with $\hat a t - \hat c = at -c$ and $\hat b t - \hat d = bt - d$ have no solutions in $\hat a, \hat b, \hat c, \hat d$ if $a, b, c, d$ are general.
 
-  % Since the map induced by $\rho$ is injective on tangent spaces, $\rho$ is generically finite, and hence dominant.
-  % To show that $\rho$ is birational, it suffices to show that the generic fiber of $\rho$ is connected.
-  % For this, it suffices to show that the generic fiber of $\rho^*$ is connected.
-  % However, observe that the fiber of $\rho^*$ over $(\alpha, \beta, \gamma)$ is given by the equations
-  % \[ \alpha = d - bt, \beta = at - c, \gamma = \alpha' \beta - \beta' \alpha + \alpha a + \beta b,\]
-  % which are affine linear equations in $a,b,c,d$.
-  % Hence, the fibers of $\rho^*$ are affine spaces, which are connected.
-  % The proof is now complete.
+%   % Since the map induced by $\rho$ is injective on tangent spaces, $\rho$ is generically finite, and hence dominant.
+%   % To show that $\rho$ is birational, it suffices to show that the generic fiber of $\rho$ is connected.
+%   % For this, it suffices to show that the generic fiber of $\rho^*$ is connected.
+%   % However, observe that the fiber of $\rho^*$ over $(\alpha, \beta, \gamma)$ is given by the equations
+%   % \[ \alpha = d - bt, \beta = at - c, \gamma = \alpha' \beta - \beta' \alpha + \alpha a + \beta b,\]
+%   % which are affine linear equations in $a,b,c,d$.
+%   % Hence, the fibers of $\rho^*$ are affine spaces, which are connected.
+%   % The proof is now complete.
 
-  We now prove that if $(\alpha, \beta, \gamma)$ is a general point in the image of $\rho^{*}$, and $\lambda \neq 0,1$ is a constant, then $\lambda(\alpha, \beta, \gamma)$ is not in the image of $\rho^{*}$.
-  In other words, the projection $\pi \from \A^{4k+9} \setminus \{0\} \to \P^{4k+8}$ restricted to $Z \setminus \{0\}$ is generically injective.  
-  To this end, suppose $(a,b,c,d)$ is a general point in $\A^{4k+8}$.
-  Then  $\alpha = d-bt$ and $\beta = at-c$ will be degree $k+2$ polynomials which are relatively prime.  
-  For any polynomial $p(t)$, let $p^{+}$ denote the highest degree coefficient of $p$.
-  Observe that $\beta^{+} = a^{+}$.  
-  If $\lambda(\alpha, \beta, \gamma)$ is also realized by some quadruple $(\tilde{a}, \tilde{b}, \tilde{c}, \tilde{d})$ then we get the equations: 
-	  \begin{align}\label{secondEquation}
-	  	\lambda \alpha &= \tilde{d} - \tilde{b}t\\
-	  	\lambda \beta &= \tilde{a}t - \tilde{c} \nonumber\\
-	  	\lambda \gamma &= \lambda^{2}(\alpha'\beta - \beta' \alpha) + \lambda \alpha \tilde{a} + \lambda \beta \tilde{b}\nonumber
-	  \end{align}
-	  The second equation gives $\tilde{a}^{+} = \lambda \beta^{+}$.
-          The last equation gives
-          \[
-            \gamma = \lambda(\alpha'\beta - \beta' \alpha) + \alpha \tilde{a} + \beta \tilde{b}.
-          \]
-          Combining the above with the equation for $\gamma$ in \eqref{eqn:alphabetagamma}, we get 
-	  \begin{align*}\label{alphasbetas}
-	    	\alpha (a - \beta') + \beta (b + \alpha') &= \alpha(\tilde{a} - \lambda\beta') + \beta(\tilde{b} + \lambda \alpha').
-          \end{align*} 
-          Since $\alpha$ and $\beta$ are relatively prime and have degree greater than $a,b,\tilde{a},\tilde{b}$, the same syzygy argument gives
-          \begin{align*}
-            a-\beta' &= \tilde{a} - \lambda \beta'\\
-            b+\alpha' &= \tilde{b} + \lambda \alpha'.
-          \end{align*} 
-	     By examining top coefficients, and using $a^{+} = \beta^{+}$, $\tilde{a}^{+} = \lambda \beta^{+}$ we get
-	     \begin{align*}
-	     	\beta^{+} - (k+2)\beta^{+} &= \lambda\beta^{+} - \lambda(k+2)\beta^{+}, \text{ or equivalently}\\
-               (1-\lambda)\beta^{+} &= (1-\lambda)(k+2)\beta^{+}.
-	     \end{align*}
-	     Given our assumption on $\lambda$, this is only possible if $\beta^{+} = 0$.  However, since $(a,b,c,d)$ were chosen generically, $\beta^{+} = a^{+}$ would not be zero, providing our desired contradiction.
+%   We now prove that if $(\alpha, \beta, \gamma)$ is a general point in the image of $\rho^{*}$, and $\lambda \neq 0,1$ is a constant, then $\lambda(\alpha, \beta, \gamma)$ is not in the image of $\rho^{*}$.
+%   In other words, the projection $\pi \from \A^{4k+9} \setminus \{0\} \to \P^{4k+8}$ restricted to $Z \setminus \{0\}$ is generically injective.  
+%   To this end, suppose $(a,b,c,d)$ is a general point in $\A^{4k+8}$.
+%   Then  $\alpha = d-bt$ and $\beta = at-c$ will be degree $k+2$ polynomials which are relatively prime.  
+%   For any polynomial $p(t)$, let $p^{+}$ denote the highest degree coefficient of $p$.
+%   Observe that $\beta^{+} = a^{+}$.  
+%   If $\lambda(\alpha, \beta, \gamma)$ is also realized by some quadruple $(\tilde{a}, \tilde{b}, \tilde{c}, \tilde{d})$ then we get the equations: 
+% 	  \begin{align}\label{secondEquation}
+% 	  	\lambda \alpha &= \tilde{d} - \tilde{b}t\\
+% 	  	\lambda \beta &= \tilde{a}t - \tilde{c} \nonumber\\
+% 	  	\lambda \gamma &= \lambda^{2}(\alpha'\beta - \beta' \alpha) + \lambda \alpha \tilde{a} + \lambda \beta \tilde{b}\nonumber
+% 	  \end{align}
+% 	  The second equation gives $\tilde{a}^{+} = \lambda \beta^{+}$.
+%           The last equation gives
+%           \[
+%             \gamma = \lambda(\alpha'\beta - \beta' \alpha) + \alpha \tilde{a} + \beta \tilde{b}.
+%           \]
+%           Combining the above with the equation for $\gamma$ in \eqref{eqn:alphabetagamma}, we get 
+% 	  \begin{align*}\label{alphasbetas}
+% 	    	\alpha (a - \beta') + \beta (b + \alpha') &= \alpha(\tilde{a} - \lambda\beta') + \beta(\tilde{b} + \lambda \alpha').
+%           \end{align*} 
+%           Since $\alpha$ and $\beta$ are relatively prime and have degree greater than $a,b,\tilde{a},\tilde{b}$, the same syzygy argument gives
+%           \begin{align*}
+%             a-\beta' &= \tilde{a} - \lambda \beta'\\
+%             b+\alpha' &= \tilde{b} + \lambda \alpha'.
+%           \end{align*} 
+% 	     By examining top coefficients, and using $a^{+} = \beta^{+}$, $\tilde{a}^{+} = \lambda \beta^{+}$ we get
+% 	     \begin{align*}
+% 	     	\beta^{+} - (k+2)\beta^{+} &= \lambda\beta^{+} - \lambda(k+2)\beta^{+}, \text{ or equivalently}\\
+%                (1-\lambda)\beta^{+} &= (1-\lambda)(k+2)\beta^{+}.
+% 	     \end{align*}
+% 	     Given our assumption on $\lambda$, this is only possible if $\beta^{+} = 0$.  However, since $(a,b,c,d)$ were chosen generically, $\beta^{+} = a^{+}$ would not be zero, providing our desired contradiction.
 
-             We have proved that $\pi \from Z \setminus \{0\} \to \P^{4k+8}$ is of degree 1.
-             Therefore, it suffices to show that the degree of $\rho^* \from \A^{4k+8} \to Z$ is 1.
-             Since we know that the map is generically finite, it suffices to show that a generic fiber is connected.
-             Let $(\alpha,\beta,\gamma) \in Z$ be a generic point.
-             The preimage of this point is cut out by the equations in \eqref{eqn:alphabetagamma}.
-             Note that these are affine linear equations in $a, b, c, d$, and hence their intersection is an affine space, which is connected.
-\end{proof}
+%              We have proved that $\pi \from Z \setminus \{0\} \to \P^{4k+8}$ is of degree 1.
+%              Therefore, it suffices to show that the degree of $\rho^* \from \A^{4k+8} \to Z$ is 1.
+%              Since we know that the map is generically finite, it suffices to show that a generic fiber is connected.
+%              Let $(\alpha,\beta,\gamma) \in Z$ be a generic point.
+%              The preimage of this point is cut out by the equations in \eqref{eqn:alphabetagamma}.
+%              Note that these are affine linear equations in $a, b, c, d$, and hence their intersection is an affine space, which is connected.
+% \end{proof}
 
-\begin{corollary}\label{cor:maxvariation3scrolls}
-  The projection-ramification map $\rho_{X}$ is dominant for every smooth three dimensional rational normal scroll $X \subset \P^{n}$.
-\end{corollary}
-\begin{proof}
-  Every such $X$ isotrivially specializes to $\P \left(\O(1) \oplus \O(1) \oplus \O(k+1)\right)$.
-  The statement now follows from the upper semi-continuity of fiber dimension.
-\end{proof}
+% \begin{corollary}\label{cor:maxvariation3scrolls}
+%   The projection-ramification map $\rho_{X}$ is dominant for every smooth three dimensional rational normal scroll $X \subset \P^{n}$.
+% \end{corollary}
+% \begin{proof}
+%   Every such $X$ isotrivially specializes to $\P \left(\O(1) \oplus \O(1) \oplus \O(k+1)\right)$.
+%   The statement now follows from the upper semi-continuity of fiber dimension.
+% \end{proof}
 
-The case of eccentric surface scrolls follows by similar calculations as in the proof of \autoref{prop:eccentric_threefold}; we omit the details.
-\begin{proposition}\label{prop:eccentric_surface}
-  Let $E = \O(1) \oplus \O(k+1)$, for $k \geq 0$.
-  Set $X = \P E$ and $L = \O_X(1)$.
-  Then the projection-ramification map $\rho_X \from \Gr(3, H^0(X, L)) \dashrightarrow |K_X + 3L|$ is birational.
-\end{proposition}
+% The case of eccentric surface scrolls follows by similar calculations as in the proof of \autoref{prop:eccentric_threefold}; we omit the details.
+% \begin{proposition}\label{prop:eccentric_surface}
+%   Let $E = \O(1) \oplus \O(k+1)$, for $k \geq 0$.
+%   Set $X = \P E$ and $L = \O_X(1)$.
+%   Then the projection-ramification map $\rho_X \from \Gr(3, H^0(X, L)) \dashrightarrow |K_X + 3L|$ is birational.
+% \end{proposition}
+
+
 
 \section{Maximal variation for generic scrolls}\label{sec:generic}
 In this section, we establish that the projection-ramification map is generically finite (equivalently, dominant) for most scrolls, notwithstanding the examples provided by \autoref{thm:counterexamples}.
@@ -1486,18 +1491,17 @@ From now on, we will talk about the image of an element in $V_m$ in $V_{m+n}$; t
 
 \begin{remark}
 The notion of a sub-bundle of a push-forward is a bit subtle; it is treated in depth in \cite[Definition~B.2.1]{oss:14}.
-We recall the main points.
-For a flat proper morphism $X \to S$ and a vector bundle $\mathcal E$ on $S$, a \emph{sub-bundle} of $\pi_* \mathcal E$ is a vector bundle $V$ on $S$ along with a map $i \from V \to \pi_* \mathcal E$ such that for every $T \to S$, the pull-back $i_T \from V_T \to \pi_* (\mathcal E_T)$ is injective.
-Note that this is a local condition on $S$.
-For Noetherian schemes such as ours, it is enough to check this condition for the $T \to S$ that are inclusions of closed points.
-Alternatively, if $F_0 \to F_1 \to \cdots $ is a complex of vector bundles on $S$ quasi-isomorphic to $R\pi_* \mathcal E$, then a sub-bundle of $\pi_* \mathcal E$ is a vector bundle $V$ along with a map $i \from V \to \pi_* \mathcal E$ such that the composite $V \to F_0$ is an injection of vector bundles (that is, the dual map is surjective).
+% We recall the main points.
+% For a flat proper morphism $X \to S$ and a vector bundle $\mathcal E$ on $S$, a \emph{sub-bundle} of $\pi_* \mathcal E$ is a vector bundle $V$ on $S$ along with a map $i \from V \to \pi_* \mathcal E$ such that for every $T \to S$, the pull-back $i_T \from V_T \to \pi_* (\mathcal E_T)$ is injective.
+% Note that this is a local condition on $S$.
+% For Noetherian schemes such as ours, it is enough to check this condition for the $T \to S$ that are inclusions of closed points.
+% Alternatively, if $F_0 \to F_1 \to \cdots $ is a complex of vector bundles on $S$ quasi-isomorphic to $R\pi_* \mathcal E$, then a sub-bundle of $\pi_* \mathcal E$ is a vector bundle $V$ along with a map $i \from V \to \pi_* \mathcal E$ such that the composite $V \to F_0$ is an injection of vector bundles (that is, the dual map is surjective).
 \end{remark}
 
-
-\begin{remark}
-\autoref{def:lls} defines linked linear series on a particular vector bundle $\mathcal E$.
-We can also vary the choice of the vector bundle, as is done in \cite{oss:14}; in that case, one imposes an additional vanishing condition on the vector bundles to ensure boundedness of the moduli space of linked linear series.
-\end{remark}
+% \begin{remark}
+% \autoref{def:lls} defines linked linear series on a particular vector bundle $\mathcal E$.
+% We can also vary the choice of the vector bundle, as is done in \cite{oss:14}; in that case, one imposes an additional vanishing condition on the vector bundles to ensure boundedness of the moduli space of linked linear series.
+% \end{remark}
 
 
 \begin{definition}[Simple linked linear series]
@@ -1558,7 +1562,7 @@ More precisely, we have the following statement.
 \end{proposition}
 \begin{proof}
   Proving that $(W_1, W_2)$ is an EHT limit linear series is straightforward, and left to the reader.
-  It is a special case of \cite[Theorem~4.3.4]{oss:14} and the equivalence of type I and type II series in the two component case (\cite[Remark~3.4.15]{oss:14}.
+  It is a special case of \cite[Theorem~4.3.4]{oss:14} and the equivalence of type I and type II series in the two component case (\cite[Remark~3.4.15]{oss:14}).
 
   The converse also follows from the proof of \cite[Theorem~4.3.4]{oss:14}, but it is not explicitly stated there.
   So we offer a proof.
@@ -1911,356 +1915,357 @@ We now have all the tools to prove \autoref{thm:rationalnormalscrolls}.
 \end{proof}
 
 
-\section{The Projection-Ramification enumerative problem} % (fold)
-\label{sec:enumerativeproblems}
-In this section, we calculate the degree of the projection-ramification map for as many varieties of minimal degree as we can, leading to a proof of \autoref{thm:examples}.
-After treating the relatively easy cases by hand, we relate the projection-ramification map for the Veronese surface and the quartic normal scroll with classical geometry of cubic plane curves.
+% \section{The Projection-Ramification enumerative problem} % (fold)
+% \label{sec:enumerativeproblems}
+% In this section, we calculate the degree of the projection-ramification map for as many varieties of minimal degree as we can, leading to a proof of \autoref{thm:examples}.
+% After treating the relatively easy cases by hand, we relate the projection-ramification map for the Veronese surface and the quartic normal scroll with classical geometry of cubic plane curves.
 
-\subsection{Rational normal curves}
-\label{sec:arnc}
-Let $X \subset \P^n$ be a rational normal curve.
-Plainly, $X$ is incompressible, and hence the projection-ramification map
-\[ \rho \from \Gr(2, n+1) \to \P^{2n-2}\]
-is a regular map.
-Therefore, we get
-\begin{align*}
-  \deg \rho &= c_1(\rho^* \O(1))^{2n-2}\\
-            &= c_1(\O_{\Gr(r+1, n+1)}(1))^{2n-2} \\
-            &= \frac{(2n-2)!}{n!(n-1)!}.
-\end{align*}
+% \subsection{Rational normal curves}
+% \label{sec:arnc}
+% Let $X \subset \P^n$ be a rational normal curve.
+% Plainly, $X$ is incompressible, and hence the projection-ramification map
+% \[ \rho \from \Gr(2, n+1) \to \P^{2n-2}\]
+% is a regular map.
+% Therefore, we get
+% \begin{align*}
+%   \deg \rho &= c_1(\rho^* \O(1))^{2n-2}\\
+%             &= c_1(\O_{\Gr(r+1, n+1)}(1))^{2n-2} \\
+%             &= \frac{(2n-2)!}{n!(n-1)!}.
+% \end{align*}
 
-\subsection{Quadric hypersurfaces} % (fold)
-\label{sec:aquadricsurface}
-A smooth quadric hypersurface $X \subset \P^{n}$ defined by a homogeneous quadric equation $F(X_{0},\dots,X_n) = 0$.
-An easy calculation shows that the projection-ramification map
-\[ \rho \from \P^n \to (\P^n)^*\]
-is given in coordinates by
-\[ p = [p_0: \dots:p_n] \mapsto \left[ \frac{\partial F}{\partial X_0}(p): \dots: \frac{\partial F}{\partial X_n}(p) \right].\]
-In other words, it is the \emph{polarity isomorphism} induced by $F$, namely the isomorphism between a projective space and its dual given by the non-degenerate bilinear form associated to $F$.
-In particular, we get $\deg \rho = 1$.
+% \subsection{Quadric hypersurfaces} % (fold)
+% \label{sec:aquadricsurface}
+% A smooth quadric hypersurface $X \subset \P^{n}$ defined by a homogeneous quadric equation $F(X_{0},\dots,X_n) = 0$.
+% An easy calculation shows that the projection-ramification map
+% \[ \rho \from \P^n \to (\P^n)^*\]
+% is given in coordinates by
+% \[ p = [p_0: \dots:p_n] \mapsto \left[ \frac{\partial F}{\partial X_0}(p): \dots: \frac{\partial F}{\partial X_n}(p) \right].\]
+% In other words, it is the \emph{polarity isomorphism} induced by $F$, namely the isomorphism between a projective space and its dual given by the non-degenerate bilinear form associated to $F$.
+% In particular, we get $\deg \rho = 1$.
 
-\subsection{The Veronese surface} % (fold)
-\label{sec:veronese}
-Let $\P^{2} \cong X \subset \P^{5}$ be the Veronese surface, the image of $\P^2$ under the complete linear series $\O(2)$.
-In this case, the projection-ramification map
-\begin{align*}
-  \rho \from  \Gr(3,H^0(\P^2, \O(2))) \cong \Gr(3, 6) \dashrightarrow \P H^0(\P^2, \O(3))^* \cong \P^9
-\end{align*}
-can be described as follows.
-Let $N \subset H^0(\P^2, \O(2))$ be a net of conics.
-Then $\rho(N)$ corresponds to the cubic curve traced out by the nodes of the singular members of $N$, called the \emph{Jacobian} of $N$.
-\begin{proposition}\label{prop:veronese}
-  Let $R \subset \P^2$ be a general cubic.
-  The fiber of $\rho$ over $[R]$ is in natural bijection with the set of non-trivial $2$-torsion line bundles on $R$.
-  In particular, we have $\deg \rho = 3$.
-\end{proposition}
-The rest of \autoref{sec:veronese} is devoted to the proof of this assertion.
+% \subsection{The Veronese surface} % (fold)
+% \label{sec:veronese}
+% Let $\P^{2} \cong X \subset \P^{5}$ be the Veronese surface, the image of $\P^2$ under the complete linear series $\O(2)$.
+% In this case, the projection-ramification map
+% \begin{align*}
+%   \rho \from  \Gr(3,H^0(\P^2, \O(2))) \cong \Gr(3, 6) \dashrightarrow \P H^0(\P^2, \O(3))^* \cong \P^9
+% \end{align*}
+% can be described as follows.
+% Let $N \subset H^0(\P^2, \O(2))$ be a net of conics.
+% Then $\rho(N)$ corresponds to the cubic curve traced out by the nodes of the singular members of $N$, called the \emph{Jacobian} of $N$.
+% \begin{proposition}\label{prop:veronese}
+%   Let $R \subset \P^2$ be a general cubic.
+%   The fiber of $\rho$ over $[R]$ is in natural bijection with the set of non-trivial $2$-torsion line bundles on $R$.
+%   In particular, we have $\deg \rho = 3$.
+% \end{proposition}
+% The rest of \autoref{sec:veronese} is devoted to the proof of this assertion.
 
-For the proof, we recall some classical projective geometry of cubics and nets of conics from \cite[\S~3]{dol:12}.
-To distinguish the various copies of $\P^2$ that naturally arise in this story, write $\P^2 = \P V$ for a 3 dimensional vector space $V$.
-Let $N \subset H^0(\P V, \O(2)) = \Sym^2V$ be a general net of conics on $\P V$.
-Given a point $x \in \P N^*$, we denote the associated conic by $Q_x$.
+% For the proof, we recall some classical projective geometry of cubics and nets of conics from \cite[\S~3]{dol:12}.
+% To distinguish the various copies of $\P^2$ that naturally arise in this story, write $\P^2 = \P V$ for a 3 dimensional vector space $V$.
+% Let $N \subset H^0(\P V, \O(2)) = \Sym^2V$ be a general net of conics on $\P V$.
+% Given a point $x \in \P N^*$, we denote the associated conic by $Q_x$.
 
-There are three important cubic plane curves associated to the net $N$: the Jacobian curve, the discriminant curve, and the Hermite curve.
-We have already seen the Jacobian curve $R \subset \P V$.
-The \emph{discriminant curve} $D \subset \P N^*$ is the locus of $x \in \P N^*$ such that $Q_x$ is singular.
-Since a pencil of conics contains three singular members, we see that $D$ is a cubic curve.
-Note that if $Q_x$ is singular, then it is the union of two distinct lines in $\P V$.
-A component line of $Q_x$ is called a \emph{Reye line}.
-The \emph{Hermite curve} $E \subset \P V^*$ is the locus of Reye lines.
-We leave it to the reader to check that it is a cubic curve.
+% There are three important cubic plane curves associated to the net $N$: the Jacobian curve, the discriminant curve, and the Hermite curve.
+% We have already seen the Jacobian curve $R \subset \P V$.
+% The \emph{discriminant curve} $D \subset \P N^*$ is the locus of $x \in \P N^*$ such that $Q_x$ is singular.
+% Since a pencil of conics contains three singular members, we see that $D$ is a cubic curve.
+% Note that if $Q_x$ is singular, then it is the union of two distinct lines in $\P V$.
+% A component line of $Q_x$ is called a \emph{Reye line}.
+% The \emph{Hermite curve} $E \subset \P V^*$ is the locus of Reye lines.
+% We leave it to the reader to check that it is a cubic curve.
 
-The three cubic curves introduced above are inter-related.
-First, we have an isomorphism $\tau \from D \to R$ defined by
-\begin{equation}\label{eqn:DR}
-  \tau \from x \mapsto \text{The singular point of $Q_x$}.
-\end{equation}
-Second, we have a degree 2 map $E \to D$ defined by
-\[ \ell \mapsto \text{The $x \in D$ such that $Q_x$ contains $\ell$}.\]
-Evidently, the fiber of this map over a given $x \in D$ corresponds to the two components of $Q_x$.
-The (\'etale) degree 2 map $E \to D \cong R$ gives a non-trivial 2-torsion element $\eta \in \Pic(R)[2]$.
-The element $\eta$ is characterized by the property that it is the unique non-trivial 2-torsion element whose pull-back to $E$ is trivial.
+% The three cubic curves introduced above are inter-related.
+% First, we have an isomorphism $\tau \from D \to R$ defined by
+% \begin{equation}\label{eqn:DR}
+%   \tau \from x \mapsto \text{The singular point of $Q_x$}.
+% \end{equation}
+% Second, we have a degree 2 map $E \to D$ defined by
+% \[ \ell \mapsto \text{The $x \in D$ such that $Q_x$ contains $\ell$}.\]
+% Evidently, the fiber of this map over a given $x \in D$ corresponds to the two components of $Q_x$.
+% The (\'etale) degree 2 map $E \to D \cong R$ gives a non-trivial 2-torsion element $\eta \in \Pic(R)[2]$.
+% The element $\eta$ is characterized by the property that it is the unique non-trivial 2-torsion element whose pull-back to $E$ is trivial.
 
-Denote by $H$ the hyperplane divisor class on $R \subset \P^2$.
-\begin{lemma}\label{lem:reye}
-  For every $a \in R$, the line joining $a$ and $a+\eta$ is a Reye line.
-  Furthermore, this Reye line is a component of $Q_d$ where $d = \tau^{-1}(H-2a-\eta)$.
-  Finally, the conjugate Reye line, namely the other component of $Q_d$, passes through the points $b$ and $b+\eta$ where $b \in R$ differs from $a$ by a non-trivial 2-torsion element other than $\eta$.
-\end{lemma}
-\begin{proof}
-  Let $\ell$ be a general Reye line, and let $d \in D$ be such that $\ell$ is a component of $Q_d$.
-  Let $x = \tau(d) \in R$ be the singular point of $Q_d$.
-  Note that $\ell \cap R$ consists of three points, one of which is $x$.
-  It suffices to show that the other two, say $y$ and $z$, differ by $\eta$.
+% Denote by $H$ the hyperplane divisor class on $R \subset \P^2$.
+% \begin{lemma}\label{lem:reye}
+%   For every $a \in R$, the line joining $a$ and $a+\eta$ is a Reye line.
+%   Furthermore, this Reye line is a component of $Q_d$ where $d = \tau^{-1}(H-2a-\eta)$.
+%   Finally, the conjugate Reye line, namely the other component of $Q_d$, passes through the points $b$ and $b+\eta$ where $b \in R$ differs from $a$ by a non-trivial 2-torsion element other than $\eta$.
+% \end{lemma}
+% \begin{proof}
+%   Let $\ell$ be a general Reye line, and let $d \in D$ be such that $\ell$ is a component of $Q_d$.
+%   Let $x = \tau(d) \in R$ be the singular point of $Q_d$.
+%   Note that $\ell \cap R$ consists of three points, one of which is $x$.
+%   It suffices to show that the other two, say $y$ and $z$, differ by $\eta$.
 
-  The point $y$ defines a line in $\P V^*$.
-  This line intersects $E \subset \P V^*$ in three points, one of which is $\ell$, and the other two are the two components of $Q_{\tau^{-1}(y)}$; these correspond to the two pre-images of $y \in R$ under the double covering $E \to R$.
-  Call these two points $y_1$ and $y_2$.
-  Define $z_1$ and $z_2$ analogously.
-  By construction, the triplets $y_1, y_2, \ell$ and $z_1, z_2, \ell$ are collinear triplets on $E \subset \P V^*$, and therefore we have the linear equivalence
-  \[ y_1 + y_2 \sim z_1 + z_2\]
-  on $E$.
-  By pushing this forward to $R$, we get
-  \[ 2y \sim 2z.\]
-  Therefore, $y - z$ is a (non-trivial) 2-torsion element in $\Pic(R)$.
-  However, the pull-back of $y-z$ is trivial on $E$, and hence $y - z = \eta$.
+%   The point $y$ defines a line in $\P V^*$.
+%   This line intersects $E \subset \P V^*$ in three points, one of which is $\ell$, and the other two are the two components of $Q_{\tau^{-1}(y)}$; these correspond to the two pre-images of $y \in R$ under the double covering $E \to R$.
+%   Call these two points $y_1$ and $y_2$.
+%   Define $z_1$ and $z_2$ analogously.
+%   By construction, the triplets $y_1, y_2, \ell$ and $z_1, z_2, \ell$ are collinear triplets on $E \subset \P V^*$, and therefore we have the linear equivalence
+%   \[ y_1 + y_2 \sim z_1 + z_2\]
+%   on $E$.
+%   By pushing this forward to $R$, we get
+%   \[ 2y \sim 2z.\]
+%   Therefore, $y - z$ is a (non-trivial) 2-torsion element in $\Pic(R)$.
+%   However, the pull-back of $y-z$ is trivial on $E$, and hence $y - z = \eta$.
 
-  Finally, let $m$ be the Reye line conjugate to $\ell$.
-  Then it contains $x$, and two other points of $R$, say $y'$ and $z'$.
-  By what we just proved, $y' - z' = \eta$.
-  But we also have $y' + z' \sim y + z$.
-  Hence $y - y'$ is a 2-torsion element, non-trivial, and distinct from $\eta$.
-  The proof is now complete.  
-\end{proof}
+%   Finally, let $m$ be the Reye line conjugate to $\ell$.
+%   Then it contains $x$, and two other points of $R$, say $y'$ and $z'$.
+%   By what we just proved, $y' - z' = \eta$.
+%   But we also have $y' + z' \sim y + z$.
+%   Hence $y - y'$ is a 2-torsion element, non-trivial, and distinct from $\eta$.
+%   The proof is now complete.  
+% \end{proof}
 
-We now have all the tools to prove \autoref{prop:veronese}.
-\begin{proof}[Proof of \autoref{prop:veronese}]
-  Let $U \subset \P H^0(\P^2, \O(3))^*$ be the locus of smooth cubic curves, $J \to U$ be the universal Picard scheme, $J[2] \subset J$ the closed subscheme of 2-torsion classes, and $J[2]^* \subset J[2]$ the open and closed subscheme of non-trivial 2-torsion classes.
-  The projection-ramification map for the Veronese surface factors as
-  \begin{alignat*}{2}
-    \rho \from \Gr(3, H^0(\P^2, \O(2))) &\dashrightarrow J[2]^* &&\dashrightarrow \P H^0(\P^2, \O(3))^*\\
-    N &\mapsto (R, \eta) &&\mapsto R.
-  \end{alignat*}
-  We construct $J[2]^* \to \Gr(3,H^0(\P^2, \O(2)))$ inverse to the first map, which shows that $\deg \rho = 3$, and identifies the fibers of $\rho$ as non-trivial 2-torsion points.
-  Given $(R, \eta) \in J[2]^*$, we need to construct a net $N$ of conics with Jacobian $R$.
-  We use \autoref{lem:reye}, which tells us the singular elements of this net in terms of $R$ and $\eta$.
-  Let $\{\eta, \eta', \eta''\}$ be the three non-trivial 2-torsion line bundles on $R$.
-  Define the map $R \to \P H^0(\P^2, \O(2))^*$ by
-  \[ R \ni a \mapsto \langle {a, a+\eta} \rangle \cup \langle {a+\eta', a+\eta''} \rangle ,\]
-  where $\langle {p,q} \rangle$ denotes the line joining $p$ and $q$.
-  We leave it to the reader to check that the image of $R$ is a plane cubic curve.
-  The span of the image of $R$ is the desired net $N$.  
-\end{proof}
+% We now have all the tools to prove \autoref{prop:veronese}.
+% \begin{proof}[Proof of \autoref{prop:veronese}]
+%   Let $U \subset \P H^0(\P^2, \O(3))^*$ be the locus of smooth cubic curves, $J \to U$ be the universal Picard scheme, $J[2] \subset J$ the closed subscheme of 2-torsion classes, and $J[2]^* \subset J[2]$ the open and closed subscheme of non-trivial 2-torsion classes.
+%   The projection-ramification map for the Veronese surface factors as
+%   \begin{alignat*}{2}
+%     \rho \from \Gr(3, H^0(\P^2, \O(2))) &\dashrightarrow J[2]^* &&\dashrightarrow \P H^0(\P^2, \O(3))^*\\
+%     N &\mapsto (R, \eta) &&\mapsto R.
+%   \end{alignat*}
+%   We construct $J[2]^* \to \Gr(3,H^0(\P^2, \O(2)))$ inverse to the first map, which shows that $\deg \rho = 3$, and identifies the fibers of $\rho$ as non-trivial 2-torsion points.
+%   Given $(R, \eta) \in J[2]^*$, we need to construct a net $N$ of conics with Jacobian $R$.
+%   We use \autoref{lem:reye}, which tells us the singular elements of this net in terms of $R$ and $\eta$.
+%   Let $\{\eta, \eta', \eta''\}$ be the three non-trivial 2-torsion line bundles on $R$.
+%   Define the map $R \to \P H^0(\P^2, \O(2))^*$ by
+%   \[ R \ni a \mapsto \langle {a, a+\eta} \rangle \cup \langle {a+\eta', a+\eta''} \rangle ,\]
+%   where $\langle {p,q} \rangle$ denotes the line joining $p$ and $q$.
+%   We leave it to the reader to check that the image of $R$ is a plane cubic curve.
+%   The span of the image of $R$ is the desired net $N$.  
+% \end{proof}
 
-\subsection{Quartic surface scroll}\label{sec:quartic_scroll}
-Our next objective is to prove that $ \deg \rho_{X} = 2$ for a generic quartic surface scroll $X \subset \P^{5}$.
-We begin by recasting $\rho_X$ in terms of nets of conics on $\P^2$, and bring in the projective geometry introduced in \autoref{sec:veronese}.
+% \subsection{Quartic surface scroll}\label{sec:quartic_scroll}
+% Our next objective is to prove that $ \deg \rho_{X} = 2$ for a generic quartic surface scroll $X \subset \P^{5}$.
+% We begin by recasting $\rho_X$ in terms of nets of conics on $\P^2$, and bring in the projective geometry introduced in \autoref{sec:veronese}.
 
-The generic quartic surface scroll $X \subset \P^5$ is isomorphic to $\P^1 \times \P^1$, embedded by the complete linear system associated to $\O(1,2)$.
-Say $\P^1 \times \P^1 = \P U \times \P V$, where $U$ and $V$ are two-dimensional vector spaces.
-Then the projection-ramification map is a $\PGL(U) \times \PGL(V)$-equivariant map
-\[
-  \Gr(3, U \otimes \Sym^2 V) \dashrightarrow \P(U \otimes \Sym^4 V)^*.
-\]
-We take the quotient of both sides by the $\PGL(U) \times \PGL(V)$-action.
-We begin by identifying the two quotients.
+% The generic quartic surface scroll $X \subset \P^5$ is isomorphic to $\P^1 \times \P^1$, embedded by the complete linear system associated to $\O(1,2)$.
+% Say $\P^1 \times \P^1 = \P U \times \P V$, where $U$ and $V$ are two-dimensional vector spaces.
+% Then the projection-ramification map is a $\PGL(U) \times \PGL(V)$-equivariant map
+% \[
+%   \Gr(3, U \otimes \Sym^2 V) \dashrightarrow \P(U \otimes \Sym^4 V)^*.
+% \]
+% We take the quotient of both sides by the $\PGL(U) \times \PGL(V)$-action.
+% We begin by identifying the two quotients.
 
-Let $S$ be a 3-dimensional quadratic space, that is, a vector space with a non-degenerate quadratic form $q$.
-Then we have $\Aut(S) =  \operatorname{O}(q) \cong \operatorname{O(3)}$.
-The projective space $\P S$ is isomorphic to $\P^2$, and it comes with a distinguished smooth conic $Q \subset \P S$.
-The automorphism group of the pair $(\P S, Q)$ is $\Aut(Q) \cong \PGL_2$.
-\begin{lemma}\label{lem:quotgrass}
-  The quotient $\Gr(3, U \otimes \Sym^2V) / \PGL(U) \times \PGL(V)$ is birational to the quotient $\Hilb^3(\P S) / \Aut S$.
-\end{lemma}
-\begin{proof}
-  Let $W$ be a 3-dimensional vector space.
-  We have a birational isomorphism
-  \begin{align*}
-    \Gr(3, &U \otimes \Sym^3 V) / \PGL(U) \times \PGL(V)\\
-           &\sim (W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U) \times \GL(V).
-  \end{align*}
-  Interpret the space $(W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U)$ as the space of $2 \times 3$ matrices with entries in $\Sym^2 V$, modulo row and column transformations.
-  Set $S = \Sym^2 V$; it has a canonical (up to scaling) quadratic form given by the conic $Q \cong \P V\subset \P S$ embedded by $\O(2)$.
-  We can then interpret $(W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U)$ as the space of $2 \times 3$ matrices with entries in $S$.
-  We have a rational map
-  \begin{align*}
-    (W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U) &\dashrightarrow
-                                                              \Hilb^3(\P S) \\
-    \text{$2 \times 3$ matrix $M$} &\mapsto \text{Vanishing locus of $2\times 2$ minors of $M$}.
-  \end{align*}
-  It is easy to check that this map is a birational isomorphism---a general triple of points in $\P S$ is the zero locus of $2 \times 2$ minors of a $2 \times 3$ matrix of linear forms, which is uniquely determined up to row and column transformations.
-  By taking a further quotient by $\GL(V)$, we finish the proof.  
-\end{proof}
+% Let $S$ be a 3-dimensional quadratic space, that is, a vector space with a non-degenerate quadratic form $q$.
+% Then we have $\Aut(S) =  \operatorname{O}(q) \cong \operatorname{O(3)}$.
+% The projective space $\P S$ is isomorphic to $\P^2$, and it comes with a distinguished smooth conic $Q \subset \P S$.
+% The automorphism group of the pair $(\P S, Q)$ is $\Aut(Q) \cong \PGL_2$.
+% \begin{lemma}\label{lem:quotgrass}
+%   The quotient $\Gr(3, U \otimes \Sym^2V) / \PGL(U) \times \PGL(V)$ is birational to the quotient $\Hilb^3(\P S) / \Aut S$.
+% \end{lemma}
+% \begin{proof}
+%   Let $W$ be a 3-dimensional vector space.
+%   We have a birational isomorphism
+%   \begin{align*}
+%     \Gr(3, &U \otimes \Sym^3 V) / \PGL(U) \times \PGL(V)\\
+%            &\sim (W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U) \times \GL(V).
+%   \end{align*}
+%   Interpret the space $(W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U)$ as the space of $2 \times 3$ matrices with entries in $\Sym^2 V$, modulo row and column transformations.
+%   Set $S = \Sym^2 V$; it has a canonical (up to scaling) quadratic form given by the conic $Q \cong \P V\subset \P S$ embedded by $\O(2)$.
+%   We can then interpret $(W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U)$ as the space of $2 \times 3$ matrices with entries in $S$.
+%   We have a rational map
+%   \begin{align*}
+%     (W^* \otimes U \otimes \Sym^2 V) / \GL(W) \times \GL(U) &\dashrightarrow
+%                                                               \Hilb^3(\P S) \\
+%     \text{$2 \times 3$ matrix $M$} &\mapsto \text{Vanishing locus of $2\times 2$ minors of $M$}.
+%   \end{align*}
+%   It is easy to check that this map is a birational isomorphism---a general triple of points in $\P S$ is the zero locus of $2 \times 2$ minors of a $2 \times 3$ matrix of linear forms, which is uniquely determined up to row and column transformations.
+%   By taking a further quotient by $\GL(V)$, we finish the proof.  
+% \end{proof}
 
-\begin{lemma}\label{lem:quotram}
-  The quotient $\P(U \otimes \Sym^4 V)^* / \PGL(U) \times \PGL(V)$ is birational to the quotient $\Gr(2, (\Sym^2 S)/q) / \Aut S$.
-\end{lemma}
-\begin{proof}
-  We have the birational isomorphism
-  \begin{align*}
-    (U \otimes \Sym^4 V) / \GL(U) &\sim \Gr(2, \Sym^4 V).
-  \end{align*}
-  Note that $q \in \Sym^2S$ spans the kernel of the natural surjection $\pi \from \Sym^2 S \to \Sym^4 V$.
-  So the claimed birational isomorphism is given by sending a two dimensional subspace $L \subset \Sym^4 V$ to the image of $\pi^{-1}L$ in $\Sym^2S/q$.
-\end{proof}
+% \begin{lemma}\label{lem:quotram}
+%   The quotient $\P(U \otimes \Sym^4 V)^* / \PGL(U) \times \PGL(V)$ is birational to the quotient $\Gr(2, (\Sym^2 S)/q) / \Aut S$.
+% \end{lemma}
+% \begin{proof}
+%   We have the birational isomorphism
+%   \begin{align*}
+%     (U \otimes \Sym^4 V) / \GL(U) &\sim \Gr(2, \Sym^4 V).
+%   \end{align*}
+%   Note that $q \in \Sym^2S$ spans the kernel of the natural surjection $\pi \from \Sym^2 S \to \Sym^4 V$.
+%   So the claimed birational isomorphism is given by sending a two dimensional subspace $L \subset \Sym^4 V$ to the image of $\pi^{-1}L$ in $\Sym^2S/q$.
+% \end{proof}
 
-Via the birational isomorphisms in \autoref{lem:quotgrass} and \autoref{lem:quotram}, the projection-ramification map $\rho_X$ transforms into an $\Aut(S)$-equivariant map
-\[
-  \mu \from \Hilb^3\P S \dashrightarrow \Gr(2, \Sym^2S/q).
-\]
-We now describe this map $\mu$ explicitly.
-To ease notation, we denote a linear form and its vanishing locus by the same letter.
-Let $\xi \in \Hilb^3 \P S$ be a general point corresponding to the three vertices of the triangle formed by three lines $L_i$ for $i = 1, 2, 3$.
-Restricting the two lines $L_i$ and $L_j$ to $Q$ gives two quadratic forms $L_i|_Q$ and $L_j|_Q$ on $Q$.
-Let $R_{ij}$ be the line whose intersection with $Q$ is the ramification divisor of the pencil $\langle  L_i|_Q, L_j|_Q \rangle$.
-It is easy to check that the quadrics $L_1 R_{23}$, $L_2 R_{13}$, and $L_3R_{12}$ span a 3-dimensional subspace of $\Sym^2 S$ that contains the quadric $q$.
-\begin{lemma}\label{lem:mu}
-  In the setup above, the image of $\xi$ under $\mu$ is the image of $\langle  L_1R_{23}, L_2R_{13},L_3R_{12} \rangle$ in $\Sym^2S/q$.
-\end{lemma}
-\begin{proof}
-  The ideal of the point $\xi \in \Hilb^3(S)$ is cut out by the $2 \times 3$ matrix of linear forms
-  \[
-    M =
-    \begin{pmatrix}
-      L_1 & 0 & L_3 \\
-      0 & L_2 & L_3
-    \end{pmatrix}.
-  \]
-  Let $U_0, U_1$ be a basis of $U$.
-  Under the isomorphism in \autoref{lem:quotgrass}, this $2 \times 3$ matrix corresponds to the point of $\Gr(3, U \otimes \Sym^2 V)$ given by the subspace of $U \otimes \Sym^2 V$ spanned by $U_0 M_{0,i} + U_1 M_{1,i}$ for $i = 1, 2, 3$.
-  From \eqref{eqn:Rmatrix}, the ramification divisor of this subspace is given by
-  \begin{align*}
-    R &= \det
-    \begin{pmatrix}
-      L_1 & 0 & U_0 L_1' \\
-      0 & L_2 & U_1 L_2' \\
-      L_3 & L_3 & (U_0+U_1)L_3'
-    \end{pmatrix} \\
-      &= U_0L_2(L_3'L_1 - L_1L_3') + U_1L_1(L_3'L_2-L_2L_3')\\
-      &= U_0L_2R_{13} + U_1 L_1R_{23}.
-  \end{align*}
-  In this calculation, $L_i'$ denotes the derivative $\frac{d}{dt}$ of $L_i$ considered as an element of $\k[t]$ by pullback under some parametrization $\spec \k[t] \to Q$ and trivialization of $\O(2)|_{\spec \k[t]}$.
-  Although the derivative depends on the choices, the forms $L_iL_j' - L_jL_i'$ do not, and they cut out precisely the ramification divisor of the pencil $\langle  L_i|_Q, L_j|_Q \rangle$.
-  Under the isomorphism in \eqref{lem:quotram}, the divisor $R$ corresponds to the 2 dimensional subspace of $\Sym^2 S/q$ spanned by $L_2R_{13}$ and $L_1R_{23}$ (The roles of $L_1, L_2, L_3$ can be changed by linear transformations of $M$, so we get that $L_3R_{12}$ also lies in this span).
-  The proof is thus complete.
-\end{proof}
+% Via the birational isomorphisms in \autoref{lem:quotgrass} and \autoref{lem:quotram}, the projection-ramification map $\rho_X$ transforms into an $\Aut(S)$-equivariant map
+% \[
+%   \mu \from \Hilb^3\P S \dashrightarrow \Gr(2, \Sym^2S/q).
+% \]
+% We now describe this map $\mu$ explicitly.
+% To ease notation, we denote a linear form and its vanishing locus by the same letter.
+% Let $\xi \in \Hilb^3 \P S$ be a general point corresponding to the three vertices of the triangle formed by three lines $L_i$ for $i = 1, 2, 3$.
+% Restricting the two lines $L_i$ and $L_j$ to $Q$ gives two quadratic forms $L_i|_Q$ and $L_j|_Q$ on $Q$.
+% Let $R_{ij}$ be the line whose intersection with $Q$ is the ramification divisor of the pencil $\langle  L_i|_Q, L_j|_Q \rangle$.
+% It is easy to check that the quadrics $L_1 R_{23}$, $L_2 R_{13}$, and $L_3R_{12}$ span a 3-dimensional subspace of $\Sym^2 S$ that contains the quadric $q$.
+% \begin{lemma}\label{lem:mu}
+%   In the setup above, the image of $\xi$ under $\mu$ is the image of $\langle  L_1R_{23}, L_2R_{13},L_3R_{12} \rangle$ in $\Sym^2S/q$.
+% \end{lemma}
+% \begin{proof}
+%   The ideal of the point $\xi \in \Hilb^3(S)$ is cut out by the $2 \times 3$ matrix of linear forms
+%   \[
+%     M =
+%     \begin{pmatrix}
+%       L_1 & 0 & L_3 \\
+%       0 & L_2 & L_3
+%     \end{pmatrix}.
+%   \]
+%   Let $U_0, U_1$ be a basis of $U$.
+%   Under the isomorphism in \autoref{lem:quotgrass}, this $2 \times 3$ matrix corresponds to the point of $\Gr(3, U \otimes \Sym^2 V)$ given by the subspace of $U \otimes \Sym^2 V$ spanned by $U_0 M_{0,i} + U_1 M_{1,i}$ for $i = 1, 2, 3$.
+%   From \eqref{eqn:Rmatrix}, the ramification divisor of this subspace is given by
+%   \begin{align*}
+%     R &= \det
+%     \begin{pmatrix}
+%       L_1 & 0 & U_0 L_1' \\
+%       0 & L_2 & U_1 L_2' \\
+%       L_3 & L_3 & (U_0+U_1)L_3'
+%     \end{pmatrix} \\
+%       &= U_0L_2(L_3'L_1 - L_1L_3') + U_1L_1(L_3'L_2-L_2L_3')\\
+%       &= U_0L_2R_{13} + U_1 L_1R_{23}.
+%   \end{align*}
+%   In this calculation, $L_i'$ denotes the derivative $\frac{d}{dt}$ of $L_i$ considered as an element of $\k[t]$ by pullback under some parametrization $\spec \k[t] \to Q$ and trivialization of $\O(2)|_{\spec \k[t]}$.
+%   Although the derivative depends on the choices, the forms $L_iL_j' - L_jL_i'$ do not, and they cut out precisely the ramification divisor of the pencil $\langle  L_i|_Q, L_j|_Q \rangle$.
+%   Under the isomorphism in \eqref{lem:quotram}, the divisor $R$ corresponds to the 2 dimensional subspace of $\Sym^2 S/q$ spanned by $L_2R_{13}$ and $L_1R_{23}$ (The roles of $L_1, L_2, L_3$ can be changed by linear transformations of $M$, so we get that $L_3R_{12}$ also lies in this span).
+%   The proof is thus complete.
+% \end{proof}
 
-Recall that the conic $Q \subset \P S$ gives an isomorphism $\P S \cong \P S^*$, called \emph{polarity} with respect to $Q$.
-On the vector spaces, it is the isomorphism induced by the bilinear form associated to $q$.
-Geometrically, it is characterized by the rule that the polar of a point $p \in Q$ is the tangent line to $Q$ at $p$.
-More generally, given a point $p \in \P S$, the pencil of lines through $p$ contains two lines tangent to $Q$; the polar of $p$ is the line joining the two points of tangency.
-We denote the polar of a point $p$ (resp. a line $L$) by $p^\perp$ (resp. $L^\perp$).
+% Recall that the conic $Q \subset \P S$ gives an isomorphism $\P S \cong \P S^*$, called \emph{polarity} with respect to $Q$.
+% On the vector spaces, it is the isomorphism induced by the bilinear form associated to $q$.
+% Geometrically, it is characterized by the rule that the polar of a point $p \in Q$ is the tangent line to $Q$ at $p$.
+% More generally, given a point $p \in \P S$, the pencil of lines through $p$ contains two lines tangent to $Q$; the polar of $p$ is the line joining the two points of tangency.
+% We denote the polar of a point $p$ (resp. a line $L$) by $p^\perp$ (resp. $L^\perp$).
 
-Set $M_i = R_{jk}$, and let $N$ be the net spanned by $L_iM_i$ for $i = 1, 2, 3$.
-By the definition of $R_{jk}$, we see that $M_i$ is the polar line of the point $L_j \cap L_k$.
-In other words, the triangles $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$ are polar conjugates---lines in one are polars to the vertices of the other (see \cite[\S~2.1.4]{dol:12}).
+% Set $M_i = R_{jk}$, and let $N$ be the net spanned by $L_iM_i$ for $i = 1, 2, 3$.
+% By the definition of $R_{jk}$, we see that $M_i$ is the polar line of the point $L_j \cap L_k$.
+% In other words, the triangles $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$ are polar conjugates---lines in one are polars to the vertices of the other (see \cite[\S~2.1.4]{dol:12}).
 
-\begin{remark}[This long remark is only for context, and is not logically necessary for what comes next]
-  \label{rem:richelot}
-  The space $\Hilb^3 \P S / \Aut S$ and its birational involution (called the Richelot involution) induced by
-  \begin{equation}\label{eqn:richelot}
-    \tau \from \Hilb^3 \P S \dashrightarrow \Hilb^3 \P S
-  \end{equation}
-  that sends a triangle formed by the lines $(\ell_1, \ell_2, \ell_3)$ to the triangle formed by the points $(\ell_1^\perp, \ell_2^\perp, \ell_3^\perp)$ have well-known moduli interpretations, which we learned from \cite[Example~4.2]{dol.how:15}.
-  Intersecting the lines $\ell_i$ with $Q$ for $i = 1, 2, 3$ gives a triple of pairs of points on $Q \cong \P^1$.
-  The double cover of $\P^1$ branched along these six points gives a genus 2 curve $C$.
-  The grouping of the six points in three pairs $\{p_i, q_i\}$ for $i = 1, 2, 3$ gives a 2-dimensional subspace of the 4-dimensional $\F_2$-vector space $\Pic C [2]$, namely $\{0\} \cup \{p_i - q_i \mid i = 1,2,3\}$.
-  This vector space is a maximal isotropic subspace for the Weil pairing on $\Pic C[2]$.
-  Conversely, a genus 2 curve $C$ with a maximal isotropic subspace of $\Pic C[2]$ defines six points on $\P^1$ grouped into a triple of pairs.
-  Thus, $\Hilb^3 \P S / \Aut S$ is birational to the moduli space of genus 2 curves along with an isotropic subspace of 2-torsion points in its Jacobian.
+% \begin{remark}[This long remark is only for context, and is not logically necessary for what comes next]
+%   \label{rem:richelot}
+%   The space $\Hilb^3 \P S / \Aut S$ and its birational involution (called the Richelot involution) induced by
+%   \begin{equation}\label{eqn:richelot}
+%     \tau \from \Hilb^3 \P S \dashrightarrow \Hilb^3 \P S
+%   \end{equation}
+%   that sends a triangle formed by the lines $(\ell_1, \ell_2, \ell_3)$ to the triangle formed by the points $(\ell_1^\perp, \ell_2^\perp, \ell_3^\perp)$ have well-known moduli interpretations, which we learned from \cite[Example~4.2]{dol.how:15}.
+%   Intersecting the lines $\ell_i$ with $Q$ for $i = 1, 2, 3$ gives a triple of pairs of points on $Q \cong \P^1$.
+%   The double cover of $\P^1$ branched along these six points gives a genus 2 curve $C$.
+%   The grouping of the six points in three pairs $\{p_i, q_i\}$ for $i = 1, 2, 3$ gives a 2-dimensional subspace of the 4-dimensional $\F_2$-vector space $\Pic C [2]$, namely $\{0\} \cup \{p_i - q_i \mid i = 1,2,3\}$.
+%   This vector space is a maximal isotropic subspace for the Weil pairing on $\Pic C[2]$.
+%   Conversely, a genus 2 curve $C$ with a maximal isotropic subspace of $\Pic C[2]$ defines six points on $\P^1$ grouped into a triple of pairs.
+%   Thus, $\Hilb^3 \P S / \Aut S$ is birational to the moduli space of genus 2 curves along with an isotropic subspace of 2-torsion points in its Jacobian.
 
-  Since general principally polarized abelian surfaces are Jacobians of genus 2 curves, $\Hilb^3 \P S / \Aut S$ is also birational to the moduli of $(A, G)$, where $A$ is a principally polarized abelian surface and $G \subset A[2]$ is a maximal isotropic subspace for the Weil pairing.
-  In this interpretation, the involution $\tau$ is called the Fricke involution; it sends $(A, G)$ to $(A/G, A[2]/G)$ (see \cite[Page~2]{muk:12}).
+%   Since general principally polarized abelian surfaces are Jacobians of genus 2 curves, $\Hilb^3 \P S / \Aut S$ is also birational to the moduli of $(A, G)$, where $A$ is a principally polarized abelian surface and $G \subset A[2]$ is a maximal isotropic subspace for the Weil pairing.
+%   In this interpretation, the involution $\tau$ is called the Fricke involution; it sends $(A, G)$ to $(A/G, A[2]/G)$ (see \cite[Page~2]{muk:12}).
 
-  Using the Torelli theorem, the moduli space of $(A, G)$ can be described as the quotient $H_2/\Gamma_0(2)$, where $H_2$ is the Siegel upper half space of degree 2, and $\Gamma_0(2) \subset \operatorname{Sp}(4, \Z)$ is the congruence subgroup consisting of matrices $\begin{pmatrix} A & B \\ C & D \end{pmatrix}$ where $A, B, C, D$ are $2 \times 2$ blocks and $C \equiv 0 \pmod 2$.
-  In this interpretation, the involution $\tau$ is induced by the action of $\frac{1}{\sqrt 2} \begin{pmatrix} 0 & I_2 \\ -2 I_2 & 0 \end{pmatrix} \in \operatorname{Sp}(4, \R)$ on $H_2$ (again, see \cite[Page~2]{muk:12}).
+%   Using the Torelli theorem, the moduli space of $(A, G)$ can be described as the quotient $H_2/\Gamma_0(2)$, where $H_2$ is the Siegel upper half space of degree 2, and $\Gamma_0(2) \subset \operatorname{Sp}(4, \Z)$ is the congruence subgroup consisting of matrices $\begin{pmatrix} A & B \\ C & D \end{pmatrix}$ where $A, B, C, D$ are $2 \times 2$ blocks and $C \equiv 0 \pmod 2$.
+%   In this interpretation, the involution $\tau$ is induced by the action of $\frac{1}{\sqrt 2} \begin{pmatrix} 0 & I_2 \\ -2 I_2 & 0 \end{pmatrix} \in \operatorname{Sp}(4, \R)$ on $H_2$ (again, see \cite[Page~2]{muk:12}).
 
-  Finally, suppose we pass to ordered triples of pairs, or equivalently to $(\P S)^3 / \Aut S$.
-  Then the moduli interpretation changes slightly.
-  Now the space is the moduli space of $(A, \psi)$, where $A$ is a principally polarized abelian surface and $\psi \from \F_2^2 \to A[2]$ is an isomorphism onto a maximal isotropic subspace (note that $\psi$ is equivalent to a maximal isotropic $G \subset A[2]$ along with a basis of $G$).
-  The moduli space of $(A, \psi)$ is the quotient $H_2 / \Gamma_1(2)$ where $\Gamma_1(2) \subset \operatorname{Sp}(4, \Z)$ is defined by the congruence conditions $A - I_2 \equiv 0 \pmod 2$ in addition to $C \equiv 0 \pmod 2$.
-  The Fricke involution continues to act on $H_2 / \Gamma_1(2)$.
-  The Satake compactification of $H_2 / \Gamma_1(2)$ is the Igusa quartic threefold in $\P^4$ on which the Fricke involution acts by a linear transformation of $\P^4$.
-  The quotient of the Igusa quartic by the Fricke involution is isomorphic to a double cover of $\P^3$ branched along the union of 4 planes  \cite[Theorem~2]{muk:12}.
-  \qed
-\end{remark}
+%   Finally, suppose we pass to ordered triples of pairs, or equivalently to $(\P S)^3 / \Aut S$.
+%   Then the moduli interpretation changes slightly.
+%   Now the space is the moduli space of $(A, \psi)$, where $A$ is a principally polarized abelian surface and $\psi \from \F_2^2 \to A[2]$ is an isomorphism onto a maximal isotropic subspace (note that $\psi$ is equivalent to a maximal isotropic $G \subset A[2]$ along with a basis of $G$).
+%   The moduli space of $(A, \psi)$ is the quotient $H_2 / \Gamma_1(2)$ where $\Gamma_1(2) \subset \operatorname{Sp}(4, \Z)$ is defined by the congruence conditions $A - I_2 \equiv 0 \pmod 2$ in addition to $C \equiv 0 \pmod 2$.
+%   The Fricke involution continues to act on $H_2 / \Gamma_1(2)$.
+%   The Satake compactification of $H_2 / \Gamma_1(2)$ is the Igusa quartic threefold in $\P^4$ on which the Fricke involution acts by a linear transformation of $\P^4$.
+%   The quotient of the Igusa quartic by the Fricke involution is isomorphic to a double cover of $\P^3$ branched along the union of 4 planes  \cite[Theorem~2]{muk:12}.
+%   \qed
+% \end{remark}
 
-Recall that $\xi \in \Hilb^3\P S$ is the point defined by the three vertices of the triangle formed by $(L_1, L_2, L_3)$.
-Let $\xi' \in \Hilb^3\P S$ be the point defined by the three vertices of the triangle formed by $(M_1, M_2, M_3)$.
-\begin{proposition}\label{prop:quarticscroll}
-  In the setup above, $\xi$ and $\xi'$ are the only points of $\Hilb^3\P S$ that map to $N \in \Gr(2, \Sym^2S/q)$.
-  In particular, the degree of $\mu \from \Hilb^3\P S \dashrightarrow \Gr(2, \Sym^2S/q)$ is 2.
-\end{proposition}
-We invite the reader to look at \autoref{fig:quarticscroll} for the configuration formed by the conic $Q$, the Jacobian $R$, the polar of the Hermite curve $E^\perp$, and the triangles $(L_1,L_2,L_3)$ and $(M_1,M_2,M_3)$.
-\begin{proof}
-  By \autoref{lem:mu}, we see immediately that $\mu(\xi') = \mu(\xi) = N$.
-  To show that no other triangles map to $N$, consider pairs of triplets $\Delta = (\Delta_1, \Delta_2, \Delta_3)$ and $\nabla = (\nabla_1, \nabla_2, \nabla_3)$ of lines in $\P S$ such that
-  \begin{enumerate}
-  \item $\Delta$ and $\nabla$ are polar conjugates with respect to $Q$, and
-  \item $\Delta_i \cup \nabla_i$ is an element of $N$ for $i = 1, 2, 3$.
-  \end{enumerate}
-  It suffices to show that the only ones satisfying the two conditions are $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$, up to permutation.
+% Recall that $\xi \in \Hilb^3\P S$ is the point defined by the three vertices of the triangle formed by $(L_1, L_2, L_3)$.
+% Let $\xi' \in \Hilb^3\P S$ be the point defined by the three vertices of the triangle formed by $(M_1, M_2, M_3)$.
+% \begin{proposition}\label{prop:quarticscroll}
+%   In the setup above, $\xi$ and $\xi'$ are the only points of $\Hilb^3\P S$ that map to $N \in \Gr(2, \Sym^2S/q)$.
+%   In particular, the degree of $\mu \from \Hilb^3\P S \dashrightarrow \Gr(2, \Sym^2S/q)$ is 2.
+% \end{proposition}
+% We invite the reader to look at \autoref{fig:quarticscroll} for the configuration formed by the conic $Q$, the Jacobian $R$, the polar of the Hermite curve $E^\perp$, and the triangles $(L_1,L_2,L_3)$ and $(M_1,M_2,M_3)$.
+% \begin{proof}
+%   By \autoref{lem:mu}, we see immediately that $\mu(\xi') = \mu(\xi) = N$.
+%   To show that no other triangles map to $N$, consider pairs of triplets $\Delta = (\Delta_1, \Delta_2, \Delta_3)$ and $\nabla = (\nabla_1, \nabla_2, \nabla_3)$ of lines in $\P S$ such that
+%   \begin{enumerate}
+%   \item $\Delta$ and $\nabla$ are polar conjugates with respect to $Q$, and
+%   \item $\Delta_i \cup \nabla_i$ is an element of $N$ for $i = 1, 2, 3$.
+%   \end{enumerate}
+%   It suffices to show that the only ones satisfying the two conditions are $(L_1, L_2, L_3)$ and $(M_1, M_2, M_3)$, up to permutation.
   
-  To show this, we need some observations.
+%   To show this, we need some observations.
 
-  First, suppose $A_1 \cup B_1$ and $A_2\cup B_2$ are elements of the net $N$, where $A_i$ and $B_j$ are lines in $\P S$.
-  Then, by definition, $A_i$ and $B_j$ are Reye lines of the net $N$.
-  Let $p = A_1 \cap A_2$ and $t = B_1 \cap B_2$.
-  We claim that the third Reye line through $p$, in addition to $A_1$ and $A_2$, is the line $\langle p, t\rangle$.
-  To see this, note that in the pencil of conics spanned by $A_1 \cup B_1$ and $A_2 \cup B_2$, the third singular conic is $\langle p, t\rangle \cup \langle p', t'\rangle$, where $p' = A_1 \cap B_2$ and $t' = A_2 \cap B_1$.
+%   First, suppose $A_1 \cup B_1$ and $A_2\cup B_2$ are elements of the net $N$, where $A_i$ and $B_j$ are lines in $\P S$.
+%   Then, by definition, $A_i$ and $B_j$ are Reye lines of the net $N$.
+%   Let $p = A_1 \cap A_2$ and $t = B_1 \cap B_2$.
+%   We claim that the third Reye line through $p$, in addition to $A_1$ and $A_2$, is the line $\langle p, t\rangle$.
+%   To see this, note that in the pencil of conics spanned by $A_1 \cup B_1$ and $A_2 \cup B_2$, the third singular conic is $\langle p, t\rangle \cup \langle p', t'\rangle$, where $p' = A_1 \cap B_2$ and $t' = A_2 \cap B_1$.
 
-  Second, let $R \subset \P S$ be the Jacobian cubic and $E \subset \P S^*$ be the Hermite cubic of $N$.
-  Let $E^\perp \subset \P S$ be the image of $E$ under the polarity isomorphism $\P S^* \to \P S$ induced by $Q$.
-  Explicitly, the points of $E^\perp$ are the polars of the Reye lines.
-  We claim that the six points of intersection of $R$ and $Q$ also lie on $E^\perp$.
-  Indeed, to show that $x \in R \cap Q$ also lies on $E^\perp$, it suffices to show that the line $T_xQ$ is a Reye line.
-  Since $x \in R$, there exists an element of $N$ of the form $A\cup B$ where $A$ and $B$ are lines intersecting at $x$.
-  Note that in the pencil of conics spanned by $A \cup B$ and $Q$, there is a singular conic containing $T_xQ$.
-  Therefore, $T_xQ$ is a Reye line.
+%   Second, let $R \subset \P S$ be the Jacobian cubic and $E \subset \P S^*$ be the Hermite cubic of $N$.
+%   Let $E^\perp \subset \P S$ be the image of $E$ under the polarity isomorphism $\P S^* \to \P S$ induced by $Q$.
+%   Explicitly, the points of $E^\perp$ are the polars of the Reye lines.
+%   We claim that the six points of intersection of $R$ and $Q$ also lie on $E^\perp$.
+%   Indeed, to show that $x \in R \cap Q$ also lies on $E^\perp$, it suffices to show that the line $T_xQ$ is a Reye line.
+%   Since $x \in R$, there exists an element of $N$ of the form $A\cup B$ where $A$ and $B$ are lines intersecting at $x$.
+%   Note that in the pencil of conics spanned by $A \cup B$ and $Q$, there is a singular conic containing $T_xQ$.
+%   Therefore, $T_xQ$ is a Reye line.
   
-  Third, since $R \cap E^\perp$ contains 6 points on the conic $Q$, the residual 3 points are collinear.
-  Let them correspond to $x_1, x_2, x_3 \in E$.
-  Denoting by $H$ the hyperplane class of $E \subset \P S^*$, we have the equation in $\Pic E$
-  \[ x_1 + x_2 + x_3 = H.\]
+%   Third, since $R \cap E^\perp$ contains 6 points on the conic $Q$, the residual 3 points are collinear.
+%   Let them correspond to $x_1, x_2, x_3 \in E$.
+%   Denoting by $H$ the hyperplane class of $E \subset \P S^*$, we have the equation in $\Pic E$
+%   \[ x_1 + x_2 + x_3 = H.\]
 
-  Having made the three necessary observations, we resume the proof.
-  Suppose we have two triangles $\Delta$ and $\nabla$ satisfying the two conditions above.
-  Consider the point $p_3 = \Delta_3 \cap \nabla_3$.
-  By the second condition, it lies on $R$.
-  By the polar conjugacy of $\Delta$ and $\nabla$, we have
-  \begin{align*}
-    p_3^\perp &= \langle \Delta_3^\perp, \nabla_3^\perp \rangle \\
-              &= \langle  \nabla_1 \cap \nabla_2, \Delta_1 \cap \Delta_2\rangle.
-  \end{align*}
-  By the first observation, we see that $p_3^\perp$ is a Reye line.
-  Hence $p_3$ lies on $E^\perp$, and hence on $R \cap E^\perp$.
-  Similarly, $p_1 = \Delta_1 \cap \nabla_1$ and $p_2 = \Delta_2 \cap \nabla_2$ also lie on $E^\perp$.
-  Since $N$ is general, we may assume that the $p_i$ do not lie on $Q$.
-  Hence, $p_1, p_2, p_3$ are the three collinear points in $R \cap E^\perp$.
-  (The fact that $p_1, p_2, p_3$ are collinear is not surprising---it is because any two polar conjugate triangles are in linear perspective \cite[Theorem~2.1.9]{dol:12}).
-  By reordering if necessary, assume that we have $p_i^\perp = x_i$ as elements of $E$.
+%   Having made the three necessary observations, we resume the proof.
+%   Suppose we have two triangles $\Delta$ and $\nabla$ satisfying the two conditions above.
+%   Consider the point $p_3 = \Delta_3 \cap \nabla_3$.
+%   By the second condition, it lies on $R$.
+%   By the polar conjugacy of $\Delta$ and $\nabla$, we have
+%   \begin{align*}
+%     p_3^\perp &= \langle \Delta_3^\perp, \nabla_3^\perp \rangle \\
+%               &= \langle  \nabla_1 \cap \nabla_2, \Delta_1 \cap \Delta_2\rangle.
+%   \end{align*}
+%   By the first observation, we see that $p_3^\perp$ is a Reye line.
+%   Hence $p_3$ lies on $E^\perp$, and hence on $R \cap E^\perp$.
+%   Similarly, $p_1 = \Delta_1 \cap \nabla_1$ and $p_2 = \Delta_2 \cap \nabla_2$ also lie on $E^\perp$.
+%   Since $N$ is general, we may assume that the $p_i$ do not lie on $Q$.
+%   Hence, $p_1, p_2, p_3$ are the three collinear points in $R \cap E^\perp$.
+%   (The fact that $p_1, p_2, p_3$ are collinear is not surprising---it is because any two polar conjugate triangles are in linear perspective \cite[Theorem~2.1.9]{dol:12}).
+%   By reordering if necessary, assume that we have $p_i^\perp = x_i$ as elements of $E$.
 
-  Now, observe that the three Reye lines through the vertex $\Delta_1 \cap \Delta_2$ are $\Delta_1$, $\Delta_2$, and $p_3^\perp$, and likewise for the other two vertices.
-  The concurrence of the three lines, along with the equality $p_3^\perp = x_3$, yields the system of equations on $\Pic E$
-  \begin{align*}
-    \Delta_1 + \Delta_2 + x_3 &= H, \\
-    \Delta_2 + \Delta_3 + x_1 &= H, \\
-    \Delta_3 + \Delta_1 + x_2 &= H. \\
-  \end{align*}
-  Of course, the same three equations hold if we replace $\Delta$ by $\nabla$.
+%   Now, observe that the three Reye lines through the vertex $\Delta_1 \cap \Delta_2$ are $\Delta_1$, $\Delta_2$, and $p_3^\perp$, and likewise for the other two vertices.
+%   The concurrence of the three lines, along with the equality $p_3^\perp = x_3$, yields the system of equations on $\Pic E$
+%   \begin{align*}
+%     \Delta_1 + \Delta_2 + x_3 &= H, \\
+%     \Delta_2 + \Delta_3 + x_1 &= H, \\
+%     \Delta_3 + \Delta_1 + x_2 &= H. \\
+%   \end{align*}
+%   Of course, the same three equations hold if we replace $\Delta$ by $\nabla$.
 
-  Note that the points $x_1, x_2, x_3 \in E$ are determined by $N$.
-  Using $x_1 + x_2 + x_3 = H$, a simple calculation gives $2 \Delta_1 = 2x_1$.
-  This equation has 4 solutions for $\Delta_1$, namely $x_1 + \epsilon$ for $\epsilon \in \Pic E[2]$.
-  Also, $\Delta_1$ determines $\Delta_2$ and $\Delta_3$ by the equations above, which in turn determine the $\nabla_i$ using polarity or the property that $\nabla_i$ and $\Delta_i$ form a fiber of the map $E \to R$.
-  Thus, it suffices to show that at most two of the four solutions for $\Delta_1$ can be valid.
+%   Note that the points $x_1, x_2, x_3 \in E$ are determined by $N$.
+%   Using $x_1 + x_2 + x_3 = H$, a simple calculation gives $2 \Delta_1 = 2x_1$.
+%   This equation has 4 solutions for $\Delta_1$, namely $x_1 + \epsilon$ for $\epsilon \in \Pic E[2]$.
+%   Also, $\Delta_1$ determines $\Delta_2$ and $\Delta_3$ by the equations above, which in turn determine the $\nabla_i$ using polarity or the property that $\nabla_i$ and $\Delta_i$ form a fiber of the map $E \to R$.
+%   Thus, it suffices to show that at most two of the four solutions for $\Delta_1$ can be valid.
 
-  Suppose $\Delta_1 = x_1$.
-  Then we get $\Delta_2 = x_2$, and $\Delta_3 = x_3$.
-  However, the lines represented by the $x_i$ are concurrent, whereas the lines $\Delta_i$ are not.
-  Therefore, we get that $\Delta_1 \neq x_1$.
-  The same argument shows that $\nabla_1 \neq x_1$.
-  Let the involution of $E$ induced by $E \to R$ be given by the addition of $\epsilon_0 \in \Pic E [2]^*$.
-  Since $\Delta_1$ and $\nabla_1$ form a fiber of $E \to R$, we have $\nabla_1 = \Delta_1 + \epsilon_0$.
-  So, $\nabla_1 \neq x_1$ translates into $\Delta_1 \neq x_1 + \epsilon_0$.
-  In summary, the only two possible solutions for $\Delta_1$ are $x_1 + \epsilon$ for $\epsilon \in \Pic E [2] \setminus \{0, \epsilon_0\}$.
-  The proof is now complete.  
-\end{proof}
-\vfill
-\begin{figure}
-  \centering
-  \includegraphics{quartic_scroll}
-  %The smiling octopus.
-  \caption{
-    The figure shows the unique pair of polar conjugate triangles of Reye lines associated to a net of conics as proved in \autoref{prop:quarticscroll}.
-    The net includes the distinguished conic $Q$, seen here as a hyperbola (dotted black).
-    The Jacobian cubic $R$ (green) and the dual of the Hermite cubic $E^\perp$ (orange) intersect in 6 points on $Q$ (4 of which are real and visible), and 3 other collinear points, two of which, say $p_1$ and $p_2$, are marked (red), and the third, say $p_3$, is at infinity.
-    The Reye lines forming the two polar conjugate triangles (dashed pink and dashed blue) come in conjugate pairs.
-    The lines in each pair intersect at $p_1$, $p_2$, and $p_3$.
-    (The figure was produced using \texttt{Sage} \cite{the:17}.)
-  }
-  \label{fig:quarticscroll}
-\end{figure}
+%   Suppose $\Delta_1 = x_1$.
+%   Then we get $\Delta_2 = x_2$, and $\Delta_3 = x_3$.
+%   However, the lines represented by the $x_i$ are concurrent, whereas the lines $\Delta_i$ are not.
+%   Therefore, we get that $\Delta_1 \neq x_1$.
+%   The same argument shows that $\nabla_1 \neq x_1$.
+%   Let the involution of $E$ induced by $E \to R$ be given by the addition of $\epsilon_0 \in \Pic E [2]^*$.
+%   Since $\Delta_1$ and $\nabla_1$ form a fiber of $E \to R$, we have $\nabla_1 = \Delta_1 + \epsilon_0$.
+%   So, $\nabla_1 \neq x_1$ translates into $\Delta_1 \neq x_1 + \epsilon_0$.
+%   In summary, the only two possible solutions for $\Delta_1$ are $x_1 + \epsilon$ for $\epsilon \in \Pic E [2] \setminus \{0, \epsilon_0\}$.
+%   The proof is now complete.  
+% \end{proof}
+% \vfill
+% \begin{figure}
+%   \centering
+%   \includegraphics{quartic_scroll}
+%   %The smiling octopus.
+%   \caption{
+%     The figure shows the unique pair of polar conjugate triangles of Reye lines associated to a net of conics as proved in \autoref{prop:quarticscroll}.
+%     The net includes the distinguished conic $Q$, seen here as a hyperbola (dotted black).
+%     The Jacobian cubic $R$ (green) and the dual of the Hermite cubic $E^\perp$ (orange) intersect in 6 points on $Q$ (4 of which are real and visible), and 3 other collinear points, two of which, say $p_1$ and $p_2$, are marked (red), and the third, say $p_3$, is at infinity.
+%     The Reye lines forming the two polar conjugate triangles (dashed pink and dashed blue) come in conjugate pairs.
+%     The lines in each pair intersect at $p_1$, $p_2$, and $p_3$.
+%     (The figure was produced using \texttt{Sage} \cite{the:17}.)
+%   }
+%   \label{fig:quarticscroll}
+% \end{figure}
+
 
  \bibliographystyle{siam}
  \bibliography{CommonMath}

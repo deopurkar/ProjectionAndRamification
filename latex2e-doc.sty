@@ -1,0 +1,220 @@
+%
+%    Documenta-LaTeX.sty (2e)
+%
+%    Version 0.52
+%
+%    Copyright (C) 1996-2017 Ulf Rehmann
+%    rehmann@math.uni-bielefeld.de
+%
+% ------------------------------ PROLOGUE -----------------------------
+%
+% This prologue is to be prepended to your LaTeX file in order to
+% give it the layout required by Documenta Mathematica.
+% Please edit the \documentclass line below, add \usepackage lines
+% according to your needs and
+% go to the line starting with \Title below, fill in title,
+% authors' names and so on and follow the further instructions there.
+% 
+% Choose one of the commands \documentclass[]{} or \documentstyle[]{}
+% depending on the version of LaTeX you use:
+%
+%
+% If you use LaTeX 2e use the following line (or similar):
+\documentclass[10pt,a4paper,twoside]{article}
+%%\usepackage{hyperref}
+% Append here commands \usepackage{...} if you want.
+%
+% If you use LaTeX 2.09 or earlier use the following line (or similar):
+%\documentstyle[10pt,twoside]{article}
+%
+% Please go to the line starting with \Title below, fill in title,
+% authors' names and so on and follow the further instructions there.
+%
+% The final values of the following 4 uncommented lines will be filled in
+% by Doc. Math. after the manuscript has been accepted for publication.
+%
+\def\YEAR{\year}\newcount\VOL\VOL=\YEAR\advance\VOL by-1995
+\def\firstpage{1}\def\lastpage{1000}
+\def\received{}\def\revised{}
+\def\communicated{}
+%
+
+\makeatletter
+\def\magnification{\afterassignment\m@g\count@}
+\def\m@g{\mag=\count@\hsize6.5truein\vsize8.9truein\dimen\footins8truein}
+\makeatother
+
+%%% Choose 10pt/12pt:
+%\oddsidemargin1.66cm\evensidemargin1.66cm\voffset1.2cm%10pt
+\oddsidemargin1.91cm\evensidemargin1.91cm\voffset1.4cm%10pt
+%\magnification1200\oddsidemargin.41cm\evensidemargin.41cm\voffset-.75cm%12pt
+
+%\textwidth12.5cm\textheight19.5cm
+\textwidth12.0cm\textheight19.0cm
+
+\font\eightrm=cmr8
+\font\caps=cmcsc10                    % Theorem, Lemma etc
+\font\ccaps=cmcsc10                   % Sections
+\font\Caps=cmcsc10 scaled \magstep1   % Title
+\font\scaps=cmcsc8
+
+%
+%-----------------headlines-----------------------------------
+
+%\input german.sty      % uncomment if necessary
+%\usepackage{german}    % uncomment if necessary
+
+\pagestyle{myheadings}
+\pagenumbering{arabic}
+\setcounter{page}{\firstpage}
+\def\bfseries{\normalsize\caps}
+
+\makeatletter
+\setlength\topmargin {14\p@}
+\setlength\headsep   {15\p@}  
+\setlength\footskip  {25\p@}  
+\setlength\parindent {20\p@} 
+\@specialpagefalse\headheight=8.5pt
+\def\DocMath{{\def\th{\thinspace}\scaps Documenta Math.}}
+\renewcommand{\@oddfoot}{\hfill\scaps Documenta Mathematica 
+    \number\VOL\  (\number\YEAR) \number\firstpage--\lastpage\hfill}
+\renewcommand{\@evenfoot}{\ifnum\thepage>\lastpage\hfill\scaps
+    Documenta Mathematica \number\VOL\  (\number\YEAR)\hfill\else\@oddfoot\fi}%
+
+\renewcommand{\@evenhead}{%
+    \ifnum\thepage>\lastpage\rlap{\thepage}\hfill%
+    \else\rlap{\thepage}\slshape\leftmark\hfill{\caps\SAuthor}\hfill\fi}%
+\renewcommand{\@oddhead}{%
+    \ifnum\thepage=\firstpage{\DocMath\hfill\llap{\thepage}}%
+    \else{\slshape\rightmark}\hfill{\caps\STitle}\hfill\llap{\thepage}\fi}%
+\makeatother
+
+\def\TSkip{\bigskip}
+\newbox\TheTitle{\obeylines\gdef\GetTitle #1
+\ShortTitle  #2
+\SubTitle    #3
+\Author      #4
+\ShortAuthor #5
+\EndTitle
+{\setbox\TheTitle=\vbox{\baselineskip=20pt\let\par=\cr\obeylines%
+\halign{\centerline{\Caps##}\cr\noalign{\medskip}\cr#1\cr}}%
+	\copy\TheTitle\TSkip\TSkip%
+\def\next{#2}\ifx\next\empty\gdef\STitle{#1}\else\gdef\STitle{#2}\fi%
+\def\next{#3}\ifx\next\empty%
+    \else\setbox\TheTitle=\vbox{\baselineskip=20pt\let\par=\cr\obeylines%
+    \halign{\centerline{\caps##} #3\cr}}\copy\TheTitle\TSkip\TSkip\fi%
+%\setbox\TheTitle=\vbox{\let\par=\cr\obeylines%
+%\halign{\centerline{\caps##} #4\cr}}\copy\TheTitle\TSkip\TSkip%
+\centerline{\caps #4}\TSkip\TSkip%
+\def\next{#5}\ifx\next\empty\gdef\SAuthor{#4}\else\gdef\SAuthor{#5}\fi%
+\ifx\received\empty\relax
+    \else\centerline{\eightrm Received: \received}\fi%
+\ifx\revised\empty\TSkip%
+    \else\centerline{\eightrm Revised: \revised}\TSkip\fi%
+\ifx\communicated\empty\relax
+    \else\centerline{\eightrm Communicated by \communicated}\fi\TSkip\TSkip%
+\catcode'015=5}}\def\Title{\obeylines\GetTitle}
+\def\Abstract{\begingroup\narrower
+    \parskip=\medskipamount\parindent=0pt{\caps Abstract. }}
+\def\EndAbstract{\par\endgroup\TSkip}
+
+\long\def\MSC#1\EndMSC{\def\arg{#1}\ifx\arg\empty\relax\else
+     {\par\narrower\noindent%
+     2010 Mathematics Subject Classification: #1\par}\fi}
+
+\long\def\KEY#1\EndKEY{\def\arg{#1}\ifx\arg\empty\relax\else
+	{\par\narrower\noindent Keywords and Phrases: #1\par}\fi\TSkip}
+
+\newbox\TheAdd\def\Addresses{\vfill\copy\TheAdd\vfill
+    \ifodd\number\lastpage\vfill\eject\phantom{.}\vfill\eject\fi}
+{\obeylines\gdef\GetAddress #1
+\Address #2 
+\Address #3
+\Address #4
+\EndAddress
+{\def\xs{4.3truecm}\parindent=0pt
+\setbox0=\vtop{{\obeylines\hsize=\xs#1\par}}\def\next{#2}
+\ifx\next\empty % 1 address
+     \setbox\TheAdd=\hbox to\hsize{\hfill\copy0\hfill}
+\else\setbox1=\vtop{{\obeylines\hsize=\xs#2\par}}\def\next{#3}
+\ifx\next\empty % 2 addresses
+     \setbox\TheAdd=\hbox to\hsize{\hfill\copy0\hfill\copy1\hfill}
+\else\setbox2=\vtop{{\obeylines\hsize=\xs#3\par}}\def\next{#4}
+\ifx\next\empty\ % 3 addresses
+     \setbox\TheAdd=\vtop{\hbox to\hsize{\hfill\copy0\hfill\copy1\hfill}
+                \vskip20pt\hbox to\hsize{\hfill\copy2\hfill}}
+\else\setbox3=\vtop{{\obeylines\hsize=\xs#4\par}}
+     \setbox\TheAdd=\vtop{\hbox to\hsize{\hfill\copy0\hfill\copy1\hfill}
+	        \vskip20pt\hbox to\hsize{\hfill\copy2\hfill\copy3\hfill}}
+\fi\fi\fi\catcode'015=5}}\gdef\Address{\obeylines\GetAddress}
+
+\hfuzz=0.1pt\tolerance=2000\emergencystretch=20pt\overfullrule=5pt
+
+%%%%% Embedded files should be stored in a separate subdirectory named
+%%%%% <filename>.files where <filename> is the same as the name of the
+%%%%% main tex file without the extension .tex.
+
+%%%%% In order for tex to find those embedded files, \input and
+%%%%% \includegraphics commands etc. have to reflect the embedded
+%%%%% files path by using the '\LOCAL' macro defined below, like
+%%%%% \input{\LOCAL/introduction} for embedding a file named
+%%%%% 'introduction.tex', or
+%%%%% \includegraphics[width=0.95\textwidth]{\LOCAL/knot.eps} for
+%%%%% embedding a graphics file named 'knot.eps', or
+%%%%% \bibselect{\LOCAL/references} in case references are embedded
+%%%%% from a file named 'references.ltb' etc.
+
+%%%%% Graphics files should always be submitted in encapsulated
+%%%%% postscript format (extension '.eps').
+
+\def\LOCAL{\jobname.files}
+
+
+\begin{document}
+%%%%% ------------- fill in your data below this line  -------------------
+%%%%%    The following lines \Title ... \EndAddress must ALL be present
+%%%%%    and in the given order.
+\Title
+%%%%%    Put here the title. Line breaks will be recognized. 
+\ShortTitle 
+%%%%%    Running title for odd numbered pages, ONE line, please. 
+%%%%%    If none is given, \Title will be used instead.          
+\SubTitle   
+%%%%%    A possible subtitle goes here.
+\Author 
+%%%%%    Put here name(s) of authors. Line breaks will be recognized.  
+\ShortAuthor 
+%%%%%%   Running title for even numbered pages, ONE line, please. 
+%%%%%%   If none is given, \Author will be used instead.          
+\EndTitle
+\Abstract 
+%%%%%    Put here the abstract of your manuscript.
+\EndAbstract
+\MSC 
+%%%%%    2010 Mathematics Subject Classification: 
+\EndMSC
+\KEY 
+%%%%%    Keywords and Phrases:     
+\EndKEY
+%%%%%    All 4 \Address lines below must be present. To center the last
+%%%%%    entry, no empty lines must be between the following \Address
+%%%%%    and \EndAddress lines.
+\Address 
+%%%%%    Address of first Author here
+\Address
+%%%%%    Address of second Author here etc.
+\Address
+\Address
+\EndAddress
+%%
+%%       Make sure the last tex command in your manuscript
+%%       before the first \end{document} is the command  \Addresses
+%%
+%%---------------------Here the prologue ends---------------------------------
+%%--------------------Here the manuscript starts------------------------------
+
+
+
+%%--------------------Here the manuscript ends--------------------------------
+\Addresses
+\end{document}

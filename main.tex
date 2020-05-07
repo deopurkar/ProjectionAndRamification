@@ -601,7 +601,7 @@ The proposition follows.
   Let $x \in X$ be a general point and $V \subset W$ an $(r+1)$-dimensional subspace with a basis $(u, a_1,\dots, a_{r-1},b)$ where
   \begin{enumerate}
     \item $u$ does not vanish at $x$,
-    \item $a_1, \dots , a_{r-1}$ vanish at $x$, and reduce to linearly independent elements of $L \otimes ({\mathfrak m}_{x}/{\mathfrak m}^{2}_{x})$, and
+    \item $a_1, \dots , a_{r-1}$ vanish at $x$, and give independent elements of $L \otimes ({\mathfrak m}_{x}/{\mathfrak m}^{2}_{x})$, and
     \item $v(b)$ has an ordinary double point at $x$. 
   \end{enumerate}
   Then $R(V)$ contains $x$ and is smooth at $x$.
@@ -609,7 +609,6 @@ The proposition follows.
 
 \begin{proof}
   That $R(V)$ contains $x$ is clear since $V \otimes \mathfrak{m}^{2}_{x} \neq 0$.
-
   For smoothness, we again work in the completion $\widehat{\O}_{X,x}$.
   After trivializing $L$, we assume $u, a_{1}, ..., b$ are elements of $\widehat{\O}_{X,x}$.
   We choose an element $z \in \widehat{\O}_{X,x}$ such that $(a_1, \dots, a_{r-1}, z)$ forms a system of coordinates, that is $\widehat{\O}_{X,x} \cong \k\llbracket a_{1}, \dots , a_{r-1}, z \rrbracket$.
@@ -649,10 +648,10 @@ We now have all the tools for the proof of \autoref{thm:mainMain}.
   We now show that it is also an isolated point in the projection-ramification map for $X$.
 
   Let $(C, 0)$ be a pointed smooth curve and $V \subset W \otimes \O_C$ a sub-bundle of rank $(r+1)$ such that
-  \begin{enumerate}
+  \begin{inparaenum}
   \item $V_{0} = V$, and 
   \item $V_{c} \neq V_{0}$ for $c \in C \setminus \{0\}$.
-  \end{enumerate}
+  \end{inparaenum}
   We must show that $R(V_c) \neq R(V)$ for a general $c \in C$.
 
   Suppose $V_c \subset W \otimes \mathfrak m_x = \widetilde W$ for all $c \in C$.
@@ -716,7 +715,7 @@ The following is an easy application of the Kodaira vanishing theorem.
   Without loss of generality, $X$ is embedded by the complete linear series.
   Indeed, passing to the complete linear series only increases the left side of the desired inequality, and does not change the right side.
   
-  We first prove the inequality \eqref{eqn:KYmH}, using a double induction---first on $r$, and then on $m$.
+  We prove \eqref{eqn:KYmH} using a double induction---first on $r$, and then on $m$.
   For the base case $r = 1$, Riemann--Roch gives
   \begin{equation}\label{eqn:r1}
     h^0(X, K_X + mH) = g_X - 1 + mn,
@@ -781,7 +780,6 @@ As a consequence, we immediately deduce \autoref{thm:minimaldegree}.
 
 \subsection{Projection-ramification for scrolls}\label{sec:prscrolls}
 \autoref{thm:minimaldegree} motivates a deeper investigation of the projection-ramification map for varieties of minimal degree.
-Indeed, for $X \subset \P^n$ of minimal degree, the projection-ramification map is potentially generically finite and dominant.
 Recall that a large class of varieties of minimal degree are the rational normal scrolls, namely $X = \P E$ for an ample vector bundle $E$ on $\P^1$ embedded by the complete linear series $\O_X(1)$.
 If $\dim X \geq 3$, then $X$ is neither incompressible nor does it have a divisorial dual variety.
 Therefore, for such $X$, \autoref{thm:main} leaves the question of maximal variation unanswered.
@@ -800,7 +798,7 @@ Note that we have an isomorphism $K_X \cong \pi^* (\det E \otimes K_C) \otimes L
 
 We now describe another construction of a section of $E \otimes \det E \otimes K_C$ from $V$, which we call the \emph{differential construction}.
 The subspace $V \subset H^0(X, L) = H^0(C, E)$ gives the evaluation map
-\[ e \from V \otimes \O_C \to E.\]
+$e \from V \otimes \O_C \to E$.
 If $V$ is generic, then $e$ is a surjection, and its kernel is canonically isomorphic to $\det E^* \otimes \det V$.
 Consider the diagram
 \begin{equation}\label{eqn:differential_construction}
@@ -809,7 +807,7 @@ Consider the diagram
   0 \arrow{r}& K_C \otimes E \arrow{r}& P(E) \arrow{r}& E \arrow{r}& 0,
 \end{tikzcd}
 \end{equation}
-where the bottom row is the standard sequence associated to $P(E)$, both maps labeled $e$ are evaluation maps, and the map $d_V$ is the map induced by them.
+where the bottom row is the standard sequence associated to $P(E)$, both maps labeled $e$ are evaluations, and the map $d_V$ is the map induced by them.
 The map $d_V$ gives a map
 \[ d_V \from \det V \to H^0(C, E \otimes \det E \otimes K_C).\]
 \begin{proposition}\label{prop:rdv}
@@ -817,7 +815,7 @@ The map $d_V$ gives a map
 \end{proposition}
 \begin{proof}
   Recall that $r_V$ is induced by the determinant of the evaluation map
-  \[ V \otimes \O_X \to P(L).\]
+ $V \otimes \O_X \to P(L)$.
   Denote by $P_\pi(L)$ the bundle of principal parts of $L$ along the fibers of $\pi$.
   More explicitly,
   \[ P_\pi(L) = {\pi_1}_* \left(\pi_2^* L \otimes \left(\O_{X \times_\pi X} / I_{\Delta}^2\right)\right),\]
@@ -841,25 +839,17 @@ The map $d_V$ gives a map
 
 Let $R = R(V) \subset X$ be the ramification divisor of the projection given by $V$.
 Note that $R$ is a divisor of class $\pi^*(\det E \otimes K_C) \otimes \O_X(1)$.
-Therefore, $R \subset X$ is a sub-scroll, or equivalently, the fibers of $R \to C$ are hyperplanes in the corresponding fiber of $X \to C$.
-We can obtain an explicit description of these hyperplanes in two ways, one using the original definition, and one using the differential construction.
-Fix a point $c \in C$, and a uniformizer $t$ of $C$ at $c$.
+Therefore, $R \subset X$ is a sub-scroll---the fibers of $R \to C$ are hyperplanes in the corresponding fiber of $X \to C$.
+An explicit description of these hyperplanes, obtained either using the original definition or using the differential construction, is as follows.
+Let $x \in X$, and $c = \pi(x)$.
+Fix a uniformizer $t$ of $C$ at $c$.
 Let $X_c \subset X$ and $R_c \subset R$ be the fibers of $X \to C$ and $R \to C$ over $c$, respectively.
-
-By definition $R \subset X$ is the set of points $x \in X$ for which there exists $s \in V$ such that $v(s)$ is singular at $x$.
-Since $s$ is a section of $L = \O_X(1)$, the hypersurface $v(s)$ is singular at $x$ if and only if it contains the entire fiber of $\pi \from X \to C$ through $x$.
-Suppose $\pi (x) = c$.
+Suppose $s$ is a section of $L = \O_X(1)$, such that the hypersurface $v(s)$ is singular at $x$.
+Then it must contain the entire fiber of $\pi \from X \to C$ through $x$.
 Then, in an open set of $X$ containing $X_c$, we have $s = t s_1$ for a section $s_1$ of $\O_X(1)$.
-Observe that, we have $\sing(v(s)) \cap F = v(s_1) \cap F$, and therefore, $R_c \subset X_c$ is the hyperplane cut out by $s_1$.
+Then $R_c \subset X_c$ is the hyperplane cut out by $s_1$.
 
-To obtain the same description using the differential construction, consider the top row of \eqref{eqn:differential_construction}.
-Let $v$ be a local section of $V \otimes \O_C$ around $c$ that generates the kernel of $e \from V \otimes \O_C \to E$ at $c$.
-The fiber of the evaluation map $V \otimes \O_C \to P(L)$ over $c$ sends $v \in V$ to the image of $e(v)$ in $L / \mathfrak m_c^2 L$.
-Since $v$ generates the kernel of $e \from V \otimes \O_C \to L$ at $c$, we know that image of $e(v)$ in $L/ \mathfrak m_cL$ is zero.
-Writing $e(v) = ts_1$ for a section $s_1$ of $E$ around $c$, we see that $d_V(v) = s_1 \otimes t \in E \otimes \mathfrak m_c/\mathfrak m_c^2$.
-Thus, the fiber of the sub-scroll defined by $d_V$ over $c$ is the hyperplane in $X_c$ cut out by $s_1$.
-
-Finally, we write an equation of $R(V) \subset X$ over an open subset of $C$ containing $c$ explicitly in coordinates.
+We now write an equation of $R(V) \subset X$ over an open subset of $C$ containing $c$ explicitly in coordinates.
 Choose a trivialization $X_1, \dots, X_r$ for $E$ over an open set $U \subset C$ containing $c$.
 Then $X_U \cong \P^{r-1} \times U = \Proj \O_U[X_1, \dots, X_r]$.
 We have a trivialization of $K_C$ over $U$ given by $dt$.

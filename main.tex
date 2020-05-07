@@ -1237,7 +1237,6 @@ As a remedy, we work with the (linked) limit linear series of higher rank as dev
 We use \cite{oss:14} for the foundations of the theory.
 
 \subsection{Linked linear series}\label{sec:lls}
-We need linked linear series for the simplest singular curve, namely a (projective, connected) nodal curve $C$ which is the nodal union of two smooth (projective, connected) curves $C_1$ and $C_2$, but we need them for vector bundles of rank higher than $1$.
 Let $B$ be the spectrum of a DVR with special point $0$ and general point $\eta$.
 Let $\pi \from X \to B$ be a smoothing of $C$ with non-singular total space $X$.
 That is, $\pi$ is a flat, proper, family of connected curves, smooth over $\eta$, and isomorphic to $C$ over $0$.
@@ -1251,9 +1250,8 @@ The \emph{degree} or \emph{total degree} of $E$ is the sum $\deg E = \deg E|_{C_
 Once and for all, fix a vector bundle $\mathcal E$ of rank $r$ on $X$, and set $E = \mathcal E|_C$.
 Let $E$ have degree $d$ and multi-degree $(w_1, w_2)$.
 Fix a positive integer $k$.
-Our next task is to recall the definition of the space of linked linear series of dimension $k$.
-It will be a $B$-scheme whose fiber over $\eta$ is the Grassmannian $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
-The key idea is to not only consider the sections of $\mathcal E$, but also of its various twists, namely the vector bundles obtained by tensoring with the powers of $\O_X(C_i)$.
+The space of linked linear series of dimension $k$ is a $B$-scheme whose fiber over $\eta$ is the Grassmannian $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
+The key idea behind its definition is to consider the sections of various twists of $\mathcal E$, satisfying certain compatibility conditions.
 
 Fix maps $\theta_1 \from \O_X \to \O_X(C_1)$ and $\theta_2 \from \O_X \to \O_X(C_2)$.
 The choice of these maps is auxiliary, and each one is unique up to multiplication by an element of $\O_B^*$.
@@ -1265,7 +1263,7 @@ For $n \in \Z$, set
   \end{cases}
 \]
 The maps $\theta_1$ and $\theta_2$ induces maps
-\[ \theta_n \from \mathcal E_m \to \mathcal E_{m+n}\]
+$\theta_n \from \mathcal E_m \to \mathcal E_{m+n}$
 given by
 \[
   \theta_n = 
@@ -1280,7 +1278,7 @@ Assume, without loss of generality, that $n_2 \geq n_1$.
 Set
 \[ d_1 = w_1 - n_1 r, \text{ and } d_2 = w_2 + n_2 r, \text{ and } b = n_2 - n_1.\]
 Observe that
-\[ d_1 + d_2 - rb = d.\]
+$ d_1 + d_2 - rb = d$.
 
 \begin{definition}[linked linear series]
   \label{def:lls}
@@ -1292,10 +1290,10 @@ Observe that
   \end{equation}
 \end{definition}
 \autoref{def:lls} is a special case of \cite[Definition~3.3.2]{oss:14}.
-From now on, we will talk about the image of an element in $V_m$ in $V_{m+n}$; this should be understood as the image under the map $\pi_* \theta_n$.
+When we talk about the image of an element in $V_m$ in $V_{m+n}$, it is to be understood as the image under the map $\pi_* \theta_n$.
 
 \begin{remark}
-The notion of a sub-bundle of a push-forward is a bit subtle; it is treated in depth in \cite[Definition~B.2.1]{oss:14}.
+The notion of a sub-bundle of a push-forward is subtle; it is treated in depth in \cite[Definition~B.2.1]{oss:14}.
 % We recall the main points.
 % For a flat proper morphism $X \to S$ and a vector bundle $\mathcal E$ on $S$, a \emph{sub-bundle} of $\pi_* \mathcal E$ is a vector bundle $V$ on $S$ along with a map $i \from V \to \pi_* \mathcal E$ such that for every $T \to S$, the pull-back $i_T \from V_T \to \pi_* (\mathcal E_T)$ is injective.
 % Note that this is a local condition on $S$.
@@ -1325,14 +1323,14 @@ The main theorem of \cite{oss:14} is the following representability theorem.
 \end{theorem}
 The last statement implies that if $v \in {\mathcal G}^{\rm simple}$ is such that ${\mathcal G}^{\rm simple}$ has relative dimension at most $k(d-k-r(g-1))$ at $v$, then it has relative dimension exactly $k(d-k-r(g-1))$ at $v$ and, furthermore, $\mathcal G(k, \mathcal E) \to B$ is an open map near $v$.
 In particular, $v$ is in the closure of $\Gr(k, H^0(X_\eta, \mathcal E_\eta))$.
-\begin{remark}
-  Osserman proves a stronger theorem, namely a relative version of the statement above, over the stack of vector bundles on $X$.
-  But the statement above is enough for our purposes.  
-\end{remark}
+% \begin{remark}
+%   Osserman proves a stronger theorem, namely a relative version of the statement above, over the stack of vector bundles on $X$.
+%   But the statement above is enough for our purposes.  
+% \end{remark}
 
-Although the definition of a linked linear series demands that we specify infinitely many vector bundles $V_n$, one for each $n \in \Z$, this is neither practical nor necessary.
-In the best case, only specifying the extremal ones, namely $V_{n_1}$ and $V_{n_2}$, suffices, provided that they satisfy some compatibility conditions.
-The original definition of limit linear series due to Eisenbud--Harris \cite{eis.har:86,eis.har:84} in the rank 1 case and Teixidor i Bigas \cite{tei-i-big:91} in the general case, took this minimalist approach.
+The definition of a linked linear series demands that we specify infinitely many vector bundles $V_n$, one for each $n \in \Z$.
+Specifying the extremal ones, namely $V_{n_1}$ and $V_{n_2}$, often suffices.
+Doing so results in the notion of limit linear series due to Eisenbud--Harris \cite{eis.har:86,eis.har:84} for rank 1 and Teixidor i Bigas \cite{tei-i-big:91} in general.
 
 Let $E_n$ be the restriction of $\mathcal E_n$ to the central fiber $C = X_0$, and set $p = C_1 \cap C_2$.
 \begin{definition}[EHT limit linear series]
@@ -1368,8 +1366,7 @@ More precisely, we have the following statement.
 \begin{proof}
   Proving that $(W_1, W_2)$ is an EHT limit linear series is straightforward, and left to the reader.
   It is a special case of \cite[Theorem~4.3.4]{oss:14} and the equivalence of type I and type II series in the two component case (\cite[Remark~3.4.15]{oss:14}).
-
-  The converse also follows from the proof of \cite[Theorem~4.3.4]{oss:14}, but it is not explicitly stated there.
+  The converse follows from the proof of \cite[Theorem~4.3.4]{oss:14}, but it is not explicitly stated there.
   So we offer a proof.
   
   First, suppose that $S$ lies over $\eta \in B$.
@@ -1417,13 +1414,12 @@ More precisely, we have the following statement.
   The proof is now complete.
 \end{proof}
 
-\autoref{prop:llseht} allows us to combine the economy of specifying an EHT limit linear series with the convenient functorial definition of a linked linear series.
-We use this in the definition of the projection-ramification map in terms of linked linear series.
+\autoref{prop:llseht} allows us to combine the economy a EHT limit linear series with the functorial definition of a linked linear series.
 
 \subsection{Projection-ramification with non-generic vanishing sequence}
 \label{sec:prnongeneric}
-We consider the projection-ramification map for linear series with a non-generic vanishing sequence.
-The analysis of such series plays a key role in defining the projection-ramification map for linked linear series.
+We now study the ramification divisors of linear series with a non-generic vanishing sequence.
+This is necessary for defining the projection-ramification map for linked linear series.
 
 Let $C$ be a smooth curve and $p \in C$ a point.
 Let $E$ be a vector bundle on $C$ of rank $r$.
@@ -1583,7 +1579,7 @@ The gluing condition in the definition of EHT limit linear series (\autoref{def:
 \begin{equation}\label{eqn:vlambdaswitch}
   V^0 = \Lambda^1 \text{ and } V^1 = \Lambda^0.
 \end{equation}
-The third condition we want to impose is that these two vector spaces be transverse, namely $\dim (V^0 \cap V^1) = 1$.
+The third condition is the transversality of these two spaces, namely $\dim (V^0 \cap V^1) = 1$.
 
 Let $\mathcal U \subset {\mathcal G}(r+1, \mathcal E)$ be the complement of the union of the following closed sets:
 \begin{enumerate}
@@ -1648,7 +1644,7 @@ Let $\mathcal U_0$ be the fiber over $0$ of $\mathcal U \to B$.
 \end{corollary}
 \begin{proof}
   If $\dim_v \mathcal U_0 = (r+1)(d-rg-1)$, then $v$ is in the closure of $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta))$ by \autoref{thm:lls}.
-  The statement now follows from the upper semi-continuity of fiber dimension.
+  The result follows from the upper semi-continuity of fiber dimension.
 \end{proof}
 
 

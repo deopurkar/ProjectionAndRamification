@@ -16,8 +16,7 @@ In this paper, we show that for a large class of varieties, $\rho$ is genericall
 In other words, non-trivial deformations of a general $L$ induce non-trivial deformations of $R(L)$.
 That is, the ramification locus ``varies maximally'' as the center of projection moves.
 
-Flenner and Manaresi  studied the question of maximal variation
-in connection with the St\"uckrad-Vogel cycle in intersection theory \cite{fle.man:98}. 
+The question of maximal variation appeared first in the work of Flenner and Manaresi in connection with the St\"uckrad-Vogel cycle in intersection theory \cite{fle.man:98}. 
 They proved maximal variation under a condition we call ``incompressibility.''
 We prove the following more general theorem.
 \begin{maintheorem}[\autoref{cor:maintheorem}]\label{thm:main}
@@ -78,7 +77,7 @@ Here the story is subtle, as evidenced by \autoref{thm:counterexamples}, but for
   If $\deg E = a \cdot (r-1) + b \cdot (2r-1) + 1$ for non-negative integers $a, b$, then the projection-ramification map $\rho$ is dominant for $X$.
   In particular, the conclusion holds if $E$ is general of degree at least $(r-1)(2r-1) + 1$.
 \end{maintheorem}
-The proof of \autoref{thm:rationalnormalscrolls} uses degeneration and the spaces of (linked) limit linear series for vector bundles of higher rank, developed by Teixidor i Bigas \cite{tei-i-big:91} and Osserman \cite{oss:14}.
+The proof of \autoref{thm:rationalnormalscrolls} proceeds by a degeneration of the scroll, and uses the spaces of (linked) limit linear series for vector bundles of higher rank, developed by Teixidor i Bigas \cite{tei-i-big:91} and Osserman \cite{oss:14}.
 % We degenerate $X$ to a reducible variety $X_0 = $ the projectivization of a vector bundle on a two-component nodal rational curve.
 % Suppose we could define a projection-ramification map for $X_0$ and show that it is dominant, then the same would hold for $X$ by the upper semi-continuity of fiber dimensions.
 % This approach fails with a na\"ive definition of the projection-ramification map.
@@ -211,11 +210,8 @@ The proof of \autoref{thm:rationalnormalscrolls} uses degeneration and the space
 All schemes are of finite type over $\k$, an algebraically closed field $\k$ of characteristic zero.
 A variety is a separated integral scheme.
 For a scheme $X$, we let $X^{\rm sm} \subset X$ be the smooth locus.
-
-We switch between divisors and line bundle and between locally free sheaves and vector bundles without comment.
 We follow Grothendieck's convention for projectivization---the projectivization $\P E$ of a vector bundle $E$ is the space of one dimensional quotients of $E$.
 For a line bundle $L$ on $X$, we denote by $|L|$ the projective space $\P H^0(X, L)^*$.
-
 Given a vector bundle $F$ on $X$, we denote by $P(F)$ the sheaf of principal parts of $F$.
 This is defined by the formula
 \[ P(F) = {\pi_2}_* \left( {\pi_1}^* F \otimes \mathcal \O_{X \times X}/ I_{\Delta}^2 \right),\]
@@ -249,37 +245,33 @@ A.D. and A.P. conducted a part of this research at the Banff International Resea
 
 % * The projection-ramification map
 \section{The projection-ramification map}\label{sec:prmap}
-In this section, we define a projection-ramification map for a linear series on a proper, normal, variety $X$.
+In this section, we define a projection-ramification map for linear series on a proper, normal, variety $X$.
 For $X \subset \P^n$, taking the linear series cut out by the hyperplanes recovers the projection-ramification map introduced in \autoref{sec:intro}.
-Working with abstract linear series, however, offers more flexibility that is helpful in inductive proofs.
+Working with abstract linear series offers more flexibility that is helpful in inductive proofs.
 
 Let $X$ be a proper variety of dimension $r$ over an algebraically closed field $\k$ of characteristic zero.
 A \emph{linear series} on $X$ is a pair $(L, W)$ consisting of a line bundle $L$ on $X$ and a subspace $W \subset H^0(X, L)$.
-The \emph{complete linear series} associated to $L$ is $(L, W)$ with $W = H^0(X, L)$.
+The \emph{complete linear series} associated to $L$ has $W = H^0(X, L)$.
 A \emph{projection} is a linear series $(L, V)$ with $\dim V = r+1$.
 A \emph{projection of $(L, W)$} is a projection $(L, V)$ with $V \subset W$.
-As a convention, we use $V$ for projections and $W$ for more general linear series.
 
 \begin{definition}[Properly ramified projection]
   \label{def:properlyramified}
 We say that a projection $(L,V)$ is \emph{properly ramified} if the evaluation homomorphism
 \[e \from V \otimes \O_{X} \to P(L)\]
-is an isomorphism at a general point in $X$.  If $(L,V)$ is properly ramified, its \emph{ramification divisor}
-\[R(L,V) \subset X\]
-is the closure of the scheme defined by the determinant of $e \from V \otimes \O_{X^{\rm sm}} \to P(L)|_{X^{\rm sm}}$.
+is an isomorphism at a general point in $X$.  If $(L,V)$ is properly ramified, its \emph{ramification divisor} $R(L,V) \subset X$
+is the closure of the scheme defined by the determinant of $e|_{X^{\rm sm}}$.
 \end{definition}
-In most cases, $L$ is clear from context, so we drop it from the notation and denote the ramification divisor simply by $R(V)$.
+If $L$ is clear from context, we omit it and denote the ramification divisor by $R(V)$.
 \begin{remark}\label{rem:Jacobian}
-  Suppose for simplicity that $V$ is a base-point free linear series that yields a surjective map $\phi \from X \to \P V$.
-  Then the ramification divisor may be defined as the degeneracy locus of the map
-  \[ d \phi \from T_{X} \to \phi^* T_{\P V}\]
-  on tangent spaces.
-  The degeneracy locus is the zero locus of $\det \phi$, which in local coordinates, is given by the determinant of the Jacobian matrix $\left( \frac{\partial \phi_i}{\partial x_j} \right)$.
-  Therefore, the ramification divisor $R(L, V)$ is also often called the \emph{Jacobian} of the linear series $(L, V)$ (see, for example, \cite[1.1.7]{dol:12}).
+  Suppose $V$ is a base-point free linear series that yields a surjective map $\phi \from X \to \P V$.
+  Then the ramification divisor defined above agrees with the degeneracy locus of the map
+  $d \phi \from T_{X} \to \phi^* T_{\P V}$.
+  Since $d \phi$ is given locally be the Jacobian matrix, the ramification divisor $R(L, V)$ is also called the \emph{Jacobian} of the linear series $(L, V)$ (see, for example, \cite[1.1.7]{dol:12}).
 \end{remark}
 
 A projection $(L, V)$ gives the evaluation map
-\[e \from V \otimes \O_X \to L.\]
+$e \from V \otimes \O_X \to L$.
 The evaluation map yields a map $p_{V,L} \from X \dashrightarrow \P V$, regular on the non-empty open set of $X$ where $e$ is surjective.
 The following is an easy observation, whose proof we skip.
 \begin{proposition}\label{prop:proj}
@@ -287,17 +279,14 @@ The following is an easy observation, whose proof we skip.
   In characteristic zero, this is equivalent to the condition that $p_{V,L}$ is dominant.
 \end{proposition}
 
-For a fixed $(L, W)$, the set of all projections of $(L, W)$ are parametrized by the Grassmannian $\Gr(r+1, W)$.
+All projections of a fixed $(L, W)$ are parametrized by the Grassmannian $\Gr(r+1, W)$.
 The property of being properly ramified is a Zariski open condition on the Grassmannian.
 
 We now define a map that assigns to a projection its ramification divisor.
 To do so, we interpret the ramification divisor as an element of a linear series.
-
 Assume, furthermore, that $X$ is normal.
-Let $K_X$ be the canonical sheaf of $X$.
-Denoting by $i \from X^{\rm sm} \to X$ the inclusion, $K_X$ is given by the push-forward
-\[ K_X = i_* K_{X^{\rm sm}}.\]
-Note that, since $X$ is normal, the complement of $X^{\rm sm} \subset X$ has codimension at least 2.
+Let $K_X$ be the canonical sheaf of $X$, defined as the push-forward to $X$ of $K_{X^{\rm sm}}$.
+Since $X$ is normal, the complement of $X^{\rm sm} \subset X$ has codimension at least 2.
 The sheaf $K_X$ is coherent, reflexive, and satisfies Serre's S2 condition.
 
 Let $L$ be a line bundle on $X$.
@@ -307,7 +296,7 @@ Given a subspace $V \subset H^0(X, L)$, we apply $\bigwedge^{r+1}$ to the evalua
 \[ e \from V \otimes \O_{X^{\rm sm}} \to P(L)|_{X^{\rm sm}},\]
 to get
 \[ \det e \from \det V \otimes \O_{X^{\rm sm}} \to K_{X^{\rm sm}} \otimes L^{r+1}. \]
-By applying $i_*$ and taking global sections, we get
+By pushing forwad to $X$ and taking global sections, we get
 \begin{equation}\label{eqn:ramsection}
   r_V \from \det V \to H^0(X, K_X \otimes L^{r+1}).
 \end{equation}
@@ -322,7 +311,7 @@ Then the map in \eqref{eqn:rammap} is non-zero at every point of $U$, and define
 \begin{equation}\label{eqn:rammapfamily}
   H^0(X, K_X \otimes L^{r+1})^* \otimes \O_{U} \to \det \mathcal V|_U^*.
 \end{equation}
-Note that $U$ is non-empty if and only if $W$ separates tangent vectors at a general point of $X$.
+The set $U$ is non-empty if and only if $W$ separates tangent vectors at a general point of $X$.
 \begin{definition}[Projection-ramification map]
   \label{def:ProjectionRamification}
   Let $(L, W)$ be a linear series that separates tangent vectors at a general point of $X$.
@@ -378,9 +367,8 @@ In particular, for $W = H^0(X, L)$, we have $W \otimes I = H^0(X, L \otimes I)$.
 For $s \in W \otimes I$, the vanishing locus $v(s)$ refers to the vanishing locus of $s$ as a section of $L$.
 We set $|W| = \P W^*$, the space of one-dimensional subspaces of $W$, and likewise $|W \otimes I| = \P (W \otimes I)^*$.
 For a complete linear series, we write $|L|$ for $|W|$.
-Note that $v(s) = v(\lambda s)$ for a non-zero scalar $\lambda$, so it causes no ambiguity to talk about $v(s)$ for $s \in |W|$.
+Note that $v(s) = v(\lambda s)$ for a non-zero scalar $\lambda$, so we may talk unambiguously about $v(s)$ for $s \in |W|$.
 
-\subsection{Non-defective linear series}\label{sec:non-defectivity}
 We study a positivity property of linear series that generalizes the property of having a divisorial dual.
 \begin{definition}[Non-defective linear series]
   \label{def:genericallynon-defective} 
@@ -518,8 +506,7 @@ The following observation relates non-defectivity with the non-degeneracy of the
 \begin{proof}
   By the definition of $P(L)$, we have a natural isomorphism
   \[ P(L)|_x = L/\mathfrak m_x^2 L,\]
-  so it suffices to show that the evaluation map
-  \[ e \from W \otimes \O_X \to P(L)\]
+  so it suffices to show that the evaluation map $e \from W \otimes \O_X \to P(L)$
   is surjective at $x$.
   Let $k$ be the generic rank of $K$, the kernel of $e$.
   From the proof of \autoref{prop:dimP}, we get
@@ -564,12 +551,8 @@ Take $\widetilde W = W \otimes \O_{\widetilde X}(-E)$ with its natural inclusion
 \end{proof}
 
 
-
-\subsection{Maximal variation for non-defective pairs}\label{sec:nondefective}
-
-In this section, we prove part~\eqref{item:dual} of \autoref{thm:main}.
+We are now ready to prove part~\eqref{item:dual} of \autoref{thm:main}.
 In fact, we prove a more general result (\autoref{thm:mainMain}).
-
 As before, $X$ is a proper, normal variety of dimension $r$ over an algebraically closed field of characteristic zero.
 \begin{theorem}
   \label{thm:mainMain}
@@ -577,8 +560,8 @@ As before, $X$ is a proper, normal variety of dimension $r$ over an algebraicall
   Then the projection-ramification map $\rho_{X,L,W}$ is generically finite onto its image.
 \end{theorem}
 
-For the proof, we need two lemmas, which are essentially local computations.
-Throughout, $X$, $L$, and $W$ are as in the statement of \autoref{thm:mainMain}.
+We need two local computations.
+Throughout, $X$, $L$, and $W$ are as in \autoref{thm:mainMain}.
 
 \begin{lemma}\label{lem:tangentconeram}
   Let $x \in X$ be a general point and $V \subset W \otimes \mathfrak m_x$ a general $(r+1)$-dimensional subspace.
@@ -608,12 +591,9 @@ has the matrix
 \end{pmatrix},
 \end{align}
 where $\partial_{i}$ denotes $\frac{\partial}{\partial s_{i}}$.
-The determinant of the matrix \eqref{matrix}
-\begin{align*}
-  t - \sum_{i}s_{i}\partial_{i}t
-\end{align*}
-is an analytic local equation for the ramification divisor $R(V)$ near $x$.
-By applying the Euler identity for homogeneous polynomials to the degree 2 part of $t$ (expressed as a power series in the $s_i$), we see that $R(V)$ shares the same tangent cone as $v(t)$ at $x$.
+The determinant of the matrix \eqref{matrix} is   $t - \sum_{i}s_{i}\partial_{i}t$,
+which is an analytic local equation for the ramification divisor $R(V)$ near $x$.
+Using the Euler identity for homogeneous polynomials to the quadratic part of $t$, expressed as a power series in $s_i$, we see that $R(V)$ shares the same tangent cone as $v(t)$ at $x$.
 The proposition follows.
 \end{proof}
 
@@ -645,15 +625,11 @@ The proposition follows.
   \partial_{2}u & 0 & 1 & \dots & \partial_{2}b \\
   \vdots & \vdots & \vdots & \vdots \\
   \partial_{z}u  & 0 & 0 & \dots & \partial_{z}b
-\end{pmatrix}
+\end{pmatrix}.
 \end{align}
-The determinant of the matrix \eqref{matrix2} is the analytic local equation for $R(V)$.
-It is given by
-\begin{align*}
-   \bar{u} \cdot \partial_{z}b \pm \partial_{z}u \cdot \bar{b},
- \end{align*} 
- where, for $r \in \widehat{\O}_{X,x}$ we set
- \[\bar{r} = r - a_{1}\partial_{1}r - a_{2}\partial_{2}r - \dots - z \partial_{z} r.\]
+For $r \in \widehat{\O}_{X,x}$, set
+\[\bar{r} = r - a_{1}\partial_{1}r - a_{2}\partial_{2}r - \dots - z \partial_{z} r.\]
+The determinant of the matrix \eqref{matrix2} is $\bar{u} \cdot \partial_{z}b \pm \partial_{z}u \cdot \bar{b}$, which is an analytic local equation for $R(V)$.
  Since $b \in {\mathfrak m}^{2}_{x}$, we get that $\bar{b} \in {\mathfrak m}^{2}_{x}$, and so $\partial_{z}b \in {\mathfrak m}_{x}$.
  Furthermore, since the tangent cone of $b$ is a non-degenerate quadric, we also get that $\partial_z b \not \in \mathfrak m_x^2$.
  Since $\overline{u}$ is a unit, we see that the tangent cone of $R(V)$ at $x$ is the hyperplane cut out by $\partial_z b \in \mathfrak m_x/\mathfrak m_x^2$.
@@ -1746,12 +1722,10 @@ We now have all the tools to prove \autoref{thm:rationalnormalscrolls}.
   The gluing condition, in turn, implies that $\Lambda(w)$ is the image of an $(r+1)$-dimensional subspace of the kernel of the map
   \[ E_2'(1) \to E_2'(1)/V(w)^1.\]
   By the genericity of $V$, the isomorphism type of the kernel of this map is constant around $v$; that is, the kernel is isomorphic to $E_2$.
-  So, a dimension count for $\mathcal G(r+1, E)$ around $v$ gives
+  A dimension count for $\mathcal G(r+1, E)$ around $v$ gives
   \begin{align*}
     \dim_v \mathcal G(r+1, E) &= \dim \Gr(r+1, H^0(C_1, E_1)) + \dim \Gr(r+1, H^0(C_2, E_2))\\
-                              &= (r+1)(d_1-1) + (r+1)(d_2-1)\\
-                              &= (r+1)(d_1+d_2-2)\\
-                              &= (r+1)(d-1).\\
+                              &= (r+1)(d_1-1) + (r+1)(d_2-1) = (r+1)(d-1).\\
   \end{align*}
 
   Finally, we must check that $v$ is an isolated point in the fiber of
@@ -2117,3 +2091,8 @@ We now have all the tools to prove \autoref{thm:rationalnormalscrolls}.
 
  \bibliographystyle{siam}
  \bibliography{CommonMath}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "ProjectionandRamificationEDIT"
+%%% End:

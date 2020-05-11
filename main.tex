@@ -824,7 +824,7 @@ We engineer the failure of maximal variation using the following elementary obse
 
 \begin{corollary}[\autoref{thm:counterexamples}]
   \label{cor:actualcounterexamples}
-  Let $r \geq 3$ and $d \geq r+1$.
+  Let $r \geq 4$ and $d \geq r+1$.
   There exist ample vector bundles $E$ of rank $r$ and degree $d$ on $\P^1$ such that for $X = \P E$ and the complete linear series $L = \O_X(1)$, the projection-ramification map $\rho_X$ is not generically finite onto its image.
 \end{corollary}
 \begin{proof}
@@ -836,7 +836,7 @@ We engineer the failure of maximal variation using the following elementary obse
 
 \begin{remark}
 In all the examples of scrolls where we know that maximal variation fails, the failure is implied by the presence of generic stabilizers.
-We do not know, however, if the presence of stabilizers is {\sl equivalent} to the failure of maximal variation.
+We do not know, however, if the presence of stabilizers is equivalent to the failure of maximal variation.
 \end{remark}
 
 \begin{remark}
@@ -844,8 +844,14 @@ We do not know, however, if the presence of stabilizers is {\sl equivalent} to t
   Therefore, the non-dominance of projection-ramification is not directly connected to the eccentricity of the splitting type of a scroll. 
 \end{remark}
 
-\todo{Summarize surface and threefold scrolls as a remark.}
-% \subsection{Eccentric threefold scrolls} % (fold)
+\begin{remark}
+  For surface and threefold scrolls, the projection-ramification map is always dominant, and hence the lower bound on $r$ in \autoref{cor:actualcounterexamples} is sharp.
+  For surface scrolls, this follows from \autoref{cor:lowdim}.
+  For threefold scrolls, we can verify by an explicit tangent space computation that $\rho$ is dominant for the particular scroll $X_0 = \P \left(\O(1) \oplus \O(1)\oplus \O(k)\right)$ for $k \geq 1$.
+  Since any threefold scroll $X$ of degree $d = k+2$ isotrivially degenerates to $X_0$, we deduce that $\rho$ is dominant for $X$ as well.
+\end{remark}
+
+%\subsection{Eccentric threefold scrolls} % (fold)
 % \label{sec:eccentric_threefolds}
 % \autoref{thm:counterexamples} leaves open the case of threefold scrolls (surface scrolls are covered by \autoref{cor:lowdim}).
 % We settle this case in this section by showing that the projection-ramification map for threefold scrolls is always generically finite, and thus the statement of \autoref{thm:counterexamples} is sharp in $r$.

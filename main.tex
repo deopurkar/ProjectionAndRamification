@@ -9,16 +9,12 @@ The association $L \mapsto R(L)$ yields a rational map
   \rho \from \Gr(n-r, n+1) \dashrightarrow |K_X + (r+1)H|,
 \]
 which we call the \emph{projection-ramification map}.
+Surprisingly, we know very little about $\rho$, despite its evident importance in projective geometry.
+This paper attempts to fill this gap.
 
-We know very little about $\rho$, despite its evident importance in projective geometry.
-%For example, is $\rho$ (generically) injective? Is it generically finite? What is its degree? What are its fibers? 
-In this paper, we show that for a large class of varieties, $\rho$ is generically finite.
+Our first result is that for a large class of varieties, $\rho$ is generically finite.
 In other words, non-trivial deformations of a general $L$ induce non-trivial deformations of $R(L)$.
 That is, the ramification locus ``varies maximally'' as the center of projection moves.
-
-The question of maximal variation appeared first in the work of Flenner and Manaresi in connection with the St\"uckrad-Vogel cycle \cite{fle.man:98}. 
-They proved maximal variation under a condition we call ``incompressibility.''
-We prove the following more general theorem.
 \begin{maintheorem}[\autoref{cor:maintheorem}]\label{thm:main}
   Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over $\C$.
   Suppose one of the following holds:
@@ -28,38 +24,15 @@ We prove the following more general theorem.
   \end{enumerate}
   Then $\rho$ is generically finite onto its image.
 \end{maintheorem}
-
-The dual variety $X^* \subset {\P^n}^*$ is the closure of the locus of hyperplanes $H \subset \P^n$ whose intersection with the smooth locus of $X$ is singular.
-If $X$ satisfies condition \eqref{item:incomp}, we say that $X$ is \emph{incompressible}---it cannot be projected down to a smaller dimensional variety.
-The maximal variation result in \cite{fle.man:98} is equivalent to \autoref{thm:main} under condition \eqref{item:incomp}.
-Our proof is independent and shorter.
-
-\autoref{thm:main} substantially enlarges the class of varieties for which we know maximal variation.
-Indeed, there are several varieties that have a divisorial dual, but are compressible.
-For example, if $X$ is any smooth surface (in characteristic zero), then the dual variety $X^*$ is a hypersurface.
-But not all such $X$ are incompressible.
-The first example is the cubic surface scroll $X \subset \P^4$---the projection from the directrix $L \subset X$ projects $X$ onto a $\P^1$.
-Thus, even for surfaces, condition \eqref{item:dual} of \autoref{thm:main} covers new ground.
-In higher dimensions, let $X$ be embedded in $\P^n$ by a sufficiently positive line bundle (for example, by a sufficiently high Veronese re-embedding).
-Then $X \subset \P^n$ is usually not incompressible, but the dual variety $X^*$ will be a hypersurface.
-
-The hypotheses in \autoref{thm:main} are sufficient, but not necessary.
-Consider $X = \P^{r-1} \times \P^1 \subset \P^{2r-1}$, embedded by the Segre embedding, for $r \geq 3$.
-Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho$ is dominant (\autoref{prop:segre}).
+Recall that the dual variety $X^* \subset {\P^n}^*$ is the closure of the set of hyperplanes $H \subset \P^n$ whose intersection with the smooth locus of $X$ is singular.
 
 It is natural to wonder if maximal variation always holds.
-This is not the case.
+Our second result shows that this is not the case.
 \begin{maintheorem}[\autoref{cor:actualcounterexamples}]
   \label{thm:counterexamples}
   There exist smooth, non-degenerate, rational normal scrolls $X \subset \P^{n}$ of every dimension $r \geq 4$ and degree $d \geq r+1$ for which the projection-ramification map $\rho$ is not generically finite onto its image.
 \end{maintheorem}
-
-The existence of such variation has been alluded to by Zak \cite{zak:}.
-Our examples are the first known instances.
-Interestingly, these examples include scrolls of general moduli.
-
-We turn our attention to cases where the map $\rho$ has a chance of being dominant.
-Our next result classifies such $X \subset \P^n$.
+Our third result classifies $X \subset \P^n$ for which $\rho$ has a chance of being dominant.
 \begin{maintheorem}[\autoref{thm:actualminimaldegree}]
   \label{thm:minimaldegree}
   Let $X \subset \P^{n}$ be a smooth, non-degenerate projective variety of dimension $r$ over a field of characteristic zero.
@@ -67,7 +40,6 @@ Our next result classifies such $X \subset \P^n$.
   \[ \dim \Gr(n-r, n+1) \leq \dim |K_X + (r+1)H|.\]
   Equality holds if and only if $X$ is a variety of minimal degree, that is $\deg X = n-r+1$.
 \end{maintheorem}
-
 The list of smooth varieties of minimial degree consists of quadric hypersurfaces, the Veronese surface in $\P^5$, and rational normal scrolls \cite[Theorem~19.9]{har:95}.
 By \autoref{thm:main}, $\rho$ is dominant for hypersurfaces and surfaces, so what remains are the scrolls.
 Here the story is subtle, as evidenced by \autoref{thm:counterexamples}, but for generic scrolls of high degree, maximal variation holds.
@@ -77,7 +49,29 @@ Here the story is subtle, as evidenced by \autoref{thm:counterexamples}, but for
   If $\deg E = a \cdot (r-1) + b \cdot (2r-1) + 1$ for non-negative integers $a, b$, then the projection-ramification map $\rho$ is dominant for $X$.
   In particular, the conclusion holds if $E$ is general of degree at least $(r-1)(2r-1) + 1$.
 \end{maintheorem}
-The proof of \autoref{thm:rationalnormalscrolls} proceeds by a degeneration of the scroll, and uses the spaces of (linked) limit linear series for vector bundles of higher rank, developed by Teixidor i Bigas \cite{tei-i-big:91} and Osserman \cite{oss:14}.
+
+The question of maximal variation of the ramification divisor appeared first in the work of Flenner and Manaresi in connection with the St\"uckrad-Vogel cycle \cite{fle.man:98}. 
+They proved maximal variation under the condition of incompressibility, namely part (1) of \autoref{thm:main}.
+Our proof of this part of the theorem is independent and shorter.
+
+\autoref{thm:main} substantially enlarges the class of varieties for which we know maximal variation.
+There are several varieties that have a divisorial dual, but are compressible.
+For example, if $X$ is any smooth surface (in characteristic zero), then the dual variety $X^*$ is a hypersurface.
+But not all such $X$ are incompressible (for example, a cubic surface in $\P^3$ can be projected to a $\P^1$).
+Thus, even for surfaces, condition \eqref{item:dual} of \autoref{thm:main} covers new ground.
+In higher dimensions, let $X$ be embedded in $\P^n$ by a sufficiently positive line bundle (for example, by a sufficiently high Veronese re-embedding).
+Then $X \subset \P^n$ is usually not incompressible, but the dual variety $X^*$ is a hypersurface.
+
+The hypotheses in \autoref{thm:main} are sufficient, but not necessary.
+For $r \geq 2$, let $X = \P^{r-1} \times \P^1$ embedded in $\P^{2r-1}$ by the Segre embedding.
+Then $X$ is neither incompressible nor is $X^*$ a hypersurface, and yet $\rho$ is dominant (\autoref{prop:segre}).
+
+Zak \cite{zak:} has alluded to the existence of varieties for which maximal variation fails.
+To our knowledge, the examples in \autoref{thm:counterexamples} are the first explicit instances.
+Interestingly, these examples include scrolls of general moduli.
+
+The proof of \autoref{thm:rationalnormalscrolls} is technically the most demanding.
+It proceeds by a degeneration of the scroll, and crucially uses the spaces of (linked) limit linear series for vector bundles of higher rank, developed by Teixidor i Bigas \cite{tei-i-big:91} and Osserman \cite{oss:14}.
 % We degenerate $X$ to a reducible variety $X_0 = $ the projectivization of a vector bundle on a two-component nodal rational curve.
 % Suppose we could define a projection-ramification map for $X_0$ and show that it is dominant, then the same would hold for $X$ by the upper semi-continuity of fiber dimensions.
 % This approach fails with a na\"ive definition of the projection-ramification map.

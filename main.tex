@@ -135,8 +135,8 @@ A.D. and A.P. conducted a part of this research at the Banff International Resea
 
 % * The projection-ramification map
 \section{The projection-ramification map}\label{sec:prmap}
-In this section, we define a projection-ramification map for linear series on a proper, normal, variety $X$.
-For $X \subset \P^n$, taking the linear series cut out by the hyperplanes recovers the projection-ramification map introduced in \autoref{sec:intro}.
+In this section, we define a projection-ramification map for linear series.
+For a variety in projective space, the definition applied to the linear series cut out by the hyperplanes recovers the projection-ramification map introduced in \autoref{sec:intro}.
 Working with abstract linear series offers more flexibility that is helpful in inductive proofs.
 
 Let $X$ be a proper variety of dimension $r$ over an algebraically closed field $\k$ of characteristic zero.
@@ -152,7 +152,7 @@ We say that a projection $(L,V)$ is \emph{properly ramified} if the evaluation h
 is an isomorphism at a general point in $X$.  If $(L,V)$ is properly ramified, its \emph{ramification divisor} $R(L,V) \subset X$
 is the closure of the scheme defined by the determinant of $e|_{X^{\rm sm}}$.
 \end{definition}
-If $L$ is clear from context, we omit it and denote the ramification divisor by $R(V)$.
+If the line bundle $L$ is clear from context, we omit it from the notation and denote the ramification divisor by $R(V)$.
 \begin{remark}\label{rem:Jacobian}
   Suppose $V$ is a base-point free linear series that yields a surjective map $\phi \from X \to \P V$.
   Then the ramification divisor defined above agrees with the degeneracy locus of the map
@@ -173,8 +173,7 @@ All projections of a fixed $(L, W)$ are parametrized by the Grassmannian $\Gr(r+
 The property of being properly ramified is a Zariski open condition on the Grassmannian.
 
 We now define a map that assigns to a projection its ramification divisor.
-To do so, we interpret the ramification divisor as an element of a linear series.
-Assume, furthermore, that $X$ is normal.
+Assume that $X$ is normal.
 Let $K_X$ be the canonical sheaf of $X$, defined as the push-forward to $X$ of $K_{X^{\rm sm}}$.
 Since $X$ is normal, the complement of $X^{\rm sm} \subset X$ has codimension at least 2.
 The sheaf $K_X$ is coherent, reflexive, and satisfies Serre's S2 condition.
@@ -226,8 +225,7 @@ Thus, $\rho_{X,L,W}$ factors as the Pl\"ucker embedding followed by a linear pro
 % * Maximal variation for incompressible and non-defective $X$
 \section{Maximal variation for incompressible and non-defective $X$}
 \label{sec:proof_of_theorem:main}
-The goal of this section is to prove \autoref{thm:main}.
-We begin by proving part \eqref{item:incomp}, which is substantially easier.
+In this section, we prove \autoref{thm:main}, beginning with part \eqref{item:incomp}, which is easier.
 \begin{proposition}[\autoref{thm:main}~\eqref{item:incomp}]
   \label{prop:incompress}
   Let $X \subset \P^n$ be a non-degenerate, normal, incompressible projective variety over a field of characteristic zero.
@@ -246,7 +244,7 @@ We begin by proving part \eqref{item:incomp}, which is substantially easier.
 \end{proof}
 
 For the proof of part \eqref{item:dual} of \autoref{thm:main}, we exhibit a particular projection that is isolated in its fiber under $\rho$.
-We proceed inductively, and work with the more abstract set-up of a linear series, allowing for series that are not very ample.
+We proceed inductively, working with linear series that are not necessarily very ample.
 
 Let $X$ be a proper variety of dimension $r$, and let $(L, W)$ be a linear series on $X$.
 For an ideal sheaf $I \subset \O_X$ we denote by $W \otimes I$ the subspace of $W$ consisting of the sections that vanish modulo $I$. %he
@@ -259,7 +257,7 @@ We set $|W| = \P W^*$, the space of one-dimensional subspaces of $W$, and likewi
 For a complete linear series, we write $|L|$ for $|W|$.
 Note that $v(s) = v(\lambda s)$ for a non-zero scalar $\lambda$, so we may talk unambiguously about $v(s)$ for $s \in |W|$.
 
-We study a positivity property of linear series that generalizes the property of having a divisorial dual.
+The following property turns out to generalize the property of having a divisorial dual.
 \begin{definition}[Non-defective linear series]
   \label{def:genericallynon-defective} 
   We say that a linear series $(L, W)$ is \emph{non-defective} if,  for a general point $x \in X$ either $W \otimes \mathfrak m_x^2 = 0$, or there exists $s \in W \otimes \mathfrak m_x^2$ such that $v(s)$ has an isolated singularity at $x$.

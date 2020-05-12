@@ -1131,6 +1131,7 @@ As a remedy, we work with the (linked) limit linear series of higher rank as dev
 We use \cite{oss:14} for the foundations of the theory.
 
 \subsection{Linked linear series}\label{sec:lls}
+Let $C$ be a nodal union of two smooth (projective, connected) curves $C_1$ and $C_2$.
 Let $B$ be the spectrum of a DVR with special point $0$ and general point $\eta$.
 Let $\pi \from X \to B$ be a smoothing of $C$ with non-singular total space $X$.
 That is, $\pi$ is a flat, proper, family of connected curves, smooth over $\eta$, and isomorphic to $C$ over $0$.
@@ -1177,17 +1178,16 @@ $ d_1 + d_2 - rb = d$.
 \begin{definition}[linked linear series]
   \label{def:lls}
   Let $S$ be a $B$-scheme.
-  A \emph{$k$-dimensional linked linear series} on $\mathcal E_S$ consists of sub-bundles $V_n \to \pi_* (\mathcal E_n)_S$ of rank $k$ for every $n \in \Z$ satisfying the following compatibility condition.
-  For every $m, n \in \Z$, the map
+  A \emph{$k$-dimensional linked linear series} on $\mathcal E_S$ consists of sub-bundles $V_n \to \pi_* (\mathcal E_n)_S$ of rank $k$ for every $n \in \Z$ satisfying the following compatibility condition:
   \begin{equation}\label{lls:compatibility}
-    \pi_* \theta_n \from \pi_* (\mathcal E_m)_S \to \pi_* (\mathcal E_{m+n})_S \text{ maps } V_m \to V_{m+n}.
+    \text{for every $m, n \in \Z$, the map }\pi_* \theta_n \from \pi_* (\mathcal E_m)_S \to \pi_* (\mathcal E_{m+n})_S \text{ maps } V_m \to V_{m+n}.
   \end{equation}
 \end{definition}
 \autoref{def:lls} is a special case of \cite[Definition~3.3.2]{oss:14}.
 When we talk about the image of an element in $V_m$ in $V_{m+n}$, it is to be understood as the image under the map $\pi_* \theta_n$.
 
 \begin{remark}
-The notion of a sub-bundle of a push-forward is subtle; it is treated in depth in \cite[Definition~B.2.1]{oss:14}.
+We alert the reader that the notion of a sub-bundle of a push-forward is subtle; it is treated in depth in \cite[Definition~B.2.1]{oss:14}.
 % We recall the main points.
 % For a flat proper morphism $X \to S$ and a vector bundle $\mathcal E$ on $S$, a \emph{sub-bundle} of $\pi_* \mathcal E$ is a vector bundle $V$ on $S$ along with a map $i \from V \to \pi_* \mathcal E$ such that for every $T \to S$, the pull-back $i_T \from V_T \to \pi_* (\mathcal E_T)$ is injective.
 % Note that this is a local condition on $S$.

@@ -12,7 +12,7 @@
    - Condensed the exposition of limit linear series by replacing exposition with references to Osserman's paper.
 
 3. Cut Section 6 on the enumerative problem entirely, as advised by the referee.
-   - The results are summarized in the introduction with short indication of how the proof works.
-   - The longest part of the section was the case of the quartic surface scroll. It took us about 10 pages to obtain one degree. We now entirely omit this.
+   - The results are summarized in the introduction with short indication of the proofs.
+   - The longest part of the section was the case of the quartic surface scroll. It took us about 10 pages to obtain the degree in this particular case. We now entirely omit this.
 
 4. Updated the abstract.

@@ -9,14 +9,14 @@ The association $L \mapsto R(L)$ yields a rational map
   \rho \from \Gr(n-r, n+1) \dashrightarrow |K_X + (r+1)H|,
 \]
 which we call the \emph{projection-ramification map}.
-Surprisingly, we know very little about $\rho$, despite its evident importance in projective geometry.
+We know surprisingly little about $\rho$, despite its evident importance in projective geometry.
 This paper attempts to fill this gap.
 
 Our first result is that for a large class of varieties, $\rho$ is generically finite.
 In other words, non-trivial deformations of a general $L$ induce non-trivial deformations of $R(L)$.
 That is, the ramification locus ``varies maximally'' as the center of projection moves.
 \begin{maintheorem}[\autoref{cor:maintheorem}]\label{thm:main}
-  Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over $\C$.
+  Let $X \subset \P^n$ be a non-degenerate, normal, projective variety over an algebraically closed field of characteristic zero.
   Suppose one of the following holds:
   \begin{enumerate}
   \item\label{item:incomp}(incompressibility) for every linear subspace $L \subset \P^n$ of dimension $(n-r-1)$, projection from $L$ restricts to a dominant rational map $X \dashrightarrow \P^r$;
@@ -40,7 +40,7 @@ Our third result classifies $X \subset \P^n$ for which $\rho$ has a chance of be
   \[ \dim \Gr(n-r, n+1) \leq \dim |K_X + (r+1)H|.\]
   Equality holds if and only if $X$ is a variety of minimal degree, that is $\deg X = n-r+1$.
 \end{maintheorem}
-The list of smooth varieties of minimial degree consists of quadric hypersurfaces, the Veronese surface in $\P^5$, and rational normal scrolls \cite[Theorem~19.9]{har:95}.
+The list of smooth varieties of minimal degree consists of quadric hypersurfaces, the Veronese surface in $\P^5$, and rational normal scrolls \cite[Theorem~19.9]{har:95}.
 By \autoref{thm:main}, $\rho$ is dominant for hypersurfaces and surfaces, so what remains are the scrolls.
 Here the story is subtle, as evidenced by \autoref{thm:counterexamples}, but for generic scrolls of high degree, maximal variation holds.
 \begin{maintheorem}[\autoref{thm:actualrationalnormalscrolls}]
@@ -79,25 +79,27 @@ It proceeds by a degeneration of the scroll, and crucially uses the spaces of (l
 
 \subsection*{Further questions}
 Our results open up an array of enumerative problems: for every variety of minimal degree, determine the degree of $\rho$.
-It is easy to check that $\rho$ is an isomorphism for quadric hypersurfaces.
-For the Veronese surface in $\P^5$, the map $\rho$ can be identified with the map that sends a net of conics in $\P^2$ to its Jacobian cubic; this map has degree 3 (see \cite[Exercise~3.2 and 3.12]{dol:12}).
+Some of these are easy.
+For example, for quadric hypersurfaces, it is immediate that $\rho$ is an isomorphism.
+For the Veronese surface in $\P^5$, we see that the map $\rho$ sends a net of conics in $\P^2$ to its Jacobian cubic; this map has degree 3 (see \cite[Exercise~3.2 and 3.12]{dol:12}).
 For a rational normal curve in $\P^n$, the map $\rho$ in fact extends to a regular map $\rho \from \Gr(2, n+1) \to \P^{2n-2}$, and is given by the Wronskian.
-As a result, it is immediate that its degree is the degree of the Grassmannian in its Pl\"ucker embedding, which is the Catalan number $\frac{(2n-2)!}{n!(n-1)!}$.
-For scrolls of dimension 2 and higher, the degree of $\rho$ remains unknown (but see \autoref{prop:segre} for some cases).
+As a result, its degree is the degree of the Grassmannian in its Pl\"ucker embedding, which is the Catalan number $\frac{(2n-2)!}{n!(n-1)!}$.
+This is where our current knowledge ends.
+In particular, for scrolls of dimension 2 and higher, the degree of $\rho$ remains unknown (but see \autoref{prop:segre} for some cases).
 For some surface scrolls, we computed the degree of $\rho$ by explicit computer calculation.
 Denote by $s_d$ the degree of $\rho$ for the generic surface scroll of degree $d$.
 We observe
 \[ s_2 = 1, \quad s_3 = 1, \quad s_4 = 2,\quad s_5 = 6, \quad s_6 = 22, \quad s_7 = 92, \quad s_8 = 422,\]
-a sequence which appears to be the beginning of \cite[A001181]{oei:} and suggests an as-yet-mysterious combinatorial structure in the degrees of $\rho$.
+a sequence which appears to be the beginning of \cite[A001181]{oei:}, perhaps hinting at a hidden combinatorial structure in the degrees of $\rho$.
 
-A second natural set of questions is about the behavior of $\rho$ in characteristic $p$ and over the real numbers.
+A second natural set of questions concerns the behavior of $\rho$ in characteristic $p$ and over the real numbers.
 The analysis of $\rho$ will surely bring new surprises in positive characteristics.
 Indeed, we know that even for the rational normal curves, the degree of $\rho$ is different in positive characteristics (see \cite{oss:06}).
 The real algebraic geometry surrounding the Wronskian map plays an important role in real enumerative geometry, the theory of real algebraic curves, and control theory, thanks to the B. and M. Shapiro conjecture \cite{sot:00, ere.gab:02}.
 Our results set the stage for the possibility of a higher-dimensional generalization of the body of work around this conjecture.
 
 \subsection{Notation and conventions}
-All schemes are of finite type over $\k$, an algebraically closed field $\k$ of characteristic zero.
+All schemes are of finite type over $\k$, an algebraically closed field of characteristic zero.
 A variety is a separated integral scheme.
 For a scheme $X$, we let $X^{\rm sm} \subset X$ be the smooth locus.
 We follow Grothendieck's convention for projectivization---the projectivization $\P E$ of a vector bundle $E$ is the space of one dimensional quotients of $E$.
@@ -109,35 +111,36 @@ where the $\pi_i$ are the projections on the two factors and $\Delta \subset X \
 
 \subsection{Organization}
 In \autoref{sec:prmap}, we give basic definitions, culminating in the precise general definition of $\rho$ (\autoref{def:ProjectionRamification}).
-The subsequent sections are logically independent of each other and can be read in any order after \autoref{sec:prmap}.
+The subsequent sections are logically independent and can be read in any order.
 
 In \autoref{sec:proof_of_theorem:main}, we prove \autoref{thm:main}\eqref{item:incomp} as \autoref{prop:incompress}.
 We then introduce the notion of non-defectivity, which generalizes the condition of having a divisorial dual.
 After establishing basic properties of non-defectivity, we prove \autoref{thm:main}\eqref{item:dual} as \autoref{thm:mainMain}.
 
 In \autoref{sec:minimaldegree}, we prove \autoref{thm:minimaldegree} as \autoref{thm:actualminimaldegree}.
-In the same section, we derive explicit formulas for the ramification divisors for scrolls in \autoref{sec:prscrolls}, give the examples advertised in \autoref{thm:counterexamples} in \autoref{sec:failure}.%, and treat the threefold scrolls in \autoref{sec:eccentric_threefolds}.
+In the same section, we derive explicit formulas for the ramification divisors for scrolls in \autoref{sec:prscrolls}, and give the examples advertised in \autoref{thm:counterexamples} in \autoref{sec:failure}.%, and treat the threefold scrolls in \autoref{sec:eccentric_threefolds}.
 
 In \autoref{sec:generic}, we prove \autoref{thm:rationalnormalscrolls} as \autoref{thm:actualrationalnormalscrolls}.
 We begin by doing some low degree cases by hand in \autoref{sec:lowdegree}.
-We then recall the theory of (linked) limit linear series for vector bundles of higher rank in \autoref{sec:lls}, and define the projection-ramification map for linked linear series in \autoref{sec:prnongeneric} and \autoref{sec:prlls}.
-We then prove \autoref{thm:rationalnormalscrolls} in \autoref{sec:llsproof} using a degeneration argument using limit linear series.
+We recall the theory of (linked) limit linear series for vector bundles of higher rank in \autoref{sec:lls}, and define the projection-ramification map for linked linear series in \autoref{sec:prnongeneric} and \autoref{sec:prlls}.
+We then prove \autoref{thm:rationalnormalscrolls} in \autoref{sec:llsproof} with a degeneration argument using limit linear series.
 
 % In \autoref{sec:enumerativeproblems}, we turn to the enumerative problem of finding the degree of $\rho$, namely the results in \autoref{thm:examples}.
 % We treat the cases of rational normal curves and quadric hypersurfaces quickly in \autoref{sec:arnc} and \autoref{sec:aquadricsurface}.
 % We devote \autoref{sec:veronese} to the case of the Veronese surface and \autoref{sec:quartic_scroll} to the case of the quartic surface scroll.
 
 \subsection*{Acknowledgments}
-We thank Fyodor Zak for generously sharing comments, ideas, and encouragement over several months.
+We thank Fyodor Zak for his ideas and encouragement over several months.
 We also thank Izzet Coskun, Joe Harris, Mirella Manaresi, Brian Osserman, and Dennis Tseng for useful conversations. 
 A.D. thanks the Australian Research Council for the grant \texttt{DE180101360} that supported a part of this project.
 A.D. and A.P. conducted a part of this research at the Banff International Research Center while attending the workshop titled \emph{Moduli spaces, birational geometry, and wall crossings} organized by Dan Abramovich, Jim Bryan, and Dawei Chen, and are grateful for the opportunity to attend.
+We thank the anonymous referee for their comments on an earlier draft.
 
 % * The projection-ramification map
 \section{The projection-ramification map}\label{sec:prmap}
 In this section, we define a projection-ramification map for linear series.
 For a variety in projective space, the definition applied to the linear series cut out by the hyperplanes recovers the projection-ramification map introduced in \autoref{sec:intro}.
-Working with abstract linear series offers more flexibility that is helpful in inductive proofs.
+Working with abstract linear series offers flexibility that is helpful in inductive proofs.
 
 Let $X$ be a proper variety of dimension $r$ over an algebraically closed field $\k$ of characteristic zero.
 A \emph{linear series} on $X$ is a pair $(L, W)$ consisting of a line bundle $L$ on $X$ and a subspace $W \subset H^0(X, L)$.
@@ -157,7 +160,7 @@ If the line bundle $L$ is clear from context, we omit it from the notation and d
   Suppose $V$ is a base-point free linear series that yields a surjective map $\phi \from X \to \P V$.
   Then the ramification divisor defined above agrees with the degeneracy locus of the map
   $d \phi \from T_{X} \to \phi^* T_{\P V}$.
-  Since $d \phi$ is given locally be the Jacobian matrix, the ramification divisor $R(L, V)$ is also called the \emph{Jacobian} of the linear series $(L, V)$ (see, for example, \cite[1.1.7]{dol:12}).
+  Since $d \phi$ is given locally by the Jacobian matrix, the ramification divisor is also called the \emph{Jacobian} of the linear series (see, for example, \cite[1.1.7]{dol:12}).
 \end{remark}
 
 A projection $(L, V)$ gives the evaluation map
@@ -172,7 +175,7 @@ The following is an easy observation, whose proof we skip.
 All projections of a fixed $(L, W)$ are parametrized by the Grassmannian $\Gr(r+1, W)$.
 The property of being properly ramified is a Zariski open condition on the Grassmannian.
 
-We now define a map that assigns to a projection its ramification divisor.
+We now define the projection-ramification map for linear series.
 Assume that $X$ is normal.
 Let $K_X$ be the canonical sheaf of $X$, defined as the push-forward to $X$ of $K_{X^{\rm sm}}$.
 Since $X$ is normal, the complement of $X^{\rm sm} \subset X$ has codimension at least 2.
@@ -185,7 +188,7 @@ Given a subspace $V \subset H^0(X, L)$, we apply $\bigwedge^{r+1}$ to the evalua
 \[ e \from V \otimes \O_{X^{\rm sm}} \to P(L)|_{X^{\rm sm}},\]
 to get
 \[ \det e \from \det V \otimes \O_{X^{\rm sm}} \to K_{X^{\rm sm}} \otimes L^{r+1}. \]
-By pushing forwad to $X$ and taking global sections, we get
+By pushing forward to $X$ and taking global sections, we get
 \begin{equation}\label{eqn:ramsection}
   r_V \from \det V \to H^0(X, K_X \otimes L^{r+1}).
 \end{equation}
@@ -254,25 +257,22 @@ then $W \otimes I = H^0(X, K)$.
 In particular, for $W = H^0(X, L)$, we have $W \otimes I = H^0(X, L \otimes I)$.
 For $s \in W \otimes I$, the vanishing locus $v(s)$ refers to the vanishing locus of $s$ as a section of $L$.
 We set $|W| = \P W^*$, the space of one-dimensional subspaces of $W$, and likewise $|W \otimes I| = \P (W \otimes I)^*$.
-For a complete linear series, we write $|L|$ for $|W|$.
-Note that $v(s) = v(\lambda s)$ for a non-zero scalar $\lambda$, so we may talk unambiguously about $v(s)$ for $s \in |W|$.
+For a complete linear series $(L, W)$, we write $|L|$ instead of $|W|$.
+Since $v(s) = v(\lambda s)$ for a non-zero scalar $\lambda$, we may talk unambiguously about $v(s)$ for $s \in |W|$.
 
 The following property turns out to generalize the property of having a divisorial dual.
 \begin{definition}[Non-defective linear series]
   \label{def:genericallynon-defective} 
-  We say that a linear series $(L, W)$ is \emph{non-defective} if,  for a general point $x \in X$ either $W \otimes \mathfrak m_x^2 = 0$, or there exists $s \in W \otimes \mathfrak m_x^2$ such that $v(s)$ has an isolated singularity at $x$.
+  We say that a linear series $(L, W)$ is \emph{non-defective} if,  for a general point $x \in X$ either $W \otimes \mathfrak m_x^2 = 0$, or there exists $s \in |W \otimes \mathfrak m_x^2|$ such that $v(s)$ has an isolated singularity at $x$.
 \end{definition}
-Note that for $s \in |W|$, the condition that $v(s)$ have an isolated singularity at $x$ is a Zariski open condition on $|W|$.
+The condition that $v(s)$ have an isolated singularity at $x$ is a Zariski open condition on $s$.
 Therefore, if there exists an $s \in |W \otimes \mathfrak m_x^2|$ such that $v(s)$ has an isolated singularity at $x$, then a general $s \in |W \otimes \mathfrak m_x^2|$ has the same property.
 \begin{remark}
-  Let $x$ be a point of $X$.
-  Suppose there exists $s \in |W|$ with an isolated singularity at $x$.
-  It may be tempting to conclude from this that $(L, W)$ is non-defective.
-  This is not necessarily true!
+  The condition in \autoref{def:genericallynon-defective} may hold for a \emph{particular} $x \in X$, and yet $(L, W)$ may not be non-defective.
   For example, take $X = \F_3$.
   Denote by $E$ the section of self-intersection $-3$ and $F$ the fiber of the projection $\F_3 \to \P^1$.
   Let $L = \O_X(E + 2F)$ and $W = H^0(X, L)$.
-  For $x \in E$, the general member of $|W \otimes \mathfrak m_x^2|$ has an isolated singularity at $x$, but the same is not true for a general $x \in X$.
+  For any $x \in E$, the general member of $|W \otimes \mathfrak m_x^2|$ has an isolated singularity at $x$, but the same is not true for a general $x \in X$.
 \end{remark}
 
 \begin{remark}
@@ -380,7 +380,7 @@ The following observation relates non-defectivity with the non-degeneracy of the
   After choosing a local trivialization for $L$ around $x$, the section $s$ corresponds to a power series $s(x_1,\dots,x_r)$ contained in $\mathfrak m_x^2 \widehat \O_{X,x}$.
   The germ of $\sing(v(s))$ at $x$ is cut out by the power series $\frac{\partial s}{\partial x_1}, \dots, \frac{\partial s}{\partial x_r}$.
   Since the germ of $\sing(v(s))$ at $x$ is the reduced point $x$, we get that $\frac{\partial s}{\partial x_1}, \dots, \frac{\partial s}{\partial x_r}$ are linearly independent as elements of $\mathfrak m_x / \mathfrak m_x^2$.
-  From this, it is easy to check that the tangent cone of $s(x_1, \dots, x_r)$ at $x$ is a non-degenerate quadric cone.
+  From this, it follows that the tangent cone of $s(x_1, \dots, x_r)$ at $x$ is a non-degenerate quadric cone.
 \end{proof}
 
 
@@ -584,9 +584,7 @@ We immediately get part~\eqref{item:dual} of \autoref{thm:main}.
 
 % * Projection-ramification for varieties of minimal degree
 \section{Projection-ramification for varieties of minimal degree}\label{sec:minimaldegree}
-In this section, we prove \autoref{thm:minimaldegree}, which relates varieties of minimal degree and the projection-ramification map.
-We then prove \autoref{thm:counterexamples} by constructing examples of rational scrolls where maximal variation fails.
-Finally, we obtain an alternate and more explicit description of the projection-ramification map for scrolls, which we use repeatedly.
+In this section, we relate varieties of minimal degree and the projection-ramification map and construct rational scrolls where maximal variation fails.
 
 The following is an easy application of the Kodaira vanishing theorem.
 \begin{proposition}\label{lem:kymh}
@@ -655,22 +653,21 @@ The following is an easy application of the Kodaira vanishing theorem.
 \end{proof}
 
 As a consequence, we immediately deduce \autoref{thm:minimaldegree}.
-\begin{theorem}[\autoref{thm:minimaldegree}]
+\begin{proposition}[\autoref{thm:minimaldegree}]
   \label{thm:actualminimaldegree}
   Let $X \subset \P^n$ be a smooth, non-degenerate projective variety of dimension $r \geq 1$ over a field of characteristic zero.
   We have the inequality
   \[ \dim \Gr(n-r, n+1) \leq \dim |K_X + (r+1)H|,\]
   where equality holds if and only if $X$ is a variety of minimal degree, that is $\deg X = n-r+1$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
   Apply \autoref{lem:kymh} with $m = r+1$.
 \end{proof}
 
 \subsection{Projection-ramification for scrolls}\label{sec:prscrolls}
 \autoref{thm:minimaldegree} motivates a deeper investigation of the projection-ramification map for varieties of minimal degree.
-Recall that a large class of varieties of minimal degree are the rational normal scrolls, namely $X = \P E$ for an ample vector bundle $E$ on $\P^1$ embedded by the complete linear series $\O_X(1)$.
-If $\dim X \geq 3$, then $X$ is neither incompressible nor does it have a divisorial dual variety.
-Therefore, for such $X$, \autoref{thm:main} leaves the question of maximal variation unanswered.
+A large class of varieties of minimal degree are the rational normal scrolls, namely $X = \P E$ for an ample vector bundle $E$ on $\P^1$ embedded by the complete linear series $\O_X(1)$.
+If $\dim X \geq 3$, then $X$ is neither incompressible nor does it have a divisorial dual variety, so \autoref{thm:main} does not apply.
 
 We now examine the projection-ramification map for projectivizations of vector bundles on smooth curves in more detail.
 Let $C$ be a smooth curve and $E$ an ample vector bundle on $C$ of rank $r$.
@@ -727,17 +724,17 @@ The map $d_V$ gives a map
 
 Let $R = R(V) \subset X$ be the ramification divisor of the projection given by $V$.
 Note that $R$ is a divisor of class $\pi^*(\det E \otimes K_C) \otimes \O_X(1)$.
-Therefore, $R \subset X$ is a sub-scroll---the fibers of $R \to C$ are hyperplanes in the corresponding fiber of $X \to C$.
-An explicit description of these hyperplanes, obtained either using the original definition or using the differential construction, is as follows.
-Let $x \in X$, and $c = \pi(x)$.
+Therefore, $R \subset X$ is a sub-scroll---the fibers of $R \to C$ are hyperplanes in the corresponding fibers of $X \to C$.
+An explicit description of these hyperplanes is as follows.
+Let $x \in X$ and $c = \pi(x)$.
 Fix a uniformizer $t$ of $C$ at $c$.
 Let $X_c \subset X$ and $R_c \subset R$ be the fibers of $X \to C$ and $R \to C$ over $c$, respectively.
 Suppose $s$ is a section of $L = \O_X(1)$, such that the hypersurface $v(s)$ is singular at $x$.
 Then it must contain the entire fiber of $\pi \from X \to C$ through $x$.
-Then, in an open set of $X$ containing $X_c$, we have $s = t s_1$ for a section $s_1$ of $\O_X(1)$.
+So, in an open set of $X$ containing $X_c$, we have $s = t s_1$ for a section $s_1$ of $\O_X(1)$.
 Then $R_c \subset X_c$ is the hyperplane cut out by $s_1$.
 
-We now write an equation of $R(V) \subset X$ over an open subset of $C$ containing $c$ explicitly in coordinates.
+We now write a local equation for $R(V) \subset X$.
 Choose a trivialization $X_1, \dots, X_r$ for $E$ over an open set $U \subset C$ containing $c$.
 Then $X_U \cong \P^{r-1} \times U = \Proj \O_U[X_1, \dots, X_r]$.
 We have a trivialization of $K_C$ over $U$ given by $dt$.
@@ -761,8 +758,8 @@ Note that the expression above is the determinant of the $(r+1) \times (r+1)$ ma
 This gives an equation for $R_U \subset X_U = \Proj \O_U[X_1, \dots, X_r]$.
 
 \subsection{Failure of maximal variation}\label{sec:failure}
-In this section, we show that there exist ample vector bundles $E$ of rank $r \geq 4$ on $\P^1$ such that the projection-ramification map for $X = \P E$ is not generically finite.
-Recall that the projection-ramification map for $X = \P E$ and the complete linear series of $L = \O_X(1)$ is a map
+Let $E$ be an ample vector bundle on $\P^1.$
+The projection-ramification map for $X = \P E$ and the complete linear series of $L = \O_X(1)$ is a map
 \[ \rho \from \Gr(r+1, H^0(X, L)) \dashrightarrow |K_X \otimes L^{r+1}|,\]
 or equivalently a map
 \[ \rho \from \Gr(r+1, H^0(\P^1, E)) \dashrightarrow \P H^0(\P^1, E \otimes \det E \otimes K_{\P^1})^*.\]
@@ -796,7 +793,7 @@ We engineer the failure of maximal variation using the following elementary obse
       U & B
     \end{pmatrix},
   \]
-  where $A \in \GL_a(\k)$, $B \in \k^\times$, and $U = (u_i)$ is an $(r-1)$ length row with entries in $H^0(\P^1, \O(b-a))$.
+  where $A \in \GL_a(\k)$, $B \in \k^\times$, and $U = (u_i)$ is a row of length $(r-1)$ with entries in $H^0(\P^1, \O(b-a))$.
   Set $d = (r-1)a + b$ so that $\det E = \O(d)$.
   Suppose $a$, $b$, and $r$, are such that
   \begin{equation}\label{eqn:requirement}
@@ -828,7 +825,7 @@ We engineer the failure of maximal variation using the following elementary obse
 \begin{proof}
   Take $E$ such that the action of $\Aut(X/\P^1)$ on a generic point of $|K_X\otimes L^{r+1}|$ has a positive-dimensional stabilizer (see \autoref{prop:specialE}).
   Since \[\rho_X \from \Gr(r+1, H^0(X, L)) \dashrightarrow |K_X \otimes L^{r+1}|\] is equivariant with respect to the action of $\Aut(X/\P^1)$, and a generic
-  point of the source does not have a positive-dimensional stabilizer (see \autoref{prop:trivialStabilizer}), it follows that $\rho_X$ cannot be dominant.
+  point of the source has a 0-dimensional stabilizer (see \autoref{prop:trivialStabilizer}), we conclude that $\rho_X$ is not dominant.
   Since the dimension of the source and target of $\rho_X$ are the same, $\rho_X$ is not generically finite.
 \end{proof}
 
@@ -995,7 +992,6 @@ We do not know, however, if the presence of stabilizers is equivalent to the fai
 \section{Maximal variation for generic scrolls}\label{sec:generic}
 In this section, we establish that the projection-ramification map is generically finite (equivalently, dominant) for most scrolls, notwithstanding the examples provided by \autoref{thm:counterexamples}.
 We begin by treating the cases of some particular scrolls by hand.
-We then bootstrap these to more general results using degeneration arguments.
 
 \subsection{Maximal variation for some particular cases}\label{sec:lowdegree}
 
@@ -1266,7 +1262,7 @@ More precisely, we have the following statement.
   First, suppose that $S$ lies over $\eta \in B$.
   Then $V_n \subset \pi_* (\mathcal E_n)_S$ is determined uniquely as the image of $V_{n_i} = \mathcal W_{n_i} \subset \pi_* (\mathcal E_{n_i})_S$ for either $i = 1$ or $i = 2$.
 
-  Next, suppose that $S = \spec K$, and it lies over $0 \in B$.
+  Next, suppose that $S = \spec K$ for a field $K$, and it lies over $0 \in B$.
   Denoting $(\mathcal E_n)_S$ by $E_n$, we must construct $V_n \subset H^0(C, E_n)$.
   By composing $\theta_{n_i-n} \from E_n \to E_{n_i}$ and the restriction $E_{n_i} \to E_{n_i}|_{C_i}$, we get a map
   \[ \iota \from H^0(C, E_n) \to H^0(C_1, E_{n_1}|_{C_1}) \oplus H^0(C_2, E_{n_2}|_{C_2}). \]
@@ -1303,7 +1299,7 @@ More precisely, we have the following statement.
   \[ \overline \iota \from \pi_* (\mathcal E_n)_S \to \pi_*(\mathcal E_{n_1})_S / \mathcal W_1 \oplus \pi_*(\mathcal E_{n_2})_S / \mathcal W_2,\]
   obtained by composing $\iota = \pi_*(\theta_{n_1-n} \oplus \theta_{n_2-n})$ and the projections $\pi_*(\mathcal E_{n_i})_S \to \pi_*(\mathcal E_{n_i})_S / \mathcal W_i$.
   We proved that, for every $\spec K \to S$, the kernel of $\overline \iota \otimes_{\O_S} K$ is $k$-dimensional.
-  Since $S$ is reduced, it is easy to prove that $V_n = \ker \iota$ is a sub-bundle of $\pi_*(\mathcal E_n)$ (see \cite[B.3.4 with reduced $B$]{oss:14}).
+  Since $S$ is reduced, it is easy to prove that $V_n = \ker \overline \iota$ is a sub-bundle of $\pi_*(\mathcal E_n)$ (see \cite[B.3.4 with reduced $B$]{oss:14}).
   It is also easy to check that $V = (V_n \mid n \in \Z)$ is a linked linear series, and the only one that satisfies $V_{n_i} = \mathcal W_i$.
   The proof is now complete.
 \end{proof}
@@ -1329,7 +1325,6 @@ Let $v_1, \dots, v_{r+1}$ be a basis of $V$ adapted to the vanishing sequence, n
   v_1 = t^a \widetilde v_1, \dots, v_{i} = t^a \widetilde v_i,\quad v_{i+1} = t^{a+1} \widetilde v_{i+1}, \dots, v_{r+1} = t^{a+1} \widetilde v_{r+1},
 \end{equation}
 for some $\widetilde v_1, \dots, \widetilde v_{r+1} \in E_p$ such that the images of $\widetilde v_1, \dots, \widetilde v_i$ in the fiber $E|_p$ are linearly independent, and the same holds for the images of $\widetilde v_{i+1}, \dots, \widetilde v_{r+1}$.
-Here we are slightly abusing the notation by denoting $v_i$ and its image in $E_p$ under the natural evaluation map by the same letter.
 Let $V^0 \subset E|_p$ be spanned by the images of $\widetilde v_1, \dots, \widetilde v_i$, and $V^1 \subset E|_p$ by the images of $\widetilde v_{i+1}, \dots, \widetilde v_{r+1}$.
 It is easy to check that a different choice of basis adapted to the vanishing sequence gives the same $V^0$ and $V^1$.
 By construction, $\dim V^0 = i$ and $\dim V^1 = r+1-i$, and therefore, $\dim (V^0 \cap V^1) \geq 1$.
@@ -1374,10 +1369,9 @@ Note that if $V$ is base-point free at $p$, then $\dim V^0 = r$ and $\dim V^1 = 
 \end{proof}
 
 We are primarily interested in generic $(r+1)$-dimensional subspaces $V \subset H^0(C, E)$.
-A generic such $V$ has the vanishing sequence
-\[ (0, \dots, 0, 1).\]
+A generic such $V$ has the vanishing sequence $(0, \dots, 0, 1)$.
 For linked linear series, it is important to also study the $V$ with complementary vanishing sequence, namely
-\[ (0,1, \dots, 1),\]
+$(0,1, \dots, 1)$,
 which we now do.
 For simplicity, we restrict to $C = \P^1$.
 
@@ -1532,7 +1526,9 @@ Note that $\mathcal U$ has the reduced scheme structure.
 The fruit of our labor is the following corollary.
 Let $\mathcal U_0$ be the fiber over $0$ of $\mathcal U \to B$.
 \begin{corollary}\label{prop:degeneration}
-  Suppose $v \in \mathcal U_0$ is such that $\dim_v \mathcal U_0 = (r+1)(d-rg-1)$ and $v$ is isolated in the fiber of $\rho$, then the projection-ramification map $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta)) \dashrightarrow \P H^0(X_\eta, \mathcal E_\eta \otimes \det E_\eta \otimes K_{X_\eta})$ is generically finite.
+  Suppose $v \in \mathcal U_0$ is such that $\dim_v \mathcal U_0 = (r+1)(d-rg-1)$ and $v$ is isolated in the fiber of $\rho$, then the projection-ramification map
+  \[\Gr(r+1, H^0(X_\eta, \mathcal E_\eta)) \dashrightarrow \P H^0(X_\eta, \mathcal E_\eta \otimes \det E_\eta \otimes K_{X_\eta})\]
+  is generically finite.
 \end{corollary}
 \begin{proof}
   If $\dim_v \mathcal U_0 = (r+1)(d-rg-1)$, then $v$ is in the closure of $\Gr(r+1, H^0(X_\eta, \mathcal E_\eta))$ by \autoref{thm:lls}.
@@ -1585,7 +1581,7 @@ We now have all the tools to prove \autoref{thm:rationalnormalscrolls}.
   By the construction of $\Lambda$, there exist bases of $V_{n_1}$ and $V_{n_2}$ that satisfy the gluing condition at $0$.
   In conclusion, $V_{n_1}$ and $V_{n_2}$ form a refined EHT limit linear series, and hence define a linked linear series $v = (V_n \mid n \in \Z)$.
 
-  It is easy to check that $\dim_v \mathcal G(r+1, E) = (r+1)(d-1)$.
+  We check that $\dim_v \mathcal G(r+1, E) = (r+1)(d-1)$.
   Indeed, for every linked linear series $w = (W_n \mid n \in \Z)$ in an open subset around $v$, the EHT limit linear series associated to $w$ determines $w$ and has the same vanishing sequence as $v$.
   In particular, $W_{n_1} \subset H^0(C_1, E_1(a))$ is the image of an $(r+1)$-dimensional subspace $V(w) \subset H^0(C_1, E_1)$ with vanishing sequence $(0, \dots, 0, 1)$, and $W_{n_2} \subset H^0(C_2, E_2'(b-a))$ is the image of an $(r+1)$-dimensional subspace $\Lambda(w)$ of $H^0(C_2, E'_2(1))$ with vanishing sequence $(0,1,\dots,1)$.
   The gluing condition, in turn, implies that $\Lambda(w)$ is the image of an $(r+1)$-dimensional subspace of the kernel of the map

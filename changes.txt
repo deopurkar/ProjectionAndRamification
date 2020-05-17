@@ -1,0 +1,18 @@
+1. Made the introduction much leaner.
+   - Cut the first paragraph to arrive immediately at the main problem.
+   - Cut the extended discussion of the enumerative problem of the degree.
+     Instead, gave a short summary of the known and unknown cases under "Further questions".
+   - Other minor changes to tighten the exposition.
+
+2. Tightened the exposition throughout the paper.
+   - Mostly minor changes to make the language less wordy.
+   - Cut two different derivations for the ramification divisor of a scroll to one (after Proposition 4.3).
+   - Relegated the result for eccentric threefold scrolls (Proposition 4.9) to a remark (Remark 4.9).
+     The proof was a long explicit calculation, which we now omit.
+   - Condensed the exposition of limit linear series by replacing exposition with references to Osserman's paper.
+
+3. Cut Section 6 on the enumerative problem entirely, as advised by the referee.
+   - The results are summarized in the introduction with short indication of how the proof works.
+   - The longest part of the section was the case of the quartic surface scroll. It took us about 10 pages to obtain one degree. We now entirely omit this.
+
+4. Updated the abstract.
